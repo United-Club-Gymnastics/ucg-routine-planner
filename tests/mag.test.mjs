@@ -211,3 +211,22 @@ test('Advanced rings: a listed swing to handstand (I.75, I.81, I.86-88) meets th
   assert.equal(scoreRoutine('sr', 'adv', [...base, sk('Uprise bwd. str. through handstand.', 'B', 1, 'WG-SR-I-32')]).deductions, 0.3);
   assert.equal(scoreRoutine('sr', 'adv', base, { swingHs: true }).deductions, 0);
 });
+
+test('Advanced floor: double flip and double flipping dismount are detected from the routine', () => {
+  const sk = (name, letter, eg, skillId) => ({ name, letter, eg, skillId });
+  const kolyvanov = sk('Salto bwd. str. with 2/1 t and salto bwd piked.', 'F', 3, 'WG-FX-III-36');
+  const routine = [sk('Front tuck', 'A', 2), sk('Back tuck', 'A', 3), sk('Full twist', 'B', 4), sk('Scale', 'A', 1), sk('Back handspring', 'A', 3), sk('L-sit', 'A', 1)];
+  // A double in the middle meets the requirement but isn't the dismount.
+  const mid = scoreRoutine('fx', 'adv', [kolyvanov, ...routine]);
+  assert.equal(mid.deductions, 0);
+  assert.equal(mid.detected.dblFlip, kolyvanov.name);
+  assert.equal(mid.detected.dblDismount, undefined);
+  assert.equal(mid.optionValues.dblDismount, 0);
+  // Last acrobatic skill is a double (a non-acrobatic skill after it doesn't matter): +0.1.
+  const end = scoreRoutine('fx', 'adv', [...routine.slice(0, 5), kolyvanov, sk('L-sit', 'A', 1)]);
+  assert.equal(end.detected.dblDismount, kolyvanov.name);
+  assert.equal(end.optionValues.dblDismount, 0.1);
+  // Typed in by hand: go by the name.
+  assert.equal(scoreRoutine('fx', 'adv', [...routine, sk('Double back', 'C', 3)]).optionValues.dblDismount, 0.1);
+  assert.equal(scoreRoutine('fx', 'adv', [...routine, sk('Back layout', 'A', 3)]).deductions, 0.3);
+});

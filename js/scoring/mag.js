@@ -8,6 +8,30 @@ import { MASTERS_LETTERS, mastersValue, meetsRequirement, vaultAgeBonus } from '
 // Rings: the five WG skills that meet the swing to handstand requirement (WG clarification).
 export const SWING_HS = ['WG-SR-I-75', 'WG-SR-I-81', 'WG-SR-I-86', 'WG-SR-I-87', 'WG-SR-I-88'];
 
+// Floor: the double (and triple) saltos in the skill list, including the ones whose
+// names don't say "double" (e.g. Kolyvanov, Tsukahara).
+export const FX_DOUBLE_SALTOS = [
+  'WG-FX-II-16', 'WG-FX-II-17', 'WG-FX-II-36', 'WG-FX-II-42', 'WG-FX-II-46', 'WG-FX-II-48',
+  'WG-FX-III-3', 'WG-FX-III-4', 'WG-FX-III-5', 'WG-FX-III-6', 'WG-FX-III-11', 'WG-FX-III-12', 'WG-FX-III-16',
+  'WG-FX-III-18', 'WG-FX-III-24', 'WG-FX-III-29', 'WG-FX-III-30', 'WG-FX-III-35', 'WG-FX-III-36', 'WG-FX-III-41',
+  'WG-FX-III-42', 'WG-FX-III-48', 'WG-FX-III-54', 'WG-FX-III-60', 'WG-FX-III-66', 'WG-FX-III-72',
+];
+// A skill typed in by hand: go by its name.
+const DOUBLE_NAME = /\b(double|dbl|triple|full[- ]?in|full[- ]?out|half[- ]?in|half[- ]?out)\b/i;
+export const isDoubleSalto = (it) => (it.skillId ? FX_DOUBLE_SALTOS.includes(it.skillId) : DOUBLE_NAME.test(it.name));
+
+// Requirements and bonuses the routine itself can show. Each takes the listed
+// skills (no blanks) and returns the skill that meets it, if any.
+const DETECT = {
+  swingHs: (skills) => skills.find((it) => SWING_HS.includes(it.skillId)),
+  dblFlip: (skills) => skills.find(isDoubleSalto),
+  // The dismount is the last acrobatic skill (EG II-IV, or a double typed in by hand).
+  dblDismount: (skills) => {
+    const last = skills.findLast((it) => [2, 3, 4].includes(it.eg) || isDoubleSalto(it));
+    return last && isDoubleSalto(last) ? last : undefined;
+  },
+};
+
 export const EXECUTION = 10;
 export const MIN_SKILLS = 6;
 export const MAX_ROUTINE = 20; // skills a routine list can hold (counting + non-counting)
@@ -103,8 +127,10 @@ export function eventOptions(event, level) {
     o.push({ id: 'conn1', kind: 'count', value: 0.1, max: 5, label: 'D or higher + B/C connection', help: '+0.1 each' });
     o.push({ id: 'conn2', kind: 'count', value: 0.2, max: 5, label: 'D or higher + D or higher connection', help: '+0.2 each' });
     if (level === 'adv') {
-      o.push({ id: 'dblDismount', kind: 'check', value: 0.1, label: 'Double flipping dismount', help: '+0.1' });
-      o.push({ id: 'dblFlip', kind: 'check', value: 0.3, deduction: true, label: 'Routine includes a double flip', help: 'Required: -0.3 neutral deduction if missing' });
+      o.push({ id: 'dblDismount', kind: 'check', value: 0.1, detect: true, label: 'Double flipping dismount',
+        help: '+0.1. Ticked automatically when the last acrobatic skill listed is a double salto.' });
+      o.push({ id: 'dblFlip', kind: 'check', value: 0.3, deduction: true, detect: true, label: 'Routine includes a double flip',
+        help: 'Required: -0.3 neutral deduction if missing. Ticked automatically for a double salto from the skill list.' });
     }
   }
   if (event === 'ph' && level === 'dev') {
@@ -113,7 +139,7 @@ export function eventOptions(event, level) {
   if (event === 'sr' && level !== 'masters') {
     o.push({ id: 'strength', kind: 'check', value: 0.3, label: 'C or higher strength skill', help: 'One-time +0.3' });
     if (level === 'adv') {
-      o.push({ id: 'swingHs', kind: 'check', value: 0.3, deduction: true, detect: SWING_HS, label: 'Routine includes a swing to handstand',
+      o.push({ id: 'swingHs', kind: 'check', value: 0.3, deduction: true, detect: true, label: 'Routine includes a swing to handstand',
         help: 'Required: -0.3 neutral deduction if missing. Ticked automatically for I.75, I.81, I.86, I.87 or I.88 from the skill list.' });
     }
   }
@@ -252,14 +278,14 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
     const v = options?.[o.id];
     let got = 0;
     if (o.detect) {
-      const hit = items.find((it) => it.status !== 'blank' && o.detect.includes(it.skillId));
+      const hit = DETECT[o.id](items.filter((it) => it.status !== 'blank'));
       if (hit) detected[o.id] = hit.name;
     }
     if (o.kind === 'check' && o.deduction) {
       if (!v && !detected[o.id]) deductions += o.value;
       continue;
     }
-    if (o.kind === 'check' && v) got = o.value;
+    if (o.kind === 'check' && (v || detected[o.id])) got = o.value;
     if (o.kind === 'count') got = Math.min(Math.max(0, Number(v) || 0), o.max) * o.value;
     if (o.kind === 'mushroom') got = Math.min(Math.max(0, Number(v) || 0), 1);
     optionValues[o.id] = round1(got);

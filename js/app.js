@@ -1126,17 +1126,18 @@ function updateComputed() {
       const row = $(`[data-option-row="${ev.id}:${o.id}"]`, card);
       const el = $(`[data-calc="opt-${o.id}"]`, card);
       if (!row || !el) continue;
-      if (o.deduction) {
-        // Met by a skill in the routine (rings swing to handstand): tick it and say which.
-        const met = r.detected?.[o.id];
+      // Met by a skill in the routine (rings swing to handstand, floor double flips):
+      // tick it and say which skill.
+      const met = o.detect ? r.detected?.[o.id] : null;
+      if (o.detect) {
         const box = $(`[data-opt="${o.id}"]`, row);
-        if (box) {
-          box.checked = !!met || !!e.options?.[ev.id]?.[o.id];
-          // Not disabled (that greys it out): ticking is ignored while a listed skill meets it.
-          if (met) box.setAttribute('aria-disabled', 'true');
-          else box.removeAttribute('aria-disabled');
-        }
-        if (o.detect) $('[data-help]', row).textContent = met ? `Met by ${met.replace(/\.+$/, '')}.` : o.help;
+        box.checked = !!met || !!e.options?.[ev.id]?.[o.id];
+        // Not disabled (that greys it out): ticking is ignored while a listed skill meets it.
+        if (met) box.setAttribute('aria-disabled', 'true');
+        else box.removeAttribute('aria-disabled');
+        $('[data-help]', row).textContent = met ? `${o.deduction ? 'Met' : `+${fmt(o.value)}, earned`} by ${met.replace(/\.+$/, '')}.` : o.help;
+      }
+      if (o.deduction) {
         const missing = !met && !e.options?.[ev.id]?.[o.id];
         el.textContent = missing ? `−${fmt(o.value)}` : '';
         row.classList.toggle('on', !missing);
