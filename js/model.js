@@ -151,7 +151,8 @@ export function scoreEvent(entry, evId) {
     return { ...out, ...r, sv: r.sv };
   }
   if (ev.kind === 'passes') {
-    const r = tt.scorePasses(evId, level, (entry.passes?.[evId] || []).map((p) => p.skills || []));
+    const ps = entry.passes?.[evId] || [];
+    const r = tt.scorePasses(evId, level, ps.map((p) => p.skills || []), ps.map((p) => p.start));
     return { ...out, ...r };
   }
 
@@ -234,6 +235,22 @@ export function normalizeEntry(e) {
     e.routines[ev.id] = r;
   }
   return changed;
+}
+
+/** Put an example routine (js/data/examples.js) into an entry's event. */
+export function applyExample(e, ex) {
+  const ev = eventInfo(e.disc, ex.event);
+  if (ev.kind === 'vault') {
+    e.vault = ex.vault || '';
+  } else if (ev.kind === 'passes') {
+    e.passes[ex.event] = (ex.passes || [[], []]).map((p, i) => ({
+      skills: p.map((s) => ({ ...blankTT(), ...s })),
+      ...(ex.starts?.[i] ? { start: ex.starts[i] } : {}),
+    }));
+  } else {
+    e.routines[ex.event] = (ex.skills || []).map((s) => ({ ...(ev.kind === 'tramp' ? blankTT() : blankSkill()), ...s }));
+  }
+  normalizeEntry(e);
 }
 
 /** True if an entry has any skill or vault filled in. */

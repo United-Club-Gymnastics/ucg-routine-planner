@@ -1,6 +1,6 @@
 # UCG Routine Planner
 
-One planner for every UCG discipline and level: **WAG** (Xcel Silver, Gold, Platinum, Diamond, Sapphire, UCG Infinity, Masters), **MAG** (Developmental, Intermediate, Advanced, Masters) and **T&T** (New, Intermediate and High Flyers). Gymnasts and coaches sign in with Google, add athletes, add the levels each athlete competes, build routines, and export filled-in UCG worksheets and competition cards.
+One planner for every UCG discipline and level: **WAG** (Xcel Silver, Gold, Platinum, Diamond, Sapphire, UCG Infinity, Masters), **MAG** (Developmental, Intermediate, Advanced, Masters) and **T&T** (New, Intermediate and High Flyers). Gymnasts and coaches sign in with Google (or try it without signing in, which saves nothing), add athletes, add the levels each athlete competes, build routines, and export filled-in UCG worksheets and competition cards.
 
 **Live site:** https://united-club-gymnastics.github.io/ucg-routine-planner/
 
@@ -14,7 +14,7 @@ Grew out of the MAG planner ([ucg-mag-planner](https://github.com/United-Club-Gy
 | Sign-in and saved routines | Firebase project `ucg-routine-planners`, in the unitedclubgymnastics.org Google Cloud organization | Everyone in `google-cloud-admin@unitedclubgymnastics.org` |
 | Rules | UCG rules policies for each discipline | Each discipline's rules team |
 
-Athletes are saved in Firestore at `users/{user id}/athletes/{athlete}`. Each athlete holds a list of **entries**, one per level they compete (`{ disc, level, decade?, routines, passes, options, vault }`). The MAG planner's data (`magAthletes`) is separate and untouched.
+Athletes are saved in Firestore at `users/{user id}/athletes/{athlete}`. Each athlete holds a list of **entries**, one per level they compete (`{ disc, level, decade?, routines, passes, options, vault }`). The MAG planner's data (`magAthletes`) is separate and untouched. Guests who haven't signed in are kept in memory only; if they sign in, their athletes are saved to their account.
 
 ## How it's organized
 
@@ -39,7 +39,7 @@ Athletes are saved in Firestore at `users/{user id}/athletes/{athlete}`. Each at
 
 **WAG Masters**: values by age decade, top 6 count, +0.5 per condensed group with a skill at the decade's level (counting or not), -1.0 per skill under 6. The skill search offers the WG WAG skills and fills in the condensed group (WG groups mapped per the Masters policy). Vault = the vault's value + age bonus, from the UCG Masters vaults (squat on, roll over, hechts, sideways handsprings) or the WG WAG vault table, or 0.0 for any other vault.
 
-**T&T** (UCG T&T Code of Points v3.41 + DD charts; double mini tuck/pike/straddle jumps are 0.0, per the UCG addendum, until the T&T team decides on WG's change): total DD per routine or pass, with each level's requirements flagged (max skill DD, salto counts, pass and routine DD limits, repeats, pass sizes). Saltos are recognised from the FIG shorthand, or the skill name when there's no shorthand.
+**T&T** (UCG T&T Code of Points v3.41 + DD charts; double mini tuck/pike/straddle jumps are 0.0, per the UCG addendum, until the T&T team decides on WG's change): total DD per routine or pass, with each level's requirements flagged (max skill DD, salto counts, pass and routine DD limits, repeats, pass sizes). Double mini: each pass's first skill is marked mounter or spotter (stored as `start` on the pass, default mounter), since a repeat only loses its difficulty in the same position. Saltos are recognised from the FIG shorthand, or the skill name when there's no shorthand.
 
 ## Data and how to rebuild it
 
@@ -50,7 +50,7 @@ Athletes are saved in Firestore at `users/{user id}/athletes/{athlete}`. Each at
 | `data/wag-vaults.js` | WG WAG vault table (`wag_wg_skills.json`) | `python tools/build_data.py` |
 | `data/masters-vaults.js` | `tools/source/Masters Vault Values.xlsx`: the vaults that aren't in the WG code. The build also checks the table's WG vaults against the WG values and prints any mismatch | `python tools/build_data.py` |
 | `data/tt-skills.js` | UCG T&T DD charts incl. the UCG addendum (`tools/source/tt_skills.json`) | `python tools/build_data.py` |
-| `data/examples.js` | T&T and MAG Dev/Int example routine sheets (`tools/source/examples.json`, typos fixed). T&T example skills found in the DD chart take the chart's shorthand and DD (some sheets predate the UCG addendum) | `python tools/build_data.py` |
+| `data/examples.js` | T&T and MAG Dev/Int example routine sheets (`tools/source/examples.json`, typos fixed). T&T example skills found in the DD chart take the chart's shorthand and DD (some sheets predate the UCG addendum). Examples that break their level's rules are left out (`EXCLUDE` in `build_data.py`; `node tools/check_examples.mjs` lists them, and a test keeps the rest clean) | `python tools/build_data.py` |
 | `data/xcel.js` | Xcel event rules charts and vault chart (hand-entered) | edit directly |
 | `data/wag-infinity-vaults.js` | Julia's Infinity vault table | edit directly |
 | `assets/worksheets/tt-*.pdf` | 2023 NAIGC competition cards, logo removed, requirement boxes corrected | `python tools/make_tt_cards.py` |

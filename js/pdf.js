@@ -204,7 +204,9 @@ async function ttPage(doc, fonts, athlete, entry, evId) {
   C.passes.forEach((P, pi) => {
     (lists[pi] || []).filter((s) => s.name || s.notation).slice(0, P.n).forEach((s, i) => {
       const y = P.top + i * P.h + P.h / 2 + 4;
-      w.text(s.name, x0 + (C.labelled ? 62 : 22), y, { size: 11, maxWidth: x1 - x0 - (C.labelled ? 68 : 28) });
+      // Double mini: say whether the first skill is a mounter or a spotter.
+      const role = evId === 'dmt' && i === 0 && s === lists[pi][0] ? ` (${entry.passes.dmt[pi].start || 'mounter'})` : '';
+      w.text(`${s.name || ''}${role}`, x0 + (C.labelled ? 62 : 22), y, { size: 11, maxWidth: x1 - x0 - (C.labelled ? 68 : 28) });
       w.center(s.notation, (x1 + x2) / 2, y, { size: 11 });
       if (s.dd !== '' && s.dd != null) w.center(fmt(s.dd), (x2 + x3) / 2, y, { size: 11 });
     });

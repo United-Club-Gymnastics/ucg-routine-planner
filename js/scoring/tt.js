@@ -92,13 +92,18 @@ export function scoreTramp(level, skills = []) {
   return { items: it, total, warnings, sv: filled.length ? total : null, totals: [['Total DD', total]] };
 }
 
-/** Double mini or tumbling: two passes. */
-export function scorePasses(event, level, passes = [[], []]) {
+/**
+ * Double mini or tumbling: two passes. starts: double mini only, whether each
+ * pass's first skill is a 'mounter' (the default) or a 'spotter'.
+ */
+export function scorePasses(event, level, passes = [[], []], starts = []) {
   const ps = [0, 1].map((p) => items(passes[p]));
   const warnings = [];
   // Double mini: a skill repeated in the same position (mounter/spotter/dismount) gets no difficulty.
+  // A mounter in one pass and a spotter in the other are different positions.
   if (event === 'dmt') {
-    for (const pos of [0, 1]) {
+    const sameStart = (starts[0] || 'mounter') === (starts[1] || 'mounter');
+    for (const pos of sameStart ? [0, 1] : [1]) {
       const a = ps[0][pos];
       const b = ps[1][pos];
       // (A repeated 0.0 skill, like a tuck jump, loses nothing, so it isn't flagged.)

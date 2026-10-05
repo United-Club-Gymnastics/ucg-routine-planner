@@ -1,6 +1,7 @@
 import * as store from './store.js';
 import {
   DISCIPLINES,
+  applyExample,
   DISC_IDS,
   DECADES,
   DECADE_LABELS,
@@ -90,6 +91,10 @@ function setStatus(text, kind = '') {
   }
 }
 function scheduleSave() {
+  if (state.user?.guest) {
+    setStatus('Not saved: sign in to keep this', 'guest');
+    return;
+  }
   setStatus('Saving…');
   clearTimeout(saveTimer);
   const a = athlete();
@@ -111,6 +116,11 @@ function renderUserArea() {
   const u = state.user;
   if (!u || u.local) {
     area.innerHTML = '';
+    return;
+  }
+  if (u.guest) {
+    area.innerHTML = `<span class="user-name">Not signed in</span>
+      <button class="topbar-link" type="button" data-signin>Sign in to save</button>`;
     return;
   }
   area.innerHTML = `
@@ -231,21 +241,45 @@ async function removeAthlete() {
 
 // ---- Sign in ----------------------------------------------------------------
 
+// Returns an error message, or '' when signed in (or the popup was closed).
+async function signIn() {
+  try {
+    await store.signIn();
+    return '';
+  } catch (e) {
+    if (e?.code === 'auth/popup-closed-by-user' || e?.code === 'auth/cancelled-popup-request') return '';
+    console.error(e);
+    return `Sign-in failed: ${e?.message || e}`;
+  }
+}
+
 function renderSignIn() {
   app.innerHTML = '';
   app.appendChild($('#signin-tpl').content.cloneNode(true));
   $('#signin-btn').onclick = async () => {
     const err = $('#signin-error');
     err.hidden = true;
-    try {
-      await store.signIn();
-    } catch (e) {
-      if (e?.code === 'auth/popup-closed-by-user') return;
-      err.textContent = `Sign-in failed: ${e?.message || e}`;
-      err.hidden = false;
-    }
+    const msg = await signIn();
+    err.textContent = msg;
+    err.hidden = !msg;
   };
+  $('#guest-btn').onclick = () => onUser(GUEST);
 }
+
+// "Sign in to save" buttons in the top bar and the guest banner.
+document.addEventListener('click', async (ev) => {
+  if (!ev.target.closest('[data-signin]')) return;
+  const msg = await signIn();
+  if (msg) alert(msg);
+});
+
+// Guests lose everything when the page closes: ask first.
+const guestHasWork = () => state.user?.guest && state.athletes.some((a) => a.name || a.entries.some(hasContent));
+window.addEventListener('beforeunload', (ev) => {
+  if (!guestHasWork()) return;
+  ev.preventDefault();
+  ev.returnValue = '';
+});
 
 // ---- Main layout -------------------------------------------------------------
 
@@ -281,7 +315,7 @@ function renderAll() {
             <input id="f-club" type="text" value="${esc(a.club)}" placeholder="Club / school" /></label>
         </div>
         <div class="editor-actions">
-          <span id="save-status" class="save-status"></span>
+          <span id="save-status" class="save-status"${state.user?.guest ? ` data-kind="guest">Not saved: sign in to keep this` : '>'}</span>
           ${e ? `<button class="btn btn-primary" type="button" id="export-all">Export PDF</button>` : ''}
           <button class="btn btn-quiet" type="button" id="delete-athlete">Delete athlete</button>
         </div>
@@ -428,16 +462,24 @@ function routineBody(e, ev, spec) {
 function passesBody(e, ev) {
   const spec = eventSpec(e, ev.id);
   return `
-    <p class="routine-help">${ev.id === 'dmt' ? 'Two passes of two skills: a mounter or spotter, then a dismount.' : 'Two passes. Search the T&T skill list or type your own skill and its DD.'}</p>
+    <p class="routine-help">${ev.id === 'dmt' ? 'Two passes of two skills: a mounter or spotter, then a dismount. A skill repeated in the same position gets no difficulty.' : 'Two passes. Search the T&T skill list or type your own skill and its DD.'}</p>
     ${[0, 1]
       .map(
         (p) => `<div class="pass" data-pass-block="${p}">
-          <div class="pass-head"><h3>Pass ${p + 1}</h3><span class="pass-dd" data-pass-dd="${p}"></span></div>
+          <div class="pass-head"><h3>Pass ${p + 1}</h3>${ev.id === 'dmt' ? startSelect(e, p) : ''}<span class="pass-dd" data-pass-dd="${p}"></span></div>
           <div class="skill-table" data-routine="${ev.id}" data-pass="${p}">${rowsMarkup(e, ev, spec, e.passes[ev.id][p].skills, p)}</div>
           ${ev.id === 'tu' ? `<div class="routine-actions"><button class="btn btn-ghost btn-sm" type="button" data-add-skill="${ev.id}" data-pass="${p}">Add skill</button></div>` : ''}
         </div>`
       )
       .join('')}`;
+}
+
+// Double mini: the first skill of a pass is a mounter or a spotter. A repeat only
+// loses its difficulty in the same position.
+function startSelect(e, p) {
+  const v = e.passes.dmt[p].start || 'mounter';
+  return `<label class="pass-start"><span class="sr-only">Pass ${p + 1} first skill</span>
+    <select data-start="${p}">${['mounter', 'spotter'].map((x) => `<option value="${x}"${x === v ? ' selected' : ''}>${x === 'mounter' ? 'Mounter' : 'Spotter'} first</option>`).join('')}</select></label>`;
 }
 
 function headCells(spec) {
@@ -688,6 +730,10 @@ function onChange(ev) {
     e.vault = t.value;
     updateComputed();
     scheduleSave();
+  } else if (t.dataset.start) {
+    e.passes.dmt[Number(t.dataset.start)].start = t.value;
+    updateComputed();
+    scheduleSave();
   } else if (t.dataset.example) {
     const ex = EXAMPLES.find((x) => x.id === t.value);
     t.value = '';
@@ -704,18 +750,6 @@ function rowsFilled(e, evId) {
   const ev = eventInfo(e.disc, evId);
   if (ev.kind === 'passes') return e.passes[evId].some((p) => p.skills.some((s) => s.name || s.notation));
   return (e.routines[evId] || []).some((s) => s.name || s.letter || s.notation);
-}
-
-function applyExample(e, ex) {
-  const ev = eventInfo(e.disc, ex.event);
-  if (ev.kind === 'vault') {
-    e.vault = ex.vault || '';
-  } else if (ev.kind === 'passes') {
-    e.passes[ex.event] = (ex.passes || [[], []]).map((p) => ({ skills: p.map((s) => ({ ...blankTT(), ...s })) }));
-  } else {
-    e.routines[ex.event] = (ex.skills || []).map((s) => ({ ...(ev.kind === 'tramp' ? blankTT() : blankSkill()), ...s }));
-  }
-  normalizeEntry(e);
 }
 
 function onClick(ev) {
@@ -1154,9 +1188,15 @@ async function runExport(button, events) {
 
 // ---- Boot -----------------------------------------------------------------
 
+const GUEST = { uid: 'guest', displayName: 'Guest', guest: true };
+
 async function onUser(user) {
+  // Signing in after trying the planner as a guest: keep what they made.
+  const carry = state.user?.guest && user && !user.guest ? state.athletes.filter((a) => a.name || a.entries.length) : [];
+  const carriedId = carry.length ? state.athleteId : null;
   state.user = user;
   renderUserArea();
+  $('#guest-banner').hidden = !user?.guest;
   if (!user) {
     state.athletes = [];
     renderAthletePicker();
@@ -1164,16 +1204,28 @@ async function onUser(user) {
     return;
   }
   $('#local-banner').hidden = !user.local;
+  if (user.guest) {
+    state.athletes = [];
+    state.athleteId = null;
+    state.entryId = null;
+    renderAll();
+    return;
+  }
   app.innerHTML = `<p class="loading">Loading athletes…</p>`;
   try {
     state.athletes = await store.listAthletes();
     for (const a of state.athletes) if (normalizeAthlete(a)) store.saveAthlete(a).catch(console.error);
+    for (const a of carry) {
+      state.athletes = state.athletes.filter((x) => x.id !== a.id);
+      state.athletes.push(a);
+      await store.saveAthlete(a);
+    }
   } catch (e) {
     console.error(e);
     app.innerHTML = `<p class="error">Could not load athletes: ${esc(e?.message || e)}</p>`;
     return;
   }
-  const remembered = readPref('rp-athlete', null);
+  const remembered = carriedId || readPref('rp-athlete', null);
   const first = state.athletes.find((a) => a.id === remembered) || sortedAthletes()[0];
   state.athleteId = first?.id ?? null;
   state.entryId = first?.entries[0]?.id ?? null;

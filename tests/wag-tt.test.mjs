@@ -80,6 +80,10 @@ test('Double mini: same skill in the same position gets no DD; pass limits', () 
   const r = scorePasses('dmt', 'if', [[t('Barani tuck', 0.7), t('Back pike', 0.6)], [t('Barani tuck', 0.7), t('Back full', 0.9)]]);
   assert.equal(r.passes[1][0].status, 'repeat');
   assert.deepEqual(r.sums, [1.3, 0.9]);
+  // A mounter in one pass and a spotter in the other are different positions.
+  const ms = scorePasses('dmt', 'nf', [[t('Full Turn', 0.2), t('Back tuck', 0.5)], [t('Full Turn', 0.2), t('Tuck Jump', 0)]], ['spotter', 'mounter']);
+  assert.equal(ms.passes[1][0].status, 'counting');
+  assert.equal(ms.total, 0.9);
 });
 test('Tumbling: pass sizes and New Flyers limits', () => {
   const r = scorePasses('tu', 'nf', [[t('Roundoff', 0.2), t('Back handspring', 0.2), t('Back handspring', 0.2), t('Back tuck', 0.5)], []]);

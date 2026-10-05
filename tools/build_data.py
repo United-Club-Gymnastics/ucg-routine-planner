@@ -192,10 +192,25 @@ def match_tt(app, skill):
     return skill
 
 
+# Example routines left out because they break their level's rules with the current
+# DD chart (found by tools/check_examples.mjs; tests/examples.test.mjs keeps the rest clean).
+EXCLUDE = {
+    "tt-if-tr-3",  # 2 full saltos; Intermediate Flyers need 3
+    "tt-hf-tr-10",  # two skills given only as "4/" (0.5) and "6o" (0.7), not in the DD chart
+    "tt-hf-tr-11",  # repeats Barani Straight
+    "tt-if-tu-1", "tt-if-tu-2",  # 0.1 skills; Intermediate Flyers need 0.2+
+    "tt-if-tu-5", "tt-if-tu-7",  # pass 2 has fewer than 8 skills
+    "tt-if-tu-9",  # pass 2: 7 skills, a 0.1 skill and 3.0 DD (max 2.9)
+    "tt-if-tu-10",  # pass 2 is 3.0 DD (max 2.9)
+}
+
+
 def examples():
     rows = []
     stale = re.compile(r"(?i)sheet note: (-1 for each skill fewer than 6|sv cap is [\d.]+)\.?")
     for e in json.load(open(os.path.join(SRC, "examples.json"), encoding="utf-8")):
+        if e["id"] in EXCLUDE:
+            continue
         r = {"id": e["id"], "disc": e["discipline"], "level": e["level"], "event": e["event"], "title": e["title"]}
         if "skills" in e:
             if e["discipline"] == "tt":
@@ -204,6 +219,10 @@ def examples():
                 r["skills"] = [{"name": s.get("name", ""), "letter": s.get("letter", ""), "eg": str(s["eg"]) if s.get("eg") else ""} for s in e["skills"]]
         if "passes" in e:
             r["passes"] = [[match_tt(e["event"], {"name": s.get("name", ""), "notation": s.get("notation", ""), "dd": s.get("dd", "")}) for s in p] for p in e["passes"]]
+            # Double mini: whether each pass starts with a mounter or a spotter.
+            starts = [(p[0].get("role") if p else None) for p in e["passes"]]
+            if any(x in ("mounter", "spotter") for x in starts):
+                r["starts"] = [x if x in ("mounter", "spotter") else "mounter" for x in starts]
         if e.get("vaultNumber"):
             r["vault"] = str(e["vaultNumber"])
         note = stale.sub("", e.get("note", "")).strip()

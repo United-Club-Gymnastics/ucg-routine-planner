@@ -1,5 +1,5 @@
 // Persistence: Firebase (Google sign-in + Firestore) when configured,
-// otherwise browser localStorage ("local mode").
+// otherwise browser localStorage ("local mode"). Guests (not signed in) save nothing.
 import { firebaseConfig } from './firebase-config.js';
 
 const FB = 'https://www.gstatic.com/firebasejs/12.19.0';
@@ -52,12 +52,16 @@ const writeLocal = (list) => localStorage.setItem(LOCAL_KEY, JSON.stringify(list
 // planner's data is in 'magAthletes' and is left alone.
 const athletesCol = () => fb.collection(db, 'users', auth.currentUser.uid, 'athletes');
 
+// Trying the planner without signing in: nothing is read or saved.
+const guest = () => isConfigured && !auth?.currentUser;
+
 export function newId() {
   return crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random();
 }
 
 export async function listAthletes() {
   if (!isConfigured) return readLocal();
+  if (guest()) return [];
   const snap = await fb.getDocs(athletesCol());
   return snap.docs.map((d) => ({ ...d.data(), id: d.id }));
 }
@@ -69,6 +73,7 @@ export async function saveAthlete(athlete) {
     writeLocal([...list, data]);
     return data;
   }
+  if (guest()) return data;
   const { id, ...rest } = data;
   await fb.setDoc(fb.doc(athletesCol(), id), rest);
   return data;
@@ -79,5 +84,6 @@ export async function deleteAthlete(id) {
     writeLocal(readLocal().filter((a) => a.id !== id));
     return;
   }
+  if (guest()) return;
   await fb.deleteDoc(fb.doc(athletesCol(), id));
 }
