@@ -376,6 +376,7 @@ input::placeholder { color: var(--fg-muted); }
 .src-badge:empty { display: none; }
 .src-badge.ucg { background: var(--ucg-blue-green); color: var(--ucg-navy); }
 .src-badge.wg { background: var(--ucg-navy); color: var(--ucg-light-blue); }
+.src-badge.usag { background: var(--ucg-purple); color: var(--ucg-navy); }
 .src-badge.custom { box-shadow: inset 0 0 0 1px var(--border-default); color: var(--fg-secondary); text-transform: uppercase; }
 
 .skill-pop {

@@ -18,7 +18,7 @@ import {
   normalizeEntry,
   scoreEntry,
 } from './model.js';
-import { findSkill, searchSkills } from './skill-search.js';
+import { findSkill, searchSkills, wagSkillAllowed } from './skill-search.js';
 import { EXAMPLES } from './data/examples.js';
 import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
 import { MAG_MASTERS_VAULTS, OTHER_VAULT } from './scoring/mag.js';
@@ -441,7 +441,7 @@ function eventCard(e, ev, visible) {
 
 function routineHelp(e, ev, spec) {
   if (spec.columns === 'dd') return 'List the routine in order. Search the T&T skill list (it fills in the FIG shorthand and DD), or type your own skill and its DD.';
-  if (spec.family === 'xcel') return `List the routine in order. Pick each skill's value letter; the planner checks the value parts and restricted skills for ${esc(levelInfo(e.disc, e.level).name)}, and you tick the special requirements below.`;
+  if (spec.family === 'xcel') return `List the routine in order. Search the Xcel skill list (it fills in the value), or type your own skill and pick its value. The planner checks the value parts and restricted skills for ${esc(levelInfo(e.disc, e.level).name)}, and you tick the special requirements below.`;
   const max = spec.maxCounting;
   const more = e.disc === 'mag' ? ', with at most 4 from one element group' : '';
   return `List the whole routine in order, and drag <span class="grip-inline">${ICON_GRIP}</span> to reorder. <strong>Each skill counts only once</strong>. Your ${max} highest-value skills count toward difficulty${more}. Counting skills are highlighted; repeats and non-counting skills are shaded gray and flagged.`;
@@ -592,9 +592,14 @@ function vaultBody(e, ev) {
       .map(([g, list]) => `<optgroup label="${esc(g)}">${list.map((v) => `<option value="${esc(v.name)}"${v.name === e.vault ? ' selected' : ''}>${esc(v.name)} (${fmt(v.dv)})</option>`).join('')}</optgroup>`)
       .join('')}</select>`;
   } else if (fam === 'xcel') {
-    control = `<select id="f-vault"><option value="">— No vault —</option>${xcelVaults(e.level)
-      .map((v) => `<option value="${esc(v.id)}"${v.id === e.vault ? ' selected' : ''}>${esc(v.label)} — ${fmt(v.sv)}</option>`)
-      .join('')}</select>`;
+    const opt = (v) => `<option value="${esc(v.id)}"${v.id === e.vault ? ' selected' : ''}>${esc(v.label)} — ${fmt(v.sv)}</option>`;
+    const list = xcelVaults(e.level);
+    const l910 = list.filter((v) => v.l910);
+    control = `<select id="f-vault"><option value="">— No vault —</option>${
+      l910.length
+        ? `<optgroup label="Xcel Sapphire vault chart">${list.filter((v) => !v.l910).map(opt).join('')}</optgroup><optgroup label="USAG Level 9/10 vaults (10.0 at UCG Sapphire)">${l910.map(opt).join('')}</optgroup>`
+        : list.map(opt).join('')
+    }</select>`;
   } else if (fam === 'wagMasters') {
     const opt = (v) => `<option value="${esc(v.id)}"${v.id === e.vault ? ' selected' : ''}>${esc(v.src === 'WG' ? `${v.id} · ` : '')}${esc(v.name)}${v.eponym ? ` (${esc(v.eponym)})` : ''} — ${fmt(v.value)}</option>`;
     const groups = {};
@@ -882,7 +887,7 @@ function onPointerDown(ev) {
 // Anything else typed is kept as a custom skill with values set by hand.
 
 const picker = { el: null, input: null, items: [], active: -1 };
-const SRC_LABEL = { UCG: 'UCG Code of Points', WG: 'World Gymnastics Code of Points' };
+const SRC_LABEL = { UCG: 'UCG Code of Points', WG: 'World Gymnastics Code of Points', USAG: 'USAG Xcel / Development Program values' };
 
 function pickerEl() {
   if (!picker.el) {
@@ -905,16 +910,14 @@ function pickerEl() {
   return picker.el;
 }
 
-// Which skill lists each family can use. Xcel and Infinity use USAG values, so
-// only the UCG additions (valued that way) are offered; WAG Masters uses WG values.
-const SOURCES = { xcel: ['UCG'], infinity: ['UCG'], wagMasters: ['WG'] };
 const searchApp = (e, evId) => (e.disc === 'tt' && evId === 'sy' ? 'tr' : evId);
 
 function openPicker(input, query) {
   const e = entry();
   const el = pickerEl();
   picker.input = input;
-  picker.items = searchSkills(e.disc, searchApp(e, input.dataset.ev), query).filter((s) => !SOURCES[levelInfo(e.disc, e.level).family] || SOURCES[levelInfo(e.disc, e.level).family].includes(s.src));
+  const fam = levelInfo(e.disc, e.level).family;
+  picker.items = searchSkills(e.disc, searchApp(e, input.dataset.ev), query).filter((s) => e.disc !== 'wag' || wagSkillAllowed(fam, e.level, s));
   picker.active = query && picker.items.length ? 0 : -1;
   input.setAttribute('aria-expanded', 'true');
   renderPicker(query);
@@ -943,7 +946,7 @@ function renderPicker(query) {
   const html = [];
   let lastHead;
   picker.items.forEach((s, i) => {
-    const head = e.disc === 'tt' ? null : e.disc === 'mag' ? (s.eg ? `EG ${ROMAN[s.eg]} · ${spec.groups?.[s.eg - 1]?.label.replace(/^[IV]+\. /, '') || ''}` : 'No element group (no EG bonus)') : s.group ? `${s.src === 'WG' ? 'WG' : 'USAG'} group ${s.group}` : 'Skills';
+    const head = e.disc === 'tt' ? null : e.disc === 'mag' ? (s.eg ? `EG ${ROMAN[s.eg]} · ${spec.groups?.[s.eg - 1]?.label.replace(/^[IV]+\. /, '') || ''}` : 'No element group (no EG bonus)') : s.group ? (s.src === 'WG' ? `WG group ${s.group}` : `Group ${s.group}${s.groupName ? ` · ${s.groupName}` : ''}`) : 'Skills';
     if (!query && head && head !== lastHead) {
       html.push(`<div class="pop-head" role="presentation">${esc(head)}</div>`);
       lastHead = head;
@@ -960,7 +963,7 @@ function renderPicker(query) {
   html.push(
     picker.items.length
       ? `<div class="pop-foot">${srcs.map((s) => `<span class="src-badge ${s.toLowerCase()}">${s}</span> ${SRC_LABEL[s] || s}`).join(' ')}. Not listed? Type your own name and set the ${e.disc === 'tt' ? 'shorthand and DD' : 'value'} yourself.</div>`
-      : `<div class="pop-empty">${e.disc === 'wag' ? 'No listed skills match. WAG skills from the Xcel and WG codes are typed in by hand: keep your own name and pick its value.' : "No listed skills match. That's fine: keep your own name and set the values yourself."}</div>`
+      : `<div class="pop-empty">No listed skills match. That's fine: keep your own name and set the values yourself.</div>`
   );
   picker.el.innerHTML = html.join('');
   setActive(picker.active);

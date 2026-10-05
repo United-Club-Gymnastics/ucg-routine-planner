@@ -46,6 +46,8 @@ test('Xcel vaults by level; Gold alternative springboard is 9.5', () => {
   assert.equal(scoreXcelVault('plat', '4.101').sv, 9.8);
   assert.equal(scoreXcelVault('plat', '1.202'), null); // not allowed at Platinum
   assert.equal(scoreXcelVault('sapphire', 'l9l10').sv, 10.0);
+  assert.equal(scoreXcelVault('sapphire', 'L910-1.402').sv, 10.0); // Level 9/10 vault not in the Sapphire chart
+  assert.equal(scoreXcelVault('diamond', 'L910-1.402'), null);
 });
 
 // ---- WAG Masters ----
@@ -102,4 +104,25 @@ test('Entries: each level scores on its own; copying routines rescores them', ()
   const tt = newEntry('c', 'tt', 'nf');
   assert.equal(scoreEntry(tt).allAround, null);
   assert.equal(tt.passes.tu[0].skills.length, 7);
+});
+
+// ---- WAG skill lists by level ----
+test('WAG skill lists: Xcel levels, Sapphire and Infinity use USAG values; Masters uses WG', async () => {
+  const { searchSkills, wagSkillAllowed, findSkill } = await import('../js/skill-search.js');
+  const { SKILLS } = await import('../js/data/wag-skills.js');
+  const list = (fam, level, app) => searchSkills('wag', app, '').filter((s) => wagSkillAllowed(fam, level, s));
+  assert.equal(new Set(SKILLS.map((s) => s.id)).size, SKILLS.length);
+  const silver = list('xcel', 'silver', 'ub');
+  assert.ok(silver.length > 200 && silver.every((s) => s.src !== 'WG' && s.prog !== 'dp'));
+  assert.ok(!silver.some((s) => s.divisions && !s.divisions.includes('silver')));
+  assert.ok(!silver.some((s) => s.id === 'USAG-UB-1.001-1')); // Bronze only
+  assert.ok(list('xcel', 'sapphire', 'ub').some((s) => s.prog === 'dp' && s.value === 'E'));
+  assert.ok(list('infinity', 'inf', 'bb').some((s) => s.prog === 'dp'));
+  assert.ok(list('wagMasters', 'masters', 'fx').every((s) => s.src === 'WG'));
+  // UCG additions keep their ids, so saved routines still find them.
+  assert.equal(findSkill('UCGW-BB-4').eponym, 'Michaels');
+});
+test('Xcel Sapphire: no difficulty restrictions, E skills count', () => {
+  const r = scoreXcel('sapphire', 'ub', [s('a', 'E'), s('b', 'E'), s('c', 'D'), s('d', 'B'), s('e', 'A'), s('f', 'A'), s('g', 'A')], { srMet: [1, 1, 1, 1] });
+  assert.ok(r.items.every((it) => it.status !== 'restricted'));
 });

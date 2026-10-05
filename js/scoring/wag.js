@@ -2,6 +2,7 @@
 // UCG Infinity SV Sheets), the UCG Xcel levels, and WAG Masters.
 import { VAULTS as INFINITY_VAULTS } from '../data/wag-infinity-vaults.js';
 import { XCEL_LIMITS, XCEL_SR, XCEL_SILVER_VAULTS, XCEL_VAULTS, XCEL_VP } from '../data/xcel.js';
+import { VAULTS as SAPPHIRE_L910_VAULTS } from '../data/sapphire-vaults.js';
 import { MASTERS_LETTERS, mastersValue, meetsRequirement, vaultAgeBonus } from './masters.js';
 import { VAULTS as WG_VAULTS } from '../data/wag-vaults.js';
 import { VAULTS as MASTERS_VAULTS } from '../data/masters-vaults.js';
@@ -171,7 +172,11 @@ export function xcelVaults(level) {
   const list = XCEL_VAULTS.filter((v) => (level === 'gold' ? v.gold : v[level] != null)).map((v) => ({
     id: v.code, label: `${v.code} · ${v.name}`, sv: level === 'gold' ? 10.0 : v[level],
   }));
-  if (level === 'sapphire') list.push({ id: 'l9l10', label: 'Other USAG Level 9 or 10 vault (not in the Sapphire chart)', sv: 10.0 });
+  if (level === 'sapphire') {
+    // USAG Level 9/10 vaults not in the Sapphire chart: 10.0 (UCG Women's Rules II.B.2).
+    for (const v of SAPPHIRE_L910_VAULTS) list.push({ id: v.id, label: `${v.code} · ${v.name}`, sv: v.sv, l910: true });
+    list.push({ id: 'l9l10', label: 'Other USAG Level 9 or 10 vault (not in the Sapphire chart)', sv: 10.0, l910: true });
+  }
   return list;
 }
 

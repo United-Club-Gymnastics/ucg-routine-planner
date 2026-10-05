@@ -1,6 +1,7 @@
 // Skill search for the routine editor: the skills for a discipline's apparatus,
-// filtered by what's typed. MAG: UCG MAG CoP + WG skills. WAG: UCG WAG CoP
-// additions (the WG WAG list comes later). T&T: the UCG DD charts.
+// filtered by what's typed. MAG: UCG MAG CoP + WG skills. WAG: USAG Xcel and
+// Development Program skills + UCG WAG CoP additions (Xcel levels, Infinity) and
+// WG skills (Masters); see wagSkillAllowed. T&T: the UCG DD charts.
 // WG names use CoP shorthand ("Salto bwd. str. w. 1/1 t."), so common words are
 // mapped onto it: "back layout full" finds that skill.
 import { SKILLS as MAG_SKILLS } from './data/mag-skills.js';
@@ -51,6 +52,19 @@ const order = (a, b) =>
   (a.dd ?? 0) - (b.dd ?? 0) ||
   VALUE_ORDER.indexOf(a.value) - VALUE_ORDER.indexOf(b.value) ||
   (a.src === b.src ? 0 : a.src === 'UCG' ? -1 : 1);
+
+// Which WAG skills a level can use. Xcel levels and UCG Infinity use USAG values:
+// Xcel skills (without the ones limited to other divisions, e.g. "Bronze/Silver/Gold
+// only") and the UCG additions; Sapphire and Infinity (the Open Scoring Level: any
+// Development Program or Xcel Sapphire skill) also get the Development Program E
+// elements. WAG Masters uses WG values.
+export function wagSkillAllowed(family, level, s) {
+  if (family === 'wagMasters') return s.src === 'WG';
+  if (s.src === 'WG') return false;
+  const lvl = family === 'infinity' ? 'sapphire' : level;
+  if (s.prog === 'dp' && lvl !== 'sapphire') return false;
+  return !s.divisions || s.divisions.includes(lvl);
+}
 
 export function findSkill(id) {
   return (id && SKILL_INDEX.get(id)) || null;

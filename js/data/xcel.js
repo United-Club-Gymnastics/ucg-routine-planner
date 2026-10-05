@@ -17,7 +17,8 @@ export const XCEL_LIMITS = {
   gold: { ub: { max: 'B', note: 'No B giants or B releases with a bar change' }, bb: { max: 'B' }, fx: { max: 'B', note: 'No B twisting saltos' } },
   plat: { ub: { max: 'B', note: 'C exceptions: clear hip, stalder, or pike sole circle to handstand (no turn)' }, bb: { max: 'C', note: 'No C acro skills' }, fx: { max: 'C', note: 'No C acro skills' } },
   diamond: { ub: { max: 'D', maxCount: 1 }, bb: { max: 'D', maxCount: 1 }, fx: { max: 'D', maxCount: 1 } },
-  sapphire: { ub: { max: 'D' }, bb: { max: 'D' }, fx: { max: 'D' } },
+  // UCG Women's Rules II.B.1: no difficulty restrictions at Sapphire, no limit on Ds or Es.
+  sapphire: { ub: { max: 'E' }, bb: { max: 'E' }, fx: { max: 'E' } },
 };
 
 export const XCEL_SR = {
