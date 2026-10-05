@@ -5,6 +5,9 @@ import { VAULTS } from '../data/mag-vaults.js';
 import { VAULTS as MASTERS_VAULTS } from '../data/masters-vaults.js';
 import { MASTERS_LETTERS, mastersValue, meetsRequirement, vaultAgeBonus } from './masters.js';
 
+// Rings: the five WG skills that meet the swing to handstand requirement (WG clarification).
+export const SWING_HS = ['WG-SR-I-75', 'WG-SR-I-81', 'WG-SR-I-86', 'WG-SR-I-87', 'WG-SR-I-88'];
+
 export const EXECUTION = 10;
 export const MIN_SKILLS = 6;
 export const MAX_ROUTINE = 20; // skills a routine list can hold (counting + non-counting)
@@ -110,7 +113,8 @@ export function eventOptions(event, level) {
   if (event === 'sr' && level !== 'masters') {
     o.push({ id: 'strength', kind: 'check', value: 0.3, label: 'C or higher strength skill', help: 'One-time +0.3' });
     if (level === 'adv') {
-      o.push({ id: 'swingHs', kind: 'check', value: 0.3, deduction: true, label: 'Routine includes a swing to handstand', help: 'Required: -0.3 neutral deduction if missing' });
+      o.push({ id: 'swingHs', kind: 'check', value: 0.3, deduction: true, detect: SWING_HS, label: 'Routine includes a swing to handstand',
+        help: 'Required: -0.3 neutral deduction if missing. Ticked automatically for I.75, I.81, I.86, I.87 or I.88 from the skill list.' });
     }
   }
   if (event === 'hb') {
@@ -174,6 +178,7 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
     letter: s?.letter || '',
     value: value(s?.letter),
     eg: s?.eg ? Number(s.eg) : null,
+    skillId: s?.skillId || '',
     bonus: 0,
     status: isFilled(s) ? null : 'blank',
   }));
@@ -242,11 +247,16 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
   let bonus = 0;
   let deductions = 0;
   const optionValues = {};
+  const detected = {}; // option id -> the skill that meets it
   for (const o of eventOptions(event, level)) {
     const v = options?.[o.id];
     let got = 0;
+    if (o.detect) {
+      const hit = items.find((it) => it.status !== 'blank' && o.detect.includes(it.skillId));
+      if (hit) detected[o.id] = hit.name;
+    }
     if (o.kind === 'check' && o.deduction) {
-      if (!v) deductions += o.value;
+      if (!v && !detected[o.id]) deductions += o.value;
       continue;
     }
     if (o.kind === 'check' && v) got = o.value;
@@ -274,6 +284,7 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
     egTotal,
     bonus,
     optionValues,
+    detected,
     shortBy,
     shortDeduction,
     raw,

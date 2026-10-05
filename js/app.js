@@ -462,7 +462,7 @@ function routineBody(e, ev, spec) {
 function passesBody(e, ev) {
   const spec = eventSpec(e, ev.id);
   return `
-    <p class="routine-help">${ev.id === 'dmt' ? 'Two passes of two skills: a mounter or spotter, then a dismount. A skill repeated in the same position gets no difficulty.' : 'Two passes. Search the T&T skill list or type your own skill and its DD.'}</p>
+    <p class="routine-help">${ev.id === 'dmt' ? 'Two passes of two skills: a mounter or spotter, then a dismount. A mounter is done from the angled bed onto the flat bed; a spotter comes after a straight jump onto the flat bed, taking off and landing there. A skill repeated in the same position gets no difficulty.' : 'Two passes. Search the T&T skill list or type your own skill and its DD.'}</p>
     ${[0, 1]
       .map(
         (p) => `<div class="pass" data-pass-block="${p}">
@@ -558,7 +558,7 @@ function optionControl(e, evId, o) {
   return `
     <label class="event-bonus${o.deduction ? ' requirement' : ''}" data-option-row="${evId}:${o.id}">
       ${leading ? control : ''}
-      <span class="event-bonus-text"><strong>${esc(o.label)}</strong><span>${esc(o.help)}</span></span>
+      <span class="event-bonus-text"><strong>${esc(o.label)}</strong><span data-help>${esc(o.help)}</span></span>
       ${leading ? '' : control}
       <span class="event-bonus-value calc" data-calc="opt-${o.id}"></span>
     </label>`;
@@ -836,6 +836,8 @@ function onPointerDown(ev) {
   });
   const startY = ev.clientY + scrollY;
   let to = from;
+  // While dragging, the row's number shows where it will land.
+  const num = $('.num', dragged);
   dragged.classList.add('dragging');
   const clearMarks = () => others.forEach((r) => r.classList.remove('drop-above', 'drop-below'));
   const move = (m) => {
@@ -844,6 +846,7 @@ function onPointerDown(ev) {
     const y = m.clientY + scrollY;
     dragged.style.transform = `translateY(${y - startY}px)`;
     to = mids.filter((mid) => mid < y).length;
+    num.textContent = to + 1;
     clearMarks();
     if (to === from) return;
     if (to < others.length) others[to].classList.add('drop-above');
@@ -856,6 +859,7 @@ function onPointerDown(ev) {
     clearMarks();
     dragged.classList.remove('dragging');
     dragged.style.transform = '';
+    num.textContent = from + 1;
     if (to !== from) moveSkill(evId, pass, from, to, 'handle');
   };
   addEventListener('pointermove', move);
@@ -909,6 +913,12 @@ function openPicker(input, query) {
   el.scrollTop = 0;
   placePicker();
 }
+
+// Close the skill list on a click anywhere outside it and its own skill box.
+document.addEventListener('pointerdown', (ev) => {
+  if (!picker.input || picker.el.contains(ev.target) || picker.input.closest('.skill-combo').contains(ev.target)) return;
+  closePicker();
+});
 
 function closePicker() {
   if (!picker.input) return;
@@ -1108,7 +1118,17 @@ function updateComputed() {
       const el = $(`[data-calc="opt-${o.id}"]`, card);
       if (!row || !el) continue;
       if (o.deduction) {
-        const missing = !e.options?.[ev.id]?.[o.id];
+        // Met by a skill in the routine (rings swing to handstand): tick it and say which.
+        const met = r.detected?.[o.id];
+        const box = $(`[data-opt="${o.id}"]`, row);
+        if (box) {
+          box.checked = !!met || !!e.options?.[ev.id]?.[o.id];
+          // Not disabled (that greys it out): ticking is ignored while a listed skill meets it.
+          if (met) box.setAttribute('aria-disabled', 'true');
+          else box.removeAttribute('aria-disabled');
+        }
+        if (o.detect) $('[data-help]', row).textContent = met ? `Met by ${met.replace(/\.+$/, '')}.` : o.help;
+        const missing = !met && !e.options?.[ev.id]?.[o.id];
         el.textContent = missing ? `−${fmt(o.value)}` : '';
         row.classList.toggle('on', !missing);
         row.classList.toggle('missing', missing && r.sv != null);

@@ -192,7 +192,7 @@ async function ttPage(doc, fonts, athlete, entry, evId) {
   const C = TT_CARDS[key];
   const page = await addTemplatePage(doc, C.url);
   const w = writer(page, fonts);
-  const synchroPartner = evId === 'sy' ? entry.options?.sy?.partner : '';
+  const synchroPartner = evId === 'sy' ? String(entry.options?.sy?.partner || '').toUpperCase() : '';
   w.text(synchroPartner ? `${athlete.name} & ${synchroPartner}` : athlete.name, C.name[0], C.name[1], { size: 13, font: fonts.bold, maxWidth: 330 });
   w.text(athlete.club, C.club[0], C.club[1], { size: 13, font: fonts.bold, maxWidth: 300 });
   if (C.levelY) {
@@ -331,6 +331,8 @@ async function loadLogo(doc) {
 // ---- entry point --------------------------------------------------------------
 
 export async function exportEntryPdf(athlete, entry, events) {
+  // The planner shows names and clubs in capitals: print them the same way.
+  athlete = { ...athlete, name: String(athlete.name || '').toUpperCase(), club: String(athlete.club || '').toUpperCase() };
   const doc = await PDFDocument.create();
   const fonts = { regular: await doc.embedFont(StandardFonts.Helvetica), bold: await doc.embedFont(StandardFonts.HelveticaBold) };
   const fam = levelInfo(entry.disc, entry.level).family;

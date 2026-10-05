@@ -199,3 +199,15 @@ test('Masters vault: WG value plus the age bonus', () => {
   assert.equal(scoreVault('masters', 'other', { decade: '70' }).startValue, 13.2);
   assert.equal(scoreVault('masters', 'UCGM-mag-straight-hecht-over-table', { decade: '50' }).startValue, 13.6); // 10 + 1.2 + 2.4
 });
+
+test('Advanced rings: a listed swing to handstand (I.75, I.81, I.86-88) meets the requirement', () => {
+  const sk = (name, letter, eg, skillId) => ({ name, letter, eg, skillId });
+  const base = [sk('Kip', 'A', 1), sk('L-sit', 'A', 2), sk('Shoulder stand', 'A', 1), sk('Back lever', 'B', 2), sk('Inlocate', 'A', 1), sk('Dislocate', 'A', 1)];
+  assert.equal(scoreRoutine('sr', 'adv', base).deductions, 0.3);
+  const r = scoreRoutine('sr', 'adv', [...base, sk('From support swing bwd. to handstand (2 s.).', 'B', 1, 'WG-SR-I-86')]);
+  assert.equal(r.deductions, 0);
+  assert.equal(r.detected.swingHs, 'From support swing bwd. to handstand (2 s.).');
+  // Not a listed one, and not ticked by hand: still missing.
+  assert.equal(scoreRoutine('sr', 'adv', [...base, sk('Uprise bwd. str. through handstand.', 'B', 1, 'WG-SR-I-32')]).deductions, 0.3);
+  assert.equal(scoreRoutine('sr', 'adv', base, { swingHs: true }).deductions, 0);
+});
