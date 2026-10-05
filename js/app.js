@@ -458,7 +458,7 @@ function skillRow(e, ev, spec, i, s, pass) {
   const cls = dd ? ' dd' : spec.columns === 'xcel' ? ' xcel' : '';
   const combo = `
     <span class="col-name skill-combo">
-      <input class="skill-input" type="text" placeholder="${dd ? 'Search or type a skill' : 'Search or type a skill'}" aria-label="${label} name"
+      <input class="skill-input" type="text" placeholder="Search or type a skill" aria-label="${label} name"
         role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="skill-pop" autocomplete="off"
         ${data} data-field="name" value="${esc(s.name)}" />
       <span class="src-badge" data-calc="src"></span>
@@ -470,8 +470,8 @@ function skillRow(e, ev, spec, i, s, pass) {
   const remove = `<button type="button" class="remove-skill" ${data} data-remove aria-label="Remove ${label}" title="Remove skill">${ICON_X}</button>`;
   if (dd) {
     return `<div class="skill-row${cls}" data-row="${i}">${handle}${combo}
-      <input class="col-letter" type="text" aria-label="${label} shorthand" ${data} data-field="notation" value="${esc(s.notation)}" placeholder="—" />
-      <input class="col-eg" type="number" inputmode="decimal" step="0.1" min="0" aria-label="${label} DD" ${data} data-field="dd" value="${esc(s.dd)}" placeholder="0.0" />
+      <input class="col-letter" type="text" aria-label="${label} shorthand" ${data} data-field="notation" value="${esc(s.notation)}" placeholder="Shorthand" />
+      <input class="col-eg" type="number" inputmode="decimal" step="0.1" min="0" aria-label="${label} DD" ${data} data-field="dd" value="${esc(s.dd)}" placeholder="DD" />
       ${remove}<span class="row-flag" data-calc="flag"></span></div>`;
   }
   const letters = `<select class="col-letter" aria-label="${label} difficulty" ${data} data-field="letter">
