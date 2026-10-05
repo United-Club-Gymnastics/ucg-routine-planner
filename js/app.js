@@ -1,77 +1,83 @@
 import * as store from './store.js';
-import { VAULTS } from './vaults.js';
 import {
-  APPARATUS,
-  ALL_EVENTS,
-  EVENTS,
-  LETTERS,
-  LEVELS,
-  LEVEL_IDS,
-  MAX_PER_EG,
-  MAX_ROUTINE,
-  SR_MAX_STATIC,
-  MIN_SKILLS,
-  ROMAN,
-  eventOptions,
+  DISCIPLINES,
+  DISC_IDS,
+  DECADES,
+  DECADE_LABELS,
+  blankSkill,
+  blankTT,
+  copyRoutines,
+  entryName,
+  eventInfo,
+  eventSpec,
   fmt,
-  scoreAthlete,
-} from './scoring.js';
+  hasContent,
+  levelInfo,
+  newEntry,
+  normalizeEntry,
+  scoreEntry,
+} from './model.js';
 import { findSkill, searchSkills } from './skill-search.js';
+import { EXAMPLES } from './data/examples.js';
+import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
+import { OTHER_VAULT } from './scoring/mag.js';
+import { INFINITY_VAULT_LIST, xcelVaults } from './scoring/wag.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 const esc = (s) =>
   String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+const uid = () => store.newId();
+const ROMAN = { 1: 'I', 2: 'II', 3: 'III', 4: 'IV' };
+const MAX_ROWS = 20;
 
 const app = $('#app');
-const TABS = ALL_EVENTS;
-const state = { user: null, athletes: [], selectedId: null, tab: readTab() };
+const state = {
+  user: null,
+  athletes: [],
+  athleteId: null,
+  entryId: null,
+  tab: readPref('rp-tabs', {}), // entryId -> event id
+  showAdd: false,
+  athOpen: false,
+  athQuery: '',
+};
 
-function readTab() {
+function readPref(key, fallback) {
   try {
-    const t = localStorage.getItem('sv-tab');
-    return TABS.includes(t) ? t : 'fx';
+    return JSON.parse(localStorage.getItem(key)) ?? fallback;
   } catch {
-    return 'fx';
+    return fallback;
   }
 }
+function writePref(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch {}
+}
 
-const blankSkill = () => ({ name: '', letter: '', eg: '' });
-const DEFAULT_LEVEL = 'int';
-const levelOf = (a) => (LEVELS[a?.level] ? a.level : DEFAULT_LEVEL);
-const maxSkills = (a) => LEVELS[levelOf(a)].maxSkills;
-const blankRoutine = (n) => Array.from({ length: n }, blankSkill);
-const isBlank = (s) => !String(s?.name || '').trim() && !s?.letter;
-const newAthlete = () => ({
-  id: store.newId(),
-  name: '',
-  club: '',
-  level: DEFAULT_LEVEL,
-  vault: '',
-  routines: Object.fromEntries(EVENTS.map((e) => [e, blankRoutine(LEVELS[DEFAULT_LEVEL].maxSkills)])),
-  options: {},
-  createdAt: Date.now(),
-});
+const athlete = () => state.athletes.find((a) => a.id === state.athleteId) || null;
+const entry = () => {
+  const a = athlete();
+  return a?.entries.find((e) => e.id === state.entryId) || a?.entries[0] || null;
+};
+const currentEvent = (e = entry()) => {
+  const evs = DISCIPLINES[e.disc].events;
+  const t = state.tab[e.id];
+  return evs.some((x) => x.id === t) ? t : evs[0].id;
+};
+const sortedAthletes = () =>
+  [...state.athletes].sort((a, b) => (a.name || '~').localeCompare(b.name || '~', undefined, { sensitivity: 'base' }));
 
-// Partial records: fill in missing fields, and show at least as many skill
-// rows as the athlete's level counts. Returns true if the record changed.
-function normalize(a) {
+function normalizeAthlete(a) {
   let changed = false;
-  if (!LEVELS[a.level]) {
-    a.level = DEFAULT_LEVEL;
+  if (!Array.isArray(a.entries) || a.entries.some((e) => !e || !DISCIPLINES[e.disc])) {
+    a.entries = (Array.isArray(a.entries) ? a.entries : []).filter((e) => e && DISCIPLINES[e.disc]);
     changed = true;
   }
-  a.routines ||= {};
-  a.options ||= {};
-  for (const e of EVENTS) {
-    const r = [...(a.routines[e] || [])];
-    while (r.length < maxSkills(a)) r.push(blankSkill());
-    a.routines[e] = r.slice(0, MAX_ROUTINE);
-  }
+  for (const e of a.entries) if (normalizeEntry(e)) changed = true;
   return changed;
 }
-
-const selected = () => state.athletes.find((a) => a.id === state.selectedId);
 
 // ---- Saving ---------------------------------------------------------------
 
@@ -86,10 +92,10 @@ function setStatus(text, kind = '') {
 function scheduleSave() {
   setStatus('Saving…');
   clearTimeout(saveTimer);
-  const athlete = selected();
+  const a = athlete();
   saveTimer = setTimeout(async () => {
     try {
-      await store.saveAthlete(athlete);
+      await store.saveAthlete(a);
       setStatus('All changes saved', 'ok');
     } catch (err) {
       console.error(err);
@@ -98,7 +104,7 @@ function scheduleSave() {
   }, 600);
 }
 
-// ---- Header / auth ---------------------------------------------------------
+// ---- Header: user + athlete picker ------------------------------------------
 
 function renderUserArea() {
   const area = $('#user-area');
@@ -113,6 +119,117 @@ function renderUserArea() {
     <button class="topbar-link" id="signout-btn" type="button">Sign out</button>`;
   $('#signout-btn').onclick = () => store.signOut();
 }
+
+const discChip = (e) =>
+  `<span class="chip chip-${e.disc}">${esc(DISCIPLINES[e.disc].name)} · ${esc(levelInfo(e.disc, e.level)?.short || '')}</span>`;
+
+function renderAthletePicker() {
+  const host = $('#athlete-picker');
+  if (!host) return;
+  const a = athlete();
+  if (!state.user) {
+    host.innerHTML = '';
+    return;
+  }
+  const q = state.athQuery.trim().toLowerCase();
+  const list = sortedAthletes().filter((x) => !q || `${x.name} ${x.club}`.toLowerCase().includes(q));
+  host.innerHTML = `
+    <button type="button" class="ath-button" id="ath-button" aria-haspopup="listbox" aria-expanded="${state.athOpen}">
+      <span class="ath-button-text">
+        <span class="ath-count">Athlete · ${state.athletes.length}</span>
+        <span class="ath-current">${esc(a ? a.name || 'Unnamed athlete' : 'No athletes yet')}</span>
+      </span>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div class="ath-pop" ${state.athOpen ? '' : 'hidden'}>
+      <div class="ath-search"><input id="ath-search" type="search" placeholder="Search name or club" aria-label="Search athletes" value="${esc(state.athQuery)}" autocomplete="off" /></div>
+      <div class="ath-list" role="listbox" aria-label="Athletes">
+        ${list
+          .map(
+            (x) => `<button type="button" role="option" class="ath-option${x.id === state.athleteId ? ' active' : ''}" data-ath="${esc(x.id)}" aria-selected="${x.id === state.athleteId}">
+              <span class="ath-option-top"><span class="ath-option-name">${esc(x.name || 'Unnamed athlete')}</span><span class="ath-option-club">${esc(x.club || '')}</span></span>
+              <span class="chips">${x.entries.map(discChip).join('')}</span>
+            </button>`
+          )
+          .join('')}
+        ${list.length ? '' : `<p class="ath-none">${state.athletes.length ? 'No athletes match.' : 'No athletes yet.'}</p>`}
+      </div>
+      <div class="ath-foot"><button type="button" class="btn btn-primary btn-sm btn-block" id="ath-add">Add athlete</button></div>
+    </div>`;
+  $('#ath-button').onclick = () => {
+    state.athOpen = !state.athOpen;
+    state.athQuery = '';
+    renderAthletePicker();
+    if (state.athOpen) $('#ath-search')?.focus();
+  };
+  const search = $('#ath-search');
+  if (search) {
+    search.oninput = () => {
+      state.athQuery = search.value;
+      const pos = search.selectionStart;
+      renderAthletePicker();
+      const s2 = $('#ath-search');
+      s2.focus();
+      s2.setSelectionRange(pos, pos);
+    };
+    search.onkeydown = (ev) => {
+      if (ev.key === 'Escape') closeAthletePicker();
+      if (ev.key === 'Enter') $('.ath-option')?.click();
+    };
+  }
+  $$('[data-ath]', host).forEach((b) => (b.onclick = () => {
+    selectAthlete(b.dataset.ath);
+    closeAthletePicker();
+  }));
+  $('#ath-add').onclick = () => {
+    closeAthletePicker();
+    addAthlete();
+  };
+}
+function closeAthletePicker() {
+  if (!state.athOpen) return;
+  state.athOpen = false;
+  renderAthletePicker();
+}
+document.addEventListener('mousedown', (ev) => {
+  if (state.athOpen && !ev.target.closest('#athlete-picker')) closeAthletePicker();
+});
+
+function selectAthlete(id) {
+  state.athleteId = id;
+  state.entryId = athlete()?.entries[0]?.id || null;
+  state.showAdd = !athlete()?.entries.length;
+  writePref('rp-athlete', id);
+  renderAll();
+}
+
+async function addAthlete() {
+  const a = { id: uid(), name: '', club: athlete()?.club || '', entries: [], createdAt: Date.now() };
+  state.athletes.push(a);
+  state.athleteId = a.id;
+  state.entryId = null;
+  state.showAdd = true;
+  renderAll();
+  $('#f-name')?.focus();
+  try {
+    await store.saveAthlete(a);
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+async function removeAthlete() {
+  const a = athlete();
+  if (!a || !confirm(`Delete ${a.name || 'this athlete'} and all of their routines? This can't be undone.`)) return;
+  await store.deleteAthlete(a.id);
+  state.athletes = state.athletes.filter((x) => x.id !== a.id);
+  const next = sortedAthletes()[0];
+  state.athleteId = next?.id ?? null;
+  state.entryId = next?.entries[0]?.id ?? null;
+  renderAll();
+}
+
+// ---- Sign in ----------------------------------------------------------------
 
 function renderSignIn() {
   app.innerHTML = '';
@@ -130,124 +247,592 @@ function renderSignIn() {
   };
 }
 
-// ---- Main layout -----------------------------------------------------------
+// ---- Main layout -------------------------------------------------------------
 
-function renderShell() {
+function renderAll() {
+  renderAthletePicker();
+  const a = athlete();
+  if (!a) {
+    app.innerHTML = `
+      <section class="page-head"><div class="page-head-inner"><p class="eyebrow">WAG · MAG · T&amp;T</p><h1>Routine planner</h1></div></section>
+      <div class="wrap"><div class="card empty-editor">
+        <h2>Add your first athlete</h2>
+        <p>Add an athlete, choose the levels they compete, and build each routine. Start values update as you type, and you can export filled-in UCG worksheets and competition cards.</p>
+        <button class="btn btn-primary" type="button" id="empty-add">Add athlete</button>
+      </div></div>`;
+    $('#empty-add').onclick = addAthlete;
+    return;
+  }
+  const e = entry();
+  if (e) state.entryId = e.id;
   app.innerHTML = `
     <section class="page-head">
       <div class="page-head-inner">
-        <p class="eyebrow">UCG MAG</p>
-        <h1>Routine planner</h1>
+        <p class="eyebrow">${esc(a.club || 'Routine planner')}</p>
+        <h1 id="hero-name">${esc(a.name || 'New athlete')}</h1>
       </div>
     </section>
-    <div class="layout">
-      <aside class="sidebar">
-        <div class="sidebar-head">
-          <h2 class="subhead">Athletes</h2>
-          <button class="btn btn-primary btn-sm" id="add-athlete" type="button">Add athlete</button>
+    <div class="wrap editor" id="editor">
+      <div class="editor-head">
+        <div class="fields">
+          <label class="field grow"><span>Gymnast name</span>
+            <input id="f-name" type="text" value="${esc(a.name)}" placeholder="Name" autocomplete="off" /></label>
+          <label class="field"><span>Club</span>
+            <input id="f-club" type="text" value="${esc(a.club)}" placeholder="Club / school" /></label>
         </div>
-        <ul id="athlete-list" class="athlete-list"></ul>
-      </aside>
-      <section id="editor" class="editor"></section>
+        <div class="editor-actions">
+          <span id="save-status" class="save-status"></span>
+          ${e ? `<button class="btn btn-primary" type="button" id="export-all">Export PDF</button>` : ''}
+          <button class="btn btn-quiet" type="button" id="delete-athlete">Delete athlete</button>
+        </div>
+      </div>
+      ${entriesRow(a, e)}
+      ${state.showAdd || !e ? addLevelPanel(a) : ''}
+      ${e ? entryBody(a, e) : ''}
     </div>`;
-  $('#add-athlete').onclick = addAthlete;
-  renderList();
-  renderEditor();
+  bindEditor(a, e);
+  if (e) updateComputed();
 }
 
-function sortedAthletes() {
-  return [...state.athletes].sort((a, b) =>
-    (a.name || '~').localeCompare(b.name || '~', undefined, { sensitivity: 'base' })
-  );
+function entriesRow(a, cur) {
+  return `
+    <div class="entries" role="tablist" aria-label="Levels">
+      <span class="label">Competes in</span>
+      ${a.entries
+        .map(
+          (e) => `<button type="button" role="tab" class="entry-tab${cur && e.id === cur.id ? ' active' : ''}" data-entry="${esc(e.id)}" aria-selected="${cur && e.id === cur.id}">
+            <span class="disc-badge disc-${e.disc}">${esc(DISCIPLINES[e.disc].name)}</span><span>${esc(levelInfo(e.disc, e.level)?.name || e.level)}</span>
+          </button>`
+        )
+        .join('')}
+      <button type="button" class="entry-add" id="toggle-add" aria-expanded="${state.showAdd}">${state.showAdd && a.entries.length ? 'Close' : '+ Add level'}</button>
+    </div>`;
 }
 
-function renderList() {
-  const list = $('#athlete-list');
-  if (!list) return;
-  if (!state.athletes.length) {
-    list.innerHTML = `<li class="empty">No athletes yet.</li>`;
-    return;
-  }
-  list.innerHTML = sortedAthletes()
-    .map((a) => {
-      const aa = scoreAthlete(a).allAround;
-      return `<li>
-        <button type="button" data-id="${esc(a.id)}" class="athlete-item${a.id === state.selectedId ? ' active' : ''}">
-          <span class="athlete-name">${esc(a.name || 'Unnamed athlete')}</span>
-          <span class="athlete-meta">${esc([LEVELS[levelOf(a)].label, a.club].filter(Boolean).join(' · '))}</span>
-          <span class="athlete-aa">${fmt(aa)}</span>
-        </button>
-      </li>`;
-    })
-    .join('');
-  $$('.athlete-item', list).forEach((b) => (b.onclick = () => select(b.dataset.id)));
+function addLevelPanel(a) {
+  return `
+    <section class="card add-panel">
+      <h2 class="card-subtitle">Add a level</h2>
+      <p class="muted">Add every level you might compete. If a meet doesn't offer your usual level, add the one it does; you can copy your routines over from a level you already have.</p>
+      <div class="add-grid">
+        ${DISC_IDS.map((d) => {
+          const D = DISCIPLINES[d];
+          return `<div class="add-col">
+            <div class="add-col-head"><span class="disc-badge disc-${d} lg">${esc(D.name)}</span><span class="muted">${esc(D.full)}</span></div>
+            ${D.levels
+              .map((l) => {
+                const mine = a.entries.find((e) => e.disc === d && e.level === l.id);
+                return `<button type="button" class="level-option${mine ? ' mine' : ''}" data-add="${d}:${l.id}">
+                  <span>${esc(l.name)}</span>${mine ? '<span class="pill pill-navy">Added</span>' : ''}
+                </button>`;
+              })
+              .join('')}
+          </div>`;
+        }).join('')}
+      </div>
+    </section>`;
 }
 
-function select(id) {
-  state.selectedId = id;
-  try {
-    localStorage.setItem('sv-selected', id);
-  } catch {}
-  renderList();
-  renderEditor();
+function entryBody(a, e) {
+  const D = DISCIPLINES[e.disc];
+  const L = levelInfo(e.disc, e.level);
+  const ev = currentEvent(e);
+  return `
+    <section class="card level-bar">
+      <span class="disc-badge disc-${e.disc} xl">${esc(D.name)}</span>
+      <div class="level-bar-text">
+        <div class="level-name">${esc(L.name)}</div>
+        <div class="muted">${esc(D.full)}</div>
+      </div>
+      ${L.masters ? `<label class="field inline"><span>Age decade</span>
+        <select id="f-decade">${DECADES.map((d) => `<option value="${d}"${d === e.decade ? ' selected' : ''}>${DECADE_LABELS[d]}</option>`).join('')}</select></label>` : ''}
+      ${a.entries.length > 1 ? `<button type="button" class="btn btn-quiet btn-sm" id="remove-entry">Remove this level</button>` : ''}
+    </section>
+    ${startPanel(a, e)}
+    <div class="summary" id="summary" role="tablist" aria-label="Events"></div>
+    ${D.events.map((x) => eventCard(e, x, x.id === ev)).join('')}`;
 }
 
-async function addAthlete() {
-  const a = newAthlete();
-  state.athletes.push(a);
-  select(a.id);
-  $('#f-name')?.focus();
-  try {
-    await store.saveAthlete(a);
-  } catch (e) {
-    console.error(e);
-  }
-}
-
-async function removeAthlete() {
-  const a = selected();
-  if (!a || !confirm(`Delete ${a.name || 'this athlete'} and all of their routines? This can't be undone.`)) return;
-  await store.deleteAthlete(a.id);
-  state.athletes = state.athletes.filter((x) => x.id !== a.id);
-  state.selectedId = sortedAthletes()[0]?.id ?? null;
-  renderList();
-  renderEditor();
-}
-
-// ---- Editor ----------------------------------------------------------------
-
-function vaultOptions(current, level) {
-  const groups = {};
-  for (const v of VAULTS) (groups[v.eg] ||= []).push(v);
-  return (
-    `<option value="">— No vault —</option>` +
-    Object.entries(groups)
-      .map(
-        ([eg, list]) =>
-          `<optgroup label="${eg ? `WG element group ${esc(eg)}` : 'UCG Code of Points'}">${list
-            .map((v) => {
-              const banned = level === 'dev' && v.flipping;
-              const dv = level === 'adv' ? v.adv : v.value;
-              const name = `${v.src === 'WG' ? `${v.id} · ` : ''}${v.name}${v.eponym ? ` (${v.eponym})` : ''}`;
-              return `<option value="${esc(v.id)}"${v.id === String(current) ? ' selected' : ''}>${esc(name)} — ${banned ? 'not allowed' : fmt(dv)}</option>`;
-            })
-            .join('')}</optgroup>`
-      )
-      .join('')
-  );
+// Offered while a level is empty: copy from another level in the discipline,
+// or fill every event with example routines.
+function startPanel(a, e) {
+  if (hasContent(e)) return '';
+  const sources = a.entries.filter((x) => x.id !== e.id && x.disc === e.disc && hasContent(x));
+  const examples = EXAMPLES.filter((x) => x.disc === e.disc && x.level === e.level);
+  if (!sources.length && !examples.length) return '';
+  return `
+    <section class="card start-panel">
+      <div class="start-text">
+        <h2 class="card-subtitle">Start from something?</h2>
+        <p class="muted">${sources.length ? `Copy every event from another ${esc(DISCIPLINES[e.disc].name)} level; values and start values are recalculated for ${esc(levelInfo(e.disc, e.level).name)}. ` : ''}${examples.length ? 'Or fill each event with an example routine, then edit it. Each event also has an Examples menu.' : ''}</p>
+      </div>
+      <div class="start-actions">
+        ${sources.length > 1 ? `<label class="field inline"><span>Copy from</span><select id="copy-src">${sources.map((s) => `<option value="${esc(s.id)}">${esc(levelInfo(s.disc, s.level).name)}</option>`).join('')}</select></label>` : ''}
+        ${sources.length ? `<button type="button" class="btn btn-primary btn-sm" id="copy-run" data-src="${esc(sources[0].id)}">${sources.length > 1 ? 'Copy routines' : `Copy from ${esc(levelInfo(sources[0].disc, sources[0].level).name)}`}</button>` : ''}
+        ${examples.length ? `<button type="button" class="btn btn-ghost btn-sm" id="examples-all">Use example routines</button>` : ''}
+      </div>
+    </section>`;
 }
 
 const ICON_GRIP = `<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><circle cx="9" cy="6" r="1.7"/><circle cx="15" cy="6" r="1.7"/><circle cx="9" cy="12" r="1.7"/><circle cx="15" cy="12" r="1.7"/><circle cx="9" cy="18" r="1.7"/><circle cx="15" cy="18" r="1.7"/></svg>`;
 const ICON_X = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>`;
 const ICON_CHEVRON = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>`;
 
-// ---- Skill picker ------------------------------------------------------------
-// Typing in a skill name (or clicking its arrow) opens a list of UCG and WG
-// skills for the apparatus; picking one fills in the name, difficulty and EG.
-// Anything else typed is kept as a custom skill with a manual difficulty / EG.
-// The list lives on <body> so the routine table's scrolling doesn't clip it.
+// ---- Event cards ---------------------------------------------------------------
+
+function eventCard(e, ev, visible) {
+  const spec = eventSpec(e, ev.id);
+  const examples = EXAMPLES.filter((x) => x.disc === e.disc && x.level === e.level && x.event === ev.id);
+  return `
+    <article class="card event-card" data-event-card="${ev.id}" id="panel-${ev.id}" role="tabpanel" aria-labelledby="tab-${ev.id}" ${visible ? '' : 'hidden'}>
+      <header class="card-head">
+        <h2 class="card-title">${esc(ev.label)}</h2>
+        <div class="card-head-right">
+          ${examples.length ? `<label class="examples-menu"><span class="sr-only">Insert an example routine</span>
+            <select data-example="${ev.id}"><option value="">Examples…</option>${examples.map((x) => `<option value="${esc(x.id)}">${esc(x.title)}</option>`).join('')}</select></label>` : ''}
+          <span class="sv-pill" data-sv="${ev.id}"></span>
+          ${ev.kind !== 'vault' || ['infinity', 'xcel'].includes(spec.family) ? `<button class="btn btn-ghost btn-sm" type="button" data-export="${ev.id}">Export PDF</button>` : ''}
+        </div>
+      </header>
+      ${ev.kind === 'vault' ? vaultBody(e, ev, spec) : ev.kind === 'passes' ? passesBody(e, ev) : routineBody(e, ev, spec)}
+      ${spec.sr ? srList(e, ev, spec) : ''}
+      ${spec.options.map((o) => optionControl(e, ev.id, o)).join('')}
+      <div class="event-foot">
+        ${spec.legend.length ? `<ul class="cg-list">${spec.legend.map((g) => `<li data-cg="${g.key}"><span class="cg-badge">${g.roman}</span><span>${esc(g.label)}</span></li>`).join('')}</ul>` : ''}
+        <dl class="totals" data-totals="${ev.id}"></dl>
+        <div class="foot-notes" data-notes="${ev.id}"></div>
+      </div>
+    </article>`;
+}
+
+function routineHelp(e, ev, spec) {
+  if (spec.columns === 'dd') return 'List the routine in order. Search the T&T skill list (it fills in the FIG shorthand and DD), or type your own skill and its DD.';
+  if (spec.family === 'xcel') return `List the routine in order. Pick each skill's value letter; the planner checks the value parts and restricted skills for ${esc(levelInfo(e.disc, e.level).name)}, and you tick the special requirements below.`;
+  const max = spec.maxCounting;
+  const more = e.disc === 'mag' ? ', with at most 4 from one element group' : '';
+  return `List the whole routine in order, and drag <span class="grip-inline">${ICON_GRIP}</span> to reorder. <strong>Each skill counts only once</strong>. Your ${max} highest-value skills count toward difficulty${more}. Counting skills are highlighted; repeats and non-counting skills are shaded gray and flagged.`;
+}
+
+function routineBody(e, ev, spec) {
+  const rows = e.routines[ev.id];
+  return `
+    <p class="routine-help">${routineHelp(e, ev, spec)}</p>
+    ${ev.synchro ? `<label class="field inline partner"><span>Synchro partner</span><input type="text" data-partner="${ev.id}" value="${esc(e.options?.[ev.id]?.partner || '')}" placeholder="Partner's name" /></label>` : ''}
+    <div class="skill-table" data-routine="${ev.id}">${rowsMarkup(e, ev, spec, rows, null)}</div>
+    <div class="routine-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-add-skill="${ev.id}">Add skill</button>
+      <span class="routine-count" data-calc="count"></span>
+    </div>`;
+}
+
+function passesBody(e, ev) {
+  const spec = eventSpec(e, ev.id);
+  return `
+    <p class="routine-help">${ev.id === 'dmt' ? 'Two passes of two skills: a mounter or spotter, then a dismount.' : 'Two passes. Search the T&T skill list or type your own skill and its DD.'}</p>
+    ${[0, 1]
+      .map(
+        (p) => `<div class="pass" data-pass-block="${p}">
+          <div class="pass-head"><h3>Pass ${p + 1}</h3><span class="pass-dd" data-pass-dd="${p}"></span></div>
+          <div class="skill-table" data-routine="${ev.id}" data-pass="${p}">${rowsMarkup(e, ev, spec, e.passes[ev.id][p].skills, p)}</div>
+          ${ev.id === 'tu' ? `<div class="routine-actions"><button class="btn btn-ghost btn-sm" type="button" data-add-skill="${ev.id}" data-pass="${p}">Add skill</button></div>` : ''}
+        </div>`
+      )
+      .join('')}`;
+}
+
+function headCells(spec) {
+  if (spec.columns === 'dd') return `<span class="col-num">#</span><span class="col-name">Skill</span><span class="col-letter">Shorthand</span><span class="col-eg">DD</span><span></span>`;
+  if (spec.columns === 'xcel') return `<span class="col-num">#</span><span class="col-name">Skill</span><span class="col-letter">Value</span><span class="col-value">VP</span><span></span>`;
+  return `<span class="col-num">#</span><span class="col-name">Skill</span><span class="col-letter">Diff.</span><span class="col-eg">Element group</span><span class="col-value">Value</span><span class="col-bonus">EG bonus</span><span></span>`;
+}
+
+function rowsMarkup(e, ev, spec, rows, pass) {
+  const cls = spec.columns === 'dd' ? ' dd' : spec.columns === 'xcel' ? ' xcel' : '';
+  return `<div class="skill-row skill-head${cls}" aria-hidden="true">${headCells(spec)}</div>${rows.map((s, i) => skillRow(e, ev, spec, i, s, pass)).join('')}`;
+}
+
+function skillRow(e, ev, spec, i, s, pass) {
+  const label = `${pass != null ? `Pass ${pass + 1} skill` : 'Skill'} ${i + 1}`;
+  const data = `data-ev="${ev.id}" data-idx="${i}"${pass != null ? ` data-pass="${pass}"` : ''}`;
+  const dd = spec.columns === 'dd';
+  const cls = dd ? ' dd' : spec.columns === 'xcel' ? ' xcel' : '';
+  const combo = `
+    <span class="col-name skill-combo">
+      <input class="skill-input" type="text" placeholder="${dd ? 'Search or type a skill' : 'Search or type a skill'}" aria-label="${label} name"
+        role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="skill-pop" autocomplete="off"
+        ${data} data-field="name" value="${esc(s.name)}" />
+      <span class="src-badge" data-calc="src"></span>
+      <button type="button" class="combo-toggle" ${data} data-combo tabindex="-1" aria-label="Show ${label} skill list">${ICON_CHEVRON}</button>
+    </span>`;
+  const handle = `<span class="col-num">
+      <button type="button" class="drag-handle" ${data} data-drag aria-label="Move ${label}. Drag, or use the up and down arrow keys." title="Drag to reorder">${ICON_GRIP}</button>
+      <span class="num">${i + 1}</span></span>`;
+  const remove = `<button type="button" class="remove-skill" ${data} data-remove aria-label="Remove ${label}" title="Remove skill">${ICON_X}</button>`;
+  if (dd) {
+    return `<div class="skill-row${cls}" data-row="${i}">${handle}${combo}
+      <input class="col-letter" type="text" aria-label="${label} shorthand" ${data} data-field="notation" value="${esc(s.notation)}" placeholder="—" />
+      <input class="col-eg" type="number" inputmode="decimal" step="0.1" min="0" aria-label="${label} DD" ${data} data-field="dd" value="${esc(s.dd)}" placeholder="0.0" />
+      ${remove}<span class="row-flag" data-calc="flag"></span></div>`;
+  }
+  const letters = `<select class="col-letter" aria-label="${label} difficulty" ${data} data-field="letter">
+      <option value="">–</option>${spec.letters.map((l) => `<option${l === s.letter ? ' selected' : ''}>${l}</option>`).join('')}</select>`;
+  if (spec.columns === 'xcel') {
+    return `<div class="skill-row${cls}" data-row="${i}">${handle}${combo}${letters}
+      <span class="col-value calc" data-calc="value"></span>${remove}<span class="row-flag" data-calc="flag"></span></div>`;
+  }
+  const eg = spec.groups
+    ? `<select class="col-eg" aria-label="${label} element group" ${data} data-field="eg">
+        <option value="">EG –</option>${spec.groups.map((g) => `<option value="${g.value}"${String(g.value) === String(s.eg) ? ' selected' : ''}>${esc(g.label)}</option>`).join('')}</select>`
+    : '<span class="col-eg"></span>';
+  return `<div class="skill-row${cls}" data-row="${i}">${handle}${combo}${letters}${eg}
+    <span class="col-value calc" data-calc="value"></span><span class="col-bonus calc" data-calc="bonus"></span>
+    ${remove}<span class="row-flag" data-calc="flag"></span></div>`;
+}
+
+function srList(e, ev, spec) {
+  const met = e.options?.[ev.id]?.sr || [];
+  return `
+    <fieldset class="sr-list">
+      <legend>Special requirements <span class="muted">(−0.50 each one missing)</span></legend>
+      ${spec.sr.map((t, i) => `<label class="sr-item"><input type="checkbox" data-sr="${ev.id}" data-sr-idx="${i}"${met[i] ? ' checked' : ''} /><span><strong>SR ${i + 1}.</strong> ${esc(t)}</span></label>`).join('')}
+    </fieldset>`;
+}
+
+function optionControl(e, evId, o) {
+  const v = e.options?.[evId]?.[o.id];
+  const data = `data-option="${evId}" data-opt="${o.id}"`;
+  let control;
+  if (o.kind === 'count') {
+    control = `<select ${data} aria-label="${esc(o.label)}">${Array.from({ length: o.max + 1 }, (_, n) => `<option value="${n}"${Number(v || 0) === n ? ' selected' : ''}>${o.id === 'bonus' ? `+${(n / 10).toFixed(1)}` : n}</option>`).join('')}</select>`;
+  } else if (o.kind === 'mushroom') {
+    control = `<select ${data} aria-label="${esc(o.label)}">${Array.from({ length: 11 }, (_, n) => {
+      const x = n / 10;
+      return `<option value="${x}"${Number(v || 0) === x ? ' selected' : ''}>+${x.toFixed(1)}</option>`;
+    }).join('')}</select>`;
+  } else {
+    control = `<input type="checkbox" ${data}${v ? ' checked' : ''} />`;
+  }
+  const leading = o.kind === 'check';
+  return `
+    <label class="event-bonus${o.deduction ? ' requirement' : ''}" data-option-row="${evId}:${o.id}">
+      ${leading ? control : ''}
+      <span class="event-bonus-text"><strong>${esc(o.label)}</strong><span>${esc(o.help)}</span></span>
+      ${leading ? '' : control}
+      <span class="event-bonus-value calc" data-calc="opt-${o.id}"></span>
+    </label>`;
+}
+
+function vaultBody(e, ev) {
+  const fam = levelInfo(e.disc, e.level).family;
+  let control = '';
+  if (fam === 'mag') {
+    const groups = {};
+    for (const v of MAG_VAULTS) (groups[v.eg] ||= []).push(v);
+    const opts = Object.entries(groups)
+      .map(([eg, list]) => `<optgroup label="${eg ? `WG element group ${esc(eg)}` : 'UCG Code of Points'}">${list
+        .map((v) => {
+          const banned = e.level === 'dev' && v.flipping;
+          const dv = e.level === 'adv' ? v.adv : v.value;
+          const name = `${v.src === 'WG' ? `${v.id} · ` : ''}${v.name}${v.eponym ? ` (${v.eponym})` : ''}`;
+          return `<option value="${esc(v.id)}"${v.id === String(e.vault) ? ' selected' : ''}>${esc(name)} — ${banned ? 'not allowed' : fmt(dv)}</option>`;
+        })
+        .join('')}</optgroup>`)
+      .join('');
+    const other = e.level === 'masters' ? `<option value="other"${e.vault === 'other' ? ' selected' : ''}>${esc(OTHER_VAULT.name)} — 0.0</option>` : '';
+    control = `<select id="f-vault"><option value="">— No vault —</option>${other}${opts}</select>`;
+  } else if (fam === 'infinity') {
+    const groups = {};
+    for (const v of INFINITY_VAULT_LIST) (groups[v.entry] ||= []).push(v);
+    control = `<select id="f-vault"><option value="">— No vault —</option>${Object.entries(groups)
+      .map(([g, list]) => `<optgroup label="${esc(g)}">${list.map((v) => `<option value="${esc(v.name)}"${v.name === e.vault ? ' selected' : ''}>${esc(v.name)} (${fmt(v.dv)})</option>`).join('')}</optgroup>`)
+      .join('')}</select>`;
+  } else if (fam === 'xcel') {
+    control = `<select id="f-vault"><option value="">— No vault —</option>${xcelVaults(e.level)
+      .map((v) => `<option value="${esc(v.id)}"${v.id === e.vault ? ' selected' : ''}>${esc(v.label)} — ${fmt(v.sv)}</option>`)
+      .join('')}</select>`;
+  } else if (fam === 'wagMasters') {
+    control = `<input id="f-vault-name" type="text" value="${esc(e.vault)}" placeholder="Vault name" />`;
+  }
+  return `
+    <div class="vault-body">
+      <label class="field grow"><span>${fam === 'wagMasters' ? 'Your vault' : 'Select your vault'}</span>${control}</label>
+      ${fam === 'wagMasters' ? `<label class="field"><span>WG D score</span><input id="f-vault-value" type="number" inputmode="decimal" step="0.1" min="0" value="${esc(e.vaultValue)}" placeholder="e.g. 2.4" /></label>` : ''}
+      <dl class="vault-info" id="vault-info"></dl>
+    </div>
+    ${fam === 'xcel' && e.level === 'gold' ? optionControl(e, 'vt', { id: 'altBoard', kind: 'check', label: 'Alternative springboard (mini-trampoline)', help: '9.5 start value if used' }) : ''}
+    ${fam === 'wagMasters' ? `<p class="routine-help">Enter your vault's value from the WG Code of Points (0.0 for a vault that isn't listed). The age bonus for your decade is added.</p>` : ''}`;
+}
+
+// ---- Binding ---------------------------------------------------------------
+
+function bindEditor(a, e) {
+  const name = $('#f-name');
+  name.oninput = () => {
+    a.name = name.value;
+    $('#hero-name').textContent = a.name || 'New athlete';
+    renderAthletePicker();
+    scheduleSave();
+  };
+  $('#f-club').oninput = (ev) => {
+    a.club = ev.target.value;
+    renderAthletePicker();
+    scheduleSave();
+  };
+  $('#delete-athlete').onclick = removeAthlete;
+  $('#toggle-add').onclick = () => {
+    state.showAdd = !state.showAdd;
+    renderAll();
+  };
+  $$('[data-entry]').forEach((b) => (b.onclick = () => {
+    state.entryId = b.dataset.entry;
+    state.showAdd = false;
+    renderAll();
+  }));
+  $$('[data-add]').forEach((b) => (b.onclick = () => {
+    const [d, l] = b.dataset.add.split(':');
+    const have = a.entries.find((x) => x.disc === d && x.level === l);
+    if (have) state.entryId = have.id;
+    else {
+      const ne = newEntry(uid(), d, l);
+      a.entries.push(ne);
+      state.entryId = ne.id;
+      scheduleSave();
+    }
+    state.showAdd = false;
+    renderAll();
+  }));
+  if (!e) return;
+
+  $('#export-all').onclick = (ev) => runExport(ev.currentTarget, DISCIPLINES[e.disc].events.map((x) => x.id));
+  $('#remove-entry')?.addEventListener('click', () => {
+    if (hasContent(e) && !confirm(`Remove ${entryName(e)} and its routines?`)) return;
+    a.entries = a.entries.filter((x) => x.id !== e.id);
+    state.entryId = a.entries[0]?.id || null;
+    scheduleSave();
+    renderAll();
+  });
+  $('#f-decade')?.addEventListener('change', (ev) => {
+    e.decade = ev.target.value;
+    scheduleSave();
+    updateComputed();
+  });
+  const copySrc = $('#copy-src');
+  if (copySrc) copySrc.onchange = () => ($('#copy-run').dataset.src = copySrc.value);
+  $('#copy-run')?.addEventListener('click', (ev) => {
+    const src = a.entries.find((x) => x.id === ev.currentTarget.dataset.src);
+    if (!src) return;
+    copyRoutines(src, e);
+    scheduleSave();
+    renderAll();
+  });
+  $('#examples-all')?.addEventListener('click', () => {
+    for (const x of DISCIPLINES[e.disc].events) {
+      const ex = EXAMPLES.find((y) => y.disc === e.disc && y.level === e.level && y.event === x.id);
+      if (ex) applyExample(e, ex);
+    }
+    scheduleSave();
+    renderAll();
+  });
+
+  const ed = $('#editor');
+  ed.oninput = onInput;
+  ed.onchange = onChange;
+  ed.onclick = onClick;
+  ed.onkeydown = onKey;
+  ed.onpointerdown = onPointerDown;
+  ed.onmousedown = (ev) => ev.target.closest('[data-combo]') && ev.preventDefault();
+  ed.onfocusout = (ev) => ev.target === picker.input && closePicker();
+  $$('[data-export]').forEach((b) => (b.onclick = () => runExport(b, [b.dataset.export])));
+}
+
+function rowsOf(e, evId, pass) {
+  return pass == null || pass === '' ? e.routines[evId] : e.passes[evId][Number(pass)].skills;
+}
+
+function onInput(ev) {
+  const t = ev.target;
+  const e = entry();
+  if (t.dataset.option) {
+    const opts = ((e.options ||= {})[t.dataset.option] ||= {});
+    opts[t.dataset.opt] = t.type === 'checkbox' ? t.checked : Number(t.value);
+  } else if (t.dataset.sr) {
+    const opts = ((e.options ||= {})[t.dataset.sr] ||= {});
+    const sr = [...(opts.sr || [])];
+    sr[Number(t.dataset.srIdx)] = t.checked;
+    opts.sr = sr;
+  } else if (t.dataset.partner) {
+    ((e.options ||= {})[t.dataset.partner] ||= {}).partner = t.value;
+  } else if (t.id === 'f-vault-name') {
+    e.vault = t.value;
+  } else if (t.id === 'f-vault-value') {
+    e.vaultValue = t.value;
+  } else if (t.dataset.ev && t.dataset.field) {
+    const row = rowsOf(e, t.dataset.ev, t.dataset.pass)[Number(t.dataset.idx)];
+    row[t.dataset.field] = t.dataset.field === 'dd' ? (t.value === '' ? '' : Number(t.value)) : t.value;
+    if (t.dataset.field === 'name') {
+      if (row.skillId && findSkill(row.skillId)?.label !== t.value) delete row.skillId;
+      openPicker(t, t.value);
+    }
+  } else return;
+  updateComputed();
+  scheduleSave();
+}
+
+function onChange(ev) {
+  const t = ev.target;
+  const e = entry();
+  if (t.id === 'f-vault') {
+    e.vault = t.value;
+    updateComputed();
+    scheduleSave();
+  } else if (t.dataset.example) {
+    const ex = EXAMPLES.find((x) => x.id === t.value);
+    t.value = '';
+    if (!ex) return;
+    const hasSkills = ex.event === 'vt' ? !!e.vault : rowsFilled(e, ex.event);
+    if (hasSkills && !confirm(`Replace this ${eventInfo(e.disc, ex.event).label.toLowerCase()} routine with “${ex.title}”?`)) return;
+    applyExample(e, ex);
+    scheduleSave();
+    renderAll();
+  }
+}
+
+function rowsFilled(e, evId) {
+  const ev = eventInfo(e.disc, evId);
+  if (ev.kind === 'passes') return e.passes[evId].some((p) => p.skills.some((s) => s.name || s.notation));
+  return (e.routines[evId] || []).some((s) => s.name || s.letter || s.notation);
+}
+
+function applyExample(e, ex) {
+  const ev = eventInfo(e.disc, ex.event);
+  if (ev.kind === 'vault') {
+    e.vault = ex.vault || '';
+  } else if (ev.kind === 'passes') {
+    e.passes[ex.event] = (ex.passes || [[], []]).map((p) => ({ skills: p.map((s) => ({ ...blankTT(), ...s })) }));
+  } else {
+    e.routines[ex.event] = (ex.skills || []).map((s) => ({ ...(ev.kind === 'tramp' ? blankTT() : blankSkill()), ...s }));
+  }
+  normalizeEntry(e);
+}
+
+function onClick(ev) {
+  const e = entry();
+  const toggle = ev.target.closest('[data-combo]');
+  if (toggle) {
+    const input = $('.skill-input', toggle.closest('.skill-combo'));
+    if (picker.input === input) closePicker();
+    else {
+      input.focus();
+      openPicker(input, '');
+    }
+    return;
+  }
+  const add = ev.target.closest('[data-add-skill]');
+  if (add) {
+    const evId = add.dataset.addSkill;
+    const list = rowsOf(e, evId, add.dataset.pass);
+    if (list.length >= MAX_ROWS) return;
+    list.push(e.disc === 'tt' ? blankTT() : blankSkill());
+    renderRows(evId, add.dataset.pass, { row: list.length - 1, part: 'name' });
+    scheduleSave();
+    return;
+  }
+  const remove = ev.target.closest('[data-remove]');
+  if (remove) {
+    const list = rowsOf(e, remove.dataset.ev, remove.dataset.pass);
+    const i = Number(remove.dataset.idx);
+    list.splice(i, 1);
+    normalizeEntry(e);
+    renderRows(remove.dataset.ev, remove.dataset.pass, { row: Math.min(i, list.length - 1), part: 'name' });
+    scheduleSave();
+  }
+}
+
+// Re-draw one routine (after add / remove / reorder / pick) and focus a row.
+function renderRows(evId, pass, focus) {
+  const e = entry();
+  const ev = eventInfo(e.disc, evId);
+  const spec = eventSpec(e, evId);
+  closePicker();
+  const sel = `[data-routine="${evId}"]${pass != null && pass !== '' ? `[data-pass="${pass}"]` : ''}`;
+  $(sel).innerHTML = rowsMarkup(e, ev, spec, rowsOf(e, evId, pass), pass != null && pass !== '' ? Number(pass) : null);
+  updateComputed();
+  if (focus) {
+    const row = $(`${sel} [data-row="${focus.row}"]`);
+    $(focus.part === 'handle' ? '.drag-handle' : '.skill-input', row)?.focus();
+  }
+}
+
+function moveSkill(evId, pass, from, to, focusPart) {
+  const list = rowsOf(entry(), evId, pass);
+  if (to < 0 || to >= list.length || to === from) return;
+  const [s] = list.splice(from, 1);
+  list.splice(to, 0, s);
+  renderRows(evId, pass, { row: to, part: focusPart });
+  scheduleSave();
+}
+
+function onKey(ev) {
+  if (ev.target.classList.contains('skill-input')) return onPickerKey(ev);
+  const h = ev.target.closest('.drag-handle');
+  if (!h || (ev.key !== 'ArrowUp' && ev.key !== 'ArrowDown')) return;
+  ev.preventDefault();
+  const from = Number(h.dataset.idx);
+  moveSkill(h.dataset.ev, h.dataset.pass, from, from + (ev.key === 'ArrowUp' ? -1 : 1), 'handle');
+}
+
+// Drag to reorder: pointer events, so it works with a mouse and on touch screens.
+function onPointerDown(ev) {
+  const handle = ev.target.closest('.drag-handle');
+  if (!handle || ev.button > 0) return;
+  ev.preventDefault();
+  const evId = handle.dataset.ev;
+  const pass = handle.dataset.pass;
+  const from = Number(handle.dataset.idx);
+  const container = handle.closest('.skill-table');
+  const rows = $$('.skill-row[data-row]', container);
+  const dragged = rows[from];
+  const others = rows.filter((r) => r !== dragged);
+  const mids = others.map((r) => {
+    const b = r.getBoundingClientRect();
+    return b.top + scrollY + b.height / 2;
+  });
+  const startY = ev.clientY + scrollY;
+  let to = from;
+  dragged.classList.add('dragging');
+  const clearMarks = () => others.forEach((r) => r.classList.remove('drop-above', 'drop-below'));
+  const move = (m) => {
+    if (m.clientY < 90) scrollBy(0, -12);
+    else if (m.clientY > innerHeight - 60) scrollBy(0, 12);
+    const y = m.clientY + scrollY;
+    dragged.style.transform = `translateY(${y - startY}px)`;
+    to = mids.filter((mid) => mid < y).length;
+    clearMarks();
+    if (to === from) return;
+    if (to < others.length) others[to].classList.add('drop-above');
+    else others[others.length - 1].classList.add('drop-below');
+  };
+  const end = () => {
+    removeEventListener('pointermove', move);
+    removeEventListener('pointerup', end);
+    removeEventListener('pointercancel', end);
+    clearMarks();
+    dragged.classList.remove('dragging');
+    dragged.style.transform = '';
+    if (to !== from) moveSkill(evId, pass, from, to, 'handle');
+  };
+  addEventListener('pointermove', move);
+  addEventListener('pointerup', end);
+  addEventListener('pointercancel', end);
+}
+
+// ---- Skill picker --------------------------------------------------------------
+// Typing in a skill name (or clicking its arrow) opens a list of skills for the
+// apparatus; picking one fills in the name and its value / EG (or shorthand / DD).
+// Anything else typed is kept as a custom skill with values set by hand.
 
 const picker = { el: null, input: null, items: [], active: -1 };
+const SRC_LABEL = { UCG: 'UCG Code of Points', WG: 'World Gymnastics Code of Points' };
 
 function pickerEl() {
   if (!picker.el) {
@@ -257,7 +842,7 @@ function pickerEl() {
     el.setAttribute('role', 'listbox');
     el.setAttribute('aria-label', 'Skills');
     el.hidden = true;
-    el.addEventListener('mousedown', (e) => e.preventDefault()); // keep focus in the input
+    el.addEventListener('mousedown', (e) => e.preventDefault());
     el.addEventListener('click', (e) => {
       const o = e.target.closest('[data-skill]');
       if (o) pickSkill(Number(o.dataset.skill));
@@ -270,10 +855,13 @@ function pickerEl() {
   return picker.el;
 }
 
+const searchApp = (e, evId) => (e.disc === 'tt' && evId === 'sy' ? 'tr' : evId);
+
 function openPicker(input, query) {
+  const e = entry();
   const el = pickerEl();
   picker.input = input;
-  picker.items = searchSkills(input.dataset.event, query);
+  picker.items = searchSkills(e.disc, searchApp(e, input.dataset.ev), query);
   picker.active = query && picker.items.length ? 0 : -1;
   input.setAttribute('aria-expanded', 'true');
   renderPicker(query);
@@ -291,28 +879,29 @@ function closePicker() {
 }
 
 function renderPicker(query) {
-  const groups = APPARATUS[picker.input.dataset.event].groups;
+  const e = entry();
+  const spec = eventSpec(e, picker.input.dataset.ev);
   const html = [];
-  let lastEg;
+  let lastHead;
   picker.items.forEach((s, i) => {
-    if (!query && s.eg !== lastEg) {
-      html.push(
-        `<div class="pop-head" role="presentation">${s.eg ? `EG ${ROMAN[s.eg]} · ${esc(groups[s.eg])}` : 'No element group (no EG bonus)'}</div>`
-      );
-      lastEg = s.eg;
+    const head = e.disc === 'tt' ? null : e.disc === 'mag' ? (s.eg ? `EG ${ROMAN[s.eg]} · ${spec.groups?.[s.eg - 1]?.label.replace(/^[IV]+\. /, '') || ''}` : 'No element group (no EG bonus)') : s.group ? `Group ${s.group}` : 'Skills';
+    if (!query && head && head !== lastHead) {
+      html.push(`<div class="pop-head" role="presentation">${esc(head)}</div>`);
+      lastHead = head;
     }
+    const meta = e.disc === 'tt' ? `${esc(s.notation || '')} · ${fmt(s.dd)}` : `${esc(s.value)}${s.eg ? ` · EG ${ROMAN[s.eg]}` : s.group ? ` · G${s.group}` : ''}`;
     html.push(`
-      <div class="pop-opt${i === picker.active ? ' active' : ''}" role="option" id="pop-opt-${i}" data-skill="${i}"
-        aria-selected="${i === picker.active}"${s.note ? ` title="Note: ${esc(s.note)}"` : ''}>
+      <div class="pop-opt${i === picker.active ? ' active' : ''}" role="option" id="pop-opt-${i}" data-skill="${i}" aria-selected="${i === picker.active}"${s.note ? ` title="Note: ${esc(s.note)}"` : ''}>
         <span class="src-badge ${s.src.toLowerCase()}">${s.src}</span>
         <span class="pop-name">${esc(s.name)}${s.eponym ? ` <span class="pop-eponym">(${esc(s.eponym)})</span>` : ''}</span>
-        <span class="pop-meta">${esc(s.value)}${s.eg ? ` · EG ${ROMAN[s.eg]}` : ''}</span>
+        <span class="pop-meta">${meta}</span>
       </div>`);
   });
+  const srcs = [...new Set(picker.items.map((s) => s.src))];
   html.push(
     picker.items.length
-      ? `<div class="pop-foot"><span class="src-badge ucg">UCG</span> UCG Code of Points <span class="src-badge wg">WG</span> World Gymnastics Code of Points. Not listed? Type your own name and set the difficulty and EG.</div>`
-      : `<div class="pop-empty">No listed skills match. That's fine: keep your own name and choose the difficulty and element group yourself.</div>`
+      ? `<div class="pop-foot">${srcs.map((s) => `<span class="src-badge ${s.toLowerCase()}">${s}</span> ${SRC_LABEL[s] || s}`).join(' ')}. Not listed? Type your own name and set the ${e.disc === 'tt' ? 'shorthand and DD' : 'value'} yourself.</div>`
+      : `<div class="pop-empty">${e.disc === 'wag' ? 'No listed skills match. WAG skills from the Xcel and WG codes are typed in by hand: keep your own name and pick its value.' : "No listed skills match. That's fine: keep your own name and set the values yourself."}</div>`
   );
   picker.el.innerHTML = html.join('');
   setActive(picker.active);
@@ -352,16 +941,22 @@ function pickSkill(i) {
   const s = picker.items[i];
   const input = picker.input;
   if (!s || !input) return;
-  const event = input.dataset.event;
-  const idx = Number(input.dataset.idx);
-  Object.assign(selected().routines[event][idx], {
-    name: s.label,
-    letter: s.value,
-    eg: s.eg ? String(s.eg) : '',
-    skillId: s.id,
-  });
+  const e = entry();
+  const evId = input.dataset.ev;
+  const pass = input.dataset.pass;
+  const row = rowsOf(e, evId, pass)[Number(input.dataset.idx)];
+  const fam = levelInfo(e.disc, e.level).family;
+  row.name = s.label;
+  row.skillId = s.id;
+  if (e.disc === 'tt') Object.assign(row, { notation: s.notation || '', dd: s.dd });
+  else {
+    const letters = eventSpec(e, evId).letters;
+    if (letters.includes(s.value)) row.letter = s.value;
+    if (fam === 'mag') row.eg = s.eg ? String(s.eg) : '';
+    if (fam === 'infinity') row.eg = s.group ? String(s.group) : '';
+  }
   closePicker();
-  renderRoutine(event, { row: idx, part: 'name' });
+  renderRows(evId, pass, { row: Number(input.dataset.idx), part: 'name' });
   scheduleSave();
 }
 
@@ -384,494 +979,152 @@ function onPickerKey(ev) {
   } else if (ev.key === 'Tab') closePicker();
 }
 
-function skillRow(event, i, s) {
-  const groups = APPARATUS[event].groups;
-  const label = `Skill ${i + 1}`;
-  const data = `data-event="${event}" data-idx="${i}"`;
-  return `
-    <div class="skill-row" data-row="${i}">
-      <span class="col-num">
-        <button type="button" class="drag-handle" data-drag="${event}" data-idx="${i}"
-          aria-label="Move ${label}. Drag, or use the up and down arrow keys." title="Drag to reorder">${ICON_GRIP}</button>
-        <span class="num">${i + 1}</span>
-      </span>
-      <span class="col-name skill-combo">
-        <input class="skill-input" type="text" placeholder="Search or type a skill" aria-label="${label} name"
-          role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="skill-pop" autocomplete="off"
-          ${data} data-field="name" value="${esc(s.name)}" />
-        <span class="src-badge" data-calc="src"></span>
-        <button type="button" class="combo-toggle" data-combo="${event}" data-idx="${i}" tabindex="-1" aria-label="Show ${label} skill list">${ICON_CHEVRON}</button>
-      </span>
-      <select class="col-letter" aria-label="${label} difficulty" ${data} data-field="letter">
-        <option value="">–</option>
-        ${LETTERS.map((l) => `<option${l === s.letter ? ' selected' : ''}>${l}</option>`).join('')}
-      </select>
-      <select class="col-eg" aria-label="${label} element group" ${data} data-field="eg">
-        <option value="">EG –</option>
-        ${Object.entries(groups)
-          .map(([n, g]) => `<option value="${n}"${String(n) === String(s.eg) ? ' selected' : ''}>${ROMAN[n]}. ${esc(g)}</option>`)
-          .join('')}
-      </select>
-      <span class="col-value calc" data-calc="value"></span>
-      <span class="col-bonus calc" data-calc="bonus"></span>
-      <button type="button" class="remove-skill" data-remove-skill="${event}" data-idx="${i}" aria-label="Remove ${label}" title="Remove skill">${ICON_X}</button>
-      <span class="row-flag" data-calc="flag"></span>
-    </div>`;
+// ---- Live values ---------------------------------------------------------------
+
+const signed = (n) => (n == null ? '—' : n < 0 ? `−${fmt(-n)}` : fmt(n));
+
+function flagFor(it, spec) {
+  if (it.status === 'repeat') return [`Repeat of Skill ${it.repeatOf + 1}`, `Repeat of skill ${it.repeatOf + 1}: each skill only counts once`];
+  if (it.status === 'restricted') return ['Restricted', 'Above this level’s allowed difficulty: −0.50, and no value part credit'];
+  if (it.flag === 'over') return ['Check level', 'This skill is outside what this level allows'];
+  if (it.status !== 'noncounting') return ['', ''];
+  if (it.reason === 'eg') return ['Over 4 in EG', 'Only 4 skills from one element group count, so this one adds no difficulty'];
+  if (it.reason === 'sr') return ['Over 3 EG II/III', 'Only 3 EG II or III skills count before a B or higher EG I skill'];
+  if (it.reason === 'egOnly') return ['EG credit only', 'Not one of your counting skills, but it earns its element group bonus'];
+  if (it.reason === 'extraVp') return ['Extra', 'Not needed for this level’s value parts'];
+  if (it.reason === 'noValue') return ['', ''];
+  return [`Not in top ${spec.maxCounting}`, `Not in your top ${spec.maxCounting}, so it doesn't count toward difficulty`];
 }
 
-function routineRows(event, athlete) {
-  return `
-    <div class="skill-row skill-head" aria-hidden="true">
-      <span class="col-num">#</span>
-      <span class="col-name">Skill</span>
-      <span class="col-letter">Diff.</span>
-      <span class="col-eg">Element group</span>
-      <span class="col-value">Value</span>
-      <span class="col-bonus">EG bonus</span>
-      <span></span>
-    </div>
-    ${athlete.routines[event].map((s, i) => skillRow(event, i, s)).join('')}`;
-}
-
-// Re-draw one event's routine (after add / remove / reorder) and optionally
-// focus something in it: { row, part: 'name' | 'handle' } or 'add'.
-function renderRoutine(event, focus) {
-  const a = selected();
-  closePicker();
-  $(`[data-routine="${event}"]`).innerHTML = routineRows(event, a);
-  updateComputed();
-  if (focus === 'add') $(`[data-add-skill="${event}"]`)?.focus();
-  else if (focus) {
-    const row = $(`[data-routine="${event}"] [data-row="${focus.row}"]`);
-    $(focus.part === 'handle' ? '.drag-handle' : '.skill-input', row)?.focus();
+function updateRows(container, items, spec, list) {
+  for (const it of items) {
+    const rowEl = $(`[data-row="${it.idx}"]`, container);
+    if (!rowEl) continue;
+    const repeat = it.status === 'repeat';
+    const gray = repeat || it.status === 'noncounting' || it.status === 'restricted';
+    rowEl.classList.toggle('is-counting', it.status === 'counting' && it.flag !== 'over');
+    rowEl.classList.toggle('is-repeat', repeat || it.status === 'restricted' || it.flag === 'over');
+    rowEl.classList.toggle('non-counting', gray && !repeat && it.status !== 'restricted');
+    rowEl.classList.toggle('has-bonus', !!it.bonus);
+    const v = $('[data-calc="value"]', rowEl);
+    if (v) v.textContent = repeat || !it.letter ? '' : spec.columns === 'xcel' ? (it.vp ? `${it.vp} VP` : fmt(it.value)) : fmt(it.value);
+    const b = $('[data-calc="bonus"]', rowEl);
+    if (b) b.textContent = it.bonus ? `+${fmt(it.bonus)}` : '';
+    const [text, title] = flagFor(it, spec);
+    const flagEl = $('[data-calc="flag"]', rowEl);
+    flagEl.textContent = text;
+    flagEl.title = title;
+    rowEl.classList.toggle('flagged', !!text);
+    const row = list[it.idx];
+    const src = findSkill(row?.skillId)?.src || (it.name ? 'Custom' : '');
+    const badge = $('[data-calc="src"]', rowEl);
+    badge.textContent = src;
+    badge.className = `src-badge ${src.toLowerCase()}`;
+    badge.title = src === 'Custom' ? 'Not from the skill list: values are set by hand' : '';
+    $('.skill-input', rowEl).title = it.name;
   }
 }
 
-function moveSkill(event, from, to, focusPart) {
-  const list = selected().routines[event];
-  if (to < 0 || to >= list.length || to === from) return;
-  const [skill] = list.splice(from, 1);
-  list.splice(to, 0, skill);
-  renderRoutine(event, { row: to, part: focusPart });
-  scheduleSave();
-}
+function updateComputed() {
+  const a = athlete();
+  const e = entry();
+  if (!a || !e) return;
+  const D = DISCIPLINES[e.disc];
+  const score = scoreEntry(e);
+  const cur = currentEvent(e);
 
-function onEditorClick(ev) {
-  const a = selected();
-  const toggle = ev.target.closest('[data-combo]');
-  if (toggle) {
-    const input = $('.skill-input', toggle.closest('.skill-combo'));
-    if (picker.input === input) closePicker();
-    else {
-      input.focus();
-      openPicker(input, '');
+  for (const ev of D.events) {
+    const card = $(`[data-event-card="${ev.id}"]`);
+    if (!card) continue;
+    const r = score.events[ev.id];
+    const spec = eventSpec(e, ev.id);
+    $(`[data-sv="${ev.id}"]`).textContent = r.sv == null ? '—' : e.disc === 'tt' ? `DD ${fmt(r.sv)}` : fmt(r.sv);
+
+    if (ev.kind === 'vault') {
+      const v = r.vault;
+      $('#vault-info', card).innerHTML = v
+        ? [v.src ? `<div><dt>Source</dt><dd><span class="src-badge ${String(v.src).toLowerCase()}">${esc(v.src)}</span></dd></div>` : '',
+          v.eg ? `<div><dt>Element group</dt><dd>${esc(v.eg)}</dd></div>` : '',
+          v.dv != null ? `<div><dt>D score</dt><dd>${fmt(v.dv)}</dd></div>` : '',
+          v.ageBonus != null ? `<div><dt>Age bonus</dt><dd>+${fmt(v.ageBonus)}</dd></div>` : ''].join('')
+        : '';
+    } else if (ev.kind === 'passes') {
+      r.passes.forEach((items, p) => {
+        updateRows($(`[data-routine="${ev.id}"][data-pass="${p}"]`, card), items, spec, e.passes[ev.id][p].skills);
+        $(`[data-pass-dd="${p}"]`, card).textContent = `DD ${fmt(r.sums[p])}`;
+      });
+    } else {
+      updateRows($(`[data-routine="${ev.id}"]`, card), r.items, spec, e.routines[ev.id]);
+      const counting = r.items.filter((it) => it.status === 'counting').length;
+      const listed = r.items.filter((it) => it.status !== 'blank').length;
+      const count = $('[data-calc="count"]', card);
+      if (count) count.textContent = spec.columns === 'dd' ? `${listed} skill${listed === 1 ? '' : 's'} listed` : spec.maxCounting ? `${counting} of ${spec.maxCounting} counting · ${listed} listed` : `${listed} listed`;
+      $(`[data-add-skill="${ev.id}"]`, card).hidden = e.routines[ev.id].length >= MAX_ROWS;
     }
-    return;
-  }
-  const add = ev.target.closest('[data-add-skill]');
-  if (add) {
-    const e = add.dataset.addSkill;
-    const list = a.routines[e];
-    if (list.length >= MAX_ROUTINE) return;
-    list.push(blankSkill());
-    renderRoutine(e, { row: list.length - 1, part: 'name' });
-    scheduleSave();
-    return;
-  }
-  const remove = ev.target.closest('[data-remove-skill]');
-  if (remove) {
-    const e = remove.dataset.removeSkill;
-    const list = a.routines[e];
-    const i = Number(remove.dataset.idx);
-    list.splice(i, 1);
-    if (list.length < maxSkills(a)) list.push(blankSkill());
-    renderRoutine(e, { row: Math.min(i, list.length - 1), part: 'name' });
-    scheduleSave();
-  }
-}
 
-function onEditorKey(ev) {
-  if (ev.target.classList.contains('skill-input')) return onPickerKey(ev);
-  const h = ev.target.closest('.drag-handle');
-  if (!h || (ev.key !== 'ArrowUp' && ev.key !== 'ArrowDown')) return;
-  ev.preventDefault();
-  const from = Number(h.dataset.idx);
-  moveSkill(h.dataset.drag, from, from + (ev.key === 'ArrowUp' ? -1 : 1), 'handle');
-}
+    for (const o of spec.options) {
+      const row = $(`[data-option-row="${ev.id}:${o.id}"]`, card);
+      const el = $(`[data-calc="opt-${o.id}"]`, card);
+      if (!row || !el) continue;
+      if (o.deduction) {
+        const missing = !e.options?.[ev.id]?.[o.id];
+        el.textContent = missing ? `−${fmt(o.value)}` : '';
+        row.classList.toggle('on', !missing);
+        row.classList.toggle('missing', missing && r.sv != null);
+        continue;
+      }
+      const got = r.optionValues?.[o.id] || 0;
+      el.textContent = got ? `+${fmt(got)}` : '';
+      row.classList.toggle('on', !!got);
+    }
+    const vrow = $(`[data-option-row="vt:altBoard"]`, card);
+    if (vrow) vrow.classList.toggle('on', !!e.options?.vt?.altBoard);
 
-// Drag to reorder: pointer events, so it works with a mouse and on touch screens.
-function onEditorPointerDown(ev) {
-  const handle = ev.target.closest('.drag-handle');
-  if (!handle || ev.button > 0) return;
-  ev.preventDefault();
-  const event = handle.dataset.drag;
-  const from = Number(handle.dataset.idx);
-  const container = $(`[data-routine="${event}"]`);
-  const rows = $$('.skill-row[data-row]', container);
-  const dragged = rows[from];
-  const others = rows.filter((r) => r !== dragged);
-  const pageMid = (r) => {
-    const b = r.getBoundingClientRect();
-    return b.top + scrollY + b.height / 2;
-  };
-  const mids = others.map(pageMid);
-  const startY = ev.clientY + scrollY;
-  let to = from;
-
-  dragged.classList.add('dragging');
-
-  const clearMarks = () => others.forEach((r) => r.classList.remove('drop-above', 'drop-below'));
-  const move = (m) => {
-    if (m.clientY < 90) scrollBy(0, -12);
-    else if (m.clientY > innerHeight - 60) scrollBy(0, 12);
-    const y = m.clientY + scrollY;
-    dragged.style.transform = `translateY(${y - startY}px)`;
-    to = mids.filter((mid) => mid < y).length;
-    clearMarks();
-    if (to === from) return;
-    if (to < others.length) others[to].classList.add('drop-above');
-    else others[others.length - 1].classList.add('drop-below');
-  };
-  const end = () => {
-    removeEventListener('pointermove', move);
-    removeEventListener('pointerup', end);
-    removeEventListener('pointercancel', end);
-    clearMarks();
-    dragged.classList.remove('dragging');
-    dragged.style.transform = '';
-    if (to !== from) moveSkill(event, from, to, 'handle');
-  };
-  addEventListener('pointermove', move);
-  addEventListener('pointerup', end);
-  addEventListener('pointercancel', end);
-}
-
-const EXPORT_TIP =
-  "Fills in your level's UCG MAG Start Value Worksheet with the counting skills, one page per event. " +
-  'Repeated and non-counting skills are left off.';
-
-function optionControl(event, o, athlete) {
-  const v = athlete.options?.[event]?.[o.id];
-  const data = `data-option="${event}" data-opt="${o.id}"`;
-  let control;
-  if (o.kind === 'count') {
-    control = `<select ${data} aria-label="${esc(o.label)}">${Array.from({ length: o.max + 1 }, (_, n) => `<option value="${n}"${Number(v || 0) === n ? ' selected' : ''}>${n}</option>`).join('')}</select>`;
-  } else if (o.kind === 'mushroom') {
-    control = `<select ${data} aria-label="${esc(o.label)}">${Array.from({ length: 11 }, (_, n) => {
-      const x = n / 10;
-      return `<option value="${x}"${Number(v || 0) === x ? ' selected' : ''}>+${x.toFixed(1)}</option>`;
-    }).join('')}</select>`;
-  } else {
-    control = `<input type="checkbox" ${data}${v ? ' checked' : ''} />`;
-  }
-  const leading = o.kind === 'check';
-  return `
-    <label class="event-bonus${o.deduction ? ' requirement' : ''}" data-option-row="${o.id}">
-      ${leading ? control : ''}
-      <span class="event-bonus-text"><strong>${esc(o.label)}</strong><span>${esc(o.help)}</span></span>
-      ${leading ? '' : control}
-      <span class="event-bonus-value calc" data-calc="opt-${o.id}"></span>
-    </label>`;
-}
-
-function eventCard(event, athlete) {
-  const ap = APPARATUS[event];
-  const level = levelOf(athlete);
-  const groups = Object.entries(ap.groups)
-    .map(([n, g]) => `<li data-cg="${n}"><span class="cg-badge">${ROMAN[n]}</span><span>${esc(g)}</span></li>`)
-    .join('');
-  return `
-    <article class="card event-card" data-event-card="${event}" id="panel-${event}" data-panel="${event}" role="tabpanel" aria-labelledby="tab-${event}">
-      <header class="card-head">
-        <h2 class="card-title">${ap.label}</h2>
-        <div class="card-head-right">
-          <span class="sv-pill" data-sv="${event}"></span>
-          <button class="btn btn-ghost btn-sm" type="button" data-export="${event}" title="${EXPORT_TIP}">Export PDF</button>
-        </div>
-      </header>
-      <p class="routine-help">
-        List the whole routine in order, and drag <span class="grip-inline">${ICON_GRIP}</span> to reorder.
-        <strong>Each skill counts only once</strong>. Your ${maxSkills(athlete)} highest-value skills count toward difficulty,
-        with at most ${MAX_PER_EG} from one element group.
-        Counting skills are highlighted; repeats and non-counting skills are shaded gray and flagged.
-      </p>
-      <div class="skill-table" data-routine="${event}">${routineRows(event, athlete)}</div>
-      <div class="routine-actions">
-        <button class="btn btn-ghost btn-sm" type="button" data-add-skill="${event}">Add skill</button>
-        <span class="routine-count" data-calc="count"></span>
-      </div>
-      ${eventOptions(event, level).map((o) => optionControl(event, o, athlete)).join('')}
-      <div class="event-foot">
-        <ul class="cg-list">${groups}</ul>
-        <dl class="totals">
-          <div><dt>Execution</dt><dd>10.0</dd></div>
-          <div><dt>Difficulty</dt><dd data-total="difficulty"></dd></div>
-          <div><dt>EG bonus</dt><dd data-total="eg"></dd></div>
-          <div><dt>Other bonus</dt><dd data-total="bonus"></dd></div>
-          <div><dt>Short of ${MIN_SKILLS}</dt><dd data-total="short"></dd></div>
-          <div class="grand"><dt>Start value</dt><dd data-total="sv"></dd></div>
-        </dl>
-        <p class="sv-note" data-calc="sv-note" hidden></p>
-      </div>
-    </article>`;
-}
-
-function vaultCard(athlete) {
-  const level = levelOf(athlete);
-  return `
-    <article class="card vault-card" id="panel-vt" data-panel="vt" role="tabpanel" aria-labelledby="tab-vt">
-      <header class="card-head">
-        <h2 class="card-title">Vault</h2>
-        <div class="card-head-right"><span class="sv-pill" data-sv="vt"></span></div>
-      </header>
-      <div class="vault-body">
-        <label class="field grow"><span>Select your vault</span>
-          <select id="f-vault">${vaultOptions(athlete.vault, level)}</select></label>
-        <dl class="vault-info" id="vault-info"></dl>
-      </div>
-      <p class="vault-note" id="vault-note" hidden></p>
-    </article>`;
-}
-
-function renderEditor() {
-  const ed = $('#editor');
-  if (!ed) return;
-  const a = selected();
-  if (!a) {
-    ed.innerHTML = `
-      <div class="card empty-editor">
-        <h2>Add your first athlete</h2>
-        <p>Each athlete gets floor, pommel horse, rings, vault, parallel bars and high bar. Start values update as you type, and you can export filled-in UCG start value worksheets.</p>
-        <button class="btn btn-primary" type="button" id="empty-add">Add athlete</button>
-      </div>`;
-    $('#empty-add').onclick = addAthlete;
-    return;
+    $$('.cg-list li', card).forEach((li) => li.classList.toggle('earned', (r.earnedGroups || []).includes(Number(li.dataset.cg))));
+    const totals = r.totals || [];
+    $(`[data-totals="${ev.id}"]`, card).innerHTML = totals
+      .map(([label, value], i) => `<div class="${i === totals.length - 1 ? 'grand' : ''}"><dt>${esc(label)}</dt><dd>${i === totals.length - 1 ? fmt(value) : signed(value)}</dd></div>`)
+      .join('');
+    const notes = [...(r.notes || []), ...(r.warnings || [])];
+    $(`[data-notes="${ev.id}"]`, card).innerHTML = notes.length ? `<ul>${notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul>` : '';
   }
 
-  ed.innerHTML = `
-    <div class="editor-head">
-      <div class="fields">
-        <label class="field grow"><span>Gymnast name</span>
-          <input id="f-name" type="text" data-field="name" value="${esc(a.name)}" placeholder="Name" /></label>
-        <label class="field"><span>Club</span>
-          <input id="f-club" type="text" data-field="club" value="${esc(a.club)}" placeholder="Club / school" /></label>
-        <label class="field"><span>Level</span>
-          <select id="f-level">${LEVEL_IDS.map((l) => `<option value="${l}"${l === levelOf(a) ? ' selected' : ''}>${esc(LEVELS[l].label)}</option>`).join('')}</select></label>
-      </div>
-      <div class="editor-actions">
-        <span id="save-status" class="save-status"></span>
-        <button class="btn btn-primary" type="button" id="export-all" title="${EXPORT_TIP}">Export PDF</button>
-        <button class="btn btn-quiet" type="button" id="delete-athlete">Delete</button>
-      </div>
-    </div>
-
-    <div class="summary" id="summary" role="tablist" aria-label="Events"></div>
-
-    ${ALL_EVENTS.map((e) => (e === 'vt' ? vaultCard(a) : eventCard(e, a))).join('')}
-  `;
-
-  $('#f-name').oninput = (ev) => {
-    a.name = ev.target.value;
-    renderListSoon();
-    scheduleSave();
-  };
-  $('#f-club').oninput = (ev) => {
-    a.club = ev.target.value;
-    renderListSoon();
-    scheduleSave();
-  };
-  $('#f-level').onchange = (ev) => {
-    a.level = ev.target.value;
-    normalize(a);
-    renderList();
-    renderEditor();
-    scheduleSave();
-  };
-  $('#f-vault').onchange = (ev) => {
-    a.vault = ev.target.value;
-    updateComputed();
-    scheduleSave();
-  };
-  $('#delete-athlete').onclick = removeAthlete;
-  $('#export-all').onclick = (ev) => runExport(ev.currentTarget, EVENTS);
-  $$('[data-export]', ed).forEach((b) => (b.onclick = () => runExport(b, [b.dataset.export])));
-
-  ed.oninput = onSkillInput;
-  ed.onclick = onEditorClick;
-  ed.onkeydown = onEditorKey;
-  ed.onpointerdown = onEditorPointerDown;
-  ed.onmousedown = (ev) => ev.target.closest('[data-combo]') && ev.preventDefault(); // keep focus in the skill input
-  ed.onfocusout = (ev) => ev.target === picker.input && closePicker();
+  $('#summary').innerHTML =
+    D.events
+      .map((ev) => {
+        const sv = score.events[ev.id].sv;
+        const on = ev.id === cur;
+        return `<button type="button" class="stat stat-tab${on ? ' active' : ''}" role="tab" id="tab-${ev.id}" data-tab="${ev.id}"
+          aria-selected="${on}" aria-controls="panel-${ev.id}" tabindex="${on ? 0 : -1}">
+          <span>${esc(ev.short)}</span><strong>${sv == null ? '—' : fmt(sv)}</strong></button>`;
+      })
+      .join('') + (score.allAround == null ? '' : `<div class="stat stat-aa"><span>All-Around</span><strong>${fmt(score.allAround)}</strong></div>`);
+  $('#summary').dataset.count = D.events.length + (score.allAround == null ? 0 : 1);
   $('#summary').onclick = (ev) => {
     const t = ev.target.closest('[data-tab]');
     if (t) selectTab(t.dataset.tab);
   };
   $('#summary').onkeydown = onTabKey;
-  updateComputed();
-}
-
-function onSkillInput(ev) {
-  const t = ev.target;
-  const a = selected();
-  if (t.dataset.option) {
-    const opts = ((a.options ||= {})[t.dataset.option] ||= {});
-    opts[t.dataset.opt] = t.type === 'checkbox' ? t.checked : Number(t.value);
-    updateComputed();
-    scheduleSave();
-    return;
-  }
-  if (!t.dataset.event) return;
-  const row = a.routines[t.dataset.event][Number(t.dataset.idx)];
-  row[t.dataset.field] = t.value;
-  if (t.dataset.field === 'name') {
-    // Editing a picked skill's name makes it a custom skill.
-    if (row.skillId && findSkill(row.skillId)?.label !== t.value) delete row.skillId;
-    openPicker(t, t.value);
-  }
-  updateComputed();
-  scheduleSave();
-}
-
-function showPanel() {
-  $$('[data-panel]').forEach((el) => (el.hidden = el.dataset.panel !== state.tab));
 }
 
 function selectTab(tab, focus = false) {
-  state.tab = tab;
-  try {
-    localStorage.setItem('sv-tab', tab);
-  } catch {}
+  const e = entry();
+  state.tab[e.id] = tab;
+  writePref('rp-tabs', state.tab);
+  closePicker();
+  $$('[data-event-card]').forEach((c) => (c.hidden = c.dataset.eventCard !== tab));
   updateComputed();
   if (focus) $(`#tab-${tab}`)?.focus();
 }
 
 function onTabKey(ev) {
-  const i = TABS.indexOf(state.tab);
-  const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: TABS.length - 1 }[ev.key];
+  const e = entry();
+  const ids = DISCIPLINES[e.disc].events.map((x) => x.id);
+  const i = ids.indexOf(currentEvent(e));
+  const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: ids.length - 1 }[ev.key];
   if (next == null || !ev.target.closest('[role="tab"]')) return;
   ev.preventDefault();
-  selectTab(TABS[(next + TABS.length) % TABS.length], true);
-}
-
-let listTimer;
-function renderListSoon() {
-  clearTimeout(listTimer);
-  listTimer = setTimeout(renderList, 250);
-}
-
-function updateComputed() {
-  const a = selected();
-  if (!a) return;
-  const score = scoreAthlete(a);
-  const level = score.level;
-  const max = maxSkills(a);
-
-  // Vault
-  const v = score.vault;
-  $('#vault-info').innerHTML = v
-    ? `<div><dt>Source</dt><dd><span class="src-badge ${v.src.toLowerCase()}">${v.src}</span></dd></div>
-       ${v.src === 'WG' ? `<div><dt>Element group</dt><dd>${esc(v.eg)}</dd></div><div><dt>VT #</dt><dd>${esc(v.id)}</dd></div>` : ''}
-       <div><dt>D score</dt><dd>${fmt(v.dv)}</dd></div>`
-    : '';
-  const vNote = $('#vault-note');
-  vNote.hidden = !(v?.banned || v?.capped);
-  vNote.textContent = v?.banned
-    ? 'Flipping vaults are not allowed at the Developmental level and score 0. Choose a handspring vault with no salto.'
-    : v?.capped
-      ? `Start value capped at ${fmt(LEVELS[level].cap)} (${fmt(v.raw)} before the cap).`
-      : '';
-  $('[data-sv="vt"]').textContent = v ? v.startValue.toFixed(1) : '—';
-
-  for (const e of EVENTS) {
-    const card = $(`[data-event-card="${e}"]`);
-    const r = score.events[e];
-    for (const it of r.items) {
-      const rowEl = $(`[data-row="${it.idx}"]`, card);
-      if (!rowEl) continue;
-      const repeat = it.status === 'repeat';
-      const nonCounting = it.status === 'noncounting';
-      rowEl.classList.toggle('is-counting', it.status === 'counting');
-      rowEl.classList.toggle('is-repeat', repeat);
-      rowEl.classList.toggle('non-counting', nonCounting);
-      rowEl.classList.toggle('has-bonus', !!it.bonus);
-      $('[data-calc="value"]', rowEl).textContent = repeat ? '—' : it.letter ? fmt(it.value) : '';
-      $('[data-calc="bonus"]', rowEl).textContent = it.bonus ? `+${fmt(it.bonus)}` : '';
-      // A short flag in place of Value / Bonus keeps every row the same
-      // height; the full explanation is in its tooltip.
-      const flagEl = $('[data-calc="flag"]', rowEl);
-      const overEg = nonCounting && it.reason === 'eg';
-      const overSr = nonCounting && it.reason === 'sr';
-      flagEl.textContent = repeat
-        ? `Repeat of Skill ${it.repeatOf + 1}`
-        : overEg
-          ? `Over ${MAX_PER_EG} in EG ${ROMAN[it.eg]}`
-          : overSr
-            ? `Over ${SR_MAX_STATIC} EG II/III`
-            : nonCounting
-              ? `Not in Top ${max}`
-              : '';
-      flagEl.title = repeat
-        ? `Repeat of skill ${it.repeatOf + 1}: each skill only counts once`
-        : overEg
-          ? `Only ${MAX_PER_EG} skills from one element group count, so this one doesn't count toward difficulty`
-          : overSr
-            ? `Only ${SR_MAX_STATIC} EG II or III skills count before a B or higher EG I skill, so this one doesn't count toward difficulty`
-            : nonCounting
-              ? `Not in your top ${max}, so it doesn't count toward difficulty`
-              : '';
-      const src = findSkill(a.routines[e][it.idx]?.skillId)?.src || (it.name ? 'Custom' : '');
-      const badge = $('[data-calc="src"]', rowEl);
-      badge.textContent = src;
-      badge.className = `src-badge ${src.toLowerCase()}`;
-      badge.title = src === 'Custom' ? 'Not from the skill list: difficulty and EG are set by hand' : '';
-      $('.skill-input', rowEl).title = it.name; // long names are cut off in the box
-    }
-    const filled = r.items.filter((it) => it.status !== 'blank').length;
-    $('[data-calc="count"]', card).textContent = `${r.rows.length} of ${max} counting · ${filled} skill${filled === 1 ? '' : 's'} listed`;
-    $(`[data-add-skill="${e}"]`, card).hidden = a.routines[e].length >= MAX_ROUTINE;
-    $$('.cg-list li', card).forEach((li) => li.classList.toggle('earned', r.egBonus[li.dataset.cg] != null));
-
-    for (const o of eventOptions(e, level)) {
-      const row = $(`[data-option-row="${o.id}"]`, card);
-      const el = $(`[data-calc="opt-${o.id}"]`, card);
-      if (o.deduction) {
-        const missing = !a.options?.[e]?.[o.id];
-        el.textContent = missing ? `−${fmt(o.value)}` : '';
-        row.classList.toggle('on', !missing);
-        row.classList.toggle('missing', missing && r.rows.length > 0);
-        continue;
-      }
-      const got = r.optionValues[o.id] || 0;
-      el.textContent = got ? `+${fmt(got)}` : '';
-      row.classList.toggle('on', !!got);
-    }
-
-    $('[data-total="difficulty"]', card).textContent = fmt(r.difficulty);
-    $('[data-total="eg"]', card).textContent = fmt(r.egTotal);
-    $('[data-total="bonus"]', card).textContent = fmt(r.bonus);
-    $('[data-total="short"]', card).textContent = r.shortDeduction ? `−${fmt(r.shortDeduction)}` : '0.0';
-    $('[data-total="sv"]', card).textContent = r.startValue.toFixed(1);
-    const notes = [];
-    if (r.capped) notes.push(`Start value capped at ${fmt(r.cap)} (${fmt(r.raw)} before the cap).`);
-    if (r.deductions) notes.push(`Expected neutral deduction −${fmt(r.deductions)}: ${fmt(r.afterDeductions)} after deductions.`);
-    const noteEl = $('[data-calc="sv-note"]', card);
-    noteEl.textContent = notes.join(' ');
-    noteEl.hidden = !notes.length;
-    $(`[data-sv="${e}"]`).textContent = r.rows.length ? r.startValue.toFixed(1) : '—';
-  }
-
-  // The score tiles double as the event tabs.
-  $('#summary').innerHTML =
-    ALL_EVENTS.map((id) => {
-      const sv = id === 'vt' ? v?.startValue : score.events[id].rows.length ? score.events[id].startValue : null;
-      const on = id === state.tab;
-      return `<button type="button" class="stat stat-tab${on ? ' active' : ''}" role="tab" id="tab-${id}" data-tab="${id}"
-          aria-selected="${on}" aria-controls="panel-${id}" tabindex="${on ? 0 : -1}">
-          <span>${APPARATUS[id].short}</span><strong>${sv == null ? '—' : sv.toFixed(1)}</strong></button>`;
-    }).join('') + `<div class="stat stat-aa"><span>All-Around</span><strong>${score.allAround.toFixed(1)}</strong></div>`;
-  showPanel();
-
-  renderListSoon();
+  selectTab(ids[(next + ids.length) % ids.length], true);
 }
 
 async function runExport(button, events) {
@@ -879,12 +1132,13 @@ async function runExport(button, events) {
   button.disabled = true;
   button.textContent = 'Building PDF…';
   try {
-    const { exportAthletePdf, downloadPdf } = await import('./pdf.js');
-    const athlete = selected();
-    downloadPdf(await exportAthletePdf(athlete, events), athlete, events);
-  } catch (e) {
-    console.error(e);
-    alert(`Could not create the PDF: ${e?.message || e}`);
+    const { exportEntryPdf, downloadPdf } = await import('./pdf.js');
+    const a = athlete();
+    const e = entry();
+    downloadPdf(await exportEntryPdf(a, e, events), a, e, events);
+  } catch (err) {
+    console.error(err);
+    alert(`Could not create the PDF: ${err?.message || err}`);
   } finally {
     button.disabled = false;
     button.textContent = label;
@@ -898,6 +1152,7 @@ async function onUser(user) {
   renderUserArea();
   if (!user) {
     state.athletes = [];
+    renderAthletePicker();
     renderSignIn();
     return;
   }
@@ -905,18 +1160,18 @@ async function onUser(user) {
   app.innerHTML = `<p class="loading">Loading athletes…</p>`;
   try {
     state.athletes = await store.listAthletes();
-    for (const a of state.athletes) if (normalize(a)) store.saveAthlete(a).catch(console.error);
+    for (const a of state.athletes) if (normalizeAthlete(a)) store.saveAthlete(a).catch(console.error);
   } catch (e) {
     console.error(e);
     app.innerHTML = `<p class="error">Could not load athletes: ${esc(e?.message || e)}</p>`;
     return;
   }
-  let remembered = null;
-  try {
-    remembered = localStorage.getItem('sv-selected');
-  } catch {}
-  state.selectedId = state.athletes.some((a) => a.id === remembered) ? remembered : sortedAthletes()[0]?.id ?? null;
-  renderShell();
+  const remembered = readPref('rp-athlete', null);
+  const first = state.athletes.find((a) => a.id === remembered) || sortedAthletes()[0];
+  state.athleteId = first?.id ?? null;
+  state.entryId = first?.entries[0]?.id ?? null;
+  state.showAdd = !!first && !first.entries.length;
+  renderAll();
 }
 
 store.init(onUser).catch((e) => {

@@ -1,7 +1,8 @@
 // UCG MAG start value rules (2026-2028), from the UCG MAG Rules breakdown and
 // rules policy, the MAG start value worksheets, and the MAG Routine
 // Composition Planner spreadsheet.
-import { VAULTS } from './vaults.js';
+import { VAULTS } from '../data/mag-vaults.js';
+import { MASTERS_LETTERS, mastersValue, meetsRequirement, vaultAgeBonus } from './masters.js';
 
 export const EXECUTION = 10;
 export const MIN_SKILLS = 6;
@@ -32,7 +33,16 @@ export const LEVELS = {
     shortDeduction: 1.0,
     cap: null,
   },
+  // Values depend on the age decade (masters.js); no cap.
+  masters: {
+    label: 'Masters',
+    maxSkills: 6,
+    shortDeduction: 1.0,
+    cap: null,
+    masters: true,
+  },
 };
+export const lettersFor = (level) => (level === 'masters' ? MASTERS_LETTERS : LETTERS);
 export const LEVEL_IDS = Object.keys(LEVELS);
 
 export const EVENTS = ['fx', 'ph', 'sr', 'pb', 'hb']; // vault is scored separately
@@ -96,7 +106,7 @@ export function eventOptions(event, level) {
   if (event === 'ph' && level === 'dev') {
     o.push({ id: 'mushroom', kind: 'mushroom', label: 'Mushroom bonus', help: '+0.1 per circle, +0.2 per other skill; top 5 count, max +1.0' });
   }
-  if (event === 'sr') {
+  if (event === 'sr' && level !== 'masters') {
     o.push({ id: 'strength', kind: 'check', value: 0.3, label: 'C or higher strength skill', help: 'One-time +0.3' });
     if (level === 'adv') {
       o.push({ id: 'swingHs', kind: 'check', value: 0.3, deduction: true, label: 'Routine includes a swing to handstand', help: 'Required: -0.3 neutral deduction if missing' });
@@ -125,6 +135,8 @@ export const skillKey = (name) => String(name || '').toLowerCase().replace(/[^a-
 
 // Element group bonus for one group, from the highest-value counting skill in it.
 function groupBonus(level, event, eg, value) {
+  // Masters: +0.5 per group; the dismount group is worth the dismount's value.
+  if (level === 'masters') return eg === 4 && event !== 'fx' ? value : 0.5;
   if (level === 'dev') return 0.5;
   if (eg === 1) return 0.5;
   if (level === 'int') return value >= 0.2 ? 0.5 : 0.3;
@@ -152,13 +164,14 @@ function groupBonus(level, event, eg, value) {
  *   rows    counting skills in routine order
  *   and totals.
  */
-export function scoreRoutine(event, level, skills = [], options = {}) {
+export function scoreRoutine(event, level, skills = [], options = {}, { decade } = {}) {
   const L = LEVELS[level] || LEVELS.int;
+  const value = (letter) => (L.masters ? mastersValue(letter, decade) ?? 0 : letterValue(letter));
   const items = skills.map((s, idx) => ({
     idx,
     name: String(s?.name || '').trim(),
     letter: s?.letter || '',
-    value: letterValue(s?.letter),
+    value: value(s?.letter),
     eg: s?.eg ? Number(s.eg) : null,
     bonus: 0,
     status: isFilled(s) ? null : 'blank',
@@ -213,7 +226,7 @@ export function scoreRoutine(event, level, skills = [], options = {}) {
   const egBonus = {};
   for (const g of [1, 2, 3, 4]) {
     const best = rows
-      .filter((r) => r.eg === g && r.letter)
+      .filter((r) => r.eg === g && r.letter && (!L.masters || meetsRequirement(r.letter, decade)))
       .sort((a, b) => b.value - a.value || a.idx - b.idx)[0];
     if (!best) continue;
     best.bonus = groupBonus(level, event, g, best.value);
@@ -244,7 +257,9 @@ export function scoreRoutine(event, level, skills = [], options = {}) {
   bonus = round1(bonus);
   deductions = round1(deductions);
 
-  const shortBy = Math.max(0, MIN_SKILLS - rows.length);
+  // Masters: Misc skills only count toward routine length from the 50s up.
+  const lengthRows = L.masters ? rows.filter((r) => meetsRequirement(r.letter, decade)) : rows;
+  const shortBy = Math.max(0, MIN_SKILLS - lengthRows.length);
   const shortDeduction = round1(shortBy * L.shortDeduction);
   const raw = round1(EXECUTION + difficulty + egTotal + bonus);
   const capped = L.cap != null && raw > L.cap;
@@ -273,10 +288,17 @@ export function findVault(id) {
   return VAULTS.find((v) => v.id === String(id)) ?? null;
 }
 
-export function scoreVault(level, id) {
-  const v = findVault(id);
-  if (!v) return null;
+// Masters: a vault not in the WG or UCG CoP is worth 0.0 plus the age bonus.
+export const OTHER_VAULT = { id: 'other', name: 'Other vault (not in the WG or UCG CoP)', eponym: '', eg: '', value: 0, adv: 0, flipping: false, src: 'Custom' };
+
+export function scoreVault(level, id, { decade } = {}) {
   const L = LEVELS[level] || LEVELS.int;
+  const v = id === 'other' && L.masters ? OTHER_VAULT : findVault(id);
+  if (!v) return null;
+  if (L.masters) {
+    const ageBonus = vaultAgeBonus('mag', decade);
+    return { ...v, dv: v.value, ageBonus, banned: false, capped: false, raw: round1(EXECUTION + v.value + ageBonus), startValue: round1(EXECUTION + v.value + ageBonus) };
+  }
   const dv = level === 'adv' ? v.adv : v.value;
   if (level === 'dev' && v.flipping) {
     return { ...v, dv, banned: true, capped: false, startValue: 0 };
@@ -288,9 +310,10 @@ export function scoreVault(level, id) {
 
 export function scoreAthlete(athlete) {
   const level = LEVELS[athlete.level] ? athlete.level : 'int';
-  const vault = scoreVault(level, athlete.vault);
+  const ctx = { decade: athlete.decade };
+  const vault = scoreVault(level, athlete.vault, ctx);
   const events = Object.fromEntries(
-    EVENTS.map((e) => [e, scoreRoutine(e, level, athlete.routines?.[e] || [], athlete.options?.[e] || {})])
+    EVENTS.map((e) => [e, scoreRoutine(e, level, athlete.routines?.[e] || [], athlete.options?.[e] || {}, ctx)])
   );
   const allAround = round1((vault?.startValue || 0) + EVENTS.reduce((t, e) => t + events[e].startValue, 0));
   return { level, vault, events, allAround };

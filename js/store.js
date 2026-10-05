@@ -38,7 +38,7 @@ export async function signOut() {
 
 // ---- Athletes -------------------------------------------------------------
 
-const LOCAL_KEY = 'mag-athletes';
+const LOCAL_KEY = 'rp-athletes';
 const readLocal = () => {
   try {
     return JSON.parse(localStorage.getItem(LOCAL_KEY)) || [];
@@ -48,8 +48,9 @@ const readLocal = () => {
 };
 const writeLocal = (list) => localStorage.setItem(LOCAL_KEY, JSON.stringify(list));
 
-// MAG athletes are kept apart from any other planner using the same Firebase project.
-const athletesCol = () => fb.collection(db, 'users', auth.currentUser.uid, 'magAthletes');
+// Athletes for the combined planner (each holds its levels as entries). The MAG-only
+// planner's data is in 'magAthletes' and is left alone.
+const athletesCol = () => fb.collection(db, 'users', auth.currentUser.uid, 'athletes');
 
 export function newId() {
   return crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random();

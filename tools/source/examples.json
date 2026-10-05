@@ -1,0 +1,6466 @@
+[
+  {
+    "id": "tt-nf-tr-1",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 1",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Seat Drop",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn to Feet from Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn to Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Return to Feet from Seat",
+        "dd": 0.0
+      }
+    ],
+    "totalDd": 0.2
+  },
+  {
+    "id": "tt-nf-tr-2",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 2",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Full Turn",
+        "dd": 0.2
+      },
+      {
+        "name": "Seat Drop",
+        "dd": 0.0
+      },
+      {
+        "name": "Swivel Hip",
+        "dd": 0.1
+      },
+      {
+        "name": "Return to Feet from Seat",
+        "dd": 0.0
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      }
+    ],
+    "totalDd": 0.4
+  },
+  {
+    "id": "tt-nf-tr-3",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 3",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn to Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Swivel Hip",
+        "dd": 0.1
+      },
+      {
+        "name": "Half Turn to Feet from Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Full Turn",
+        "dd": 0.2
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      }
+    ],
+    "totalDd": 0.6
+  },
+  {
+    "id": "tt-nf-tr-4",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 4",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Full Turn",
+        "dd": 0.2
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Seat Drop",
+        "dd": 0.0
+      },
+      {
+        "name": "Swivel Hip",
+        "dd": 0.1
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Return to Feet from Seat",
+        "dd": 0.0
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Front Drop",
+        "dd": 0.1
+      },
+      {
+        "name": "Return to Feet from Front",
+        "dd": 0.1
+      }
+    ],
+    "totalDd": 0.6
+  },
+  {
+    "id": "tt-nf-tr-5",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 5",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Seat Drop",
+        "dd": 0.0
+      },
+      {
+        "name": "Swivel Hip",
+        "dd": 0.1
+      },
+      {
+        "name": "Seat to Front",
+        "dd": 0.1
+      },
+      {
+        "name": "Front to Doggy",
+        "dd": 0.0
+      },
+      {
+        "name": "Return to Feet from Doggy",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      }
+    ],
+    "totalDd": 0.8
+  },
+  {
+    "id": "tt-nf-tr-6",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 6",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Full Turn",
+        "dd": 0.2
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn to Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Swivel Hip",
+        "dd": 0.1
+      },
+      {
+        "name": "Half Turn to Feet from Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Front 3/4",
+        "dd": 0.3
+      },
+      {
+        "name": "Return to Feet from Back",
+        "dd": 0.1
+      }
+    ],
+    "totalDd": 1.0
+  },
+  {
+    "id": "tt-nf-tr-7",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 7",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Full Turn",
+        "dd": 0.2
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn to Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Swivel Hip",
+        "dd": 0.1
+      },
+      {
+        "name": "Half Turn to Feet from Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      }
+    ],
+    "totalDd": 1.1
+  },
+  {
+    "id": "tt-nf-tr-8",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 8",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Front Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn to Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Swivel Hip",
+        "dd": 0.1
+      },
+      {
+        "name": "Half Turn to Feet from Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Front Drop",
+        "dd": 0.1
+      },
+      {
+        "name": "Half Turn to Feet from Front",
+        "dd": 0.2
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Full Turn",
+        "dd": 0.2
+      }
+    ],
+    "totalDd": 1.3
+  },
+  {
+    "id": "tt-nf-tr-9",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 9",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Seat Drop",
+        "dd": 0.0
+      },
+      {
+        "name": "Swivel Hip",
+        "dd": 0.1
+      },
+      {
+        "name": "Half Turn to Feet from Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Full Turn",
+        "dd": 0.2
+      },
+      {
+        "name": "Front 3/4",
+        "dd": 0.3
+      },
+      {
+        "name": "Return to Feet from Back",
+        "dd": 0.1
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      }
+    ],
+    "totalDd": 1.3
+  },
+  {
+    "id": "tt-nf-tr-10",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 10",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Drop",
+        "dd": 0.1
+      },
+      {
+        "name": "Pullover",
+        "dd": 0.3
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Seat Drop",
+        "dd": 0.0
+      },
+      {
+        "name": "Swivel Hip",
+        "dd": 0.1
+      },
+      {
+        "name": "Return to Feet from Seat",
+        "dd": 0.0
+      },
+      {
+        "name": "Full Turn",
+        "dd": 0.2
+      }
+    ],
+    "totalDd": 1.3
+  },
+  {
+    "id": "tt-nf-tr-11",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 11",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back 3/4",
+        "dd": 0.3
+      },
+      {
+        "name": "Return to Feet from Front",
+        "dd": 0.1
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Barani Tuck",
+        "dd": 0.6
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Return to Feet from Seat",
+        "dd": 0.0
+      },
+      {
+        "name": "Full Turn",
+        "dd": 0.2
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Drop",
+        "dd": 0.1
+      },
+      {
+        "name": "Return to Feet from Back",
+        "dd": 0.1
+      }
+    ],
+    "totalDd": 1.4
+  },
+  {
+    "id": "tt-nf-tr-12",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 12",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Drop",
+        "dd": 0.1
+      },
+      {
+        "name": "Pullover",
+        "dd": 0.3
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Seat Drop",
+        "dd": 0.0
+      },
+      {
+        "name": "Swivel Hip",
+        "dd": 0.1
+      },
+      {
+        "name": "Seat to Doggy",
+        "dd": 0.1
+      },
+      {
+        "name": "Doggy Front 3/4",
+        "dd": 0.3
+      }
+    ],
+    "totalDd": 1.5
+  },
+  {
+    "id": "tt-nf-tr-13",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 13",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Front Drop",
+        "dd": 0.1
+      },
+      {
+        "name": "Front to Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Return to Feet from Seat",
+        "dd": 0.0
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Half Turn to Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Swivel Hip",
+        "dd": 0.1
+      },
+      {
+        "name": "Half Turn to Feet from Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Pike",
+        "dd": 0.6
+      }
+    ],
+    "totalDd": 1.6
+  },
+  {
+    "id": "tt-nf-tr-14",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 14",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Drop",
+        "dd": 0.1
+      },
+      {
+        "name": "Back to Front",
+        "dd": 0.2
+      },
+      {
+        "name": "Return to Feet from Front",
+        "dd": 0.1
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn to Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Half Turn to Feet from Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Front Pike",
+        "dd": 0.6
+      }
+    ],
+    "totalDd": 1.7
+  },
+  {
+    "id": "tt-nf-tr-15",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 15",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Full Turn",
+        "dd": 0.2
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Seat Drop",
+        "dd": 0.0
+      },
+      {
+        "name": "Swivel Hip",
+        "dd": 0.1
+      },
+      {
+        "name": "Return to Feet from Seat",
+        "dd": 0.0
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Front Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Back Drop",
+        "dd": 0.1
+      },
+      {
+        "name": "Pullover",
+        "dd": 0.3
+      }
+    ],
+    "totalDd": 1.8
+  },
+  {
+    "id": "tt-nf-tr-16",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 16",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Front Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Seat Drop",
+        "dd": 0.0
+      },
+      {
+        "name": "Seat to Front",
+        "dd": 0.1
+      },
+      {
+        "name": "Front to Back",
+        "dd": 0.2
+      },
+      {
+        "name": "Cradle",
+        "dd": 0.3
+      },
+      {
+        "name": "Return to Feet from Back",
+        "dd": 0.1
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      }
+    ],
+    "totalDd": 1.8
+  },
+  {
+    "id": "tt-nf-tr-17",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 17",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Front 3/4",
+        "dd": 0.3
+      },
+      {
+        "name": "Half Turn to Feet from Back",
+        "dd": 0.2
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Half Turn to Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Swivel Hip",
+        "dd": 0.1
+      },
+      {
+        "name": "Return to Feet from Seat",
+        "dd": 0.0
+      }
+    ],
+    "totalDd": 1.9
+  },
+  {
+    "id": "tt-nf-tr-18",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 18",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Drop",
+        "dd": 0.1
+      },
+      {
+        "name": "Pullover",
+        "dd": 0.3
+      },
+      {
+        "name": "Front 3/4",
+        "dd": 0.3
+      },
+      {
+        "name": "Half Turn to Feet from Back",
+        "dd": 0.2
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.2
+      },
+      {
+        "name": "Front Drop",
+        "dd": 0.1
+      },
+      {
+        "name": "Return to Feet from Front",
+        "dd": 0.1
+      },
+      {
+        "name": "Full Turn",
+        "dd": 0.2
+      }
+    ],
+    "totalDd": 2.0,
+    "note": "Sheet lists 'Straddle Jump' at DD 0.2 (skill 7); Straddle Jump is 0.0 everywhere else in the sheet. The sheet total (2.0) includes the 0.2."
+  },
+  {
+    "id": "tt-nf-tr-19",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 19",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Airplane",
+        "dd": 0.2
+      },
+      {
+        "name": "Front to Back",
+        "dd": 0.2
+      },
+      {
+        "name": "Pullover",
+        "dd": 0.3
+      },
+      {
+        "name": "Front 3/4",
+        "dd": 0.3
+      },
+      {
+        "name": "Return to Feet from Back",
+        "dd": 0.1
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      }
+    ],
+    "totalDd": 2.3
+  },
+  {
+    "id": "tt-nf-tr-20",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Trampoline Routine 20",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Drop",
+        "dd": 0.1
+      },
+      {
+        "name": "Cradle",
+        "dd": 0.3
+      },
+      {
+        "name": "Half Turn to Feet from Back",
+        "dd": 0.2
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Front 3/4",
+        "dd": 0.3
+      },
+      {
+        "name": "Return to Feet from Back",
+        "dd": 0.1
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Airplane",
+        "dd": 0.2
+      },
+      {
+        "name": "Half Turn to Feet from Front",
+        "dd": 0.2
+      }
+    ],
+    "totalDd": 2.5
+  },
+  {
+    "id": "tt-if-tr-1",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 1",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Front Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Seat Drop",
+        "dd": 0.0
+      },
+      {
+        "name": "Swivel Hip",
+        "dd": 0.1
+      },
+      {
+        "name": "Return to Feet from Seat",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Drop",
+        "dd": 0.1
+      },
+      {
+        "name": "Ballout Tuck",
+        "dd": 0.6
+      }
+    ],
+    "totalDd": 1.9
+  },
+  {
+    "id": "tt-if-tr-2",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 2",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Half Turn to Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Half Turn to Feet from Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Back Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Full Turn",
+        "dd": 0.2
+      }
+    ],
+    "totalDd": 2.2
+  },
+  {
+    "id": "tt-if-tr-3",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 3",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Front Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Half Turn to Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Swivel Hip",
+        "dd": 0.1
+      },
+      {
+        "name": "Seat to Front",
+        "dd": 0.1
+      },
+      {
+        "name": "Front to Back",
+        "dd": 0.2
+      },
+      {
+        "name": "Cradle",
+        "dd": 0.3
+      },
+      {
+        "name": "Full Turn from Back",
+        "dd": 0.3
+      }
+    ],
+    "totalDd": 2.2
+  },
+  {
+    "id": "tt-if-tr-4",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 4",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Half Turn to Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Seat to Front",
+        "dd": 0.1
+      },
+      {
+        "name": "Return to Feet from Front",
+        "dd": 0.1
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Barani Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Full Turn",
+        "dd": 0.2
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Barani Straight",
+        "dd": 0.6
+      }
+    ],
+    "totalDd": 2.3
+  },
+  {
+    "id": "tt-if-tr-5",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 5",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Front Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Front Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Seat Drop",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn to Feet from Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      }
+    ],
+    "totalDd": 2.4
+  },
+  {
+    "id": "tt-if-tr-6",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 6",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Full Turn to seat",
+        "dd": 0.2
+      },
+      {
+        "name": "Swivel Hip",
+        "dd": 0.1
+      },
+      {
+        "name": "Half Turn to Feet from Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Back Drop",
+        "dd": 0.1
+      },
+      {
+        "name": "Half Turn to Feet from Back",
+        "dd": 0.2
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Front Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Front Tuck",
+        "dd": 0.5
+      }
+    ],
+    "totalDd": 2.4
+  },
+  {
+    "id": "tt-if-tr-7",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 7",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Full Turn",
+        "dd": 0.2
+      },
+      {
+        "name": "Seat Drop",
+        "dd": 0.0
+      },
+      {
+        "name": "Return to Feet from Seat",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Pike",
+        "dd": 0.6
+      }
+    ],
+    "totalDd": 2.6
+  },
+  {
+    "id": "tt-if-tr-8",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 8",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Seat Drop",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn to Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Return to Feet from Seat",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Full Turn",
+        "dd": 0.2
+      },
+      {
+        "name": "Barani Tuck",
+        "dd": 0.6
+      }
+    ],
+    "totalDd": 2.7
+  },
+  {
+    "id": "tt-if-tr-9",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 9",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back 3/4",
+        "dd": 0.3
+      },
+      {
+        "name": "Front to Back",
+        "dd": 0.2
+      },
+      {
+        "name": "Pullover",
+        "dd": 0.3
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Barani Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Front 3/4",
+        "dd": 0.3
+      },
+      {
+        "name": "Ballout Tuck",
+        "dd": 0.6
+      }
+    ],
+    "totalDd": 2.9
+  },
+  {
+    "id": "tt-if-tr-10",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 10",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Seat Drop",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn to Feet from Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Barani Straight",
+        "dd": 0.6
+      }
+    ],
+    "totalDd": 3.0
+  },
+  {
+    "id": "tt-if-tr-11",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 11",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Barani Tuck",
+        "dd": 0.6
+      },
+      {
+        "name": "Pike Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Full Turn",
+        "dd": 0.2
+      },
+      {
+        "name": "Barani Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      }
+    ],
+    "totalDd": 3.2
+  },
+  {
+    "id": "tt-if-tr-12",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 12",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Front 3/4",
+        "dd": 0.3
+      },
+      {
+        "name": "Barani Ballout",
+        "dd": 0.7
+      },
+      {
+        "name": "Front Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Half Turn to Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Swivel Hip",
+        "dd": 0.1
+      },
+      {
+        "name": "Half Turn to Feet from Seat",
+        "dd": 0.1
+      },
+      {
+        "name": "Back Drop",
+        "dd": 0.1
+      },
+      {
+        "name": "Pullover to Back",
+        "dd": 0.5
+      },
+      {
+        "name": "Pullover",
+        "dd": 0.3
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      }
+    ],
+    "totalDd": 3.2
+  },
+  {
+    "id": "tt-if-tr-13",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 13",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back 3/4",
+        "dd": 0.3
+      },
+      {
+        "name": "Airplane",
+        "dd": 0.2
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Barani Tuck",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Seat Drop",
+        "dd": 0.0
+      },
+      {
+        "name": "Return to Feet from Seat",
+        "dd": 0.0
+      }
+    ],
+    "totalDd": 3.4
+  },
+  {
+    "id": "tt-if-tr-14",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 14",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Barani Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Full",
+        "dd": 0.7
+      },
+      {
+        "name": "Seat Drop",
+        "dd": 0.0
+      },
+      {
+        "name": "Seat to Front",
+        "dd": 0.1
+      },
+      {
+        "name": "Cruise",
+        "dd": 0.3
+      },
+      {
+        "name": "Return to Feet from Front",
+        "dd": 0.1
+      },
+      {
+        "name": "Barani Tuck",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Back Straight",
+        "dd": 0.6
+      }
+    ],
+    "totalDd": 3.5
+  },
+  {
+    "id": "tt-if-tr-15",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 15",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Barani Tuck",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Seat Drop",
+        "dd": 0.0
+      },
+      {
+        "name": "Return to Feet from Seat",
+        "dd": 0.0
+      }
+    ],
+    "totalDd": 3.6
+  },
+  {
+    "id": "tt-if-tr-16",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 16",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Front 3/4",
+        "dd": 0.3
+      },
+      {
+        "name": "Porpoise Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Porpoise Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Barani Ballout",
+        "dd": 0.7
+      },
+      {
+        "name": "Barani Tuck",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Front Drop",
+        "dd": 0.1
+      },
+      {
+        "name": "Cruise",
+        "dd": 0.3
+      },
+      {
+        "name": "Front to Back",
+        "dd": 0.2
+      },
+      {
+        "name": "Return to Feet from Back",
+        "dd": 0.1
+      }
+    ],
+    "totalDd": 3.9
+  },
+  {
+    "id": "tt-if-tr-17",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 17",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Full",
+        "dd": 0.7
+      },
+      {
+        "name": "Half Turn",
+        "dd": 0.1
+      },
+      {
+        "name": "Back Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Front PIke",
+        "dd": 0.6
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Front Tuck",
+        "dd": 0.5
+      }
+    ],
+    "totalDd": 4.2
+  },
+  {
+    "id": "tt-if-tr-18",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 18",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Front 3/4",
+        "dd": 0.3
+      },
+      {
+        "name": "Ballout Tuck",
+        "dd": 0.6
+      },
+      {
+        "name": "Straddle Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Back Full",
+        "dd": 0.7
+      },
+      {
+        "name": "Tuck Jump",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Tuck",
+        "dd": 0.6
+      },
+      {
+        "name": "Front Tuck",
+        "dd": 0.5
+      }
+    ],
+    "totalDd": 4.4
+  },
+  {
+    "id": "tt-if-tr-19",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 19",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Front Drop",
+        "dd": 0.1
+      },
+      {
+        "name": "Cruise",
+        "dd": 0.3
+      },
+      {
+        "name": "Return to Feet from Front",
+        "dd": 0.1
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Barani Tuck",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Pike",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Full",
+        "dd": 0.7
+      }
+    ],
+    "totalDd": 4.7
+  },
+  {
+    "id": "tt-if-tr-20",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Trampoline Routine 20",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Front 3/4",
+        "dd": 0.3
+      },
+      {
+        "name": "Barani Ballout to Back",
+        "dd": 0.8
+      },
+      {
+        "name": "Return to Feet from Back",
+        "dd": 0.1
+      },
+      {
+        "name": "Back Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "dd": 0.6
+      },
+      {
+        "name": "Front Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Back Tuck",
+        "dd": 0.5
+      },
+      {
+        "name": "Barani Tuck",
+        "dd": 0.6
+      },
+      {
+        "name": "1 1/4 Back Tuck",
+        "dd": 0.6
+      },
+      {
+        "name": "Pullover",
+        "dd": 0.3
+      }
+    ],
+    "totalDd": 4.9
+  },
+  {
+    "id": "tt-hf-tr-1",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 1",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Front Drop",
+        "notation": "1-/",
+        "dd": 0.1
+      },
+      {
+        "name": "Cruise",
+        "notation": "21/",
+        "dd": 0.3
+      },
+      {
+        "name": "Return to Feet from Front",
+        "notation": "1-/",
+        "dd": 0.1
+      },
+      {
+        "name": "Back Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Barani Tuck",
+        "notation": "41o",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Pike",
+        "notation": "40<",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Pike",
+        "notation": "41<",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Straight",
+        "notation": "40/",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Full",
+        "notation": "42",
+        "dd": 0.7
+      }
+    ],
+    "totalDd": 4.7
+  },
+  {
+    "id": "tt-hf-tr-2",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 2",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Front 3/4",
+        "notation": "30/",
+        "dd": 0.3
+      },
+      {
+        "name": "Barani Ballout to Back",
+        "notation": "61o",
+        "dd": 0.8
+      },
+      {
+        "name": "Return to Feet from Back",
+        "notation": "1-/",
+        "dd": 0.1
+      },
+      {
+        "name": "Back Straight",
+        "notation": "40/",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Front Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Back Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Barani Tuck",
+        "notation": "41o",
+        "dd": 0.6
+      },
+      {
+        "name": "1 1/4 Back Tuck",
+        "notation": "50o",
+        "dd": 0.6
+      },
+      {
+        "name": "Pullover",
+        "notation": "3-/",
+        "dd": 0.3
+      }
+    ],
+    "totalDd": 4.9
+  },
+  {
+    "id": "tt-hf-tr-3",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 3",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Front 3/4",
+        "notation": "30/",
+        "dd": 0.3
+      },
+      {
+        "name": "Barani Ballout",
+        "notation": "51o",
+        "dd": 0.7
+      },
+      {
+        "name": "Tuck Jump",
+        "notation": "--0",
+        "dd": 0.0
+      },
+      {
+        "name": "Barani Tuck",
+        "notation": "41o",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Back Pike",
+        "notation": "40<",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Pike",
+        "notation": "41<",
+        "dd": 0.6
+      },
+      {
+        "name": "Straddle Jump",
+        "notation": "Str.",
+        "dd": 0.0
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Straight",
+        "notation": "40/",
+        "dd": 0.6
+      }
+    ],
+    "totalDd": 4.5
+  },
+  {
+    "id": "tt-hf-tr-4",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 4",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back 3/4",
+        "notation": "30/",
+        "dd": 0.3
+      },
+      {
+        "name": "Cody Tuck",
+        "notation": "50o",
+        "dd": 0.6
+      },
+      {
+        "name": "Tuck Jump",
+        "notation": "--0",
+        "dd": 0.0
+      },
+      {
+        "name": "Barani Tuck",
+        "notation": "41o",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Barani Pike",
+        "notation": "41<",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Pike",
+        "notation": "40<",
+        "dd": 0.6
+      },
+      {
+        "name": "Straddle Jump",
+        "notation": "Str.",
+        "dd": 0.0
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Full",
+        "notation": "42",
+        "dd": 0.7
+      }
+    ],
+    "totalDd": 4.5
+  },
+  {
+    "id": "tt-hf-tr-5",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 5",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Front 3/4",
+        "notation": "30/",
+        "dd": 0.3
+      },
+      {
+        "name": "Barani Ballout",
+        "notation": "51o",
+        "dd": 0.7
+      },
+      {
+        "name": "Tuck Jump",
+        "notation": "--0",
+        "dd": 0.0
+      },
+      {
+        "name": "Barani Tuck",
+        "notation": "41o",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Barani Pike",
+        "notation": "41<",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Pike",
+        "notation": "40<",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Straight",
+        "notation": "40/",
+        "dd": 0.6
+      },
+      {
+        "name": "Front Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      }
+    ],
+    "totalDd": 5.0
+  },
+  {
+    "id": "tt-hf-tr-6",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 6",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Front 3/4",
+        "notation": "30/",
+        "dd": 0.3
+      },
+      {
+        "name": "Barani Ballout",
+        "notation": "51o",
+        "dd": 0.7
+      },
+      {
+        "name": "Back Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Barani Tuck",
+        "notation": "41o",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Full",
+        "notation": "42",
+        "dd": 0.7
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Straight",
+        "notation": "40/",
+        "dd": 0.6
+      },
+      {
+        "name": "Straddle Jump",
+        "notation": "Str.",
+        "dd": 0.0
+      },
+      {
+        "name": "Tuck Jump",
+        "notation": "--0",
+        "dd": 0.0
+      },
+      {
+        "name": "Double Back Tuck",
+        "notation": "800o",
+        "dd": 1.0
+      }
+    ],
+    "totalDd": 5.0
+  },
+  {
+    "id": "tt-hf-tr-7",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 7",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Front 3/4",
+        "notation": "30/",
+        "dd": 0.3
+      },
+      {
+        "name": "Ballout Tuck",
+        "notation": "50o",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Barani Tuck",
+        "notation": "41o",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Pike",
+        "notation": "40<",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Pike",
+        "notation": "41<",
+        "dd": 0.6
+      },
+      {
+        "name": "Pike Jump",
+        "notation": "-->",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Straight",
+        "notation": "40/",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Full",
+        "notation": "42",
+        "dd": 0.7
+      }
+    ],
+    "totalDd": 5.1
+  },
+  {
+    "id": "tt-hf-tr-8",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 8",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Straight",
+        "notation": "40/",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Full",
+        "notation": "42",
+        "dd": 0.7
+      },
+      {
+        "name": "Straddle Jump",
+        "notation": "Str.",
+        "dd": 0.0
+      },
+      {
+        "name": "Barani Pike",
+        "notation": "41<",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Pike",
+        "notation": "40<",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Tuck",
+        "notation": "41o",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Front Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Front Pike",
+        "notation": "40<",
+        "dd": 0.6
+      }
+    ],
+    "totalDd": 5.3
+  },
+  {
+    "id": "tt-hf-tr-9",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 9",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Tuck Barani Out",
+        "notation": "801o",
+        "dd": 1.1
+      },
+      {
+        "name": "Tuck Jump",
+        "notation": "--0",
+        "dd": 0.0
+      },
+      {
+        "name": "Barani Tuck",
+        "notation": "41o",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Barani Pike",
+        "notation": "41<",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Pike",
+        "notation": "40<",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Straight",
+        "notation": "40/",
+        "dd": 0.6
+      },
+      {
+        "name": "Straddle Jump",
+        "notation": "Str.",
+        "dd": 0.0
+      },
+      {
+        "name": "Back Full",
+        "notation": "42",
+        "dd": 0.7
+      }
+    ],
+    "totalDd": 5.3
+  },
+  {
+    "id": "tt-hf-tr-10",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 10",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "1 3/4 Front Tuck",
+        "notation": "700o",
+        "dd": 0.8
+      },
+      {
+        "name": "Porpoise Straight",
+        "notation": "4/",
+        "dd": 0.5
+      },
+      {
+        "name": "Cradle",
+        "notation": "21/",
+        "dd": 0.3
+      },
+      {
+        "notation": "4/",
+        "dd": 0.5
+      },
+      {
+        "notation": "6o",
+        "dd": 0.7
+      },
+      {
+        "name": "Pullover to Back",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Porpoise Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Porpise Pike",
+        "notation": "40<",
+        "dd": 0.6
+      },
+      {
+        "name": "Full Twisting Porpoise",
+        "notation": "42",
+        "dd": 0.7
+      },
+      {
+        "name": "Ballout Tuck",
+        "notation": "50o",
+        "dd": 0.6
+      }
+    ],
+    "totalDd": 5.7,
+    "note": "Skill 4 has no name in the sheet (only notation '4/' and DD 0.5). Skill 5 has no name in the sheet (only notation '6o' and DD 0.7)."
+  },
+  {
+    "id": "tt-hf-tr-11",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 11",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Pike Barani Out",
+        "notation": "801<",
+        "dd": 1.3
+      },
+      {
+        "name": "Back Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Tuck Barani Out",
+        "notation": "801o",
+        "dd": 1.1
+      },
+      {
+        "name": "Back Straight",
+        "notation": "40/",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Pike",
+        "notation": "40<",
+        "dd": 0.6
+      },
+      {
+        "name": "Rudy",
+        "notation": "43",
+        "dd": 0.8
+      },
+      {
+        "name": "Tuck Jump",
+        "notation": "--0",
+        "dd": 0.0
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Double Back Tuck",
+        "notation": "800o",
+        "dd": 1.0
+      }
+    ],
+    "totalDd": 7.1
+  },
+  {
+    "id": "tt-hf-tr-12",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 12",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Pike Barani Out",
+        "notation": "801<",
+        "dd": 1.3
+      },
+      {
+        "name": "Back Pike",
+        "notation": "40<",
+        "dd": 0.6
+      },
+      {
+        "name": "Tuck Barani Out",
+        "notation": "801o",
+        "dd": 1.1
+      },
+      {
+        "name": "Back Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Barani Tuck",
+        "notation": "41o",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Full",
+        "notation": "42",
+        "dd": 0.7
+      },
+      {
+        "name": "Barani Pike",
+        "notation": "41<",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Straight",
+        "notation": "40/",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Double Full",
+        "notation": "44/",
+        "dd": 0.9
+      }
+    ],
+    "totalDd": 7.5
+  },
+  {
+    "id": "tt-hf-tr-13",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 13",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back 3/4",
+        "notation": "30/",
+        "dd": 0.3
+      },
+      {
+        "name": "Cody Pike",
+        "notation": "50<",
+        "dd": 0.7
+      },
+      {
+        "name": "Barani Tuck",
+        "notation": "41o",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Barani Pike",
+        "notation": "41<",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Pike",
+        "notation": "40<",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Straight",
+        "notation": "40/",
+        "dd": 0.6
+      },
+      {
+        "name": "Rudy",
+        "notation": "43",
+        "dd": 0.8
+      },
+      {
+        "name": "Back Full",
+        "notation": "42",
+        "dd": 0.7
+      }
+    ],
+    "totalDd": 6.0
+  },
+  {
+    "id": "tt-hf-tr-14",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 14",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Straight",
+        "notation": "40/",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Full",
+        "notation": "42",
+        "dd": 0.7
+      },
+      {
+        "name": "Rudy",
+        "notation": "43",
+        "dd": 0.8
+      },
+      {
+        "name": "Tuck Jump",
+        "notation": "--0",
+        "dd": 0.0
+      },
+      {
+        "name": "Barani Pike",
+        "notation": "41<",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Pike",
+        "notation": "40<",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Tuck",
+        "notation": "41o",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Tuck Barani Out",
+        "notation": "801o",
+        "dd": 1.1
+      }
+    ],
+    "totalDd": 6.1
+  },
+  {
+    "id": "tt-hf-tr-15",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 15",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Tuck Barani Out",
+        "notation": "801o",
+        "dd": 1.1
+      },
+      {
+        "name": "Double Back Tuck",
+        "notation": "800o",
+        "dd": 1.0
+      },
+      {
+        "name": "Barani Tuck",
+        "notation": "41o",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Full",
+        "notation": "42",
+        "dd": 0.7
+      },
+      {
+        "name": "Barani Pike",
+        "notation": "41<",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Pike",
+        "notation": "40<",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Straight",
+        "notation": "40/",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Rudy",
+        "notation": "43",
+        "dd": 0.8
+      }
+    ],
+    "totalDd": 7.1
+  },
+  {
+    "id": "tt-hf-tr-16",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 16",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Back Pike",
+        "notation": "40<",
+        "dd": 0.6
+      },
+      {
+        "name": "Pike Barani Out",
+        "notation": "801<",
+        "dd": 1.3
+      },
+      {
+        "name": "Half-In, Half-Out",
+        "notation": "811o",
+        "dd": 1.2
+      },
+      {
+        "name": "Double Back Tuck",
+        "notation": "800o",
+        "dd": 1.0
+      },
+      {
+        "name": "Tuck Barani Out",
+        "notation": "801o",
+        "dd": 1.1
+      },
+      {
+        "name": "Double Back Pike",
+        "notation": "800<",
+        "dd": 1.2
+      },
+      {
+        "name": "Back Straight",
+        "notation": "40/",
+        "dd": 0.6
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Front Full in Barani Out",
+        "notation": "821o",
+        "dd": 1.3
+      }
+    ],
+    "totalDd": 9.4
+  },
+  {
+    "id": "tt-hf-tr-17",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 17",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Tuck Rudy-Out",
+        "notation": "803o",
+        "dd": 1.3
+      },
+      {
+        "name": "Back Pike",
+        "notation": "40<",
+        "dd": 0.6
+      },
+      {
+        "name": "Pike Barani Out",
+        "notation": "801<",
+        "dd": 1.3
+      },
+      {
+        "name": "Double Back Tuck",
+        "notation": "800o",
+        "dd": 1.0
+      },
+      {
+        "name": "Tuck Barani Out",
+        "notation": "801o",
+        "dd": 1.1
+      },
+      {
+        "name": "Back Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Barani Tuck",
+        "notation": "41o",
+        "dd": 0.6
+      },
+      {
+        "name": "Half-in, half-out Tuck",
+        "notation": "811o",
+        "dd": 1.2
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Full-in, full-out Straight",
+        "notation": "822/",
+        "dd": 1.6
+      }
+    ],
+    "totalDd": 9.8
+  },
+  {
+    "id": "tt-hf-tr-18",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 18",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Pike Full-in, Barani-out",
+        "notation": "821<",
+        "dd": 1.5
+      },
+      {
+        "name": "Half-in, half-out tuck",
+        "notation": "811o",
+        "dd": 1.2
+      },
+      {
+        "name": "Barani-out Tuck",
+        "notation": "801o",
+        "dd": 1.1
+      },
+      {
+        "name": "Double Back Tuck",
+        "notation": "800o",
+        "dd": 1.0
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Tuck",
+        "notation": "40o",
+        "dd": 0.5
+      },
+      {
+        "name": "Barani Tuck",
+        "notation": "41o",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Pike",
+        "notation": "40<",
+        "dd": 0.6
+      },
+      {
+        "name": "Pike Barani Out",
+        "notation": "801<",
+        "dd": 1.3
+      },
+      {
+        "name": "Full-in, full-out Straight",
+        "notation": "822/",
+        "dd": 1.6
+      }
+    ],
+    "totalDd": 10.0
+  },
+  {
+    "id": "tt-hf-tr-19",
+    "discipline": "tt",
+    "level": "hf",
+    "title": "High Flyers Trampoline Routine 19",
+    "event": "tr",
+    "skills": [
+      {
+        "name": "Full-in, Barani-out",
+        "notation": "821o",
+        "dd": 1.3
+      },
+      {
+        "name": "Back Straight",
+        "notation": "40/",
+        "dd": 0.6
+      },
+      {
+        "name": "Pike Barani-out",
+        "notation": "801<",
+        "dd": 1.3
+      },
+      {
+        "name": "Double Back Tuck",
+        "notation": "800o",
+        "dd": 1.0
+      },
+      {
+        "name": "Tuck Barani Out",
+        "notation": "801o",
+        "dd": 1.1
+      },
+      {
+        "name": "Double Pike",
+        "notation": "800<",
+        "dd": 1.2
+      },
+      {
+        "name": "Barani Pike",
+        "notation": "41<",
+        "dd": 0.6
+      },
+      {
+        "name": "Back Full",
+        "notation": "42",
+        "dd": 0.7
+      },
+      {
+        "name": "Barani Straight",
+        "notation": "41/",
+        "dd": 0.6
+      },
+      {
+        "name": "Full-in, full-out Straight",
+        "notation": "822/",
+        "dd": 1.6
+      }
+    ],
+    "totalDd": 10.0
+  },
+  {
+    "id": "tt-nf-dmt-1",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 1",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0,
+          "role": "spotter"
+        },
+        {
+          "name": "Straddle Jump",
+          "dd": 0.0,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Straddle Jump",
+          "dd": 0.0,
+          "role": "spotter"
+        },
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.0,
+      0.0
+    ],
+    "totalDd": 0.0
+  },
+  {
+    "id": "tt-nf-dmt-2",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 2",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0,
+          "role": "mounter"
+        },
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0,
+          "role": "spotter"
+        },
+        {
+          "name": "Straddle Jump",
+          "dd": 0.0,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.0,
+      0.0
+    ],
+    "totalDd": 0.0
+  },
+  {
+    "id": "tt-nf-dmt-3",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 3",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Half Turn",
+          "dd": 0.1,
+          "role": "spotter"
+        },
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0,
+          "role": "spotter"
+        },
+        {
+          "name": "Full Turn",
+          "dd": 0.2,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.1,
+      0.2
+    ],
+    "totalDd": 0.3
+  },
+  {
+    "id": "tt-nf-dmt-4",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 4",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Pike Jump",
+          "dd": 0.0,
+          "role": "spotter"
+        },
+        {
+          "name": "Half Turn",
+          "dd": 0.1,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Half Turn",
+          "dd": 0.1,
+          "role": "spotter"
+        },
+        {
+          "name": "Full Turn",
+          "dd": 0.2,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.1,
+      0.3
+    ],
+    "totalDd": 0.4
+  },
+  {
+    "id": "tt-nf-dmt-5",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 5",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Full Turn",
+          "dd": 0.2,
+          "role": "spotter"
+        },
+        {
+          "name": "Full Turn",
+          "dd": 0.2,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Full Turn",
+          "dd": 0.2,
+          "role": "mounter"
+        },
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.4,
+      0.2
+    ],
+    "totalDd": 0.6
+  },
+  {
+    "id": "tt-nf-dmt-6",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 6",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0,
+          "role": "mounter"
+        },
+        {
+          "name": "Half Turn",
+          "dd": 0.1,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0,
+          "role": "spotter"
+        },
+        {
+          "name": "Front Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.1,
+      0.5
+    ],
+    "totalDd": 0.6
+  },
+  {
+    "id": "tt-nf-dmt-7",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 7",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0,
+          "role": "mounter"
+        },
+        {
+          "name": "Full Turn",
+          "dd": 0.2,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Straddle Jump",
+          "dd": 0.0,
+          "role": "spotter"
+        },
+        {
+          "name": "Front Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.2,
+      0.5
+    ],
+    "totalDd": 0.7
+  },
+  {
+    "id": "tt-nf-dmt-8",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 8",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0,
+          "role": "spotter"
+        },
+        {
+          "name": "1.5 Turn",
+          "dd": 0.3,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Back Tuck",
+          "dd": 0.5,
+          "role": "spotter"
+        },
+        {
+          "name": "Tuck Jump (bwd)",
+          "dd": 0.0,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.3,
+      0.5
+    ],
+    "totalDd": 0.8
+  },
+  {
+    "id": "tt-nf-dmt-9",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 9",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Half Turn",
+          "dd": 0.1,
+          "role": "spotter"
+        },
+        {
+          "name": "Full Turn (bwd)",
+          "dd": 0.2,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Straddle Jump",
+          "dd": 0.0,
+          "role": "spotter"
+        },
+        {
+          "name": "Barani Pike",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.3,
+      0.7
+    ],
+    "totalDd": 1.0
+  },
+  {
+    "id": "tt-nf-dmt-10",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 10",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Full Turn",
+          "dd": 0.2,
+          "role": "spotter"
+        },
+        {
+          "name": "Half Turn",
+          "dd": 0.1,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0,
+          "role": "spotter"
+        },
+        {
+          "name": "Back Straight",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.3,
+      0.7
+    ],
+    "totalDd": 1.0
+  },
+  {
+    "id": "tt-nf-dmt-11",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 11",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Straddle Jump",
+          "dd": 0.0,
+          "role": "mounter"
+        },
+        {
+          "name": "Front Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Half Turn",
+          "dd": 0.1,
+          "role": "spotter"
+        },
+        {
+          "name": "Back Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.5,
+      0.6
+    ],
+    "totalDd": 1.1
+  },
+  {
+    "id": "tt-nf-dmt-12",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 12",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Pike Jump",
+          "dd": 0.0,
+          "role": "spotter"
+        },
+        {
+          "name": "Front Pike",
+          "dd": 0.6,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Back Tuck",
+          "dd": 0.5,
+          "role": "spotter"
+        },
+        {
+          "name": "Tuck Jump (bwd)",
+          "dd": 0.0,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.6,
+      0.5
+    ],
+    "totalDd": 1.1
+  },
+  {
+    "id": "tt-nf-dmt-13",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 13",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0,
+          "role": "mounter"
+        },
+        {
+          "name": "Front Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Pike Jump",
+          "dd": 0.0,
+          "role": "spotter"
+        },
+        {
+          "name": "Front Pike",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.5,
+      0.7
+    ],
+    "totalDd": 1.2,
+    "note": "Sheet lists 'Front Pike' (pass 2 dismount) at DD 0.7; Front Pike is 0.6 elsewhere in this tab (e.g. Routine 12)."
+  },
+  {
+    "id": "tt-nf-dmt-14",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 14",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Back Tuck",
+          "dd": 0.5,
+          "role": "spotter"
+        },
+        {
+          "name": "Straddle Jump (bwd)",
+          "dd": 0.0,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Straddle Jump",
+          "dd": 0.0,
+          "role": "spotter"
+        },
+        {
+          "name": "Barani Tuck",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.5,
+      0.7
+    ],
+    "totalDd": 1.2
+  },
+  {
+    "id": "tt-nf-dmt-15",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 15",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0,
+          "role": "spotter"
+        },
+        {
+          "name": "Barani Tuck",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Straddle Jump",
+          "dd": 0.0,
+          "role": "mounter"
+        },
+        {
+          "name": "Front Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.7,
+      0.5
+    ],
+    "totalDd": 1.2
+  },
+  {
+    "id": "tt-nf-dmt-16",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 16",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Half Turn",
+          "dd": 0.1,
+          "role": "mounter"
+        },
+        {
+          "name": "Back Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Half Turn",
+          "dd": 0.1,
+          "role": "spotter"
+        },
+        {
+          "name": "Back Straight",
+          "dd": 0.6,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.6,
+      0.7
+    ],
+    "totalDd": 1.3
+  },
+  {
+    "id": "tt-nf-dmt-17",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 17",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Half Turn",
+          "dd": 0.1,
+          "role": "spotter"
+        },
+        {
+          "name": "Back Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Straddle Jump",
+          "dd": 0.0,
+          "role": "mounter"
+        },
+        {
+          "name": "Barani Straight",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.6,
+      0.7
+    ],
+    "totalDd": 1.3
+  },
+  {
+    "id": "tt-nf-dmt-18",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 18",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Straddle Jump",
+          "dd": 0.0,
+          "role": "mounter"
+        },
+        {
+          "name": "Barani Pike",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Half Turn",
+          "dd": 0.1,
+          "role": "spotter"
+        },
+        {
+          "name": "Back Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.7,
+      0.6
+    ],
+    "totalDd": 1.3
+  },
+  {
+    "id": "tt-nf-dmt-19",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 19",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Full Turn",
+          "dd": 0.2,
+          "role": "spotter"
+        },
+        {
+          "name": "Front Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Half Turn",
+          "dd": 0.1,
+          "role": "spotter"
+        },
+        {
+          "name": "Back Half",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.7,
+      0.8
+    ],
+    "totalDd": 1.5
+  },
+  {
+    "id": "tt-nf-dmt-20",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Double Mini Routine 20",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Full Turn",
+          "dd": 0.2,
+          "role": "mounter"
+        },
+        {
+          "name": "Front Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Full Turn",
+          "dd": 0.2,
+          "role": "spotter"
+        },
+        {
+          "name": "Barani Straight",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.7,
+      0.9
+    ],
+    "totalDd": 1.6
+  },
+  {
+    "id": "tt-if-dmt-1",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 1",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Straddle Jump",
+          "dd": 0.0
+        },
+        {
+          "name": "Front Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0
+        },
+        {
+          "name": "Front Pike",
+          "dd": 0.6,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.5,
+      0.6
+    ],
+    "totalDd": 1.1
+  },
+  {
+    "id": "tt-if-dmt-2",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 2",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0
+        },
+        {
+          "name": "Front Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Half Turn",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.5,
+      0.6
+    ],
+    "totalDd": 1.1
+  },
+  {
+    "id": "tt-if-dmt-3",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 3",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Straddle Jump",
+          "dd": 0.0
+        },
+        {
+          "name": "Front Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0
+        },
+        {
+          "name": "Barani Tuck",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.5,
+      0.7
+    ],
+    "totalDd": 1.2
+  },
+  {
+    "id": "tt-if-dmt-4",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 4",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Half Turn",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Pike Jump",
+          "dd": 0.0
+        },
+        {
+          "name": "Barani Pike",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.6,
+      0.7
+    ],
+    "totalDd": 1.3
+  },
+  {
+    "id": "tt-if-dmt-5",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 5",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0
+        },
+        {
+          "name": "Front Straight",
+          "dd": 0.6,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Half Turn",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Straight",
+          "dd": 0.6,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.6,
+      0.7
+    ],
+    "totalDd": 1.3
+  },
+  {
+    "id": "tt-if-dmt-6",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 6",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0
+        },
+        {
+          "name": "Barani Pike",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Half Turn",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Pike",
+          "dd": 0.6,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.7,
+      0.7
+    ],
+    "totalDd": 1.4
+  },
+  {
+    "id": "tt-if-dmt-7",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 7",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Front Tuck",
+          "dd": 0.5
+        },
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Back Tuck",
+          "dd": 0.5
+        },
+        {
+          "name": "Front Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.5,
+      1.0
+    ],
+    "totalDd": 1.5
+  },
+  {
+    "id": "tt-if-dmt-8",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 8",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Straddle Jump",
+          "dd": 0.0
+        },
+        {
+          "name": "Front Pike",
+          "dd": 0.6,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Front Tuck",
+          "dd": 0.5
+        },
+        {
+          "name": "Front Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.6,
+      1.0
+    ],
+    "totalDd": 1.6
+  },
+  {
+    "id": "tt-if-dmt-9",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 9",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0
+        },
+        {
+          "name": "Barani Straight",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Straddle Jump",
+          "dd": 0.0
+        },
+        {
+          "name": "Front Full",
+          "dd": 0.9,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.7,
+      0.9
+    ],
+    "totalDd": 1.6
+  },
+  {
+    "id": "tt-if-dmt-10",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 10",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Straddle Jump",
+          "dd": 0.0
+        },
+        {
+          "name": "Barani Pike",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Half Turn",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Full",
+          "dd": 0.9,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.7,
+      1.0
+    ],
+    "totalDd": 1.7
+  },
+  {
+    "id": "tt-if-dmt-11",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 11",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Straddle Jump",
+          "dd": 0.0
+        },
+        {
+          "name": "Barani Straight",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0
+        },
+        {
+          "name": "Rudy",
+          "dd": 1.2,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      0.7,
+      1.2
+    ],
+    "totalDd": 1.9
+  },
+  {
+    "id": "tt-if-dmt-12",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 12",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Barani Pike",
+          "dd": 0.7
+        },
+        {
+          "name": "Back Pike",
+          "dd": 0.6,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Half Turn",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Straight",
+          "dd": 0.6,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      1.3,
+      0.7
+    ],
+    "totalDd": 2.0
+  },
+  {
+    "id": "tt-if-dmt-13",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 13",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Back Tuck",
+          "dd": 0.5
+        },
+        {
+          "name": "Barani Straight",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0
+        },
+        {
+          "name": "Front Full",
+          "dd": 0.9,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      1.2,
+      0.9
+    ],
+    "totalDd": 2.1
+  },
+  {
+    "id": "tt-if-dmt-14",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 14",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Half Turn",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Full",
+          "dd": 0.9,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Straddle Jump",
+          "dd": 0.0
+        },
+        {
+          "name": "Rudy",
+          "dd": 1.2,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      1.0,
+      1.2
+    ],
+    "totalDd": 2.2
+  },
+  {
+    "id": "tt-if-dmt-15",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 15",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Front Tuck",
+          "dd": 0.5
+        },
+        {
+          "name": "Barani Straight",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Tuck Jump",
+          "dd": 0.0
+        },
+        {
+          "name": "Rudy",
+          "dd": 1.2,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      1.2,
+      1.2
+    ],
+    "totalDd": 2.4
+  },
+  {
+    "id": "tt-if-dmt-16",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 16",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Barani Pike",
+          "dd": 0.7
+        },
+        {
+          "name": "Back Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Back Tuck",
+          "dd": 0.5
+        },
+        {
+          "name": "Barani Tuck",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      1.2,
+      1.2
+    ],
+    "totalDd": 2.4
+  },
+  {
+    "id": "tt-if-dmt-17",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 17",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Barani Tuck",
+          "dd": 0.7
+        },
+        {
+          "name": "Back Tuck",
+          "dd": 0.5,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Barani Straight",
+          "dd": 0.7
+        },
+        {
+          "name": "Back Straight",
+          "dd": 0.6,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      1.2,
+      1.3
+    ],
+    "totalDd": 2.5
+  },
+  {
+    "id": "tt-if-dmt-18",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 18",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Back Tuck",
+          "dd": 0.5
+        },
+        {
+          "name": "Front Full",
+          "dd": 0.9,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Back Straight",
+          "dd": 0.6
+        },
+        {
+          "name": "Barani Straight",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      1.4,
+      1.3
+    ],
+    "totalDd": 2.7
+  },
+  {
+    "id": "tt-if-dmt-19",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 19",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Back Pike",
+          "dd": 0.6
+        },
+        {
+          "name": "Barani Pike",
+          "dd": 0.7,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Back Straight",
+          "dd": 0.6
+        },
+        {
+          "name": "Front Full",
+          "dd": 0.9,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      1.3,
+      1.5
+    ],
+    "totalDd": 2.8
+  },
+  {
+    "id": "tt-if-dmt-20",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Double Mini Routine 20",
+    "event": "dmt",
+    "passes": [
+      [
+        {
+          "name": "Barani Tuck",
+          "dd": 0.7
+        },
+        {
+          "name": "Back Straight",
+          "dd": 0.6,
+          "role": "dismount"
+        }
+      ],
+      [
+        {
+          "name": "Barani Straight",
+          "dd": 0.7
+        },
+        {
+          "name": "Back Full",
+          "dd": 0.9,
+          "role": "dismount"
+        }
+      ]
+    ],
+    "passTotals": [
+      1.3,
+      1.6
+    ],
+    "totalDd": 2.9
+  },
+  {
+    "id": "tt-nf-tu-1",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Power Tumbling Routine 1",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Cartwheel",
+          "dd": 0.1
+        },
+        {
+          "name": "Cartwheel Step-in to Hollow",
+          "dd": 0.1
+        },
+        {
+          "name": "Backward Roll (tuck)",
+          "dd": 0.1
+        },
+        {
+          "name": "Backward Roll (pike)",
+          "dd": 0.1
+        }
+      ],
+      [
+        {
+          "name": "Handstand Forward Roll",
+          "dd": 0.1
+        },
+        {
+          "name": "Forward Roll Stepout",
+          "dd": 0.1
+        },
+        {
+          "name": "Cartwheel",
+          "dd": 0.1
+        },
+        {
+          "name": "Cartwheel Step-In to Hollow",
+          "dd": 0.1
+        }
+      ]
+    ],
+    "passTotals": [
+      0.4,
+      0.4
+    ],
+    "totalDd": 0.8
+  },
+  {
+    "id": "tt-nf-tu-2",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Power Tumbling Routine 2",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Roundoff",
+          "dd": 0.2
+        },
+        {
+          "name": "Straight Jump",
+          "dd": 0.1
+        },
+        {
+          "name": "Backward Roll (tuck)",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Extension Roll Pike Down",
+          "dd": 0.1
+        },
+        {
+          "name": "Backward Roll (pike)",
+          "dd": 0.1
+        }
+      ],
+      [
+        {
+          "name": "Handstand Forward Roll",
+          "dd": 0.1
+        },
+        {
+          "name": "Jump Full Turn",
+          "dd": 0.1
+        },
+        {
+          "name": "Forward Roll (tuck)",
+          "dd": 0.1
+        },
+        {
+          "name": "Forward Roll Step-Out",
+          "dd": 0.1
+        },
+        {
+          "name": "Cartwheel",
+          "dd": 0.1
+        },
+        {
+          "name": "Cartwheel Step-In to Hollow",
+          "dd": 0.1
+        }
+      ]
+    ],
+    "passTotals": [
+      0.6,
+      0.6
+    ],
+    "totalDd": 1.2
+  },
+  {
+    "id": "tt-nf-tu-3",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Power Tumbling Routine 3",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Forward Roll (tuck)",
+          "dd": 0.1
+        },
+        {
+          "name": "Forward Roll Step-Out",
+          "dd": 0.1
+        },
+        {
+          "name": "Cartwheel Step-In to Hollow",
+          "dd": 0.1
+        },
+        {
+          "name": "Backward Roll (Tuck)",
+          "dd": 0.1
+        },
+        {
+          "name": "Backward Roll (Pike)",
+          "dd": 0.1
+        }
+      ],
+      [
+        {
+          "name": "Handstand Forward Roll Stepout",
+          "dd": 0.1
+        },
+        {
+          "name": "Cartwheel Step-In to Hollow",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Extension Roll Pike Down",
+          "dd": 0.1
+        },
+        {
+          "name": "Jump Half Turn",
+          "dd": 0.1
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Rebound",
+          "dd": 0.1
+        }
+      ]
+    ],
+    "passTotals": [
+      0.5,
+      0.9
+    ],
+    "totalDd": 1.4
+  },
+  {
+    "id": "tt-nf-tu-4",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Power Tumbling Routine 4",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Roundoff (power hurdle)",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Rebound",
+          "dd": 0.1
+        }
+      ],
+      [
+        {
+          "name": "Roundoff (run)",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Rebound",
+          "dd": 0.1
+        }
+      ]
+    ],
+    "passTotals": [
+      0.6,
+      0.8
+    ],
+    "totalDd": 1.4
+  },
+  {
+    "id": "tt-nf-tu-5",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Power Tumbling Routine 5",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Forward Roll Step-Out",
+          "dd": 0.1
+        },
+        {
+          "name": "Cartwheel",
+          "dd": 0.1
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.2
+        },
+        {
+          "name": "Jump Half Turn",
+          "dd": 0.1
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.2
+        },
+        {
+          "name": "Rebound",
+          "dd": 0.1
+        }
+      ],
+      [
+        {
+          "name": "Cartwheel",
+          "dd": 0.1
+        },
+        {
+          "name": "Cartwheel Step-In to Hollow",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Extension Roll Pike Down",
+          "dd": 0.1
+        },
+        {
+          "name": "Jump Half Turn",
+          "dd": 0.1
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Rebound",
+          "dd": 0.1
+        }
+      ]
+    ],
+    "passTotals": [
+      0.8,
+      0.9
+    ],
+    "totalDd": 1.7
+  },
+  {
+    "id": "tt-nf-tu-6",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Power Tumbling Routine 6",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Cartwheel",
+          "dd": 0.1
+        },
+        {
+          "name": "Handstand Forward Roll Step Out",
+          "dd": 0.1
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Rebound",
+          "dd": 0.1
+        }
+      ],
+      [
+        {
+          "name": "Handstand Forward Roll Stepout",
+          "dd": 0.1
+        },
+        {
+          "name": "Cartwheel",
+          "dd": 0.1
+        },
+        {
+          "name": "Cartwheel",
+          "dd": 0.1
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.2
+        },
+        {
+          "name": "Jump Half Turn",
+          "dd": 0.1
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        }
+      ]
+    ],
+    "passTotals": [
+      0.7,
+      1.0
+    ],
+    "totalDd": 1.7
+  },
+  {
+    "id": "tt-nf-tu-7",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Power Tumbling Routine 7",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Half Turn",
+          "dd": 0.1
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.2
+        },
+        {
+          "name": "Half Turn",
+          "dd": 0.1
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.2
+        },
+        {
+          "name": "Rebound",
+          "dd": 0.1
+        }
+      ],
+      [
+        {
+          "name": "Roundoff (run)",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Rebound",
+          "dd": 0.1
+        }
+      ]
+    ],
+    "passTotals": [
+      1.0,
+      0.9
+    ],
+    "totalDd": 1.8,
+    "note": "Sheet's Routine Total (1.8) is a typed value, not a formula; the two pass totals (1.0 + 0.9) sum to 1.9."
+  },
+  {
+    "id": "tt-nf-tu-8",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Power Tumbling Routine 8",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Cartwheel",
+          "dd": 0.1
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Rebound",
+          "dd": 0.1
+        }
+      ],
+      [
+        {
+          "name": "Cartwheel",
+          "dd": 0.1
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.2
+        },
+        {
+          "name": "Jump Half Turn",
+          "dd": 0.1
+        },
+        {
+          "name": "Cartwheel",
+          "dd": 0.1
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Rebound",
+          "dd": 0.1
+        }
+      ]
+    ],
+    "passTotals": [
+      0.8,
+      1.0
+    ],
+    "totalDd": 1.8
+  },
+  {
+    "id": "tt-nf-tu-9",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Power Tumbling Routine 9",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Roundoff (run)",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Rebound",
+          "dd": 0.1
+        }
+      ],
+      [
+        {
+          "name": "Roundoff (power hurdle)",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Rebound",
+          "dd": 0.1
+        }
+      ]
+    ],
+    "passTotals": [
+      1.3,
+      0.9
+    ],
+    "totalDd": 2.2
+  },
+  {
+    "id": "tt-nf-tu-10",
+    "discipline": "tt",
+    "level": "nf",
+    "title": "New Flyers Power Tumbling Routine 10",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Roundoff (run)",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Rebound",
+          "dd": 0.1
+        }
+      ],
+      [
+        {
+          "name": "Roundoff (power hurdle)",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.2
+        },
+        {
+          "name": "Rebound",
+          "dd": 0.1
+        }
+      ]
+    ],
+    "passTotals": [
+      1.3,
+      1.3
+    ],
+    "totalDd": 2.6
+  },
+  {
+    "id": "tt-if-tu-1",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Power Tumbling Routine 1",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Handstand Forward Roll Step-Out",
+          "dd": 0.0
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Jump Half Turn",
+          "dd": 0.0
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Tuck",
+          "dd": 0.5
+        }
+      ],
+      [
+        {
+          "name": "Handstand Forward Roll Step-Out",
+          "dd": 0.0
+        },
+        {
+          "name": "Cartwheel Step-In to Hollow",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Extension Roll Pike Down",
+          "dd": 0.0
+        },
+        {
+          "name": "Backward Roll Pike",
+          "dd": 0.0
+        },
+        {
+          "name": "Jump 1/2 Turn",
+          "dd": 0.0
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Straight Jump",
+          "dd": 0.0
+        }
+      ]
+    ],
+    "passTotals": [
+      0.7,
+      0.3
+    ],
+    "totalDd": 1.0,
+    "note": "This tab ('Intermediate Flyers Power Tumbling') is hidden in the workbook. Sheet note: 'Routine skill values include any applicable bonuses for Front or Back Whips'."
+  },
+  {
+    "id": "tt-if-tu-2",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Power Tumbling Routine 2",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Straight Jump",
+          "dd": 0.0
+        }
+      ],
+      [
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Straight Jump",
+          "dd": 0.0
+        }
+      ]
+    ],
+    "passTotals": [
+      0.4,
+      0.7
+    ],
+    "totalDd": 1.1,
+    "note": "This tab ('Intermediate Flyers Power Tumbling') is hidden in the workbook. Sheet note: 'Routine skill values include any applicable bonuses for Front or Back Whips'."
+  },
+  {
+    "id": "tt-if-tu-3",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Power Tumbling Routine 3",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Pike",
+          "dd": 0.6
+        }
+      ],
+      [
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Tuck",
+          "dd": 0.5
+        }
+      ]
+    ],
+    "passTotals": [
+      1.0,
+      1.2
+    ],
+    "totalDd": 2.2,
+    "note": "This tab ('Intermediate Flyers Power Tumbling') is hidden in the workbook. Sheet note: 'Routine skill values include any applicable bonuses for Front or Back Whips'."
+  },
+  {
+    "id": "tt-if-tu-4",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Power Tumbling Routine 4",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Straight (Layout)",
+          "dd": 0.6
+        }
+      ],
+      [
+        {
+          "name": "Front Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Flyspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Flyspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Flyspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Flyspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Flyspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Flyspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Front Pike",
+          "dd": 0.7
+        }
+      ]
+    ],
+    "passTotals": [
+      1.0,
+      1.4
+    ],
+    "totalDd": 2.4,
+    "note": "This tab ('Intermediate Flyers Power Tumbling') is hidden in the workbook. Sheet note: 'Routine skill values include any applicable bonuses for Front or Back Whips'."
+  },
+  {
+    "id": "tt-if-tu-5",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Power Tumbling Routine 5",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Front Tuck Step-Out",
+          "dd": 0.6
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Tuck",
+          "dd": 0.5
+        }
+      ],
+      [
+        {
+          "name": "Front Tuck Step-Out",
+          "dd": 0.6
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Straight (Layout)",
+          "dd": 0.6
+        }
+      ]
+    ],
+    "passTotals": [
+      1.4,
+      1.6
+    ],
+    "totalDd": 3.0,
+    "note": "This tab ('Intermediate Flyers Power Tumbling') is hidden in the workbook. Sheet note: 'Routine skill values include any applicable bonuses for Front or Back Whips'."
+  },
+  {
+    "id": "tt-if-tu-6",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Power Tumbling Routine 6",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Full",
+          "dd": 0.9
+        }
+      ],
+      [
+        {
+          "name": "Front Tuck Step-Out",
+          "dd": 0.6
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Straight (Layout)",
+          "dd": 0.6
+        }
+      ]
+    ],
+    "passTotals": [
+      1.3,
+      1.8
+    ],
+    "totalDd": 3.1,
+    "note": "This tab ('Intermediate Flyers Power Tumbling') is hidden in the workbook. Sheet note: 'Routine skill values include any applicable bonuses for Front or Back Whips'."
+  },
+  {
+    "id": "tt-if-tu-7",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Power Tumbling Routine 7",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Whipback",
+          "dd": 0.3
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Straight (Layout)",
+          "dd": 0.6
+        }
+      ],
+      [
+        {
+          "name": "Barani",
+          "dd": 0.8
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Whipback",
+          "dd": 0.3
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Full",
+          "dd": 0.9
+        }
+      ]
+    ],
+    "passTotals": [
+      1.2,
+      2.4
+    ],
+    "totalDd": 3.6,
+    "note": "This tab ('Intermediate Flyers Power Tumbling') is hidden in the workbook. Sheet note: 'Routine skill values include any applicable bonuses for Front or Back Whips'."
+  },
+  {
+    "id": "tt-if-tu-8",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Power Tumbling Routine 8",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Whipback",
+          "dd": 0.3
+        },
+        {
+          "name": "Whipback",
+          "dd": 0.3
+        },
+        {
+          "name": "Whipback",
+          "dd": 0.3
+        },
+        {
+          "name": "Back Straight (Layout)",
+          "dd": 0.6
+        }
+      ],
+      [
+        {
+          "name": "Front Layout Step-Out",
+          "dd": 0.7
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Whipback",
+          "dd": 0.3
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Full",
+          "dd": 0.9
+        }
+      ]
+    ],
+    "passTotals": [
+      1.6,
+      2.4
+    ],
+    "totalDd": 4.0,
+    "note": "This tab ('Intermediate Flyers Power Tumbling') is hidden in the workbook. Sheet note: 'Routine skill values include any applicable bonuses for Front or Back Whips'."
+  },
+  {
+    "id": "tt-if-tu-9",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Power Tumbling Routine 9",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Front Tuck Step-Out",
+          "dd": 0.6
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Whipback",
+          "dd": 0.3
+        },
+        {
+          "name": "Back Tuck",
+          "dd": 0.5
+        }
+      ],
+      [
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Barani Tuck",
+          "dd": 0.7
+        },
+        {
+          "name": "Front Tuck",
+          "dd": 0.6
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Jump Full Turn",
+          "dd": 0.0
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Full",
+          "dd": 0.9
+        }
+      ]
+    ],
+    "passTotals": [
+      1.6,
+      2.5
+    ],
+    "totalDd": 4.1,
+    "note": "This tab ('Intermediate Flyers Power Tumbling') is hidden in the workbook. Sheet note: 'Routine skill values include any applicable bonuses for Front or Back Whips'."
+  },
+  {
+    "id": "tt-if-tu-10",
+    "discipline": "tt",
+    "level": "if",
+    "title": "Intermediate Flyers Power Tumbling Routine 10",
+    "event": "tu",
+    "passes": [
+      [
+        {
+          "name": "Front Tuck Step-Out",
+          "dd": 0.6
+        },
+        {
+          "name": "Front Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Front Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Front Tuck",
+          "dd": 0.6
+        },
+        {
+          "name": "Front Tuck",
+          "dd": 0.6
+        }
+      ],
+      [
+        {
+          "name": "Front Tuck Step-Out",
+          "dd": 0.6
+        },
+        {
+          "name": "Roundoff",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Back Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Arabian Step-Out",
+          "dd": 0.7
+        },
+        {
+          "name": "Front Handspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Flyspring",
+          "dd": 0.1
+        },
+        {
+          "name": "Front Pike",
+          "dd": 0.7
+        }
+      ]
+    ],
+    "passTotals": [
+      2.0,
+      2.5
+    ],
+    "totalDd": 4.5,
+    "note": "This tab ('Intermediate Flyers Power Tumbling') is hidden in the workbook. Sheet note: 'Routine skill values include any applicable bonuses for Front or Back Whips'."
+  },
+  {
+    "id": "mag-dev-fx-1",
+    "discipline": "mag",
+    "level": "dev",
+    "title": "Developmental Floor example",
+    "event": "fx",
+    "sv": 11.6,
+    "sheetTotals": {
+      "numberOfSkills": 6,
+      "difficulty": 0.6,
+      "egBonus": 1.0,
+      "bonusDeduction": 0.0
+    },
+    "skills": [
+      {
+        "name": "Run into cartwheel",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Backward roll to support",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "L hold",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Dive Roll (side pass)",
+        "letter": "A",
+        "eg": 2
+      },
+      {
+        "name": "Half pirouette in handstand",
+        "letter": "A",
+        "eg": 1
+      },
+      {
+        "name": "Round off",
+        "letter": "A",
+        "eg": null
+      }
+    ],
+    "video": "https://youtu.be/P_xa5MvEPr0",
+    "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 12.7."
+  },
+  {
+    "id": "mag-dev-ph-1",
+    "discipline": "mag",
+    "level": "dev",
+    "title": "Developmental Pommel Horse example",
+    "event": "ph",
+    "sv": 11.7,
+    "sheetTotals": {
+      "numberOfSkills": 6,
+      "difficulty": 0.7,
+      "egBonus": 0.5,
+      "bonusDeduction": 0.5
+    },
+    "skills": [
+      {
+        "name": "Single leg stockli travel",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Scissor hop",
+        "letter": "B",
+        "eg": 1
+      },
+      {
+        "name": "Single leg travel",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Scissor",
+        "letter": "A",
+        "eg": 1
+      },
+      {
+        "name": "False Scissor",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "1/2 Circle dismount",
+        "letter": "A",
+        "eg": null
+      }
+    ],
+    "video": "https://youtu.be/oOk4IZOtGiU",
+    "note": "Bonus/Deduction column entries: skill 1 (Single leg stockli travel): '5 Mushroom Circles'; skill 2 (Scissor hop): '+(0.5)'. Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 12.7."
+  },
+  {
+    "id": "mag-dev-sr-1",
+    "discipline": "mag",
+    "level": "dev",
+    "title": "Developmental Rings example",
+    "event": "sr",
+    "sv": 12.1,
+    "sheetTotals": {
+      "numberOfSkills": 6,
+      "difficulty": 0.6,
+      "egBonus": 1.5,
+      "bonusDeduction": 0.0
+    },
+    "skills": [
+      {
+        "name": "Muscle up",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Shoulder stand",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "L-sit",
+        "letter": "A",
+        "eg": 2
+      },
+      {
+        "name": "Fwd roll from support",
+        "letter": "A",
+        "eg": 1
+      },
+      {
+        "name": "German hang",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Back pike dismount",
+        "letter": "A",
+        "eg": 4
+      }
+    ],
+    "video": "https://youtu.be/wmPVrcZKRYw",
+    "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 12.7."
+  },
+  {
+    "id": "mag-dev-vt-1",
+    "discipline": "mag",
+    "level": "dev",
+    "title": "Developmental Vault example",
+    "event": "vt",
+    "vault": "Hdspr. (FIG VT 201)",
+    "vaultName": "Hdspr.",
+    "vaultNumber": 201,
+    "vaultEg": 2,
+    "sv": 11.2,
+    "video": "https://youtu.be/oo0gXB4FPvs",
+    "note": "Sheet note: SV Cap is 12.7."
+  },
+  {
+    "id": "mag-dev-pb-1",
+    "discipline": "mag",
+    "level": "dev",
+    "title": "Developmental Parallel Bars example",
+    "event": "pb",
+    "sv": 12.1,
+    "sheetTotals": {
+      "numberOfSkills": 6,
+      "difficulty": 0.6,
+      "egBonus": 1.5,
+      "bonusDeduction": 0.0
+    },
+    "skills": [
+      {
+        "name": "Kip",
+        "letter": "A",
+        "eg": 3
+      },
+      {
+        "name": "L",
+        "letter": "A",
+        "eg": 2
+      },
+      {
+        "name": "Shoulder Stand Hold",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Forward Roll",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Front Uprise",
+        "letter": "A",
+        "eg": 1
+      },
+      {
+        "name": "Flank Dismount",
+        "letter": "A",
+        "eg": null
+      }
+    ],
+    "video": "https://youtu.be/9KwgcAB9v00",
+    "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 12.7."
+  },
+  {
+    "id": "mag-dev-hb-1",
+    "discipline": "mag",
+    "level": "dev",
+    "title": "Developmental High Bar example",
+    "event": "hb",
+    "sv": 11.1,
+    "sheetTotals": {
+      "numberOfSkills": 6,
+      "difficulty": 0.6,
+      "egBonus": 0.5,
+      "bonusDeduction": 0.0
+    },
+    "skills": [
+      {
+        "name": "Pullover",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Cast to Horizontal",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Back Hip Circle to Undershoot",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Back Uprise to Undershoot",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Kip to Support to Undershoot",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Back Pike Dismount",
+        "letter": "A",
+        "eg": 4
+      }
+    ],
+    "video": "https://youtube.com/watch?v=TXesc5Rb80o?feature=share",
+    "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 12.7."
+  },
+  {
+    "id": "mag-int-fx-1",
+    "discipline": "mag",
+    "level": "int",
+    "title": "Intermediate Floor example",
+    "event": "fx",
+    "sv": 11.7,
+    "sheetTotals": {
+      "numberOfSkills": 6,
+      "difficulty": 0.6,
+      "egBonus": 1.1,
+      "bonusDeduction": 0.0
+    },
+    "skills": [
+      {
+        "name": "Front Tuck",
+        "letter": "A",
+        "eg": 2
+      },
+      {
+        "name": "Cartwheel",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Dive Roll (side pass)",
+        "letter": "A",
+        "eg": 2
+      },
+      {
+        "name": "Handstand Half Pirouette",
+        "letter": "A",
+        "eg": 1
+      },
+      {
+        "name": "Round Off",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Back Tuck",
+        "letter": "A",
+        "eg": 3
+      }
+    ],
+    "video": "https://youtu.be/OkTig22qyeg",
+    "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 13.2."
+  },
+  {
+    "id": "mag-int-ph-1",
+    "discipline": "mag",
+    "level": "int",
+    "title": "Intermediate Pommel Horse example",
+    "event": "ph",
+    "sv": 11.5,
+    "sheetTotals": {
+      "numberOfSkills": 6,
+      "difficulty": 0.7,
+      "egBonus": 0.8,
+      "bonusDeduction": 0.0
+    },
+    "skills": [
+      {
+        "name": "Single Leg Stockli Travel",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Scissor",
+        "letter": "A",
+        "eg": 1
+      },
+      {
+        "name": "Scissor Hop",
+        "letter": "B",
+        "eg": 1
+      },
+      {
+        "name": "Single Leg Travel",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Circle",
+        "letter": "A",
+        "eg": 2
+      },
+      {
+        "name": "1/2 Circle Dismount",
+        "letter": "A",
+        "eg": null
+      }
+    ],
+    "video": "https://youtu.be/lAJLPhhrXwg",
+    "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 13.2."
+  },
+  {
+    "id": "mag-int-sr-1",
+    "discipline": "mag",
+    "level": "int",
+    "title": "Intermediate Rings example",
+    "event": "sr",
+    "sv": 11.7,
+    "sheetTotals": {
+      "numberOfSkills": 6,
+      "difficulty": 0.6,
+      "egBonus": 1.1,
+      "bonusDeduction": 0.0
+    },
+    "skills": [
+      {
+        "name": "Inlocate",
+        "letter": "A",
+        "eg": 1
+      },
+      {
+        "name": "Back uprise to support",
+        "letter": "A",
+        "eg": 1
+      },
+      {
+        "name": "L-sit",
+        "letter": "A",
+        "eg": 2
+      },
+      {
+        "name": "German hang",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Dislocate",
+        "letter": "A",
+        "eg": 1
+      },
+      {
+        "name": "Back layout",
+        "letter": "A",
+        "eg": 4
+      }
+    ],
+    "video": "https://youtu.be/1wd5CMEFAh8",
+    "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 13.2."
+  },
+  {
+    "id": "mag-int-vt-1",
+    "discipline": "mag",
+    "level": "int",
+    "title": "Intermediate Vault example",
+    "event": "vt",
+    "vault": "Hdspr. sw. 1/4t. (FIG VT 301)",
+    "vaultName": "Hdspr. sw. 1/4t.",
+    "vaultNumber": 301,
+    "vaultEg": 3,
+    "sv": 11.2,
+    "video": "https://youtu.be/iw-cMRsmPng",
+    "note": "Sheet note: SV Cap is 13.2."
+  },
+  {
+    "id": "mag-int-pb-1",
+    "discipline": "mag",
+    "level": "int",
+    "title": "Intermediate Parallel Bars example",
+    "event": "pb",
+    "sv": 12.0,
+    "sheetTotals": {
+      "numberOfSkills": 6,
+      "difficulty": 0.6,
+      "egBonus": 1.4,
+      "bonusDeduction": 0.0
+    },
+    "skills": [
+      {
+        "name": "Kip",
+        "letter": "A",
+        "eg": 3
+      },
+      {
+        "name": "L",
+        "letter": "A",
+        "eg": 2
+      },
+      {
+        "name": "Shoulder Stand Hold",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Front Uprise",
+        "letter": "A",
+        "eg": 1
+      },
+      {
+        "name": "Swing Handstand",
+        "letter": "A",
+        "eg": 2
+      },
+      {
+        "name": "Back Pike",
+        "letter": "A",
+        "eg": 4
+      }
+    ],
+    "video": "https://youtu.be/eOOFV1BmwEs",
+    "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 13.2."
+  },
+  {
+    "id": "mag-int-hb-1",
+    "discipline": "mag",
+    "level": "int",
+    "title": "Intermediate High Bar example",
+    "event": "hb",
+    "sv": 10.9,
+    "sheetTotals": {
+      "numberOfSkills": 6,
+      "difficulty": 0.6,
+      "egBonus": 0.3,
+      "bonusDeduction": 0.0
+    },
+    "skills": [
+      {
+        "name": "Pullover in Undergrip",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "3/4 Front Giant Hop Out",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Swing Half Turn",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Kip to Support",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Cast to Horizontal",
+        "letter": "A",
+        "eg": null
+      },
+      {
+        "name": "Back Pike Dismount",
+        "letter": "A",
+        "eg": 4
+      }
+    ],
+    "video": "https://youtube.com/watch?v=2keQH9G2-0w?feature=share",
+    "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 13.2."
+  }
+]

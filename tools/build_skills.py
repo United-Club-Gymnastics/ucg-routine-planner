@@ -22,8 +22,8 @@ import sys
 DROPBOX = os.path.expanduser(r"~/Steinsharpe Dropbox/Nate Sharpe/Documents/Misc/Gymnastics")
 WG_DEFAULT = os.path.join(DROPBOX, "Reference", "gym_skill_extract", "skills_verified.json")
 COP_DEFAULT = os.path.join(DROPBOX, "UCG", "Code of Points")
-OUT = os.path.join(os.path.dirname(__file__), "..", "js", "skills.js")
-VAULT_OUT = os.path.join(os.path.dirname(__file__), "..", "js", "vaults.js")
+OUT = os.path.join(os.path.dirname(__file__), "..", "js", "data", "mag-skills.js")
+VAULT_OUT = os.path.join(os.path.dirname(__file__), "..", "js", "data", "mag-vaults.js")
 
 # Advanced (GymACT) values that differ from the WG value, by WG vault number.
 ADV_VAULT = {107: 3.6, 108: 4.4, 109: 4.8, 113: 4.0, 114: 4.4, 115: 4.8, 116: 5.2, 117: 5.6, 118: 6.0,

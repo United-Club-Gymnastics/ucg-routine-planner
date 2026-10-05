@@ -1,0 +1,1631 @@
+{
+ "tramp": [
+  {
+   "name": "¾ front somersault",
+   "fig": "30",
+   "positions": {
+    "o": 0.3,
+    "<": 0.3,
+    "/": 0.3
+   }
+  },
+  {
+   "name": "1 ¾ front somersault",
+   "fig": "700",
+   "positions": {
+    "o": 0.8,
+    "<": 0.9,
+    "/": 0.9
+   }
+  },
+  {
+   "name": "2 ¾ front somersault",
+   "fig": "11000",
+   "positions": {
+    "o": 1.3,
+    "<": 1.5,
+    "/": 1.5
+   }
+  },
+  {
+   "name": "Porpoise",
+   "fig": "40",
+   "positions": {
+    "o": 0.5,
+    "<": 0.6,
+    "/": 0.6
+   }
+  },
+  {
+   "name": "Double porpoise",
+   "fig": "800",
+   "positions": {
+    "o": 1.0,
+    "<": 1.2,
+    "/": 1.2
+   }
+  },
+  {
+   "name": "Ball out",
+   "fig": "50",
+   "positions": {
+    "o": 0.6,
+    "<": 0.7,
+    "/": 0.7
+   }
+  },
+  {
+   "name": "Barani ball out",
+   "fig": "51",
+   "positions": {
+    "o": 0.7,
+    "<": 0.7,
+    "/": 0.7
+   }
+  },
+  {
+   "name": "Rudy ball out",
+   "fig": "53",
+   "positions": {
+    "/": 0.9
+   }
+  },
+  {
+   "name": "Fliffis ball out",
+   "fig": "901",
+   "positions": {
+    "o": 1.2,
+    "<": 1.4,
+    "/": 1.4
+   }
+  },
+  {
+   "name": "Fliffis Rudy ball out",
+   "fig": "903",
+   "positions": {
+    "o": 1.4,
+    "<": 1.6,
+    "/": 1.6
+   }
+  },
+  {
+   "name": "¾ back somersault",
+   "fig": "30",
+   "positions": {
+    "o": 0.3,
+    "<": 0.3,
+    "/": 0.3
+   }
+  },
+  {
+   "name": "1 ¾ back with ½ twist",
+   "fig": "710",
+   "positions": {
+    "o": 0.9,
+    "<": 1.0,
+    "/": 1.0
+   }
+  },
+  {
+   "name": "2 ¾ back with ½ twist",
+   "fig": "11100",
+   "positions": {
+    "o": 1.5,
+    "<": 1.7,
+    "/": 1.7
+   }
+  },
+  {
+   "name": "Pullover",
+   "fig": "30",
+   "positions": {
+    "o": 0.3,
+    "<": 0.3,
+    "/": 0.3
+   }
+  },
+  {
+   "name": "Double pullover",
+   "fig": "700",
+   "positions": {
+    "o": 0.8,
+    "<": 0.9,
+    "/": 0.9
+   }
+  },
+  {
+   "name": "Cody",
+   "fig": "50",
+   "positions": {
+    "o": 0.6,
+    "<": 0.7,
+    "/": 0.7
+   }
+  },
+  {
+   "name": "Cody full",
+   "fig": "52",
+   "positions": {
+    "/": 0.8
+   }
+  },
+  {
+   "name": "Double Cody",
+   "fig": "900",
+   "positions": {
+    "o": 1.2,
+    "<": 1.4,
+    "/": 1.4
+   }
+  },
+  {
+   "name": "Front somersault",
+   "fig": "40",
+   "positions": {
+    "o": 0.5,
+    "<": 0.6,
+    "/": 0.6
+   }
+  },
+  {
+   "name": "Barani",
+   "fig": "41",
+   "positions": {
+    "o": 0.6,
+    "<": 0.6,
+    "/": 0.6
+   }
+  },
+  {
+   "name": "Front Full",
+   "fig": "42",
+   "positions": {
+    "/": 0.7
+   }
+  },
+  {
+   "name": "Rudy",
+   "fig": "43",
+   "positions": {
+    "/": 0.8
+   }
+  },
+  {
+   "name": "Randy",
+   "fig": "45",
+   "positions": {
+    "/": 1.0
+   }
+  },
+  {
+   "name": "Back somersault",
+   "fig": "40",
+   "positions": {
+    "o": 0.5,
+    "<": 0.6,
+    "/": 0.6
+   }
+  },
+  {
+   "name": "Back somersault, ½ twist",
+   "fig": "41",
+   "positions": {
+    "o": 0.6,
+    "<": 0.6,
+    "/": 0.6
+   }
+  },
+  {
+   "name": "Back full",
+   "fig": "42",
+   "positions": {
+    "/": 0.7
+   }
+  },
+  {
+   "name": "Back double full",
+   "fig": "44",
+   "positions": {
+    "/": 0.9
+   }
+  },
+  {
+   "name": "Back triple full",
+   "fig": "46",
+   "positions": {
+    "/": 1.1
+   }
+  },
+  {
+   "name": "Double Front",
+   "fig": "800",
+   "positions": {
+    "o": 1.0,
+    "<": 1.2,
+    "/": 1.2
+   }
+  },
+  {
+   "name": "Barani-out",
+   "fig": "801",
+   "positions": {
+    "o": 1.1,
+    "<": 1.3,
+    "/": 1.3
+   }
+  },
+  {
+   "name": "Rudy-out",
+   "fig": "803",
+   "positions": {
+    "o": 1.3,
+    "<": 1.5,
+    "/": 1.5
+   }
+  },
+  {
+   "name": "Randy-out",
+   "fig": "805",
+   "positions": {
+    "o": 1.6,
+    "<": 1.8,
+    "/": 1.8
+   }
+  },
+  {
+   "name": "Half-in",
+   "fig": "810",
+   "positions": {
+    "o": 1.1,
+    "<": 1.3,
+    "/": 1.3
+   }
+  },
+  {
+   "name": "Half-in, full-out",
+   "fig": "812",
+   "positions": {
+    "o": 1.3,
+    "<": 1.5,
+    "/": 1.5
+   }
+  },
+  {
+   "name": "Full-in, Barani-out",
+   "fig": "821",
+   "positions": {
+    "o": 1.3,
+    "<": 1.5,
+    "/": 1.5
+   }
+  },
+  {
+   "name": "Full-in, Rudy-out",
+   "fig": "823",
+   "positions": {
+    "o": 1.6,
+    "<": 1.8,
+    "/": 1.8
+   }
+  },
+  {
+   "name": "Full-in, Randy-out",
+   "fig": "825",
+   "positions": {
+    "o": 2.0,
+    "<": 2.2,
+    "/": 2.2
+   }
+  },
+  {
+   "name": "Double back",
+   "fig": "800",
+   "positions": {
+    "o": 1.1,
+    "<": 1.3,
+    "/": 1.3
+   }
+  },
+  {
+   "name": "Half-in, half-out",
+   "fig": "811",
+   "positions": {
+    "o": 1.3,
+    "<": 1.5,
+    "/": 1.5
+   }
+  },
+  {
+   "name": "Half-in, Rudy-out",
+   "fig": "813",
+   "positions": {
+    "o": 1.5,
+    "<": 1.7,
+    "/": 1.7
+   }
+  },
+  {
+   "name": "Half-in, Randy-out",
+   "fig": "815",
+   "positions": {
+    "o": 1.9,
+    "<": 2.1,
+    "/": 2.1
+   }
+  },
+  {
+   "name": "Full-in",
+   "fig": "820",
+   "positions": {
+    "o": 1.3,
+    "<": 1.5,
+    "/": 1.5
+   }
+  },
+  {
+   "name": "Full-out",
+   "fig": "802",
+   "positions": {
+    "o": 1.3,
+    "<": 1.5,
+    "/": 1.5
+   }
+  },
+  {
+   "name": "Full-in, full-out",
+   "fig": "822",
+   "positions": {
+    "o": 1.5,
+    "<": 1.7,
+    "/": 1.7
+   }
+  },
+  {
+   "name": "1½-in, half-out",
+   "fig": "831",
+   "positions": {
+    "o": 1.5,
+    "<": 1.7,
+    "/": 1.7
+   }
+  },
+  {
+   "name": "Full, double full 'Miller'",
+   "fig": "833",
+   "positions": {
+    "o": 1.9,
+    "<": 2.1,
+    "/": 2.1
+   }
+  },
+  {
+   "name": "Double full, double full",
+   "fig": "844",
+   "positions": {
+    "o": 2.3,
+    "<": 2.5,
+    "/": 2.5
+   }
+  },
+  {
+   "name": "Triffis half-out",
+   "fig": "12001",
+   "positions": {
+    "o": 1.7,
+    "<": 2.0,
+    "/": 2.0
+   }
+  },
+  {
+   "name": "Triffis Rudy-out",
+   "fig": "12003",
+   "positions": {
+    "o": 2.1,
+    "<": 2.4,
+    "/": 2.4
+   }
+  },
+  {
+   "name": "Triffis full-in, half-out",
+   "fig": "12201",
+   "positions": {
+    "o": 2.1,
+    "<": 2.4,
+    "/": 2.4
+   }
+  },
+  {
+   "name": "Triffis full-in, Rudy-out",
+   "fig": "12203",
+   "positions": {
+    "o": 2.7,
+    "<": 3.0,
+    "/": 3.0
+   }
+  },
+  {
+   "name": "Quad half-out",
+   "fig": "160001",
+   "positions": {
+    "o": 2.5,
+    "<": 2.9,
+    "/": 2.9
+   }
+  },
+  {
+   "name": "Triple back",
+   "fig": "12000",
+   "positions": {
+    "o": 1.8,
+    "<": 2.1,
+    "/": 2.1
+   }
+  },
+  {
+   "name": "Triffis half-in, half-out",
+   "fig": "12101",
+   "positions": {
+    "o": 2.0,
+    "<": 2.3,
+    "/": 2.3
+   }
+  },
+  {
+   "name": "Triffis half-in, Rudy-out",
+   "fig": "12103",
+   "positions": {
+    "o": 2.6,
+    "<": 2.9,
+    "/": 2.9
+   }
+  },
+  {
+   "name": "Triffis full, full, full",
+   "fig": "12222",
+   "positions": {
+    "o": 3.2,
+    "<": 3.5,
+    "/": 3.5
+   }
+  },
+  {
+   "name": "Quad back",
+   "fig": "160000",
+   "positions": {
+    "o": 2.5,
+    "<": 2.9,
+    "/": 2.9
+   }
+  },
+  {
+   "name": "Tuck Jump",
+   "fig": "--o",
+   "positions": {
+    "": 0.0
+   }
+  },
+  {
+   "name": "Straddle Jump",
+   "fig": "Straddle",
+   "positions": {
+    "": 0.0
+   }
+  },
+  {
+   "name": "Pike Jump",
+   "fig": "-->",
+   "positions": {
+    "": 0.0
+   }
+  },
+  {
+   "name": "Half Turn",
+   "fig": "-1/",
+   "positions": {
+    "": 0.1
+   }
+  },
+  {
+   "name": "Full Turn",
+   "fig": "-2/",
+   "positions": {
+    "": 0.2
+   }
+  },
+  {
+   "name": "1.5 Turn",
+   "fig": "-3/",
+   "positions": {
+    "": 0.3
+   }
+  },
+  {
+   "name": "Double Turn",
+   "fig": "-4/",
+   "positions": {
+    "": 0.4
+   }
+  },
+  {
+   "name": "2.5 Turn",
+   "fig": "-5/",
+   "positions": {
+    "": 0.5
+   }
+  },
+  {
+   "name": "Triple Turn",
+   "fig": "-6/",
+   "positions": {
+    "": 0.6
+   }
+  },
+  {
+   "name": "Doggy Drop",
+   "fig": "Doggy",
+   "positions": {
+    "": 0.0
+   }
+  },
+  {
+   "name": "Seat Drop",
+   "fig": "--/",
+   "positions": {
+    "": 0.0
+   }
+  },
+  {
+   "name": "Half Turn to Seat",
+   "fig": "-1/",
+   "positions": {
+    "": 0.1
+   }
+  },
+  {
+   "name": "Full Turn to Seat",
+   "fig": "-2/",
+   "positions": {
+    "": 0.2
+   }
+  },
+  {
+   "name": "Half Turn from Seat",
+   "fig": "-1/",
+   "positions": {
+    "": 0.1
+   }
+  },
+  {
+   "name": "Full Turn from Seat",
+   "fig": "-2/",
+   "positions": {
+    "": 0.2
+   }
+  },
+  {
+   "name": "Front Drop (all positions)",
+   "fig": "1-/",
+   "positions": {
+    "": 0.1
+   }
+  },
+  {
+   "name": "Airplane (Half turn to Front)",
+   "fig": "11/",
+   "positions": {
+    "": 0.2
+   }
+  },
+  {
+   "name": "Full Turn to Front Drop",
+   "fig": "12/",
+   "positions": {
+    "": 0.3
+   }
+  },
+  {
+   "name": "Half Turn from Front",
+   "fig": "11/",
+   "positions": {
+    "": 0.2
+   }
+  },
+  {
+   "name": "Full Turn from Front",
+   "fig": "12/",
+   "positions": {
+    "": 0.3
+   }
+  },
+  {
+   "name": "Back Drop (all positions)",
+   "fig": "1-/",
+   "positions": {
+    "": 0.1
+   }
+  },
+  {
+   "name": "Half Turn to Back",
+   "fig": "11/",
+   "positions": {
+    "": 0.2
+   }
+  },
+  {
+   "name": "Full Turn to Back",
+   "fig": "12/",
+   "positions": {
+    "": 0.3
+   }
+  },
+  {
+   "name": "Half Turn from Back",
+   "fig": "11/",
+   "positions": {
+    "": 0.2
+   }
+  },
+  {
+   "name": "Full Turn from Back",
+   "fig": "12/",
+   "positions": {
+    "": 0.3
+   }
+  },
+  {
+   "name": "Return to Feet (from seat or doggy)",
+   "fig": "ROF",
+   "positions": {
+    "": 0.0
+   }
+  },
+  {
+   "name": "Return to Feet (from front or back)",
+   "fig": "1-/",
+   "positions": {
+    "": 0.1
+   }
+  },
+  {
+   "name": "Doggy to Seat",
+   "fig": "1-/",
+   "positions": {
+    "": 0.1
+   }
+  },
+  {
+   "name": "Doggy to Back",
+   "fig": "2-/",
+   "positions": {
+    "": 0.2
+   }
+  },
+  {
+   "name": "Doggy to Front",
+   "fig": "0-/",
+   "positions": {
+    "": 0.0
+   }
+  },
+  {
+   "name": "Seat to Doggy",
+   "fig": "1-/",
+   "positions": {
+    "": 0.1
+   }
+  },
+  {
+   "name": "Back to Doggy",
+   "fig": "1-/",
+   "positions": {
+    "": 0.1
+   }
+  },
+  {
+   "name": "Doggy Front 3/4",
+   "fig": "3-/",
+   "positions": {
+    "": 0.3
+   }
+  },
+  {
+   "name": "Front to Seat",
+   "fig": "1-/",
+   "positions": {
+    "": 0.1
+   }
+  },
+  {
+   "name": "Front to Back",
+   "fig": "2-/",
+   "positions": {
+    "": 0.2
+   }
+  },
+  {
+   "name": "Seat to Front",
+   "fig": "1-/",
+   "positions": {
+    "": 0.1
+   }
+  },
+  {
+   "name": "Back to Front",
+   "fig": "2-/",
+   "positions": {
+    "": 0.2
+   }
+  },
+  {
+   "name": "Cradle (Back Drop, Half Turn to Back)",
+   "fig": "21/",
+   "positions": {
+    "": 0.3
+   }
+  },
+  {
+   "name": "Cruise (Front, Half Turn to Front)",
+   "fig": "21/",
+   "positions": {
+    "": 0.3
+   }
+  },
+  {
+   "name": "Swivel Hip (Seat Drop, Half Turn to Seat Drop)",
+   "fig": "11/",
+   "positions": {
+    "": 0.1
+   }
+  },
+  {
+   "name": "Pullover to Front",
+   "fig": "2-/",
+   "positions": {
+    "": 0.2
+   }
+  },
+  {
+   "name": "Pullover Half Turn",
+   "fig": "21/",
+   "positions": {
+    "": 0.3
+   }
+  },
+  {
+   "name": "Pullover Full Turn",
+   "fig": "22/",
+   "positions": {
+    "": 0.4
+   }
+  },
+  {
+   "name": "Pullover to Back",
+   "fig": "4-o",
+   "positions": {
+    "": 0.5
+   }
+  }
+ ],
+ "dmt": [
+  {
+   "name": "Front somersault",
+   "fig": "40",
+   "positions": {
+    "o": 0.5,
+    "<": 0.6,
+    "/": 0.6
+   }
+  },
+  {
+   "name": "Barani",
+   "fig": "41",
+   "positions": {
+    "o": 0.7,
+    "<": 0.7,
+    "/": 0.7
+   }
+  },
+  {
+   "name": "Front full",
+   "fig": "42",
+   "positions": {
+    "/": 0.9
+   }
+  },
+  {
+   "name": "Rudy",
+   "fig": "43",
+   "positions": {
+    "/": 1.2
+   }
+  },
+  {
+   "name": "Randy",
+   "fig": "45",
+   "positions": {
+    "/": 1.9
+   }
+  },
+  {
+   "name": "Back somersault",
+   "fig": "40",
+   "positions": {
+    "o": 0.5,
+    "<": 0.6,
+    "/": 0.6
+   }
+  },
+  {
+   "name": "Arabian somersault",
+   "fig": "41",
+   "positions": {
+    "o": 0.7,
+    "<": 0.7,
+    "/": 0.7
+   }
+  },
+  {
+   "name": "Back full",
+   "fig": "42",
+   "positions": {
+    "/": 0.9
+   }
+  },
+  {
+   "name": "Back double full",
+   "fig": "44",
+   "positions": {
+    "/": 1.5
+   }
+  },
+  {
+   "name": "Back triple full",
+   "fig": "46",
+   "positions": {
+    "/": 2.3
+   }
+  },
+  {
+   "name": "Double front",
+   "fig": "800",
+   "positions": {
+    "o": 2.0,
+    "<": 2.4,
+    "/": 2.8
+   }
+  },
+  {
+   "name": "Barani-out",
+   "fig": "801",
+   "positions": {
+    "o": 2.4,
+    "<": 2.8,
+    "/": 3.2
+   }
+  },
+  {
+   "name": "Rudy-out",
+   "fig": "803",
+   "positions": {
+    "o": 3.2,
+    "<": 3.6,
+    "/": 4.0
+   }
+  },
+  {
+   "name": "Randy-out",
+   "fig": "805",
+   "positions": {
+    "o": 4.0,
+    "<": 4.4,
+    "/": 4.8
+   }
+  },
+  {
+   "name": "Half-in",
+   "fig": "810",
+   "positions": {
+    "o": 2.4,
+    "<": 2.8,
+    "/": 3.2
+   }
+  },
+  {
+   "name": "Half-in, full-out",
+   "fig": "812",
+   "positions": {
+    "o": 3.2,
+    "<": 3.6,
+    "/": 4.0
+   }
+  },
+  {
+   "name": "Full-in, half-out",
+   "fig": "821",
+   "positions": {
+    "o": 3.2,
+    "<": 3.6,
+    "/": 4.0
+   }
+  },
+  {
+   "name": "Full-in, Rudy-out",
+   "fig": "823",
+   "positions": {
+    "o": 4.0,
+    "<": 4.4,
+    "/": 4.8
+   }
+  },
+  {
+   "name": "Full-in, Randy-out",
+   "fig": "825",
+   "positions": {
+    "o": 4.8,
+    "<": 5.2,
+    "/": 5.6
+   }
+  },
+  {
+   "name": "Double back",
+   "fig": "800",
+   "positions": {
+    "o": 2.0,
+    "<": 2.4,
+    "/": 2.8
+   }
+  },
+  {
+   "name": "Half-in, half-out",
+   "fig": "811",
+   "positions": {
+    "o": 2.8,
+    "<": 3.2,
+    "/": 3.6
+   }
+  },
+  {
+   "name": "Half-in, Rudy-out",
+   "fig": "813",
+   "positions": {
+    "o": 3.6,
+    "<": 4.0,
+    "/": 4.4
+   }
+  },
+  {
+   "name": "Half-in, Randy-out",
+   "fig": "815",
+   "positions": {
+    "o": 4.4,
+    "<": 4.8,
+    "/": 5.2
+   }
+  },
+  {
+   "name": "Full-in",
+   "fig": "820",
+   "positions": {
+    "o": 2.8,
+    "<": 3.2,
+    "/": 3.6
+   }
+  },
+  {
+   "name": "Full-out",
+   "fig": "802",
+   "positions": {
+    "o": 2.8,
+    "<": 3.2,
+    "/": 3.6
+   }
+  },
+  {
+   "name": "Double full-out",
+   "fig": "804",
+   "positions": {
+    "o": 3.6,
+    "<": 4.0,
+    "/": 4.4
+   }
+  },
+  {
+   "name": "Full-in, full-out",
+   "fig": "822",
+   "positions": {
+    "o": 3.6,
+    "/": 4.4
+   }
+  },
+  {
+   "name": "1½ in, half-out 'Full, full'",
+   "fig": "831",
+   "positions": {
+    "o": 3.6,
+    "<": 4.0,
+    "/": 4.4
+   }
+  },
+  {
+   "name": "Full, double full 'Miller'",
+   "fig": "833",
+   "positions": {
+    "o": 4.4,
+    "<": 4.8,
+    "/": 5.2
+   }
+  },
+  {
+   "name": "Double full, double full",
+   "fig": "844",
+   "positions": {
+    "o": 5.2,
+    "/": 6.0
+   }
+  },
+  {
+   "name": "Triple full, double full",
+   "fig": "855",
+   "positions": {
+    "/": 6.8
+   }
+  },
+  {
+   "name": "Triffis half-out",
+   "fig": "12001",
+   "positions": {
+    "o": 5.1,
+    "<": 5.9
+   }
+  },
+  {
+   "name": "Triffis Rudy-out",
+   "fig": "12003",
+   "positions": {
+    "o": 6.3,
+    "<": 7.1
+   }
+  },
+  {
+   "name": "Triffis full-in, half-out",
+   "fig": "12201",
+   "positions": {
+    "o": 6.3,
+    "<": 7.1
+   }
+  },
+  {
+   "name": "Triffis full-in, Rudy-out",
+   "fig": "12203",
+   "positions": {
+    "o": 7.5,
+    "<": 8.3
+   }
+  },
+  {
+   "name": "Triple back",
+   "fig": "12000",
+   "positions": {
+    "o": 4.5,
+    "<": 5.3,
+    "/": 6.1
+   }
+  },
+  {
+   "name": "Triffis full-in",
+   "fig": "12200",
+   "positions": {
+    "o": 5.7,
+    "<": 6.5
+   }
+  },
+  {
+   "name": "Triffis half-in, half-out",
+   "fig": "12101",
+   "positions": {
+    "o": 5.7,
+    "<": 6.5
+   }
+  },
+  {
+   "name": "Triffis half-in, Rudy-out",
+   "fig": "12103",
+   "positions": {
+    "o": 6.9,
+    "<": 7.7
+   }
+  },
+  {
+   "name": "Quad back",
+   "fig": "160000",
+   "positions": {
+    "o": 8.0,
+    "<": 9.6
+   }
+  },
+  {
+   "name": "Tuck Jump",
+   "fig": "--o",
+   "positions": {
+    "": 0.1
+   }
+  },
+  {
+   "name": "Straddle Jump",
+   "fig": "Straddle",
+   "positions": {
+    "": 0.1
+   }
+  },
+  {
+   "name": "Pike Jump",
+   "fig": "-->",
+   "positions": {
+    "": 0.1
+   }
+  },
+  {
+   "name": "Half Turn",
+   "fig": "-1/",
+   "positions": {
+    "": 0.1
+   }
+  },
+  {
+   "name": "Full Turn",
+   "fig": "-2/",
+   "positions": {
+    "": 0.2
+   }
+  },
+  {
+   "name": "1.5 Turn",
+   "fig": "-3/",
+   "positions": {
+    "": 0.3
+   }
+  }
+ ],
+ "tumbling": [
+  {
+   "name": "Roundoff",
+   "symbol": "(",
+   "dd": 0.2
+  },
+  {
+   "name": "Front handspring",
+   "symbol": "H",
+   "dd": 0.2
+  },
+  {
+   "name": "Front somersault tuck",
+   "symbol": ".4o",
+   "dd": 0.6,
+   "alt_symbol": ".-o"
+  },
+  {
+   "name": "Front somersault pike",
+   "symbol": ".4<",
+   "dd": 0.7,
+   "alt_symbol": ".-<"
+  },
+  {
+   "name": "Front somersault straight",
+   "symbol": ".4/",
+   "dd": 0.7,
+   "alt_symbol": ".-/"
+  },
+  {
+   "name": "Barani tuck",
+   "symbol": ".41o",
+   "dd": 0.8,
+   "alt_symbol": ".1o"
+  },
+  {
+   "name": "Barani pike",
+   "symbol": ".41<",
+   "dd": 0.8,
+   "alt_symbol": ".1<"
+  },
+  {
+   "name": "Barani straight",
+   "symbol": ".41/",
+   "dd": 0.8,
+   "alt_symbol": ".1/"
+  },
+  {
+   "name": "Front full",
+   "symbol": ".42",
+   "dd": 1.0,
+   "alt_symbol": ".2"
+  },
+  {
+   "name": "Rudy",
+   "symbol": ".43",
+   "dd": 1.2,
+   "alt_symbol": ".3"
+  },
+  {
+   "name": "Double front tuck",
+   "symbol": ".--o",
+   "dd": 2.4
+  },
+  {
+   "name": "Double front pike",
+   "symbol": ".--<",
+   "dd": 2.6
+  },
+  {
+   "name": "Front half-out tuck",
+   "symbol": ".-1o",
+   "dd": 2.6
+  },
+  {
+   "name": "Front half-out pike",
+   "symbol": ".-1<",
+   "dd": 2.8
+  },
+  {
+   "name": "Back handspring",
+   "symbol": "F",
+   "dd": 0.2
+  },
+  {
+   "name": "Whipback (whip)",
+   "symbol": "^",
+   "dd": 0.3
+  },
+  {
+   "name": "Back somersault tuck",
+   "symbol": "4o",
+   "dd": 0.5,
+   "alt_symbol": "-o"
+  },
+  {
+   "name": "Back somersault pike",
+   "symbol": "4<",
+   "dd": 0.6,
+   "alt_symbol": "-<"
+  },
+  {
+   "name": "Back somersault straight",
+   "symbol": "4/",
+   "dd": 0.6,
+   "alt_symbol": "-/"
+  },
+  {
+   "name": "Back straight ½ twist",
+   "symbol": "41/",
+   "dd": 0.7,
+   "alt_symbol": "1/"
+  },
+  {
+   "name": "Back full",
+   "symbol": "42",
+   "dd": 0.9,
+   "alt_symbol": "2"
+  },
+  {
+   "name": "Back 1½ twist",
+   "symbol": "43",
+   "dd": 1.1,
+   "alt_symbol": "3"
+  },
+  {
+   "name": "Double full",
+   "symbol": "44",
+   "dd": 1.3,
+   "alt_symbol": "4"
+  },
+  {
+   "name": "Triple full",
+   "symbol": "46",
+   "dd": 1.9,
+   "alt_symbol": "6"
+  },
+  {
+   "name": "Double back tuck",
+   "symbol": "--o",
+   "dd": 2.0
+  },
+  {
+   "name": "Double back pike",
+   "symbol": "--<",
+   "dd": 2.2
+  },
+  {
+   "name": "Double back straight",
+   "symbol": "--/",
+   "dd": 2.4
+  },
+  {
+   "name": "Double back split straight",
+   "symbol": "--Y",
+   "dd": 2.4
+  },
+  {
+   "name": "Back half-out tuck",
+   "symbol": "-1o",
+   "dd": 2.2
+  },
+  {
+   "name": "Back half-out straight",
+   "symbol": "-1/",
+   "dd": 2.6
+  },
+  {
+   "name": "Full-out tuck",
+   "symbol": "-2o",
+   "dd": 2.4
+  },
+  {
+   "name": "Full-out straight",
+   "symbol": "-2/",
+   "dd": 2.8
+  },
+  {
+   "name": "Full-in tuck",
+   "symbol": "2-o",
+   "dd": 2.4
+  },
+  {
+   "name": "Full-in pike",
+   "symbol": "2-<",
+   "dd": 2.6
+  },
+  {
+   "name": "Full-in straight",
+   "symbol": "2-/",
+   "dd": 2.8
+  },
+  {
+   "name": "Full-in, half-out tuck",
+   "symbol": "21o",
+   "dd": 2.8
+  },
+  {
+   "name": "Full-in, half-out straight",
+   "symbol": "21/",
+   "dd": 3.2
+  },
+  {
+   "name": "Full, full tuck",
+   "symbol": "22o",
+   "dd": 3.2
+  },
+  {
+   "name": "Full, full pike",
+   "symbol": "22<",
+   "dd": 3.4
+  },
+  {
+   "name": "Full, full straight",
+   "symbol": "22/",
+   "dd": 3.6
+  },
+  {
+   "name": "Full-in, 1½-out tuck",
+   "symbol": "23o",
+   "dd": 3.8
+  },
+  {
+   "name": "Full-in, 1½-out straight",
+   "symbol": "23/",
+   "dd": 4.2
+  },
+  {
+   "name": "Full, double full tuck",
+   "symbol": "33o",
+   "dd": 4.4
+  },
+  {
+   "name": "Full, double full straight",
+   "symbol": "33/",
+   "dd": 4.8
+  },
+  {
+   "name": "Double full, double full straight",
+   "symbol": "44/",
+   "dd": 6.4
+  },
+  {
+   "name": "Triple back tuck",
+   "symbol": "---o",
+   "dd": 4.5
+  },
+  {
+   "name": "Triple back pike",
+   "symbol": "---<",
+   "dd": 5.1
+  },
+  {
+   "name": "Triple back straight",
+   "symbol": "---/",
+   "dd": 5.7
+  },
+  {
+   "name": "Half-in, triple tuck (arabian)",
+   "symbol": "1--o",
+   "dd": 5.4
+  },
+  {
+   "name": "Half-in, triple pike (arabian)",
+   "symbol": "1--<",
+   "dd": 6.0
+  },
+  {
+   "name": "Full-in, triple back tuck",
+   "symbol": "2--o",
+   "dd": 6.3
+  },
+  {
+   "name": "Full-in, triple back pike",
+   "symbol": "2--<",
+   "dd": 6.9
+  },
+  {
+   "name": "Quadruple back tuck",
+   "symbol": "----o",
+   "dd": 8.0
+  },
+  {
+   "name": "Straight Jump/Rebound",
+   "symbol": "--/",
+   "dd": 0.1
+  },
+  {
+   "name": "Jump 1/2 Turn",
+   "symbol": "-1/",
+   "dd": 0.1
+  },
+  {
+   "name": "Jump Full Turn",
+   "symbol": "-2/",
+   "dd": 0.1
+  },
+  {
+   "name": "Forward Roll (tuck)",
+   "symbol": "--o",
+   "dd": 0.1
+  },
+  {
+   "name": "Forward Roll (pike)",
+   "symbol": "-->",
+   "dd": 0.1
+  },
+  {
+   "name": "Forward Roll Step-Out",
+   "symbol": "--o",
+   "dd": 0.1
+  },
+  {
+   "name": "Handstand Forward Roll",
+   "symbol": "/--o",
+   "dd": 0.1
+  },
+  {
+   "name": "Handstand Forward Roll Step-Out",
+   "symbol": "/--o",
+   "dd": 0.1
+  },
+  {
+   "name": "Cartwheel",
+   "symbol": "x",
+   "dd": 0.1
+  },
+  {
+   "name": "Cartwheel Step-In to Hollow",
+   "symbol": "x(",
+   "dd": 0.1
+  },
+  {
+   "name": "Backward Roll (tuck)",
+   "symbol": "--o",
+   "dd": 0.1
+  },
+  {
+   "name": "Backward Roll (pike)",
+   "symbol": "-->",
+   "dd": 0.1
+  },
+  {
+   "name": "Back Extension Roll Pike Down",
+   "symbol": "",
+   "dd": 0.1
+  },
+  {
+   "name": "Back Walkover",
+   "symbol": "bwo",
+   "dd": 0.1
+  },
+  {
+   "name": "Front Walkover",
+   "symbol": "fwo",
+   "dd": 0.1
+  },
+  {
+   "name": "Flyspring",
+   "symbol": "f",
+   "dd": 0.2
+  },
+  {
+   "name": "Forward Whip",
+   "symbol": "^",
+   "dd": 0.3
+  },
+  {
+   "name": "Front Aerial",
+   "symbol": "fa",
+   "dd": 0.2
+  },
+  {
+   "name": "Side Aerial",
+   "symbol": "sa",
+   "dd": 0.2
+  },
+  {
+   "name": "Arabian (tuck)",
+   "symbol": "41o",
+   "dd": 0.7
+  },
+  {
+   "name": "Arabian (pike)",
+   "symbol": "41<",
+   "dd": 0.7
+  }
+ ],
+ "rules": {
+  "tramp": [
+   "[Struck through in source, superseded by the NAIGC addendum's itemized values for jumps/drops/turns] Elements without twist or somersault: 0.1",
+   "Each ¼ somersault rotation: 0.1",
+   "Each ½ twist: 0.1",
+   "Single somersaults (360°) completed: 0.5",
+   "Double somersaults (720°) completed: 1.0",
+   "Triple somersaults (1080°) completed: 1.6",
+   "Quad somersaults (1440°) completed: 2.2",
+   "Pike / straight in single somersault, no [text truncated in source; 'twist' inferred from chart values, e.g. Barani and Back somersault ½ twist have no pike/straight bonus]: 0.1",
+   "Pike / straight in double somersault: 0.2",
+   "Pike / straight in triple somersault: 0.3",
+   "Pike / straight in quad somersault: 0.4",
+   "Double somersaults — each ½ (180°) twist over [truncated in source; 720° (i.e. more than 2 full twists) inferred from chart values 813/815/822/823/825/833/844]: add 0.1",
+   "Triple somersaults — each ½ (180°) twist over 3[truncated in source; 360° (i.e. more than 1 full twist) inferred from chart values 12003/12101/12103/12203/12222]: add 0.2",
+   "Quadruple somersaults: count 0.3 per ½ (180°) twist",
+   "Bonus: Backward double somersaults (720° - 990°): 0.1",
+   "Bonus: Backward triple somersaults (1080° - 1350°): 0.2",
+   "Bonus: Backward quadruple somersaults (1440°): 0.3"
+  ],
+  "dmt": [
+   "Tuck, pike and straddle jumps will be worth 0.1 DD each [page-2 header, not struck through, so the skill list uses 0.1; NOTE the NAIGC addendum lists DMT Tuck/Straddle/Pike Jump at 0.0 - unresolved conflict]",
+   "Each completed 360° of somersault: 0.5",
+   "Twists - single somersaults: Each ½ twist up to first 360°: 0.2",
+   "Twists - single somersaults: Each ½ twist more than 1 full twist: 0.3",
+   "Twists - single somersaults: Each ½ twist more than 2 full twist: 0.4",
+   "Twists - single somersaults: Each ½ twist more than 3 full twist: 0.5",
+   "Position: Single somersault: pike / straight, without twist: 0.1",
+   "Position: Double somersault: pike / straight: 0.4 / 0.8",
+   "Position: Triple somersault: pike / straight: 0.8 / 1.6",
+   "Twists: Double somersault each ½ twist: 0.2",
+   "Twists: Triple somersault each ½ twist: 0.2",
+   "Double somersaults: Add all somersault and twist values, double that amount, and then add the position bonus.",
+   "Triple somersaults: Add all somersault and twist values, triple that amount, and then add the position bonus."
+  ],
+  "tumbling": [
+   "Position Bonus - Single somersaults: Tuck 0.0, Pike 0.1, Straight 0.1",
+   "Position Bonus - Double somersaults: Tuck 0.0, Pike 0.1, Straight 0.2",
+   "Position Bonus - Triple somersaults: Tuck 0.0, Pike 0.2, Straight 0.4",
+   "Front somersaults: 0.1 forward bonus",
+   "Double somersaults: the value of the element, which includes somersault, twist, position & forward bonuses will be doubled. (Somersaults + Twists + Position + Fwd) x 2",
+   "Triple somersaults: the value of the element, which includes somersault, twist, position & forward bonuses will be tripled. (Somersaults + Twists + Position + Fwd) x 3",
+   "Somersault Twist Value - Singles: Each 1/2 twist (180°) up to 2 full twists: 0.2",
+   "Somersault Twist Value - Singles: Each 1/2 twist more than 2 full twists (>720°): 0.3",
+   "Somersault Twist Value - Singles: Each 1/2 twist more than 3 full twists (>1080°): 0.4",
+   "Somersault Twist Value - Doubles: Each 1/2 twist (180°) up to a full twist: 0.1",
+   "Somersault Twist Value - Doubles: Each 1/2 twist more than 1 full twist (>360°): 0.2",
+   "Somersault Twist Value - Doubles: Each 1/2 twist more than 2 full twists (>720°): 0.3",
+   "Somersault Twist Value - Doubles: Each 1/2 twist more than 3 full twists (>1080°): 0.4",
+   "Somersault Twist Value - Triples: Each 1/2 twist (180°) up to a full twist: 0.3",
+   "Somersault Twist Value - Triples: Each 1/2 twist more than 1 full twist (>360°): 0.4",
+   "[Not stated on the chart] Base somersault value is not printed on the tumbling page; chart values imply a single somersault base of 0.5 (Back tuck 0.5) and double-somersault base of 1.0 before x2 (Double back tuck 2.0)."
+  ]
+ }
+}

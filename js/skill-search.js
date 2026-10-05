@@ -1,7 +1,11 @@
-// Skill search for the routine editor: UCG CoP and WG skills for an apparatus,
-// filtered by what's typed. WG names use CoP shorthand ("Salto bwd. str. w. 1/1 t."),
-// so common words are mapped onto it: "back layout full" finds that skill.
-import { SKILLS } from './skills.js';
+// Skill search for the routine editor: the skills for a discipline's apparatus,
+// filtered by what's typed. MAG: UCG MAG CoP + WG skills. WAG: UCG WAG CoP
+// additions (the WG WAG list comes later). T&T: the UCG DD charts.
+// WG names use CoP shorthand ("Salto bwd. str. w. 1/1 t."), so common words are
+// mapped onto it: "back layout full" finds that skill.
+import { SKILLS as MAG_SKILLS } from './data/mag-skills.js';
+import { SKILLS as WAG_SKILLS } from './data/wag-skills.js';
+import { SKILLS as TT_SKILLS } from './data/tt-skills.js';
 
 const FRACTIONS = { '½': '1/2', '¼': '1/4', '¾': '3/4' };
 const ALIASES = {
@@ -29,28 +33,34 @@ function tokens(text) {
 
 export const skillLabel = (s) => (s.eponym ? `${s.name} (${s.eponym})` : s.name);
 
+const ALL = { mag: MAG_SKILLS, wag: WAG_SKILLS, tt: TT_SKILLS };
 const byApp = {};
-for (const s of SKILLS) {
-  s.label = skillLabel(s);
-  s.tokens = tokens(`${s.label} ${s.note}`);
-  (byApp[s.app] ||= []).push(s);
+for (const [disc, list] of Object.entries(ALL)) {
+  for (const s of list) {
+    s.disc = disc;
+    s.label = skillLabel(s);
+    s.tokens = tokens(`${s.label} ${s.note || ''} ${s.notation || ''}`);
+    (byApp[`${disc}.${s.app}`] ||= []).push(s);
+  }
 }
+const SKILL_INDEX = new Map(Object.values(ALL).flat().map((s) => [s.id, s]));
 
 const VALUE_ORDER = ['Sub-A', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
 const order = (a, b) =>
   (a.eg || 0) - (b.eg || 0) ||
+  (a.dd ?? 0) - (b.dd ?? 0) ||
   VALUE_ORDER.indexOf(a.value) - VALUE_ORDER.indexOf(b.value) ||
   (a.src === b.src ? 0 : a.src === 'UCG' ? -1 : 1);
 
 export function findSkill(id) {
-  return id ? SKILLS.find((s) => s.id === id) || null : null;
+  return (id && SKILL_INDEX.get(id)) || null;
 }
 
 // Skills for an apparatus matching every typed word (as a word start).
 // With nothing typed: the whole list by element group (no EG first), value,
 // then UCG before WG. While searching: closest matches (fewest extra words) first.
-export function searchSkills(app, query) {
+export function searchSkills(disc, app, query) {
   const q = tokens(query);
-  const list = (byApp[app] || []).filter((s) => q.every((w) => s.tokens.some((t) => t.startsWith(w))));
+  const list = (byApp[`${disc}.${app}`] || []).filter((s) => q.every((w) => s.tokens.some((t) => t.startsWith(w))));
   return list.sort(q.length ? (a, b) => a.tokens.length - b.tokens.length || order(a, b) : order);
 }

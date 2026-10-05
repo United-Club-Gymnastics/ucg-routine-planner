@@ -1,7 +1,7 @@
 // Run with: npm test
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { scoreRoutine, scoreVault, scoreAthlete } from '../js/scoring.js';
+import { scoreRoutine, scoreVault, scoreAthlete } from '../js/scoring/mag.js';
 
 const s = (name, letter, eg) => ({ name, letter, eg });
 
@@ -174,4 +174,27 @@ test('all-around adds vault and the five events', () => {
 
 test('blank rows are ignored; empty routine scores 0', () => {
   assert.equal(scoreRoutine('fx', 'int', [s('', '', '')]).startValue, 0);
+});
+
+test('Masters: values by age decade, EG I-III +0.5, dismount EG = dismount value', () => {
+  const r = scoreRoutine('pb', 'masters', [
+    s('a', 'ME', 1), s('b', 'A', 2), s('c', 'B', 3), s('d', 'A', 2), s('e', 'ME', 1), s('f', 'A', 4),
+  ], {}, { decade: '50' });
+  // 50s: ME 0.2, A 0.4, B 0.6
+  assert.equal(r.difficulty, 2.2);
+  assert.equal(r.egTotal, 1.9); // 0.5 x 3 + dismount A 0.4
+  assert.equal(r.startValue, 14.1);
+});
+
+test('Masters: Misc skills count from the 50s; not in the 30s', () => {
+  const six = [s('a', 'Misc', 1), s('b', 'Misc', 2), s('c', 'Misc', 3), s('d', 'Misc', 1), s('e', 'Misc', 2), s('f', 'Misc', 3)];
+  assert.equal(scoreRoutine('hb', 'masters', six, {}, { decade: '60' }).shortBy, 0);
+  const r30 = scoreRoutine('hb', 'masters', six, {}, { decade: '30' });
+  assert.equal(r30.shortBy, 6);
+  assert.equal(r30.egTotal, 0);
+});
+
+test('Masters vault: WG value plus the age bonus', () => {
+  assert.equal(scoreVault('masters', '202', { decade: '40' }).startValue, 13.0); // 10 + 1.4 + 1.6
+  assert.equal(scoreVault('masters', 'other', { decade: '70' }).startValue, 13.2);
 });
