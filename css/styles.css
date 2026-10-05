@@ -420,18 +420,8 @@ input::placeholder { color: var(--fg-muted); }
   transition: none;
 }
 .skill-row.dragging .drag-handle { cursor: grabbing; }
-/* Where a dragged skill will land: a navy line in the gap, with a dot at the start. */
-.skill-row.drop-above, .skill-row.drop-below { position: relative; }
-.skill-row.drop-above::before, .skill-row.drop-below::before {
-  content: ''; position: absolute; z-index: 6; left: 6px; right: 6px; height: 3px; border-radius: 2px; background: var(--ucg-navy); pointer-events: none;
-}
-.skill-row.drop-above::after, .skill-row.drop-below::after {
-  content: ''; position: absolute; z-index: 6; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--ucg-navy); pointer-events: none;
-}
-.skill-row.drop-above::before { top: -5px; }
-.skill-row.drop-above::after { top: -8px; }
-.skill-row.drop-below::before { bottom: -5px; }
-.skill-row.drop-below::after { bottom: -8px; }
+/* Drag to reorder: the other rows slide aside to show where the skill will land. */
+.skill-table.reordering .skill-row:not(.dragging) { transition: transform 0.12s var(--ease); }
 .skill-row.dragging .num { color: var(--ucg-navy); font-weight: 700; }
 
 .skill-row[data-row] + .skill-row[data-row] { margin-top: 6px; }

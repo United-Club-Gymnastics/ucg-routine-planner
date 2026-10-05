@@ -836,31 +836,40 @@ function onPointerDown(ev) {
   });
   const startY = ev.clientY + scrollY;
   let to = from;
-  // While dragging, the row's number shows where it will land.
-  const num = $('.num', dragged);
+  // While dragging, the other rows slide aside to open a gap where the skill will
+  // land, and every row's number shows its new position.
+  const nums = rows.map((r) => $('.num', r));
+  const next = rows[from + 1] || rows[from - 1];
+  const gap = next ? Math.abs(next.getBoundingClientRect().top - dragged.getBoundingClientRect().top) - dragged.offsetHeight : 0;
+  const step = dragged.offsetHeight + Math.max(0, gap);
   dragged.classList.add('dragging');
-  const clearMarks = () => others.forEach((r) => r.classList.remove('drop-above', 'drop-below'));
+  container.classList.add('reordering');
   const move = (m) => {
     if (m.clientY < 90) scrollBy(0, -12);
     else if (m.clientY > innerHeight - 60) scrollBy(0, 12);
     const y = m.clientY + scrollY;
     dragged.style.transform = `translateY(${y - startY}px)`;
-    to = mids.filter((mid) => mid < y).length;
-    num.textContent = to + 1;
-    clearMarks();
-    if (to === from) return;
-    if (to < others.length) others[to].classList.add('drop-above');
-    else others[others.length - 1].classList.add('drop-below');
+    const t = mids.filter((mid) => mid < y).length;
+    if (t === to) return;
+    to = t;
+    rows.forEach((r, k) => {
+      if (r === dragged) return void (nums[k].textContent = to + 1);
+      const shift = k > from && k <= to ? -1 : k < from && k >= to ? 1 : 0;
+      r.style.transform = shift ? `translateY(${shift * step}px)` : '';
+      nums[k].textContent = k + shift + 1;
+    });
   };
-  const end = () => {
+  const end = (ev) => {
     removeEventListener('pointermove', move);
     removeEventListener('pointerup', end);
     removeEventListener('pointercancel', end);
-    clearMarks();
+    container.classList.remove('reordering');
+    rows.forEach((r, k) => {
+      r.style.transform = '';
+      nums[k].textContent = k + 1;
+    });
     dragged.classList.remove('dragging');
-    dragged.style.transform = '';
-    num.textContent = from + 1;
-    if (to !== from) moveSkill(evId, pass, from, to, 'handle');
+    if (ev.type === 'pointerup' && to !== from) moveSkill(evId, pass, from, to, 'handle');
   };
   addEventListener('pointermove', move);
   addEventListener('pointerup', end);
