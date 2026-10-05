@@ -315,6 +315,7 @@ async function xcelPages(doc, fonts, athlete, entry, events, score) {
     });
     y += 58;
     w.text(`Planned with the UCG Routine Planner. Values from the USAG Xcel Code of Points (2022-2028) and the UCG Women's Rules Policy.`, 48, 760, { size: 8, c: MUTED, maxWidth: 516 });
+    w.text('Not affiliated with or endorsed by USA Gymnastics. Xcel is a trademark of USA Gymnastics.', 48, 771, { size: 8, c: MUTED, maxWidth: 516 });
   }
 }
 

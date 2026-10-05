@@ -158,6 +158,8 @@ h2 { font-size: var(--fs-h2); line-height: var(--leading-tight); letter-spacing:
 .banner-btn:hover { background: var(--ucg-navy-deep); }
 
 main { padding: 0 0 clamp(48px, 6vw, 80px); }
+.site-footer { border-top: 1px solid var(--border-default); padding: 16px var(--gutter) 24px; }
+.site-footer p { max-width: var(--container-max); margin: 0 auto; font-size: var(--fs-xs); color: var(--fg-secondary); }
 .loading, main > .error { padding: 48px var(--gutter); max-width: var(--container-max); margin: 0 auto; }
 .loading { color: var(--fg-muted); }
 .error { color: #b8412a; }
