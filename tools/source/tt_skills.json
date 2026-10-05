@@ -1147,21 +1147,21 @@
    "name": "Tuck Jump",
    "fig": "--o",
    "positions": {
-    "": 0.1
+    "": 0.0
    }
   },
   {
    "name": "Straddle Jump",
    "fig": "Straddle",
    "positions": {
-    "": 0.1
+    "": 0.0
    }
   },
   {
    "name": "Pike Jump",
    "fig": "-->",
    "positions": {
-    "": 0.1
+    "": 0.0
    }
   },
   {
@@ -1595,7 +1595,7 @@
    "Bonus: Backward quadruple somersaults (1440°): 0.3"
   ],
   "dmt": [
-   "Tuck, pike and straddle jumps will be worth 0.1 DD each [page-2 header, not struck through, so the skill list uses 0.1; NOTE the NAIGC addendum lists DMT Tuck/Straddle/Pike Jump at 0.0 - unresolved conflict]",
+   "Tuck, pike and straddle jumps will be worth 0.1 DD each [page-2 header, not struck through, but UCG uses the addendum value, 0.0, for now (WG changed this; the T&T team has not decided whether to adopt it - decided 2026-10-05)]",
    "Each completed 360° of somersault: 0.5",
    "Twists - single somersaults: Each ½ twist up to first 360°: 0.2",
    "Twists - single somersaults: Each ½ twist more than 1 full twist: 0.3",

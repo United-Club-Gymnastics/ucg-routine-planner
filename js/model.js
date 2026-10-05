@@ -139,7 +139,7 @@ export function scoreEvent(entry, evId) {
       const v = wag.scoreXcelVault(level, entry.vault, { altBoard: !!opts.altBoard });
       if (v) Object.assign(out, { sv: v.sv, vault: v, totals: [['Start value', v.sv]] });
     } else if (fam === 'wagMasters') {
-      const v = wag.scoreWagMastersVault(entry.vaultValue, ctx);
+      const v = wag.scoreWagMastersVault(entry.vault, ctx);
       if (v) Object.assign(out, { sv: v.sv, vault: v, totals: [['Execution', 10], ['D score', v.dv], ['Age bonus', v.ageBonus]] });
     }
     out.totals.push(['Start value', out.sv]);
@@ -194,7 +194,7 @@ export function scoreEntry(entry) {
 // ---- entries ----------------------------------------------------------------
 
 export function newEntry(id, disc, level) {
-  const e = { id, disc, level, routines: {}, passes: {}, options: {}, vault: '', vaultValue: '' };
+  const e = { id, disc, level, routines: {}, passes: {}, options: {}, vault: '' };
   if (levelInfo(disc, level)?.masters) e.decade = DEFAULT_DECADE;
   normalizeEntry(e);
   return e;
@@ -238,7 +238,7 @@ export function normalizeEntry(e) {
 
 /** True if an entry has any skill or vault filled in. */
 export function hasContent(e) {
-  if (e.vault || e.vaultValue) return true;
+  if (e.vault) return true;
   if (Object.values(e.routines || {}).some((r) => r.some((s) => s.name || s.letter || s.notation))) return true;
   return Object.values(e.passes || {}).some((p) => p.some((x) => (x.skills || []).some((s) => s.name || s.notation)));
 }
@@ -252,8 +252,7 @@ export function copyRoutines(from, to) {
   const clone = (x) => JSON.parse(JSON.stringify(x));
   to.routines = clone(from.routines || {});
   to.passes = clone(from.passes || {});
-  const sameVaults = levelInfo(from.disc, from.level)?.family === levelInfo(to.disc, to.level)?.family && from.disc === 'mag';
-  if (sameVaults || from.level === to.level) to.vault = from.vault;
-  to.vaultValue = from.vaultValue;
+  // Vault ids carry over where both levels use the same vault list (MAG levels).
+  if (from.disc === 'mag' || from.level === to.level) to.vault = from.vault;
   normalizeEntry(to);
 }

@@ -3,6 +3,8 @@
 import { VAULTS as INFINITY_VAULTS } from '../data/wag-infinity-vaults.js';
 import { XCEL_LIMITS, XCEL_SR, XCEL_SILVER_VAULTS, XCEL_VAULTS, XCEL_VP } from '../data/xcel.js';
 import { MASTERS_LETTERS, mastersValue, meetsRequirement, vaultAgeBonus } from './masters.js';
+import { VAULTS as WG_VAULTS } from '../data/wag-vaults.js';
+import { VAULTS as MASTERS_VAULTS } from '../data/masters-vaults.js';
 
 export const EXECUTION = 10;
 export const MIN_SKILLS = 6;
@@ -217,12 +219,28 @@ export function scoreWagMasters(event, skills = [], { decade } = {}) {
   };
 }
 
-/** WAG Masters vault: the vault's WG value (typed in) plus the age bonus. */
-export function scoreWagMastersVault(value, { decade } = {}) {
-  if (value === '' || value == null || Number.isNaN(Number(value))) return null;
+// WAG Masters vaults: the UCG Masters vaults (squat on, hechts, ...), the WG vault
+// table, and any other vault (0.0).
+export const WAG_MASTERS_VAULTS = MASTERS_VAULTS.filter((v) => v.disc === 'wag');
+export const WAG_WG_VAULTS = WG_VAULTS;
+export const WAG_OTHER_VAULT = { id: 'other', name: 'Other vault (not in the WG or UCG CoP)', value: 0, src: 'Custom' };
+export const findWagMastersVault = (id) =>
+  id === 'other' ? WAG_OTHER_VAULT : WAG_MASTERS_VAULTS.find((v) => v.id === id) || WG_VAULTS.find((v) => v.id === id) || null;
+
+/** WAG Masters vault: the vault's value plus the age bonus. */
+export function scoreWagMastersVault(id, { decade } = {}) {
+  const v = findWagMastersVault(id);
+  if (!v) return null;
   const ageBonus = vaultAgeBonus('wag', decade);
-  return { dv: Number(value), ageBonus, sv: round1(EXECUTION + Number(value) + ageBonus) };
+  return { ...v, dv: v.value, ageBonus, sv: round1(EXECUTION + v.value + ageBonus) };
 }
+
+// WG element group -> WAG Masters condensed group (Masters Rules Policy).
+export const WG_TO_MASTERS = {
+  ub: { 1: 1, 2: 2, 4: 2, 5: 2, 3: 3, 6: 4 },
+  bb: { 2: 1, 3: 2, 4: 3, 5: 3, 1: 4, 6: 4 },
+  fx: { 1: 1, 2: 2, 3: 3, 4: 4, 5: 4 },
+};
 
 export const WAG_MASTERS_LETTERS = MASTERS_LETTERS;
 export { ROMAN };

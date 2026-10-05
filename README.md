@@ -35,20 +35,22 @@ Athletes are saved in Firestore at `users/{user id}/athletes/{athlete}`. Each at
 
 **UCG Infinity** (UCG Infinity Rules v1.2): A=0.1, B=0.3, C=0.5, D=0.7, E=0.9; top 8 count; +0.3 per condensed group with a B or higher (counting or not); +0.3 apparatus bonus; -1.0 per skill under 6; vault from the Infinity vault table.
 
-**Xcel** (UCG Women's Rules Policy v6.0 + USAG Xcel Code 2022-2028 event charts): start 10.0 (Sapphire 9.6 + up to 0.4 bonus); -0.50 per missing special requirement (ticked by the gymnast); minus the value of each missing value part (A=0.1, B=0.3, C=0.5; a higher value part can fill a lower one); -0.50 per restricted skill (above the level's limit; Diamond allows one D). Restrictions that depend on the kind of skill (e.g. "no B acro" at Silver) are shown as notes; the planner only checks the letter. Vaults from the Xcel vault chart; Gold 9.5 with the alternative springboard; Sapphire can pick any other L9/L10 vault at 10.0. Xcel skills are typed in with their values (the USAG skill list isn't public); the UCG WAG additions are searchable.
+**Xcel** (UCG Women's Rules Policy v6.0 + USAG Xcel Code 2022-2028 event charts): start 10.0 (Sapphire 9.6 + up to 0.4 bonus); -0.50 per missing special requirement (ticked by the gymnast); minus the value of each missing value part (A=0.1, B=0.3, C=0.5; a higher value part can fill a lower one); -0.50 per restricted skill (above the level's limit; Diamond allows one D). Restrictions that depend on the kind of skill (e.g. "no B acro" at Silver) are shown as notes; the planner only checks the letter. Vaults from the Xcel vault chart; Gold 9.5 with the alternative springboard; Sapphire can pick any other L9/L10 vault at 10.0. Xcel skills are typed in with their values; the skill search offers only the UCG WAG additions here, since Xcel and Infinity use USAG values, not WG values.
 
-**WAG Masters**: values by age decade, top 6 count, +0.5 per condensed group with a skill at the decade's level (counting or not), -1.0 per skill under 6, vault = WG value (typed in) + age bonus.
+**WAG Masters**: values by age decade, top 6 count, +0.5 per condensed group with a skill at the decade's level (counting or not), -1.0 per skill under 6. The skill search offers the WG WAG skills and fills in the condensed group (WG groups mapped per the Masters policy). Vault = the vault's value + age bonus, from the UCG Masters vaults (squat on, roll over, hechts, sideways handsprings) or the WG WAG vault table, or 0.0 for any other vault.
 
-**T&T** (UCG T&T Code of Points v3.41 + DD charts): total DD per routine or pass, with each level's requirements flagged (max skill DD, salto counts, pass and routine DD limits, repeats, pass sizes). Saltos are recognised from the FIG shorthand, or the skill name when there's no shorthand.
+**T&T** (UCG T&T Code of Points v3.41 + DD charts; double mini tuck/pike/straddle jumps are 0.0, per the UCG addendum, until the T&T team decides on WG's change): total DD per routine or pass, with each level's requirements flagged (max skill DD, salto counts, pass and routine DD limits, repeats, pass sizes). Saltos are recognised from the FIG shorthand, or the skill name when there's no shorthand.
 
 ## Data and how to rebuild it
 
 | Data | Source | Rebuild |
 | --- | --- | --- |
 | `data/mag-skills.js`, `data/mag-vaults.js` | UCG MAG CoP master + FIG MAG CoP 2025-2028 extractor | `python tools/build_skills.py` (needs the Code of Points repo and Inkscape) |
-| `data/wag-skills.js` | UCG WAG CoP additions (`tools/source/wag_ucg_skills.json`) | `python tools/build_data.py` |
+| `data/wag-skills.js` | WG WAG CoP 2025-2028 (`tools/source/wag_wg_skills.json`, from the extractor in Dropbox `Reference/gym_skill_extract/WG WAG CoP Extraction`) + UCG WAG CoP additions (`wag_ucg_skills.json`) | `python tools/build_data.py` |
+| `data/wag-vaults.js` | WG WAG vault table (`wag_wg_skills.json`) | `python tools/build_data.py` |
+| `data/masters-vaults.js` | `tools/source/Masters Vault Values.xlsx`: the vaults that aren't in the WG code. The build also checks the table's WG vaults against the WG values and prints any mismatch | `python tools/build_data.py` |
 | `data/tt-skills.js` | UCG T&T DD charts incl. the UCG addendum (`tools/source/tt_skills.json`) | `python tools/build_data.py` |
-| `data/examples.js` | T&T and MAG Dev/Int example routine sheets (`tools/source/examples.json`) | `python tools/build_data.py` |
+| `data/examples.js` | T&T and MAG Dev/Int example routine sheets (`tools/source/examples.json`, typos fixed). T&T example skills found in the DD chart take the chart's shorthand and DD (some sheets predate the UCG addendum) | `python tools/build_data.py` |
 | `data/xcel.js` | Xcel event rules charts and vault chart (hand-entered) | edit directly |
 | `data/wag-infinity-vaults.js` | Julia's Infinity vault table | edit directly |
 | `assets/worksheets/tt-*.pdf` | 2023 NAIGC competition cards, logo removed, requirement boxes corrected | `python tools/make_tt_cards.py` |

@@ -20,8 +20,8 @@ import {
 import { findSkill, searchSkills } from './skill-search.js';
 import { EXAMPLES } from './data/examples.js';
 import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
-import { OTHER_VAULT } from './scoring/mag.js';
-import { INFINITY_VAULT_LIST, xcelVaults } from './scoring/wag.js';
+import { MAG_MASTERS_VAULTS, OTHER_VAULT } from './scoring/mag.js';
+import { INFINITY_VAULT_LIST, WAG_MASTERS_VAULTS, WAG_OTHER_VAULT, WAG_WG_VAULTS, WG_TO_MASTERS, xcelVaults } from './scoring/wag.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -538,8 +538,11 @@ function vaultBody(e, ev) {
         })
         .join('')}</optgroup>`)
       .join('');
-    const other = e.level === 'masters' ? `<option value="other"${e.vault === 'other' ? ' selected' : ''}>${esc(OTHER_VAULT.name)} — 0.0</option>` : '';
-    control = `<select id="f-vault"><option value="">— No vault —</option>${other}${opts}</select>`;
+    const masters = e.level === 'masters'
+      ? `<option value="other"${e.vault === 'other' ? ' selected' : ''}>${esc(OTHER_VAULT.name)} — 0.0</option>
+         <optgroup label="UCG Masters vaults">${MAG_MASTERS_VAULTS.map((v) => `<option value="${esc(v.id)}"${v.id === e.vault ? ' selected' : ''}>${esc(v.name)} — ${fmt(v.value)}</option>`).join('')}</optgroup>`
+      : '';
+    control = `<select id="f-vault"><option value="">— No vault —</option>${masters}${opts}</select>`;
   } else if (fam === 'infinity') {
     const groups = {};
     for (const v of INFINITY_VAULT_LIST) (groups[v.entry] ||= []).push(v);
@@ -551,16 +554,20 @@ function vaultBody(e, ev) {
       .map((v) => `<option value="${esc(v.id)}"${v.id === e.vault ? ' selected' : ''}>${esc(v.label)} — ${fmt(v.sv)}</option>`)
       .join('')}</select>`;
   } else if (fam === 'wagMasters') {
-    control = `<input id="f-vault-name" type="text" value="${esc(e.vault)}" placeholder="Vault name" />`;
+    const opt = (v) => `<option value="${esc(v.id)}"${v.id === e.vault ? ' selected' : ''}>${esc(v.src === 'WG' ? `${v.id} · ` : '')}${esc(v.name)}${v.eponym ? ` (${esc(v.eponym)})` : ''} — ${fmt(v.value)}</option>`;
+    const groups = {};
+    for (const v of WAG_WG_VAULTS) (groups[v.eg] ||= []).push(v);
+    control = `<select id="f-vault"><option value="">— No vault —</option>${opt(WAG_OTHER_VAULT)}
+      <optgroup label="UCG Masters vaults">${WAG_MASTERS_VAULTS.map(opt).join('')}</optgroup>
+      ${Object.entries(groups).map(([g, list]) => `<optgroup label="WG vault group ${esc(g)}">${list.map(opt).join('')}</optgroup>`).join('')}</select>`;
   }
   return `
     <div class="vault-body">
-      <label class="field grow"><span>${fam === 'wagMasters' ? 'Your vault' : 'Select your vault'}</span>${control}</label>
-      ${fam === 'wagMasters' ? `<label class="field"><span>WG D score</span><input id="f-vault-value" type="number" inputmode="decimal" step="0.1" min="0" value="${esc(e.vaultValue)}" placeholder="e.g. 2.4" /></label>` : ''}
+      <label class="field grow"><span>Select your vault</span>${control}</label>
       <dl class="vault-info" id="vault-info"></dl>
     </div>
     ${fam === 'xcel' && e.level === 'gold' ? optionControl(e, 'vt', { id: 'altBoard', kind: 'check', label: 'Alternative springboard (mini-trampoline)', help: '9.5 start value if used' }) : ''}
-    ${fam === 'wagMasters' ? `<p class="routine-help">Enter your vault's value from the WG Code of Points (0.0 for a vault that isn't listed). The age bonus for your decade is added.</p>` : ''}`;
+    ${levelInfo(e.disc, e.level).masters ? `<p class="routine-help">Your decade's age bonus is added to the vault's value. A vault that isn't in the WG or UCG Code of Points is worth 0.0 plus the age bonus.</p>` : ''}`;
 }
 
 // ---- Binding ---------------------------------------------------------------
@@ -662,10 +669,6 @@ function onInput(ev) {
     opts.sr = sr;
   } else if (t.dataset.partner) {
     ((e.options ||= {})[t.dataset.partner] ||= {}).partner = t.value;
-  } else if (t.id === 'f-vault-name') {
-    e.vault = t.value;
-  } else if (t.id === 'f-vault-value') {
-    e.vaultValue = t.value;
   } else if (t.dataset.ev && t.dataset.field) {
     const row = rowsOf(e, t.dataset.ev, t.dataset.pass)[Number(t.dataset.idx)];
     row[t.dataset.field] = t.dataset.field === 'dd' ? (t.value === '' ? '' : Number(t.value)) : t.value;
@@ -855,13 +858,16 @@ function pickerEl() {
   return picker.el;
 }
 
+// Which skill lists each family can use. Xcel and Infinity use USAG values, so
+// only the UCG additions (valued that way) are offered; WAG Masters uses WG values.
+const SOURCES = { xcel: ['UCG'], infinity: ['UCG'], wagMasters: ['WG'] };
 const searchApp = (e, evId) => (e.disc === 'tt' && evId === 'sy' ? 'tr' : evId);
 
 function openPicker(input, query) {
   const e = entry();
   const el = pickerEl();
   picker.input = input;
-  picker.items = searchSkills(e.disc, searchApp(e, input.dataset.ev), query);
+  picker.items = searchSkills(e.disc, searchApp(e, input.dataset.ev), query).filter((s) => !SOURCES[levelInfo(e.disc, e.level).family] || SOURCES[levelInfo(e.disc, e.level).family].includes(s.src));
   picker.active = query && picker.items.length ? 0 : -1;
   input.setAttribute('aria-expanded', 'true');
   renderPicker(query);
@@ -884,7 +890,7 @@ function renderPicker(query) {
   const html = [];
   let lastHead;
   picker.items.forEach((s, i) => {
-    const head = e.disc === 'tt' ? null : e.disc === 'mag' ? (s.eg ? `EG ${ROMAN[s.eg]} · ${spec.groups?.[s.eg - 1]?.label.replace(/^[IV]+\. /, '') || ''}` : 'No element group (no EG bonus)') : s.group ? `Group ${s.group}` : 'Skills';
+    const head = e.disc === 'tt' ? null : e.disc === 'mag' ? (s.eg ? `EG ${ROMAN[s.eg]} · ${spec.groups?.[s.eg - 1]?.label.replace(/^[IV]+\. /, '') || ''}` : 'No element group (no EG bonus)') : s.group ? `${s.src === 'WG' ? 'WG' : 'USAG'} group ${s.group}` : 'Skills';
     if (!query && head && head !== lastHead) {
       html.push(`<div class="pop-head" role="presentation">${esc(head)}</div>`);
       lastHead = head;
@@ -954,6 +960,7 @@ function pickSkill(i) {
     if (letters.includes(s.value)) row.letter = s.value;
     if (fam === 'mag') row.eg = s.eg ? String(s.eg) : '';
     if (fam === 'infinity') row.eg = s.group ? String(s.group) : '';
+    if (fam === 'wagMasters') row.eg = s.group && WG_TO_MASTERS[evId]?.[s.group] ? String(WG_TO_MASTERS[evId][s.group]) : '';
   }
   closePicker();
   renderRows(evId, pass, { row: Number(input.dataset.idx), part: 'name' });

@@ -1,0 +1,6803 @@
+[
+  {
+    "number": "1.00",
+    "variant": 1,
+    "description": "Handspring fwd",
+    "value": "1.60",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.01",
+    "variant": 1,
+    "description": "Handspring fwd on – ½ turn (180°) off",
+    "value": "2.00",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.02",
+    "variant": 1,
+    "description": "Handspring fwd on – 1/1 turn (360°) off",
+    "value": "2.60",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.03",
+    "variant": 1,
+    "description": "Handspring fwd on – 1½ turn (540°) off",
+    "value": "3.20",
+    "eponym": "Kim",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.04",
+    "variant": 1,
+    "description": "Handspring fwd on – 2/1 turn (720°) off",
+    "value": "3.60",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.05",
+    "variant": 1,
+    "description": "Handspring fwd on – 2½ turn (900°) off",
+    "value": "4.00",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.10",
+    "variant": 1,
+    "description": "Yamashita",
+    "value": "2.00",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.11",
+    "variant": 1,
+    "description": "Yamashita with ½ turn (180°) off",
+    "value": "2.40",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.12",
+    "variant": 1,
+    "description": "Yamashita with 1/1 turn (360°) off",
+    "value": "2.80",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.20",
+    "variant": 1,
+    "description": "Handspring fwd with ½ turn (180°) on – repulsion off",
+    "value": "1.60",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.21",
+    "variant": 1,
+    "description": "Handspring fwd with ½ turn (180°) on – ½ turn (180°) off (in either direction)",
+    "value": "2.40",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.22",
+    "variant": 1,
+    "description": "Handspring fwd with ½ turn (180°) on – 1/1 turn (360°) off",
+    "value": "2.60",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.23",
+    "variant": 1,
+    "description": "Handspring fwd with ½ turn (180°) on – 1½ turn (540°) off",
+    "value": "3.20",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.24",
+    "variant": 1,
+    "description": "Handspring fwd with ½ turn (180°) on – 2/1 turn (720°) off",
+    "value": "3.60",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.30",
+    "variant": 1,
+    "description": "Handspring fwd with 1/1 turn (360°) on – Handspring fwd off",
+    "value": "3.20",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.31",
+    "variant": 1,
+    "description": "Handspring fwd with 1/1 turn (360°) on – 1/1 turn (360°) off",
+    "value": "3.60",
+    "eponym": "Korbut",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.40",
+    "variant": 1,
+    "description": "Round-off, flic-flac on – repulsion off",
+    "value": "2.00",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.50",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ½ turn (180°) on – Handspring fwd off",
+    "value": "2.20",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.51",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ½ turn (180°) on –½ turn (180°) off",
+    "value": "2.60",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.52",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ½ turn (180°) on – 1/1 turn (360°) off",
+    "value": "3.00",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.53",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ½ turn (180°) on – 1½ turn (540°) off",
+    "value": "3.40",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.60",
+    "variant": 1,
+    "description": "Round-off, flic-flac with 1/1 turn (360°) on – repulsion off",
+    "value": "2.40",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.61",
+    "variant": 1,
+    "description": "Round-off, flic-flac with 1/1 turn (360°) on – ½ turn (180°) off",
+    "value": "2.80",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.62",
+    "variant": 1,
+    "description": "Round-off, flic-flac with 1/1 turn (360°) on –1/1 turn (360°) off",
+    "value": "3.20",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "HANDSPRING, YAMASHITA, ROUND-OFF WITH OR WITHOUT TURN IN 1ST AND/OR 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "2.10",
+    "variant": 1,
+    "description": "Handspring fwd on – tucked salto fwd off",
+    "value": "3.60",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "HANDSPRING FWD WITH/WITHOUT 1/1 TURN (360°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "2.11",
+    "variant": 1,
+    "description": "Handspring fwd on – tucked salto fwd with ½ twist (180°) off, also – ½ turn (180°) and tucked salto bwd off",
+    "value": "3.80",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "HANDSPRING FWD WITH/WITHOUT 1/1 TURN (360°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "2.12",
+    "variant": 1,
+    "description": "Handspring fwd on – tucked salto fwd with 1/1 twist (360°) off",
+    "value": "4.20",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "HANDSPRING FWD WITH/WITHOUT 1/1 TURN (360°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "2.13",
+    "variant": 1,
+    "description": "Handspring fwd on – tucked salto fwd with 1½ twist (540°) off",
+    "value": "4.60",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "HANDSPRING FWD WITH/WITHOUT 1/1 TURN (360°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "2.20",
+    "variant": 1,
+    "description": "Handspring fwd on – piked salto fwd off",
+    "value": "3.80",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "HANDSPRING FWD WITH/WITHOUT 1/1 TURN (360°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "2.21",
+    "variant": 1,
+    "description": "Handspring fwd on – piked salto fwd with ½ twist (180°) off, also – ½ turn (180°) and piked salto bwd off",
+    "value": "4.00",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "HANDSPRING FWD WITH/WITHOUT 1/1 TURN (360°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "2.22",
+    "variant": 1,
+    "description": "Handspring fwd on – piked salto fwd with 1/1 twist (360°) off",
+    "value": "4.40",
+    "eponym": "Chusovitina",
+    "element_group": "2",
+    "group_name": "HANDSPRING FWD WITH/WITHOUT 1/1 TURN (360°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "2.30",
+    "variant": 1,
+    "description": "Handspring fwd on – stretched salto fwd off",
+    "value": "4.40",
+    "eponym": "Evdokimova",
+    "element_group": "2",
+    "group_name": "HANDSPRING FWD WITH/WITHOUT 1/1 TURN (360°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "2.31",
+    "variant": 1,
+    "description": "Handspring fwd on – stretched salto fwd with ½ twist (180°) off",
+    "value": "4.60",
+    "eponym": "Wang",
+    "element_group": "2",
+    "group_name": "HANDSPRING FWD WITH/WITHOUT 1/1 TURN (360°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "2.32",
+    "variant": 1,
+    "description": "Handspring fwd on – stretched salto fwd with 1/1 twist (360°) off",
+    "value": "5.00",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "HANDSPRING FWD WITH/WITHOUT 1/1 TURN (360°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "2.33",
+    "variant": 1,
+    "description": "Handspring fwd on – stretched salto fwd with 1½ twist (540°) off",
+    "value": "5.40",
+    "eponym": "Chusovitina",
+    "element_group": "2",
+    "group_name": "HANDSPRING FWD WITH/WITHOUT 1/1 TURN (360°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "2.34",
+    "variant": 1,
+    "description": "Handspring fwd on – stretched salto fwd with 2/1 twist (720°) off",
+    "value": "5.80",
+    "eponym": "Yeo",
+    "element_group": "2",
+    "group_name": "HANDSPRING FWD WITH/WITHOUT 1/1 TURN (360°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "2.40",
+    "variant": 1,
+    "description": "Handspring fwd with 1/1 turn (360°) on – tucked salto fwd off",
+    "value": "4.80",
+    "eponym": "Davydova",
+    "element_group": "2",
+    "group_name": "HANDSPRING FWD WITH/WITHOUT 1/1 TURN (360°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "2.41",
+    "variant": 1,
+    "description": "Handspring fwd with 1/1 turn (360°) on – piked salto fwd off",
+    "value": "5.20",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "HANDSPRING FWD WITH/WITHOUT 1/1 TURN (360°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "2.50",
+    "variant": 1,
+    "description": "Handspring fwd on – tucked double salto fwd off",
+    "value": "6.00",
+    "eponym": "Produnova",
+    "element_group": "2",
+    "group_name": "HANDSPRING FWD WITH/WITHOUT 1/1 TURN (360°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "3.10",
+    "variant": 1,
+    "description": "Tsukahara tucked",
+    "value": "3.20",
+    "eponym": "Tourischeva",
+    "element_group": "3",
+    "group_name": "HANDSPRING WITH ¼ - ½ TURN (90°-180°) IN 1ST FLIGHT PHASE (TSUKAHARA) – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "3.11",
+    "variant": 1,
+    "description": "Tsukahara tucked with ½ twist (180°) off",
+    "value": "3.40",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HANDSPRING WITH ¼ - ½ TURN (90°-180°) IN 1ST FLIGHT PHASE (TSUKAHARA) – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "3.12",
+    "variant": 1,
+    "description": "Tsukahara tucked with 1/1 twist (360°) off",
+    "value": "3.80",
+    "eponym": "Kim",
+    "element_group": "3",
+    "group_name": "HANDSPRING WITH ¼ - ½ TURN (90°-180°) IN 1ST FLIGHT PHASE (TSUKAHARA) – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "3.13",
+    "variant": 1,
+    "description": "Tsukahara tucked with 1½ twist (540°) off",
+    "value": "4.20",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HANDSPRING WITH ¼ - ½ TURN (90°-180°) IN 1ST FLIGHT PHASE (TSUKAHARA) – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "3.14",
+    "variant": 1,
+    "description": "Tsukahara tucked with 2/1 twist (720°) off",
+    "value": "4.60",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HANDSPRING WITH ¼ - ½ TURN (90°-180°) IN 1ST FLIGHT PHASE (TSUKAHARA) – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "3.20",
+    "variant": 1,
+    "description": "Tsukahara piked",
+    "value": "3.40",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HANDSPRING WITH ¼ - ½ TURN (90°-180°) IN 1ST FLIGHT PHASE (TSUKAHARA) – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "3.30",
+    "variant": 1,
+    "description": "Tsukahara stretched",
+    "value": "3.80",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HANDSPRING WITH ¼ - ½ TURN (90°-180°) IN 1ST FLIGHT PHASE (TSUKAHARA) – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "3.31",
+    "variant": 1,
+    "description": "Tsukahara stretched with ½ twist (180°) off",
+    "value": "4.00",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HANDSPRING WITH ¼ - ½ TURN (90°-180°) IN 1ST FLIGHT PHASE (TSUKAHARA) – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "3.32",
+    "variant": 1,
+    "description": "Tsukahara stretched with 1/1 twist (360°) off",
+    "value": "4.40",
+    "eponym": "Kim",
+    "element_group": "3",
+    "group_name": "HANDSPRING WITH ¼ - ½ TURN (90°-180°) IN 1ST FLIGHT PHASE (TSUKAHARA) – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "3.33",
+    "variant": 1,
+    "description": "Tsukahara stretched with 1½ twist (540°) off",
+    "value": "4.80",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HANDSPRING WITH ¼ - ½ TURN (90°-180°) IN 1ST FLIGHT PHASE (TSUKAHARA) – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "3.34",
+    "variant": 1,
+    "description": "Tsukahara stretched with 2/1 twist (720°) off",
+    "value": "5.20",
+    "eponym": "Zamolodchikova",
+    "element_group": "3",
+    "group_name": "HANDSPRING WITH ¼ - ½ TURN (90°-180°) IN 1ST FLIGHT PHASE (TSUKAHARA) – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "3.35",
+    "variant": 1,
+    "description": "Tsukahara stretched with 2½ twist (900°) off",
+    "value": "5.60",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HANDSPRING WITH ¼ - ½ TURN (90°-180°) IN 1ST FLIGHT PHASE (TSUKAHARA) – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.10",
+    "variant": 1,
+    "description": "Round-off, flic-flac on – tucked salto bwd off",
+    "value": "3.00",
+    "eponym": "Yurchenko",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.11",
+    "variant": 1,
+    "description": "Round-off, flic-flac on – tucked salto bwd with ½ twist (180°) off",
+    "value": "3.20",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.12",
+    "variant": 1,
+    "description": "Round-off, flic-flac on - tucked salto bwd with 1/1 twist (360°) off",
+    "value": "3.60",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.13",
+    "variant": 1,
+    "description": "Round-off, flic-flac on – tucked salto bwd with 1½ twist (540°) off",
+    "value": "4.00",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.14",
+    "variant": 1,
+    "description": "Round-off, flic-flac on – tucked salto bwd with 2/1 twist (720°) off",
+    "value": "4.40",
+    "eponym": "Dungelova",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.20",
+    "variant": 1,
+    "description": "Round-off, flic-flac on – piked salto bwd off",
+    "value": "3.20",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.30",
+    "variant": 1,
+    "description": "Round-off, flic-flac on – stretched salto bwd off",
+    "value": "3.60",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.31",
+    "variant": 1,
+    "description": "Round-off, flic-flac on – stretched salto bwd with ½ twist (180°) off",
+    "value": "3.80",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.32",
+    "variant": 1,
+    "description": "Round-off, flic-flac on – stretched salto bwd with 1/1 twist (360°) off",
+    "value": "4.20",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.33",
+    "variant": 1,
+    "description": "Round-off, flic-flac on – stretched salto bwd with 1½ twist (540°) off",
+    "value": "4.60",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.34",
+    "variant": 1,
+    "description": "Round-off, flic-flac on – stretched salto bwd with 2/1 twist (720°) off",
+    "value": "5.00",
+    "eponym": "Baitova",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.35",
+    "variant": 1,
+    "description": "Round-off, flic-flac on –stretched salto bwd with 2½ twist (900°) off",
+    "value": "5.40",
+    "eponym": "Amanar",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.40",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ¾ turn (270°) on – tucked salto bwd off",
+    "value": "3.60",
+    "eponym": "Luconi",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.41",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ¾ turn (270°) on – tucked salto bwd with ½ twist (180°) off",
+    "value": "4.00",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.42",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ¾ turn (270°) on – tucked salto bwd with 1/1 twist (360°) off",
+    "value": "4.20",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.50",
+    "variant": 1,
+    "description": "Round-off, flic-flac ¾ turn (270°) on – piked salto bwd off",
+    "value": "3.80",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.51",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ¾ turn (270°) on – stretched salto bwd off",
+    "value": "4.20",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.52",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ¾ turn (270°) on – stretched salto bwd with ½ twist (180°) off",
+    "value": "4.60",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.53",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ¾ turn (270°) on – stretched salto bwd with 1/1 twist (360°) off",
+    "value": "5.00",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "4.62",
+    "variant": 1,
+    "description": "Round-off, flic-flac on –double piked salto bwd off",
+    "value": "6.40",
+    "eponym": "Biles",
+    "element_group": "4",
+    "group_name": "ROUND-OFF (YURCHENKO) WITH/WO ¾ TURN (270°) IN 1ST FLIGHT PHASE – SALTO BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "5.10",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ½ turn (180°) on – tucked salto fwd off",
+    "value": "3.80",
+    "eponym": "Ivantcheva",
+    "element_group": "5",
+    "group_name": "ROUND-OFF WITH ½ TURN (180°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "5.11",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ½ turn (180°) on – tucked salto fwd with ½ twist (180°) off, also – ½ turn (180°) and tucked salto bwd off",
+    "value": "4.00",
+    "eponym": "Servente",
+    "element_group": "5",
+    "group_name": "ROUND-OFF WITH ½ TURN (180°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "5.12",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ½ turn (180°) on – tucked salto fwd with 1/1 twist (360°) off",
+    "value": "4.40",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ROUND-OFF WITH ½ TURN (180°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "5.13",
+    "variant": 1,
+    "description": "Round-off flic-flac with ½ turn (180°) on - tucked salto fwd with 1½ twist (540°) off",
+    "value": "4.80",
+    "eponym": "Khorkina",
+    "element_group": "5",
+    "group_name": "ROUND-OFF WITH ½ TURN (180°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "5.20",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ½ turn (180°) on – piked salto fwd off",
+    "value": "4.00",
+    "eponym": "Omelianchik",
+    "element_group": "5",
+    "group_name": "ROUND-OFF WITH ½ TURN (180°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "5.21",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ½ turn (180°) on – piked salto fwd with ½ twist (180°) off, also – ½ turn (180°) and piked salto bwd off",
+    "value": "4.20",
+    "eponym": "Podkopayeva",
+    "element_group": "5",
+    "group_name": "ROUND-OFF WITH ½ TURN (180°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "5.22",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ½ turn (180°) on – piked salto fwd with 1/1 twist (360°) off",
+    "value": "4.60",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ROUND-OFF WITH ½ TURN (180°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "5.30",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ½ turn (180°) on – stretched salto fwd off",
+    "value": "4.60",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ROUND-OFF WITH ½ TURN (180°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "5.31",
+    "variant": 1,
+    "description": "Round-off, flic-flac with ½ turn (180°) on – salto fwd stretched with ½ twist (180°) off",
+    "value": "4.80",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ROUND-OFF WITH ½ TURN (180°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "5.32",
+    "variant": 1,
+    "description": "Round-off flic-flac with ½ turn (180°) on – stretched salto fwd with 1/1 twist (360°) off",
+    "value": "5.20",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ROUND-OFF WITH ½ TURN (180°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "5.33",
+    "variant": 1,
+    "description": "Round-off flic-flac with ½ turn (180°) on – stretched salto fwd with 1½ twist (540°) off",
+    "value": "5.60",
+    "eponym": "Cheng",
+    "element_group": "5",
+    "group_name": "ROUND-OFF WITH ½ TURN (180°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "5.34",
+    "variant": 1,
+    "description": "Round off flic-flac with ½ turn (180°) on – stretched salto fwd with 2/1 twist (720°) off",
+    "value": "6.00",
+    "eponym": "Biles",
+    "element_group": "5",
+    "group_name": "ROUND-OFF WITH ½ TURN (180°) IN 1ST FLIGHT PHASE – SALTO FWD/BWD WITH/WITHOUT TWIST IN 2ND FLIGHT PHASE",
+    "apparatus": "VT"
+  },
+  {
+    "number": "1.101",
+    "variant": 1,
+    "description": "Glide kip to support on LB, or glide with ½ turn (180°) kip to support on LB",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.102",
+    "variant": 1,
+    "description": "Jump with ½ turn (180°) kip to support on LB",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.102",
+    "variant": 2,
+    "description": "Jump with ½ turn (180°) stoop through to rear support on LB (back kip)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.202",
+    "variant": 1,
+    "description": "Jump with 1/1 turn (360°) and Glide kip to support on LB",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.103",
+    "variant": 1,
+    "description": "Glide on LB (or swing fwd on HB) and stoop through to rear support (back kip); or straddle cut bwd to hang on same bar",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.203",
+    "variant": 1,
+    "description": "Reverse kip from: – glide fwd on LB – swing fwd on HB – stoop through to kip hang, back kip swing, seat (pike) circle bwd to rear support",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.104",
+    "variant": 1,
+    "description": "Jump to hang on HB – also with reverse grip – kip to support",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.204",
+    "variant": 1,
+    "description": "Facing HB – Jump with ½ turn (180°) – kip to support on HB",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.204",
+    "variant": 2,
+    "description": "Free jump with ½ turn (180°) over LB to hang on HB",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.304",
+    "variant": 1,
+    "description": "Jump with ½ turn (180°) over LB – kip to support on HB",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.105",
+    "variant": 1,
+    "description": "Facing HB – jump with 1/1 turn (360°) to hang on HB",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.106",
+    "variant": 1,
+    "description": "Straddle vault with hand repulsion over LB to catch HB",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.206",
+    "variant": 1,
+    "description": "Free straddle jump over LB to hang on HB",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.206",
+    "variant": 2,
+    "description": "Hecht jump (legs together) with hand repulsion over LB to hang on HB",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.306",
+    "variant": 1,
+    "description": "Free stretch jump over LB with legs together to hang on HB",
+    "value": "C=0.3",
+    "eponym": "Makhautsova",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.406",
+    "variant": 1,
+    "description": "Hecht jump (legs together) with hand repulsion and 1/1 turn (360°) over LB to hang on HB",
+    "value": "D=0.4",
+    "eponym": "Gebeshian",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.207",
+    "variant": 1,
+    "description": "Salto fwd tucked, piked or straddled over LB into L hang on LB",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.307",
+    "variant": 1,
+    "description": "Facing HB – salto fwd to hang on HB",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.307",
+    "variant": 2,
+    "description": "Roll fwd piked with hand repulsion over LB with flight to hang on HB",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.407",
+    "variant": 1,
+    "description": "Salto fwd tucked over LB to hang on HB without touching LB",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.208",
+    "variant": 1,
+    "description": "Round-off in front of LB – flight bwd (straddled) through clear straddle support on LB",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.308",
+    "variant": 1,
+    "description": "Round-off in front of LB – flight bwd over LB with legs together or straddled to hang on HB",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.408",
+    "variant": 1,
+    "description": "Round-off in front of LB – flight bwd over LB with 1/1 turn (360°) to hang on HB",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.409",
+    "variant": 1,
+    "description": "Round-off in front of LB – tucked salto bwd over LB to hang on LB",
+    "value": "D=0.4",
+    "eponym": "Jentsch",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.409",
+    "variant": 2,
+    "description": "Round-off in front of LB, flic-flac through hstd phase on LB",
+    "value": "D=0.4",
+    "eponym": "González",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.509",
+    "variant": 1,
+    "description": "Round-off in front of LB, flic-flac with 1/1 turn (360°) to clear support or through hstd phase on LB",
+    "value": "E=0.5",
+    "eponym": "Gurova",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.609",
+    "variant": 1,
+    "description": "Round-off in front of LB – tucked arabian salto over LB to hang on HB without touching the LB",
+    "value": "F=0.6",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.709",
+    "variant": 1,
+    "description": "Round-off in front of LB – piked arabian salto over LB to hang on HB without touching the LB",
+    "value": "G=0.7",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.210",
+    "variant": 1,
+    "description": "Jump to hstd on LB with hips bent, then extended, also with ½ turn (180°) in hstd phase, legs together or straddle",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.310",
+    "variant": 1,
+    "description": "Jump to hstd on LB with hips bent, then extended and 1/1 turn (360°) in hstd phase, legs together or straddle",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.310",
+    "variant": 2,
+    "description": "Jump with extended body to hdst on LB also with ½ turn (180°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.410",
+    "variant": 1,
+    "description": "Jump with extended body to hstd on LB with 1/1 turn (360°) in hstd phase",
+    "value": "D=0.4",
+    "eponym": "Maaranen",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.411",
+    "variant": 1,
+    "description": "Jump to clear support on HB – clear hip circle to hstd on HB, also with ½ turn (180°) in hstd phase on HB",
+    "value": "D=0.4",
+    "eponym": "McNamara",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.101",
+    "variant": 1,
+    "description": "Cast to hstd with legs straddled or with hips bent; also with hop-grip change",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.201",
+    "variant": 1,
+    "description": "Cast to hstd with legs together and hips extended; also with hop-grip change, also with ½ turn (180°) legs together or straddled",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.301",
+    "variant": 1,
+    "description": "Cast with 1/1 turn (360°) to hstd",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.401",
+    "variant": 1,
+    "description": "Cast with 1½ turn (540°) to hstd",
+    "value": "D=0.4",
+    "eponym": "Reeder",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.202",
+    "variant": 1,
+    "description": "Front support on HB – stoop with flight or free straddle fwd over HB and ½ turn (180°) to hang on HB",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.302",
+    "variant": 1,
+    "description": "Hip circle bwd hecht with flight and ½ turn (180°) passing over bar to hang on same bar – also from clear hip circle bwd",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.303",
+    "variant": 1,
+    "description": "From front support on HB – cast with release and 1/1 turn (360°) to hang on HB",
+    "value": "C=0.3",
+    "eponym": "Caslavska",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.403",
+    "variant": 1,
+    "description": "From inner front support on LB – cast with salto roll fwd to hang on HB (Radochla roll)",
+    "value": "D=0.4",
+    "eponym": "Radochla",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.503",
+    "variant": 1,
+    "description": "Front support on HB – cast with salto fwd straddled to hang on HB (Comaneci salto)",
+    "value": "E=0.5",
+    "eponym": "Comaneci",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.104",
+    "variant": 1,
+    "description": "Hip circle fwd (hips touching bar)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.404",
+    "variant": 1,
+    "description": "Clear hip circle fwd to hstd, also with ½ turn (180°) in hstd phase",
+    "value": "D=0.4",
+    "eponym": "Weiler-kip",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.504",
+    "variant": 1,
+    "description": "Clear hip circle fwd to hstd with 1/1 turn (360°) in hstd phase",
+    "value": "E=0.5",
+    "eponym": "Godwin",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.105",
+    "variant": 1,
+    "description": "Hip circle bwd (hips touching bar)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.105",
+    "variant": 2,
+    "description": "Clear hip circle bwd or hip circle bwd on LB – hip repulsion (“false-pop”) – with regrasp on LB",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.305",
+    "variant": 1,
+    "description": "Clear hip circle to hstd, also with hop-grip change in hstd phase, or with ½ turn (180°) to hstd",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.405",
+    "variant": 1,
+    "description": "Clear hip circle with 1/1 turn (360°) to hstd",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.505",
+    "variant": 1,
+    "description": "Clear hip circle with 1½ turn (540°) to hstd",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.206",
+    "variant": 1,
+    "description": "Clear underswing on LB, release and counter movement fwd in flight to hang on HB.",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.306",
+    "variant": 1,
+    "description": "Clear hip circle bwd on HB with hecht to clear support on LB",
+    "value": "C=0.3",
+    "eponym": "Pedrick",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.406",
+    "variant": 1,
+    "description": "Inner front support on LB – clear hip circle through hstd with flight to hang on HB",
+    "value": "D=0.4",
+    "eponym": "Shaposhnikova",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.506",
+    "variant": 1,
+    "description": "Clear hip circle on HB, counter straddle over HB to hang on HB",
+    "value": "E=0.5",
+    "eponym": "Hindorff",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.506",
+    "variant": 2,
+    "description": "Clear hip circle on HB with counter straddle over the HB with ½ turn (180°) to hang in mixed L grip",
+    "value": "E=0.5",
+    "eponym": "Martins",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.506",
+    "variant": 3,
+    "description": "Clear hip circle through hstd with ½ turn (180°) in flight to hang on HB",
+    "value": "E=0.5",
+    "eponym": "Khorkina",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.606",
+    "variant": 1,
+    "description": "Clear hip circle on HB, counter pike over HB to hang on HB",
+    "value": "F=0.6",
+    "eponym": "Shang",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.606",
+    "variant": 2,
+    "description": "Clear hip circle on HB, counter pike over HB with ½ turn (180°) to hang in mixed L grip",
+    "value": "F=0.6",
+    "eponym": "Black",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.307",
+    "variant": 1,
+    "description": "Outer front support – clear hip circle bwd on LB with hecht to hang on HB",
+    "value": "C=0.3",
+    "eponym": "Yarotska",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "2.407",
+    "variant": 1,
+    "description": "Outer front support – clear hip circle bwd on LB with hecht with ½ turn (180°) to hang on HB (legs together or straddled)",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "CASTS AND CLEAR HIP CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.201",
+    "variant": 1,
+    "description": "Giant circle bwd in regular grip, or on one arm, also with ½ turn (180°) to hstd",
+    "value": "B=0.2",
+    "eponym": "Liu",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.301",
+    "variant": 1,
+    "description": "Giant circle bwd with 1/1 turn (360°) to hstd",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.401",
+    "variant": 1,
+    "description": "Giant circle bwd with 1½ or 2/1 turn (540° or 720°) to hstd, also with hop 1/1 turn (360°) to hstd",
+    "value": "D=0.4",
+    "eponym": "Chusovitina",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.402",
+    "variant": 1,
+    "description": "Hang on HB – Swing fwd with ½ turn (180°) and flight to hstd",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.502",
+    "variant": 1,
+    "description": "Hang on HB – Swing fwd with 1½ turn (540°) and flight over LB to hang on LB",
+    "value": "E=0.5",
+    "eponym": "Strong",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.403",
+    "variant": 1,
+    "description": "Long swing fwd, counter straddle-reverse hecht over HB to hang (Tkatchev)",
+    "value": "D=0.4",
+    "eponym": "Davydova",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.403",
+    "variant": 2,
+    "description": "Tkatchev with ½ turn (180°)",
+    "value": "D=0.4",
+    "eponym": "Kononenko",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.403",
+    "variant": 3,
+    "description": "Swing fwd with ½ turn (180°), pike vault over HB to hang",
+    "value": "D=0.4",
+    "eponym": "Monckton",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.503",
+    "variant": 1,
+    "description": "Tkatchev piked",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.503",
+    "variant": 2,
+    "description": "Long swing fwd with ½ turn (180°) - ½ turn (180°) to counter straddle in flight over HB to hang",
+    "value": "E=0.5",
+    "eponym": "Shushunova",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.304",
+    "variant": 1,
+    "description": "Hang on HB, facing LB – swing fwd and roll bwd (legs straddled) to clear support on LB",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.404",
+    "variant": 1,
+    "description": "Hang on HB, facing LB – swing fwd, salto bwd stretched between bars to clear support on LB",
+    "value": "D=0.4",
+    "eponym": "Pak",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.504",
+    "variant": 1,
+    "description": "Pak Salto with 1/1 turn (360°)",
+    "value": "E=0.5",
+    "eponym": "Bhardwaj",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.604",
+    "variant": 1,
+    "description": "Facing outward on HB - swing fwd and counter salto fwd with legs straddled to catch HB in reverse grip",
+    "value": "F=0.6",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.405",
+    "variant": 1,
+    "description": "Swing fwd with ½ turn (180°) and salto fwd straddled (Deltchev Salto), or piked",
+    "value": "D=0.4",
+    "eponym": "Moreno/Nakamura",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.405",
+    "variant": 2,
+    "description": "or swing fwd and salto bwd with ½ turn (180°) piked (Gienger Salto) – to hang on HB",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.505",
+    "variant": 1,
+    "description": "Swing fwd and salto bwd with ½ turn (180°) stretched to hang on HB",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.705",
+    "variant": 1,
+    "description": "Swing fwd and salto bwd stretched with 1½ turn (540°) to hang on HB",
+    "value": "G=0.7",
+    "eponym": "Hristakieva",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.206",
+    "variant": 1,
+    "description": "Giant circle fwd in reverse, regular or mix grip, also with legs straddled or hips bent in upswing phase; also with ½ turn (180°) to hstd.",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.306",
+    "variant": 1,
+    "description": "Giant circle fwd with 1/1 turn (360°) to hstd",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.506",
+    "variant": 1,
+    "description": "Giant circle fwd in reverse grip to hstd with initiation of 1/1 turn (360°) on one arm before hstd phase, or giant circle fwd in reverse grip with 1½ turn (540°) to hstd",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.307",
+    "variant": 1,
+    "description": "Swing bwd – straddle flight bwd over LB to hstd on LB",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.407",
+    "variant": 1,
+    "description": "Swing bwd release and ½ turn (180°) in flight between the bars to clear support on LB",
+    "value": "D=0.4",
+    "eponym": "Ejova",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.308",
+    "variant": 1,
+    "description": "Swing bwd salto fwd tucked to hang on HB",
+    "value": "C=0.3",
+    "eponym": "Jaeger-Salto",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.408",
+    "variant": 1,
+    "description": "Jaeger Salto straddled to hang on HB",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.408",
+    "variant": 2,
+    "description": "Jaeger Salto straddled with ½ turn (180°) to hang on HB",
+    "value": "D=0.4",
+    "eponym": "Li Ya",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.408",
+    "variant": 3,
+    "description": "Jaeger Salto piked to hang on HB",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.608",
+    "variant": 1,
+    "description": "Jaeger Salto stretched to hang on HB",
+    "value": "F=0.6",
+    "eponym": "Capuccitti",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.708",
+    "variant": 1,
+    "description": "Swing bwd with salto fwd tucked over HB to hang on HB",
+    "value": "G=0.7",
+    "eponym": "Mo",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.309",
+    "variant": 1,
+    "description": "Swing bwd with free stoop or straddle vault and ½ turn (180°) over HB to hang",
+    "value": "C=0.3",
+    "eponym": "Zhang/Volpi",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.409",
+    "variant": 1,
+    "description": "Swing bwd with ½ turn (180°) and straddle flight bwd over HB to catch HB",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.310",
+    "variant": 1,
+    "description": "Giant circle fwd in L grip with piked or stretched body (L grip giant), also with ½ turn (180°) to hstd",
+    "value": "C=0.3",
+    "eponym": "Zaytseva",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.410",
+    "variant": 1,
+    "description": "Giant circle fwd in L grip with 1/1 turn (360°) to hstd",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "3.510",
+    "variant": 1,
+    "description": "Giant circle fwd in L grip with initiation of 1/1 turn (360°) on 1 arm before hstd phase, completed to hstd, or Giant circle fwd in L grip with 1½ turn (540˚) to hstd (any technique accepted)",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GIANT CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.101",
+    "variant": 1,
+    "description": "Clear straddle circle fwd to clear support",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.201",
+    "variant": 1,
+    "description": "Kip on HB, passing through clear straddle support – swing/press to hstd and ½ turn (180°) in hstd phase",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.401",
+    "variant": 1,
+    "description": "Stalder fwd to hstd, also with ½ turn (180°) to hstd",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.501",
+    "variant": 1,
+    "description": "Stalder fwd with 1/1 turn (360°) to hstd",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.302",
+    "variant": 1,
+    "description": "Clear straddle circle bwd on HB with flight to clear support on LB",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.402",
+    "variant": 1,
+    "description": "Clear straddle circle bwd on HB with flight fwd to hstd on LB",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.502",
+    "variant": 1,
+    "description": "Stalder bwd on HB with counter straddle - reverse hecht over HB to hang",
+    "value": "E=0.5",
+    "eponym": "Ricna",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.502",
+    "variant": 2,
+    "description": "Stalder bwd on HB with counter straddle reverse hecht over HB with ½ (180°) turn to hang in mixed L grip",
+    "value": "E=0.5",
+    "eponym": "Derwael/Fenton",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.602",
+    "variant": 1,
+    "description": "Stalder bwd on HB with counter pike - reverse hecht over HB to hang",
+    "value": "F=0.6",
+    "eponym": "Downie",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.103",
+    "variant": 1,
+    "description": "Clear straddle circle fwd in L grip to clear support",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.403",
+    "variant": 1,
+    "description": "Stalder fwd in L grip to hstd, also with ½ turn (180°) to hstd",
+    "value": "D=0.4",
+    "eponym": "White",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.503",
+    "variant": 1,
+    "description": "Stalder fwd in L grip with 1/1 turn (360°) to hstd (any technique accepted)",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.104",
+    "variant": 1,
+    "description": "Clear straddle circle bwd to clear support",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.304",
+    "variant": 1,
+    "description": "Stalder bwd to hstd, also with hop-grip change in hstd phase or with ½ turn (180°) to hstd",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.404",
+    "variant": 1,
+    "description": "Stalder bwd with 1/1 turn (360°) to hstd",
+    "value": "D=0.4",
+    "eponym": "Frederick",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.504",
+    "variant": 1,
+    "description": "Stalder bwd with 1½ turn (540°) to hstd",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.205",
+    "variant": 1,
+    "description": "Facing inward – Stalder bwd with release and counter movement fwd in flight to hang on HB",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.305",
+    "variant": 1,
+    "description": "Facing inward – Stalder bwd with hecht flight to hang on HB",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.405",
+    "variant": 1,
+    "description": "Facing outward – Stalder bwd through hstd with flight to hang on HB",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.505",
+    "variant": 1,
+    "description": "Stalder bwd through hstd with flight and ½ turn (180°), to hang on HB",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.106",
+    "variant": 1,
+    "description": "Rear support – seat (pike) circle fwd to rear support",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.406",
+    "variant": 1,
+    "description": "Clear pike circle fwd to hstd, also with ½ turn (180°) to hstd",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.506",
+    "variant": 1,
+    "description": "Clear pike circle fwd with 1/1 turn (360°) to hstd",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.107",
+    "variant": 1,
+    "description": "Rear support – seat (pike) circle bwd to rear support",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.407",
+    "variant": 1,
+    "description": "Clear pike circle bwd to hstd, also with ½ turn (180°) to hstd",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.507",
+    "variant": 1,
+    "description": "Clear pike circle bwd with 1/1 turn (360°) to hstd.",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.208",
+    "variant": 1,
+    "description": "Clear pike circle bwd on LB with counter flight to hang on HB",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.308",
+    "variant": 1,
+    "description": "Clear pike circle bwd on LB with hecht flight to hang on HB",
+    "value": "C=0.3",
+    "eponym": "Zgoba",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.508",
+    "variant": 1,
+    "description": "Clear pike circle bwd through hstd with flight to hang on HB, also with ½ turn (180°)",
+    "value": "E=0.5",
+    "eponym": "Komova",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.508",
+    "variant": 2,
+    "description": "Clear pike circle bwd with counter straddle (open hip before flight) – reverse hecht over HB to hang",
+    "value": "E=0.5",
+    "eponym": "Galante",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.608",
+    "variant": 1,
+    "description": "Clear pike circle bwd with counter pike – reverse hecht over HB to hang",
+    "value": "F=0.6",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "4.708",
+    "variant": 1,
+    "description": "Clear pike circle bwd on LB with counter flight to hang on HB",
+    "value": "G=0.7",
+    "eponym": "Nemour",
+    "element_group": "4",
+    "group_name": "STALDER CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.101",
+    "variant": 1,
+    "description": "Rear support on LB or HB – seat (pike) circle fwd with straddle cut bwd to hang on same bar",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.301",
+    "variant": 1,
+    "description": "Outer rear support on HB – fall bwd to inverted pike swing or seat (pike) circle fwd – straddle cut bwd with flight over LB to hang",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.301",
+    "variant": 2,
+    "description": "Rear support on LB - seat (pike) circle fwd with straddle cut bwd and grip change to hang on HB.",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.501",
+    "variant": 1,
+    "description": "Stoop in to Adler-seat (pike) circle fwd through clear extended support to finish in L grip (deviation up to 30° allowed), also with ½ turn (180°)",
+    "value": "E=0.5",
+    "eponym": "Luo",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.202",
+    "variant": 1,
+    "description": "Rear support on HB – seat circle bwd with release to hang on LB",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.302",
+    "variant": 1,
+    "description": "Clear rear pike support on HB (legs together) – full circle swing bwd to finish in clear rear support on HB (Steinemann circle)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.402",
+    "variant": 1,
+    "description": "Clear rear pike support on HB (legs together) – full circle swing bwd – continuing through clear rear pike support bwd over HB into hang",
+    "value": "D=0.4",
+    "eponym": "Mirgoradskaja",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.402",
+    "variant": 2,
+    "description": "From hstd clear pike circle bwd to rear inverted pike support",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.502",
+    "variant": 1,
+    "description": "Clear rear pike support on HB (legs together) – circle swing bwd and continue to salto bwd stretched between bars to clear support on LB circle swing bwd and ½ turn (180°) with flight to hstd on LB",
+    "value": "E=0.5",
+    "eponym": "Teza",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.303",
+    "variant": 1,
+    "description": "Clear rear pike support (legs together) on HB – full circle swing bwd with stoop out bwd to hang on HB",
+    "value": "C=0.3",
+    "eponym": "Li Li",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.403",
+    "variant": 1,
+    "description": "Clear rear pike support (legs together) on HB – full circle swing bwd with counter flight bwd straddled",
+    "value": "D=0.4",
+    "eponym": "Li Li",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.104",
+    "variant": 1,
+    "description": "Underswing bwd (inverted pike swing), dislocate (Schleudern) to hang on HB",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.304",
+    "variant": 1,
+    "description": "Schleudern to near hstd with hop-change to regular grip on HB",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.304",
+    "variant": 2,
+    "description": "Stoop trough on HB, dislocate and release with ½ (180°) turn in flight between the bars to catch LB in hang",
+    "value": "C=0.3",
+    "eponym": "Alt",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.404",
+    "variant": 1,
+    "description": "Underswing bwd (inverted pike swing) on HB – dislocate with flight to hstd on LB also from stoop through etc...",
+    "value": "D=0.4",
+    "eponym": "Zuchold-Schleudern",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.105",
+    "variant": 1,
+    "description": "Sole circle forward (piked or straddle)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.305",
+    "variant": 1,
+    "description": "Pike sole circle fwd in reverse grip to hstd, also with ½ turn (180°) to hstd",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.405",
+    "variant": 1,
+    "description": "Pike sole circle fwd in reverse grip with 1/1 turn (360°) to hstd",
+    "value": "D=0.4",
+    "eponym": "Hoefnagel",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.106",
+    "variant": 1,
+    "description": "Sole circle forward in L grip (piked or straddle)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.306",
+    "variant": 1,
+    "description": "Pike sole circle fwd in L grip to hstd, also with ½ turn (180°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.406",
+    "variant": 1,
+    "description": "Pike sole circle fwd in L grip with 1/1 turn (360°) to hstd",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.207",
+    "variant": 1,
+    "description": "Underswing on LB (support of feet) with counter movement fwd in flight to hang on HB",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.307",
+    "variant": 1,
+    "description": "Underswing on HB or LB with hand release and 1½ turn (540°) to hang",
+    "value": "C=0.3",
+    "eponym": "Burda",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.607",
+    "variant": 1,
+    "description": "Facing outward on HB – underswing with support of feet-counter salto fwd straddled to catch on HB",
+    "value": "F=0.6",
+    "eponym": "Kim",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.108",
+    "variant": 1,
+    "description": "Sole circle bwd (piked or straddle)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.308",
+    "variant": 1,
+    "description": "Pike sole circle bwd to hstd, also with hop-grip change to reverse grip in hstd phase, also with ½ turn (180°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.408",
+    "variant": 1,
+    "description": "Pike sole circle bwd with 1/1 turn (360°) to hstd",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.508",
+    "variant": 1,
+    "description": "Pike sole circle bwd with 1½ turn (540°) to hstd",
+    "value": "E=0.5",
+    "eponym": "Lucke",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.409",
+    "variant": 1,
+    "description": "Inner front support on LB – pike sole circle bwd through hstd with flight to hang on HB",
+    "value": "D=0.4",
+    "eponym": "Maloney",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.509",
+    "variant": 1,
+    "description": "Facing outward on LB – pike sole circle bwd through hstd with flight and ½ turn (180°), or 1/1 turn (360°) to hang on HB",
+    "value": "E=0.5",
+    "eponym": "Van Leeuwen/Seitz",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.410",
+    "variant": 1,
+    "description": "Pike sole circle bwd counter straddle-reverse hecht over HB to hang",
+    "value": "D=0.4",
+    "eponym": "Ray",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.410",
+    "variant": 2,
+    "description": "Pike sole circle bwd with counter straddle hecht over HB with ½ turn (180°) to hang in mixed L grip",
+    "value": "D=0.4",
+    "eponym": "Tweddle",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.510",
+    "variant": 1,
+    "description": "Pike sole circle bwd counter pike hecht over HB to hang",
+    "value": "E=0.5",
+    "eponym": "Church",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.510",
+    "variant": 2,
+    "description": "Pike sole circle bwd with counter pike hecht over HB with ½ turn (180°) to hang in mixed L grip",
+    "value": "E=0.5",
+    "eponym": "Fenton",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.610",
+    "variant": 1,
+    "description": "Pike sole circle bwd with counter stretched – reverse hecht in layout position over HB to hang",
+    "value": "F=0.6",
+    "eponym": "Nabieva",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "5.610",
+    "variant": 2,
+    "description": "Pike sole circle bwd with counter stretched – reverse hecht in layout position over HB, with ½ turn (180°) to hang in mixed L grip",
+    "value": "F=0.6",
+    "eponym": "Derwael",
+    "element_group": "5",
+    "group_name": "PIKE CIRCLES",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.101",
+    "variant": 1,
+    "description": "From HB – underswing with ½ turn (180°) or 1/1 turn (360°) to stand",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.201",
+    "variant": 1,
+    "description": "From HB – underswing with salto fwd tucked or piked",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.301",
+    "variant": 1,
+    "description": "From HB – underswing with salto fwd tucked or piked with ½ turn (180°) or 1/1 turn (360°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.401",
+    "variant": 1,
+    "description": "From HB – underswing with salto fwd tucked with 1½ turn (540°)",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.401",
+    "variant": 2,
+    "description": "From HB – underswing with salto fwd stretched with ½ turn (180°)",
+    "value": "D=0.4",
+    "eponym": "Moors",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.102",
+    "variant": 1,
+    "description": "From HB – clear underswing with ½ turn (180°) or 1/1 turn (360°) to stand",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.302",
+    "variant": 1,
+    "description": "From HB – clear underswing with salto fwd tucked or piked; also with ½ turn (180°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.302",
+    "variant": 2,
+    "description": "Clear straddle circle with salto fwd tucked also with ½ turn (180°)",
+    "value": "C=0.3",
+    "eponym": "Plichta/Alt",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.402",
+    "variant": 1,
+    "description": "From HB – clear underswing with salto fwd tucked with 1/1 turn (360°)",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.402",
+    "variant": 2,
+    "description": "Clear pike underswing to salto forward stretched with ½ turn (180°)",
+    "value": "D=0.4",
+    "eponym": "Brunner",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.402",
+    "variant": 3,
+    "description": "From HB – clear straddle circle with salto fwd tucked with 1/1 turn (360°)",
+    "value": "D=0.4",
+    "eponym": "Petz",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.502",
+    "variant": 1,
+    "description": "From HB – clear underswing with salto fwd tucked with 1½ turn (540°)",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.303",
+    "variant": 1,
+    "description": "From HB – underswing with ½ or clear underswing with ½ turn (180°) to salto bwd tucked or piked",
+    "value": "C=0.3",
+    "eponym": "Comaneci",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.403",
+    "variant": 1,
+    "description": "From HB – underswing with ½ turn (180°) to salto bwd stretched",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.403",
+    "variant": 2,
+    "description": "From HB – clear underswing with ½ turn (180°) to salto bwd stretched",
+    "value": "D=0.4",
+    "eponym": "Okino",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.403",
+    "variant": 3,
+    "description": "From HB – underswing with ½ turn (180°) to salto bwd tucked with 1/1 turn (360°)",
+    "value": "D=0.4",
+    "eponym": "Kraeker",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.104",
+    "variant": 1,
+    "description": "Swing fwd to salto bwd tucked, piked or stretched (flyaway)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.204",
+    "variant": 1,
+    "description": "Swing fwd to salto bwd tucked, or stretched with ½ turn (180°) or 1/1 turn (360°) (flyaway)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.304",
+    "variant": 1,
+    "description": "Swing fwd to salto bwd stretched with 1½ turn (540°) or 2/1 turn (720°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.404",
+    "variant": 1,
+    "description": "Swing fwd to salto bwd stretched with 2½ turn (900°)",
+    "value": "D=0.4",
+    "eponym": "Ji",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.504",
+    "variant": 1,
+    "description": "Swing fwd to salto bwd stretched with 3/1 turn (1080°)",
+    "value": "E=0.5",
+    "eponym": "Bar",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.205",
+    "variant": 1,
+    "description": "Swing fwd to double salto bwd tucked",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.305",
+    "variant": 1,
+    "description": "Swing fwd to double salto bwd piked",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.405",
+    "variant": 1,
+    "description": "Swing fwd to double salto bwd tucked or piked with 1/1 turn (360°) in first or second salto",
+    "value": "D=0.4",
+    "eponym": "Morio/Chusovitina",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.505",
+    "variant": 1,
+    "description": "Swing fwd to double salto bwd tucked with 1½ turn (540°)",
+    "value": "E=0.5",
+    "eponym": "Mustafina",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.605",
+    "variant": 1,
+    "description": "Swing fwd to double salto bwd tucked with 2/1 turn (720°)",
+    "value": "F=0.6",
+    "eponym": "Fabrichnova",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.406",
+    "variant": 1,
+    "description": "Swing fwd to double salto bwd stretched",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.606",
+    "variant": 1,
+    "description": "Swing fwd to double salto bwd stretched with 1/1 turn (360°) in first or second salto",
+    "value": "F=0.6",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.706",
+    "variant": 1,
+    "description": "Swing fwd to double salto bwd stretched with 2/1 turn (720°)",
+    "value": "G=0.7",
+    "eponym": "Ray",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.407",
+    "variant": 1,
+    "description": "Swing fwd to salto bwd tucked with ½ turn (180°) – into salto fwd tucked",
+    "value": "D=0.4",
+    "eponym": "Fontaine",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.407",
+    "variant": 2,
+    "description": "Swing fwd with ½ turn (180°) to double salto fwd tucked",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.507",
+    "variant": 1,
+    "description": "Swing fwd to salto bwd stretched with ½ turn (180°) – into salto fwd stretched",
+    "value": "E=0.5",
+    "eponym": "Blanco",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.507",
+    "variant": 2,
+    "description": "Swing fwd with ½ turn (180°) to double salto fwd piked",
+    "value": "E=0.5",
+    "eponym": "Giovannini/Li Ya",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.707",
+    "variant": 1,
+    "description": "Swing fwd to triple salto bwd tucked",
+    "value": "G=0.7",
+    "eponym": "Magaña",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.108",
+    "variant": 1,
+    "description": "Swing bwd to salto fwd tucked, piked or stretched or clear straddle circle fwd on HB to salto fwd tucked",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.208",
+    "variant": 1,
+    "description": "Swing bwd to salto fwd tucked or stretched with ½ turn (180°) or 1/1 turn (360°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.308",
+    "variant": 1,
+    "description": "Swing bwd to salto fwd stretched with 1½ turn (540°) or 2/1 turn (720°)",
+    "value": "C=0.3",
+    "eponym": "Pechstein",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.308",
+    "variant": 2,
+    "description": "From L grip, swing bwd, ½ (180°) turn, to double salto bwd tucked",
+    "value": "C=0.3",
+    "eponym": "Fan",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.408",
+    "variant": 1,
+    "description": "Swing bwd to double salto fwd tucked",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.508",
+    "variant": 1,
+    "description": "Swing bwd to double salto fwd tucked with ½ turn (180°) also salto fwd with ½ turn (180°) into salto bwd tucked",
+    "value": "E=0.5",
+    "eponym": "Arai",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.508",
+    "variant": 2,
+    "description": "Swing bwd to double salto fwd piked",
+    "value": "E=0.5",
+    "eponym": "Stewart",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.608",
+    "variant": 1,
+    "description": "Swing bwd to double salto fwd piked with ½ turn (180°)",
+    "value": "F=0.6",
+    "eponym": "Pentek",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.209",
+    "variant": 1,
+    "description": "Hip circle bwd (also clear) on LB or HB – hecht",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.309",
+    "variant": 1,
+    "description": "Hip circle bwd (also clear) on LB or HB – hecht with 1/1 turn (360°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.409",
+    "variant": 1,
+    "description": "Hip circle bwd (also clear) on LB or HB – hecht with salto bwd tucked",
+    "value": "D=0.4",
+    "eponym": "Mukhina",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.509",
+    "variant": 1,
+    "description": "Hip circle bwd (also clear) on LB or HB – hecht with ½ turn (180°) to salto fwd tucked",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.609",
+    "variant": 1,
+    "description": "Hip circle bwd (also clear) on LB or HB – hecht with 1/1 turn (360°) to salto bwd tucked",
+    "value": "F=0.6",
+    "eponym": "Ma",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.210",
+    "variant": 1,
+    "description": "On HB - salto fwd tucked",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "6.310",
+    "variant": 1,
+    "description": "On HB – salto fwd piked or salto bwd tucked or piked",
+    "value": "C=0.3",
+    "eponym": "Delladio/Parolari",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "UB"
+  },
+  {
+    "number": "1.101",
+    "variant": 1,
+    "description": "Leap - on landing must show arabesque position (leg min. at horizontal)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB",
+    "markers": [
+      "D"
+    ]
+  },
+  {
+    "number": "1.201",
+    "variant": 1,
+    "description": "Split leap (180°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB",
+    "markers": [
+      "D"
+    ]
+  },
+  {
+    "number": "1.401",
+    "variant": 1,
+    "description": "Leap fwd with leg change (free leg swing to 45°) to cross split",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB",
+    "markers": [
+      "D"
+    ]
+  },
+  {
+    "number": "1.102",
+    "variant": 1,
+    "description": "Thief vault – take-off from one leg – free leap over beam, one leg after another to rear support – 90° approach to beam, or Scissor leap over beam to cross sit on thigh – diagonal approach to beam",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB",
+    "markers": [
+      "D"
+    ]
+  },
+  {
+    "number": "1.302",
+    "variant": 1,
+    "description": "Straight Jump with ½ turn (180°) in flight phase to stand",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB",
+    "markers": [
+      "D"
+    ]
+  },
+  {
+    "number": "1.402",
+    "variant": 1,
+    "description": "Jump with 1/1 turn (360°) in flight phase to stand – approach from end or diagonal to beam",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB",
+    "markers": [
+      "D"
+    ]
+  },
+  {
+    "number": "1.103",
+    "variant": 1,
+    "description": "Flank to rear support, also with ½ turn (180°)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.103",
+    "variant": 2,
+    "description": "Jump with hand support, ¾ turn (270˚) in support to cross sit on thigh",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.303",
+    "variant": 1,
+    "description": "Two flying flairs",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.403",
+    "variant": 1,
+    "description": "3 flying flairs",
+    "value": "D=0.4",
+    "eponym": "Homma",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.403",
+    "variant": 2,
+    "description": "Two flank circles followed by leg “Flair”",
+    "value": "D=0.4",
+    "eponym": "Baitova",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.204",
+    "variant": 1,
+    "description": "Jump with ½ turn (180°) to clear straddle support, or jump bwd through straddle position over the beam to front support, or to side split – 90° approach to beam",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB",
+    "markers": [
+      "D"
+    ]
+  },
+  {
+    "number": "1.304",
+    "variant": 1,
+    "description": "Straddle pike jump bwd over beam from round-off into immediate hip circle bwd – 90° approach to beam",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB",
+    "markers": [
+      "D"
+    ]
+  },
+  {
+    "number": "1.105",
+    "variant": 1,
+    "description": "Jump with hand support to side split sit or straddle position (must show split without hands touching the beam as final position; in straddle position the trunk must touch the beam)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB",
+    "markers": [
+      "D"
+    ]
+  },
+  {
+    "number": "1.105",
+    "variant": 2,
+    "description": "Jump or leap to cross split sit – diagonal approach to beam (with hand support)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB",
+    "markers": [
+      "D"
+    ]
+  },
+  {
+    "number": "1.305",
+    "variant": 1,
+    "description": "Free jump to cross split sit take-off from two feet – diagonal approach to beam",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB",
+    "markers": [
+      "D"
+    ]
+  },
+  {
+    "number": "1.305",
+    "variant": 2,
+    "description": "Change leg leap to free cross split sit – diagonal approach to beam",
+    "value": "C=0.3",
+    "eponym": "Dick",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB",
+    "markers": [
+      "D"
+    ]
+  },
+  {
+    "number": "1.405",
+    "variant": 1,
+    "description": "Leap with leg change and ½ turn (180˚) away from beam to free cross split sit – diagonal approach to beam",
+    "value": "D=0.4",
+    "eponym": "Dick",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB",
+    "markers": [
+      "D"
+    ]
+  },
+  {
+    "number": "1.106",
+    "variant": 1,
+    "description": "From side stand - squat or stoop through to rear support",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.207",
+    "variant": 1,
+    "description": "Jump to roll fwd at end or middle of beam to sit position or tuck stand",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.207",
+    "variant": 2,
+    "description": "Jump to clear straddle support on end of beam – swing bwd to roll fwd to sit position or tuck stand",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.108",
+    "variant": 1,
+    "description": "Cartwheel with bending of both arms through chest stand to swing down",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.108",
+    "variant": 2,
+    "description": "Stand at side of beam and jump to chest stand with both arms bent",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.208",
+    "variant": 1,
+    "description": "Jump with ½ turn (180°) over shoulder to neck stand, ½ turn (180°) to chest stand",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.308",
+    "variant": 1,
+    "description": "Jump with ½ turn (180°) over shoulder to neck stand, 1/1 or 1½ turn (360° - 540˚) to neck stand",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.309",
+    "variant": 1,
+    "description": "From cross stand facing end of beam – head kip",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.309",
+    "variant": 2,
+    "description": "From cross stand facing end of beam – jump to hstd with hip angle (pike) to front walkover",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.309",
+    "variant": 3,
+    "description": "From cross stand facing end of beam – jump to hstd with hip angle (pike) to handspring fwd with step-out or land on 2 feet",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.609",
+    "variant": 1,
+    "description": "Round-off at end of beam – flic-flac with ½ turn (180°) and walkover fwd",
+    "value": "F=0.6",
+    "eponym": "Dunn",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.210",
+    "variant": 1,
+    "description": "Jump, press, or swing to hstd (2 sec.) – lower to end position touching beam, also with ½ turn (180°) in hstd",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.310",
+    "variant": 1,
+    "description": "Jump, press, or swing to cross or side hstd with 1/1 - 1½ turn (360°- 540°) – lower to end position touching beam",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.111",
+    "variant": 1,
+    "description": "Planche with support on one or both bent arms (2 sec.), also legs in cross split position",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.211",
+    "variant": 1,
+    "description": "Jump with bent hips to clear front support above horizontal minimum at 45° (planche) (2 sec.) - lower to optional end position",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.311",
+    "variant": 1,
+    "description": "Jump with stretched hips to planche (2 sec.)",
+    "value": "C=0.3",
+    "eponym": "Shushunova",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.311",
+    "variant": 2,
+    "description": "Jump, press, or swing to hstd – lower to planche (2 sec.), also with ½ turn (180°) in hstd",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.311",
+    "variant": 3,
+    "description": "Jump, press, or swing to hstd – lower to clear pike support with legs together (2 sec.), also with ½ turn (180°) in hstd",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.311",
+    "variant": 4,
+    "description": "From hstd (2 sec.) release one hand with swing down swd to rear support; also with ½ turn (180°) in hstd",
+    "value": "C=0.3",
+    "eponym": "Li Yifang",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.411",
+    "variant": 1,
+    "description": "Jump, press or swing to hstd – 1/1 turn (360°) in hstd – lower to planche (2 sec.),",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.411",
+    "variant": 2,
+    "description": "or to clear pike support with legs together (2 sec.)",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.411",
+    "variant": 3,
+    "description": "Jump, press, or swing to hstd – 1/1 turn (360°) in hstd – release one hand with swing down swd to rear support",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.312",
+    "variant": 1,
+    "description": "Hstd in cross position with large arch span, also piked with one leg vertical, other leg bent (2 sec.) - lower to optional end position",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.312",
+    "variant": 2,
+    "description": "Hstd with horizontal leg hold (2 sec.) – reverse planche in different variations - lower to optional end position",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.412",
+    "variant": 1,
+    "description": "Jump or press to side hstd – walkover fwd to side stand on both legs",
+    "value": "D=0.4",
+    "eponym": "Phillips",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.213",
+    "variant": 1,
+    "description": "Press to side hstd, with bending - stretching of legs – hop with ¼ turn (90°) to cross hstd - lower to optional end position",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.313",
+    "variant": 1,
+    "description": "Jump, press, or swing to hstd shift weight to one arm hstd (2 sec.) – lower to optional end position",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.413",
+    "variant": 1,
+    "description": "Jump or press on one arm to hstd lower to optional end position, also jump, press, or swing to hstd – shift weight to side hstd on one arm (2 sec.), lowering to clear straddle support on one arm, also with ¼ turn (90°)",
+    "value": "D=0.4",
+    "eponym": "Rankin",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.114",
+    "variant": 1,
+    "description": "Jump to hstd with bent or straight legs – lower to optional end position",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.214",
+    "variant": 1,
+    "description": "Cartwheel on one or both arms",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.314",
+    "variant": 1,
+    "description": "Jump with ¼ turn (90°) and extended hips through a momentary hstd on one arm with immediate ¼ turn (90°) and support on second arm to side hstd – lower to optional end position - 90° approach to beam",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.314",
+    "variant": 2,
+    "description": "From rear stand (back towards beam), flic flac over beam to candle position, ending in front support",
+    "value": "C=0.3",
+    "eponym": "Beukes",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.314",
+    "variant": 3,
+    "description": "From rear stand (back towards beam), flic flac with ½ turn (180°) to candle position, ending in front support (grasping under the beam with both hands)",
+    "value": "C=0.3",
+    "eponym": "Soares",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.414",
+    "variant": 1,
+    "description": "Round-off in front of beam – jump with ½ twist (180°) to near side hstd – lower to optional position",
+    "value": "D=0.4",
+    "eponym": "Gurova",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.514",
+    "variant": 1,
+    "description": "Round-off in front of beam – flic-flac with1/1 twist (360°) to hip circle bwd",
+    "value": "E=0.5",
+    "eponym": "Zamolodchikova",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.215",
+    "variant": 1,
+    "description": "Handspring fwd with hand repulsion from springboard to rear support – or with ¼ turn (90°) to cross sit on thigh – 90° approach to beam",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.215",
+    "variant": 2,
+    "description": "Cartwheel, grasping the beam, to front support – 90° approach to beam",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.315",
+    "variant": 1,
+    "description": "Free (aerial) walkover fwd to rear support – or with ¼ turn (90°) to cross sit on thigh – 90° approach to beam",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.615",
+    "variant": 1,
+    "description": "Aerial walkover fwd to cross stand – approach from end of beam, take off from both feet",
+    "value": "F=0.6",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.416",
+    "variant": 1,
+    "description": "Salto fwd tucked to stand – approach from end of beam",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.516",
+    "variant": 1,
+    "description": "Salto fwd piked to stand – approach from end of beam",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.616",
+    "variant": 1,
+    "description": "Salto fwd tucked with ½ twist (180°)",
+    "value": "F=0.6",
+    "eponym": "Wong Hiu Ying Angel",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.716",
+    "variant": 1,
+    "description": "Round-off at end of beam – take off bwd with ½ turn (180°) – tucked salto fwd to stand",
+    "value": "G=0.7",
+    "eponym": "Erceg",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.317",
+    "variant": 1,
+    "description": "Round-off at end of beam – flic-flac through hstd with swing down to cross straddle sit",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.417",
+    "variant": 1,
+    "description": "Round-off at end of beam – flic-flac through hstd – support on one or both arms – to stand",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.417",
+    "variant": 2,
+    "description": "Round-off at end of beam – flic-flac with 1/1 twist (360°) into swing down to cross straddle sit",
+    "value": "D=0.4",
+    "eponym": "Tsavdaridou",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.517",
+    "variant": 1,
+    "description": "Round-off at end of beam – flic-flac with ¾ twist (270˚) to stand",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.518",
+    "variant": 1,
+    "description": "Round-off at end of beam – salto bwd tucked, piked or stretched with step-out to stand",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.618",
+    "variant": 1,
+    "description": "Round-off at end of beam – salto bwd tucked with 1/1 twist (360°) to stand",
+    "value": "F=0.6",
+    "eponym": "Garrison",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.618",
+    "variant": 2,
+    "description": "Round-off at end of beam – salto bwd stretched to stand",
+    "value": "F=0.6",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.718",
+    "variant": 1,
+    "description": "Round-off at end of beam – salto bwd stretched with 1/1 twist (360°) to stand",
+    "value": "G=0.7",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.619",
+    "variant": 1,
+    "description": "Jump fwd with ½ twist (180°) – salto bwd piked to stand",
+    "value": "F=0.6",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "MOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.101",
+    "variant": 1,
+    "description": "Split leap fwd (leg separation 180°)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.301",
+    "variant": 1,
+    "description": "Split leap fwd with ½ turn (180°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.202",
+    "variant": 1,
+    "description": "Split jump (leg separation 180°) from cross position",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.302",
+    "variant": 1,
+    "description": "Split jump with ½ turn (180°) from cross position",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.402",
+    "variant": 1,
+    "description": "Split jump with 1/1 turn (360°) from cross position",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.203",
+    "variant": 1,
+    "description": "Straddle pike jump (both legs above horizontal), or side split jump from cross position",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.303",
+    "variant": 1,
+    "description": "Straddle pike jump with ½ turn (180°) from cross position",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.403",
+    "variant": 1,
+    "description": "Straddle pike with 1/1 turn (360°) from cross position",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.204",
+    "variant": 1,
+    "description": "Fouetté hop with ½ turn (180°) to land in arabesque (free leg above horizontal)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.404",
+    "variant": 1,
+    "description": "Fouetté hop with leg change to cross split (leg separation 180°) (tour jeté)",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.504",
+    "variant": 1,
+    "description": "Tour jeté with additional ½ turn (180°)",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.105",
+    "variant": 1,
+    "description": "Stride leap fwd with change of legs to wolf position (hip angle at 45°)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.305",
+    "variant": 1,
+    "description": "Leap fwd with leg change (free leg swing to 45˚) to cross split (180° separation < after leg change) (Switch leap)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.405",
+    "variant": 1,
+    "description": "Switch leap with ½ turn (180°)",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.505",
+    "variant": 1,
+    "description": "Switch leap to ring position (leg separation 180°)",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.206",
+    "variant": 1,
+    "description": "Leap with ¼ turn (90°) into straddle pike position (both legs above horizontal), to land on one or both feet",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.306",
+    "variant": 1,
+    "description": "Leap fwd with leg change and ¼ turn (90°) to side split (180°) or straddle pike position",
+    "value": "C=0.3",
+    "eponym": "Johnson",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.506",
+    "variant": 1,
+    "description": "Johnson with additional ½ turn (180°)",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.107",
+    "variant": 1,
+    "description": "Pike jump from cross position (hip <90°)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.207",
+    "variant": 1,
+    "description": "Pike jump from cross position with ½ turn (180°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.407",
+    "variant": 1,
+    "description": "Pike jump from cross position with 1/1 turn (360°)",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.108",
+    "variant": 1,
+    "description": "Sissone (leg separation 180° on the diagonal / 45° to the floor) take off from both feet, land on one foot",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "2.108",
+    "variant": 2,
+    "description": "Stag jump (leg separation 180°)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "2.208",
+    "variant": 1,
+    "description": "Sissone to ring position (rear foot at head height, body arched and head dropped bwd, leg separation 180°) to land on one foot, or stag-ring jump",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "2.308",
+    "variant": 1,
+    "description": "Jump with upper back arch and head release with feet to head height/closed ring (Sheep jump)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.408",
+    "variant": 1,
+    "description": "Split jump to ring position (leg separation 180°) to land on two feet",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "2.408",
+    "variant": 2,
+    "description": "Split ring leap (leg separation 180°)",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "2.408",
+    "variant": 3,
+    "description": "Jump to cross over split with body arched and head dropped bwd",
+    "value": "D=0.4",
+    "eponym": "Yang-Bo",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "2.209",
+    "variant": 1,
+    "description": "Hop with ½ turn (180°) free leg extended at horizontal throughout",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "2.209",
+    "variant": 2,
+    "description": "Stretched jump/hop with 1/1turn (360°) from cross position",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "2.409",
+    "variant": 1,
+    "description": "Stretched jump/hop with 1½ turn (540°) from cross position",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.110",
+    "variant": 1,
+    "description": "Cat leap (knees above horizontal alternately)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "2.110",
+    "variant": 2,
+    "description": "Scissors leap forward (legs above horizontal)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "2.210",
+    "variant": 1,
+    "description": "Cat leap with ½ turn (180°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.310",
+    "variant": 1,
+    "description": "Cat leap with 1/1 turn (360°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.211",
+    "variant": 1,
+    "description": "Tuck hop or jump with ½ turn (180°) from cross position (hip & knee angle at 45°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.311",
+    "variant": 1,
+    "description": "Tuck hop or jump with 1/1 turn (360°) from cross position",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.411",
+    "variant": 1,
+    "description": "Tuck hop or jump with 1½ turn (540°) from cross position",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.112",
+    "variant": 1,
+    "description": "Wolf hop or jump from cross position (hip angle at 45°, knees together)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "2.212",
+    "variant": 1,
+    "description": "Wolf hop or jump with ½ turn (180°) from cross position",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.412",
+    "variant": 1,
+    "description": "Wolf hop or jump with 1/1 turn (360°) from cross position",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "2.512",
+    "variant": 1,
+    "description": "Wolf hop or jump with 1½ turn (540°) from cross position",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.101",
+    "variant": 1,
+    "description": "1/1 turn (360°) on one leg – free leg optional below horizontal",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.201",
+    "variant": 1,
+    "description": "1½ turn (540°) on one leg – free leg optional below horizontal",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.401",
+    "variant": 1,
+    "description": "2/1 turn (720°) on one leg – free leg optional below horizontal",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.501",
+    "variant": 1,
+    "description": "3/1 turn (1080°) on one leg – free leg optional below horizontal",
+    "value": "E=0.5",
+    "eponym": "Okino",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.302",
+    "variant": 1,
+    "description": "1/1 turn (360°) on one leg in back attitude, thigh of free leg at horizontal, throughout turn",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.402",
+    "variant": 1,
+    "description": "1½ turn (540°) on one leg in back attitude, thigh of free leg at horizontal, throughout turn",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.403",
+    "variant": 1,
+    "description": "1/1 turn (360°) pirouette with free leg held bwd with both hands",
+    "value": "D=0.4",
+    "eponym": "Preziosa",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.304",
+    "variant": 1,
+    "description": "1/1 turn (360°) with heel of extended free leg fwd at horizontal throughout turn (support leg may be straight or bent)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.404",
+    "variant": 1,
+    "description": "1½ turn (540°) with heel of extended free leg fwd at horizontal throughout turn (support leg may be straight or bent)",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.504",
+    "variant": 1,
+    "description": "2/1 turn (720°) with heel of extended free leg fwd at horizontal throughout turn (support leg may be straight or bent)",
+    "value": "E=0.5",
+    "eponym": "Wevers",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.305",
+    "variant": 1,
+    "description": "1/1 turn (360°) with free leg held upward in 180° split position throughout turn",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.405",
+    "variant": 1,
+    "description": "1 ½ turn (540°) with free leg held upward in 180° split position throughout turn",
+    "value": "D=0.4",
+    "eponym": "Galante",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.505",
+    "variant": 1,
+    "description": "2/1 turn (720°) with free leg held upward in 180° split position throughout turn",
+    "value": "E=0.5",
+    "eponym": "Sugihara",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.206",
+    "variant": 1,
+    "description": "½ illusion turn (180°) through standing split (180° legs separation) with/without brief touching of beam with one hand",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.406",
+    "variant": 1,
+    "description": "1/1 illusion turn (360°) through standing split (180° legs separation) with/without brief touching of beam with one hand",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.207",
+    "variant": 1,
+    "description": "1/1 turn (360°) in tuck stand on one leg – free leg straight throughout turn",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.307",
+    "variant": 1,
+    "description": "1½ turn (540°) in tuck stand on one leg – free leg straight throughout turn",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.407",
+    "variant": 1,
+    "description": "2/1 turn (720°) or 2½ turn (900°) in tuck stand on one leg – free leg straight throughout turn",
+    "value": "D=0.4",
+    "eponym": "Humphrey",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "3.507",
+    "variant": 1,
+    "description": "3/1 turn (1080°) in tuck stand on one leg – free leg straight throughout turn",
+    "value": "E=0.5",
+    "eponym": "Mitchell",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "3.208",
+    "variant": 1,
+    "description": "1/1 turn to 1½ turn (360°- 540°) in prone position – alternate support of hands permitted",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "3.408",
+    "variant": 1,
+    "description": "1¼ (450°) turn on back in kip position (hip-leg angle closed)",
+    "value": "D=0.4",
+    "eponym": "Li Li",
+    "element_group": "3",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.101",
+    "variant": 1,
+    "description": "From kneeling sit position, rise upward with body wave through toe-balance stand",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB",
+    "markers": [
+      "D"
+    ]
+  },
+  {
+    "number": "4.102",
+    "variant": 1,
+    "description": "Standing split fwd with hand support in front of support leg (leg separation 180°) – Needle scale (2 sec.) or Stand on one leg with foot of free leg in fwd hold above head (2 sec.)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB",
+    "markers": [
+      "D",
+      "*"
+    ]
+  },
+  {
+    "number": "4.102",
+    "variant": 2,
+    "description": "Scale fwd, support leg extended (leg separation 180°) (2 sec.)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB",
+    "markers": [
+      "D",
+      "*"
+    ]
+  },
+  {
+    "number": "4.202",
+    "variant": 1,
+    "description": "Clear pike support with legs together (2 sec.)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.103",
+    "variant": 1,
+    "description": "Kick to side or cross hstd (2 sec.), lower to end position touching beam",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.203",
+    "variant": 1,
+    "description": "Kick to cross hstd – roll fwd with or without hand support to sit position or to tuck stand",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.204",
+    "variant": 1,
+    "description": "Roll fwd without hand support to sit position or to tuck stand",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.204",
+    "variant": 2,
+    "description": "From cross sit, swing bwd to shoulder roll fwd with hip extension and hand support to sit position or to tuck stand",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.304",
+    "variant": 1,
+    "description": "Free shoulder roll fwd with hip extension and without hand support to sit position or tuck stand",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.105",
+    "variant": 1,
+    "description": "Roll bwd with hand support on top of the beam – landing on one or both feet",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.305",
+    "variant": 1,
+    "description": "Roll bwd to hstd - lower to end position touching beam",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.206",
+    "variant": 1,
+    "description": "Roll swd, body tucked, straddle piked or stretched through neck stand, also with ½ turn (180°) over shoulder",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.306",
+    "variant": 1,
+    "description": "Roll swd, body stretched without hand support",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.107",
+    "variant": 1,
+    "description": "Cartwheel, also with support on one arm, or Cartwheel with flight phase before or after hand support",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.207",
+    "variant": 1,
+    "description": "Roll swd, piked straddle with hand support – end position optional",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.307",
+    "variant": 1,
+    "description": "From cross sit or side split – roll swd straddle or stretched without hand support – end position optional",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.108",
+    "variant": 1,
+    "description": "Walkover fwd, with/without alternate hand support",
+    "value": "A=0.1",
+    "eponym": "Tinsica",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.108",
+    "variant": 2,
+    "description": "Walkover fwd, bwd",
+    "value": "A=0.1",
+    "eponym": "Tic-Toc",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.208",
+    "variant": 1,
+    "description": "Walkover fwd, with support of one arm",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.308",
+    "variant": 1,
+    "description": "Kick to cross hdst with ½ turn (180°) to walkover fwd",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.308",
+    "variant": 2,
+    "description": "Walkover fwd in side position to side stand",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.109",
+    "variant": 1,
+    "description": "Walkover bwd, with/without alternate hand support, also with swing down to cross sit",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.209",
+    "variant": 1,
+    "description": "Walkover bwd, with support of one arm",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.309",
+    "variant": 1,
+    "description": "Walkover bwd with ½ turn (180°) to walkover fwd",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.309",
+    "variant": 2,
+    "description": "Walkover bwd in side position to side stand",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.309",
+    "variant": 3,
+    "description": "Walkover bwd with stoop through of one leg to cross split sit",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.210",
+    "variant": 1,
+    "description": "From extended tuck sit – walkover bwd",
+    "value": "B=0.2",
+    "eponym": "Valdez",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.210",
+    "variant": 2,
+    "description": "Kick over bwd through horizontal plane with support on one arm",
+    "value": "B=0.2",
+    "eponym": "Garrison",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "4.310",
+    "variant": 1,
+    "description": "Valdez with 1/1 turn (360°) lower to end position touching beam",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "HOLDS AND ACROBATIC NON-FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.201",
+    "variant": 1,
+    "description": "Handspring fwd with flight to land on one or both legs (same element), also with support on one arm",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.301",
+    "variant": 1,
+    "description": "Handspring fwd with leg change in flight phase",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.401",
+    "variant": 1,
+    "description": "Jump bwd (flic-flac take-off) with ½ twist (180°) through hstd to walkover fwd also with support on one arm, or to tic-toc",
+    "value": "D=0.4",
+    "eponym": "Onodi",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.501",
+    "variant": 1,
+    "description": "Jump bwd (flic-flac take-off) with ½ twist (180°) to handspring fwd land on 2 feet",
+    "value": "E=0.5",
+    "eponym": "Worley",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.202",
+    "variant": 1,
+    "description": "Flic-flac to land on both feet",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.302",
+    "variant": 1,
+    "description": "Flic-flac with ½ twist (180°) to hstd (2 sec.) – lower to optional end position",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.402",
+    "variant": 1,
+    "description": "Flic-flac from side position with ½ twist (180°) to side hstd lower to optional end position",
+    "value": "D=0.4",
+    "eponym": "Kolesnikova",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.303",
+    "variant": 1,
+    "description": "Flic-flac with ¼ twist (90°) to hstd (2 sec.) – lower to optional end position",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.403",
+    "variant": 1,
+    "description": "Flic-flac with ¾ twist (270°) to side hstd (2 sec.) – lower to optional end position",
+    "value": "D=0.4",
+    "eponym": "Omelianchik",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.204",
+    "variant": 1,
+    "description": "Flic-flac with step-out, also with support on one arm",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.304",
+    "variant": 1,
+    "description": "Flic-flac with ½ twist (180°) after hand support",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.404",
+    "variant": 1,
+    "description": "Flic-flac with min. ¾ twist (270°) before hand support",
+    "value": "D=0.4",
+    "eponym": "Kochetkova",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.405",
+    "variant": 1,
+    "description": "Flic-flac with step-out from side position",
+    "value": "D=0.4",
+    "eponym": "Tousek",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.405",
+    "variant": 2,
+    "description": "Flic-flac from side position to front support or with hip circle bwd",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.505",
+    "variant": 1,
+    "description": "Flic-flac from side position with 1/1 twist (360°) to hip circle bwd",
+    "value": "E=0.5",
+    "eponym": "Teza",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.206",
+    "variant": 1,
+    "description": "Gainer flic-flac also with support on one arm",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.306",
+    "variant": 1,
+    "description": "Gainer flic-flac with ¼ twist (90°) to hstd (2 sec.) – lower to optional end position",
+    "value": "C=0.3",
+    "eponym": "Kitti",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.406",
+    "variant": 1,
+    "description": "Gainer flic-flac with min. ¾ twist (270°) before hand support",
+    "value": "D=0.4",
+    "eponym": "Khorkina",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.207",
+    "variant": 1,
+    "description": "Flic-flac or Gainer flic-flac – with high flight phase, and swing down to cross straddle sit",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.307",
+    "variant": 1,
+    "description": "Flic-flac or Gainer flic-flac – with piking and stretching of hips in flight phase and swing down to cross straddle sit",
+    "value": "C=0.3",
+    "eponym": "Rueda",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.407",
+    "variant": 1,
+    "description": "Flic-flac with 1/1 twist (360°) – swing down to cross straddle sit",
+    "value": "D=0.4",
+    "eponym": "Rulfova",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.208",
+    "variant": 1,
+    "description": "Round-off",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.408",
+    "variant": 1,
+    "description": "Free (aerial) cartwheel – landing on one or both feet, in cross or side position, also with leg change",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.508",
+    "variant": 1,
+    "description": "Free (aerial) round-off tucked or piked – take off from 2 feet",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.409",
+    "variant": 1,
+    "description": "Free (aerial) walkover fwd, landing on one or both feet",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.310",
+    "variant": 1,
+    "description": "Salto fwd tucked, take-off from one leg to stand on one or two feet",
+    "value": "C=0.3",
+    "eponym": "Liukin",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.410",
+    "variant": 1,
+    "description": "Salto fwd tucked to cross stand",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.510",
+    "variant": 1,
+    "description": "Salto fwd piked to cross stand",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.411",
+    "variant": 1,
+    "description": "Salto swd tucked take off from one leg to side stand",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.511",
+    "variant": 1,
+    "description": "Salto swd tucked with ½ twist (180°) take off from one leg to side stand",
+    "value": "E=0.5",
+    "eponym": "Schaefer",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.611",
+    "variant": 1,
+    "description": "Arabian salto tucked (take-off bwd with ½ twist [180°], salto fwd)",
+    "value": "F=0.6",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.312",
+    "variant": 1,
+    "description": "Salto bwd tucked, piked or stretched (step out)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.512",
+    "variant": 1,
+    "description": "Salto bwd stretched with legs together",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.612",
+    "variant": 1,
+    "description": "Salto bwd tucked with 1/1 twist (360°)",
+    "value": "F=0.6",
+    "eponym": "Shishova",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.712",
+    "variant": 1,
+    "description": "Salto bwd stretched with 1/1 twist (360°)",
+    "value": "G=0.7",
+    "eponym": "Shishova",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.313",
+    "variant": 1,
+    "description": "Gainer salto bwd tucked, piked or stretched-step out",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.613",
+    "variant": 1,
+    "description": "Jump fwd with ½ twist (180°) – salto bwd tucked",
+    "value": "F=0.6",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "5.613",
+    "variant": 2,
+    "description": "– piked",
+    "value": "F=0.6",
+    "eponym": "Produnova",
+    "element_group": "5",
+    "group_name": "ACROBATIC FLIGHT",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.101",
+    "variant": 1,
+    "description": "Free (aerial) walkover fwd with ½ twist (180°)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.201",
+    "variant": 1,
+    "description": "Free (aerial) walkover fwd with 1/1 twist (360°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.201",
+    "variant": 2,
+    "description": "Free (aerial) cartwheel with ½ twist (180°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.301",
+    "variant": 1,
+    "description": "Free (aerial) walkover fwd with 1½ twist (540°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.501",
+    "variant": 1,
+    "description": "Free (aerial) cartwheel into salto bwd tucked",
+    "value": "E=0.5",
+    "eponym": "Kim",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.102",
+    "variant": 1,
+    "description": "Salto fwd tucked or piked, also with ½ twist (180°)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.202",
+    "variant": 1,
+    "description": "Salto fwd stretched, also with ½ twist (180°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.202",
+    "variant": 2,
+    "description": "Salto fwd tucked with 1/1 twist (360°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.302",
+    "variant": 1,
+    "description": "Salto fwd stretched with 1/1 twist (360°) or 1½ twist (540°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.402",
+    "variant": 1,
+    "description": "Salto fwd stretched with 2/1 twist (720°)",
+    "value": "D=0.4",
+    "eponym": "Araujo",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.602",
+    "variant": 1,
+    "description": "Double salto fwd tucked",
+    "value": "F=0.6",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.203",
+    "variant": 1,
+    "description": "Jump bwd, with ½ twist (180°), salto fwd tucked or piked (Arabian salto)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.303",
+    "variant": 1,
+    "description": "Stretched jump fwd with 1/1 twist (360°) and salto fwd tucked or piked",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.403",
+    "variant": 1,
+    "description": "Stretched jump fwd with 1/1 twist (360°) and salto fwd stretched",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.703",
+    "variant": 1,
+    "description": "Arabian double salto fwd tucked",
+    "value": "G=0.7",
+    "eponym": "Patterson",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.104",
+    "variant": 1,
+    "description": "Salto bwd tucked, piked, or stretched, also with ½ twist (180°) (tucked or stretched)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.204",
+    "variant": 1,
+    "description": "Salto bwd tucked or stretched with 1/1 twist (360°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.304",
+    "variant": 1,
+    "description": "Salto bwd tucked or stretched with 1½ twist (540°)",
+    "value": "C=0.3",
+    "eponym": "Domingues",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.304",
+    "variant": 2,
+    "description": "Salto bwd stretched with 2/1 twist (720°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.404",
+    "variant": 1,
+    "description": "Salto bwd stretched with 2½ twist (900°)",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.604",
+    "variant": 1,
+    "description": "Salto bwd stretched with 3/1 twist (1080°)",
+    "value": "F=0.6",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.405",
+    "variant": 1,
+    "description": "Double salto bwd tucked",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.505",
+    "variant": 1,
+    "description": "Double salto bwd piked",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.705",
+    "variant": 1,
+    "description": "Double salto bwd tucked or piked with 1/1 twist (360°)",
+    "value": "G=0.7",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.805",
+    "variant": 1,
+    "description": "Double salto bwd tucked with 2/1 twist (720°)",
+    "value": "H=0.8",
+    "eponym": "Biles",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.106",
+    "variant": 1,
+    "description": "Gainer salto tucked, piked, or stretched to side of beam, also with ½ twist (180°) (tucked or stretched)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.206",
+    "variant": 1,
+    "description": "Gainer salto tucked or stretched with 1/1 twist (360°) to side of beam",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.306",
+    "variant": 1,
+    "description": "Gainer salto bwd tucked or stretched with 1½ twist (540˚) or 2/1 twist (720°) to side of beam",
+    "value": "C=0.3",
+    "eponym": "Bohmerova",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.406",
+    "variant": 1,
+    "description": "Gainer salto bwd stretched with 2½ twist (900°) to side of beam",
+    "value": "D=0.4",
+    "eponym": "Khorkina",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.606",
+    "variant": 1,
+    "description": "Gainer salto bwd stretched with 3/1 twist (1080°) to side of beam",
+    "value": "F=0.6",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.207",
+    "variant": 1,
+    "description": "Gainer salto tucked or piked at end of beam",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.307",
+    "variant": 1,
+    "description": "Gainer salto stretched with legs together at end of beam",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.307",
+    "variant": 2,
+    "description": "Gainer salto tucked with 1/1 twist (360°) at end of beam",
+    "value": "C=0.3",
+    "eponym": "Kim",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.407",
+    "variant": 1,
+    "description": "Gainer salto stretched with 1/1 twist (360°) at end of beam",
+    "value": "D=0.4",
+    "eponym": "Steingruber",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.407",
+    "variant": 2,
+    "description": "Gainer salto tucked with 1½ twist (540°) at end of beam",
+    "value": "D=0.4",
+    "eponym": "Olafsdottir",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "6.507",
+    "variant": 1,
+    "description": "Gainer salto stretched with 2/1 twist (720°) at end of beam",
+    "value": "E=0.5",
+    "eponym": "Jurkowska-Kowalska",
+    "element_group": "6",
+    "group_name": "DISMOUNTS",
+    "apparatus": "BB"
+  },
+  {
+    "number": "1.101",
+    "variant": 1,
+    "description": "Split leap fwd (leg separation 180°)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.201",
+    "variant": 1,
+    "description": "Split leap with ½ turn (180°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.301",
+    "variant": 1,
+    "description": "Split leap with 1/1 turn (360°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.202",
+    "variant": 1,
+    "description": "Fouetté hop with leg change to cross split (leg separation 180°), also to ring position (tour jeté)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.302",
+    "variant": 1,
+    "description": "Tour jeté with additional ½ turn (180°), landing on one or both feet, or in split sit position",
+    "value": "C=0.3",
+    "eponym": "Produnova",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.302",
+    "variant": 2,
+    "description": "Leap fwd, through tour jeté technique, with ¾ turn (270°) into straddle pike position with additional ¼ turn (90°), landing on one or both feet",
+    "value": "C=0.3",
+    "eponym": "Csillag",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.402",
+    "variant": 1,
+    "description": "Tour jeté with additional 1/1 turn (360°), landing on one or both feet",
+    "value": "D=0.4",
+    "eponym": "Gogean",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.103",
+    "variant": 1,
+    "description": "Tuck jump with separation of legs to cross split (180°) during flight phase",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.203",
+    "variant": 1,
+    "description": "Butterfly fwd torso parallel to floor, slightly arched, legs straddled and feet above hip height during flight",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.203",
+    "variant": 2,
+    "description": "Butterfly bwd torso parallel to floor, slightly arched, legs straddled and feet at or slightly below hip height during flight,",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.104",
+    "variant": 1,
+    "description": "Leap fwd with ¼ turn (90°) into straddle pike position (both legs above horizontal) or side split to land on one or both feet",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.204",
+    "variant": 1,
+    "description": "Switch leap with ¼ turn (90°) to side split or to straddle pike position (both legs above horizontal)",
+    "value": "B=0.2",
+    "eponym": "Johnson",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.304",
+    "variant": 1,
+    "description": "Switch leap with ½ turn (180°) in flight phase",
+    "value": "C=0.3",
+    "eponym": "Frolova",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.304",
+    "variant": 2,
+    "description": "Johnson with additional ½ turn (180°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.404",
+    "variant": 1,
+    "description": "Switch leap with 1/1 turn (360°) in flight phase",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.404",
+    "variant": 2,
+    "description": "Johnson with additional 1/1 turn (360°)",
+    "value": "D=0.4",
+    "eponym": "Bulimar",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.105",
+    "variant": 1,
+    "description": "Stride leap fwd with change of legs to wolf position",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.205",
+    "variant": 1,
+    "description": "Leap fwd with leg change (free leg swing to 45°) to cross split (180° separation after leg change) (Switch leap)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.305",
+    "variant": 1,
+    "description": "Switch leap to ring position (180° separation of legs)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.405",
+    "variant": 1,
+    "description": "Switch leap to ring position with ½ turn (180°)",
+    "value": "D=0.4",
+    "eponym": "Sankova",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.106",
+    "variant": 1,
+    "description": "Pike jump (hip < 90°)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.206",
+    "variant": 1,
+    "description": "Jump with upper back arch and head release with feet almost touching head (sheep jump)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.306",
+    "variant": 1,
+    "description": "Pike jump (hip < 90°) with 1/1 turn (360°), also landing in front lying support",
+    "value": "C=0.3",
+    "eponym": "Moerz",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.107",
+    "variant": 1,
+    "description": "Straddle pike jump (both legs above horizontal), or side split jump (leg separation 180˚)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.207",
+    "variant": 1,
+    "description": "Straddle pike or side split jump with ½ turn (180°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.207",
+    "variant": 2,
+    "description": "Split Jump with ½ turn (180°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.307",
+    "variant": 1,
+    "description": "Straddle pike or side split jump with 1/1 turn (360°)",
+    "value": "C=0.3",
+    "eponym": "Popa",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.307",
+    "variant": 2,
+    "description": "Split Jump with 1/1 turn (360°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.407",
+    "variant": 1,
+    "description": "Straddle pike or side split jump with 1½ turn (540°)",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.407",
+    "variant": 2,
+    "description": "Split Jump with 1½ turn (540°)",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.108",
+    "variant": 1,
+    "description": "Straddle pike (both legs above horizontal), or side split jump landing in front lying support, also with ½ turn (180°)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.108",
+    "variant": 2,
+    "description": "Hop with 1/1 turn (360°) to straddle and land in front lying support",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.208",
+    "variant": 1,
+    "description": "Straddle pike (both legs above horizontal), or side split jump with 1/1 turn (360°) landing in front lying support",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.208",
+    "variant": 2,
+    "description": "Hop with 1½ turn (540°) in horizontal plane to land in front lying support",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.109",
+    "variant": 1,
+    "description": "Split jump (leg separation 180°)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.109",
+    "variant": 2,
+    "description": "Stag jump",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.109",
+    "variant": 3,
+    "description": "Stag jump with ½ turn (180°)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.109",
+    "variant": 4,
+    "description": "Sissone (leg separation 180°on the diagonal/45°to the floor) take off two feet, land on one foot",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.209",
+    "variant": 1,
+    "description": "Sissone to ring position (rear foot at head height, body arched and head dropped bwd, 180° separation of legs), to land on one foot",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.209",
+    "variant": 2,
+    "description": "Stag ring jump (rear foot at head height, body arched and head dropped bwd)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.209",
+    "variant": 3,
+    "description": "Split jump to ring position (180° separation of legs) to land on both feet",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.209",
+    "variant": 4,
+    "description": "Split jump to ring position with ½ turn (180°) to land on both feet",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.309",
+    "variant": 1,
+    "description": "Split ring leap (180° separation of legs)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.309",
+    "variant": 2,
+    "description": "Split jump to ring position with 1/1 turn (360°)",
+    "value": "C=0.3",
+    "eponym": "Jurkowska-Kowalska",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.409",
+    "variant": 1,
+    "description": "Tour jeté, to ring position with additional ½ turn (180°)",
+    "value": "D=0.4",
+    "eponym": "Ferrari",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.409",
+    "variant": 2,
+    "description": "Split leap to ring position with ½ turn (180°)",
+    "value": "D=0.4",
+    "eponym": "Ting",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.110",
+    "variant": 1,
+    "description": "Stretched hop or jump with 1/1 turn (360°)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.310",
+    "variant": 1,
+    "description": "Stretched hop or jump with 2/1 turn (720°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.111",
+    "variant": 1,
+    "description": "Leap with alternate leg change (knees above horizontal) (Cat leap)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.111",
+    "variant": 2,
+    "description": "Scissors leap forward (legs above horizontal)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.211",
+    "variant": 1,
+    "description": "Cat leap with 1/1 turn (360º)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.311",
+    "variant": 1,
+    "description": "Cat leap with 2/1 turn (720°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.112",
+    "variant": 1,
+    "description": "Hop with ½ turn (180˚) to land in arabesque with free leg above horizontal (Fouetté hop)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.112",
+    "variant": 2,
+    "description": "Hop with ½ turn (180°) free leg extended at horizontal throughout",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.212",
+    "variant": 1,
+    "description": "Hop with 1/1 turn (360°), free leg extended at horizontal throughout",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.213",
+    "variant": 1,
+    "description": "Tuck hop or jump with 1/1 turn (360º)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.313",
+    "variant": 1,
+    "description": "Tuck hop or jump with 2/1 turn (720°) also landing in front lying support",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.114",
+    "variant": 1,
+    "description": "Hop or Jump with one leg bent and the other – extended straight, fwd above horizontal with knees together (Wolf hop or jump)",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "1.214",
+    "variant": 1,
+    "description": "Wolf hop or jump with 1/1 turn (360°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.214",
+    "variant": 2,
+    "description": "Wolf hop or jump with 1/1 turn (360°) landing in front lying support",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "1.514",
+    "variant": 1,
+    "description": "Wolf hop or jump with 2/1 turn (720°)",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "GYMNASTIC LEAPS, JUMPS AND HOPS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "2.101",
+    "variant": 1,
+    "description": "1/1 turn (360°) on one leg – free leg optional below horizontal",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "2.201",
+    "variant": 1,
+    "description": "2/1 turn (720°) on one leg – free leg optional below horizontal",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "2.301",
+    "variant": 1,
+    "description": "3/1 turn (1080°) on one leg – free leg optional below horizontal",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "2.501",
+    "variant": 1,
+    "description": "4/1 turn (1440°) on one leg – free leg optional below horizontal",
+    "value": "E=0.5",
+    "eponym": "Gomez",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "2.202",
+    "variant": 1,
+    "description": "1/1 turn (360°) with heel of extended free leg fwd at horizontal throughout turn (support leg may be straight or bent)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "2.402",
+    "variant": 1,
+    "description": "2/1 turn (720°) with heel of extended free leg fwd at horizontal throughout turn (support leg may be straight or bent)",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "2.203",
+    "variant": 1,
+    "description": "1/1 turn (360°) with free leg held upward in 180° split position throughout turn",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "2.403",
+    "variant": 1,
+    "description": "2/1 turn (720°) with free leg held upward in 180° split position throughout turn",
+    "value": "D=0.4",
+    "eponym": "Memmel",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "2.503",
+    "variant": 1,
+    "description": "3/1 turn (1080°) with free leg held upward in 180° split position throughout turn",
+    "value": "E=0.5",
+    "eponym": "Mustafina",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "2.204",
+    "variant": 1,
+    "description": "1/1 turn (360°) in back attitude (thigh of free leg at horizontal throughout turn)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "2.404",
+    "variant": 1,
+    "description": "2/1 turn (720°) in back attitude (thigh of free leg at horizontal throughout turn)",
+    "value": "D=0.4",
+    "eponym": "Semenova",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "2.404",
+    "variant": 2,
+    "description": "2/1 turn (720°) with free leg held with both hands bwd/upward throughout turn",
+    "value": "D=0.4",
+    "eponym": "Berar",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX",
+    "markers": [
+      "*"
+    ]
+  },
+  {
+    "number": "2.205",
+    "variant": 1,
+    "description": "1/1 turn (360°) in scale fwd with free leg above horizontal throughout turn",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "2.206",
+    "variant": 1,
+    "description": "1/1 illusion turn (360°) through standing split without touching floor with hand",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "2.207",
+    "variant": 1,
+    "description": "1/1 turn (360°) in tuck stand on one leg – free leg straight throughout turn",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "2.307",
+    "variant": 1,
+    "description": "2/1 (720°) pirouette starting with free leg at horizontal, lowering to complete the turn in wolf position",
+    "value": "C=0.3",
+    "eponym": "Nguyen",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "2.407",
+    "variant": 1,
+    "description": "2/1 turn (720°) in tuck stand on one leg – free leg straight throughout turn (no turn initiation with a push from hands on floor)",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "2.507",
+    "variant": 1,
+    "description": "3/1 turn (1080°) in tuck stand on one leg – free leg straight throughout turn (no turn initiation with a push from hands on floor)",
+    "value": "E=0.5",
+    "eponym": "Mitchell",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "2.208",
+    "variant": 1,
+    "description": "2/1 spin (720°) or more on back in kip position (hip-leg < closed)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "GYMNASTIC TURNS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "3.101",
+    "variant": 1,
+    "description": "Jump kick or press to hstd – return movement optional, also with ½ and 1/1 turn (180° - 360°) in hstd",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HAND SUPPORT ELEMENTS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "3.201",
+    "variant": 1,
+    "description": "Jump kick or press to hstd with 1½ - 2/1 turn (540° - 720°) in hstd – return movement optional",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HAND SUPPORT ELEMENTS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "3.102",
+    "variant": 1,
+    "description": "Hecht roll",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HAND SUPPORT ELEMENTS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "3.103",
+    "variant": 1,
+    "description": "Roll bwd to hstd with ½ or 1/1 turn (180° - 360°) in hstd",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HAND SUPPORT ELEMENTS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "3.203",
+    "variant": 1,
+    "description": "Roll bwd to hstd with 1½ - 2/1 (540° - 720°) turn in hstd",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HAND SUPPORT ELEMENTS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "3.104",
+    "variant": 1,
+    "description": "Walkover bwd from stand or extended tuck-sit to hstd with 1/1 turn (360°) in hstd – return movement optional",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HAND SUPPORT ELEMENTS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "3.105",
+    "variant": 1,
+    "description": "Handspring fwd, take-off from one leg or Flyspring fwd, take-off from both legs – with or without hecht phase before hand support – landing optional",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HAND SUPPORT ELEMENTS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "3.105",
+    "variant": 2,
+    "description": "Jump bwd with ½ twist (180°) to handspring fwd – landing optional",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HAND SUPPORT ELEMENTS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "3.305",
+    "variant": 1,
+    "description": "Handspring fwd with 1/1 twist (360°) after hand support or before",
+    "value": "C=0.3",
+    "eponym": "Mostepanova",
+    "element_group": "3",
+    "group_name": "HAND SUPPORT ELEMENTS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "3.106",
+    "variant": 1,
+    "description": "Round-off",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HAND SUPPORT ELEMENTS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "3.107",
+    "variant": 1,
+    "description": "All flic-flac and gainer flic-flac variations, also with support of one arm",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HAND SUPPORT ELEMENTS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "3.107",
+    "variant": 2,
+    "description": "Arabian (bwd take-off) with ¼ twist (90°) – free (aerial) cartwheel – continuing with ¼ twist (90°) to front lying support",
+    "value": "A=0.1",
+    "eponym": "Tsavdaridou",
+    "element_group": "3",
+    "group_name": "HAND SUPPORT ELEMENTS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "3.207",
+    "variant": 1,
+    "description": "Flic-flac with 1/1 twist (360°) before hand support",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "3",
+    "group_name": "HAND SUPPORT ELEMENTS",
+    "apparatus": "FX"
+  },
+  {
+    "number": "4.101",
+    "variant": 1,
+    "description": "Salto fwd tucked or piked",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "SALTOS FORWARD & SIDEWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "4.201",
+    "variant": 1,
+    "description": "Salto fwd tucked with ½ or 1/1 twist (180° or 360°), also Salto fwd piked with ½ twist (180°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "SALTOS FORWARD & SIDEWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "4.501",
+    "variant": 1,
+    "description": "Double salto fwd tucked",
+    "value": "E=0.5",
+    "eponym": "Podkopayeva",
+    "element_group": "4",
+    "group_name": "SALTOS FORWARD & SIDEWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "4.601",
+    "variant": 1,
+    "description": "Double salto fwd tucked with ½ twist (180°)",
+    "value": "F=0.6",
+    "eponym": "Podkopayeva",
+    "element_group": "4",
+    "group_name": "SALTOS FORWARD & SIDEWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "4.601",
+    "variant": 2,
+    "description": "Double salto fwd piked",
+    "value": "F=0.6",
+    "eponym": "Dowell",
+    "element_group": "4",
+    "group_name": "SALTOS FORWARD & SIDEWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "4.202",
+    "variant": 1,
+    "description": "Salto fwd stretched, also with ½ twist (180°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "SALTOS FORWARD & SIDEWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "4.302",
+    "variant": 1,
+    "description": "Salto fwd stretched with 1/1 or 1½ twist (360° or 540°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "SALTOS FORWARD & SIDEWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "4.402",
+    "variant": 1,
+    "description": "Salto fwd stretched with 2/1 twist (720°)",
+    "value": "D=0.4",
+    "eponym": "Tarasevich",
+    "element_group": "4",
+    "group_name": "SALTOS FORWARD & SIDEWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "4.502",
+    "variant": 1,
+    "description": "Salto fwd stretched with 2½ twist (900°)",
+    "value": "E=0.5",
+    "eponym": "Cojocar",
+    "element_group": "4",
+    "group_name": "SALTOS FORWARD & SIDEWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "4.602",
+    "variant": 1,
+    "description": "Salto fwd stretched with 3/1 twist (1080°)",
+    "value": "F=0.6",
+    "eponym": "Maldonado",
+    "element_group": "4",
+    "group_name": "SALTOS FORWARD & SIDEWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "4.103",
+    "variant": 1,
+    "description": "Free (aerial) walkover fwd",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "SALTOS FORWARD & SIDEWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "4.104",
+    "variant": 1,
+    "description": "Free (aerial) cartwheel or free (aerial) round-off",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "SALTOS FORWARD & SIDEWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "4.105",
+    "variant": 1,
+    "description": "From take-off fwd from one or both legs – salto swd tucked or piked",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "SALTOS FORWARD & SIDEWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "4.205",
+    "variant": 1,
+    "description": "Arabian salto tucked or piked, (take-off bwd with ½ twist [180°], salto fwd) – landing optional",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "4",
+    "group_name": "SALTOS FORWARD & SIDEWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "4.505",
+    "variant": 1,
+    "description": "Arabian double salto tucked /",
+    "value": "E=0.5",
+    "eponym": "Andreasen/Jentsch",
+    "element_group": "4",
+    "group_name": "SALTOS FORWARD & SIDEWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "4.605",
+    "variant": 1,
+    "description": "Arabian double salto piked",
+    "value": "F=0.6",
+    "eponym": "Dos Santos",
+    "element_group": "4",
+    "group_name": "SALTOS FORWARD & SIDEWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "4.805",
+    "variant": 1,
+    "description": "Arabian double salto stretched",
+    "value": "H=0.8",
+    "eponym": "Dos Santos",
+    "element_group": "4",
+    "group_name": "SALTOS FORWARD & SIDEWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.101",
+    "variant": 1,
+    "description": "Salto bwd tucked, piked, or stretched",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.201",
+    "variant": 1,
+    "description": "Salto bwd stretched with ½, or salto bwd tucked or stretched with 1/1 twist (180° or 360°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.301",
+    "variant": 1,
+    "description": "Salto bwd stretched with 1½ or 2/1 twist (540° or 720°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.401",
+    "variant": 1,
+    "description": "Salto bwd stretched with 2½ twist (900°)",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.501",
+    "variant": 1,
+    "description": "Salto bwd stretched with 3/1 twist (1080°)",
+    "value": "E=0.5",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.601",
+    "variant": 1,
+    "description": "Salto bwd stretched with 3½ twist (1260°)",
+    "value": "F=0.6",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.402",
+    "variant": 1,
+    "description": "Double salto bwd tucked",
+    "value": "D=0.4",
+    "eponym": "Kim",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.402",
+    "variant": 2,
+    "description": "Double salto bwd pike",
+    "value": "D=0.4",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.502",
+    "variant": 1,
+    "description": "Double salto bwd tucked or piked with 1/1 twist (360°) (any technique)",
+    "value": "E=0.5",
+    "eponym": "Mukhina/Oliveira",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.802",
+    "variant": 1,
+    "description": "Double salto bwd tucked with 2/1 twist (720°)",
+    "value": "H=0.8",
+    "eponym": "Silivas",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.1002",
+    "variant": 1,
+    "description": "Double salto bwd tucked with 3/1 twist (1080°)",
+    "value": "J=1.0",
+    "eponym": "Biles 2",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.603",
+    "variant": 1,
+    "description": "Double salto bwd stretched",
+    "value": "F=0.6",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.703",
+    "variant": 1,
+    "description": "Double Salto bwd stretched with ½ twist (180°)",
+    "value": "G=0.7",
+    "eponym": "Biles",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.803",
+    "variant": 1,
+    "description": "Double salto bwd stretched with 1/1 twist (360°)",
+    "value": "H=0.8",
+    "eponym": "Chusovitina/Touzhikova",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.903",
+    "variant": 1,
+    "description": "Double Salto bwd stretched with 2/1 twist (720°)",
+    "value": "I=0.9",
+    "eponym": "Moors",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.104",
+    "variant": 1,
+    "description": "Whip salto bwd",
+    "value": "A=0.1",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.204",
+    "variant": 1,
+    "description": "Whip salto bwd with ½ twist (180°)",
+    "value": "B=0.2",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  },
+  {
+    "number": "5.304",
+    "variant": 1,
+    "description": "Whip salto bwd with 1/1 twist (360°)",
+    "value": "C=0.3",
+    "eponym": "",
+    "element_group": "5",
+    "group_name": "SALTOS BACKWARD",
+    "apparatus": "FX"
+  }
+]

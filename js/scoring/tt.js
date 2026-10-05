@@ -101,7 +101,8 @@ export function scorePasses(event, level, passes = [[], []]) {
     for (const pos of [0, 1]) {
       const a = ps[0][pos];
       const b = ps[1][pos];
-      if (a && b && a.status !== 'blank' && b.status !== 'blank' && skillKey(a.name || a.notation) === skillKey(b.name || b.notation)) {
+      // (A repeated 0.0 skill, like a tuck jump, loses nothing, so it isn't flagged.)
+      if (a && b && a.status !== 'blank' && b.status !== 'blank' && b.dd > 0 && skillKey(a.name || a.notation) === skillKey(b.name || b.notation)) {
         b.status = 'repeat';
         b.repeatOf = pos;
         warnings.push(`Pass 2 repeats the ${pos ? 'dismount' : 'first skill'} of pass 1 in the same position, so it gets no difficulty.`);

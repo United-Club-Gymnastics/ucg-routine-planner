@@ -2,6 +2,7 @@
 // rules policy, the MAG start value worksheets, and the MAG Routine
 // Composition Planner spreadsheet.
 import { VAULTS } from '../data/mag-vaults.js';
+import { VAULTS as MASTERS_VAULTS } from '../data/masters-vaults.js';
 import { MASTERS_LETTERS, mastersValue, meetsRequirement, vaultAgeBonus } from './masters.js';
 
 export const EXECUTION = 10;
@@ -284,8 +285,10 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
   };
 }
 
+export const MAG_MASTERS_VAULTS = MASTERS_VAULTS.filter((v) => v.disc === 'mag');
+
 export function findVault(id) {
-  return VAULTS.find((v) => v.id === String(id)) ?? null;
+  return VAULTS.find((v) => v.id === String(id)) ?? MAG_MASTERS_VAULTS.find((v) => v.id === id) ?? null;
 }
 
 // Masters: a vault not in the WG or UCG CoP is worth 0.0 plus the age bonus.

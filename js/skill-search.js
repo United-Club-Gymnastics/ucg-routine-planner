@@ -47,7 +47,7 @@ const SKILL_INDEX = new Map(Object.values(ALL).flat().map((s) => [s.id, s]));
 
 const VALUE_ORDER = ['Sub-A', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
 const order = (a, b) =>
-  (a.eg || 0) - (b.eg || 0) ||
+  (a.eg || a.group || 0) - (b.eg || b.group || 0) ||
   (a.dd ?? 0) - (b.dd ?? 0) ||
   VALUE_ORDER.indexOf(a.value) - VALUE_ORDER.indexOf(b.value) ||
   (a.src === b.src ? 0 : a.src === 'UCG' ? -1 : 1);
