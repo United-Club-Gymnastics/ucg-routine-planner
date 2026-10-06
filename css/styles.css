@@ -292,6 +292,7 @@ input::placeholder { color: var(--fg-muted); }
 .save-status[data-kind='ok'] { color: var(--fg-accent); }
 .save-status[data-kind='error'] { color: #b8412a; font-weight: 600; }
 .save-status[data-kind='guest'] { color: var(--fg-secondary); font-weight: 600; }
+.save-status[data-kind='pending'] { color: var(--fg-secondary); font-weight: 600; }
 
 /* ---- Stat block ---- */
 .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); gap: 12px; }

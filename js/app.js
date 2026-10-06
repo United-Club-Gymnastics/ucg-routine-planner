@@ -102,14 +102,92 @@ function scheduleSave() {
   clearTimeout(saveTimer);
   const a = athlete();
   saveTimer = setTimeout(async () => {
-    try {
-      await store.saveAthlete(a);
-      setStatus('All changes saved', 'ok');
-    } catch (err) {
+    saveTimer = null;
+    const failed = (err) => {
       console.error(err);
       setStatus('Could not save. Check your connection.', 'error');
+    };
+    try {
+      const saved = await store.saveAthlete(a);
+      ownSaves.set(a.id, saved.updatedAt);
+      if (saved.pending) {
+        // No signal: kept on this phone, and sent when the connection is back.
+        setStatus('Saved on this device · will sync when online', 'pending');
+        saved.pending.then(() => setStatus('All changes saved', 'ok'), failed);
+      } else setStatus('All changes saved', 'ok');
+    } catch (err) {
+      failed(err);
     }
   }, 600);
+}
+
+// ---- Live updates from other devices ------------------------------------------------
+// When the same athlete is edited on another phone, its changes arrive here. Other
+// athletes update quietly; the one on screen updates only when nothing is being typed or
+// saved, otherwise a prompt offers to load the latest (nothing is redrawn under the cursor).
+const ownSaves = new Map(); // athlete id -> updatedAt of this device's last save
+let stopWatching = () => {};
+const typing = () => !!saveTimer || !!document.activeElement?.closest?.('#app input, #app select, #app textarea');
+
+function applyRemote(changes) {
+  let redraw = false;
+  let picker = false;
+  for (const { type, athlete: data } of changes) {
+    if (type !== 'removed' && ownSaves.get(data.id) === data.updatedAt) continue; // this device's own save
+    const i = state.athletes.findIndex((x) => x.id === data.id);
+    if (type === 'removed') {
+      if (i < 0) continue;
+      state.athletes.splice(i, 1);
+      if (data.id === state.athleteId) {
+        const next = sortedAthletes()[0];
+        state.athleteId = next?.id ?? null;
+        state.entryId = next?.entries[0]?.id ?? null;
+        redraw = true;
+      } else picker = true;
+      continue;
+    }
+    if (i >= 0 && state.athletes[i].updatedAt === data.updatedAt) continue; // already have this version
+    normalizeAthlete(data);
+    if (i < 0) {
+      state.athletes.push(data);
+      picker = true;
+    } else if (data.id !== state.athleteId) {
+      state.athletes[i] = data;
+      picker = true;
+    } else if (typing()) {
+      offerRemote(data);
+    } else {
+      state.athletes[i] = data;
+      if (!data.entries.some((x) => x.id === state.entryId)) state.entryId = data.entries[0]?.id ?? null;
+      redraw = true;
+    }
+  }
+  if (redraw) renderAll();
+  else if (picker) renderAthletePicker();
+}
+
+function offerRemote(data) {
+  showToast('remote-toast', `${data.name || 'This athlete'} was changed on another device.`, 'Load latest', () => {
+    const i = state.athletes.findIndex((x) => x.id === data.id);
+    if (i >= 0) state.athletes[i] = data;
+    if (!data.entries.some((x) => x.id === state.entryId)) state.entryId = data.entries[0]?.id ?? null;
+    renderAll();
+  });
+}
+
+// A message at the bottom of the screen with one button (new version, remote change).
+function showToast(id, text, label, onClick) {
+  $(`#${id}`)?.remove();
+  const el = document.createElement('div');
+  el.id = id;
+  el.className = 'toast';
+  el.setAttribute('role', 'status');
+  el.innerHTML = `<span>${esc(text)}</span><button type="button" class="toast-btn">${esc(label)}</button>`;
+  $('button', el).onclick = () => {
+    el.remove();
+    onClick();
+  };
+  document.body.appendChild(el);
 }
 
 // ---- Header: user + athlete picker ------------------------------------------
@@ -1532,6 +1610,8 @@ async function onUser(user) {
   const carry = state.user?.guest && user && !user.guest ? state.athletes.filter((a) => a.name || a.entries.length) : [];
   const carriedId = carry.length ? state.athleteId : null;
   state.user = user;
+  stopWatching();
+  stopWatching = () => {};
   renderUserArea();
   $('#guest-banner').hidden = !user?.guest;
   if (!user) {
@@ -1568,6 +1648,7 @@ async function onUser(user) {
   state.entryId = first?.entries[0]?.id ?? null;
   state.showAdd = !!first && !first.entries.length;
   renderAll();
+  if (!user.local) stopWatching = store.watchAthletes(applyRemote);
 }
 
 // ---- Updates ----------------------------------------------------------------------
@@ -1597,14 +1678,7 @@ function watchForUpdates() {
   });
 }
 function showUpdate(worker) {
-  if ($('#update-toast')) return;
-  const el = document.createElement('div');
-  el.id = 'update-toast';
-  el.className = 'toast';
-  el.setAttribute('role', 'status');
-  el.innerHTML = `<span>A new version of the planner is ready.</span><button type="button" class="toast-btn">Reload</button>`;
-  $('button', el).onclick = () => worker.postMessage('skipWaiting');
-  document.body.appendChild(el);
+  if (!$('#update-toast')) showToast('update-toast', 'A new version of the planner is ready.', 'Reload', () => worker.postMessage('skipWaiting'));
 }
 watchForUpdates();
 
