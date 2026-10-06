@@ -13,7 +13,7 @@ export const VAULTS = [
   {"id": "107", "name": "Hdspr. fwd. and salto fwd. p. w. ½ t. (Cuervo p.).", "eponym": "", "eg": "I", "value": 2.8, "adv": 3.6, "flipping": true, "src": "WG"},
   {"id": "108", "name": "Hdspr. fwd. and salto fwd. p. w. 1/1 t. (Cuervo p. w. ½ t.).", "eponym": "", "eg": "I", "value": 3.2, "adv": 4.4, "flipping": true, "src": "WG"},
   {"id": "109", "name": "Hdspr. fwd. and salto fwd. p. w. 3/2 t. (Cuervo p. w. 1/1 t.).", "eponym": "", "eg": "I", "value": 3.6, "adv": 4.8, "flipping": true, "src": "WG"},
-  {"id": "113", "name": "Hdspr. fwd. and salto fwd. str. w. ½ t (Cuervo str.).", "eponym": "", "eg": "I", "value": 3.6, "adv": 4.0, "flipping": true, "src": "WG"},
+  {"id": "113", "name": "Hdspr. fwd. and salto fwd. str. w. ½ t. (Cuervo str.).", "eponym": "", "eg": "I", "value": 3.6, "adv": 4.0, "flipping": true, "src": "WG"},
   {"id": "114", "name": "Hdspr. fwd. and salto fwd. str. w. 1/1 t. (Cuervo str. ½ t.).", "eponym": "", "eg": "I", "value": 4.0, "adv": 4.4, "flipping": true, "src": "WG"},
   {"id": "115", "name": "Hdspr. fwd. and salto fwd. str. w. 3/2 t. (Cuervo str. w. 1/1 t.).", "eponym": "Lou-Yun", "eg": "I", "value": 4.4, "adv": 4.8, "flipping": true, "src": "WG"},
   {"id": "116", "name": "Hdspr. fwd. and salto fwd. str. w. 2/1 t. (Cuervo str. 3/2 t.).", "eponym": "", "eg": "I", "value": 4.8, "adv": 5.2, "flipping": true, "src": "WG"},
@@ -85,7 +85,7 @@ export const VAULTS = [
   {"id": "516", "name": "Round off, ½ t. and hdspr. fwd. and salto fwd. tucked.", "eponym": "", "eg": "V", "value": 2.2, "adv": 2.2, "flipping": true, "src": "WG"},
   {"id": "517", "name": "Round off, ½ t. a. hdspr. fwd. and salto fwd. p.", "eponym": "", "eg": "V", "value": 2.6, "adv": 2.6, "flipping": true, "src": "WG"},
   {"id": "518", "name": "Round off, ½ t. and hdspr. fwd. and salto fwd. str.", "eponym": "", "eg": "V", "value": 3.4, "adv": 3.4, "flipping": true, "src": "WG"},
-  {"id": "519", "name": "Yurchenko and salto bwd . tucked.", "eponym": "Melissanidis", "eg": "V", "value": 4.8, "adv": 4.8, "flipping": true, "src": "WG"},
+  {"id": "519", "name": "Yurchenko and salto bwd. tucked.", "eponym": "Melissanidis", "eg": "V", "value": 4.8, "adv": 4.8, "flipping": true, "src": "WG"},
   {"id": "520", "name": "Melissanidis piked.", "eponym": "Yang Wei", "eg": "V", "value": 5.2, "adv": 5.2, "flipping": true, "src": "WG"},
   {"id": "521", "name": "Round off, ½ t. a. hdspr. fwd. and double salto fwd. tucked.", "eponym": "", "eg": "V", "value": 5.0, "adv": 5.0, "flipping": true, "src": "WG"}
 ];
