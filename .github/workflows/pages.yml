@@ -22,13 +22,19 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install build tools
+        run: npm ci
       - name: Test scoring
-        run: node --test tests/*.test.mjs
-      - name: Stamp build version for cache busting
-        run: sed -i "s/__BUILD__/${GITHUB_SHA::8}/g" index.html
+        run: npm test
+      - name: Build the site (bundled, hashed file names) into _site/
+        run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4

@@ -2,7 +2,6 @@
 // otherwise browser localStorage ("local mode"). Guests (not signed in) save nothing.
 import { firebaseConfig } from './firebase-config.js';
 
-const FB = 'https://www.gstatic.com/firebasejs/12.19.0';
 // Add ?local to the address to try the app without signing in (saves in this browser only).
 const forceLocal = new URLSearchParams(location.search).has('local');
 export const isConfigured = !forceLocal && !String(firebaseConfig.apiKey || '').startsWith('YOUR_');
@@ -14,15 +13,10 @@ export async function init(onUserChange) {
     onUserChange({ uid: 'local', displayName: 'Local mode', local: true });
     return;
   }
-  const [{ initializeApp }, authMod, fsMod] = await Promise.all([
-    import(`${FB}/firebase-app.js`),
-    import(`${FB}/firebase-auth.js`),
-    import(`${FB}/firebase-firestore.js`),
-  ]);
-  fb = { ...authMod, ...fsMod };
-  const app = initializeApp(firebaseConfig);
+  fb = await import('./firebase.js');
+  const app = fb.initializeApp(firebaseConfig);
   auth = fb.getAuth(app);
-  db = fb.getFirestore(app);
+  db = fb.initializeFirestore(app, {});
   fb.onAuthStateChanged(auth, (user) => onUserChange(user));
 }
 
