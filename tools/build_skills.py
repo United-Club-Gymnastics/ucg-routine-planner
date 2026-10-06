@@ -37,6 +37,10 @@ ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4}
 DROP = re.compile(r"^\((DSA|DSB|Circle in (cross|side) support)\)$|^(A|B|C|D|Ga)$")
 
 
+# Typos in the WG MAG extraction that stop a skill being found ("f wd" for "fwd").
+NAME_FIXES = {"Salto f wd. straight, also with ½ t.": "Salto fwd. straight, also with ½ t."}
+
+
 def wg_skills(path):
     out = []
     for s in json.load(open(path, encoding="utf-8")):
@@ -45,7 +49,7 @@ def wg_skills(path):
         out.append({
             "id": f"WG-{s['apparatus']}-{s['element_group']}-{s['number']}",  # FIG numbers restart in each EG
             "app": s["apparatus"].lower(),
-            "name": " ".join(s["description"].split()),
+            "name": NAME_FIXES.get(" ".join(s["description"].split()), " ".join(s["description"].split())),
             "eponym": s["eponym"] or "",
             "value": s["value"].split("=")[0],
             "eg": ROMAN.get(s["element_group"]),

@@ -15,15 +15,25 @@ const ALIASES = {
   layout: 'str', stretched: 'str', straight: 'str', str: 'str',
   handstand: 'hdst', hdst: 'hdst', hs: 'hdst', hstd: 'hdst',
   double: 'dbl', dbl: 'dbl',
+  bhs: 'flicflac',
   full: '1/1', half: '1/2',
   twist: 'turn', twists: 'turn', turns: 'turn', turn: 'turn', t: 'turn',
   tucked: 'tuck', tuck: 'tuck', piked: 'pike', pike: 'pike',
   straddled: 'straddle', straddle: 'straddle', strad: 'straddle',
 };
 
+// Compound words written one, two or hyphenated ways: "round off" = "round-off" = "roundoff".
+const COMPOUNDS = [
+  [/round[\s-]*off/g, 'roundoff'],
+  [/(flic[\s-]*flac|flip[\s-]*flop)/g, 'flicflac'],
+  [/hand[\s-]*spring/g, 'handspring'],
+  [/lay[\s-]*out/g, 'layout'],
+  // A back handspring is a flic-flac: keep both words so either name finds it.
+  [/back(?:ward)?\s+handspring/g, 'back flicflac handspring'],
+];
+
 function tokens(text) {
-  return String(text || '')
-    .toLowerCase()
+  return COMPOUNDS.reduce((t, [re, word]) => t.replace(re, word), String(text || '').toLowerCase())
     .replace(/[½¼¾]/g, (c) => FRACTIONS[c])
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '') // Stöckli -> stockli
@@ -77,9 +87,17 @@ export function findSkill(id) {
 // With nothing typed: the whole list by element group (no EG first), value,
 // then UCG before WG. While searching: matches in the name before matches only in a
 // note, then closest matches (fewest extra words) first.
+// Ranking: how far a name is from what was typed, counting the words that weren't typed.
+// Linking words and "salto"/"somersault" are free (a "back tuck" is a salto); a double or
+// triple that wasn't asked for is a big step away from the single skill.
+const FREE = new Set(['salto', 'saltos', 'somersault', 'or', 'also', 'with', 'w', 'to', 'and', 'the', 'a', 'of', 'in', 'on', 'from']);
+const MULTI = new Set(['dbl', 'triple', 'tpl', 'quad', 'quadruple']);
+const extra = (s, q) =>
+  s.nameTokens.reduce((c, t) => (q.some((w) => t.startsWith(w)) ? c : c + (FREE.has(t) ? 0 : MULTI.has(t) ? 3 : 1)), 0);
+
 export function searchSkills(disc, app, query) {
   const q = tokens(query);
   const list = (byApp[`${disc}.${app}`] || []).filter((s) => q.every((w) => s.tokens.some((t) => t.startsWith(w))));
   const inName = (s) => q.every((w) => s.nameTokens.some((t) => t.startsWith(w)));
-  return list.sort(q.length ? (a, b) => inName(b) - inName(a) || a.nameTokens.length - b.nameTokens.length || order(a, b) : order);
+  return list.sort(q.length ? (a, b) => inName(b) - inName(a) || extra(a, q) - extra(b, q) || order(a, b) : order);
 }

@@ -153,7 +153,7 @@ export const SKILLS = [
   {"id": "WG-FX-II-4", "app": "fx", "name": "Handspring salto fwd. tuck.", "eponym": "Morandi", "value": "D", "eg": 2, "src": "WG", "note": ""},
   {"id": "WG-FX-II-7", "app": "fx", "name": "Dive roll.", "eponym": "", "value": "A", "eg": 2, "src": "WG", "note": ""},
   {"id": "WG-FX-II-13", "app": "fx", "name": "Salto fwd. tucked or piked, also with ½ t.", "eponym": "", "value": "A", "eg": 2, "src": "WG", "note": ""},
-  {"id": "WG-FX-II-14", "app": "fx", "name": "Salto f wd. straight, also with ½ t.", "eponym": "", "value": "B", "eg": 2, "src": "WG", "note": ""},
+  {"id": "WG-FX-II-14", "app": "fx", "name": "Salto fwd. straight, also with ½ t.", "eponym": "", "value": "B", "eg": 2, "src": "WG", "note": ""},
   {"id": "WG-FX-II-16", "app": "fx", "name": "Double salto fwd. tucked, also with ½ t.", "eponym": "", "value": "D", "eg": 2, "src": "WG", "note": ""},
   {"id": "WG-FX-II-17", "app": "fx", "name": "Double salto fwd. piked, also with ½ t.", "eponym": "", "value": "E", "eg": 2, "src": "WG", "note": ""},
   {"id": "WG-FX-II-36", "app": "fx", "name": "Double salto fwd. tucked with 1/1 turn.", "eponym": "", "value": "F", "eg": 2, "src": "WG", "note": ""},

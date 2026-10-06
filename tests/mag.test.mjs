@@ -231,3 +231,14 @@ test('Advanced floor: double flip and double flipping dismount are detected from
   assert.equal(scoreRoutine('fx', 'adv', [...routine, sk('Double back', 'C', 3)]).optionValues.dblDismount, 0.1);
   assert.equal(scoreRoutine('fx', 'adv', [...routine, sk('Back layout', 'A', 3)]).deductions, 0.3);
 });
+
+test('Skill search: synonyms, any word order, compound words, plain skill first', async () => {
+  const { searchSkills } = await import('../js/skill-search.js');
+  const first = (d, app, q) => searchSkills(d, app, q)[0]?.name;
+  assert.equal(first('mag', 'fx', 'back tuck'), 'Salto backwards tucked or piked.');
+  assert.equal(first('mag', 'fx', 'tuck back'), 'Salto backwards tucked or piked.');
+  for (const q of ['front layout', 'forward straight', 'fwd stretched']) assert.equal(first('mag', 'fx', q), 'Salto fwd. straight, also with ½ t.');
+  assert.equal(first('mag', 'fx', 'double back'), 'Double salto bwd. tucked.');
+  for (const q of ['round off', 'roundoff', 'round-off']) assert.equal(first('tt', 'tu', q), 'Roundoff');
+  for (const q of ['flip flop', 'bhs', 'back handspring']) assert.equal(first('tt', 'tu', q), 'Back handspring');
+});
