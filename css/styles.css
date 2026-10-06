@@ -389,6 +389,18 @@ input::placeholder { color: var(--fg-muted); }
   position: sticky; top: 0; z-index: 1; padding: 6px 12px; background: #eef5f6; color: var(--fg-secondary);
   font-family: var(--font-display); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
 }
+/* "Only B · EG II skills (12 hidden)  Show all": the list is narrowed by values chosen by hand. */
+.pop-filter {
+  position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 7px 12px; background: var(--ucg-white); border-bottom: 1px solid var(--border-default);
+  color: var(--ucg-navy); font-size: var(--fs-xs); font-weight: 600;
+}
+.skill-pop:has(.pop-filter) .pop-head { top: 33px; }
+.pop-filter-btn {
+  flex: none; border: 1.5px solid var(--ucg-navy); border-radius: var(--radius-btn); background: var(--ucg-white);
+  color: var(--ucg-navy); padding: 3px 9px; font: inherit; font-weight: 700; cursor: pointer;
+}
+.pop-filter-btn:hover { background: var(--ucg-light-blue); }
 .pop-opt { display: grid; grid-template-columns: 40px 1fr auto; gap: 10px; align-items: center; padding: 6px 12px; cursor: pointer; }
 .pop-opt .src-badge { justify-self: start; }
 .pop-opt:hover, .pop-opt.active { background: var(--ucg-light-blue); }

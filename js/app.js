@@ -724,6 +724,7 @@ function onInput(ev) {
   } else if (t.dataset.ev && t.dataset.field) {
     const row = rowsOf(e, t.dataset.ev, t.dataset.pass)[Number(t.dataset.idx)];
     row[t.dataset.field] = t.dataset.field === 'dd' ? (t.value === '' ? '' : Number(t.value)) : t.value;
+    if (['letter', 'eg', 'dd'].includes(t.dataset.field)) delete row.fromList; // chosen by hand: filters the list
     if (t.dataset.field === 'name') {
       if (row.skillId && findSkill(row.skillId)?.label !== t.value) delete row.skillId;
       openPicker(t, t.value);
@@ -915,12 +916,23 @@ function pickerEl() {
     el.hidden = true;
     el.addEventListener('mousedown', (e) => e.preventDefault());
     el.addEventListener('click', (e) => {
+      if (e.target.closest('[data-show-all]')) {
+        picker.showAll = true;
+        openPicker(picker.input, picker.input.value);
+        return;
+      }
       const o = e.target.closest('[data-skill]');
       if (o) pickSkill(Number(o.dataset.skill));
     });
     document.body.appendChild(el);
     addEventListener('resize', placePicker);
     addEventListener('scroll', placePicker, true);
+    // Phones: the on-screen keyboard shrinks the visible area (the visual viewport).
+    window.visualViewport?.addEventListener('resize', () => {
+      makeRoom();
+      placePicker();
+    });
+    window.visualViewport?.addEventListener('scroll', placePicker);
     picker.el = el;
   }
   return picker.el;
@@ -928,12 +940,50 @@ function pickerEl() {
 
 const searchApp = (e, evId) => (e.disc === 'tt' && evId === 'sy' ? 'tr' : evId);
 
+// A difficulty, element group or DD the gymnast chose by hand (not filled in by
+// picking a skill) narrows the list to skills that match it.
+function presetFilter(e, input) {
+  const evId = input.dataset.ev;
+  const row = rowsOf(e, evId, input.dataset.pass)[Number(input.dataset.idx)];
+  if (!row || row.fromList) return null;
+  const fam = levelInfo(e.disc, e.level).family;
+  const tests = [];
+  const labels = [];
+  if (e.disc === 'tt') {
+    if (row.dd !== '' && row.dd != null) {
+      tests.push((s) => Number(s.dd) === Number(row.dd));
+      labels.push(`DD ${fmt(row.dd)}`);
+    }
+  } else {
+    if (row.letter) {
+      tests.push((s) => s.value === row.letter);
+      labels.push(row.letter === 'ME' ? 'Masters Element' : row.letter);
+    }
+    if (row.eg) {
+      const eg = String(row.eg);
+      if (fam === 'mag') tests.push((s) => String(s.eg) === eg);
+      else if (fam === 'infinity') tests.push((s) => String(s.group) === eg);
+      else if (fam === 'wagMasters') tests.push((s) => String(WG_TO_MASTERS[evId]?.[s.group]) === eg);
+      if (fam !== 'xcel') labels.push(fam === 'infinity' ? `group ${eg}` : `EG ${ROMAN[eg] || eg}`);
+    }
+  }
+  return tests.length ? { test: (s) => tests.every((t) => t(s)), label: labels.join(' · ') } : null;
+}
+
 function openPicker(input, query) {
   const e = entry();
   const el = pickerEl();
-  picker.input = input;
+  if (picker.input !== input) {
+    picker.showAll = false;
+    picker.input = input;
+    makeRoom();
+  }
   const fam = levelInfo(e.disc, e.level).family;
-  picker.items = searchSkills(e.disc, searchApp(e, input.dataset.ev), query).filter((s) => e.disc !== 'wag' || wagSkillAllowed(fam, e.level, s));
+  const all = searchSkills(e.disc, searchApp(e, input.dataset.ev), query).filter((s) => e.disc !== 'wag' || wagSkillAllowed(fam, e.level, s));
+  const filter = presetFilter(e, input);
+  picker.filter = filter && !picker.showAll ? filter : null;
+  picker.hidden = picker.filter ? all.length - all.filter(picker.filter.test).length : 0;
+  picker.items = picker.filter ? all.filter(picker.filter.test) : all;
   picker.active = query && picker.items.length ? 0 : -1;
   input.setAttribute('aria-expanded', 'true');
   renderPicker(query);
@@ -954,12 +1004,16 @@ function closePicker() {
   picker.input.setAttribute('aria-expanded', 'false');
   picker.input.removeAttribute('aria-activedescendant');
   picker.input = null;
+  picker.showAll = false;
 }
 
 function renderPicker(query) {
   const e = entry();
   const spec = eventSpec(e, picker.input.dataset.ev);
   const html = [];
+  if (picker.filter) {
+    html.push(`<div class="pop-filter" role="presentation"><span>Only ${esc(picker.filter.label)} skills${picker.hidden ? ` (${picker.hidden} hidden)` : ''}</span><button type="button" class="pop-filter-btn" data-show-all>Show all</button></div>`);
+  }
   let lastHead;
   picker.items.forEach((s, i) => {
     const head = e.disc === 'tt' ? null : e.disc === 'mag' ? (s.eg ? `EG ${ROMAN[s.eg]} · ${spec.groups?.[s.eg - 1]?.label.replace(/^[IV]+\. /, '') || ''}` : 'No element group (no EG bonus)') : s.group ? (s.src === 'WG' ? `WG group ${s.group}` : `Group ${s.group}${s.groupName ? ` · ${s.groupName}` : ''}`) : 'Skills';
@@ -997,22 +1051,39 @@ function setActive(i) {
   else picker.input.removeAttribute('aria-activedescendant');
 }
 
+// The part of the page the gymnast can actually see: on a phone the on-screen keyboard
+// covers the bottom (window.visualViewport), and the sticky header covers the top.
+function visibleArea() {
+  const vv = window.visualViewport;
+  const top = Math.max(vv ? vv.offsetTop : 0, $('.site-header')?.getBoundingClientRect().bottom || 0);
+  const bottom = vv ? vv.offsetTop + vv.height : innerHeight;
+  return { top, bottom };
+}
+const isPhone = () => matchMedia('(max-width: 640px), (pointer: coarse)').matches;
+
+// Phones: scroll the skill box up under the header so the list fits below it, above
+// the keyboard (the usual pattern for a search box with suggestions on mobile).
+function makeRoom() {
+  if (!picker.input || !isPhone()) return;
+  const r = picker.input.getBoundingClientRect();
+  const { top, bottom } = visibleArea();
+  if (bottom - r.bottom < 260) window.scrollBy({ top: r.top - top - 8 });
+}
+
 function placePicker() {
   if (!picker.input) return;
   const r = picker.input.getBoundingClientRect();
-  if (r.bottom < 0 || r.top > innerHeight) return closePicker();
+  const { top, bottom } = visibleArea();
+  if (r.bottom < top || r.top > bottom) return closePicker();
   const w = Math.min(Math.max(r.width + 60, 440), innerWidth - 16);
   const left = Math.min(Math.max(8, r.left), innerWidth - w - 8);
-  const below = innerHeight - r.bottom - 12;
-  const above = r.top - 12;
-  const up = below < 240 && above > below;
-  Object.assign(picker.el.style, {
-    left: `${left}px`,
-    width: `${w}px`,
-    maxHeight: `${Math.min(380, up ? above : below)}px`,
-    top: up ? '' : `${r.bottom + 4}px`,
-    bottom: up ? `${innerHeight - r.top + 4}px` : '',
-  });
+  const below = bottom - r.bottom - 8;
+  const above = r.top - top - 8;
+  // Below the box unless there's clearly more room above (never on phones: there the box is moved up instead).
+  const up = !isPhone() && below < 240 && above > below;
+  const maxHeight = Math.max(120, Math.min(380, up ? above : below));
+  Object.assign(picker.el.style, { left: `${left}px`, width: `${w}px`, maxHeight: `${maxHeight}px`, bottom: '' });
+  picker.el.style.top = up ? `${Math.max(top, r.top - 4 - Math.min(picker.el.scrollHeight, maxHeight))}px` : `${r.bottom + 4}px`;
 }
 
 function pickSkill(i) {
@@ -1026,6 +1097,7 @@ function pickSkill(i) {
   const fam = levelInfo(e.disc, e.level).family;
   row.name = s.label;
   row.skillId = s.id;
+  row.fromList = true; // its values came from the list, so they don't filter it next time
   if (e.disc === 'tt') Object.assign(row, { notation: s.notation || '', dd: s.dd });
   else {
     const letters = eventSpec(e, evId).letters;

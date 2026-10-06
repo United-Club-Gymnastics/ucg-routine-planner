@@ -1,5 +1,6 @@
 // PDF export for every level:
-//   MAG Dev / Int / Adv, MAG + WAG Masters: fill in the official start value worksheets
+//   MAG Dev / Int / Adv, MAG Masters: fill in the official start value worksheets
+//   WAG Masters: the Masters WAG worksheet's layout, drawn here in UCG style
 //   T&T: fill in the competition cards (NAIGC logo removed, requirements corrected)
 //   UCG Infinity: Julia Sharpe's worksheet (pdf-infinity.js)
 //   Xcel: a UCG Xcel worksheet drawn here (there is no official one)
@@ -8,6 +9,8 @@
 import { PDFDocument, StandardFonts, rgb } from 'https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.esm.min.js';
 import { DISCIPLINES, DECADE_LABELS, eventInfo, eventSpec, levelInfo, scoreEntry } from './model.js';
 import { XCEL_SR, XCEL_VP } from './data/xcel.js';
+import { DECADES, VAULT_AGE_BONUS, mastersValue } from './scoring/masters.js';
+import { WG_TO_MASTERS } from './scoring/wag.js';
 
 const PAGE_H = 792;
 const INK = rgb(0.094, 0.294, 0.337); // UCG dark blue green, reads as "filled in"
@@ -144,7 +147,6 @@ async function magPage(doc, fonts, athlete, entry, evId, r) {
 
 const MASTERS_LAYOUTS = {
   mag: { url: 'assets/worksheets/mag-masters.pdf', y1: 76.6, y2: 91.6, rowTop: 177.5, lines: [362.4, 433.6, 504.1, 534.1] },
-  wag: { url: 'assets/worksheets/wag-masters.pdf', y1: 67.6, y2: 82.6, rowTop: 183.5, lines: [368.4, 424.6, 495.1, 525.1] },
 };
 const MASTERS_COLS = [[75.5, 289.5], [289.5, 428.5], [428.5, 484.5], [484.5, 570.5]];
 
@@ -172,6 +174,172 @@ async function mastersPage(doc, fonts, athlete, entry, evId, r) {
   }
   const extra = (r.items || []).filter((it) => it.reason === 'egOnly');
   if (extra.length) w.text(`EG bonus also from skills outside the 6 counting: ${extra.map((x) => x.name).join(', ')}.`, 75, 560, { size: 9, maxWidth: 480 });
+}
+
+// ---- WAG Masters: the UCG Masters WAG start value worksheet, drawn here ------------
+// Same layout as the Masters WAG SV worksheet (2026 Individual World Cup), in the
+// planner's low-ink UCG style: thin rules, no filled blocks.
+
+// WG element groups on each apparatus, by the Masters condensed group they belong to.
+const WG_WAG_GROUPS = {
+  ub: { 1: 'Mounts', 2: 'Casts & Clear Hip Circles', 3: 'Giant Circles', 4: 'Stalder Circles', 5: 'Pike Circles', 6: 'Dismounts' },
+  bb: { 1: 'Mounts', 2: 'Leaps / Jumps / Hops', 3: 'Turns', 4: 'Holds & Acrobatic Non-flight', 5: 'Acrobatic Flight', 6: 'Dismounts' },
+  fx: { 1: 'Leaps / Jumps / Hops', 2: 'Turns', 3: 'Hand Support Elements', 4: 'Saltos Forward & Sideward', 5: 'Saltos Backward' },
+};
+
+async function wagMastersPage(doc, fonts, athlete, entry, evId, r) {
+  const page = doc.addPage([792, 612]);
+  const w = writer(page, fonts, NAVY);
+  const H = 612;
+  const logo = await loadLogo(doc);
+  let x0 = 36;
+  if (logo) {
+    const h = 30;
+    const lw = (logo.width / logo.height) * h;
+    page.drawImage(logo, { x: 36, y: H - 30 - h, width: lw, height: h });
+    x0 = 36 + lw + 14;
+  }
+  w.text('WAG Masters Start Value Worksheet', x0, 52, { size: 20, font: fonts.bold });
+
+  // Gymnast, club, apparatus, age decade
+  const field = (label, value, x, width) => {
+    const lw = w.text(label, x, 88, { size: 10, font: fonts.bold });
+    w.line(x + lw + 4, 90, x + width, 90, 0.6, NAVY);
+    w.text(value, x + lw + 8, 87, { size: 11, maxWidth: width - lw - 10, font: fonts.bold, c: INK });
+  };
+  field('Gymnast name:', athlete.name, 36, 262);
+  field('Club:', athlete.club, 312, 186);
+  field('Apparatus:', eventInfo('wag', evId).label, 512, 138);
+  field('Age decade:', DECADE_LABELS[entry.decade] || '', 664, 92);
+
+  // Skills table (left)
+  const cols = [[36, 58, '#'], [58, 236, 'Name of skill'], [236, 290, 'Difficulty|(A/B/etc.)'], [290, 342, 'Value|(by age)'], [342, 394, 'Condensed|group (I-IV)'], [394, 446, 'EG bonus|(+0.5 per group)']];
+  let y = 112;
+  for (const [a, b, label] of cols) {
+    const lines = label.split('|');
+    lines.forEach((t, i) => w.center(t, (a + b) / 2, y + 10 + i * 9, { size: i ? 6.5 : 8, font: i ? fonts.regular : fonts.bold, c: i ? MUTED : NAVY }));
+  }
+  y += 28;
+  w.line(36, y, 446, y, 1, NAVY);
+  const rowH = 20;
+  const counting = (r.items || []).filter((it) => it.status === 'counting');
+  const egOnly = (r.items || []).filter((it) => it.reason === 'egOnly');
+  const row = (it, label, i, { value = true } = {}) => {
+    const ty = y + rowH * (i + 1) - 6;
+    w.center(label, 47, ty, { size: 9, c: MUTED });
+    if (it) {
+      w.text(it.name, 62, ty, { size: 9.5, maxWidth: 170, c: INK });
+      w.center(it.letter === 'ME' ? 'Masters' : it.letter, 263, ty, { size: 9.5, c: INK });
+      if (value && it.letter) w.center(fmt(it.value), 316, ty, { size: 9.5, c: INK });
+      if (!value) w.center('-', 316, ty, { size: 9.5, c: MUTED });
+      if (it.eg) w.center(ROMAN[it.eg] || String(it.eg), 368, ty, { size: 9.5, c: INK });
+      if (it.bonus) w.center('+0.5', 420, ty, { size: 9.5, c: INK });
+    }
+    w.line(36, y + rowH * (i + 1), 446, y + rowH * (i + 1), 0.5);
+  };
+  for (let i = 0; i < 6; i++) row(counting[i], String(i + 1), i);
+  for (const [a] of cols.slice(1)) w.line(a, y - 28, a, y + rowH * 6, 0.5);
+  y += rowH * 6 + 13;
+  w.text('Skills used only for the EG bonus (not difficulty)', 36, y, { size: 8, font: fonts.bold, c: MUTED });
+  y += 2;
+  const extraRows = Math.max(2, egOnly.length);
+  for (let i = 0; i < extraRows; i++) row(egOnly[i], '', i, { value: false });
+  for (const [a] of cols.slice(1)) w.line(a, y, a, y + rowH * extraRows, 0.5);
+  y += rowH * extraRows;
+
+  // Values by age decade (right)
+  const tx = 470;
+  const labelW = 120;
+  const colW = (756 - tx - labelW) / DECADES.length;
+  const cx = (i) => tx + labelW + colW * i + colW / 2;
+  const me = DECADES.indexOf(String(entry.decade));
+  let ty = 112;
+  w.text('Age decade', tx, ty + 12, { size: 8.5, font: fonts.bold });
+  DECADES.forEach((d, i) => w.center(DECADE_LABELS[d], cx(i), ty + 12, { size: 8.5, font: fonts.bold }));
+  ty += 18;
+  w.line(tx, ty, 756, ty, 1, NAVY);
+  const tableRows = [
+    ['Counting skills', () => '6'],
+    ['EG bonus: skill at least', (i) => (i < 2 ? 'ME' : 'Misc.')],
+    ['Routine length: skill at least', (i) => (i < 2 ? 'ME' : 'Misc.')],
+    ['Vault age bonus', (i) => fmt(VAULT_AGE_BONUS.wag[i])],
+    ['Value: Misc. skill', (i) => (i < 2 ? 'n/a' : fmt(mastersValue('Misc', DECADES[i])))],
+    ['Value: Masters Element (ME)', (i) => fmt(mastersValue('ME', DECADES[i]))],
+    ['Value: A', (i) => fmt(mastersValue('A', DECADES[i]))],
+    ['Value: B', (i) => fmt(mastersValue('B', DECADES[i]))],
+    ['Value: C', (i) => fmt(mastersValue('C', DECADES[i]))],
+    ['Value: D or higher', (i) => fmt(mastersValue('D', DECADES[i]))],
+  ];
+  const trH = 17;
+  tableRows.forEach(([label, val], k) => {
+    const yy = ty + trH * (k + 1) - 5;
+    w.text(label, tx, yy, { size: 8, maxWidth: labelW - 6 });
+    DECADES.forEach((d, i) => w.center(val(i), cx(i), yy, { size: 8, font: i === me ? fonts.bold : fonts.regular, c: i === me ? INK : NAVY }));
+    w.line(tx, ty + trH * (k + 1), 756, ty + trH * (k + 1), 0.5);
+  });
+  // The gymnast's decade: a navy outline around its column.
+  if (me >= 0) w.box(tx + labelW + colW * me + 1, 112, colW - 2, 18 + trH * tableRows.length + 2, { border: NAVY, thickness: 1.2 });
+
+  // Start value line
+  y = Math.max(y, ty + trH * tableRows.length) + 26;
+  const parts = [
+    ['Execution', '10.0'],
+    ['+ Total difficulty', r.sv == null ? '' : fmt(r.difficulty)],
+    ['+ Total EG', r.sv == null ? '' : fmt(r.egTotal)],
+    ['- Skills short of 6', r.sv == null ? '' : fmt(r.shortBy)],
+    ['= Start value', r.sv == null ? '' : fmt(r.sv)],
+  ];
+  const bw = 720 / parts.length;
+  parts.forEach(([label, val], i) => {
+    const x = 36 + i * bw;
+    const last = i === parts.length - 1;
+    w.text(label, x + 4, y, { size: 9, font: fonts.bold, c: MUTED });
+    w.box(x + 2, y + 6, bw - 10, 30, { border: last ? NAVY : LINE, thickness: last ? 1.4 : 0.75 });
+    w.center(val, x + 2 + (bw - 10) / 2, y + 27, { size: last ? 16 : 13, font: last ? fonts.bold : fonts.regular, c: INK });
+  });
+  y += 62;
+
+  // Notes (left) and condensed element groups (right)
+  const notes = [
+    ['Difficulty:', 'values depend on the skill and the age decade (table above). Only the 6 most valuable skills count toward difficulty.'],
+    ['Element group bonus:', '+0.5 for each condensed group with a skill (counting or not) at the decade\'s level; one per group, up to +2.0.'],
+    ['Short routine:', '-1.0 for each skill fewer than 6 (a 4-skill routine gets -2.0).'],
+  ];
+  let ny = y;
+  for (const [head, body] of notes) {
+    const hw = w.text(head, 36, ny, { size: 8.5, font: fonts.bold });
+    const words = body.split(' ');
+    let lineText = '';
+    let first = true;
+    for (const word of words) {
+      const next = lineText ? `${lineText} ${word}` : word;
+      const avail = first ? 250 - hw - 4 : 250;
+      if (fonts.regular.widthOfTextAtSize(next, 8.5) > avail) {
+        w.text(lineText, first ? 36 + hw + 4 : 36, ny, { size: 8.5 });
+        ny += 11;
+        lineText = word;
+        first = false;
+      } else lineText = next;
+    }
+    w.text(lineText, first ? 36 + hw + 4 : 36, ny, { size: 8.5 });
+    ny += 18;
+  }
+  const gx = 300;
+  const gw = (756 - gx - 24) / 3;
+  w.text('Condensed element groups (and the WG groups in each)', gx, y, { size: 8.5, font: fonts.bold });
+  const apps = [['ub', 'Bars'], ['bb', 'Beam'], ['fx', 'Floor']];
+  apps.forEach(([app, label], i) => w.text(label, gx + 24 + gw * i, y + 14, { size: 8.5, font: fonts.bold, c: app === evId ? INK : NAVY }));
+  let gy = y + 18;
+  w.line(gx, gy, 756, gy, 1, NAVY);
+  for (const g of [1, 2, 3, 4]) {
+    const lists = apps.map(([app]) => Object.entries(WG_WAG_GROUPS[app]).filter(([n]) => WG_TO_MASTERS[app][n] === g).map(([n, name]) => `${n}. ${name}`));
+    const lines = Math.max(...lists.map((l) => l.length));
+    lists.forEach((l, i) => l.forEach((t, k) => w.text(t, gx + 24 + gw * i, gy + 11 + k * 10, { size: 8, maxWidth: gw - 6, font: apps[i][0] === evId ? fonts.bold : fonts.regular })));
+    w.text(ROMAN[g], gx + 4, gy + 11, { size: 8.5, font: fonts.bold });
+    gy += lines * 10 + 5;
+    w.line(gx, gy, 756, gy, 0.5);
+  }
+  w.text('Planned with the UCG Routine Planner. Values from the UCG Masters Rules Policy and the World Gymnastics WAG Code of Points.', 36, 594, { size: 7.5, c: MUTED, maxWidth: 720 });
 }
 
 // ---- T&T competition cards -----------------------------------------------------
@@ -351,6 +519,7 @@ export async function exportEntryPdf(athlete, entry, events) {
       const ev = eventInfo(entry.disc, evId);
       if (entry.disc === 'tt') await ttPage(doc, fonts, athlete, entry, evId);
       else if (ev.kind === 'vault') continue; // no MAG / Masters vault worksheet
+      else if (levelInfo(entry.disc, entry.level).masters && entry.disc === 'wag') await wagMastersPage(doc, fonts, athlete, entry, evId, score.events[evId]);
       else if (levelInfo(entry.disc, entry.level).masters) await mastersPage(doc, fonts, athlete, entry, evId, score.events[evId]);
       else await magPage(doc, fonts, athlete, entry, evId, score.events[evId]);
     }

@@ -61,7 +61,7 @@ Athletes are saved in Firestore at `users/{user id}/athletes/{athlete}`. Each at
 
 ## Worksheets
 
-MAG Dev/Int/Adv, MAG Masters, WAG Masters and the T&T cards are the printouts people already fill in by hand; the planner writes onto them at fixed positions measured from each PDF (`LAYOUTS` in `js/pdf.js`). **If a sheet changes, replace it in `assets/worksheets/` and re-measure.** UCG Infinity uses Julia's worksheet; Xcel uses a low-ink worksheet drawn in `js/pdf.js` (there's no official one).
+MAG Dev/Int/Adv, MAG Masters and the T&T cards are the printouts people already fill in by hand; the planner writes onto them at fixed positions measured from each PDF (`LAYOUTS` in `js/pdf.js`). **If a sheet changes, replace it in `assets/worksheets/` and re-measure.** UCG Infinity uses Julia's worksheet. Xcel uses a low-ink worksheet drawn in `js/pdf.js` (there's no official one), and WAG Masters a low-ink, UCG-branded drawing of the Masters WAG SV worksheet (2026 Individual World Cup) with its age-decade value table.
 
 ## Develop locally
 
