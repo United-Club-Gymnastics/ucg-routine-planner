@@ -11,6 +11,7 @@ import { DISCIPLINES, DECADE_LABELS, eventInfo, eventSpec, levelInfo, scoreEntry
 import { XCEL_SR, XCEL_VP } from './data/xcel.js';
 import { DECADES, VAULT_AGE_BONUS, mastersValue } from './scoring/masters.js';
 import { WG_TO_MASTERS } from './scoring/wag.js';
+import { findSkill } from './skill-search.js';
 
 const PAGE_H = 792;
 const INK = rgb(0.094, 0.294, 0.337); // UCG dark blue green, reads as "filled in"
@@ -21,6 +22,19 @@ const fmt = (n) => (n == null ? '' : Number(n).toFixed(1));
 const ROMAN = { 1: 'I', 2: 'II', 3: 'III', 4: 'IV' };
 
 // ---- shared drawing helpers ----------------------------------------------------
+
+// A listed skill's box number in its code ("WG I.75", "Xcel 7.104"), to check it's the right skill.
+const boxOf = (entry, evId, idx) => findSkill(entry.routines?.[evId]?.[idx]?.skillId)?.box || '';
+
+// Skill name with its box number right-aligned (smaller, grey) in the same cell; the name shrinks first.
+function nameWithBox(w, fonts, name, box, x, right, y, size = 10, color) {
+  let boxW = 0;
+  if (box) {
+    boxW = fonts.regular.widthOfTextAtSize(box, 7.5);
+    w.text(box, right - boxW, y, { size: 7.5, c: MUTED });
+  }
+  w.text(name, x, y, { size, maxWidth: right - x - (box ? boxW + 6 : 0), ...(color ? { c: color } : {}) });
+}
 
 function safeText(font, text) {
   const s = String(text ?? '')
@@ -119,7 +133,7 @@ async function magPage(doc, fonts, athlete, entry, evId, r) {
   (r.rows || []).forEach((row, i) => {
     const y = L.rowTop + i * L.rowH + L.rowH / 2 + 3.5;
     const [name, diff, value, eg] = L.cols;
-    w.text(row.name, name[0] + 20, y, { maxWidth: name[1] - name[0] - 26 });
+    nameWithBox(w, fonts, row.name, boxOf(entry, evId, row.idx), name[0] + 20, name[1] - 6, y);
     w.center(row.letter, (diff[0] + diff[1]) / 2, y);
     if (row.letter) w.center(fmt(row.value), (value[0] + value[1]) / 2, y);
     if (row.eg) w.center(String(row.eg), (eg[0] + eg[1]) / 2, y);
@@ -162,7 +176,7 @@ async function mastersPage(doc, fonts, athlete, entry, evId, r) {
   (r.rows || []).slice(0, 6).forEach((row, i) => {
     const y = L.rowTop + i * rowH + rowH / 2 + 3.5;
     const [name, diff, value, eg] = MASTERS_COLS;
-    w.text(row.name, name[0] + 20, y, { maxWidth: name[1] - name[0] - 26 });
+    nameWithBox(w, fonts, row.name, boxOf(entry, evId, row.idx), name[0] + 20, name[1] - 6, y);
     w.center(row.letter === 'ME' ? 'Masters' : row.letter, (diff[0] + diff[1]) / 2, y);
     if (row.letter) w.center(fmt(row.value), (value[0] + value[1]) / 2, y);
     if (row.eg) w.center(ROMAN[row.eg] || String(row.eg), (eg[0] + eg[1]) / 2, y);
@@ -228,7 +242,7 @@ async function wagMastersPage(doc, fonts, athlete, entry, evId, r) {
     const ty = y + rowH * (i + 1) - 6;
     w.center(label, 47, ty, { size: 9, c: MUTED });
     if (it) {
-      w.text(it.name, 62, ty, { size: 9.5, maxWidth: 170, c: INK });
+      nameWithBox(w, fonts, it.name, boxOf(entry, evId, it.idx), 62, 233, ty, 9.5, INK);
       w.center(it.letter === 'ME' ? 'Masters' : it.letter, 263, ty, { size: 9.5, c: INK });
       if (value && it.letter) w.center(fmt(it.value), 316, ty, { size: 9.5, c: INK });
       if (!value) w.center('-', 316, ty, { size: 9.5, c: MUTED });
@@ -423,6 +437,7 @@ async function xcelPages(doc, fonts, athlete, entry, events, score) {
     // Skills table: thin rules only, no filled blocks (saves ink).
     const cols = [[48, 70, '#'], [70, 400, 'Skill'], [400, 470, 'Value'], [470, 564, 'Value part']];
     for (const [x0, , label] of cols) w.text(label.toUpperCase(), x0 + 4, y, { size: 8, font: fonts.bold, c: MUTED });
+    w.text('CODE #', 396 - fonts.bold.widthOfTextAtSize('CODE #', 8), y, { size: 8, font: fonts.bold, c: MUTED });
     y += 6;
     w.line(48, y, 564, y, 1, NAVY);
     const items = (r.items || []).filter((it) => it.status !== 'blank');
@@ -433,7 +448,7 @@ async function xcelPages(doc, fonts, athlete, entry, events, score) {
       const ty = y + rowH * (i + 1) - 6;
       w.text(String(i + 1), 52, ty, { size: 9, c: MUTED });
       if (it) {
-        w.text(it.name, 74, ty, { size: 10, maxWidth: 322, c: INK });
+        nameWithBox(w, fonts, it.name, boxOf(entry, evId, it.idx), 74, 396, ty, 10, INK);
         w.center(it.letter, 435, ty, { size: 10, c: INK });
         const vp = it.status === 'restricted' ? 'Restricted (-0.50)' : it.status === 'repeat' ? 'Repeat (no VP)' : it.vp ? `${it.vp} VP` : '';
         w.text(vp, 474, ty, { size: 9, c: INK });

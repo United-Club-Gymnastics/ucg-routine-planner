@@ -685,6 +685,13 @@ input::placeholder { color: var(--fg-muted); }
   .athlete-picker { margin-left: 0; width: 100%; }
   .level-name { font-size: 1.3rem; }
 }
+/* Phones: the box number goes under the skill name, so the name keeps the whole box. */
+@media (max-width: 640px) {
+  .skill-row .skill-input { padding-right: 34px; }
+  .skill-combo .src-badge { position: static; transform: none; display: inline-block; margin-top: 4px; }
+  .skill-combo .src-badge:empty { display: none; }
+  .skill-combo .combo-toggle { top: 4.5px; transform: none; }
+}
 @media (max-width: 640px) {
   .skill-row.dd, .skill-row.xcel {
     grid-template-columns: 44px 1fr 1fr 1fr 28px;

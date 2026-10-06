@@ -251,8 +251,10 @@ test('Catalog: box numbers, other names, Masters lists', async () => {
   assert.equal(findSkill('UCG-FX-pancake-stop-required').box, 'UCG FX 1');
   assert.ok(ids('mag', 'sr', 'I.75').includes('WG-SR-I-75'));
   assert.ok(ids('wag', 'bb', '7.104').includes('USAG-BB-7.104-1a'));
-  assert.ok(searchSkills('mag', 'pb', 'peach basket').length > 0);
-  assert.ok(searchSkills('wag', 'ub', 'free hip').length > 0);
+  // Other names coaches use find the skill, and it comes first.
+  assert.equal(searchSkills('mag', 'pb', 'peach basket')[0].id, 'WG-PB-III-116'); // Felge to support
+  assert.match(searchSkills('wag', 'ub', 'free hip')[0].label, /^Clear hip/);
+  assert.equal(searchSkills('wag', 'ub', 'toe front')[0].id, 'USAG-UB-8.301-1'); // HB underswing front salto
   // MAG Masters offers WG + the UCG Masters list, not the main UCG additions (and the reverse below Masters).
   const at = (level) => searchSkills('mag', 'fx', '').filter((s) => magSkillAllowed(level, s));
   assert.ok(at('masters').some((s) => s.src === 'UCGM') && !at('masters').some((s) => s.src === 'UCG'));

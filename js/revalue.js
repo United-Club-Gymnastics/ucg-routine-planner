@@ -41,7 +41,16 @@ export function revalueEntry(entry, fromLevel, catalog) {
         continue;
       }
       const el = els[0];
-      const own = Object.values(el.c).flat().find((x) => x.r === row.skillId || catalog.pidOf[x.r] === row.skillId);
+      const isOwn = (x) => x.r === row.skillId || catalog.pidOf[x.r] === row.skillId;
+      const own = Object.values(el.c).flat().find(isOwn);
+      const ownCode = Object.keys(el.c).find((c) => el.c[c].some(isOwn));
+      // Same code at both levels (Xcel Gold -> Platinum, MAG Dev -> Adv, Sapphire <-> Infinity):
+      // the skill keeps its own record and value.
+      if (ownCode && rule.value_codes.includes(ownCode) && allowed(findSkill(row.skillId))) {
+        row.fromList = true;
+        summary.exact++;
+        continue;
+      }
       const approx = ids.length > 1 || own?.rel === 'covers_more';
 
       let code, pick;
@@ -63,11 +72,20 @@ export function revalueEntry(entry, fromLevel, catalog) {
       }
 
       // The planner skill to show: the target entry itself, else another record of the same
-      // element that this level's skill list offers; else the element's name, typed in.
+      // element that this level's skill list offers.
       const pidFor = (x) => catalog.pidOf[x.r] || (findSkill(x.r) ? x.r : null);
       let pid = pidFor(pick);
       if (!allowed(findSkill(pid))) pid = Object.values(el.c).flat().map(pidFor).find((p) => allowed(findSkill(p))) || null;
       const listed = pid && findSkill(pid);
+      if (!listed) {
+        // The level's code has the element, but not as a skill this level offers (e.g. an Xcel
+        // skill limited to Bronze/Silver/Gold copied to Platinum): not credited there.
+        Object.assign(row, { letter: '', eg: '', noCredit: true });
+        delete row.skillId;
+        row.fromList = true;
+        summary.notCredited++;
+        continue;
+      }
 
       const value = String(pick.x || pick.v || '').split('=')[0];
       const g = String(pick.g || '');
@@ -76,9 +94,8 @@ export function revalueEntry(entry, fromLevel, catalog) {
       else if (fam === 'infinity') eg = /^\d+$/.test(g) ? g : ''; // the USAG group; scoring condenses it
       else if (fam === 'wagMasters') eg = code === 'WG-WAG-2025' ? String(WG_TO_MASTERS[evId]?.[g] || '') : ROMAN[g] || '';
 
-      row.name = listed ? listed.label : el.s;
-      if (listed) row.skillId = listed.id;
-      else delete row.skillId;
+      row.name = listed.label;
+      row.skillId = listed.id;
       row.letter = letters.includes(value) ? value : '';
       if (fam !== 'xcel') row.eg = eg;
       row.fromList = true;

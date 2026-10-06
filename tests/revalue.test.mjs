@@ -57,3 +57,14 @@ test('MAG: a UCG addition copied to Masters becomes its Masters entry', () => {
   assert.equal(rows[0].letter, 'ME');
   assert.equal(rows[0].eg, '1');
 });
+
+test('Same code at both levels: skills keep their own record, unflagged; division-limited skills are not credited', () => {
+  const { rows } = copyTo('wag', 'gold', 'plat', 'bb', [pick('USAG-BB-1.104-1', 'Jump to split sit or straddle stand', 'A')], WAG);
+  assert.equal(rows[0].skillId, 'USAG-BB-1.104-1');
+  assert.equal(rows[0].letter, 'A');
+  assert.ok(!rows[0].approx && !rows[0].noCredit);
+  const ltd = copyTo('wag', 'gold', 'plat', 'fx', [pick('USAG-FX-1.001-1', 'Leg swing hop', 'A')], WAG);
+  assert.ok(ltd.rows[0].noCredit); // "Bronze/Silver/Gold only"
+  const mag = copyTo('mag', 'dev', 'adv', 'fx', [pick('UCG-FX-pancake-stop-required', 'Pancake (stop required)', 'A', '1')], MAG);
+  assert.equal(mag.rows[0].skillId, 'UCG-FX-pancake-stop-required');
+});
