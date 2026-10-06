@@ -409,6 +409,7 @@ function startPanel(a, e) {
 }
 
 const ICON_GRIP = `<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><circle cx="9" cy="6" r="1.7"/><circle cx="15" cy="6" r="1.7"/><circle cx="9" cy="12" r="1.7"/><circle cx="15" cy="12" r="1.7"/><circle cx="9" cy="18" r="1.7"/><circle cx="15" cy="18" r="1.7"/></svg>`;
+const ICON_LINK = `<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>`;
 const ICON_X = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>`;
 const ICON_CHEVRON = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>`;
 
@@ -441,7 +442,7 @@ function eventCard(e, ev, visible) {
 
 function routineHelp(e, ev, spec) {
   if (spec.columns === 'dd') return 'List the routine in order. Search the T&T skill list (it fills in the FIG shorthand and DD), or type your own skill and its DD.';
-  if (spec.family === 'xcel') return `List the routine in order. Search the Xcel skill list (it fills in the value), or type your own skill and pick its value. The planner checks the value parts and restricted skills for ${esc(levelInfo(e.disc, e.level).name)}, and you tick the special requirements below.`;
+  if (spec.family === 'xcel') return `List the routine in order. Search the Xcel skill list (it fills in the value), or type your own skill and pick its value. The planner checks the value parts and restricted skills for ${esc(levelInfo(e.disc, e.level).name)}, and you tick the special requirements below. An element earns credit at most twice, the second time only in a different connection${spec.links ? `: mark connected skills with <span class="grip-inline">${ICON_LINK}</span> between rows` : ''}.`;
   const max = spec.maxCounting;
   const more = e.disc === 'mag' ? ', with at most 4 from one element group' : '';
   return `List the whole routine in order, and drag <span class="grip-inline">${ICON_GRIP}</span> to reorder. <strong>Each skill counts only once</strong>. Your ${max} highest-value skills count toward difficulty${more}. Counting skills are highlighted; repeats and non-counting skills are shaded gray and flagged.`;
@@ -519,8 +520,12 @@ function skillRow(e, ev, spec, i, s, pass) {
   const letters = `<select class="col-letter" aria-label="${label} difficulty" ${data} data-field="letter">
       <option value="">–</option>${spec.letters.map((l) => `<option${l === s.letter ? ' selected' : ''}>${l}</option>`).join('')}</select>`;
   if (spec.columns === 'xcel') {
-    return `<div class="skill-row${cls}" data-row="${i}">${handle}${combo}${letters}
-      <span class="col-value calc" data-calc="value"></span>${remove}<span class="row-flag" data-calc="flag"></span></div>`;
+    // Beam / floor: connected to the next skill (sits on the line between the two rows).
+    const link = spec.links
+      ? `<button type="button" class="link-toggle" ${data} data-link aria-pressed="${!!s.link}" aria-label="${label} connected to the next skill" title="${s.link ? 'Connected to the next skill (click to separate)' : 'Not connected to the next skill (click to connect)'}">${ICON_LINK}</button>`
+      : '';
+    return `<div class="skill-row${cls}${s.link ? ' linked' : ''}" data-row="${i}">${handle}${combo}${letters}
+      <span class="col-value calc" data-calc="value"></span>${remove}<span class="row-flag" data-calc="flag"></span>${link}</div>`;
   }
   const eg = spec.groups
     ? `<select class="col-eg" aria-label="${label} element group" ${data} data-field="eg">
@@ -776,6 +781,17 @@ function onClick(ev) {
     if (list.length >= MAX_ROWS) return;
     list.push(e.disc === 'tt' ? blankTT() : blankSkill());
     renderRows(evId, add.dataset.pass, { row: list.length - 1, part: 'name' });
+    scheduleSave();
+    return;
+  }
+  const link = ev.target.closest('[data-link]');
+  if (link) {
+    const row = rowsOf(e, link.dataset.ev, link.dataset.pass)[Number(link.dataset.idx)];
+    row.link = !row.link;
+    link.setAttribute('aria-pressed', row.link);
+    link.title = row.link ? 'Connected to the next skill (click to separate)' : 'Not connected to the next skill (click to connect)';
+    link.closest('.skill-row').classList.toggle('linked', row.link);
+    updateComputed();
     scheduleSave();
     return;
   }
@@ -1047,7 +1063,13 @@ function onPickerKey(ev) {
 const signed = (n) => (n == null ? '—' : n < 0 ? `−${fmt(-n)}` : fmt(n));
 
 function flagFor(it, spec) {
-  if (it.status === 'repeat') return [`Repeat of Skill ${it.repeatOf + 1}`, `Repeat of skill ${it.repeatOf + 1}: each skill only counts once`];
+  if (it.status === 'repeat') {
+    const n = it.repeatOf + 1;
+    if (it.repeatWhy === 'connection') return ['Same connection', `Same element and same connection as skill ${n}: the second time only earns value-part credit in a different connection (a different skill before or after it, or on floor a different pass)`];
+    if (it.repeatWhy === 'third') return ['Third time', 'An element earns value-part credit at most twice in a routine'];
+    if (it.repeatWhy === 'pass') return ['Same pass', `This pass repeats the one with skill ${n}: flight elements with hand support only earn credit again in a different pass`];
+    return [`Repeat of Skill ${n}`, `Repeat of skill ${n}: each element only earns value-part credit once`];
+  }
   if (it.status === 'restricted') return ['Restricted', 'Above this level’s allowed difficulty: −0.50, and no value part credit'];
   if (it.flag === 'over') return ['Check level', 'This skill is outside what this level allows'];
   if (it.status !== 'noncounting') return ['', ''];
@@ -1066,6 +1088,7 @@ function updateRows(container, items, spec, list) {
     const repeat = it.status === 'repeat';
     const gray = repeat || it.status === 'noncounting' || it.status === 'restricted';
     rowEl.classList.toggle('is-counting', it.status === 'counting' && it.flag !== 'over');
+    rowEl.classList.toggle('is-blank', it.status === 'blank');
     rowEl.classList.toggle('is-repeat', repeat || it.status === 'restricted' || it.flag === 'over');
     rowEl.classList.toggle('non-counting', gray && !repeat && it.status !== 'restricted');
     rowEl.classList.toggle('has-bonus', !!it.bonus);

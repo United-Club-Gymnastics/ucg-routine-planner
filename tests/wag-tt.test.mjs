@@ -126,3 +126,46 @@ test('Xcel Sapphire: no difficulty restrictions, E skills count', () => {
   const r = scoreXcel('sapphire', 'ub', [s('a', 'E'), s('b', 'E'), s('c', 'D'), s('d', 'B'), s('e', 'A'), s('f', 'A'), s('g', 'A')], { srMet: [1, 1, 1, 1] });
   assert.ok(r.items.every((it) => it.status !== 'restricted'));
 });
+
+// ---- Xcel: counting the same element more than once (Code of Points examples) ----
+const st = (r) => r.items.filter((it) => it.status !== 'blank').map((it) => (it.status === 'repeat' ? `x:${it.repeatWhy}` : 'ok'));
+const sk = (name, letter = 'A', link = false) => ({ name, letter, link });
+test('Xcel bars: twice at most, the second time in a different connection (UB Ch. 2 example)', () => {
+  const r = scoreXcel('gold', 'ub', ['Pullover', 'Cast', 'Back hip circle', 'Cast', 'Back hip circle', 'Cast', 'Back hip circle', 'Underswing dismount'].map((n) => sk(n)), { srMet: [1, 1, 1, 1] });
+  // 2nd back hip circle: same connection (cast before and after) -> no VP; 3rd cast -> no VP; 3rd back hip circle: different exit -> VP.
+  assert.deepEqual(st(r), ['ok', 'ok', 'ok', 'ok', 'x:connection', 'x:third', 'ok', 'ok']);
+});
+test('Xcel beam: an isolated repeat is the same connection; connected to something else it counts (BB Ch. 2 example)', () => {
+  const r = scoreXcel('gold', 'bb', [sk('Flic-flac step-out', 'B'), sk('Flic-flac step-out', 'B'), sk('Straddle jump', 'A', true), sk('Flic-flac step-out', 'B')], { srMet: [1, 1, 1, 1] });
+  assert.deepEqual(st(r), ['ok', 'x:connection', 'ok', 'ok']);
+});
+test('Xcel floor: hand-support flight elements count every time unless the whole pass repeats', () => {
+  const pass = (extra = []) => [sk('Round-off', 'A', true), sk('Flic-flac', 'A', true), ...extra, sk('Back tuck', 'A')];
+  const same = scoreXcel('gold', 'fx', [...pass(), ...pass()], { srMet: [1, 1, 1, 1] });
+  assert.deepEqual(st(same), ['ok', 'ok', 'ok', 'x:pass', 'x:pass', 'x:connection']);
+  const diff = scoreXcel('gold', 'fx', [...pass(), ...pass([sk('Flic-flac', 'A', true)])], { srMet: [1, 1, 1, 1] });
+  assert.deepEqual(st(diff), ['ok', 'ok', 'ok', 'ok', 'ok', 'ok', 'ok']);
+});
+test('UCG Infinity: each element earns credit once, whatever the connection', () => {
+  const r = scoreInfinity('bb', [sk('Back walkover'), sk('Cartwheel', 'A', true), sk('Back walkover')]);
+  assert.deepEqual(st(r), ['ok', 'ok', 'x:once']);
+});
+test('Same-element data: versions the Code counts as one element share a key; hand-support flight from the list', async () => {
+  const { elementKey } = await import('../js/scoring/wag.js');
+  const id = (skillId) => ({ skillId, name: '' });
+  // UB 2.001: casts listed by division angle are one element.
+  assert.equal(elementKey(id('USAG-UB-2.001-2')), elementKey(id('USAG-UB-2.001-4')));
+  // FX 1.201: no turn vs full turn are different elements.
+  assert.notEqual(elementKey(id('USAG-FX-1.201-1')), elementKey(id('USAG-FX-1.201-2')));
+  // Two casts at different listed angles, in the same connection: the second is a repeat.
+  const cast = (v) => ({ name: `cast ${v}`, letter: 'A', skillId: `USAG-UB-2.001-${v}` });
+  const bhc = { name: 'Back hip circle', letter: 'A' };
+  const r = scoreXcel('silver', 'ub', [{ name: 'Pullover', letter: 'A' }, cast(2), bhc, cast(3), bhc, cast(4), { name: 'Underswing dismount', letter: 'A' }], { srMet: [1, 1, 1, 1] });
+  assert.equal(r.items[4].repeatWhy, 'connection'); // 2nd back hip circle: cast before and after, as the 1st
+  assert.equal(r.items[5].repeatWhy, 'third'); // 3rd cast
+  // Floor: a listed flic-flac counts again in a different pass.
+  const ff = { name: 'Flic-flac', letter: 'B', skillId: 'USAG-FX-5.106-1', link: true };
+  const ro = { name: 'Round-off', letter: 'A', skillId: 'USAG-FX-5.105-1', link: true };
+  const f = scoreXcel('gold', 'fx', [ro, ff, { name: 'Back tuck', letter: 'A' }, ro, ff, ff, { name: 'Back tuck', letter: 'A' }], { srMet: [1, 1, 1, 1] });
+  assert.ok(f.items.every((it) => it.status !== 'repeat'));
+});

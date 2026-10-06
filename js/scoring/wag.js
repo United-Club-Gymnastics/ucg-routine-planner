@@ -6,6 +6,9 @@ import { VAULTS as SAPPHIRE_L910_VAULTS } from '../data/sapphire-vaults.js';
 import { MASTERS_LETTERS, mastersValue, meetsRequirement, vaultAgeBonus } from './masters.js';
 import { VAULTS as WG_VAULTS } from '../data/wag-vaults.js';
 import { VAULTS as MASTERS_VAULTS } from '../data/masters-vaults.js';
+import { SAME_ELEMENT, HAND_SUPPORT_FLIGHT as HAND_SUPPORT_FLIGHT_IDS } from '../data/wag-same.js';
+
+const HAND_SUPPORT_FLIGHT = new Set(HAND_SUPPORT_FLIGHT_IDS);
 
 export const EXECUTION = 10;
 export const MIN_SKILLS = 6;
@@ -64,7 +67,7 @@ const condensedOf = (event, eg) => {
 export function scoreInfinity(event, skills = [], { eventBonus = false } = {}) {
   const items = baseItems(skills, (l) => INFINITY_VALUES[l] ?? 0);
   for (const it of items) it.condensed = it.eg ? condensedOf(event, it.eg) : null;
-  markRepeats(items);
+  markOnce(items);
   const cand = items.filter((it) => !it.status);
   const counting = new Set([...cand].sort((a, b) => b.value - a.value || a.idx - b.idx).slice(0, INFINITY_MAX_SKILLS).map((it) => it.idx));
   for (const it of cand) {
@@ -119,7 +122,7 @@ export const XCEL_MISSING_SR = 0.5;
  */
 export function scoreXcel(level, event, skills = [], { srMet = [], bonus = 0 } = {}) {
   const items = baseItems(skills, (l) => XCEL_VALUE[l] ?? 0);
-  markRepeats(items);
+  markXcelRepeats(event, items);
   const limit = XCEL_LIMITS[level][event];
   let topLetterCount = 0;
   for (const it of items) {
@@ -259,11 +262,14 @@ function baseItems(skills, valueOf) {
     letter: s?.letter || '',
     value: valueOf(s?.letter || ''),
     eg: s?.eg ? Number(s.eg) : null,
+    skillId: s?.skillId || '',
+    link: !!s?.link, // beam / floor: connected to the next skill
     bonus: 0,
     status: isFilled(s) ? null : 'blank',
   }));
 }
 
+// WAG Masters: each skill counts once (by name).
 function markRepeats(items) {
   const seen = new Map();
   for (const it of items) {
@@ -273,5 +279,85 @@ function markRepeats(items) {
       it.status = 'repeat';
       it.repeatOf = seen.get(key);
     } else if (key) seen.set(key, it.idx);
+  }
+}
+
+// Which element a row is, for counting repeats. A skill picked from the list goes by its
+// listed version, except versions the Code counts as one element (they share a key, from
+// data/wag-same.js); a skill typed in by hand goes by its name.
+export const elementKey = (it) => (it.skillId ? SAME_ELEMENT[it.skillId] || it.skillId : `name:${skillKey(it.name)}`);
+
+const HAND_FLIGHT_NAME = /\b(round[- ]?off|flic[- ]?flac|flip[- ]?flop|back handspring|front handspring|flyspring|bhs|fhs)\b/i;
+const isHandSupportFlight = (it) => (it.skillId ? HAND_SUPPORT_FLIGHT.has(it.skillId) : HAND_FLIGHT_NAME.test(it.name));
+
+const repeat = (it, of, why) => Object.assign(it, { status: 'repeat', repeatOf: of.idx, repeatWhy: why });
+
+// UCG Infinity: an element earns value-part credit once, whatever its connection.
+function markOnce(items) {
+  const seen = new Map();
+  for (const it of items) {
+    if (it.status) continue;
+    const key = elementKey(it);
+    if (seen.has(key)) repeat(it, seen.get(key), 'once');
+    else seen.set(key, it);
+  }
+}
+
+/**
+ * Xcel (Code of Points, General D-F and each event's Chapter 2):
+ * - An element earns value-part credit at most twice; the second time only in a different
+ *   connection (preceded or followed by a different element). Never a third time.
+ * - Floor: acro flight elements with hand support (round-off, flic-flac, ...) earn credit
+ *   any number of times, as long as the pass is different. A pass that repeats an
+ *   earlier pass exactly gets none for them.
+ * Connections: a bars routine is one continuous sequence; on beam and floor a skill is
+ * connected to the next one when its row's `link` is set. Elements that are connected
+ * form a pass (an isolated element is a pass of one). On floor the connection that
+ * matters is the whole pass: once two passes differ (an element added, removed or
+ * reordered), every element in them can earn credit (Floor Ch. 2 B.2.e-f).
+ */
+function markXcelRepeats(event, items) {
+  const live = items.filter((it) => !it.status);
+  const key = new Map(live.map((it) => [it, elementKey(it)]));
+  const connected = (k) => k < live.length - 1 && (event === 'ub' || live[k].link); // live[k] -> live[k + 1]
+  const context = new Map(
+    live.map((it, k) => [it, `${k > 0 && connected(k - 1) ? key.get(live[k - 1]) : '-'}|${connected(k) ? key.get(live[k + 1]) : '-'}`])
+  );
+  // Passes, and the earlier identical pass (if any) each one repeats.
+  const passOf = new Map();
+  const passSig = new Map();
+  const firstPass = new Map();
+  let pass = [];
+  live.forEach((it, k) => {
+    pass.push(it);
+    if (connected(k)) return;
+    const sig = pass.map((x) => key.get(x)).join('>');
+    const earlier = firstPass.get(sig);
+    if (!earlier) firstPass.set(sig, pass);
+    for (const [i, x] of pass.entries()) {
+      passOf.set(x, { earlier, i });
+      passSig.set(x, sig);
+    }
+    pass = [];
+  });
+
+  if (event === 'fx') for (const it of live) context.set(it, passSig.get(it));
+  const credited = new Map(); // element key -> items that earned credit
+  for (const it of live) {
+    const prior = credited.get(key.get(it)) || [];
+    if (event === 'fx' && isHandSupportFlight(it)) {
+      const { earlier, i } = passOf.get(it);
+      if (earlier) {
+        repeat(it, earlier[i], 'pass');
+        continue;
+      }
+    } else if (prior.length >= 2) {
+      repeat(it, prior[0], 'third');
+      continue;
+    } else if (prior.length === 1 && context.get(prior[0]) === context.get(it)) {
+      repeat(it, prior[0], 'connection');
+      continue;
+    }
+    credited.set(key.get(it), [...prior, it]);
   }
 }

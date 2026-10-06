@@ -107,6 +107,8 @@ export function eventSpec(entry, evId) {
     spec.letters = wag.XCEL_LETTERS;
     spec.sr = XCEL_SR[level][evId];
     spec.columns = 'xcel';
+    // Beam and floor: the gymnast marks which skills are connected (bars routines are continuous).
+    spec.links = evId === 'bb' || evId === 'fx';
     if (level === 'sapphire') spec.options = [{ id: 'bonus', kind: 'count', value: 0.1, max: 4, label: 'Sapphire bonus', help: 'Up to +0.40 (connection or difficulty bonus per the Xcel Code)' }];
   }
   return spec;

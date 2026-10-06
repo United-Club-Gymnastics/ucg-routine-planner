@@ -414,6 +414,20 @@ input::placeholder { color: var(--fg-muted); }
   transition: background var(--duration-1) var(--ease), color var(--duration-1) var(--ease);
 }
 .drag-handle { cursor: grab; touch-action: none; }
+
+/* Xcel beam / floor: "connected to the next skill", a small round toggle on the line between two rows. */
+.skill-row:has(.link-toggle) { position: relative; }
+.link-toggle {
+  position: absolute; z-index: 2; left: 20px; bottom: -15px; width: 22px; height: 16px; padding: 0;
+  display: grid; place-items: center; cursor: pointer;
+  border: 1.5px solid var(--border-default); border-radius: var(--radius-pill);
+  background: var(--ucg-white); color: var(--fg-muted);
+}
+.link-toggle::before { content: ''; position: absolute; inset: -8px -6px; } /* bigger tap area */
+.link-toggle:hover { border-color: var(--ucg-navy); color: var(--ucg-navy); }
+.link-toggle[aria-pressed='true'] { background: var(--ucg-navy); border-color: var(--ucg-navy); color: var(--ucg-white); }
+.skill-row[data-row]:last-child .link-toggle, .skill-row.is-blank .link-toggle { display: none; }
+.skill-table:has(.link-toggle) .skill-row[data-row] + .skill-row[data-row] { margin-top: 14px; }
 .remove-skill { cursor: pointer; width: 28px; }
 .drag-handle:hover, .remove-skill:hover { background: rgba(173, 186, 233, 0.25); color: var(--fg-primary); }
 .skill-row.dragging {
@@ -616,9 +630,8 @@ input::placeholder { color: var(--fg-muted); }
 .skill-row.dd input.col-letter, .skill-row.dd input.col-eg { text-align: center; }
 .skill-row.xcel { grid-template-columns: 50px minmax(160px, 1fr) 76px 64px 28px; }
 .skill-row.xcel .remove-skill { grid-column: 5; }
-.skill-row.xcel .row-flag { grid-column: 4; }
+.skill-row.xcel .row-flag { grid-column: 2; grid-row: 2; justify-self: start; }
 .skill-row.flagged .row-flag { display: inline-block; }
-.skill-row.xcel.flagged .col-value { display: none; }
 .pass { padding: 4px 0 6px; }
 .pass + .pass { border-top: 1px solid var(--border-subtle); }
 .pass-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 12px 20px 0; }

@@ -1,0 +1,1634 @@
+{
+ "source": "Reviewed per USAG number against the Xcel CoP 2022-2028 (General D-F; Bars/Beam/Floor Chapter 2 'Elements considered different / the same'; element-table box notes) and, for E elements and as a tiebreaker, the USAG Development Program 2026-2030 box notes. 'same': listed versions that count as one element; versions not in a group are different elements. Reasons are our own words. 'unsure': calls for the WAG rules lead to confirm.",
+ "UB": {
+  "boxes": [
+   {
+    "number": "1.101",
+    "same": [],
+    "reason": "turn degree differs (none vs 1/2); v2 also usable within the exercise"
+   },
+   {
+    "number": "1.204",
+    "same": [],
+    "reason": "different skills: clear rear support regrasp to HB vs straddle cut to LB hang"
+   },
+   {
+    "number": "1.304",
+    "same": [],
+    "reason": "different skills/turn: straddle cut vs 1/1 turn"
+   },
+   {
+    "number": "1.206",
+    "same": [],
+    "reason": "judgement: different skills (jump-turn into a kip on HB vs jump clearing the LB to a HB hang)"
+   },
+   {
+    "number": "1.307",
+    "same": [],
+    "reason": "different direction (forward salto vs backward salto roll)"
+   },
+   {
+    "number": "1.410",
+    "same": [],
+    "reason": "turn degree differs (none vs 1/2), also different catch bar"
+   },
+   {
+    "number": "1.412",
+    "same": [],
+    "reason": "different skills: back tuck salto vs flic-flac through LB handstand"
+   },
+   {
+    "number": "1.414",
+    "same": [],
+    "reason": "turn degree differs (1/1, none, 1/2)"
+   },
+   {
+    "number": "2.001",
+    "same": [
+     [
+      "USAG-UB-2.001-1",
+      "USAG-UB-2.001-2",
+      "USAG-UB-2.001-3",
+      "USAG-UB-2.001-4",
+      "USAG-UB-2.001-5",
+      "USAG-UB-2.001-6"
+     ]
+    ],
+    "reason": "all are one cast; the listed angles are division requirements, not different elements"
+   },
+   {
+    "number": "2.301",
+    "same": [],
+    "reason": "turn degree differs: hop with no turn vs 1/2 turn vs 1/1 one-arm (Healy)"
+   },
+   {
+    "number": "2.401",
+    "same": [
+     [
+      "USAG-UB-2.401-1",
+      "USAG-UB-2.401-3"
+     ]
+    ],
+    "reason": "v3 is the 1 1/2 turn finishing in L/mixed-L grip: grip-only difference (matches the Code's own cast-handstand 1 1/2 example); hop to L grip has no turn"
+   },
+   {
+    "number": "2.202",
+    "same": [],
+    "reason": "turn degree differs (none vs 1/2) and different bar"
+   },
+   {
+    "number": "2.402",
+    "same": [],
+    "reason": "different skills: salto roll between bars vs turning giant with rear-vault release"
+   },
+   {
+    "number": "2.203",
+    "same": [],
+    "reason": "turn degree differs (plain uprise vs turning uprise with 1/2)"
+   },
+   {
+    "number": "2.303",
+    "same": [],
+    "reason": "turn degree differs (none/1/2 vs 1/1 Healy)"
+   },
+   {
+    "number": "2.403",
+    "same": [],
+    "reason": "turn degree differs (1/1 vs hop with no turn vs 1 1/2)"
+   },
+   {
+    "number": "2.404",
+    "same": [],
+    "reason": "different skills: turning-uprise forward straddle over HB vs back-uprise release backward over HB; total turn differs"
+   },
+   {
+    "number": "2.205",
+    "same": [],
+    "reason": "turn degree differs (none vs 1/2 turn on the swing)"
+   },
+   {
+    "number": "2.405",
+    "same": [],
+    "reason": "turn differs (1/1 in handstand vs 1/2 in flight)"
+   },
+   {
+    "number": "2.406",
+    "same": [],
+    "reason": "Cox differs by body position and turn; Bullock vs Montell are distinct releases to different bars (HB rebar vs LB catch)"
+   },
+   {
+    "number": "3.202",
+    "same": [],
+    "reason": "judgement: flight with arm flair to hang vs turn to clear support are different skills"
+   },
+   {
+    "number": "3.305",
+    "same": [],
+    "reason": "turn degree differs (1/2 vs 1/1 Healy)"
+   },
+   {
+    "number": "3.306",
+    "same": [],
+    "reason": "different skills/turn: dislocate staying on HB vs flight over LB; Tai adds 1/2 turn"
+   },
+   {
+    "number": "4.102",
+    "same": [],
+    "reason": "different skills: long-hang pullover vs tucked LB back giant"
+   },
+   {
+    "number": "4.303",
+    "same": [],
+    "reason": "turn differs (1/2; 1/2+1/2 opposite directions; 1/1 Healy on one arm; 1/1 LB tucked giant); the Code treats opposite-direction split turns as different"
+   },
+   {
+    "number": "4.403",
+    "same": [
+     [
+      "USAG-UB-4.403-1",
+      "USAG-UB-4.403-3"
+     ]
+    ],
+    "reason": "1/1 in handstand with or without a hop on the first half: same turn degree and direction, hop is technique/grip only; 1 1/2 differs"
+   },
+   {
+    "number": "4.306",
+    "same": [],
+    "reason": "turn degree differs (none vs 1/2)"
+   },
+   {
+    "number": "4.307",
+    "same": [],
+    "reason": "different skills: tucked 1/2-turn flight (not a salto) vs tucked Gienger salto"
+   },
+   {
+    "number": "4.407",
+    "same": [],
+    "reason": "different direction (forward vs backward salto) and extra 1/2 turn after catch"
+   },
+   {
+    "number": "5.302",
+    "same": [],
+    "reason": "judgement: v2 is the LB giant with legs tucked at the bottom and a 1/1 in handstand, a separate skill from the HB front giant family in v1"
+   },
+   {
+    "number": "5.402",
+    "same": [],
+    "reason": "judgement: slip-grip front giant, front giant 1/1, and hop to L grip are separate named skills; turn differs for v2"
+   },
+   {
+    "number": "5.405",
+    "same": [],
+    "reason": "turn degree differs (none vs 1/1)"
+   },
+   {
+    "number": "6.401",
+    "same": [],
+    "reason": "judgement: overgrip forward stalder is a separate skill from stalder to handstand; Healy adds 1/1"
+   },
+   {
+    "number": "6.202",
+    "same": [],
+    "reason": "turn degree differs (none vs 1/2) and different bar"
+   },
+   {
+    "number": "6.402",
+    "same": [],
+    "reason": "different skills: straddle circle flight to LB handstand vs forward stalder to straddle salto"
+   },
+   {
+    "number": "6.104",
+    "same": [],
+    "reason": "turn degree differs (none vs 1/2)"
+   },
+   {
+    "number": "6.204",
+    "same": [],
+    "reason": "turn degree differs (none vs 1/2)"
+   },
+   {
+    "number": "6.304",
+    "same": [],
+    "reason": "turn degree differs (none, 1/2, 1/1 Healy)"
+   },
+   {
+    "number": "6.404",
+    "same": [],
+    "reason": "turn degree differs (hop with no turn, 1/2, hop plus 1/1 Healy)"
+   },
+   {
+    "number": "6.305",
+    "same": [
+     [
+      "USAG-UB-6.305-1",
+      "USAG-UB-6.305-2"
+     ]
+    ],
+    "reason": "same circle and same LB-to-HB release; counter vs hecht flight shape is not a listed criterion (7.313 lists both shapes as one element)"
+   },
+   {
+    "number": "7.101",
+    "same": [],
+    "reason": "different direction (backward vs forward), the Code's own example"
+   },
+   {
+    "number": "7.203",
+    "same": [
+     [
+      "USAG-UB-7.203-1",
+      "USAG-UB-7.203-2"
+     ]
+    ],
+    "reason": "same sole circle flight HB to LB; finishing on feet vs hands is not a listed criterion"
+   },
+   {
+    "number": "7.204",
+    "same": [],
+    "reason": "judgement: v1 transitions LB to HB, v3 stays on HB, v2 adds a forward salto"
+   },
+   {
+    "number": "7.305",
+    "same": [],
+    "reason": "judgement: same pattern but opposite transitions (HB to LB vs LB to HB)"
+   },
+   {
+    "number": "7.206",
+    "same": [],
+    "reason": "turn degree differs and opposite transitions"
+   },
+   {
+    "number": "7.406",
+    "same": [],
+    "reason": "different skills (free seat circle over HB, salto to LB, 1/2 turn to LB handstand, pike circle to inverted support)"
+   },
+   {
+    "number": "7.308",
+    "same": [],
+    "reason": "turn degree differs (none/1/2 vs 1/1 Healy)"
+   },
+   {
+    "number": "7.408",
+    "same": [],
+    "reason": "turn degree differs (none/1/2 vs 1/1)"
+   },
+   {
+    "number": "7.209",
+    "same": [],
+    "reason": "turn degree differs (none vs 1/2)"
+   },
+   {
+    "number": "7.309",
+    "same": [],
+    "reason": "turn degree differs (none, 1/2, 1/1 Healy)"
+   },
+   {
+    "number": "7.409",
+    "same": [],
+    "reason": "turn degree differs (hop with no turn vs 1/2)"
+   },
+   {
+    "number": "7.310",
+    "same": [],
+    "reason": "turn degree differs (none vs 1/2)"
+   },
+   {
+    "number": "7.410",
+    "same": [],
+    "reason": "turn degree differs (none vs 1/1) and different flight action"
+   },
+   {
+    "number": "7.313",
+    "same": [],
+    "reason": "different skills: release to HB vs circle to support"
+   },
+   {
+    "number": "8.006",
+    "same": [
+     [
+      "USAG-UB-8.006-1",
+      "USAG-UB-8.006-2"
+     ]
+    ],
+    "reason": "same toe-on/underswing dismount from LB; starting with feet on the bar is not a listed criterion"
+   },
+   {
+    "number": "8.401",
+    "same": [],
+    "reason": "saltos differ by body position and/or twist (and entry)"
+   },
+   {
+    "number": "8.402",
+    "same": [],
+    "reason": "salto body position differs (stretched vs tucked)"
+   },
+   {
+    "number": "8.107",
+    "same": [],
+    "reason": "turn differs (1/2 turn on the swing in v2)"
+   },
+   {
+    "number": "8.207",
+    "same": [],
+    "reason": "different entry turn and twist"
+   },
+   {
+    "number": "8.407",
+    "same": [],
+    "reason": "different skills: forward double twist vs double back"
+   },
+   {
+    "number": "8.310",
+    "same": [],
+    "reason": "judgement: clear-hip entry vs giant (through handstand) over HB vs twisting straddle-cut salto"
+   },
+   {
+    "number": "8.410",
+    "same": [],
+    "reason": "twist differs (none, 2/1+, 1/1)"
+   },
+   {
+    "number": "1.512",
+    "same": [],
+    "reason": "reaching handstand on LB vs finishing in clear support; treated as different per the reaches-handstand rule"
+   },
+   {
+    "number": "2.502",
+    "same": [],
+    "reason": "different skills: twisting salto roll LB to HB vs cast straddle salto on HB"
+   },
+   {
+    "number": "3.502",
+    "same": [
+     [
+      "USAG-UB-3.502-1",
+      "USAG-UB-3.502-2"
+     ]
+    ],
+    "reason": "straddled vs piked counter release is legs apart vs together, not a salto"
+   },
+   {
+    "number": "3.505",
+    "same": [],
+    "reason": "turn degree differs (1/1 vs 1 1/2)"
+   },
+   {
+    "number": "4.505",
+    "same": [],
+    "reason": "turn differs (none, 1/2+1/2, 1/1)"
+   },
+   {
+    "number": "4.506",
+    "same": [],
+    "reason": "different skills/direction (forward salto rebar vs twisting back salto to LB)"
+   },
+   {
+    "number": "4.507",
+    "same": [],
+    "reason": "different direction and turn degree"
+   },
+   {
+    "number": "5.502",
+    "same": [],
+    "reason": "turn degree differs (1/1 one-arm vs 1 1/2)"
+   },
+   {
+    "number": "5.505",
+    "same": [],
+    "reason": "salto body position differs (piked/stretched vs tucked) and 1/2 turn in v3"
+   },
+   {
+    "number": "5.507",
+    "same": [],
+    "reason": "v1 and v2 are separately named 1/1 skills (hop-initiated on two hands vs on one arm with the free arm flared); v3 differs by turn. See unsure: Healy-style one-arm turns are grouped elsewhere"
+   },
+   {
+    "number": "6.504",
+    "same": [
+     [
+      "USAG-UB-6.504-2",
+      "USAG-UB-6.504-3"
+     ]
+    ],
+    "reason": "v3 is the 1 1/2 version finishing in L/mixed-L grip: grip only; 1/1 differs by turn"
+   },
+   {
+    "number": "6.505",
+    "same": [],
+    "reason": "turn degree differs (none vs 1/2)"
+   },
+   {
+    "number": "7.504",
+    "same": [],
+    "reason": "turn degree differs (none vs 1/2)"
+   },
+   {
+    "number": "7.509",
+    "same": [
+     [
+      "USAG-UB-7.509-2",
+      "USAG-UB-7.509-3"
+     ]
+    ],
+    "reason": "v3 is the 1 1/2 version finishing in L/mixed-L grip: grip only; 1/1 differs by turn"
+   },
+   {
+    "number": "7.510",
+    "same": [],
+    "reason": "turn degree differs (1/2 vs 1/1)"
+   },
+   {
+    "number": "7.511",
+    "same": [],
+    "reason": "v2 is primarily the 1/2-turn version (turn differs); see unsure for its piked option"
+   },
+   {
+    "number": "8.501",
+    "same": [],
+    "reason": "twist differs (1/1 vs 1 1/2)"
+   },
+   {
+    "number": "8.504",
+    "same": [],
+    "reason": "different saltos/twists (twisting double, mixed back-front, double-twisting double, triple)"
+   },
+   {
+    "number": "8.505",
+    "same": [],
+    "reason": "twist differs; scissor split counts as legs apart in a salto"
+   },
+   {
+    "number": "8.506",
+    "same": [],
+    "reason": "twist and/or body position differ"
+   },
+   {
+    "number": "8.507",
+    "same": [],
+    "reason": "different salto counts, twists and directions"
+   },
+   {
+    "number": "8.508",
+    "same": [],
+    "reason": "different direction (forward vs backward salto) and twist"
+   }
+  ],
+  "unsure": [
+   {
+    "number": "2.401",
+    "ids": [
+     "USAG-UB-2.401-1",
+     "USAG-UB-2.401-3"
+    ],
+    "question": "Healy 1 1/2 to L grip is done on one arm; grouped as same per the Code's grip example (cast handstand 1 1/2 vs same to L grip). Does the one-arm (Healy) technique make it different from the 1 1/2 pirouette? v1 also covers a 1/1, which would differ by turn."
+   },
+   {
+    "number": "4.403",
+    "ids": [
+     "USAG-UB-4.403-1",
+     "USAG-UB-4.403-3"
+    ],
+    "question": "Is a 1/1 in handstand with a hop on the first half the same element as a plain 1/1 in handstand?"
+   },
+   {
+    "number": "6.305",
+    "ids": [
+     "USAG-UB-6.305-1",
+     "USAG-UB-6.305-2"
+    ],
+    "question": "Counter-movement (Ray) vs hecht flight from LB stalder to HB: same element or different?"
+   },
+   {
+    "number": "7.203",
+    "ids": [
+     "USAG-UB-7.203-1",
+     "USAG-UB-7.203-2"
+    ],
+    "question": "Sole circle flight HB to LB finishing on feet vs regrasping the bar: same element?"
+   },
+   {
+    "number": "8.006",
+    "ids": [
+     "USAG-UB-8.006-1",
+     "USAG-UB-8.006-2"
+    ],
+    "question": "Underswing dismount from support vs toe-on from squat/straddle/stoop on LB: same element?"
+   },
+   {
+    "number": "1.512",
+    "ids": [
+     "USAG-UB-1.512-1",
+     "USAG-UB-1.512-2"
+    ],
+    "question": "Twisting flic-flac mount to clear support vs through LB handstand: best guess different (handstand rule); or is the second just an allowed option of the same element?"
+   },
+   {
+    "number": "5.507",
+    "ids": [
+     "USAG-UB-5.507-1",
+     "USAG-UB-5.507-2"
+    ],
+    "question": "Hop-initiated 1/1 vs one-arm 1/1 with arm flair, both from an L-grip front giant: same turn, but one-arm support and separate names. Same or different? (Elsewhere the Code bundles in-handstand and one-arm Healy turns of equal degree.)"
+   },
+   {
+    "number": "6.504",
+    "ids": [
+     "USAG-UB-6.504-2",
+     "USAG-UB-6.504-3"
+    ],
+    "question": "The L/mixed-L grip option follows the 1 1/2 paragraph, so it is grouped with the 1 1/2; the drawing does not show the degree. Confirm it is not the 1/1 to L grip."
+   },
+   {
+    "number": "3.502",
+    "ids": [
+     "USAG-UB-3.502-1",
+     "USAG-UB-3.502-2"
+    ],
+    "question": "Clear hip counter release straddled vs piked: same element (legs rule, not a salto)?"
+   },
+   {
+    "number": "7.204",
+    "ids": [
+     "USAG-UB-7.204-1",
+     "USAG-UB-7.204-3"
+    ],
+    "question": "Seat circle forward 1/2 turn to HB hang, from LB vs on HB: does the bar transition make it different?"
+   },
+   {
+    "number": "7.305",
+    "ids": [
+     "USAG-UB-7.305-1",
+     "USAG-UB-7.305-2"
+    ],
+    "question": "Seat circle straddle cut HB to LB vs LB to HB: same element or different?"
+   },
+   {
+    "number": "3.202",
+    "ids": [
+     "USAG-UB-3.202-1",
+     "USAG-UB-3.202-2"
+    ],
+    "question": "Underswing 1/2 turn with arm flair to hang vs 1/2 turn to clear support: same element?"
+   },
+   {
+    "number": "2.406",
+    "ids": [
+     "USAG-UB-2.406-2",
+     "USAG-UB-2.406-3"
+    ],
+    "question": "Bullock (straddle front salto to HB) vs Montell (straddle front salto to LB, reverse grip): same element?"
+   },
+   {
+    "number": "6.401",
+    "ids": [
+     "USAG-UB-6.401-1",
+     "USAG-UB-6.401-2"
+    ],
+    "question": "Forward stalder in overgrip vs forward stalder to handstand: same element?"
+   },
+   {
+    "number": "5.402",
+    "ids": [
+     "USAG-UB-5.402-1",
+     "USAG-UB-5.402-3"
+    ],
+    "question": "Slip-grip front giant vs front giant that hops into L grip (neither turns): same element?"
+   },
+   {
+    "number": "8.310",
+    "ids": [
+     "USAG-UB-8.310-1",
+     "USAG-UB-8.310-2"
+    ],
+    "question": "Clear-hip back salto dismount vs giant to back salto over HB (both tucked): same element?"
+   },
+   {
+    "number": "7.511",
+    "ids": [
+     "USAG-UB-7.511-1",
+     "USAG-UB-7.511-2"
+    ],
+    "question": "v2 bundles a piked reverse hecht (legs-together rule would make it same as v1) with the 1/2-turn Tweddle (different). Should the planner treat v2 as same or different?"
+   }
+  ]
+ },
+ "BB": {
+  "boxes": [
+   {
+    "number": "1.101",
+    "same": [
+     [
+      "USAG-BB-1.101-1",
+      "USAG-BB-1.101-2"
+     ]
+    ],
+    "reason": "Ending (lowering into a scale) is an end-position variant of the same mount; v1's two-foot jump form would differ by take-off."
+   },
+   {
+    "number": "1.201",
+    "same": [],
+    "reason": "Turn degree differs (1/2 vs none); different jump shape too."
+   },
+   {
+    "number": "1.401",
+    "same": [],
+    "reason": "Take-off one vs both legs; turn degree differs."
+   },
+   {
+    "number": "1.102",
+    "same": [
+     [
+      "USAG-BB-1.102-2",
+      "USAG-BB-1.102-3"
+     ]
+    ],
+    "reason": "v1 has no turn vs 180 deg total in v2/v3; v2 and v3 share take-off and total turn, only the end support differs."
+   },
+   {
+    "number": "1.204",
+    "same": [],
+    "reason": "Turn degree differs (1/2 vs none)."
+   },
+   {
+    "number": "1.105",
+    "same": [
+     [
+      "USAG-BB-1.105-1",
+      "USAG-BB-1.105-2"
+     ]
+    ],
+    "reason": "Both one-leg take-off; leg change and end sit are leg/end-position variants, no listed differentiator."
+   },
+   {
+    "number": "1.305",
+    "same": [],
+    "reason": "Turn degree differs (none vs 1/2)."
+   },
+   {
+    "number": "1.108",
+    "same": [
+     [
+      "USAG-BB-1.108-1",
+      "USAG-BB-1.108-2"
+     ]
+    ],
+    "reason": "Support-position variant of the same held-stand mount; no listed differentiator."
+   },
+   {
+    "number": "1.308",
+    "same": [],
+    "reason": "Turn degree differs (1/1 vs 1/2)."
+   },
+   {
+    "number": "1.409",
+    "same": [],
+    "reason": "Landing one foot (step) vs two feet; v3 is a different acro sequence."
+   },
+   {
+    "number": "1.311",
+    "same": [],
+    "reason": "Turn degree differs (none vs 1/2 in handstand)."
+   },
+   {
+    "number": "1.412",
+    "same": [],
+    "reason": "Best guess: one-arm handstand mounts with different entry and exit; handstands are only declared same when entrance and exit match."
+   },
+   {
+    "number": "1.213",
+    "same": [],
+    "reason": "Landing one vs both legs (cartwheel vs round-off); matches the 7.203 box note."
+   },
+   {
+    "number": "1.313",
+    "same": [],
+    "reason": "Support one arm vs both; turn differs."
+   },
+   {
+    "number": "1.214",
+    "same": [],
+    "reason": "Hand support vs none (handspring vs aerial)."
+   },
+   {
+    "number": "1.414",
+    "same": [],
+    "reason": "Salto body position differs (tuck vs pike)."
+   },
+   {
+    "number": "2.101",
+    "same": [
+     [
+      "USAG-BB-2.101-1",
+      "USAG-BB-2.101-2"
+     ]
+    ],
+    "reason": "Added 1/4 turn does not differentiate; v3 differs by two-foot take-off. Box note: stag and double stag jump count as one."
+   },
+   {
+    "number": "2.201",
+    "same": [
+     [
+      "USAG-BB-2.201-2",
+      "USAG-BB-2.201-3",
+      "USAG-BB-2.201-4",
+      "USAG-BB-2.201-5"
+     ]
+    ],
+    "reason": "Split jumps differing only by an added 1/4 turn or its timing: same. v1 one-leg take-off; v6 has 1/2 turn."
+   },
+   {
+    "number": "2.301",
+    "same": [
+     [
+      "USAG-BB-2.301-1",
+      "USAG-BB-2.301-5"
+     ],
+     [
+      "USAG-BB-2.301-3",
+      "USAG-BB-2.301-4"
+     ]
+    ],
+    "reason": "1/4 vs 1/2 turn differs (v1 vs v2). v1/v5: one-leg leaps differing by leg shape and a 1/4 turn. v3/v4: two-foot split jumps differing by leg action/direction only."
+   },
+   {
+    "number": "2.202",
+    "same": [
+     [
+      "USAG-BB-2.202-1",
+      "USAG-BB-2.202-2",
+      "USAG-BB-2.202-3",
+      "USAG-BB-2.202-4",
+      "USAG-BB-2.202-5"
+     ]
+    ],
+    "reason": "All two-foot straddle jumps differing only by an added 1/4 turn, its timing, or cross vs side start: same."
+   },
+   {
+    "number": "2.302",
+    "same": [],
+    "reason": "Turn degree differs (none vs 1/2)."
+   },
+   {
+    "number": "2.402",
+    "same": [],
+    "reason": "Turn degree differs (1/2 vs 3/4); the DP box note for this same pair says different."
+   },
+   {
+    "number": "2.303",
+    "same": [
+     [
+      "USAG-BB-2.303-1",
+      "USAG-BB-2.303-2"
+     ]
+    ],
+    "reason": "Same two-foot straddle jump to support; differs by an added 1/4 turn and end support only."
+   },
+   {
+    "number": "2.403",
+    "same": [
+     [
+      "USAG-BB-2.403-1",
+      "USAG-BB-2.403-2"
+     ]
+    ],
+    "reason": "Same turn range; only end position differs (sit vs front support)."
+   },
+   {
+    "number": "2.304",
+    "same": [],
+    "reason": "DP box note for this same pair: different elements."
+   },
+   {
+    "number": "2.105",
+    "same": [
+     [
+      "USAG-BB-2.105-1",
+      "USAG-BB-2.105-2"
+     ]
+    ],
+    "reason": "Leg position only (stag vs wolf after the leg change)."
+   },
+   {
+    "number": "2.305",
+    "same": [
+     [
+      "USAG-BB-2.305-1",
+      "USAG-BB-2.305-2",
+      "USAG-BB-2.305-3"
+     ]
+    ],
+    "reason": "Switch leaps differing by leg shape, end position, or an added 1/4 turn: same."
+   },
+   {
+    "number": "2.405",
+    "same": [
+     [
+      "USAG-BB-2.405-1",
+      "USAG-BB-2.405-2"
+     ]
+    ],
+    "reason": "Both one-leg switch leaps; side-stand start and leg shape are not listed differentiators."
+   },
+   {
+    "number": "2.306",
+    "same": [],
+    "reason": "Turn degree differs (none vs 1/2)."
+   },
+   {
+    "number": "2.406",
+    "same": [],
+    "reason": "Turn degree differs (1/2 vs 3/4, as in the DP 2.402 note); v1 also allows 3/4, which would match v2."
+   },
+   {
+    "number": "2.407",
+    "same": [],
+    "reason": "Take-off both legs (jump) vs one leg (leap)."
+   },
+   {
+    "number": "2.108",
+    "same": [
+     [
+      "USAG-BB-2.108-1",
+      "USAG-BB-2.108-3"
+     ]
+    ],
+    "reason": "Leg position only (arch, leg beat): same, per the Code's own example; v2 differs by 1/2 turn."
+   },
+   {
+    "number": "2.109",
+    "same": [],
+    "reason": "DP box note: all variations different."
+   },
+   {
+    "number": "3.003",
+    "same": [
+     [
+      "USAG-BB-3.003-1",
+      "USAG-BB-3.003-2"
+     ]
+    ],
+    "reason": "Same 1/2 turn degree; one vs two feet is not a listed differentiator for turns."
+   },
+   {
+    "number": "3.306",
+    "same": [],
+    "reason": "Turn degree differs (1 1/2 vs 1 3/4) with a different finish."
+   },
+   {
+    "number": "5.002",
+    "same": [
+     [
+      "USAG-BB-5.002-1",
+      "USAG-BB-5.002-2"
+     ]
+    ],
+    "reason": "Division-specific criteria for the same partial handstand; partial vs vertical handstand are the same."
+   },
+   {
+    "number": "5.206",
+    "same": [],
+    "reason": "Turn degree differs (hold vs 1/1 turn)."
+   },
+   {
+    "number": "5.307",
+    "same": [],
+    "reason": "One arm vs both (v2 is held on two arms); cross vs side; v1 and v3 have different entrances."
+   },
+   {
+    "number": "6.101",
+    "same": [
+     [
+      "USAG-BB-6.101-1",
+      "USAG-BB-6.101-2",
+      "USAG-BB-6.101-3"
+     ]
+    ],
+    "reason": "Forward rolls differing only by entry or head vs shoulder path; no listed differentiator."
+   },
+   {
+    "number": "6.201",
+    "same": [],
+    "reason": "Best guess: flight dive roll from a two-foot take-off vs a roll with no leg take-off."
+   },
+   {
+    "number": "6.104",
+    "same": [
+     [
+      "USAG-BB-6.104-1",
+      "USAG-BB-6.104-2"
+     ]
+    ],
+    "reason": "Backward roll vs shoulder roll: no listed differentiator."
+   },
+   {
+    "number": "6.205",
+    "same": [
+     [
+      "USAG-BB-6.205-1",
+      "USAG-BB-6.205-2"
+     ]
+    ],
+    "reason": "Sideward rolls differing by body shape and start/end position only."
+   },
+   {
+    "number": "7.201",
+    "same": [
+     [
+      "USAG-BB-7.201-2",
+      "USAG-BB-7.201-4"
+     ]
+    ],
+    "reason": "v3 one-arm support differs; alternating hands is still two-arm support (same); v1 starts from support rather than a leg take-off."
+   },
+   {
+    "number": "7.302",
+    "same": [],
+    "reason": "Support one arm vs both."
+   },
+   {
+    "number": "7.402",
+    "same": [],
+    "reason": "Box note: aerial walkover vs swing-through aerial are different (swing-through variants, incl. to kneel/sit, are one)."
+   },
+   {
+    "number": "7.203",
+    "same": [],
+    "reason": "Box note: different elements."
+   },
+   {
+    "number": "7.403",
+    "same": [
+     [
+      "USAG-BB-7.403-1",
+      "USAG-BB-7.403-2",
+      "USAG-BB-7.403-3",
+      "USAG-BB-7.403-4",
+      "USAG-BB-7.403-5"
+     ]
+    ],
+    "reason": "Variants by 1/4 turn-out, sideways landing (still on one foot), start or finish pose: no listed differentiator; DP note treats swing-through variants as one. Within v1, step vs swing-through entry differ (Xcel note)."
+   },
+   {
+    "number": "7.104",
+    "same": [],
+    "reason": "Turn degree differs (v2 adds a 1/1 turn)."
+   },
+   {
+    "number": "7.206",
+    "same": [],
+    "reason": "Turn degree differs (none vs 1/2 in handstand)."
+   },
+   {
+    "number": "7.306",
+    "same": [],
+    "reason": "Turn degree differs (1/1 vs none)."
+   },
+   {
+    "number": "7.409",
+    "same": [],
+    "reason": "Landing on feet vs in handstand; turn differs."
+   },
+   {
+    "number": "7.310",
+    "same": [],
+    "reason": "Support one arm vs both; landing on feet vs hands."
+   },
+   {
+    "number": "7.312",
+    "same": [
+     [
+      "USAG-BB-7.312-1",
+      "USAG-BB-7.312-2"
+     ]
+    ],
+    "reason": "Non-salto flic-flac: tuck vs pike is a body-shape variant with the same landing."
+   },
+   {
+    "number": "8.301",
+    "same": [],
+    "reason": "Salto body position differs (tuck vs straddle); different take-off."
+   },
+   {
+    "number": "8.303",
+    "same": [],
+    "reason": "Landing on both legs vs step-out on one."
+   },
+   {
+    "number": "8.304",
+    "same": [],
+    "reason": "Landing on feet (step-out) vs into straddle sit; body position differs."
+   },
+   {
+    "number": "9.101",
+    "same": [
+     [
+      "USAG-BB-9.101-1",
+      "USAG-BB-9.101-2"
+     ]
+    ],
+    "reason": "Handspring vs headspring dismount: both two-arm support, no listed differentiator."
+   },
+   {
+    "number": "9.302",
+    "same": [],
+    "reason": "Twist degree differs (1 1/2 vs 1/1)."
+   },
+   {
+    "number": "9.102",
+    "same": [
+     [
+      "USAG-BB-9.102-1",
+      "USAG-BB-9.102-2"
+     ]
+    ],
+    "reason": "Forward vs sideward aerial dismount; both no hands and two-foot landing; no listed differentiator."
+   },
+   {
+    "number": "9.202",
+    "same": [],
+    "reason": "Body position differs (aerial walkover vs tucked salto)."
+   },
+   {
+    "number": "9.103",
+    "same": [],
+    "reason": "Twist degree differs (1/4 vs 3/4)."
+   },
+   {
+    "number": "9.203",
+    "same": [],
+    "reason": "Twist degree differs (1 1/4 vs 1 3/4)."
+   },
+   {
+    "number": "9.208",
+    "same": [],
+    "reason": "Body position and twist both differ."
+   },
+   {
+    "number": "9.308",
+    "same": [],
+    "reason": "Body position differs (layout vs tuck)."
+   },
+   {
+    "number": "9.408",
+    "same": [],
+    "reason": "Twist degree differs (2/1 vs 2 1/2)."
+   },
+   {
+    "number": "2.0 Bronze",
+    "same": [],
+    "reason": "Division A-value stand-ins for distinct root elements (leap vs split jump vs straddle jump); take-off and root number differ."
+   },
+   {
+    "number": "2.0 Silver",
+    "same": [],
+    "reason": "Division A-value stand-ins for distinct root elements (leap vs split jump vs straddle jump); take-off and root number differ."
+   },
+   {
+    "number": "2.401",
+    "same": [],
+    "reason": "Turn degree differs (3/4 vs 1/2)."
+   },
+   {
+    "number": "1.514",
+    "same": [],
+    "reason": "Body position, turn, an added entry element, or aerial vs salto differ across all versions."
+   },
+   {
+    "number": "1.515",
+    "same": [],
+    "reason": "Landing on feet vs in a sit; v3 is a different salto."
+   },
+   {
+    "number": "1.516",
+    "same": [],
+    "reason": "Step-out vs two-foot landing and body position; v3 adds a 1/1 twist."
+   },
+   {
+    "number": "2.501",
+    "same": [
+     [
+      "USAG-BB-2.501-1",
+      "USAG-BB-2.501-2"
+     ]
+    ],
+    "reason": "Cross vs side start only: same. v3 has a 1/1 turn, v4 a 1/2 turn."
+   },
+   {
+    "number": "2.502",
+    "same": [
+     [
+      "USAG-BB-2.502-1",
+      "USAG-BB-2.502-2"
+     ]
+    ],
+    "reason": "Cross vs side start only: same. v3 totals 1/2 turn vs 1/1."
+   },
+   {
+    "number": "2.503",
+    "same": [
+     [
+      "USAG-BB-2.503-1",
+      "USAG-BB-2.503-2",
+      "USAG-BB-2.503-3"
+     ]
+    ],
+    "reason": "Same jump and turn; only the end position differs."
+   },
+   {
+    "number": "2.505",
+    "same": [],
+    "reason": "v3 has no turn; v1 (1/2 or more) vs v2 (3/4 or more total) differ by turn degree as first listed."
+   },
+   {
+    "number": "2.507",
+    "same": [
+     [
+      "USAG-BB-2.507-1",
+      "USAG-BB-2.507-2"
+     ]
+    ],
+    "reason": "Leg shape and side-stand start only."
+   },
+   {
+    "number": "2.511",
+    "same": [
+     [
+      "USAG-BB-2.511-1",
+      "USAG-BB-2.511-2"
+     ]
+    ],
+    "reason": "Cross vs side start only."
+   },
+   {
+    "number": "3.506",
+    "same": [],
+    "reason": "Turn degree differs (3/1 vs 4/1)."
+   },
+   {
+    "number": "7.502",
+    "same": [],
+    "reason": "v1 is a hand-support walkover; v2 lands on one leg vs v3 on two feet."
+   },
+   {
+    "number": "7.503",
+    "same": [],
+    "reason": "DP box note: all variations different."
+   },
+   {
+    "number": "7.510",
+    "same": [],
+    "reason": "Twist degree differs; v2 adds a pirouette."
+   },
+   {
+    "number": "8.501",
+    "same": [],
+    "reason": "Take-off/landing legs, body position, or twist differ in each."
+   },
+   {
+    "number": "8.502",
+    "same": [],
+    "reason": "Body position and take-off differ."
+   },
+   {
+    "number": "8.504",
+    "same": [],
+    "reason": "Body position or twist differ."
+   },
+   {
+    "number": "8.505",
+    "same": [],
+    "reason": "Body position and take-off differ."
+   },
+   {
+    "number": "9.506",
+    "same": [],
+    "reason": "Twist degree differs."
+   },
+   {
+    "number": "9.507",
+    "same": [],
+    "reason": "Twist added (none vs 1/1)."
+   },
+   {
+    "number": "9.509",
+    "same": [],
+    "reason": "Body position and twist differ."
+   }
+  ],
+  "unsure": [
+   {
+    "number": "1.101",
+    "ids": [
+     "USAG-BB-1.101-1",
+     "USAG-BB-1.101-2"
+    ],
+    "question": "Is a leap mount that ends lowered into a scale the same element as the plain leap/jump mount? (v1 also covers a two-foot jump, which would differ by take-off.)"
+   },
+   {
+    "number": "1.102",
+    "ids": [
+     "USAG-BB-1.102-2",
+     "USAG-BB-1.102-3"
+    ],
+    "question": "Leg-swing mounts with 180 deg total turn ending in front support vs straddle sit: same element?"
+   },
+   {
+    "number": "1.105",
+    "ids": [
+     "USAG-BB-1.105-1",
+     "USAG-BB-1.105-2"
+    ],
+    "question": "Leap mount to cross split sit vs switch-leg leap mount to straddle sit: same element, or does the leg change / end sit make them different?"
+   },
+   {
+    "number": "1.108",
+    "ids": [
+     "USAG-BB-1.108-1",
+     "USAG-BB-1.108-2"
+    ],
+    "question": "Chest/head stand mount vs shoulder stand mount: same element?"
+   },
+   {
+    "number": "1.412",
+    "ids": [
+     "USAG-BB-1.412-1",
+     "USAG-BB-1.412-2"
+    ],
+    "question": "One-arm handstand mount vs handstand shifted to one arm and lowered to straddle support: does the different entry/exit make them different?"
+   },
+   {
+    "number": "2.301",
+    "ids": [
+     "USAG-BB-2.301-1",
+     "USAG-BB-2.301-3",
+     "USAG-BB-2.301-4",
+     "USAG-BB-2.301-5"
+    ],
+    "question": "The strict same-number default groups the ring-leap catch (v5) with the 1/4-turn split leap (v1), and the Heinrich (v3) with the Sweetin (v4). Are these really the same element?"
+   },
+   {
+    "number": "2.305",
+    "ids": [
+     "USAG-BB-2.305-1",
+     "USAG-BB-2.305-2"
+    ],
+    "question": "Switch leap with 1/4 turn landing in front support: same as the plain switch leap?"
+   },
+   {
+    "number": "2.405",
+    "ids": [
+     "USAG-BB-2.405-1",
+     "USAG-BB-2.405-2"
+    ],
+    "question": "Switch side leap vs switch leap taken from a side stand: same element?"
+   },
+   {
+    "number": "2.406",
+    "ids": [
+     "USAG-BB-2.406-1",
+     "USAG-BB-2.406-2"
+    ],
+    "question": "v1 allows 1/2 or 3/4 turn; v2 is 3/4. Is a 3/4 pike jump from side the same as one from cross, and does 1/2 vs 3/4 differ?"
+   },
+   {
+    "number": "2.505",
+    "ids": [
+     "USAG-BB-2.505-1",
+     "USAG-BB-2.505-2"
+    ],
+    "question": "Switch leap with 1/2+ turn vs switch side leap with an extra 1/2-3/4 turn: turn totals overlap. Same or different?"
+   },
+   {
+    "number": "3.003",
+    "ids": [
+     "USAG-BB-3.003-1",
+     "USAG-BB-3.003-2"
+    ],
+    "question": "1/2 turn on one foot vs heel-snap 1/2 turn (on two feet): same element for VP?"
+   },
+   {
+    "number": "3.306",
+    "ids": [
+     "USAG-BB-3.306-1",
+     "USAG-BB-3.306-2"
+    ],
+    "question": "1 1/2 vs 1 3/4 tuck turn finishing in a kneel: is the extra 1/4 a different degree of turn, or an added 1/4 that does not count?"
+   },
+   {
+    "number": "5.307",
+    "ids": [
+     "USAG-BB-5.307-1",
+     "USAG-BB-5.307-2",
+     "USAG-BB-5.307-3"
+    ],
+    "question": "Back walkover to one-arm handstand vs one-arm handstand hold: does the entrance make them different? (The rule only says same entrance and exit = same.)"
+   },
+   {
+    "number": "6.101",
+    "ids": [
+     "USAG-BB-6.101-1",
+     "USAG-BB-6.101-2",
+     "USAG-BB-6.101-3"
+    ],
+    "question": "Forward roll vs whip forward roll vs shoulder roll with hands: same element?"
+   },
+   {
+    "number": "6.201",
+    "ids": [
+     "USAG-BB-6.201-1",
+     "USAG-BB-6.201-2"
+    ],
+    "question": "Dive roll vs hand-supported shoulder roll through vertical: same or different?"
+   },
+   {
+    "number": "7.201",
+    "ids": [
+     "USAG-BB-7.201-1",
+     "USAG-BB-7.201-2",
+     "USAG-BB-7.201-4"
+    ],
+    "question": "Front walkover from straddle support (swing to handstand) vs from a stand; and alternating hand support vs both hands: same element?"
+   },
+   {
+    "number": "7.312",
+    "ids": [
+     "USAG-BB-7.312-1",
+     "USAG-BB-7.312-2"
+    ],
+    "question": "Tuck-open vs pike-open flic to straddle sit (v2 also allows a gainer, one-leg take-off): same element?"
+   },
+   {
+    "number": "7.403",
+    "ids": [
+     "USAG-BB-7.403-1",
+     "USAG-BB-7.403-2",
+     "USAG-BB-7.403-3",
+     "USAG-BB-7.403-4",
+     "USAG-BB-7.403-5"
+    ],
+    "question": "The strict default makes all aerial cartwheel variants (side landing, Perry 1/4 turn-out, Clore from kneel, Marinez leg hold) one element. Correct, or are any (especially Clore and Marinez) different?"
+   },
+   {
+    "number": "9.101",
+    "ids": [
+     "USAG-BB-9.101-1",
+     "USAG-BB-9.101-2"
+    ],
+    "question": "Front handspring vs front headspring dismount: same element?"
+   },
+   {
+    "number": "9.102",
+    "ids": [
+     "USAG-BB-9.102-1",
+     "USAG-BB-9.102-2"
+    ],
+    "question": "Front aerial dismount vs aerial round-off dismount: same element?"
+   },
+   {
+    "number": "1.514",
+    "ids": [
+     "USAG-BB-1.514-1",
+     "USAG-BB-1.514-4"
+    ],
+    "question": "Front tuck mount vs handspring then front tuck mount from the end: does the added handspring make them different?"
+   },
+   {
+    "number": "6.205",
+    "ids": [
+     "USAG-BB-6.205-1",
+     "USAG-BB-6.205-2"
+    ],
+    "question": "v2 is a stretched sideward roll with a full 360 deg body rotation; does that count as a 1/1 turn (different from v1, which has none or 1/2), or is it the same sideward roll?"
+   },
+   {
+    "number": "6.104",
+    "ids": [
+     "USAG-BB-6.104-1",
+     "USAG-BB-6.104-2"
+    ],
+    "question": "Backward roll vs backward shoulder roll: same element? (Same question as 6.101 v3.)"
+   },
+   {
+    "number": "2.507",
+    "ids": [
+     "USAG-BB-2.507-1",
+     "USAG-BB-2.507-2"
+    ],
+    "question": "Switch ring leap vs switch double-stag ring leap taken from a side stand: same element? (Same question as 2.405.)"
+   }
+  ]
+ },
+ "FX": {
+  "boxes": [
+   {
+    "number": "1.201",
+    "same": [],
+    "reason": "No turn vs full turn: different degree of turn."
+   },
+   {
+    "number": "1.104",
+    "same": [
+     [
+      "USAG-FX-1.104-1",
+      "USAG-FX-1.104-2"
+     ]
+    ],
+    "reason": "Both are switch leaps (one-foot take-off) with no turn; only the leg shape differs (wolf vs stag), which is not a listed criterion and matches the stag/split-variation-is-same note."
+   },
+   {
+    "number": "1.304",
+    "same": [],
+    "reason": "Rond-de-jambe switch is normally done without turn, so it differs from the half-turn switch by degree of turn. If it is done with the half turn it would arguably be the same element (see unsure)."
+   },
+   {
+    "number": "1.305",
+    "same": [],
+    "reason": "Quarter-turn switch-side vs switch-side with an added turn to stand vs half turn in the horizontal plane to prone: treated as different degrees/kinds of turn, each printed as its own entry."
+   },
+   {
+    "number": "1.207",
+    "same": [],
+    "reason": "No turn vs half turn: different degree of turn."
+   },
+   {
+    "number": "1.308",
+    "same": [],
+    "reason": "Two-foot jump with full turn vs one-foot leap with 1.5 turns: different take-off and different turn."
+   },
+   {
+    "number": "1.109",
+    "same": [],
+    "reason": "Hitch-kick vs cabriole. The Xcel box is silent, but the 2026 Development code box says all four (fwd/back of each) are different; followed that."
+   },
+   {
+    "number": "1.209",
+    "same": [
+     [
+      "USAG-FX-1.209-1",
+      "USAG-FX-1.209-2"
+     ]
+    ],
+    "reason": "Both one-foot take-off with half turn total (two quarter turns vs one half); no printed criterion separates them, so same by default."
+   },
+   {
+    "number": "1.310",
+    "same": [],
+    "reason": "One-foot tour jete to ring (half turn) vs two-foot stag-ring jump with full turn: different take-off and turn."
+   },
+   {
+    "number": "1.410",
+    "same": [],
+    "reason": "Both full turn, but one-foot leap vs two-foot jump: leaps and jumps under one number are different."
+   },
+   {
+    "number": "1.211",
+    "same": [],
+    "reason": "Two-foot jump vs one-foot leap: leaps and jumps under one number are different."
+   },
+   {
+    "number": "1.311",
+    "same": [],
+    "reason": "One-foot leap with no turn vs two-foot jump with full turn: different take-off and turn."
+   },
+   {
+    "number": "4.201",
+    "same": [],
+    "reason": "Half twist vs full twist into the dive roll: different degree of turn."
+   },
+   {
+    "number": "4.102",
+    "same": [],
+    "reason": "Box note: every backward-roll variation counts as a different element."
+   },
+   {
+    "number": "5.102",
+    "same": [],
+    "reason": "One-foot take-off handspring vs two-foot take-off flyspring; take-off criterion applied by analogy (see unsure)."
+   },
+   {
+    "number": "5.202",
+    "same": [],
+    "reason": "Arabian handspring has a half twist, flyspring has none: different degree of turn."
+   },
+   {
+    "number": "5.104",
+    "same": [],
+    "reason": "Box note: cartwheel, aerial cartwheel and butterfly variations all count as different elements."
+   },
+   {
+    "number": "6.201",
+    "same": [],
+    "reason": "Tucked vs piked/stretched salto: different body position."
+   },
+   {
+    "number": "8.403",
+    "same": [],
+    "reason": "Double back tucked vs piked: different body position."
+   },
+   {
+    "number": "7.502",
+    "same": [],
+    "reason": "Double arabian without vs with half twist: different degree of turn (Development Program E box)."
+   },
+   {
+    "number": "8.503",
+    "same": [],
+    "reason": "Full twist vs 1.5 twist: different degree of turn (Development Program E box)."
+   },
+   {
+    "number": "8.504",
+    "same": [],
+    "reason": "No twist vs full twist vs double twist: different degree of turn (Development Program E box)."
+   }
+  ],
+  "handSupportFlight": [
+   "USAG-FX-5.102-1",
+   "USAG-FX-5.102-2",
+   "USAG-FX-5.202-1",
+   "USAG-FX-5.202-2",
+   "USAG-FX-5.302-1",
+   "USAG-FX-5.105-1",
+   "USAG-FX-5.106-1",
+   "USAG-FX-5.206-1",
+   "UCGW-FX-6"
+  ],
+  "unsure": [
+   {
+    "number": "1.104",
+    "ids": [
+     "USAG-FX-1.104-1",
+     "USAG-FX-1.104-2"
+    ],
+    "question": "Switch leap to wolf vs switch stag leap: no printed note. Treated as same (shape only). Should different leg shapes in one box count separately?"
+   },
+   {
+    "number": "1.209",
+    "ids": [
+     "USAG-FX-1.209-1",
+     "USAG-FX-1.209-2"
+    ],
+    "question": "Straight-leg hitch-kick with two quarter turns vs tour jete: both one-foot take-off, half turn total, no box note. Same by default rule, or different skills?"
+   },
+   {
+    "number": "1.109",
+    "ids": [
+     "USAG-FX-1.109-1",
+     "USAG-FX-1.109-2"
+    ],
+    "question": "Xcel box has no note; the 2026 Development code says hitch-kick and cabriole (fwd/back) are all different. Does that note apply to Xcel?"
+   },
+   {
+    "number": "1.304",
+    "ids": [
+     "USAG-FX-1.304-1",
+     "USAG-FX-1.304-2"
+    ],
+    "question": "Variant 2 (rond-de-jambe switch) covers both no-turn and half-turn forms. Without turn it differs from variant 1; with half turn it may be the same. How should the single id be treated?"
+   },
+   {
+    "number": "1.305",
+    "ids": [
+     "USAG-FX-1.305-1",
+     "USAG-FX-1.305-2",
+     "USAG-FX-1.305-3"
+    ],
+    "question": "Quarter-turn switch-side vs the half/three-quarter turn-to-stand version differ by only a quarter turn in the half-turn case; and the turn-to-stand vs horizontal-plane-to-prone versions both have a half turn. Are any of these the same?"
+   },
+   {
+    "number": "5.102",
+    "ids": [
+     "USAG-FX-5.102-1",
+     "USAG-FX-5.102-2"
+    ],
+    "question": "Front handspring (one-foot take-off) vs flyspring (two-foot take-off), both may land on one foot. Take-off criterion is written only for leaps/jumps/hops. Same or different? (Low stakes: both are hand-support flight elements.)"
+   },
+   {
+    "number": "5.107",
+    "ids": [
+     "USAG-FX-5.107-1"
+    ],
+    "question": "Head/neck kips have hand support and usually a brief flight, but also support on head/neck (cf. dive roll not counting as flight). Excluded from handSupportFlight; should they be included?"
+   },
+   {
+    "number": "5.104",
+    "ids": [
+     "USAG-FX-5.104-1"
+    ],
+    "question": "Cartwheel record includes a with-flight option and the no-hands aerial cartwheel. Excluded from handSupportFlight because the usual cartwheel has no flight; should a flighted cartwheel qualify?"
+   },
+   {
+    "number": "5.105",
+    "ids": [
+     "USAG-FX-5.105-1"
+    ],
+    "question": "Record merges round-off (hand support) with free aerial round-off (no hands). Included in handSupportFlight as a round-off; the aerial form alone would not qualify."
+   },
+   {
+    "number": "3.101",
+    "ids": [
+     "USAG-FX-3.101-1"
+    ],
+    "question": "Record includes a jump onto the hands (brief flight before hand support) but mostly kick/press handstands with no flight. Excluded from handSupportFlight; should the jump form qualify?"
+   }
+  ]
+ }
+}

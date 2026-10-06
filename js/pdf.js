@@ -267,12 +267,16 @@ async function xcelPages(doc, fonts, athlete, entry, events, score) {
       if (it) {
         w.text(it.name, 74, ty, { size: 10, maxWidth: 322, c: INK });
         w.center(it.letter, 435, ty, { size: 10, c: INK });
-        const vp = it.status === 'restricted' ? 'Restricted (-0.50)' : it.status === 'repeat' ? 'Repeat' : it.vp ? `${it.vp} VP` : '';
+        const vp = it.status === 'restricted' ? 'Restricted (-0.50)' : it.status === 'repeat' ? 'Repeat (no VP)' : it.vp ? `${it.vp} VP` : '';
         w.text(vp, 474, ty, { size: 9, c: INK });
       }
       w.line(48, y + rowH * (i + 1), 564, y + rowH * (i + 1), 0.5);
+      // Beam / floor: "+" on the line between two connected skills.
+      if (it?.link && items[i + 1]) w.center('+', 66, y + rowH * (i + 1) + 4, { size: 12, font: fonts.bold, c: NAVY });
     }
-    y += rowH * n + 22;
+    y += rowH * n + 12;
+    if (items.some((it, i) => it.link && items[i + 1])) w.text('+ between two skills: connected.', 48, y, { size: 8, c: MUTED });
+    y += 20;
 
     w.text('Value parts required', 48, y, { size: 11, font: fonts.bold });
     const need = XCEL_VP[entry.level].reduce((m, l) => ({ ...m, [l]: (m[l] || 0) + 1 }), {});
