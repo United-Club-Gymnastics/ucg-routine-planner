@@ -13,7 +13,8 @@ const HAND_SUPPORT_FLIGHT = new Set(HAND_SUPPORT_FLIGHT_IDS);
 export const EXECUTION = 10;
 export const MIN_SKILLS = 6;
 export const round1 = (n) => Math.round(n * 10) / 10;
-const isFilled = (s) => !!(s && (String(s.name || '').trim() || s.letter));
+// A skill re-valued as "not credited at this level" (revalue.js) counts for nothing, routine length included.
+const isFilled = (s) => !!(s && !s.noCredit && (String(s.name || '').trim() || s.letter));
 // Repeat matching ignores case, spaces and punctuation, but not fractions: "¾ front
 // somersault" and "front somersault" are different skills (¾ -> 3/4 -> "34").
 const FRACTIONS = { '½': '1/2', '¼': '1/4', '¾': '3/4' };

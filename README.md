@@ -41,6 +41,15 @@ Athletes are saved in Firestore at `users/{user id}/athletes/{athlete}`. Each at
 
 **T&T** (UCG T&T Code of Points v3.41 + DD charts; double mini tuck/pike/straddle jumps are 0.0, per the UCG addendum, until the T&T team decides on WG's change): total DD per routine or pass, with each level's requirements flagged (max skill DD, salto counts, pass and routine DD limits, repeats, pass sizes). Double mini: each pass's first skill is marked mounter or spotter (stored as `start` on the pass, default mounter), since a repeat only loses its difficulty in the same position. Saltos are recognised from the FIG shorthand, or the skill name when there's no shorthand.
 
+## Skill catalog: box numbers, other names, re-valuing
+
+`tools/source/catalog/` holds the cross-code skill catalog built in Dropbox `Reference/gym_skill_extract/skill_catalog` (only the `*_public` catalogs, `aliases_*.json` and `levels.json`; the full catalogs carry the codes' text and stay private). `build_data.py` turns it into:
+- `js/data/skill-index.js`: each planner skill's box number in its own code (`WG I.75`, `Xcel 7.104`, `DP 1.512`, `UCG FX 12`, `Masters PB 12` with the page) and other names coaches use. Shown in the skill list and on the picked row; searchable.
+- `js/data/masters-skills.js`: the UCG Masters MAG and WAG skill lists. MAG Masters offers WG + this list instead of the main UCG MAG additions; WAG Masters offers WG + this list.
+- `js/data/catalog-{wag,mag}.js`: loaded only when a routine is copied to another level. `js/revalue.js` then gives each listed skill the target level's code entry (value, element group, planner skill), per `levels.json`: first code in `value_codes` with an entry; WG `adjusted_value` (beam jumps in side position) wins; **approximate** when the routine's own record is broader than the element or maps to several; **not credited** (kept, flagged, worth nothing) when no code of that level has it; skills typed in by hand are flagged to check. The entry records the catalog and levels versions it was re-valued with. Vaults aren't re-valued yet (each level's vault list has its own ids).
+
+Routines store the planner's skill ids, which the catalog's aliases resolve (with `merged`), so catalog rebuilds don't break saved routines. To update: copy the new public files into `tools/source/catalog/` and run `python tools/build_data.py`.
+
 ## Data and how to rebuild it
 
 | Data | Source | Rebuild |

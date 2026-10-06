@@ -158,7 +158,8 @@ export function letterValue(letter) {
   return LETTER_VALUES[l] ?? LETTER_VALUES[l.toUpperCase()] ?? 0;
 }
 
-const isFilled = (s) => !!(s && (String(s.name || '').trim() || s.letter));
+// A skill re-valued as "not credited at this level" (revalue.js) counts for nothing, routine length included.
+const isFilled = (s) => !!(s && !s.noCredit && (String(s.name || '').trim() || s.letter));
 export const SR_MAX_STATIC = 3; // WG rings: EG II/III skills before a B or higher EG I skill
 
 // "Back giant", "backgiant" and "Back-Giant" are the same skill.

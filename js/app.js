@@ -1,4 +1,5 @@
 import * as store from './store.js';
+import { clearRevalueFlags } from './revalue.js';
 import {
   DISCIPLINES,
   applyExample,
@@ -384,13 +385,32 @@ function entryBody(a, e) {
         <select id="f-decade">${DECADES.map((d) => `<option value="${d}"${d === e.decade ? ' selected' : ''}>${DECADE_LABELS[d]}</option>`).join('')}</select></label>` : ''}
       ${a.entries.length > 1 ? `<button type="button" class="btn btn-quiet btn-sm" id="remove-entry">Remove this level</button>` : ''}
     </section>
-    ${startPanel(a, e)}
+    ${startPanel(a, e)}${revaluedNotice(e)}
     <div class="summary" id="summary" role="tablist" aria-label="Events"></div>
     ${D.events.map((x) => eventCard(e, x, x.id === ev)).join('')}`;
 }
 
 // Offered while a level is empty: copy from another level in the discipline,
 // or fill every event with example routines.
+// After copying from another level: what the re-valuing did, until dismissed.
+function revaluedNotice(e) {
+  const r = e.revalued;
+  const s = r?.summary;
+  if (!s) return '';
+  const parts = [
+    s.approximate && `${s.approximate} approximate (the value depends on the version performed)`,
+    s.notCredited && `${s.notCredited} not credited at this level`,
+    s.typed && `${s.typed} typed in by hand (check their values)`,
+  ].filter(Boolean);
+  const from = levelInfo(e.disc, r.from)?.name || r.from;
+  return `
+    <section class="card revalue-notice" role="status">
+      <p><strong>Copied from ${esc(from)} and re-valued for ${esc(levelInfo(e.disc, e.level).name)}.</strong>
+        ${s.exact} skill${s.exact === 1 ? '' : 's'} matched exactly${parts.length ? `; ${esc(parts.join('; '))}. Those are flagged below.` : '.'}</p>
+      <button type="button" class="btn btn-ghost btn-sm" id="revalue-ok">OK</button>
+    </section>`;
+}
+
 function startPanel(a, e) {
   if (hasContent(e)) return '';
   const sources = a.entries.filter((x) => x.id !== e.id && x.disc === e.disc && hasContent(x));
@@ -679,10 +699,27 @@ function bindEditor(a, e) {
   });
   const copySrc = $('#copy-src');
   if (copySrc) copySrc.onchange = () => ($('#copy-run').dataset.src = copySrc.value);
-  $('#copy-run')?.addEventListener('click', (ev) => {
-    const src = a.entries.find((x) => x.id === ev.currentTarget.dataset.src);
+  $('#copy-run')?.addEventListener('click', async (ev) => {
+    const button = ev.currentTarget;
+    const src = a.entries.find((x) => x.id === button.dataset.src);
     if (!src) return;
     copyRoutines(src, e);
+    // Another level's code values the skills differently: re-value them with the skill catalog.
+    if (e.disc !== 'tt' && src.level !== e.level) {
+      button.disabled = true;
+      try {
+        const [{ revalueEntry }, { CATALOG }] = await Promise.all([import('./revalue.js'), import(`./data/catalog-${e.disc}.js`)]);
+        revalueEntry(e, src.level, CATALOG);
+      } catch (err) {
+        console.error(err);
+        alert(`Copied, but the skills couldn't be re-valued for this level: ${err?.message || err}`);
+      }
+    }
+    scheduleSave();
+    renderAll();
+  });
+  $('#revalue-ok')?.addEventListener('click', () => {
+    delete e.revalued.summary;
     scheduleSave();
     renderAll();
   });
@@ -727,6 +764,7 @@ function onInput(ev) {
     const row = rowsOf(e, t.dataset.ev, t.dataset.pass)[Number(t.dataset.idx)];
     row[t.dataset.field] = t.dataset.field === 'dd' ? (t.value === '' ? '' : Number(t.value)) : t.value;
     if (['letter', 'eg', 'dd'].includes(t.dataset.field)) delete row.fromList; // chosen by hand: filters the list
+    clearRevalueFlags(row);
     // A skill from the list has its own value and group: changing them means a different skill.
     if (['letter', 'eg'].includes(t.dataset.field) && row.skillId) return clearListedSkill(t, row);
     if (t.dataset.field === 'name') {
@@ -748,6 +786,7 @@ function clearListedSkill(t, row) {
   row.name = '';
   delete row.skillId;
   delete row.fromList;
+  clearRevalueFlags(row);
   if (e.disc === 'tt') row.notation = '';
   renderRows(evId, pass, { row: idx, part: 'name' });
   const input = $(`[data-routine="${evId}"]${pass != null && pass !== '' ? `[data-pass="${pass}"]` : ''} [data-row="${idx}"] .skill-input`);
@@ -1241,6 +1280,7 @@ function pickSkill(i) {
   row.name = s.label;
   row.skillId = s.id;
   row.fromList = true; // its values came from the list, so they don't filter it next time
+  clearRevalueFlags(row);
   if (e.disc === 'tt') Object.assign(row, { notation: s.notation || '', dd: s.dd });
   else {
     const letters = eventSpec(e, evId).letters;
@@ -1312,12 +1352,20 @@ function updateRows(container, items, spec, list) {
     if (v) v.textContent = repeat || !it.letter ? '' : spec.columns === 'xcel' ? (it.vp ? `${it.vp} VP` : fmt(it.value)) : fmt(it.value);
     const b = $('[data-calc="bonus"]', rowEl);
     if (b) b.textContent = it.bonus ? `+${fmt(it.bonus)}` : '';
-    const [text, title] = flagFor(it, spec);
+    const row = list[it.idx];
+    const [text, title] = row?.noCredit
+      ? ['Not credited here', "None of the codes this level uses has this skill, so it earns nothing. Pick a replacement or remove it."]
+      : flagFor(it, spec)[0]
+        ? flagFor(it, spec)
+        : row?.approx
+          ? ['Approximate', 'Re-valued from a broader entry: the value depends on which version is performed. Check it.']
+          : row?.check
+            ? ['Check value', "Typed in by hand, so it couldn't be re-valued for this level."]
+            : ['', ''];
     const flagEl = $('[data-calc="flag"]', rowEl);
     flagEl.textContent = text;
     flagEl.title = title;
     rowEl.classList.toggle('flagged', !!text);
-    const row = list[it.idx];
     const listed = findSkill(row?.skillId);
     const src = listed?.src || (it.name ? 'Custom' : '');
     const badge = $('[data-calc="src"]', rowEl);
