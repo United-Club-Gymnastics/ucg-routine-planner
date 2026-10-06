@@ -222,10 +222,11 @@ test('Advanced floor: double flip and double flipping dismount are detected from
   assert.equal(mid.detected.dblFlip, kolyvanov.name);
   assert.equal(mid.detected.dblDismount, undefined);
   assert.equal(mid.optionValues.dblDismount, 0);
-  // Last acrobatic skill is a double (a non-acrobatic skill after it doesn't matter): +0.1.
-  const end = scoreRoutine('fx', 'adv', [...routine.slice(0, 5), kolyvanov, sk('L-sit', 'A', 1)]);
+  // The last skill is a double: +0.1. Anything after it (even a non-acrobatic skill) means it isn't the dismount.
+  const end = scoreRoutine('fx', 'adv', [...routine.slice(0, 5), kolyvanov]);
   assert.equal(end.detected.dblDismount, kolyvanov.name);
   assert.equal(end.optionValues.dblDismount, 0.1);
+  assert.equal(scoreRoutine('fx', 'adv', [...routine.slice(0, 5), kolyvanov, sk('L-sit', 'A', 1)]).detected.dblDismount, undefined);
   // Typed in by hand: go by the name.
   assert.equal(scoreRoutine('fx', 'adv', [...routine, sk('Double back', 'C', 3)]).optionValues.dblDismount, 0.1);
   assert.equal(scoreRoutine('fx', 'adv', [...routine, sk('Back layout', 'A', 3)]).deductions, 0.3);

@@ -396,6 +396,7 @@ input::placeholder { color: var(--fg-muted); }
   color: var(--ucg-navy); font-size: var(--fs-xs); font-weight: 600;
 }
 .skill-pop:has(.pop-filter) .pop-head { top: 33px; }
+.pop-notice { padding: 8px 12px; background: #fff4d1; border-bottom: 1px solid #e7c65a; color: var(--ucg-navy); font-size: var(--fs-xs); font-weight: 600; }
 .pop-filter-btn {
   flex: none; border: 1.5px solid var(--ucg-navy); border-radius: var(--radius-btn); background: var(--ucg-white);
   color: var(--ucg-navy); padding: 3px 9px; font: inherit; font-weight: 700; cursor: pointer;
@@ -536,6 +537,21 @@ input::placeholder { color: var(--fg-muted); }
 .totals dt { font-family: var(--font-display); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted); }
 .totals dd { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
 .totals .grand dd { font-size: 2.2rem; color: var(--fg-accent); }
+.totals dt { display: inline-flex; align-items: center; justify-content: flex-end; gap: 3px; }
+
+/* (i) score explanations: hover or focus shows the bubble; tap toggles it. */
+.info-tip {
+  position: relative; display: inline-grid; place-items: center; width: 16px; height: 16px; padding: 0;
+  border: 0; border-radius: 50%; background: transparent; color: var(--fg-secondary); cursor: help; flex: none;
+}
+.info-tip::before { content: ''; position: absolute; inset: -8px; } /* bigger tap area */
+.info-tip:hover, .info-tip:focus-visible { color: var(--ucg-navy); }
+.tip-bubble {
+  position: fixed; z-index: 60; padding: 8px 10px; border-radius: var(--radius-sm);
+  background: var(--ucg-navy); color: var(--ucg-white); box-shadow: var(--shadow);
+  font-family: var(--font-body); font-size: var(--fs-xs); font-weight: 400; line-height: 1.4;
+  letter-spacing: normal; text-transform: none; text-align: left; pointer-events: none;
+}
 
 
 /* ---- Combined planner ---- */

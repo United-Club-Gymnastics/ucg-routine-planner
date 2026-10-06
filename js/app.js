@@ -21,7 +21,9 @@ import {
 import { findSkill, searchSkills, wagSkillAllowed } from './skill-search.js';
 import { EXAMPLES } from './data/examples.js';
 import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
+import * as mag from './scoring/mag.js';
 import { MAG_MASTERS_VAULTS, OTHER_VAULT } from './scoring/mag.js';
+import { mastersValue, vaultAgeBonus } from './scoring/masters.js';
 import { INFINITY_VAULT_LIST, WAG_MASTERS_VAULTS, WAG_OTHER_VAULT, WAG_WG_VAULTS, WG_TO_MASTERS, xcelVaults } from './scoring/wag.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -725,6 +727,8 @@ function onInput(ev) {
     const row = rowsOf(e, t.dataset.ev, t.dataset.pass)[Number(t.dataset.idx)];
     row[t.dataset.field] = t.dataset.field === 'dd' ? (t.value === '' ? '' : Number(t.value)) : t.value;
     if (['letter', 'eg', 'dd'].includes(t.dataset.field)) delete row.fromList; // chosen by hand: filters the list
+    // A skill from the list has its own value and group: changing them means a different skill.
+    if (['letter', 'eg'].includes(t.dataset.field) && row.skillId) return clearListedSkill(t, row);
     if (t.dataset.field === 'name') {
       if (row.skillId && findSkill(row.skillId)?.label !== t.value) delete row.skillId;
       openPicker(t, t.value);
@@ -734,9 +738,35 @@ function onInput(ev) {
   scheduleSave();
 }
 
+// The value or group of a skill picked from the list was changed: clear the skill and
+// open the list, narrowed to skills with the new values, so the gymnast picks the right one.
+function clearListedSkill(t, row) {
+  const e = entry();
+  const evId = t.dataset.ev;
+  const pass = t.dataset.pass;
+  const idx = Number(t.dataset.idx);
+  row.name = '';
+  delete row.skillId;
+  delete row.fromList;
+  if (e.disc === 'tt') row.notation = '';
+  renderRows(evId, pass, { row: idx, part: 'name' });
+  const input = $(`[data-routine="${evId}"]${pass != null && pass !== '' ? `[data-pass="${pass}"]` : ''} [data-row="${idx}"] .skill-input`);
+  if (input) {
+    picker.notice = 'Skill cleared because its value changed. Please select a new skill.';
+    openPicker(input, '');
+  }
+  scheduleSave();
+}
+
 function onChange(ev) {
   const t = ev.target;
   const e = entry();
+  // T&T: a new DD for a skill from the list (checked once the number is entered, not per keystroke).
+  if (t.dataset.field === 'dd' && t.dataset.ev) {
+    const row = rowsOf(e, t.dataset.ev, t.dataset.pass)[Number(t.dataset.idx)];
+    const listed = row?.skillId && findSkill(row.skillId);
+    if (listed && Number(listed.dd) !== Number(row.dd)) return clearListedSkill(t, row);
+  }
   if (t.id === 'f-vault') {
     e.vault = t.value;
     updateComputed();
@@ -898,6 +928,112 @@ function onPointerDown(ev) {
   addEventListener('pointercancel', end);
 }
 
+// ---- Score explanations (the (i) next to each score component) ---------------------
+// Brief, like the notes on the MAG start value worksheets.
+
+const ICON_INFO = `<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6"/><circle cx="12" cy="7.6" r="0.6" fill="currentColor"/></svg>`;
+const infoButton = (label, tip) => `<button type="button" class="info-tip" data-tip="${esc(tip)}" aria-label="About ${esc(label)}: ${esc(tip)}">${ICON_INFO}</button>`;
+
+function scoreTip(e, ev, label) {
+  const L = levelInfo(e.disc, e.level);
+  const fam = L.family;
+  const lvl = e.level;
+  const decade = e.decade ? `${DECADE_LABELS[e.decade]} ` : '';
+  if (e.disc === 'tt') {
+    if (label === 'Total DD') return ev.kind === 'passes' ? 'Both passes added together.' : 'The DD of every skill added together. A repeated skill earns no DD.';
+    if (/^Pass \d DD$/.test(label)) return 'The DD of the skills in this pass. A skill repeated in the same position earns none.';
+  }
+  if (ev.kind === 'vault') {
+    if (label === 'Execution') return 'Every vault starts from 10.0 for execution.';
+    if (label === 'D score') return "The vault's difficulty value from the vault table.";
+    if (label === 'Age bonus') return `Masters: added by age decade (${decade}gymnasts get +${fmt(vaultAgeBonus(e.disc, e.decade))}).`;
+    if (label === 'Start value') return fam === 'xcel' ? "From the Xcel vault chart for this level." : 'Execution + D score' + (L.masters ? ' + age bonus.' : '.');
+    return '';
+  }
+  const tips = {
+    Execution: 'Every routine starts from 10.0 for execution.',
+    'Start value': 'The sum of the parts to the left.',
+  };
+  if (fam === 'mag') {
+    const max = mag.LEVELS[lvl].maxSkills;
+    Object.assign(tips, {
+      Difficulty: L.masters
+        ? `Your 6 highest-value skills, valued for ${decade}gymnasts (an A is worth ${fmt(mastersValue('A', e.decade))}).`
+        : `Your ${max} highest-value skills: A 0.1, B 0.2, C 0.3 and so on. At most 4 count from one element group.`,
+      'EG bonus': {
+        dev: '+0.5 for each element group with a counting skill, up to 3 groups (+1.5).',
+        int: 'EG I: +0.5. EG II-IV: +0.5 with a B or higher, +0.3 with an A.',
+        adv: 'EG I: +0.5. Other groups: +0.5 for D or higher, +0.4 for C, +0.3 for A or B. The dismount group is worth the dismount\'s value (max 0.5).',
+        masters: "+0.5 for each group I-III with a skill at your decade's level. The dismount group is worth the dismount's value.",
+      }[lvl],
+      'Other bonus': 'Connection and event bonuses, from the options below.',
+      [`Short of ${mag.MIN_SKILLS}`]: `-${fmt(mag.LEVELS[lvl].shortDeduction)} for each skill fewer than ${mag.MIN_SKILLS}.`,
+      'Start value': mag.LEVELS[lvl].cap ? `The sum of the parts to the left, capped at ${fmt(mag.LEVELS[lvl].cap)} (the cap applies before the short-routine deduction).` : tips['Start value'],
+    });
+  } else if (fam === 'infinity') {
+    Object.assign(tips, {
+      Difficulty: 'Your 8 highest-value skills: A 0.1, B 0.3, C 0.5, D 0.7, E 0.9.',
+      'EG bonus': '+0.3 for each condensed group (I-IV) with a B or higher skill, counting or not.',
+      'Apparatus bonus': 'One-time +0.3 event bonus, from the option below.',
+      'Short of 6': '-1.0 for each skill fewer than 6.',
+    });
+  } else if (fam === 'wagMasters') {
+    Object.assign(tips, {
+      Difficulty: `Your 6 highest-value skills, valued for ${decade}gymnasts (an A is worth ${fmt(mastersValue('A', e.decade))}).`,
+      'EG bonus': "+0.5 for each condensed group (I-IV) with a skill at your decade's level, counting or not (max +2.0).",
+      'Short of 6': '-1.0 for each skill fewer than 6.',
+    });
+  } else if (fam === 'xcel') {
+    Object.assign(tips, {
+      Start: lvl === 'sapphire' ? 'Sapphire starts from 9.6, plus up to 0.4 bonus.' : 'Every routine starts from 10.0.',
+      Bonus: 'Sapphire: up to +0.4 connection or difficulty bonus, from the option below.',
+      'Missing SRs': '-0.50 for each special requirement not ticked.',
+      'Missing VPs': 'Each required value part not covered costs its value: A 0.1, B 0.3, C 0.5. A higher skill can fill a lower value part.',
+      Restricted: "-0.50 for each skill above this level's allowed difficulty (it earns no value part).",
+    });
+  }
+  return tips[label] || '';
+}
+
+// One floating bubble: hover or focus shows it; a tap toggles it (phones).
+const tipEl = document.createElement('div');
+tipEl.className = 'tip-bubble';
+tipEl.setAttribute('role', 'tooltip');
+tipEl.hidden = true;
+document.body.appendChild(tipEl);
+let tipFor = null;
+function showTip(btn) {
+  tipFor = btn;
+  tipEl.textContent = btn.dataset.tip;
+  tipEl.hidden = false;
+  const r = btn.getBoundingClientRect();
+  const w = Math.min(260, innerWidth - 16);
+  tipEl.style.maxWidth = `${w}px`;
+  const left = Math.min(Math.max(8, r.left + r.width / 2 - tipEl.offsetWidth / 2), innerWidth - tipEl.offsetWidth - 8);
+  const above = r.top - tipEl.offsetHeight - 8;
+  tipEl.style.left = `${left}px`;
+  tipEl.style.top = `${above > 8 ? above : r.bottom + 8}px`;
+}
+function hideTip() {
+  tipFor = null;
+  tipEl.hidden = true;
+}
+document.addEventListener('mouseover', (ev) => {
+  const b = ev.target.closest('[data-tip]');
+  if (b && b !== tipFor) showTip(b);
+  else if (!b && tipFor && matchMedia('(hover: hover)').matches) hideTip();
+});
+document.addEventListener('focusin', (ev) => ev.target.matches?.('[data-tip]') && showTip(ev.target));
+document.addEventListener('focusout', (ev) => ev.target === tipFor && hideTip());
+document.addEventListener('click', (ev) => {
+  const b = ev.target.closest('[data-tip]');
+  if (b) {
+    if (tipFor === b && !matchMedia('(hover: hover)').matches) hideTip();
+    else showTip(b);
+  } else if (tipFor) hideTip();
+});
+addEventListener('scroll', () => tipFor && hideTip(), true);
+
 // ---- Skill picker --------------------------------------------------------------
 // Typing in a skill name (or clicking its arrow) opens a list of skills for the
 // apparatus; picking one fills in the name and its value / EG (or shorthand / DD).
@@ -1005,12 +1141,14 @@ function closePicker() {
   picker.input.removeAttribute('aria-activedescendant');
   picker.input = null;
   picker.showAll = false;
+  picker.notice = '';
 }
 
 function renderPicker(query) {
   const e = entry();
   const spec = eventSpec(e, picker.input.dataset.ev);
   const html = [];
+  if (picker.notice) html.push(`<div class="pop-notice" role="status">${esc(picker.notice)}</div>`);
   if (picker.filter) {
     html.push(`<div class="pop-filter" role="presentation"><span>Only ${esc(picker.filter.label)} skills${picker.hidden ? ` (${picker.hidden} hidden)` : ''}</span><button type="button" class="pop-filter-btn" data-show-all>Show all</button></div>`);
   }
@@ -1252,7 +1390,10 @@ function updateComputed() {
     $$('.cg-list li', card).forEach((li) => li.classList.toggle('earned', (r.earnedGroups || []).includes(Number(li.dataset.cg))));
     const totals = r.totals || [];
     $(`[data-totals="${ev.id}"]`, card).innerHTML = totals
-      .map(([label, value], i) => `<div class="${i === totals.length - 1 ? 'grand' : ''}"><dt>${esc(label)}</dt><dd>${i === totals.length - 1 ? fmt(value) : signed(value)}</dd></div>`)
+      .map(([label, value], i) => {
+        const tip = scoreTip(e, ev, label);
+        return `<div class="${i === totals.length - 1 ? 'grand' : ''}"><dt>${esc(label)}${tip ? infoButton(label, tip) : ''}</dt><dd>${i === totals.length - 1 ? fmt(value) : signed(value)}</dd></div>`;
+      })
       .join('');
     const notes = [...(r.notes || []), ...(r.warnings || [])];
     $(`[data-notes="${ev.id}"]`, card).innerHTML = notes.length ? `<ul>${notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul>` : '';

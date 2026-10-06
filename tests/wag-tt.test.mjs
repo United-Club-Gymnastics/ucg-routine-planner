@@ -183,3 +183,7 @@ test('Forms: a record split into forms keeps its old id (form a); forms count as
   const f = scoreXcel('gold', 'fx', [ro, { name: 'Back tuck', letter: 'A' }, ro, { name: 'Back tuck', letter: 'A' }], { srMet: [1, 1, 1, 1] });
   assert.equal(f.items[2].repeatWhy, 'pass');
 });
+test('Trampoline: a ¾ somersault is not a repeat of the full somersault', () => {
+  const r = scoreTramp('if', [t('Front somersault tuck', 0.5, '40o'), t('¾ front somersault tuck', 0.3, '30o'), t('Front somersault tuck', 0.5, '40o')]);
+  assert.deepEqual(r.items.map((it) => it.status), ['counting', 'counting', 'repeat']);
+});

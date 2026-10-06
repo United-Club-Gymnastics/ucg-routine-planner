@@ -25,9 +25,9 @@ export const isDoubleSalto = (it) => (it.skillId ? FX_DOUBLE_SALTOS.includes(it.
 const DETECT = {
   swingHs: (skills) => skills.find((it) => SWING_HS.includes(it.skillId)),
   dblFlip: (skills) => skills.find(isDoubleSalto),
-  // The dismount is the last acrobatic skill (EG II-IV, or a double typed in by hand).
+  // The dismount is the last skill in the routine.
   dblDismount: (skills) => {
-    const last = skills.findLast((it) => [2, 3, 4].includes(it.eg) || isDoubleSalto(it));
+    const last = skills.at(-1);
     return last && isDoubleSalto(last) ? last : undefined;
   },
 };
@@ -128,7 +128,7 @@ export function eventOptions(event, level) {
     o.push({ id: 'conn2', kind: 'count', value: 0.2, max: 5, label: 'D or higher + D or higher connection', help: '+0.2 each' });
     if (level === 'adv') {
       o.push({ id: 'dblDismount', kind: 'check', value: 0.1, detect: true, label: 'Double flipping dismount',
-        help: '+0.1. Ticked automatically when the last acrobatic skill listed is a double salto.' });
+        help: '+0.1. Ticked automatically when the last skill listed is a double or triple salto.' });
       o.push({ id: 'dblFlip', kind: 'check', value: 0.3, deduction: true, detect: true, label: 'Routine includes a double flip',
         help: 'Required: -0.3 neutral deduction if missing. Ticked automatically for a double salto from the skill list.' });
     }
@@ -162,7 +162,11 @@ const isFilled = (s) => !!(s && (String(s.name || '').trim() || s.letter));
 export const SR_MAX_STATIC = 3; // WG rings: EG II/III skills before a B or higher EG I skill
 
 // "Back giant", "backgiant" and "Back-Giant" are the same skill.
-export const skillKey = (name) => String(name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+// Repeat matching ignores case, spaces and punctuation, but not fractions: "¾ front
+// somersault" and "front somersault" are different skills (¾ -> 3/4 -> "34").
+const FRACTIONS = { '½': '1/2', '¼': '1/4', '¾': '3/4' };
+export const skillKey = (name) =>
+  String(name || '').toLowerCase().replace(/[½¼¾]/g, (c) => FRACTIONS[c]).replace(/[^a-z0-9]/g, '');
 
 // Element group bonus for one group, from the highest-value counting skill in it.
 function groupBonus(level, event, eg, value) {

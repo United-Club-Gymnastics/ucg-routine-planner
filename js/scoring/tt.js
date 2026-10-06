@@ -4,7 +4,11 @@
 // flags those instead of computing a score.
 export const round1 = (n) => Math.round(n * 10) / 10;
 const isFilled = (s) => !!(s && (String(s.name || '').trim() || s.notation || s.dd !== '' && s.dd != null && s.dd !== undefined));
-export const skillKey = (name) => String(name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+// Repeat matching ignores case, spaces and punctuation, but not fractions: "¾ front
+// somersault" and "front somersault" are different skills (¾ -> 3/4 -> "34").
+const FRACTIONS = { '½': '1/2', '¼': '1/4', '¾': '3/4' };
+export const skillKey = (name) =>
+  String(name || '').toLowerCase().replace(/[½¼¾]/g, (c) => FRACTIONS[c]).replace(/[^a-z0-9]/g, '');
 
 export const TRAMP_SKILLS = 10;
 export const PASS_SIZES = {
