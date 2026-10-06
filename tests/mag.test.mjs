@@ -197,7 +197,7 @@ test('Masters: Misc skills count from the 50s; not in the 30s', () => {
 test('Masters vault: WG value plus the age bonus', () => {
   assert.equal(scoreVault('masters', '202', { decade: '40' }).startValue, 13.0); // 10 + 1.4 + 1.6
   assert.equal(scoreVault('masters', 'other', { decade: '70' }).startValue, 13.2);
-  assert.equal(scoreVault('masters', 'UCGM-mag-straight-hecht-over-table', { decade: '50' }).startValue, 13.6); // 10 + 1.2 + 2.4
+  assert.equal(scoreVault('masters', 'UCGM-mag-straight-hecht-over-table', { decade: '50' }).startValue, 14.0); // 10 + 1.6 (box value) + 2.4
 });
 
 test('Advanced rings: a listed swing to handstand (I.75, I.81, I.86-88) meets the requirement', () => {

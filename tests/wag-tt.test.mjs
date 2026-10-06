@@ -61,6 +61,7 @@ test('WAG Masters: decade values, EG +0.5 from any skill, 6 count', () => {
   assert.equal(scoreWagMastersVault('1.11', { decade: '60' }).sv, 16.6); // Yamashita 1/2: 10 + 2.4 + 4.2
   assert.equal(scoreWagMastersVault('UCGM-wag-pike-hecht-over-table', { decade: '30' }).sv, 12.9); // 10 + 1.1 + 1.8
   assert.equal(scoreWagMastersVault('other', { decade: '70' }).sv, 15.0);
+  assert.equal(scoreWagMastersVault('UCGM-wag-forward-headspring', { decade: '50' }).sv, 14.2); // 10 + 0.8 + 3.4
 });
 
 // ---- T&T ----
