@@ -9231,9 +9231,21 @@
         "form": "c",
         "name": "Back walkover from tuck sit",
         "eponym": "Valdez"
+      },
+      {
+        "form": "d",
+        "name": "One-arm front walkover"
+      },
+      {
+        "form": "e",
+        "name": "Front walkover, one hand then the other"
+      },
+      {
+        "form": "f",
+        "name": "One-arm back walkover"
       }
     ],
-    "forms_rule": "Box note: all are considered as different elements. The box pictures six variations; the forward, backward and from-tuck-sit walkovers are named here, and the other pictured variations count as different elements too.",
+    "forms_rule": "Box note: all are considered as different elements. The box pictures six variations: front walkover, one-arm front walkover, front walkover from one arm to the other, back walkover, one-arm back walkover, and back walkover from tuck sit (identified by Nate from the drawings).",
     "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 17, 5.101 note"
   },
   {
