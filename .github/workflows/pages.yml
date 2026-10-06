@@ -32,6 +32,10 @@ jobs:
         run: npm test
       - name: Build the site (bundled, hashed file names) into _site/
         run: npm run build
+      - name: Smoke test the built site in a browser
+        run: |
+          npx playwright install --with-deps chromium
+          npm run smoke
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
