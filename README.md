@@ -75,11 +75,32 @@ MAG Dev/Int/Adv, MAG Masters and the T&T cards are the printouts people already 
 ## Develop locally
 
 ```bash
-npm start      # serves on http://localhost:8080
+npm start      # serves the source on http://localhost:8080 (no build needed)
 npm test       # scoring tests (Node 20+)
 ```
 
-Open <http://localhost:8080/?local> to try it without signing in (saved in that browser only). Pushing to `main` runs the tests and publishes to GitHub Pages.
+Open <http://localhost:8080/?local> to try it without signing in (saved in that browser only). In development the files load as they are: Firebase and pdf-lib come from their CDNs, and there's no service worker.
+
+## Build and deploy
+
+Pushing to `main` runs `.github/workflows/pages.yml`: `npm ci`, the scoring tests, `npm run build`, a browser smoke test of the build, then publishes `_site/` to GitHub Pages. To do the same locally:
+
+```bash
+npm ci                                  # once: esbuild, Firebase, pdf-lib, Playwright
+npm run build                           # -> _site/
+npm run preview                         # http://localhost:8139/ucg-routine-planner/ (like GitHub Pages)
+npx playwright install chromium         # once
+npm run smoke                           # browser smoke test of _site/
+```
+
+What the build does (`tools/build_site.mjs`):
+- **Bundles** `js/app.js` with esbuild, with code splitting and hashed file names. Startup is about 140 KB of JavaScript. Firebase, PDF export, the skill catalog and each discipline's skill lists (`loadDiscipline` in `js/skill-search.js`) are separate chunks, loaded on demand and fetched ahead (on hovering a level, Export PDF, or showing the copy panel).
+- **Swaps the pinned CDN imports** for the same versions from npm (`CDN` in the build script), so the live site doesn't depend on those CDNs. If you add a CDN import, pin it there too or the build fails.
+- **Writes `sw.js`** (from `tools/sw-template.js`): a service worker that stores every file of the build on the device (about 1.25 MB, once). The planner opens instantly and works offline, including PDF export. Each build is a version; after a deploy, open pages show "A new version of the planner is ready — Reload".
+
+Offline data: Firestore keeps a copy on the device. Edits save there with no signal ("Saved on this device · will sync when online") and sync later. Changes made on another device arrive live, but never redraw the screen while you're typing ("Changed on another device — Load latest").
+
+The font (Saira Condensed, OFL) is served from `assets/fonts/`.
 
 ## Design
 

@@ -1673,6 +1673,20 @@ async function onUser(user) {
   if (!user.local) stopWatching = store.watchAthletes(applyRemote);
 }
 
+// ---- Errors -------------------------------------------------------------------------
+// Anything unexpected shows a message with a Reload button instead of failing silently.
+// Harmless browser noise and dropped connections (handled where they happen) are ignored.
+const IGNORED_ERRORS = /ResizeObserver loop|AbortError|aborted|^Failed to fetch$|^Load failed$|NetworkError when attempting to fetch/i;
+function reportError(err) {
+  const msg = String(err?.message || err || '');
+  if (!msg || err?.name === 'AbortError' || IGNORED_ERRORS.test(msg)) return;
+  // A lazy part of the planner that no longer exists: a newer version has replaced this page's.
+  const stale = /dynamically imported module|Importing a module script failed|error loading dynamically imported/i.test(msg);
+  showToast('error-toast', stale ? 'A new version of the planner is available.' : 'Something went wrong.', 'Reload', () => location.reload());
+}
+addEventListener('error', (ev) => reportError(ev.error || ev.message));
+addEventListener('unhandledrejection', (ev) => reportError(ev.reason));
+
 // ---- Updates ----------------------------------------------------------------------
 // The built site runs a service worker (tools/sw-template.js) that keeps the planner on the
 // device. A new deploy installs in the background; offer to switch to it.
