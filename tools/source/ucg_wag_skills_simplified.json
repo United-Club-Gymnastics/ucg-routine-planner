@@ -1220,7 +1220,20 @@
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "UB",
-    "source": "USAG Xcel 2022-2028"
+    "source": "USAG Xcel 2022-2028",
+    "forms": [
+      {
+        "form": "a",
+        "name": "Jump to HB hang, kip",
+        "note": "also with reverse grip"
+      },
+      {
+        "form": "b",
+        "name": "Jump to HB, hop down to LB kip"
+      }
+    ],
+    "forms_rule": "The paragraph runs two different mounts together: a kip on the high bar after a jump to hang, and a jump to the high bar that drops to a kip on the low bar.",
+    "forms_citation": "Development Program 2026 UB 1.106 prints them as separate paragraphs (-1/-2 and -3); user review Oct 2026"
   },
   {
     "number": "1.206",
