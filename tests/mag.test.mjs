@@ -1,6 +1,10 @@
 // Run with: npm test
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { loadDiscipline } from '../js/skill-search.js';
+
+// Skill lists load per discipline (as the app does before showing an athlete).
+await Promise.all(['wag', 'mag', 'tt'].map(loadDiscipline));
 import { scoreRoutine, scoreVault, scoreAthlete } from '../js/scoring/mag.js';
 
 const s = (name, letter, eg) => ({ name, letter, eg });

@@ -19,8 +19,7 @@ import {
   normalizeEntry,
   scoreEntry,
 } from './model.js';
-import { findSkill, magSkillAllowed, searchSkills, wagSkillAllowed } from './skill-search.js';
-import { EXAMPLES } from './data/examples.js';
+import { EXAMPLES, disciplineLoaded, findSkill, loadDiscipline, magSkillAllowed, searchSkills, wagSkillAllowed } from './skill-search.js';
 import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
 import * as mag from './scoring/mag.js';
 import { MAG_MASTERS_VAULTS, OTHER_VAULT } from './scoring/mag.js';
@@ -367,6 +366,17 @@ window.addEventListener('beforeunload', (ev) => {
 function renderAll() {
   renderAthletePicker();
   const a = athlete();
+  // The athlete's disciplines' skill lists load on demand; draw once they're here, so every
+  // listed skill is recognised (badges, box numbers, and its id kept when saving).
+  const missing = [...new Set((a?.entries || []).map((x) => x.disc))].filter((d) => !disciplineLoaded(d));
+  if (missing.length) {
+    app.innerHTML = `<p class="loading">Loading…</p>`;
+    Promise.all(missing.map(loadDiscipline)).then(renderAll, (err) => {
+      console.error(err);
+      app.innerHTML = `<p class="error">Couldn't load the skill lists. Check your connection, then <a href="">reload</a>.</p>`;
+    });
+    return;
+  }
   if (!a) {
     app.innerHTML = `
       <section class="page-head"><div class="page-head-inner"><p class="eyebrow">WAG · MAG · T&amp;T</p><h1>Routine planner</h1></div></section>
@@ -755,6 +765,11 @@ function bindEditor(a, e) {
     state.showAdd = false;
     renderAll();
   }));
+  $$('[data-add]').forEach((b) => {
+    const prefetch = () => loadDiscipline(b.dataset.add.split(':')[0]).catch(() => {});
+    b.addEventListener('pointerenter', prefetch, { once: true });
+    b.addEventListener('focus', prefetch, { once: true });
+  });
   $$('[data-add]').forEach((b) => (b.onclick = () => {
     const [d, l] = b.dataset.add.split(':');
     const have = a.entries.find((x) => x.disc === d && x.level === l);
@@ -783,6 +798,10 @@ function bindEditor(a, e) {
     scheduleSave();
     updateComputed();
   });
+  // Fetch ahead: the PDF code when Export is about to be used; the catalog with the copy panel.
+  const warmPdf = () => import('./pdf.js').catch(() => {});
+  $$('#export-all, [data-export]').forEach((b) => ['pointerenter', 'focus', 'touchstart'].forEach((ev) => b.addEventListener(ev, warmPdf, { once: true, passive: true })));
+  if ($('#copy-run') && e.disc !== 'tt') import(`./data/catalog-${e.disc}.js`).catch(() => {});
   const copySrc = $('#copy-src');
   if (copySrc) copySrc.onchange = () => ($('#copy-run').dataset.src = copySrc.value);
   $('#copy-run')?.addEventListener('click', async (ev) => {
@@ -854,7 +873,10 @@ function onInput(ev) {
     // A skill from the list has its own value and group: changing them means a different skill.
     if (['letter', 'eg'].includes(t.dataset.field) && row.skillId) return clearListedSkill(t, row);
     if (t.dataset.field === 'name') {
-      if (row.skillId && findSkill(row.skillId)?.label !== t.value) delete row.skillId;
+      // Typing a different name makes it a typed-in skill (but never drop an id just because
+      // its list isn't loaded).
+      const listed = row.skillId && findSkill(row.skillId);
+      if (listed && listed.label !== t.value) delete row.skillId;
       openPicker(t, t.value);
     }
   } else return;

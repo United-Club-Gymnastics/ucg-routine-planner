@@ -7,11 +7,9 @@
 // "UCG FX 12", "Masters PB 12") and other names coaches use (aka), from the skill catalog.
 // WG names use CoP shorthand ("Salto bwd. str. w. 1/1 t."), so common words are
 // mapped onto it: "back layout full" finds that skill.
-import { SKILLS as MAG_SKILLS } from './data/mag-skills.js';
-import { SKILLS as WAG_SKILLS } from './data/wag-skills.js';
-import { SKILLS as TT_SKILLS } from './data/tt-skills.js';
-import { SKILLS as MASTERS_SKILLS } from './data/masters-skills.js';
-import { INDEX } from './data/skill-index.js';
+// Each discipline's lists load on demand (loadDiscipline), so a T&T coach never downloads
+// the WAG list. Callers wait for an athlete's disciplines before showing them (app.js
+// renderAll), so findSkill / searchSkills always see the data they need.
 
 const FRACTIONS = { '½': '1/2', '¼': '1/4', '¾': '3/4' };
 const ALIASES = {
@@ -49,17 +47,14 @@ function tokens(text) {
 
 export const skillLabel = (s) => (s.eponym ? `${s.name} (${s.eponym})` : s.name);
 
-const ALL = {
-  mag: [...MAG_SKILLS, ...MASTERS_SKILLS.filter((s) => s.disc === 'mag')],
-  wag: [...WAG_SKILLS, ...MASTERS_SKILLS.filter((s) => s.disc === 'wag')],
-  tt: TT_SKILLS,
-};
 const byApp = {};
-for (const [disc, list] of Object.entries(ALL)) {
+const SKILL_INDEX = new Map();
+
+function add(disc, list, index = {}) {
   for (const s of list) {
     s.disc = disc;
     s.label = skillLabel(s);
-    const info = INDEX[s.id] || {};
+    const info = index[s.id] || {};
     s.box = info.l || '';
     s.page = info.p || null;
     s.aka = info.a || s.aka || [];
@@ -68,11 +63,42 @@ for (const [disc, list] of Object.entries(ALL)) {
     s.akaTokens = s.aka.map((a) => tokens(a)); // other names count as the name
     s.boxTokens = tokens(s.box); // "7.104" or "I.75" finds the skill
     (byApp[`${disc}.${s.app}`] ||= []).push(s);
+    SKILL_INDEX.set(s.id, s);
+    // A USAG record later split into forms keeps its old id as an alias of form "a".
+    if (s.alias) SKILL_INDEX.set(s.alias, s);
   }
 }
-const SKILL_INDEX = new Map(Object.values(ALL).flat().map((s) => [s.id, s]));
-// A USAG record later split into forms keeps its old id as an alias of form "a".
-for (const s of WAG_SKILLS) if (s.alias) SKILL_INDEX.set(s.alias, s);
+
+// Example routines (T&T, MAG Developmental / Intermediate) load with those disciplines.
+export let EXAMPLES = [];
+const examples = () => import('./data/examples.js').then((m) => (EXAMPLES = m.EXAMPLES));
+
+const LOADERS = {
+  wag: () =>
+    Promise.all([import('./data/wag-skills.js'), import('./data/masters-skills-wag.js'), import('./data/skill-index-wag.js')]).then(
+      ([a, b, ix]) => add('wag', [...a.SKILLS, ...b.SKILLS], ix.INDEX)
+    ),
+  mag: () =>
+    Promise.all([import('./data/mag-skills.js'), import('./data/masters-skills-mag.js'), import('./data/skill-index-mag.js'), examples()]).then(
+      ([a, b, ix]) => add('mag', [...a.SKILLS, ...b.SKILLS], ix.INDEX)
+    ),
+  tt: () => Promise.all([import('./data/tt-skills.js'), examples()]).then(([t]) => add('tt', t.SKILLS)),
+};
+const loading = {};
+const loaded = new Set();
+
+/** Load a discipline's skill lists (once). Resolves when findSkill / searchSkills have them. */
+export function loadDiscipline(disc) {
+  if (!LOADERS[disc]) return Promise.resolve();
+  loading[disc] ||= LOADERS[disc]()
+    .then(() => loaded.add(disc))
+    .catch((err) => {
+      delete loading[disc]; // try again next time (e.g. a dropped connection on first visit)
+      throw err;
+    });
+  return loading[disc];
+}
+export const disciplineLoaded = (disc) => loaded.has(disc) || !LOADERS[disc];
 
 const VALUE_ORDER = ['Sub-A', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
 const order = (a, b) =>
