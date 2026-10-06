@@ -88,6 +88,8 @@ const head = [
   // Sign-in and the database talk to these as soon as Firebase starts.
   '<link rel="preconnect" href="https://firestore.googleapis.com" crossorigin />',
   '<link rel="preconnect" href="https://identitytoolkit.googleapis.com" crossorigin />',
+  // Offline use and instant reopening (sw.js, built below); the page shows when an update is ready.
+  `<script>if ('serviceWorker' in navigator) addEventListener('load', () => navigator.serviceWorker.register('sw.js'));</script>`,
 ];
 html = html.replace('</head>', `    ${head.join('\n    ')}\n  </head>`);
 if (html.includes('__BUILD__') || html.includes('importmap')) throw new Error('index.html still has development-only parts');
@@ -111,5 +113,14 @@ const walk = (dir) => {
   }
 };
 walk(OUT);
-writeFileSync(join(OUT, 'build-files.json'), JSON.stringify(files.sort(), null, 1));
+files.sort();
+writeFileSync(join(OUT, 'build-files.json'), JSON.stringify(files, null, 1));
 if (!existsSync(join(OUT, 'index.html'))) throw new Error('no index.html');
+
+// Service worker: this build's version and every file to keep on the device.
+const version = hash(Buffer.concat(files.map((f) => readFileSync(join(OUT, f)))));
+const sw = readFileSync(join(ROOT, 'tools', 'sw-template.js'), 'utf8')
+  .replace("'__VERSION__'", JSON.stringify(version))
+  .replace('__FILES__', JSON.stringify(files.filter((f) => f !== 'build-files.json')));
+writeFileSync(join(OUT, 'sw.js'), sw);
+console.log(`service worker: version ${version}, ${files.length - 1} files`);

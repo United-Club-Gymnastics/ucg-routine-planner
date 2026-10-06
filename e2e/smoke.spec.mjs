@@ -34,3 +34,20 @@ test('signed-out: the sign-in screen appears (Firebase loads)', async ({ page })
   await expect(page.locator('#guest-btn')).toBeVisible();
   expect(errors.filter((e) => !/firestore|identitytoolkit|googleapis|ERR_/i.test(e))).toEqual([]);
 });
+
+test('offline: after one visit the planner opens and exports with no network', async ({ page, context }) => {
+  const errors = watchErrors(page);
+  await page.goto('./?local');
+  await page.evaluate(() => navigator.serviceWorker.ready);
+  await page.reload();
+  await expect.poll(() => page.evaluate(() => !!navigator.serviceWorker.controller)).toBe(true);
+  await context.setOffline(true);
+  await page.reload();
+  await page.locator('.empty-editor').getByRole('button', { name: 'Add athlete' }).click();
+  await page.getByRole('button', { name: 'Xcel Gold' }).click();
+  const download = page.waitForEvent('download'); // PDF code and worksheet come from the device
+  await page.locator('#export-all').click();
+  expect((await download).suggestedFilename()).toMatch(/\.pdf$/);
+  await context.setOffline(false);
+  expect(errors).toEqual([]);
+});

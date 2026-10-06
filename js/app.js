@@ -1570,6 +1570,44 @@ async function onUser(user) {
   renderAll();
 }
 
+// ---- Updates ----------------------------------------------------------------------
+// The built site runs a service worker (tools/sw-template.js) that keeps the planner on the
+// device. A new deploy installs in the background; offer to switch to it.
+function watchForUpdates() {
+  const sw = navigator.serviceWorker;
+  if (!sw) return;
+  const hadController = !!sw.controller; // the very first install doesn't need a reload
+  let reloading = false;
+  sw.addEventListener('controllerchange', () => {
+    if (hadController && !reloading) {
+      reloading = true;
+      location.reload();
+    }
+  });
+  sw.getRegistration().then((reg) => {
+    if (!reg) return;
+    const offer = (worker) => worker && sw.controller && showUpdate(worker);
+    offer(reg.waiting);
+    reg.addEventListener('updatefound', () => {
+      const w = reg.installing;
+      w?.addEventListener('statechange', () => w.state === 'installed' && offer(w));
+    });
+    // Look for a new version whenever the planner comes back to the foreground.
+    document.addEventListener('visibilitychange', () => document.visibilityState === 'visible' && reg.update().catch(() => {}));
+  });
+}
+function showUpdate(worker) {
+  if ($('#update-toast')) return;
+  const el = document.createElement('div');
+  el.id = 'update-toast';
+  el.className = 'toast';
+  el.setAttribute('role', 'status');
+  el.innerHTML = `<span>A new version of the planner is ready.</span><button type="button" class="toast-btn">Reload</button>`;
+  $('button', el).onclick = () => worker.postMessage('skipWaiting');
+  document.body.appendChild(el);
+}
+watchForUpdates();
+
 store.init(onUser).catch((e) => {
   console.error(e);
   app.innerHTML = `<p class="error">Could not start the app: ${esc(e?.message || e)}</p>`;

@@ -762,3 +762,15 @@ input::placeholder { color: var(--fg-muted); }
   .editor-actions { width: 100%; }
   .save-status { text-align: left; flex: 1; }
 }
+
+/* "A new version is ready — Reload" (and other app-wide messages): white on navy. */
+.toast {
+  position: fixed; z-index: 70; left: 50%; bottom: 16px; transform: translateX(-50%); max-width: calc(100vw - 32px);
+  display: flex; align-items: center; gap: 14px; padding: 10px 12px 10px 16px; border-radius: var(--radius);
+  background: var(--ucg-navy); color: var(--ucg-white); box-shadow: var(--shadow-lg); font-size: var(--fs-sm);
+}
+.toast-btn {
+  flex: none; border: 0; border-radius: var(--radius-btn); padding: 7px 12px; cursor: pointer;
+  background: var(--ucg-white); color: var(--ucg-navy); font: inherit; font-weight: 700;
+}
+.toast-btn:hover { background: var(--ucg-light-blue); }
