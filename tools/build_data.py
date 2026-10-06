@@ -102,7 +102,8 @@ def wag():
             form = {**row, "id": fid, "name": f["name"], "eponym": f.get("eponym", row["eponym"]), "value": f.get("value", row["value"])}
             if f.get("element_group"):
                 form["group"] = int(f["element_group"])
-            form["note"] = s.get("forms_rule") or row["note"]
+            # Hover note: the form's own detail ("also with alternating hands", ...), then the Code rule.
+            form["note"] = " — ".join(x for x in (f.get("note"), s.get("forms_rule") or row["note"]) if x)
             if f["form"] == "a":
                 form["alias"] = row["id"]
                 links["aliases"][row["id"]] = fid

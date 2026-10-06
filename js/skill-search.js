@@ -41,6 +41,7 @@ for (const [disc, list] of Object.entries(ALL)) {
     s.disc = disc;
     s.label = skillLabel(s);
     s.tokens = tokens(`${s.label} ${s.note || ''} ${s.notation || ''}`);
+    s.nameTokens = tokens(`${s.label} ${s.notation || ''}`); // ranking: a match in the name beats one only in the note
     (byApp[`${disc}.${s.app}`] ||= []).push(s);
   }
 }
@@ -74,9 +75,11 @@ export function findSkill(id) {
 
 // Skills for an apparatus matching every typed word (as a word start).
 // With nothing typed: the whole list by element group (no EG first), value,
-// then UCG before WG. While searching: closest matches (fewest extra words) first.
+// then UCG before WG. While searching: matches in the name before matches only in a
+// note, then closest matches (fewest extra words) first.
 export function searchSkills(disc, app, query) {
   const q = tokens(query);
   const list = (byApp[`${disc}.${app}`] || []).filter((s) => q.every((w) => s.tokens.some((t) => t.startsWith(w))));
-  return list.sort(q.length ? (a, b) => a.tokens.length - b.tokens.length || order(a, b) : order);
+  const inName = (s) => q.every((w) => s.nameTokens.some((t) => t.startsWith(w)));
+  return list.sort(q.length ? (a, b) => inName(b) - inName(a) || a.nameTokens.length - b.nameTokens.length || order(a, b) : order);
 }

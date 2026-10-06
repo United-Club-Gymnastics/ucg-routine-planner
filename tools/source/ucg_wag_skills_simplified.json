@@ -7023,7 +7023,8 @@
     "forms": [
       {
         "form": "a",
-        "name": "Back walkover, also alternating hands or to sit"
+        "name": "Back walkover",
+        "note": "also with alternating hands, or swinging down to cross sit"
       },
       {
         "form": "b",
@@ -9357,7 +9358,9 @@
       },
       {
         "form": "c",
-        "name": "Cartwheel with flight before or after hands"
+        "name": "Cartwheel with flight phase",
+        "note": "flight before or after the hands; flagged as hand-support flight by the plain meaning of the term (the Code gives no list)",
+        "hand_support_flight": true
       },
       {
         "form": "d",
@@ -9419,7 +9422,8 @@
     "forms": [
       {
         "form": "a",
-        "name": "Back handspring (two feet or step-out)",
+        "name": "Back handspring",
+        "note": "two-foot landing or step-out",
         "hand_support_flight": true
       },
       {
@@ -9497,7 +9501,8 @@
       },
       {
         "form": "b",
-        "name": "Front layout (also step-out)"
+        "name": "Front layout",
+        "note": "step-out or two-foot landing"
       },
       {
         "form": "c",
@@ -9580,7 +9585,8 @@
     "forms": [
       {
         "form": "a",
-        "name": "Back tuck (also step-out)"
+        "name": "Back tuck",
+        "note": "step-out or two-foot landing"
       },
       {
         "form": "b",
@@ -9588,7 +9594,8 @@
       },
       {
         "form": "c",
-        "name": "Back layout (also step-out)"
+        "name": "Back layout",
+        "note": "step-out or two-foot landing"
       }
     ],
     "forms_rule": "Saltos in different body positions are different elements; step-out vs two-foot landing is the same.",
