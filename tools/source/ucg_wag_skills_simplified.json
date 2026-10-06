@@ -4326,7 +4326,7 @@
     "number": "1.201",
     "variant": 1,
     "description": "Jump mount with ½ turn in air",
-    "value": "A",
+    "value": "B",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
@@ -4334,14 +4334,13 @@
     "source": "USAG Xcel 2022-2028",
     "markers": [
       "D"
-    ],
-    "table_value": "B"
+    ]
   },
   {
     "number": "1.201",
     "variant": 2,
     "description": "Straddle jump mount at beam end",
-    "value": "A",
+    "value": "B",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
@@ -4349,14 +4348,13 @@
     "source": "USAG Xcel 2022-2028",
     "markers": [
       "D"
-    ],
-    "table_value": "B"
+    ]
   },
   {
     "number": "1.301",
     "variant": 1,
     "description": "Switch split jump mount",
-    "value": "A",
+    "value": "C",
     "eponym": "Whipple",
     "element_group": "1",
     "group_name": "Mounts",
@@ -4364,14 +4362,13 @@
     "source": "USAG Xcel 2022-2028",
     "markers": [
       "D"
-    ],
-    "table_value": "C"
+    ]
   },
   {
     "number": "1.401",
     "variant": 1,
     "description": "Jump mount with full turn in air",
-    "value": "A",
+    "value": "D",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
@@ -4379,14 +4376,13 @@
     "source": "USAG Xcel 2022-2028",
     "markers": [
       "D"
-    ],
-    "table_value": "D"
+    ]
   },
   {
     "number": "1.401",
     "variant": 2,
     "description": "Switch leap mount at beam end",
-    "value": "A",
+    "value": "D",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
@@ -4394,8 +4390,7 @@
     "source": "USAG Xcel 2022-2028",
     "markers": [
       "D"
-    ],
-    "table_value": "D"
+    ]
   },
   {
     "number": "1.102",
@@ -4446,7 +4441,7 @@
     "number": "1.202",
     "variant": 1,
     "description": "Thief vault mount to rear support",
-    "value": "A",
+    "value": "B",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
@@ -4454,8 +4449,7 @@
     "source": "USAG Xcel 2022-2028",
     "markers": [
       "D"
-    ],
-    "table_value": "B"
+    ]
   },
   {
     "number": "1.103",
@@ -4475,7 +4469,7 @@
     "number": "1.203",
     "variant": 1,
     "description": "Kehre-in mount, ½ turn to rear support",
-    "value": "A",
+    "value": "B",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
@@ -4483,14 +4477,13 @@
     "source": "USAG Xcel 2022-2028",
     "markers": [
       "NA"
-    ],
-    "table_value": "B"
+    ]
   },
   {
     "number": "1.303",
     "variant": 1,
     "description": "Two flank circles into flair",
-    "value": "A",
+    "value": "C",
     "eponym": "Baitova",
     "element_group": "1",
     "group_name": "Mounts",
@@ -4498,14 +4491,13 @@
     "source": "USAG Xcel 2022-2028",
     "markers": [
       "NA"
-    ],
-    "table_value": "C"
+    ]
   },
   {
     "number": "1.403",
     "variant": 1,
     "description": "Three flying flairs",
-    "value": "A",
+    "value": "D",
     "eponym": "Homma",
     "element_group": "1",
     "group_name": "Mounts",
@@ -4513,8 +4505,7 @@
     "source": "USAG Xcel 2022-2028",
     "markers": [
       "NA"
-    ],
-    "table_value": "D"
+    ]
   },
   {
     "number": "1.104",
@@ -4534,7 +4525,7 @@
     "number": "1.204",
     "variant": 1,
     "description": "Jump with ½ turn to straddle support",
-    "value": "A",
+    "value": "B",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
@@ -4543,14 +4534,13 @@
     "markers": [
       "D"
     ],
-    "revised": true,
-    "table_value": "B"
+    "revised": true
   },
   {
     "number": "1.204",
     "variant": 2,
     "description": "Back-to-beam straddle jump over to front support",
-    "value": "A",
+    "value": "B",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
@@ -4559,14 +4549,13 @@
     "markers": [
       "D"
     ],
-    "revised": true,
-    "table_value": "B"
+    "revised": true
   },
   {
     "number": "1.304",
     "variant": 1,
     "description": "Round-off straddle-over mount to back hip circle",
-    "value": "A",
+    "value": "C",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
@@ -4574,8 +4563,7 @@
     "source": "USAG Xcel 2022-2028",
     "markers": [
       "D"
-    ],
-    "table_value": "C"
+    ]
   },
   {
     "number": "1.105",
@@ -4609,7 +4597,7 @@
     "number": "1.305",
     "variant": 1,
     "description": "Two-foot jump mount to cross split sit",
-    "value": "A",
+    "value": "C",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
@@ -4617,14 +4605,13 @@
     "source": "USAG Xcel 2022-2028",
     "markers": [
       "D"
-    ],
-    "table_value": "C"
+    ]
   },
   {
     "number": "1.305",
     "variant": 2,
     "description": "Jump mount with ½ turn into split sit",
-    "value": "A",
+    "value": "C",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
@@ -4632,14 +4619,13 @@
     "source": "USAG Xcel 2022-2028",
     "markers": [
       "D"
-    ],
-    "table_value": "C"
+    ]
   },
   {
     "number": "1.405",
     "variant": 1,
     "description": "Switch leap mount to split sit",
-    "value": "A",
+    "value": "D",
     "eponym": "Whitney",
     "element_group": "1",
     "group_name": "Mounts",
@@ -4647,8 +4633,7 @@
     "source": "USAG Xcel 2022-2028",
     "markers": [
       "D"
-    ],
-    "table_value": "D"
+    ]
   },
   {
     "number": "1.106",
@@ -4668,7 +4653,7 @@
     "number": "1.206",
     "variant": 1,
     "description": "Squat/stoop-through mount to pike support hold",
-    "value": "A",
+    "value": "B",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
@@ -4676,8 +4661,7 @@
     "source": "USAG Xcel 2022-2028",
     "markers": [
       "NA"
-    ],
-    "table_value": "B"
+    ]
   },
   {
     "number": "1.107",
@@ -4694,13 +4678,12 @@
     "number": "1.207",
     "variant": 1,
     "description": "Free forward roll mount, beam end",
-    "value": "A",
+    "value": "B",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "B"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.108",
@@ -4730,49 +4713,45 @@
     "number": "1.208",
     "variant": 1,
     "description": "Chest stand, ½ turn to shoulder stand",
-    "value": "A",
+    "value": "B",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "B"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.308",
     "variant": 1,
     "description": "Chest stand with full turn",
-    "value": "A",
+    "value": "C",
     "eponym": "Silivas",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "C"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.308",
     "variant": 2,
     "description": "Back-to-beam jump, ½ turn to chest stand",
-    "value": "A",
+    "value": "C",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "C"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.408",
     "variant": 1,
     "description": "Back handspring mount to chest stand",
-    "value": "A",
+    "value": "D",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "D"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.109",
@@ -4790,55 +4769,51 @@
     "number": "1.209",
     "variant": 1,
     "description": "Head kip mount at beam end",
-    "value": "A",
+    "value": "B",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "B"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.309",
     "variant": 1,
     "description": "Pike handstand mount, front handspring step-out",
-    "value": "A",
+    "value": "C",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "C"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.409",
     "variant": 1,
     "description": "Hecht front handspring mount",
-    "value": "A",
+    "value": "D",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "D"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.409",
     "variant": 2,
     "description": "Piked flyspring mount",
-    "value": "A",
+    "value": "D",
     "eponym": "McCool",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "D"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.409",
     "variant": 3,
     "description": "Round-off, back handspring ½, front walkover",
-    "value": "A",
+    "value": "D",
     "eponym": "Dunn",
     "element_group": "1",
     "group_name": "Mounts",
@@ -4849,122 +4824,112 @@
     "number": "1.210",
     "variant": 1,
     "description": "Handstand mount (also with ½ turn)",
-    "value": "A",
+    "value": "B",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
     "source": "USAG Xcel 2022-2028",
-    "revised": true,
-    "table_value": "B"
+    "revised": true
   },
   {
     "number": "1.310",
     "variant": 1,
     "description": "Handstand mount with full or double turn",
-    "value": "A",
+    "value": "C",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "C"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.211",
     "variant": 1,
     "description": "Jump to side planche hold",
-    "value": "A",
+    "value": "B",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "B"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.311",
     "variant": 1,
     "description": "Planche or handstand lowered to planche",
-    "value": "A",
+    "value": "C",
     "eponym": "Schuschunova",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "C"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.311",
     "variant": 2,
     "description": "Handstand mount, ½ turn, lower to planche",
-    "value": "A",
+    "value": "C",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "C"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.411",
     "variant": 1,
     "description": "Handstand mount, full-double turn, lower to planche",
-    "value": "A",
+    "value": "D",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "D"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.212",
     "variant": 1,
     "description": "Lori-hop (press handstand, hop ¼ turn)",
-    "value": "A",
+    "value": "B",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "B"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.312",
     "variant": 1,
     "description": "Handstand mount, shift to one-arm hold",
-    "value": "A",
+    "value": "C",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "C"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.412",
     "variant": 1,
     "description": "One-arm handstand mount",
-    "value": "A",
+    "value": "D",
     "eponym": "Rankin",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "D"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.412",
     "variant": 2,
     "description": "One-arm handstand, lower to straddle",
-    "value": "A",
+    "value": "D",
     "eponym": "Rankin/Lowing",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "D"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.113",
@@ -4981,133 +4946,122 @@
     "number": "1.213",
     "variant": 1,
     "description": "Hecht cartwheel or handstand mount",
-    "value": "A",
+    "value": "B",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "B"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.213",
     "variant": 2,
     "description": "Hecht round-off mount at beam end",
-    "value": "A",
+    "value": "B",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "B"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.313",
     "variant": 1,
     "description": "Hecht mount turning through one-arm handstand",
-    "value": "A",
+    "value": "C",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "C"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.313",
     "variant": 2,
     "description": "Round-off, jump ½ to handstand",
-    "value": "A",
+    "value": "C",
     "eponym": "Gurova",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "C"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.413",
     "variant": 1,
     "description": "Hecht jump with ½ turn to side handstand",
-    "value": "A",
+    "value": "D",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "D"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.214",
     "variant": 1,
     "description": "Front handspring off board to rear support",
-    "value": "A",
+    "value": "B",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "B"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.214",
     "variant": 2,
     "description": "Aerial walkover mount to rear support or sit",
-    "value": "A",
+    "value": "B",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "B"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.314",
     "variant": 1,
     "description": "Front tuck mount to cross sit",
-    "value": "A",
+    "value": "C",
     "eponym": "Poulin",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "C"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.414",
     "variant": 1,
     "description": "Front tuck mount to rear support",
-    "value": "A",
+    "value": "D",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "D"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.414",
     "variant": 2,
     "description": "Front pike mount to rear support",
-    "value": "A",
+    "value": "D",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "D"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "1.415",
     "variant": 1,
     "description": "Round-off back handspring mount to stand or sit",
-    "value": "A",
+    "value": "D",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028",
-    "table_value": "D"
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "2.101",
@@ -9528,7 +9482,7 @@
     "number": "1.307",
     "variant": 1,
     "description": "Hecht roll mount",
-    "value": "A",
+    "value": "C",
     "eponym": "",
     "element_group": "1",
     "group_name": "Mounts",
@@ -10528,8 +10482,7 @@
     "source": "USAG Development Program 2026-2030",
     "markers": [
       "BKA"
-    ],
-    "ucg_note": "beam mount: Xcel values every mount A; whether UCG uses this Development Program value is an open rules question"
+    ]
   },
   {
     "number": "1.514",
@@ -10543,8 +10496,7 @@
     "source": "USAG Development Program 2026-2030",
     "markers": [
       "FA"
-    ],
-    "ucg_note": "beam mount: Xcel values every mount A; whether UCG uses this Development Program value is an open rules question"
+    ]
   },
   {
     "number": "1.514",
@@ -10558,8 +10510,7 @@
     "source": "USAG Development Program 2026-2030",
     "markers": [
       "FA"
-    ],
-    "ucg_note": "beam mount: Xcel values every mount A; whether UCG uses this Development Program value is an open rules question"
+    ]
   },
   {
     "number": "1.514",
@@ -10573,8 +10524,7 @@
     "source": "USAG Development Program 2026-2030",
     "markers": [
       "FA"
-    ],
-    "ucg_note": "beam mount: Xcel values every mount A; whether UCG uses this Development Program value is an open rules question"
+    ]
   },
   {
     "number": "1.514",
@@ -10588,8 +10538,7 @@
     "source": "USAG Development Program 2026-2030",
     "markers": [
       "FA"
-    ],
-    "ucg_note": "beam mount: Xcel values every mount A; whether UCG uses this Development Program value is an open rules question"
+    ]
   },
   {
     "number": "1.514",
@@ -10603,8 +10552,7 @@
     "source": "USAG Development Program 2026-2030",
     "markers": [
       "FA"
-    ],
-    "ucg_note": "beam mount: Xcel values every mount A; whether UCG uses this Development Program value is an open rules question"
+    ]
   },
   {
     "number": "1.515",
@@ -10618,8 +10566,7 @@
     "source": "USAG Development Program 2026-2030",
     "markers": [
       "BKA"
-    ],
-    "ucg_note": "beam mount: Xcel values every mount A; whether UCG uses this Development Program value is an open rules question"
+    ]
   },
   {
     "number": "1.515",
@@ -10633,8 +10580,7 @@
     "source": "USAG Development Program 2026-2030",
     "markers": [
       "BKA"
-    ],
-    "ucg_note": "beam mount: Xcel values every mount A; whether UCG uses this Development Program value is an open rules question"
+    ]
   },
   {
     "number": "1.515",
@@ -10648,8 +10594,7 @@
     "source": "USAG Development Program 2026-2030",
     "markers": [
       "FA"
-    ],
-    "ucg_note": "beam mount: Xcel values every mount A; whether UCG uses this Development Program value is an open rules question"
+    ]
   },
   {
     "number": "1.516",
@@ -10663,8 +10608,7 @@
     "source": "USAG Development Program 2026-2030",
     "markers": [
       "BKA"
-    ],
-    "ucg_note": "beam mount: Xcel values every mount A; whether UCG uses this Development Program value is an open rules question"
+    ]
   },
   {
     "number": "1.516",
@@ -10678,8 +10622,7 @@
     "source": "USAG Development Program 2026-2030",
     "markers": [
       "BKA"
-    ],
-    "ucg_note": "beam mount: Xcel values every mount A; whether UCG uses this Development Program value is an open rules question"
+    ]
   },
   {
     "number": "1.516",
@@ -10693,8 +10636,7 @@
     "source": "USAG Development Program 2026-2030",
     "markers": [
       "BKA"
-    ],
-    "ucg_note": "beam mount: Xcel values every mount A; whether UCG uses this Development Program value is an open rules question"
+    ]
   },
   {
     "number": "2.501",
