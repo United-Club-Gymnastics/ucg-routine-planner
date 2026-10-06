@@ -4306,7 +4306,19 @@
     "source": "USAG Xcel 2022-2028",
     "markers": [
       "D"
-    ]
+    ],
+    "forms": [
+      {
+        "form": "a",
+        "name": "Leap mount to stand, one-foot take-off"
+      },
+      {
+        "form": "b",
+        "name": "Jump mount to stand, two-foot take-off"
+      }
+    ],
+    "forms_rule": "Leap vs jump: take-off from one leg vs both legs makes a leap/jump different.",
+    "forms_citation": "Xcel BALANCE BEAM - 10, Chapter 2 B.2.e"
   },
   {
     "number": "1.101",
@@ -6891,7 +6903,23 @@
     "element_group": "7",
     "group_name": "Walkovers / Cartwheels / Handsprings",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028"
+    "source": "USAG Xcel 2022-2028",
+    "forms": [
+      {
+        "form": "a",
+        "name": "Cartwheel"
+      },
+      {
+        "form": "b",
+        "name": "One-arm cartwheel"
+      },
+      {
+        "form": "c",
+        "name": "Bent-arm or forearm cartwheel through chest stand"
+      }
+    ],
+    "forms_rule": "Box note: all of these variations are considered different elements.",
+    "forms_citation": "Xcel BALANCE BEAM ELEMENTS - 39, 7.103 note; DP BALANCE BEAM ELEMENTS - 31, 7.103 note"
   },
   {
     "number": "7.203",
@@ -6924,7 +6952,19 @@
     "element_group": "7",
     "group_name": "Walkovers / Cartwheels / Handsprings",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028"
+    "source": "USAG Xcel 2022-2028",
+    "forms": [
+      {
+        "form": "a",
+        "name": "Side aerial"
+      },
+      {
+        "form": "b",
+        "name": "Swing-through side aerial from one-leg stand"
+      }
+    ],
+    "forms_rule": "Box note (2026 DP): the aerial cartwheel and the swing-through aerial cartwheel are different elements; other swing-through variations are the same. The Xcel cell has no note, but Xcel's matching note on the aerial walkover (7.402) says the same.",
+    "forms_citation": "DP BALANCE BEAM ELEMENTS - 31, 7.403 note; Xcel BALANCE BEAM ELEMENTS - 38, aerial walkover note"
   },
   {
     "number": "7.403",
@@ -6979,7 +7019,20 @@
     "element_group": "7",
     "group_name": "Walkovers / Cartwheels / Handsprings",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028"
+    "source": "USAG Xcel 2022-2028",
+    "forms": [
+      {
+        "form": "a",
+        "name": "Back walkover, also alternating hands or to sit"
+      },
+      {
+        "form": "b",
+        "name": "One-arm back walkover",
+        "eponym": ""
+      }
+    ],
+    "forms_rule": "Support on one arm vs both arms makes an element different. Alternate hand support and the swing down to cross sit stay with the two-arm form: no Code rule separates them.",
+    "forms_citation": "Xcel BALANCE BEAM - 10, Chapter 2 B.2.c"
   },
   {
     "number": "7.104",
@@ -7277,7 +7330,20 @@
     "element_group": "7",
     "group_name": "Walkovers / Cartwheels / Handsprings",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028"
+    "source": "USAG Xcel 2022-2028",
+    "forms": [
+      {
+        "form": "a",
+        "name": "Back handspring, pike-open, to straddle sit"
+      },
+      {
+        "form": "b",
+        "name": "Gainer back handspring, pike-open, to straddle sit",
+        "eponym": ""
+      }
+    ],
+    "forms_rule": "An acro element taking off from one leg vs both legs is different: the gainer takes off from one leg.",
+    "forms_citation": "Xcel BALANCE BEAM - 10, Chapter 2 B.2.f"
   },
   {
     "number": "8.301",
@@ -7322,7 +7388,29 @@
     "element_group": "8",
     "group_name": "Saltos",
     "apparatus": "BB",
-    "source": "USAG Xcel 2022-2028"
+    "source": "USAG Xcel 2022-2028",
+    "forms": [
+      {
+        "form": "a",
+        "name": "Side somi tucked, one-foot take-off",
+        "eponym": ""
+      },
+      {
+        "form": "b",
+        "name": "Side somi piked, one-foot take-off",
+        "eponym": ""
+      },
+      {
+        "form": "c",
+        "name": "Swing-through side somi tucked"
+      },
+      {
+        "form": "d",
+        "name": "Swing-through side somi piked"
+      }
+    ],
+    "forms_rule": "Box note: all of the above are considered different elements (salto body position also differs: tucked vs piked).",
+    "forms_citation": "Xcel BALANCE BEAM ELEMENTS - 47, 8.402 note; Xcel BALANCE BEAM - 10, Chapter 2 B.2.d"
   },
   {
     "number": "8.303",
@@ -7940,7 +8028,19 @@
     "element_group": "1",
     "group_name": "Leaps / Jumps / Hops",
     "apparatus": "FX",
-    "source": "USAG Xcel 2022-2028"
+    "source": "USAG Xcel 2022-2028",
+    "forms": [
+      {
+        "form": "a",
+        "name": "Split leap with ¼ or ½ turn"
+      },
+      {
+        "form": "b",
+        "name": "Split jump with ½ turn"
+      }
+    ],
+    "forms_rule": "Box note: the split leap with ¼ or ½ turn and the split jump with ½ turn are different elements; the two leap turn amounts are the same element (adding a ¼ turn does not make an element different).",
+    "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 3, 1.202 note; DP FLOOR EXERCISE ELEMENTS - 1, 1.202 note"
   },
   {
     "number": "1.302",
@@ -8968,7 +9068,23 @@
     "group_name": "Rolls",
     "apparatus": "FX",
     "source": "USAG Xcel 2022-2028",
-    "revised": true
+    "revised": true,
+    "forms": [
+      {
+        "form": "a",
+        "name": "Forward roll"
+      },
+      {
+        "form": "b",
+        "name": "Handstand forward roll"
+      },
+      {
+        "form": "c",
+        "name": "Dive (hecht) roll"
+      }
+    ],
+    "forms_rule": "Box note: all are considered different elements.",
+    "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 16, 4.101 note"
   },
   {
     "number": "4.201",
@@ -9013,7 +9129,19 @@
     "group_name": "Rolls",
     "apparatus": "FX",
     "source": "USAG Xcel 2022-2028",
-    "revised": true
+    "revised": true,
+    "forms": [
+      {
+        "form": "a",
+        "name": "Backward roll, tucked"
+      },
+      {
+        "form": "b",
+        "name": "Backward roll, piked"
+      }
+    ],
+    "forms_rule": "Box note: all are considered different elements.",
+    "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 16, 4.102 note"
   },
   {
     "number": "4.102",
@@ -9037,7 +9165,19 @@
     "group_name": "Rolls",
     "apparatus": "FX",
     "source": "USAG Xcel 2022-2028",
-    "revised": true
+    "revised": true,
+    "forms": [
+      {
+        "form": "a",
+        "name": "Back extension roll to handstand"
+      },
+      {
+        "form": "b",
+        "name": "Back extension roll, ½ turn in handstand"
+      }
+    ],
+    "forms_rule": "Box note: all are considered different elements; a different degree of turn also makes an element different.",
+    "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 16, 4.102 note; Xcel FLOOR EXERCISE - 9, Chapter 2 B.2.a"
   },
   {
     "number": "4.202",
@@ -9075,7 +9215,24 @@
     "element_group": "5",
     "group_name": "Walkovers / Cartwheels / Handsprings",
     "apparatus": "FX",
-    "source": "USAG Xcel 2022-2028"
+    "source": "USAG Xcel 2022-2028",
+    "forms": [
+      {
+        "form": "a",
+        "name": "Front walkover"
+      },
+      {
+        "form": "b",
+        "name": "Back walkover"
+      },
+      {
+        "form": "c",
+        "name": "Back walkover from tuck sit",
+        "eponym": "Valdez"
+      }
+    ],
+    "forms_rule": "Box note: all are considered as different elements. The box pictures six variations; the forward, backward and from-tuck-sit walkovers are named here, and the other pictured variations count as different elements too.",
+    "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 17, 5.101 note"
   },
   {
     "number": "5.201",
@@ -9086,7 +9243,20 @@
     "element_group": "5",
     "group_name": "Walkovers / Cartwheels / Handsprings",
     "apparatus": "FX",
-    "source": "USAG Xcel 2022-2028"
+    "source": "USAG Xcel 2022-2028",
+    "forms": [
+      {
+        "form": "a",
+        "name": "Back walkover from stand, full turn in handstand",
+        "eponym": ""
+      },
+      {
+        "form": "b",
+        "name": "Tuck-sit back walkover, full turn in handstand"
+      }
+    ],
+    "forms_rule": "Box note: considered as different elements (from stand vs from extended tuck sit).",
+    "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 17, 5.201 note"
   },
   {
     "number": "5.102",
@@ -9175,7 +9345,28 @@
     "group_name": "Walkovers / Cartwheels / Handsprings",
     "apparatus": "FX",
     "source": "USAG Xcel 2022-2028",
-    "revised": true
+    "revised": true,
+    "forms": [
+      {
+        "form": "a",
+        "name": "Cartwheel"
+      },
+      {
+        "form": "b",
+        "name": "One-arm cartwheel"
+      },
+      {
+        "form": "c",
+        "name": "Cartwheel with flight before or after hands"
+      },
+      {
+        "form": "d",
+        "name": "Aerial cartwheel",
+        "hand_support_flight": false
+      }
+    ],
+    "forms_rule": "Box note: all considered as different elements.",
+    "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 19, 5.104 note"
   },
   {
     "number": "5.104",
@@ -9198,7 +9389,21 @@
     "element_group": "5",
     "group_name": "Walkovers / Cartwheels / Handsprings",
     "apparatus": "FX",
-    "source": "USAG Xcel 2022-2028"
+    "source": "USAG Xcel 2022-2028",
+    "forms": [
+      {
+        "form": "a",
+        "name": "Round-off",
+        "hand_support_flight": true
+      },
+      {
+        "form": "b",
+        "name": "Aerial round-off",
+        "hand_support_flight": false
+      }
+    ],
+    "forms_rule": "Box note: considered as different elements. Only the round-off is a flight element with hand support.",
+    "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 19, 5.105 note"
   },
   {
     "number": "5.106",
@@ -9210,7 +9415,26 @@
     "group_name": "Walkovers / Cartwheels / Handsprings",
     "apparatus": "FX",
     "source": "USAG Xcel 2022-2028",
-    "revised": true
+    "revised": true,
+    "forms": [
+      {
+        "form": "a",
+        "name": "Back handspring (two feet or step-out)",
+        "hand_support_flight": true
+      },
+      {
+        "form": "b",
+        "name": "Gainer back handspring",
+        "hand_support_flight": true
+      },
+      {
+        "form": "c",
+        "name": "One-arm back handspring",
+        "hand_support_flight": true
+      }
+    ],
+    "forms_rule": "Box note: the variations are considered different elements; a flic-flac to two feet and with step-out are the same element.",
+    "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 20, 5.106 note"
   },
   {
     "number": "5.206",
@@ -9265,7 +9489,27 @@
     "element_group": "6",
     "group_name": "Saltos Forward",
     "apparatus": "FX",
-    "source": "USAG Xcel 2022-2028"
+    "source": "USAG Xcel 2022-2028",
+    "forms": [
+      {
+        "form": "a",
+        "name": "Front pike"
+      },
+      {
+        "form": "b",
+        "name": "Front layout (also step-out)"
+      },
+      {
+        "form": "c",
+        "name": "Front pike with ½ twist"
+      },
+      {
+        "form": "d",
+        "name": "Front layout with ½ twist"
+      }
+    ],
+    "forms_rule": "Saltos in different body positions (tuck / pike / stretched) and with different degrees of turn are different elements; step-out vs two-foot landing is the same.",
+    "forms_citation": "Xcel FLOOR EXERCISE - 9 and - 10, Chapter 2 B.2.a and B.2.b"
   },
   {
     "number": "6.301",
@@ -9332,7 +9576,23 @@
     "element_group": "8",
     "group_name": "Saltos Backward",
     "apparatus": "FX",
-    "source": "USAG Xcel 2022-2028"
+    "source": "USAG Xcel 2022-2028",
+    "forms": [
+      {
+        "form": "a",
+        "name": "Back tuck (also step-out)"
+      },
+      {
+        "form": "b",
+        "name": "Back pike"
+      },
+      {
+        "form": "c",
+        "name": "Back layout (also step-out)"
+      }
+    ],
+    "forms_rule": "Saltos in different body positions are different elements; step-out vs two-foot landing is the same.",
+    "forms_citation": "Xcel FLOOR EXERCISE - 10, Chapter 2 B.2.b and C.1"
   },
   {
     "number": "8.201",
@@ -9343,7 +9603,35 @@
     "element_group": "8",
     "group_name": "Saltos Backward",
     "apparatus": "FX",
-    "source": "USAG Xcel 2022-2028"
+    "source": "USAG Xcel 2022-2028",
+    "forms": [
+      {
+        "form": "a",
+        "name": "Back tuck with ½ twist"
+      },
+      {
+        "form": "b",
+        "name": "Back pike with ½ twist"
+      },
+      {
+        "form": "c",
+        "name": "Back layout with ½ twist"
+      },
+      {
+        "form": "d",
+        "name": "Back tuck full twist"
+      },
+      {
+        "form": "e",
+        "name": "Back pike full twist"
+      },
+      {
+        "form": "f",
+        "name": "Back layout full twist"
+      }
+    ],
+    "forms_rule": "Saltos in different body positions and with different degrees of turn are different elements.",
+    "forms_citation": "Xcel FLOOR EXERCISE - 9 and - 10, Chapter 2 B.2.a and B.2.b"
   },
   {
     "number": "8.301",
@@ -9512,7 +9800,25 @@
     "source": "USAG Xcel 2022-2028",
     "divisions": [
       "Bronze"
-    ]
+    ],
+    "forms": [
+      {
+        "form": "a",
+        "name": "Stag leap, any split",
+        "same_as": [
+          "USAG-BB-2.101-1"
+        ]
+      },
+      {
+        "form": "b",
+        "name": "Split leap, any split",
+        "same_as": [
+          "USAG-BB-2.201-1"
+        ]
+      }
+    ],
+    "forms_rule": "Division stand-in for the regular stag and split leaps (A value at Bronze, any split angle).",
+    "forms_citation": "Xcel BALANCE BEAM ELEMENTS - 1, split angles by division"
   },
   {
     "number": "2.0 Bronze",
@@ -9526,7 +9832,12 @@
     "source": "USAG Xcel 2022-2028",
     "divisions": [
       "Bronze"
-    ]
+    ],
+    "same_as": [
+      "USAG-BB-2.201-2"
+    ],
+    "forms_rule": "Division stand-in for the regular split jump in cross position.",
+    "forms_citation": "Xcel BALANCE BEAM ELEMENTS - 1"
   },
   {
     "number": "2.0 Bronze",
@@ -9540,7 +9851,12 @@
     "source": "USAG Xcel 2022-2028",
     "divisions": [
       "Bronze"
-    ]
+    ],
+    "same_as": [
+      "USAG-BB-2.202-1"
+    ],
+    "forms_rule": "Division stand-in for the regular straddle jump in cross position.",
+    "forms_citation": "Xcel BALANCE BEAM ELEMENTS - 1"
   },
   {
     "number": "2.0 Silver",
@@ -9554,7 +9870,25 @@
     "source": "USAG Xcel 2022-2028",
     "divisions": [
       "Silver"
-    ]
+    ],
+    "forms": [
+      {
+        "form": "a",
+        "name": "Stag leap, 90° split",
+        "same_as": [
+          "USAG-BB-2.101-1"
+        ]
+      },
+      {
+        "form": "b",
+        "name": "Split leap, 90° split",
+        "same_as": [
+          "USAG-BB-2.201-1"
+        ]
+      }
+    ],
+    "forms_rule": "Division stand-in for the regular stag and split leaps (A value at Silver, minimum 90° split).",
+    "forms_citation": "Xcel BALANCE BEAM ELEMENTS - 1, split angles by division"
   },
   {
     "number": "2.0 Silver",
@@ -9568,7 +9902,12 @@
     "source": "USAG Xcel 2022-2028",
     "divisions": [
       "Silver"
-    ]
+    ],
+    "same_as": [
+      "USAG-BB-2.201-2"
+    ],
+    "forms_rule": "Division stand-in for the regular split jump.",
+    "forms_citation": "Xcel BALANCE BEAM ELEMENTS - 1"
   },
   {
     "number": "2.0 Silver",
@@ -9582,7 +9921,12 @@
     "source": "USAG Xcel 2022-2028",
     "divisions": [
       "Silver"
-    ]
+    ],
+    "same_as": [
+      "USAG-BB-2.202-1"
+    ],
+    "forms_rule": "Division stand-in for the regular straddle jump in cross position.",
+    "forms_citation": "Xcel BALANCE BEAM ELEMENTS - 1"
   },
   {
     "number": "2.0 Gold",
@@ -10204,7 +10548,23 @@
     "element_group": "7",
     "group_name": "Circle Swings / Hechts",
     "apparatus": "UB",
-    "source": "USAG Development Program 2026-2030"
+    "source": "USAG Development Program 2026-2030",
+    "forms": [
+      {
+        "form": "a",
+        "name": "Counter reverse hecht with ½ turn over HB"
+      },
+      {
+        "form": "b",
+        "name": "Piked counter reverse hecht over HB",
+        "eponym": "",
+        "same_as": [
+          "USAG-UB-7.511-1"
+        ]
+      }
+    ],
+    "forms_rule": "The ½-turn form is different (degree of turn). The piked form is the same element as the straddled version in variant 1: legs together vs separated does not make a bars element different (saltos aside).",
+    "forms_citation": "Xcel UNEVEN BARS - 11, Chapter 2 C.2 (same); DP UNEVEN BAR ELEMENTS - 35"
   },
   {
     "number": "7.512",

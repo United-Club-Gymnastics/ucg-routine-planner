@@ -169,3 +169,17 @@ test('Same-element data: versions the Code counts as one element share a key; ha
   const f = scoreXcel('gold', 'fx', [ro, ff, { name: 'Back tuck', letter: 'A' }, ro, ff, ff, { name: 'Back tuck', letter: 'A' }], { srMet: [1, 1, 1, 1] });
   assert.ok(f.items.every((it) => it.status !== 'repeat'));
 });
+test('Forms: a record split into forms keeps its old id (form a); forms count as different elements', async () => {
+  const { findSkill } = await import('../js/skill-search.js');
+  const { elementKey } = await import('../js/scoring/wag.js');
+  assert.equal(findSkill('USAG-BB-7.104-1').id, 'USAG-BB-7.104-1a');
+  const k = (skillId) => elementKey({ skillId, name: '' });
+  assert.equal(k('USAG-BB-7.104-1'), k('USAG-BB-7.104-1a'));
+  assert.notEqual(k('USAG-BB-7.104-1a'), k('USAG-BB-7.104-1b')); // one-arm back walkover is a different element
+  assert.equal(k('USAG-BB-2.0 Silver-1a'), k('USAG-BB-2.101-1')); // division stand-in = the regular stag leap
+  assert.equal(k('USAG-UB-7.511-2b'), k('USAG-UB-7.511-1')); // piked form = the same element as v1
+  // Round-off then aerial round-off in a repeated floor pass: only the round-off is a hand-support flight element.
+  const ro = { name: 'Round-off', letter: 'A', skillId: 'USAG-FX-5.105-1a', link: true };
+  const f = scoreXcel('gold', 'fx', [ro, { name: 'Back tuck', letter: 'A' }, ro, { name: 'Back tuck', letter: 'A' }], { srMet: [1, 1, 1, 1] });
+  assert.equal(f.items[2].repeatWhy, 'pass');
+});

@@ -45,6 +45,8 @@ for (const [disc, list] of Object.entries(ALL)) {
   }
 }
 const SKILL_INDEX = new Map(Object.values(ALL).flat().map((s) => [s.id, s]));
+// A USAG record later split into forms keeps its old id as an alias of form "a".
+for (const s of WAG_SKILLS) if (s.alias) SKILL_INDEX.set(s.alias, s);
 
 const VALUE_ORDER = ['Sub-A', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
 const order = (a, b) =>
