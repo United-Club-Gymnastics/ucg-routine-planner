@@ -1,0 +1,6021 @@
+{
+ "discipline": "WAG",
+ "version": "a25f357c085e",
+ "built": "2026-10-06",
+ "aliases": {
+  "WGW-BB-1.101-1": [
+   "WAG-BB-0001"
+  ],
+  "USAG-BB-1.101-2": [
+   "WAG-BB-0001"
+  ],
+  "WGW-BB-1.201-1": [
+   "WAG-BB-0002"
+  ],
+  "WGW-BB-1.302-1": [
+   "WAG-BB-0003"
+  ],
+  "WGW-BB-1.402-1": [
+   "WAG-BB-0004"
+  ],
+  "USAG-BB-1.401-1": [
+   "WAG-BB-0004"
+  ],
+  "WGW-BB-1.103-2": [
+   "WAG-BB-0005"
+  ],
+  "WGW-BB-1.303-1": [
+   "WAG-BB-0006"
+  ],
+  "WGW-BB-1.403-1": [
+   "WAG-BB-0007"
+  ],
+  "USAG-BB-1.403-1": [
+   "WAG-BB-0007"
+  ],
+  "WGW-BB-1.403-2": [
+   "WAG-BB-0008"
+  ],
+  "USAG-BB-1.303-1": [
+   "WAG-BB-0008"
+  ],
+  "WGW-BB-1.304-1": [
+   "WAG-BB-0009"
+  ],
+  "USAG-BB-1.304-1": [
+   "WAG-BB-0009"
+  ],
+  "WGW-BB-1.105-1": [
+   "WAG-BB-0010"
+  ],
+  "USAG-BB-1.104-1": [
+   "WAG-BB-0010",
+   "WAG-BB-0404"
+  ],
+  "WGW-BB-1.305-1": [
+   "WAG-BB-0011"
+  ],
+  "USAG-BB-1.305-1": [
+   "WAG-BB-0011"
+  ],
+  "WGW-BB-1.305-2": [
+   "WAG-BB-0012"
+  ],
+  "USAG-BB-1.405-1": [
+   "WAG-BB-0012"
+  ],
+  "WGW-BB-1.405-1": [
+   "WAG-BB-0013"
+  ],
+  "WGW-BB-1.106-1": [
+   "WAG-BB-0014"
+  ],
+  "WGW-BB-1.207-1": [
+   "WAG-BB-0015",
+   "WAG-BB-0218",
+   "WAG-BB-0397"
+  ],
+  "USAG-BB-1.107-1": [
+   "WAG-BB-0015",
+   "WAG-BB-0016"
+  ],
+  "WGW-BB-1.207-2": [
+   "WAG-BB-0016"
+  ],
+  "WGW-BB-1.108-1": [
+   "WAG-BB-0017"
+  ],
+  "WGW-BB-1.108-2": [
+   "WAG-BB-0018"
+  ],
+  "USAG-BB-1.108-1": [
+   "WAG-BB-0018"
+  ],
+  "WGW-BB-1.208-1": [
+   "WAG-BB-0019"
+  ],
+  "WGW-BB-1.308-1": [
+   "WAG-BB-0020"
+  ],
+  "WGW-BB-1.309-1": [
+   "WAG-BB-0021"
+  ],
+  "USAG-BB-1.209-1": [
+   "WAG-BB-0021"
+  ],
+  "WGW-BB-1.309-2": [
+   "WAG-BB-0022"
+  ],
+  "USAG-BB-1.210-1": [
+   "WAG-BB-0022",
+   "WAG-BB-0343",
+   "WAG-BB-0405",
+   "WAG-BB-0406",
+   "WAG-BB-0407"
+  ],
+  "WGW-BB-1.609-1": [
+   "WAG-BB-0023"
+  ],
+  "USAG-BB-1.409-3": [
+   "WAG-BB-0023"
+  ],
+  "WGW-BB-1.310-1": [
+   "WAG-BB-0024"
+  ],
+  "WGW-BB-1.111-1": [
+   "WAG-BB-0025"
+  ],
+  "WGW-BB-1.211-1": [
+   "WAG-BB-0026"
+  ],
+  "USAG-BB-1.211-1": [
+   "WAG-BB-0026"
+  ],
+  "WGW-BB-1.311-1": [
+   "WAG-BB-0027"
+  ],
+  "WGW-BB-1.311-2": [
+   "WAG-BB-0028"
+  ],
+  "WGW-BB-1.311-3": [
+   "WAG-BB-0029"
+  ],
+  "WGW-BB-1.311-4": [
+   "WAG-BB-0030"
+  ],
+  "WGW-BB-1.411-1": [
+   "WAG-BB-0031"
+  ],
+  "WGW-BB-1.411-2": [
+   "WAG-BB-0032"
+  ],
+  "WGW-BB-1.411-3": [
+   "WAG-BB-0033"
+  ],
+  "WGW-BB-1.312-1": [
+   "WAG-BB-0034"
+  ],
+  "WGW-BB-1.312-2": [
+   "WAG-BB-0035"
+  ],
+  "WGW-BB-1.213-1": [
+   "WAG-BB-0036"
+  ],
+  "USAG-BB-1.212-1": [
+   "WAG-BB-0036"
+  ],
+  "WGW-BB-1.313-1": [
+   "WAG-BB-0037"
+  ],
+  "USAG-BB-1.312-1": [
+   "WAG-BB-0037"
+  ],
+  "WGW-BB-1.214-1": [
+   "WAG-BB-0038"
+  ],
+  "USAG-BB-1.213-1": [
+   "WAG-BB-0038",
+   "WAG-BB-0408"
+  ],
+  "WGW-BB-1.314-1": [
+   "WAG-BB-0039"
+  ],
+  "USAG-BB-1.313-1": [
+   "WAG-BB-0039"
+  ],
+  "WGW-BB-1.314-2": [
+   "WAG-BB-0040"
+  ],
+  "USAG-BB-1.408-1": [
+   "WAG-BB-0040"
+  ],
+  "WGW-BB-1.314-3": [
+   "WAG-BB-0041"
+  ],
+  "USAG-BB-1.308-2": [
+   "WAG-BB-0041"
+  ],
+  "WGW-BB-1.414-1": [
+   "WAG-BB-0042"
+  ],
+  "USAG-BB-1.313-2": [
+   "WAG-BB-0042"
+  ],
+  "WGW-BB-1.514-1": [
+   "WAG-BB-0043"
+  ],
+  "USAG-BB-1.513-1": [
+   "WAG-BB-0043"
+  ],
+  "WGW-BB-1.215-1": [
+   "WAG-BB-0044"
+  ],
+  "USAG-BB-1.214-1": [
+   "WAG-BB-0044"
+  ],
+  "WGW-BB-1.215-2": [
+   "WAG-BB-0045"
+  ],
+  "WGW-BB-1.315-1": [
+   "WAG-BB-0046"
+  ],
+  "USAG-BB-1.214-2": [
+   "WAG-BB-0046"
+  ],
+  "WGW-BB-1.615-1": [
+   "WAG-BB-0047"
+  ],
+  "USAG-BB-1.514-5": [
+   "WAG-BB-0047"
+  ],
+  "WGW-BB-1.416-1": [
+   "WAG-BB-0048"
+  ],
+  "USAG-BB-1.514-1": [
+   "WAG-BB-0048"
+  ],
+  "WGW-BB-1.516-1": [
+   "WAG-BB-0049"
+  ],
+  "USAG-BB-1.514-2": [
+   "WAG-BB-0049"
+  ],
+  "WGW-BB-1.616-1": [
+   "WAG-BB-0050"
+  ],
+  "USAG-BB-1.514-3": [
+   "WAG-BB-0050"
+  ],
+  "WGW-BB-1.716-1": [
+   "WAG-BB-0051"
+  ],
+  "USAG-BB-1.515-3": [
+   "WAG-BB-0051"
+  ],
+  "WGW-BB-1.317-1": [
+   "WAG-BB-0052",
+   "WAG-BB-0410"
+  ],
+  "USAG-BB-1.415-1": [
+   "WAG-BB-0052",
+   "WAG-BB-0053",
+   "WAG-BB-0410"
+  ],
+  "WGW-BB-1.417-1": [
+   "WAG-BB-0053"
+  ],
+  "WGW-BB-1.417-2": [
+   "WAG-BB-0054"
+  ],
+  "USAG-BB-1.515-2": [
+   "WAG-BB-0054"
+  ],
+  "WGW-BB-1.517-1": [
+   "WAG-BB-0055"
+  ],
+  "WGW-BB-1.518-1": [
+   "WAG-BB-0056"
+  ],
+  "USAG-BB-1.516-1": [
+   "WAG-BB-0056"
+  ],
+  "WGW-BB-1.618-1": [
+   "WAG-BB-0057"
+  ],
+  "WGW-BB-1.618-2": [
+   "WAG-BB-0058"
+  ],
+  "USAG-BB-1.516-2": [
+   "WAG-BB-0058"
+  ],
+  "WGW-BB-1.718-1": [
+   "WAG-BB-0059"
+  ],
+  "USAG-BB-1.516-3": [
+   "WAG-BB-0059"
+  ],
+  "WGW-BB-1.619-1": [
+   "WAG-BB-0060"
+  ],
+  "WGW-BB-2.101-1": [
+   "WAG-BB-0061"
+  ],
+  "USAG-BB-2.201-1": [
+   "WAG-BB-0061"
+  ],
+  "USAG-BB-2.0 Bronze-1b": [
+   "WAG-BB-0061"
+  ],
+  "WGW-BB-2.301-1": [
+   "WAG-BB-0062"
+  ],
+  "WGW-BB-2.202-1": [
+   "WAG-BB-0063",
+   "WAG-BB-0239",
+   "WAG-BB-0240",
+   "WAG-BB-0241",
+   "WAG-BB-0244"
+  ],
+  "USAG-BB-2.201-2": [
+   "WAG-BB-0063"
+  ],
+  "WGW-BB-2.302-1": [
+   "WAG-BB-0064",
+   "WAG-BB-0401",
+   "WAG-BB-0402"
+  ],
+  "WGW-BB-2.402-1": [
+   "WAG-BB-0065"
+  ],
+  "USAG-BB-2.501-3": [
+   "WAG-BB-0065"
+  ],
+  "WGW-BB-2.203-1": [
+   "WAG-BB-0066",
+   "WAG-BB-0247",
+   "WAG-BB-0248",
+   "WAG-BB-0249",
+   "WAG-BB-0250",
+   "WAG-BB-0251"
+  ],
+  "USAG-BB-2.202-1": [
+   "WAG-BB-0066"
+  ],
+  "WGW-BB-2.303-1": [
+   "WAG-BB-0067",
+   "WAG-BB-0253",
+   "WAG-BB-0254"
+  ],
+  "USAG-BB-2.302-2": [
+   "WAG-BB-0067"
+  ],
+  "WGW-BB-2.403-1": [
+   "WAG-BB-0068",
+   "WAG-BB-0416"
+  ],
+  "USAG-BB-2.502-1": [
+   "WAG-BB-0068"
+  ],
+  "WGW-BB-2.204-1": [
+   "WAG-BB-0069"
+  ],
+  "USAG-BB-2.304-2": [
+   "WAG-BB-0069"
+  ],
+  "WGW-BB-2.404-1": [
+   "WAG-BB-0070",
+   "WAG-BB-0429"
+  ],
+  "USAG-BB-2.404-1": [
+   "WAG-BB-0070",
+   "WAG-BB-0429"
+  ],
+  "WGW-BB-2.504-1": [
+   "WAG-BB-0071"
+  ],
+  "USAG-BB-2.504-1": [
+   "WAG-BB-0071"
+  ],
+  "WGW-BB-2.105-1": [
+   "WAG-BB-0072"
+  ],
+  "USAG-BB-2.105-2": [
+   "WAG-BB-0072"
+  ],
+  "WGW-BB-2.305-1": [
+   "WAG-BB-0073",
+   "WAG-BB-0245",
+   "WAG-BB-0259",
+   "WAG-BB-0430"
+  ],
+  "USAG-BB-2.305-1": [
+   "WAG-BB-0073",
+   "WAG-BB-0430"
+  ],
+  "WGW-BB-2.405-1": [
+   "WAG-BB-0074",
+   "WAG-BB-0538"
+  ],
+  "WGW-BB-2.505-1": [
+   "WAG-BB-0075"
+  ],
+  "USAG-BB-2.507-1": [
+   "WAG-BB-0075"
+  ],
+  "WGW-BB-2.206-1": [
+   "WAG-BB-0076"
+  ],
+  "USAG-BB-2.301-1": [
+   "WAG-BB-0076"
+  ],
+  "WGW-BB-2.306-1": [
+   "WAG-BB-0077",
+   "WAG-BB-0417",
+   "WAG-BB-0433"
+  ],
+  "USAG-BB-2.405-1": [
+   "WAG-BB-0077",
+   "WAG-BB-0433"
+  ],
+  "WGW-BB-2.506-1": [
+   "WAG-BB-0078",
+   "WAG-BB-0539"
+  ],
+  "WGW-BB-2.107-1": [
+   "WAG-BB-0079",
+   "WAG-BB-0260"
+  ],
+  "USAG-BB-2.206-1": [
+   "WAG-BB-0079"
+  ],
+  "WGW-BB-2.207-1": [
+   "WAG-BB-0080",
+   "WAG-BB-0262"
+  ],
+  "USAG-BB-2.306-2": [
+   "WAG-BB-0080"
+  ],
+  "WGW-BB-2.407-1": [
+   "WAG-BB-0081"
+  ],
+  "USAG-BB-2.506-1": [
+   "WAG-BB-0081"
+  ],
+  "WGW-BB-2.108-1": [
+   "WAG-BB-0082"
+  ],
+  "USAG-BB-2.207-1": [
+   "WAG-BB-0082"
+  ],
+  "WGW-BB-2.108-2": [
+   "WAG-BB-0083",
+   "WAG-BB-0413"
+  ],
+  "USAG-BB-2.101-3": [
+   "WAG-BB-0083",
+   "WAG-BB-0413"
+  ],
+  "WGW-BB-2.208-1": [
+   "WAG-BB-0084"
+  ],
+  "WGW-BB-2.308-1": [
+   "WAG-BB-0085"
+  ],
+  "USAG-BB-2.407-1": [
+   "WAG-BB-0085"
+  ],
+  "WGW-BB-2.408-1": [
+   "WAG-BB-0086"
+  ],
+  "WGW-BB-2.408-2": [
+   "WAG-BB-0087"
+  ],
+  "WGW-BB-2.408-3": [
+   "WAG-BB-0088",
+   "WAG-BB-0414"
+  ],
+  "USAG-BB-2.501-1": [
+   "WAG-BB-0088"
+  ],
+  "WGW-BB-2.209-1": [
+   "WAG-BB-0089"
+  ],
+  "USAG-BB-2.304-1": [
+   "WAG-BB-0089"
+  ],
+  "WGW-BB-2.209-2": [
+   "WAG-BB-0090"
+  ],
+  "WGW-BB-2.409-1": [
+   "WAG-BB-0091"
+  ],
+  "WGW-BB-2.110-1": [
+   "WAG-BB-0092"
+  ],
+  "WGW-BB-2.110-2": [
+   "WAG-BB-0093"
+  ],
+  "WGW-BB-2.210-1": [
+   "WAG-BB-0094"
+  ],
+  "USAG-BB-2.209-1": [
+   "WAG-BB-0094"
+  ],
+  "WGW-BB-2.310-1": [
+   "WAG-BB-0095"
+  ],
+  "USAG-BB-2.309-1": [
+   "WAG-BB-0095"
+  ],
+  "WGW-BB-2.211-1": [
+   "WAG-BB-0096",
+   "WAG-BB-0275"
+  ],
+  "USAG-BB-2.210-1": [
+   "WAG-BB-0096"
+  ],
+  "WGW-BB-2.311-1": [
+   "WAG-BB-0097",
+   "WAG-BB-0436"
+  ],
+  "USAG-BB-2.410-1": [
+   "WAG-BB-0097",
+   "WAG-BB-0436"
+  ],
+  "WGW-BB-2.411-1": [
+   "WAG-BB-0098"
+  ],
+  "USAG-BB-2.510-1": [
+   "WAG-BB-0098"
+  ],
+  "WGW-BB-2.212-1": [
+   "WAG-BB-0099",
+   "WAG-BB-0440",
+   "WAG-BB-0442",
+   "WAG-BB-0443"
+  ],
+  "USAG-BB-2.211-1": [
+   "WAG-BB-0099",
+   "WAG-BB-0440",
+   "WAG-BB-0441"
+  ],
+  "WGW-BB-2.412-1": [
+   "WAG-BB-0100",
+   "WAG-BB-0445"
+  ],
+  "USAG-BB-2.411-1": [
+   "WAG-BB-0100",
+   "WAG-BB-0445"
+  ],
+  "WGW-BB-2.512-1": [
+   "WAG-BB-0101",
+   "WAG-BB-0446"
+  ],
+  "USAG-BB-2.511-1": [
+   "WAG-BB-0101"
+  ],
+  "WGW-BB-3.101-1": [
+   "WAG-BB-0102",
+   "WAG-BB-0281",
+   "WAG-BB-0282"
+  ],
+  "USAG-BB-3.101-1": [
+   "WAG-BB-0102"
+  ],
+  "WGW-BB-3.201-1": [
+   "WAG-BB-0103"
+  ],
+  "USAG-BB-3.201-1": [
+   "WAG-BB-0103"
+  ],
+  "WGW-BB-3.401-1": [
+   "WAG-BB-0104"
+  ],
+  "USAG-BB-3.401-1": [
+   "WAG-BB-0104"
+  ],
+  "WGW-BB-3.501-1": [
+   "WAG-BB-0105"
+  ],
+  "USAG-BB-3.501-1": [
+   "WAG-BB-0105"
+  ],
+  "WGW-BB-3.302-1": [
+   "WAG-BB-0106"
+  ],
+  "USAG-BB-3.302-1": [
+   "WAG-BB-0106"
+  ],
+  "WGW-BB-3.402-1": [
+   "WAG-BB-0107"
+  ],
+  "USAG-BB-3.402-1": [
+   "WAG-BB-0107"
+  ],
+  "WGW-BB-3.403-1": [
+   "WAG-BB-0108"
+  ],
+  "WGW-BB-3.304-1": [
+   "WAG-BB-0109"
+  ],
+  "USAG-BB-3.303-1": [
+   "WAG-BB-0109"
+  ],
+  "WGW-BB-3.404-1": [
+   "WAG-BB-0110"
+  ],
+  "USAG-BB-3.403-1": [
+   "WAG-BB-0110"
+  ],
+  "WGW-BB-3.504-1": [
+   "WAG-BB-0111"
+  ],
+  "WGW-BB-3.305-1": [
+   "WAG-BB-0112"
+  ],
+  "USAG-BB-3.309-1": [
+   "WAG-BB-0112"
+  ],
+  "WGW-BB-3.405-1": [
+   "WAG-BB-0113"
+  ],
+  "USAG-BB-3.409-1": [
+   "WAG-BB-0113"
+  ],
+  "WGW-BB-3.505-1": [
+   "WAG-BB-0114"
+  ],
+  "USAG-BB-3.509-1": [
+   "WAG-BB-0114"
+  ],
+  "WGW-BB-3.206-1": [
+   "WAG-BB-0115"
+  ],
+  "USAG-BB-3.305-1": [
+   "WAG-BB-0115"
+  ],
+  "WGW-BB-3.406-1": [
+   "WAG-BB-0116"
+  ],
+  "USAG-BB-3.505-1": [
+   "WAG-BB-0116"
+  ],
+  "WGW-BB-3.207-1": [
+   "WAG-BB-0117"
+  ],
+  "USAG-BB-3.206-1": [
+   "WAG-BB-0117"
+  ],
+  "WGW-BB-3.307-1": [
+   "WAG-BB-0118"
+  ],
+  "USAG-BB-3.306-1": [
+   "WAG-BB-0118"
+  ],
+  "WGW-BB-3.407-1": [
+   "WAG-BB-0119"
+  ],
+  "WGW-BB-3.507-1": [
+   "WAG-BB-0120"
+  ],
+  "USAG-BB-3.506-1": [
+   "WAG-BB-0120"
+  ],
+  "WGW-BB-3.208-1": [
+   "WAG-BB-0121"
+  ],
+  "USAG-BB-3.207-1": [
+   "WAG-BB-0121"
+  ],
+  "WGW-BB-3.408-1": [
+   "WAG-BB-0122"
+  ],
+  "USAG-BB-3.407-1": [
+   "WAG-BB-0122"
+  ],
+  "WGW-BB-4.101-1": [
+   "WAG-BB-0123"
+  ],
+  "USAG-BB-4.204-1": [
+   "WAG-BB-0123"
+  ],
+  "WGW-BB-4.102-2": [
+   "WAG-BB-0124"
+  ],
+  "USAG-BB-5.101-1": [
+   "WAG-BB-0124"
+  ],
+  "USAG-BB-5.201-1": [
+   "WAG-BB-0124"
+  ],
+  "WGW-BB-4.202-1": [
+   "WAG-BB-0125"
+  ],
+  "WGW-BB-4.103-1": [
+   "WAG-BB-0126"
+  ],
+  "USAG-BB-5.106a-1": [
+   "WAG-BB-0126",
+   "WAG-BB-0307"
+  ],
+  "USAG-BB-5.106b-1": [
+   "WAG-BB-0126",
+   "WAG-BB-0311"
+  ],
+  "WGW-BB-4.203-1": [
+   "WAG-BB-0127"
+  ],
+  "USAG-BB-6.203-1": [
+   "WAG-BB-0127"
+  ],
+  "UCGM-wag-BB-forward-roll-any-start-or-end-position": [
+   "WAG-BB-0127",
+   "WAG-BB-0128"
+  ],
+  "WGW-BB-4.204-1": [
+   "WAG-BB-0128"
+  ],
+  "USAG-BB-6.202-1": [
+   "WAG-BB-0128"
+  ],
+  "WGW-BB-4.204-2": [
+   "WAG-BB-0129"
+  ],
+  "USAG-BB-6.201-2": [
+   "WAG-BB-0129"
+  ],
+  "UCGM-wag-BB-shoulder-roll-forwards-any-end-position": [
+   "WAG-BB-0129",
+   "WAG-BB-0130"
+  ],
+  "WGW-BB-4.304-1": [
+   "WAG-BB-0130"
+  ],
+  "USAG-BB-6.302-1": [
+   "WAG-BB-0130"
+  ],
+  "WGW-BB-4.105-1": [
+   "WAG-BB-0131"
+  ],
+  "WGW-BB-4.305-1": [
+   "WAG-BB-0132"
+  ],
+  "USAG-BB-6.204-1": [
+   "WAG-BB-0132"
+  ],
+  "WGW-BB-4.306-1": [
+   "WAG-BB-0133"
+  ],
+  "WGW-BB-4.207-1": [
+   "WAG-BB-0134"
+  ],
+  "WGW-BB-4.307-1": [
+   "WAG-BB-0135"
+  ],
+  "WGW-BB-4.108-2": [
+   "WAG-BB-0136"
+  ],
+  "USAG-BB-7.105-1": [
+   "WAG-BB-0136"
+  ],
+  "WGW-BB-4.208-1": [
+   "WAG-BB-0137"
+  ],
+  "USAG-BB-7.201-3": [
+   "WAG-BB-0137"
+  ],
+  "WGW-BB-4.308-1": [
+   "WAG-BB-0138"
+  ],
+  "WGW-BB-4.308-2": [
+   "WAG-BB-0139"
+  ],
+  "USAG-BB-7.301-1": [
+   "WAG-BB-0139"
+  ],
+  "WGW-BB-4.209-1": [
+   "WAG-BB-0140"
+  ],
+  "USAG-BB-7.104-1b": [
+   "WAG-BB-0140"
+  ],
+  "WGW-BB-4.309-1": [
+   "WAG-BB-0141"
+  ],
+  "WGW-BB-4.309-2": [
+   "WAG-BB-0142"
+  ],
+  "USAG-BB-7.304-1": [
+   "WAG-BB-0142"
+  ],
+  "WGW-BB-4.309-3": [
+   "WAG-BB-0143"
+  ],
+  "USAG-BB-7.305-1": [
+   "WAG-BB-0143"
+  ],
+  "WGW-BB-4.210-2": [
+   "WAG-BB-0144"
+  ],
+  "USAG-BB-7.306-2": [
+   "WAG-BB-0144"
+  ],
+  "WGW-BB-4.310-1": [
+   "WAG-BB-0145"
+  ],
+  "USAG-BB-7.306-1": [
+   "WAG-BB-0145"
+  ],
+  "WGW-BB-5.301-1": [
+   "WAG-BB-0146"
+  ],
+  "USAG-BB-7.302-1": [
+   "WAG-BB-0146"
+  ],
+  "WGW-BB-5.501-1": [
+   "WAG-BB-0147"
+  ],
+  "WGW-BB-5.202-1": [
+   "WAG-BB-0148"
+  ],
+  "USAG-BB-7.210-1": [
+   "WAG-BB-0148"
+  ],
+  "WGW-BB-5.302-1": [
+   "WAG-BB-0149"
+  ],
+  "WGW-BB-5.402-1": [
+   "WAG-BB-0150"
+  ],
+  "USAG-BB-7.409-2": [
+   "WAG-BB-0150"
+  ],
+  "WGW-BB-5.303-1": [
+   "WAG-BB-0151"
+  ],
+  "USAG-BB-7.310-2": [
+   "WAG-BB-0151"
+  ],
+  "WGW-BB-5.403-1": [
+   "WAG-BB-0152"
+  ],
+  "USAG-BB-7.510-1": [
+   "WAG-BB-0152"
+  ],
+  "WGW-BB-5.304-1": [
+   "WAG-BB-0153"
+  ],
+  "WGW-BB-5.404-1": [
+   "WAG-BB-0154"
+  ],
+  "USAG-BB-7.508-1": [
+   "WAG-BB-0154"
+  ],
+  "WGW-BB-5.405-1": [
+   "WAG-BB-0155"
+  ],
+  "USAG-BB-7.409-1": [
+   "WAG-BB-0155"
+  ],
+  "WGW-BB-5.405-2": [
+   "WAG-BB-0156"
+  ],
+  "USAG-BB-7.309-1": [
+   "WAG-BB-0156"
+  ],
+  "WGW-BB-5.505-1": [
+   "WAG-BB-0157"
+  ],
+  "USAG-BB-7.509-1": [
+   "WAG-BB-0157"
+  ],
+  "WGW-BB-5.306-1": [
+   "WAG-BB-0158"
+  ],
+  "WGW-BB-5.207-1": [
+   "WAG-BB-0159",
+   "WAG-BB-0354"
+  ],
+  "USAG-BB-7.212-1": [
+   "WAG-BB-0159"
+  ],
+  "WGW-BB-5.407-1": [
+   "WAG-BB-0160"
+  ],
+  "USAG-BB-7.512-1": [
+   "WAG-BB-0160"
+  ],
+  "WGW-BB-5.208-1": [
+   "WAG-BB-0161"
+  ],
+  "USAG-BB-7.203-2": [
+   "WAG-BB-0161"
+  ],
+  "WGW-BB-5.408-1": [
+   "WAG-BB-0162",
+   "WAG-BB-0335",
+   "WAG-BB-0336",
+   "WAG-BB-0337",
+   "WAG-BB-0338",
+   "WAG-BB-0339",
+   "WAG-BB-0465",
+   "WAG-BB-0466",
+   "WAG-BB-0467"
+  ],
+  "USAG-BB-7.403-1a": [
+   "WAG-BB-0162"
+  ],
+  "USAG-BB-7.403-1": [
+   "WAG-BB-0162"
+  ],
+  "WGW-BB-5.508-1": [
+   "WAG-BB-0163"
+  ],
+  "WGW-BB-5.409-1": [
+   "WAG-BB-0164",
+   "WAG-BB-0459",
+   "WAG-BB-0462",
+   "WAG-BB-0463"
+  ],
+  "USAG-BB-7.402-1": [
+   "WAG-BB-0164"
+  ],
+  "WGW-BB-5.410-1": [
+   "WAG-BB-0165"
+  ],
+  "USAG-BB-8.501-1": [
+   "WAG-BB-0165"
+  ],
+  "WGW-BB-5.411-1": [
+   "WAG-BB-0166",
+   "WAG-BB-0359"
+  ],
+  "USAG-BB-8.402-1a": [
+   "WAG-BB-0166"
+  ],
+  "USAG-BB-8.402-1": [
+   "WAG-BB-0166"
+  ],
+  "WGW-BB-5.511-1": [
+   "WAG-BB-0167"
+  ],
+  "WGW-BB-5.611-1": [
+   "WAG-BB-0168"
+  ],
+  "USAG-BB-8.502-1": [
+   "WAG-BB-0168"
+  ],
+  "WGW-BB-5.512-1": [
+   "WAG-BB-0169"
+  ],
+  "USAG-BB-8.504-1": [
+   "WAG-BB-0169"
+  ],
+  "WGW-BB-5.612-1": [
+   "WAG-BB-0170"
+  ],
+  "USAG-BB-8.504-2": [
+   "WAG-BB-0170"
+  ],
+  "WGW-BB-5.712-1": [
+   "WAG-BB-0171"
+  ],
+  "USAG-BB-8.504-3": [
+   "WAG-BB-0171"
+  ],
+  "WGW-BB-5.613-1": [
+   "WAG-BB-0172"
+  ],
+  "WGW-BB-5.613-2": [
+   "WAG-BB-0173"
+  ],
+  "USAG-BB-8.505-1": [
+   "WAG-BB-0173"
+  ],
+  "WGW-BB-6.101-1": [
+   "WAG-BB-0174"
+  ],
+  "USAG-BB-9.102-1": [
+   "WAG-BB-0174",
+   "WAG-BB-0490"
+  ],
+  "WGW-BB-6.201-2": [
+   "WAG-BB-0175"
+  ],
+  "WGW-BB-6.301-1": [
+   "WAG-BB-0176"
+  ],
+  "USAG-BB-9.302-1": [
+   "WAG-BB-0176",
+   "WAG-BB-0491"
+  ],
+  "WGW-BB-6.501-1": [
+   "WAG-BB-0177"
+  ],
+  "WGW-BB-6.302-1": [
+   "WAG-BB-0178"
+  ],
+  "WGW-BB-6.402-1": [
+   "WAG-BB-0179"
+  ],
+  "USAG-BB-9.404-1": [
+   "WAG-BB-0179"
+  ],
+  "WGW-BB-6.602-1": [
+   "WAG-BB-0180"
+  ],
+  "USAG-BB-9.504-1": [
+   "WAG-BB-0180"
+  ],
+  "WGW-BB-6.203-1": [
+   "WAG-BB-0181"
+  ],
+  "USAG-BB-9.205-1": [
+   "WAG-BB-0181"
+  ],
+  "WGW-BB-6.303-1": [
+   "WAG-BB-0182"
+  ],
+  "WGW-BB-6.403-1": [
+   "WAG-BB-0183"
+  ],
+  "WGW-BB-6.703-1": [
+   "WAG-BB-0184"
+  ],
+  "USAG-BB-9.505-1": [
+   "WAG-BB-0184"
+  ],
+  "WGW-BB-6.204-1": [
+   "WAG-BB-0185"
+  ],
+  "WGW-BB-6.304-1": [
+   "WAG-BB-0186"
+  ],
+  "WGW-BB-6.304-2": [
+   "WAG-BB-0187"
+  ],
+  "WGW-BB-6.404-1": [
+   "WAG-BB-0188"
+  ],
+  "USAG-BB-9.506-1": [
+   "WAG-BB-0188"
+  ],
+  "WGW-BB-6.604-1": [
+   "WAG-BB-0189"
+  ],
+  "USAG-BB-9.506-2": [
+   "WAG-BB-0189"
+  ],
+  "WGW-BB-6.405-1": [
+   "WAG-BB-0190"
+  ],
+  "USAG-BB-9.507-1": [
+   "WAG-BB-0190",
+   "WAG-BB-0191"
+  ],
+  "WGW-BB-6.505-1": [
+   "WAG-BB-0191"
+  ],
+  "WGW-BB-6.805-1": [
+   "WAG-BB-0192"
+  ],
+  "WGW-BB-6.406-1": [
+   "WAG-BB-0193"
+  ],
+  "USAG-BB-9.408-2": [
+   "WAG-BB-0193"
+  ],
+  "WGW-BB-6.606-1": [
+   "WAG-BB-0194"
+  ],
+  "USAG-BB-9.508-1": [
+   "WAG-BB-0194"
+  ],
+  "WGW-BB-6.307-1": [
+   "WAG-BB-0195"
+  ],
+  "USAG-BB-9.409-1": [
+   "WAG-BB-0195",
+   "WAG-BB-0501"
+  ],
+  "WGW-BB-6.307-2": [
+   "WAG-BB-0196"
+  ],
+  "USAG-BB-9.309-1": [
+   "WAG-BB-0196",
+   "WAG-BB-0500"
+  ],
+  "WGW-BB-6.407-1": [
+   "WAG-BB-0197"
+  ],
+  "USAG-BB-9.509-1": [
+   "WAG-BB-0197"
+  ],
+  "WGW-BB-6.407-2": [
+   "WAG-BB-0198"
+  ],
+  "WGW-BB-6.507-1": [
+   "WAG-BB-0199"
+  ],
+  "USAG-BB-1.101-1b": [
+   "WAG-BB-0200"
+  ],
+  "USAG-BB-1.201-1": [
+   "WAG-BB-0201"
+  ],
+  "USAG-BB-1.201-2": [
+   "WAG-BB-0202"
+  ],
+  "USAG-BB-1.301-1": [
+   "WAG-BB-0203"
+  ],
+  "WGW-BB-1.401-1": [
+   "WAG-BB-0204"
+  ],
+  "USAG-BB-1.401-2": [
+   "WAG-BB-0204"
+  ],
+  "USAG-BB-1.102-1": [
+   "WAG-BB-0205"
+  ],
+  "WGW-BB-1.102-1": [
+   "WAG-BB-0205",
+   "WAG-BB-0208"
+  ],
+  "USAG-BB-1.102-2": [
+   "WAG-BB-0206"
+  ],
+  "USAG-BB-1.102-3": [
+   "WAG-BB-0207"
+  ],
+  "USAG-BB-1.202-1": [
+   "WAG-BB-0208"
+  ],
+  "USAG-BB-1.103-1": [
+   "WAG-BB-0209"
+  ],
+  "USAG-BB-1.203-1": [
+   "WAG-BB-0210"
+  ],
+  "WGW-BB-1.103-1": [
+   "WAG-BB-0210"
+  ],
+  "USAG-BB-1.204-1": [
+   "WAG-BB-0211"
+  ],
+  "WGW-BB-1.204-1": [
+   "WAG-BB-0211",
+   "WAG-BB-0212"
+  ],
+  "USAG-BB-1.204-2": [
+   "WAG-BB-0212"
+  ],
+  "USAG-BB-1.105-1": [
+   "WAG-BB-0213"
+  ],
+  "WGW-BB-1.105-2": [
+   "WAG-BB-0213"
+  ],
+  "USAG-BB-1.105-2": [
+   "WAG-BB-0214"
+  ],
+  "USAG-BB-1.305-2": [
+   "WAG-BB-0215"
+  ],
+  "USAG-BB-1.106-1": [
+   "WAG-BB-0216"
+  ],
+  "USAG-BB-1.206-1": [
+   "WAG-BB-0217"
+  ],
+  "USAG-BB-1.207-1": [
+   "WAG-BB-0218"
+  ],
+  "USAG-BB-1.108-2": [
+   "WAG-BB-0219"
+  ],
+  "USAG-BB-1.208-1": [
+   "WAG-BB-0220"
+  ],
+  "USAG-BB-1.308-1": [
+   "WAG-BB-0221"
+  ],
+  "USAG-BB-1.109-1": [
+   "WAG-BB-0222"
+  ],
+  "USAG-BB-1.309-1": [
+   "WAG-BB-0223"
+  ],
+  "WGW-BB-1.309-3": [
+   "WAG-BB-0223",
+   "WAG-BB-0225"
+  ],
+  "USAG-BB-1.409-1": [
+   "WAG-BB-0224"
+  ],
+  "USAG-BB-1.409-2": [
+   "WAG-BB-0225"
+  ],
+  "USAG-BB-1.310-1": [
+   "WAG-BB-0226"
+  ],
+  "USAG-BB-1.311-1": [
+   "WAG-BB-0227"
+  ],
+  "USAG-BB-1.311-2": [
+   "WAG-BB-0228"
+  ],
+  "USAG-BB-1.411-1": [
+   "WAG-BB-0229"
+  ],
+  "USAG-BB-1.412-1": [
+   "WAG-BB-0230"
+  ],
+  "WGW-BB-1.413-1": [
+   "WAG-BB-0230",
+   "WAG-BB-0231"
+  ],
+  "USAG-BB-1.412-2": [
+   "WAG-BB-0231"
+  ],
+  "USAG-BB-1.113-1": [
+   "WAG-BB-0232"
+  ],
+  "USAG-BB-1.213-2": [
+   "WAG-BB-0233"
+  ],
+  "USAG-BB-1.413-1": [
+   "WAG-BB-0234"
+  ],
+  "USAG-BB-1.314-1": [
+   "WAG-BB-0235"
+  ],
+  "USAG-BB-1.414-1": [
+   "WAG-BB-0236"
+  ],
+  "USAG-BB-1.414-2": [
+   "WAG-BB-0237"
+  ],
+  "USAG-BB-2.101-1": [
+   "WAG-BB-0238"
+  ],
+  "USAG-BB-2.201-3": [
+   "WAG-BB-0239"
+  ],
+  "USAG-BB-2.201-4": [
+   "WAG-BB-0240"
+  ],
+  "USAG-BB-2.201-5": [
+   "WAG-BB-0241"
+  ],
+  "USAG-BB-2.201-6": [
+   "WAG-BB-0242"
+  ],
+  "USAG-BB-2.301-2": [
+   "WAG-BB-0243"
+  ],
+  "USAG-BB-2.301-3": [
+   "WAG-BB-0244"
+  ],
+  "USAG-BB-2.301-4": [
+   "WAG-BB-0245"
+  ],
+  "USAG-BB-2.301-5": [
+   "WAG-BB-0246"
+  ],
+  "USAG-BB-2.202-2": [
+   "WAG-BB-0247"
+  ],
+  "USAG-BB-2.202-3": [
+   "WAG-BB-0248"
+  ],
+  "USAG-BB-2.202-4": [
+   "WAG-BB-0249"
+  ],
+  "USAG-BB-2.202-5": [
+   "WAG-BB-0250"
+  ],
+  "USAG-BB-2.302-1": [
+   "WAG-BB-0251"
+  ],
+  "USAG-BB-2.402-1": [
+   "WAG-BB-0253"
+  ],
+  "USAG-BB-2.402-2": [
+   "WAG-BB-0254"
+  ],
+  "USAG-BB-2.203-1": [
+   "WAG-BB-0255"
+  ],
+  "USAG-BB-2.104-1": [
+   "WAG-BB-0256"
+  ],
+  "USAG-BB-2.105-1": [
+   "WAG-BB-0257"
+  ],
+  "USAG-BB-2.305-3": [
+   "WAG-BB-0258"
+  ],
+  "USAG-BB-2.405-2": [
+   "WAG-BB-0259"
+  ],
+  "USAG-BB-2.306-1": [
+   "WAG-BB-0260"
+  ],
+  "USAG-BB-2.406-1": [
+   "WAG-BB-0261"
+  ],
+  "USAG-BB-2.406-2": [
+   "WAG-BB-0262"
+  ],
+  "USAG-BB-2.307-1": [
+   "WAG-BB-0263"
+  ],
+  "USAG-BB-2.407-2": [
+   "WAG-BB-0264"
+  ],
+  "USAG-BB-2.108-1": [
+   "WAG-BB-0265"
+  ],
+  "USAG-BB-2.108-2": [
+   "WAG-BB-0266"
+  ],
+  "USAG-BB-2.108-3": [
+   "WAG-BB-0267"
+  ],
+  "USAG-BB-2.208-1": [
+   "WAG-BB-0268"
+  ],
+  "USAG-BB-2.308-1": [
+   "WAG-BB-0269"
+  ],
+  "USAG-BB-2.408-1": [
+   "WAG-BB-0270"
+  ],
+  "USAG-BB-2.109-1": [
+   "WAG-BB-0271"
+  ],
+  "USAG-BB-2.109-2": [
+   "WAG-BB-0272"
+  ],
+  "USAG-BB-2.409-1": [
+   "WAG-BB-0273"
+  ],
+  "USAG-BB-2.110-1": [
+   "WAG-BB-0274"
+  ],
+  "USAG-BB-2.310-1": [
+   "WAG-BB-0275"
+  ],
+  "USAG-BB-3.001-1": [
+   "WAG-BB-0276"
+  ],
+  "USAG-BB-3.002-1": [
+   "WAG-BB-0277"
+  ],
+  "USAG-BB-3.003-1": [
+   "WAG-BB-0278"
+  ],
+  "USAG-BB-3.003-2": [
+   "WAG-BB-0279"
+  ],
+  "USAG-BB-3.004-1": [
+   "WAG-BB-0280"
+  ],
+  "USAG-BB-3.202-1": [
+   "WAG-BB-0281"
+  ],
+  "USAG-BB-3.203-1": [
+   "WAG-BB-0282"
+  ],
+  "USAG-BB-3.304-1": [
+   "WAG-BB-0283"
+  ],
+  "USAG-BB-3.404-1": [
+   "WAG-BB-0284"
+  ],
+  "USAG-BB-3.306-2": [
+   "WAG-BB-0285"
+  ],
+  "USAG-BB-3.406-1": [
+   "WAG-BB-0286"
+  ],
+  "USAG-BB-3.107-1": [
+   "WAG-BB-0287"
+  ],
+  "USAG-BB-3.208-1": [
+   "WAG-BB-0288"
+  ],
+  "USAG-BB-3.308-1": [
+   "WAG-BB-0289"
+  ],
+  "USAG-BB-4.101-1": [
+   "WAG-BB-0290"
+  ],
+  "USAG-BB-4.201-1": [
+   "WAG-BB-0291"
+  ],
+  "USAG-BB-4.102-1": [
+   "WAG-BB-0292"
+  ],
+  "USAG-BB-4.202-1": [
+   "WAG-BB-0293"
+  ],
+  "USAG-BB-4.103-1": [
+   "WAG-BB-0294"
+  ],
+  "USAG-BB-4.203-1": [
+   "WAG-BB-0295"
+  ],
+  "USAG-BB-5.001-1": [
+   "WAG-BB-0296"
+  ],
+  "USAG-BB-5.002-1": [
+   "WAG-BB-0297"
+  ],
+  "USAG-BB-5.002-2": [
+   "WAG-BB-0298"
+  ],
+  "USAG-BB-5.003-1": [
+   "WAG-BB-0299"
+  ],
+  "USAG-BB-5.102-1": [
+   "WAG-BB-0300"
+  ],
+  "USAG-BB-5.103-1": [
+   "WAG-BB-0300"
+  ],
+  "WGW-BB-4.102-1": [
+   "WAG-BB-0300"
+  ],
+  "USAG-BB-5.302-1": [
+   "WAG-BB-0301"
+  ],
+  "USAG-BB-5.402-1": [
+   "WAG-BB-0302"
+  ],
+  "USAG-BB-5.104-1": [
+   "WAG-BB-0303"
+  ],
+  "USAG-BB-5.204-1": [
+   "WAG-BB-0304"
+  ],
+  "USAG-BB-5.105-1": [
+   "WAG-BB-0305"
+  ],
+  "USAG-BB-5.305-1": [
+   "WAG-BB-0306"
+  ],
+  "USAG-BB-5.206-1": [
+   "WAG-BB-0308"
+  ],
+  "USAG-BB-5.206-2": [
+   "WAG-BB-0309"
+  ],
+  "USAG-BB-5.306-1": [
+   "WAG-BB-0310"
+  ],
+  "USAG-BB-5.107-1": [
+   "WAG-BB-0312"
+  ],
+  "USAG-BB-5.307-1": [
+   "WAG-BB-0313"
+  ],
+  "USAG-BB-5.307-2": [
+   "WAG-BB-0314"
+  ],
+  "USAG-BB-5.307-3": [
+   "WAG-BB-0315"
+  ],
+  "USAG-BB-5.208-1": [
+   "WAG-BB-0316"
+  ],
+  "USAG-BB-5.308-1": [
+   "WAG-BB-0317"
+  ],
+  "USAG-BB-6.101-1": [
+   "WAG-BB-0318"
+  ],
+  "USAG-BB-6.101-2": [
+   "WAG-BB-0319"
+  ],
+  "USAG-BB-6.101-3": [
+   "WAG-BB-0320"
+  ],
+  "USAG-BB-6.201-1": [
+   "WAG-BB-0321"
+  ],
+  "USAG-BB-6.104-1": [
+   "WAG-BB-0322"
+  ],
+  "USAG-BB-6.104-2": [
+   "WAG-BB-0323"
+  ],
+  "USAG-BB-6.304-1": [
+   "WAG-BB-0324"
+  ],
+  "USAG-BB-6.205-2": [
+   "WAG-BB-0325"
+  ],
+  "WGW-BB-4.206-1": [
+   "WAG-BB-0325",
+   "WAG-BB-0453",
+   "WAG-BB-0454"
+  ],
+  "USAG-BB-7.101-1": [
+   "WAG-BB-0326"
+  ],
+  "USAG-BB-7.201-1": [
+   "WAG-BB-0327"
+  ],
+  "USAG-BB-7.201-2": [
+   "WAG-BB-0328"
+  ],
+  "WGW-BB-4.108-1": [
+   "WAG-BB-0328",
+   "WAG-BB-0329"
+  ],
+  "USAG-BB-7.201-4": [
+   "WAG-BB-0329"
+  ],
+  "USAG-BB-7.302-2": [
+   "WAG-BB-0330"
+  ],
+  "WGW-BB-5.201-1": [
+   "WAG-BB-0330",
+   "WAG-BB-0457",
+   "WAG-BB-0458"
+  ],
+  "USAG-BB-7.103-1a": [
+   "WAG-BB-0331"
+  ],
+  "USAG-BB-7.103-1": [
+   "WAG-BB-0331"
+  ],
+  "WGW-BB-4.107-1": [
+   "WAG-BB-0331",
+   "WAG-BB-0332",
+   "WAG-BB-0334"
+  ],
+  "USAG-BB-7.103-1b": [
+   "WAG-BB-0332"
+  ],
+  "USAG-BB-7.103-1c": [
+   "WAG-BB-0333"
+  ],
+  "USAG-BB-7.203-1": [
+   "WAG-BB-0334"
+  ],
+  "USAG-BB-7.403-1b": [
+   "WAG-BB-0335"
+  ],
+  "USAG-BB-7.403-2": [
+   "WAG-BB-0336"
+  ],
+  "USAG-BB-7.403-3": [
+   "WAG-BB-0337"
+  ],
+  "USAG-BB-7.403-4": [
+   "WAG-BB-0338"
+  ],
+  "USAG-BB-7.403-5": [
+   "WAG-BB-0339"
+  ],
+  "USAG-BB-7.104-1a": [
+   "WAG-BB-0340",
+   "WAG-BB-0469",
+   "WAG-BB-0470"
+  ],
+  "USAG-BB-7.104-1": [
+   "WAG-BB-0340",
+   "WAG-BB-0469",
+   "WAG-BB-0470"
+  ],
+  "WGW-BB-4.109-1": [
+   "WAG-BB-0340",
+   "WAG-BB-0469",
+   "WAG-BB-0470"
+  ],
+  "USAG-BB-7.104-2": [
+   "WAG-BB-0341"
+  ],
+  "USAG-BB-7.204-1": [
+   "WAG-BB-0342"
+  ],
+  "USAG-BB-7.404-1": [
+   "WAG-BB-0343"
+  ],
+  "WGW-BB-1.412-1": [
+   "WAG-BB-0343"
+  ],
+  "USAG-BB-7.205-1": [
+   "WAG-BB-0344"
+  ],
+  "USAG-BB-7.106-1": [
+   "WAG-BB-0345"
+  ],
+  "USAG-BB-7.206-2": [
+   "WAG-BB-0346"
+  ],
+  "USAG-BB-7.107-1": [
+   "WAG-BB-0347"
+  ],
+  "USAG-BB-7.207-1": [
+   "WAG-BB-0348"
+  ],
+  "USAG-BB-7.307-1": [
+   "WAG-BB-0349"
+  ],
+  "USAG-BB-7.208-1": [
+   "WAG-BB-0350"
+  ],
+  "WGW-BB-5.204-1": [
+   "WAG-BB-0350",
+   "WAG-BB-0352"
+  ],
+  "USAG-BB-7.308-1": [
+   "WAG-BB-0351"
+  ],
+  "USAG-BB-7.310-1": [
+   "WAG-BB-0352"
+  ],
+  "USAG-BB-7.311-1": [
+   "WAG-BB-0353"
+  ],
+  "WGW-BB-5.206-1": [
+   "WAG-BB-0353",
+   "WAG-BB-0403"
+  ],
+  "USAG-BB-7.312-1": [
+   "WAG-BB-0354"
+  ],
+  "USAG-BB-7.312-2a": [
+   "WAG-BB-0355"
+  ],
+  "USAG-BB-7.312-2": [
+   "WAG-BB-0355"
+  ],
+  "WGW-BB-5.307-1": [
+   "WAG-BB-0355",
+   "WAG-BB-0356"
+  ],
+  "USAG-BB-7.312-2b": [
+   "WAG-BB-0356"
+  ],
+  "USAG-BB-8.301-2": [
+   "WAG-BB-0357"
+  ],
+  "USAG-BB-8.402-1b": [
+   "WAG-BB-0358"
+  ],
+  "USAG-BB-8.402-1c": [
+   "WAG-BB-0359"
+  ],
+  "USAG-BB-8.402-1d": [
+   "WAG-BB-0360"
+  ],
+  "USAG-BB-8.303-2": [
+   "WAG-BB-0361"
+  ],
+  "WGW-BB-5.312-1": [
+   "WAG-BB-0361",
+   "WAG-BB-0362",
+   "WAG-BB-0364",
+   "WAG-BB-0482",
+   "WAG-BB-0483",
+   "WAG-BB-0485",
+   "WAG-BB-0486",
+   "WAG-BB-0514"
+  ],
+  "USAG-BB-8.403-1": [
+   "WAG-BB-0362"
+  ],
+  "USAG-BB-8.304-2": [
+   "WAG-BB-0363"
+  ],
+  "USAG-BB-8.404-1": [
+   "WAG-BB-0364"
+  ],
+  "USAG-BB-8.305-1": [
+   "WAG-BB-0365"
+  ],
+  "WGW-BB-5.313-1": [
+   "WAG-BB-0365",
+   "WAG-BB-0366",
+   "WAG-BB-0487"
+  ],
+  "USAG-BB-8.405-1": [
+   "WAG-BB-0366"
+  ],
+  "USAG-BB-9.001-1": [
+   "WAG-BB-0367"
+  ],
+  "USAG-BB-9.002-1": [
+   "WAG-BB-0368"
+  ],
+  "USAG-BB-9.003-1": [
+   "WAG-BB-0369"
+  ],
+  "USAG-BB-9.101-2": [
+   "WAG-BB-0370"
+  ],
+  "USAG-BB-9.201-1": [
+   "WAG-BB-0371"
+  ],
+  "USAG-BB-9.301-1": [
+   "WAG-BB-0372"
+  ],
+  "USAG-BB-9.302-2": [
+   "WAG-BB-0373"
+  ],
+  "WGW-BB-6.201-1": [
+   "WAG-BB-0373",
+   "WAG-BB-0376"
+  ],
+  "USAG-BB-9.402-1": [
+   "WAG-BB-0374"
+  ],
+  "USAG-BB-9.102-2": [
+   "WAG-BB-0375"
+  ],
+  "USAG-BB-9.202-1": [
+   "WAG-BB-0376"
+  ],
+  "USAG-BB-9.202-2": [
+   "WAG-BB-0377"
+  ],
+  "WGW-BB-6.202-2": [
+   "WAG-BB-0377"
+  ],
+  "USAG-BB-9.103-1": [
+   "WAG-BB-0378"
+  ],
+  "USAG-BB-9.103-2": [
+   "WAG-BB-0379"
+  ],
+  "USAG-BB-9.203-1": [
+   "WAG-BB-0380"
+  ],
+  "USAG-BB-9.203-2": [
+   "WAG-BB-0381"
+  ],
+  "USAG-BB-9.303-1": [
+   "WAG-BB-0382"
+  ],
+  "USAG-BB-9.304-1": [
+   "WAG-BB-0383"
+  ],
+  "USAG-BB-9.405-1": [
+   "WAG-BB-0384"
+  ],
+  "USAG-BB-9.106-1": [
+   "WAG-BB-0385"
+  ],
+  "WGW-BB-6.104-1": [
+   "WAG-BB-0385"
+  ],
+  "USAG-BB-9.206-1": [
+   "WAG-BB-0386"
+  ],
+  "USAG-BB-9.306-1": [
+   "WAG-BB-0387"
+  ],
+  "USAG-BB-9.406-1": [
+   "WAG-BB-0388"
+  ],
+  "USAG-BB-9.208-1": [
+   "WAG-BB-0389"
+  ],
+  "WGW-BB-6.106-1": [
+   "WAG-BB-0389",
+   "WAG-BB-0498"
+  ],
+  "USAG-BB-9.208-2": [
+   "WAG-BB-0390"
+  ],
+  "WGW-BB-6.206-1": [
+   "WAG-BB-0390"
+  ],
+  "USAG-BB-9.308-1": [
+   "WAG-BB-0391"
+  ],
+  "USAG-BB-9.308-2": [
+   "WAG-BB-0392"
+  ],
+  "WGW-BB-6.306-1": [
+   "WAG-BB-0392",
+   "WAG-BB-0393"
+  ],
+  "USAG-BB-9.408-1": [
+   "WAG-BB-0393"
+  ],
+  "USAG-BB-9.209-1": [
+   "WAG-BB-0394"
+  ],
+  "WGW-BB-6.207-1": [
+   "WAG-BB-0394",
+   "WAG-BB-0500"
+  ],
+  "USAG-BB-9.210-1": [
+   "WAG-BB-0395"
+  ],
+  "USAG-BB-9.310-1": [
+   "WAG-BB-0396"
+  ],
+  "USAG-BB-1.307-1": [
+   "WAG-BB-0397"
+  ],
+  "USAG-BB-1.114-1": [
+   "WAG-BB-0398"
+  ],
+  "USAG-BB-2.0 Bronze-1a": [
+   "WAG-BB-0399"
+  ],
+  "USAG-BB-2.0 Bronze-1": [
+   "WAG-BB-0399"
+  ],
+  "USAG-BB-2.0 Silver-1a": [
+   "WAG-BB-0400"
+  ],
+  "USAG-BB-2.0 Silver-1": [
+   "WAG-BB-0400"
+  ],
+  "USAG-BB-2.401-1": [
+   "WAG-BB-0401"
+  ],
+  "USAG-BB-2.401-2": [
+   "WAG-BB-0402"
+  ],
+  "USAG-BB-7.211-1": [
+   "WAG-BB-0403"
+  ],
+  "WGW-BB-1.210-1": [
+   "WAG-BB-0405",
+   "WAG-BB-0406",
+   "WAG-BB-0407"
+  ],
+  "WGW-BB-1.114-1": [
+   "WAG-BB-0408"
+  ],
+  "USAG-BB-1.514-4": [
+   "WAG-BB-0409"
+  ],
+  "USAG-BB-1.515-1": [
+   "WAG-BB-0411"
+  ],
+  "USAG-BB-2.101-2": [
+   "WAG-BB-0412"
+  ],
+  "USAG-BB-2.501-2": [
+   "WAG-BB-0414"
+  ],
+  "USAG-BB-2.501-4": [
+   "WAG-BB-0415"
+  ],
+  "USAG-BB-2.502-2": [
+   "WAG-BB-0416"
+  ],
+  "USAG-BB-2.502-3": [
+   "WAG-BB-0417"
+  ],
+  "USAG-BB-2.303-1": [
+   "WAG-BB-0418",
+   "WAG-BB-0419"
+  ],
+  "USAG-BB-2.303-2": [
+   "WAG-BB-0420",
+   "WAG-BB-0421"
+  ],
+  "USAG-BB-2.403-1": [
+   "WAG-BB-0422",
+   "WAG-BB-0423"
+  ],
+  "USAG-BB-2.403-2": [
+   "WAG-BB-0424",
+   "WAG-BB-0425"
+  ],
+  "USAG-BB-2.503-1": [
+   "WAG-BB-0426"
+  ],
+  "USAG-BB-2.503-2": [
+   "WAG-BB-0427"
+  ],
+  "USAG-BB-2.503-3": [
+   "WAG-BB-0428"
+  ],
+  "USAG-BB-2.305-2": [
+   "WAG-BB-0431",
+   "WAG-BB-0432"
+  ],
+  "USAG-BB-2.505-3": [
+   "WAG-BB-0434"
+  ],
+  "USAG-BB-2.507-2": [
+   "WAG-BB-0435"
+  ],
+  "USAG-BB-2.111-1": [
+   "WAG-BB-0437",
+   "WAG-BB-0438",
+   "WAG-BB-0439"
+  ],
+  "WGW-BB-2.112-1": [
+   "WAG-BB-0437",
+   "WAG-BB-0438",
+   "WAG-BB-0439"
+  ],
+  "USAG-BB-2.311-1": [
+   "WAG-BB-0442",
+   "WAG-BB-0443",
+   "WAG-BB-0444"
+  ],
+  "USAG-BB-2.511-2": [
+   "WAG-BB-0446"
+  ],
+  "USAG-BB-3.506-2": [
+   "WAG-BB-0447"
+  ],
+  "USAG-BB-5.203-1": [
+   "WAG-BB-0448",
+   "WAG-BB-0449"
+  ],
+  "USAG-BB-5.407-1": [
+   "WAG-BB-0451",
+   "WAG-BB-0452"
+  ],
+  "USAG-BB-6.205-1": [
+   "WAG-BB-0453",
+   "WAG-BB-0454"
+  ],
+  "USAG-BB-6.305-1": [
+   "WAG-BB-0455",
+   "WAG-BB-0456"
+  ],
+  "USAG-BB-7.202-1": [
+   "WAG-BB-0457",
+   "WAG-BB-0458"
+  ],
+  "USAG-BB-7.402-2": [
+   "WAG-BB-0459",
+   "WAG-BB-0460"
+  ],
+  "USAG-BB-7.502-1": [
+   "WAG-BB-0461"
+  ],
+  "WGW-BB-5.401-1": [
+   "WAG-BB-0461"
+  ],
+  "USAG-BB-7.502-2": [
+   "WAG-BB-0462"
+  ],
+  "USAG-BB-7.502-3": [
+   "WAG-BB-0463"
+  ],
+  "USAG-BB-7.503-1": [
+   "WAG-BB-0464"
+  ],
+  "USAG-BB-7.503-2": [
+   "WAG-BB-0465"
+  ],
+  "USAG-BB-7.503-3": [
+   "WAG-BB-0466"
+  ],
+  "USAG-BB-7.503-4": [
+   "WAG-BB-0467"
+  ],
+  "USAG-BB-7.503-5": [
+   "WAG-BB-0468"
+  ],
+  "USAG-BB-7.206-1": [
+   "WAG-BB-0471",
+   "WAG-BB-0472"
+  ],
+  "WGW-BB-4.210-1": [
+   "WAG-BB-0471",
+   "WAG-BB-0472"
+  ],
+  "USAG-BB-7.510-2": [
+   "WAG-BB-0473"
+  ],
+  "USAG-BB-7.511-1": [
+   "WAG-BB-0474"
+  ],
+  "WGW-BB-5.406-1": [
+   "WAG-BB-0474"
+  ],
+  "USAG-BB-8.301-1": [
+   "WAG-BB-0475",
+   "WAG-BB-0476"
+  ],
+  "USAG-BB-8.401-1": [
+   "WAG-BB-0477",
+   "WAG-BB-0478",
+   "WAG-BB-0479"
+  ],
+  "WGW-BB-5.310-1": [
+   "WAG-BB-0478",
+   "WAG-BB-0479"
+  ],
+  "USAG-BB-8.501-2": [
+   "WAG-BB-0479"
+  ],
+  "USAG-BB-8.501-4": [
+   "WAG-BB-0480"
+  ],
+  "USAG-BB-8.502-2": [
+   "WAG-BB-0481"
+  ],
+  "USAG-BB-8.501-3": [
+   "WAG-BB-0481"
+  ],
+  "WGW-BB-5.510-1": [
+   "WAG-BB-0481"
+  ],
+  "USAG-BB-8.303-1": [
+   "WAG-BB-0482",
+   "WAG-BB-0483"
+  ],
+  "USAG-BB-8.503-1": [
+   "WAG-BB-0484"
+  ],
+  "USAG-BB-8.304-1": [
+   "WAG-BB-0485",
+   "WAG-BB-0486"
+  ],
+  "USAG-BB-8.505-2": [
+   "WAG-BB-0487"
+  ],
+  "USAG-BB-9.101-1": [
+   "WAG-BB-0488",
+   "WAG-BB-0489"
+  ],
+  "USAG-BB-9.104-1": [
+   "WAG-BB-0492",
+   "WAG-BB-0493"
+  ],
+  "WGW-BB-6.102-1": [
+   "WAG-BB-0492",
+   "WAG-BB-0493"
+  ],
+  "USAG-BB-9.204-1": [
+   "WAG-BB-0494",
+   "WAG-BB-0495",
+   "WAG-BB-0496"
+  ],
+  "WGW-BB-6.202-1": [
+   "WAG-BB-0494",
+   "WAG-BB-0495",
+   "WAG-BB-0496"
+  ],
+  "USAG-BB-9.507-2": [
+   "WAG-BB-0497"
+  ],
+  "WGW-BB-6.705-1": [
+   "WAG-BB-0497"
+  ],
+  "USAG-BB-9.108-1": [
+   "WAG-BB-0498",
+   "WAG-BB-0499"
+  ],
+  "USAG-BB-9.509-2": [
+   "WAG-BB-0502"
+  ],
+  "UCGW-BB-4": [
+   "WAG-BB-0503"
+  ],
+  "UCGW-BB-1": [
+   "WAG-BB-0504"
+  ],
+  "UCGM-wag-BB-jump-to-glide-kip-mount-denk-lobnig": [
+   "WAG-BB-0504"
+  ],
+  "UCGW-BB-2": [
+   "WAG-BB-0505"
+  ],
+  "UCGW-BB-3": [
+   "WAG-BB-0506"
+  ],
+  "UCGW-BB-5": [
+   "WAG-BB-0507"
+  ],
+  "UCGW-BB-6": [
+   "WAG-BB-0508"
+  ],
+  "UCGW-BB-7": [
+   "WAG-BB-0509"
+  ],
+  "UCGM-wag-BB-crocodile-hold-2-sec-rogers": [
+   "WAG-BB-0509"
+  ],
+  "UCGW-BB-8": [
+   "WAG-BB-0510"
+  ],
+  "UCGW-BB-9": [
+   "WAG-BB-0511"
+  ],
+  "UCGM-wag-BB-handstand-drop-to-shoulderstand-2-sec-mccarthy": [
+   "WAG-BB-0511"
+  ],
+  "UCGW-BB-10": [
+   "WAG-BB-0512"
+  ],
+  "UCGM-wag-BB-pistol-squat-in-relev-or-y-scale-niolet": [
+   "WAG-BB-0512"
+  ],
+  "UCGW-BB-11": [
+   "WAG-BB-0513"
+  ],
+  "UCGW-BB-12": [
+   "WAG-BB-0514"
+  ],
+  "UCGM-wag-BB-salto-backward-tucked-with-step-out-to-stand-sharpe": [
+   "WAG-BB-0514"
+  ],
+  "UCGW-BB-13": [
+   "WAG-BB-0515"
+  ],
+  "UCGM-wag-BB-full-twisting-butterfly-churko": [
+   "WAG-BB-0515"
+  ],
+  "UCGM-wag-BB-free-round-off-dismount": [
+   "WAG-BB-0516"
+  ],
+  "UCGM-wag-BB-front-handspring-dismount": [
+   "WAG-BB-0517"
+  ],
+  "UCGM-wag-BB-round-off-dismount": [
+   "WAG-BB-0518"
+  ],
+  "UCGM-wag-BB-cartwheel-to-momentary-handstand-drop-to-stand-dismount": [
+   "WAG-BB-0519"
+  ],
+  "UCGM-wag-BB-free-front-handspring-dismount": [
+   "WAG-BB-0520"
+  ],
+  "UCGM-wag-BB-stand-on-one-leg-in-relev-w-free-leg-horizontal-2-s-facing-a": [
+   "WAG-BB-0521"
+  ],
+  "UCGM-wag-BB-stand-on-one-leg-w-free-leg-horizontal-2-s-facing-any-direct": [
+   "WAG-BB-0522"
+  ],
+  "UCGM-wag-BB-headstand-2-s": [
+   "WAG-BB-0523"
+  ],
+  "UCGM-wag-BB-tuck-jump": [
+   "WAG-BB-0524"
+  ],
+  "UCGM-wag-BB-straight-jump-with-1-2-twist": [
+   "WAG-BB-0525"
+  ],
+  "UCGM-wag-BB-straight-jump-with-double-leg-change": [
+   "WAG-BB-0526"
+  ],
+  "UCGM-wag-BB-half-turn-on-one-leg-free-leg-any-position": [
+   "WAG-BB-0527"
+  ],
+  "UCGM-wag-BB-full-turn-on-knee-or-knees": [
+   "WAG-BB-0528"
+  ],
+  "UCGM-wag-BB-kick-up-to-momentary-handstand-and-return-to-stand": [
+   "WAG-BB-0529"
+  ],
+  "UCGM-wag-BB-shoulder-roll-backwards-any-end-position": [
+   "WAG-BB-0530"
+  ],
+  "UCGM-wag-BB-backward-roll-to-kneeling-from-any-start-position": [
+   "WAG-BB-0531"
+  ],
+  "USAG-BB-2.0 Bronze-2": [
+   "WAG-BB-0532"
+  ],
+  "USAG-BB-2.0 Bronze-3": [
+   "WAG-BB-0533"
+  ],
+  "USAG-BB-2.0 Silver-2": [
+   "WAG-BB-0534"
+  ],
+  "USAG-BB-2.0 Silver-3": [
+   "WAG-BB-0535"
+  ],
+  "USAG-BB-2.0 Gold-1": [
+   "WAG-BB-0536"
+  ],
+  "USAG-BB-2.0 Platinum-1": [
+   "WAG-BB-0537"
+  ],
+  "USAG-BB-2.505-1": [
+   "WAG-BB-0538"
+  ],
+  "USAG-BB-2.505-2": [
+   "WAG-BB-0539"
+  ],
+  "USAG-BB-1.101-1a": [
+   "WAG-BB-0540"
+  ],
+  "USAG-BB-1.101-1": [
+   "WAG-BB-0540"
+  ],
+  "USAG-BB-2.0 Silver-1b": [
+   "WAG-BB-0541"
+  ],
+  "WGW-FX-1.101-1": [
+   "WAG-FX-0001"
+  ],
+  "WGW-FX-1.201-1": [
+   "WAG-FX-0002"
+  ],
+  "WGW-FX-1.301-1": [
+   "WAG-FX-0003"
+  ],
+  "WGW-FX-1.302-1": [
+   "WAG-FX-0004"
+  ],
+  "USAG-FX-1.309-1": [
+   "WAG-FX-0004"
+  ],
+  "WGW-FX-1.302-2": [
+   "WAG-FX-0005"
+  ],
+  "WGW-FX-1.103-1": [
+   "WAG-FX-0006"
+  ],
+  "USAG-FX-1.201-1": [
+   "WAG-FX-0006"
+  ],
+  "WGW-FX-1.203-1": [
+   "WAG-FX-0007"
+  ],
+  "WGW-FX-1.203-2": [
+   "WAG-FX-0008"
+  ],
+  "WGW-FX-1.104-1": [
+   "WAG-FX-0009"
+  ],
+  "WGW-FX-1.204-1": [
+   "WAG-FX-0010",
+   "WAG-FX-0225"
+  ],
+  "USAG-FX-1.305-1": [
+   "WAG-FX-0010",
+   "WAG-FX-0225"
+  ],
+  "WGW-FX-1.304-1": [
+   "WAG-FX-0011"
+  ],
+  "USAG-FX-1.304-1": [
+   "WAG-FX-0011"
+  ],
+  "WGW-FX-1.304-2": [
+   "WAG-FX-0012",
+   "WAG-FX-0118"
+  ],
+  "WGW-FX-1.404-1": [
+   "WAG-FX-0013"
+  ],
+  "USAG-FX-1.404-1": [
+   "WAG-FX-0013"
+  ],
+  "WGW-FX-1.404-2": [
+   "WAG-FX-0014"
+  ],
+  "WGW-FX-1.105-1": [
+   "WAG-FX-0015"
+  ],
+  "USAG-FX-1.104-1": [
+   "WAG-FX-0015"
+  ],
+  "WGW-FX-1.205-1": [
+   "WAG-FX-0016"
+  ],
+  "USAG-FX-1.204-1": [
+   "WAG-FX-0016"
+  ],
+  "WGW-FX-1.305-1": [
+   "WAG-FX-0017"
+  ],
+  "USAG-FX-1.311-1": [
+   "WAG-FX-0017"
+  ],
+  "WGW-FX-1.405-1": [
+   "WAG-FX-0018"
+  ],
+  "USAG-FX-1.411-1": [
+   "WAG-FX-0018"
+  ],
+  "WGW-FX-1.106-1": [
+   "WAG-FX-0019",
+   "WAG-FX-0226"
+  ],
+  "USAG-FX-1.206-1": [
+   "WAG-FX-0019",
+   "WAG-FX-0226",
+   "WAG-FX-0227"
+  ],
+  "WGW-FX-1.206-1": [
+   "WAG-FX-0020"
+  ],
+  "USAG-FX-1.211-1": [
+   "WAG-FX-0020"
+  ],
+  "WGW-FX-1.107-1": [
+   "WAG-FX-0021"
+  ],
+  "USAG-FX-1.207-1": [
+   "WAG-FX-0021"
+  ],
+  "WGW-FX-1.207-1": [
+   "WAG-FX-0022"
+  ],
+  "USAG-FX-1.207-2": [
+   "WAG-FX-0022"
+  ],
+  "WGW-FX-1.207-2": [
+   "WAG-FX-0023"
+  ],
+  "USAG-FX-1.202-1b": [
+   "WAG-FX-0023"
+  ],
+  "WGW-FX-1.307-2": [
+   "WAG-FX-0024"
+  ],
+  "USAG-FX-1.302-1": [
+   "WAG-FX-0024"
+  ],
+  "WGW-FX-1.407-2": [
+   "WAG-FX-0025"
+  ],
+  "USAG-FX-1.402-1": [
+   "WAG-FX-0025"
+  ],
+  "WGW-FX-1.108-2": [
+   "WAG-FX-0026"
+  ],
+  "WGW-FX-1.208-2": [
+   "WAG-FX-0027"
+  ],
+  "USAG-FX-1.308-2": [
+   "WAG-FX-0027"
+  ],
+  "WGW-FX-1.109-1": [
+   "WAG-FX-0028"
+  ],
+  "WGW-FX-1.109-2": [
+   "WAG-FX-0029"
+  ],
+  "WGW-FX-1.109-3": [
+   "WAG-FX-0030"
+  ],
+  "UCGW-FX-1": [
+   "WAG-FX-0030",
+   "WAG-FX-0244"
+  ],
+  "WGW-FX-1.109-4": [
+   "WAG-FX-0031"
+  ],
+  "USAG-FX-1.110-1": [
+   "WAG-FX-0031"
+  ],
+  "WGW-FX-1.209-1": [
+   "WAG-FX-0032"
+  ],
+  "WGW-FX-1.209-2": [
+   "WAG-FX-0033"
+  ],
+  "WGW-FX-1.209-3": [
+   "WAG-FX-0034"
+  ],
+  "WGW-FX-1.209-4": [
+   "WAG-FX-0035"
+  ],
+  "WGW-FX-1.309-1": [
+   "WAG-FX-0036"
+  ],
+  "WGW-FX-1.309-2": [
+   "WAG-FX-0037"
+  ],
+  "USAG-FX-1.410-2": [
+   "WAG-FX-0037"
+  ],
+  "WGW-FX-1.409-1": [
+   "WAG-FX-0038"
+  ],
+  "USAG-FX-1.410-1": [
+   "WAG-FX-0038"
+  ],
+  "WGW-FX-1.409-2": [
+   "WAG-FX-0039"
+  ],
+  "WGW-FX-1.111-1": [
+   "WAG-FX-0040"
+  ],
+  "WGW-FX-1.111-2": [
+   "WAG-FX-0041",
+   "WAG-FX-0126"
+  ],
+  "WGW-FX-1.211-1": [
+   "WAG-FX-0042"
+  ],
+  "USAG-FX-1.213-1": [
+   "WAG-FX-0042",
+   "WAG-FX-0235"
+  ],
+  "WGW-FX-1.311-1": [
+   "WAG-FX-0043"
+  ],
+  "USAG-FX-1.413-1": [
+   "WAG-FX-0043"
+  ],
+  "WGW-FX-1.112-1": [
+   "WAG-FX-0044"
+  ],
+  "USAG-FX-1.214-1": [
+   "WAG-FX-0044"
+  ],
+  "WGW-FX-1.112-2": [
+   "WAG-FX-0045"
+  ],
+  "USAG-FX-1.114-1": [
+   "WAG-FX-0045"
+  ],
+  "WGW-FX-1.212-1": [
+   "WAG-FX-0046"
+  ],
+  "USAG-FX-1.314-1": [
+   "WAG-FX-0046"
+  ],
+  "WGW-FX-1.213-1": [
+   "WAG-FX-0047"
+  ],
+  "USAG-FX-1.215-1": [
+   "WAG-FX-0047"
+  ],
+  "WGW-FX-1.114-1": [
+   "WAG-FX-0048"
+  ],
+  "USAG-FX-1.116-1": [
+   "WAG-FX-0048"
+  ],
+  "WGW-FX-1.214-1": [
+   "WAG-FX-0049"
+  ],
+  "USAG-FX-1.316-1": [
+   "WAG-FX-0049",
+   "WAG-FX-0050"
+  ],
+  "WGW-FX-1.214-2": [
+   "WAG-FX-0050"
+  ],
+  "WGW-FX-1.514-1": [
+   "WAG-FX-0051"
+  ],
+  "USAG-FX-1.516-1": [
+   "WAG-FX-0051"
+  ],
+  "WGW-FX-2.101-1": [
+   "WAG-FX-0052",
+   "WAG-FX-0148"
+  ],
+  "USAG-FX-2.101-1": [
+   "WAG-FX-0052"
+  ],
+  "WGW-FX-2.201-1": [
+   "WAG-FX-0053",
+   "WAG-FX-0150"
+  ],
+  "USAG-FX-2.301-1": [
+   "WAG-FX-0053",
+   "WAG-FX-0241"
+  ],
+  "WGW-FX-2.301-1": [
+   "WAG-FX-0054"
+  ],
+  "USAG-FX-2.401-1": [
+   "WAG-FX-0054"
+  ],
+  "WGW-FX-2.501-1": [
+   "WAG-FX-0055"
+  ],
+  "USAG-FX-2.501-1": [
+   "WAG-FX-0055"
+  ],
+  "WGW-FX-2.202-1": [
+   "WAG-FX-0056"
+  ],
+  "WGW-FX-2.402-1": [
+   "WAG-FX-0057"
+  ],
+  "WGW-FX-2.203-1": [
+   "WAG-FX-0058"
+  ],
+  "USAG-FX-2.208-1": [
+   "WAG-FX-0058"
+  ],
+  "WGW-FX-2.403-1": [
+   "WAG-FX-0059"
+  ],
+  "USAG-FX-2.408-1": [
+   "WAG-FX-0059"
+  ],
+  "WGW-FX-2.503-1": [
+   "WAG-FX-0060"
+  ],
+  "WGW-FX-2.204-1": [
+   "WAG-FX-0061"
+  ],
+  "WGW-FX-2.404-1": [
+   "WAG-FX-0062"
+  ],
+  "WGW-FX-2.404-2": [
+   "WAG-FX-0063"
+  ],
+  "WGW-FX-2.205-1": [
+   "WAG-FX-0064"
+  ],
+  "USAG-FX-2.204-1": [
+   "WAG-FX-0064"
+  ],
+  "WGW-FX-2.206-1": [
+   "WAG-FX-0065"
+  ],
+  "USAG-FX-2.205-1": [
+   "WAG-FX-0065"
+  ],
+  "WGW-FX-2.207-1": [
+   "WAG-FX-0066"
+  ],
+  "WGW-FX-2.307-1": [
+   "WAG-FX-0067"
+  ],
+  "WGW-FX-2.407-1": [
+   "WAG-FX-0068"
+  ],
+  "WGW-FX-2.507-1": [
+   "WAG-FX-0069"
+  ],
+  "USAG-FX-2.506-1": [
+   "WAG-FX-0069"
+  ],
+  "WGW-FX-2.208-1": [
+   "WAG-FX-0070"
+  ],
+  "USAG-FX-2.207-1": [
+   "WAG-FX-0070"
+  ],
+  "WGW-FX-3.201-1": [
+   "WAG-FX-0071"
+  ],
+  "USAG-FX-3.201-1": [
+   "WAG-FX-0071"
+  ],
+  "WGW-FX-3.102-1": [
+   "WAG-FX-0072"
+  ],
+  "USAG-FX-4.101-1c": [
+   "WAG-FX-0072"
+  ],
+  "WGW-FX-3.203-1": [
+   "WAG-FX-0073"
+  ],
+  "WGW-FX-3.104-1": [
+   "WAG-FX-0074",
+   "WAG-FX-0182",
+   "WAG-FX-0183"
+  ],
+  "WGW-FX-3.105-2": [
+   "WAG-FX-0075"
+  ],
+  "USAG-FX-5.202-1": [
+   "WAG-FX-0075"
+  ],
+  "WGW-FX-3.305-1": [
+   "WAG-FX-0076"
+  ],
+  "USAG-FX-5.302-1": [
+   "WAG-FX-0076"
+  ],
+  "WGW-FX-3.106-1": [
+   "WAG-FX-0077"
+  ],
+  "USAG-FX-5.105-1a": [
+   "WAG-FX-0077"
+  ],
+  "USAG-FX-5.105-1": [
+   "WAG-FX-0077"
+  ],
+  "WGW-FX-3.107-1": [
+   "WAG-FX-0078",
+   "WAG-FX-0195",
+   "WAG-FX-0196",
+   "WAG-FX-0197"
+  ],
+  "WGW-FX-3.107-2": [
+   "WAG-FX-0079"
+  ],
+  "WGW-FX-3.207-1": [
+   "WAG-FX-0080"
+  ],
+  "USAG-FX-5.206-1": [
+   "WAG-FX-0080"
+  ],
+  "WGW-FX-4.501-1": [
+   "WAG-FX-0081"
+  ],
+  "USAG-FX-6.502-1": [
+   "WAG-FX-0081",
+   "WAG-FX-0082",
+   "WAG-FX-0083"
+  ],
+  "WGW-FX-4.601-1": [
+   "WAG-FX-0082"
+  ],
+  "WGW-FX-4.601-2": [
+   "WAG-FX-0083"
+  ],
+  "WGW-FX-4.302-1": [
+   "WAG-FX-0084"
+  ],
+  "WGW-FX-4.402-1": [
+   "WAG-FX-0085"
+  ],
+  "USAG-FX-6.501-1": [
+   "WAG-FX-0085",
+   "WAG-FX-0086",
+   "WAG-FX-0087"
+  ],
+  "WGW-FX-4.502-1": [
+   "WAG-FX-0086"
+  ],
+  "WGW-FX-4.602-1": [
+   "WAG-FX-0087"
+  ],
+  "WGW-FX-4.103-1": [
+   "WAG-FX-0088"
+  ],
+  "WGW-FX-4.105-1": [
+   "WAG-FX-0089"
+  ],
+  "WGW-FX-4.205-1": [
+   "WAG-FX-0090"
+  ],
+  "WGW-FX-4.505-1": [
+   "WAG-FX-0091"
+  ],
+  "USAG-FX-7.502-1": [
+   "WAG-FX-0091",
+   "WAG-FX-0092",
+   "WAG-FX-0093"
+  ],
+  "WGW-FX-4.605-1": [
+   "WAG-FX-0092"
+  ],
+  "WGW-FX-4.805-1": [
+   "WAG-FX-0093"
+  ],
+  "WGW-FX-5.101-1": [
+   "WAG-FX-0094",
+   "WAG-FX-0210",
+   "WAG-FX-0211",
+   "WAG-FX-0212",
+   "WAG-FX-0221"
+  ],
+  "WGW-FX-5.301-1": [
+   "WAG-FX-0095"
+  ],
+  "WGW-FX-5.401-1": [
+   "WAG-FX-0096"
+  ],
+  "USAG-FX-8.401-1": [
+   "WAG-FX-0096"
+  ],
+  "WGW-FX-5.501-1": [
+   "WAG-FX-0097"
+  ],
+  "USAG-FX-8.501-1": [
+   "WAG-FX-0097",
+   "WAG-FX-0098"
+  ],
+  "WGW-FX-5.601-1": [
+   "WAG-FX-0098"
+  ],
+  "WGW-FX-5.402-1": [
+   "WAG-FX-0099"
+  ],
+  "USAG-FX-8.403-1": [
+   "WAG-FX-0099"
+  ],
+  "WGW-FX-5.402-2": [
+   "WAG-FX-0100"
+  ],
+  "USAG-FX-8.403-2": [
+   "WAG-FX-0100"
+  ],
+  "WGW-FX-5.502-1": [
+   "WAG-FX-0101"
+  ],
+  "USAG-FX-8.503-1": [
+   "WAG-FX-0101"
+  ],
+  "WGW-FX-5.802-1": [
+   "WAG-FX-0102"
+  ],
+  "USAG-FX-8.504-3": [
+   "WAG-FX-0102",
+   "WAG-FX-0107"
+  ],
+  "WGW-FX-5.1002-1": [
+   "WAG-FX-0103"
+  ],
+  "WGW-FX-5.603-1": [
+   "WAG-FX-0104"
+  ],
+  "USAG-FX-8.504-1": [
+   "WAG-FX-0104"
+  ],
+  "WGW-FX-5.703-1": [
+   "WAG-FX-0105"
+  ],
+  "WGW-FX-5.803-1": [
+   "WAG-FX-0106"
+  ],
+  "USAG-FX-8.504-2": [
+   "WAG-FX-0106"
+  ],
+  "WGW-FX-5.903-1": [
+   "WAG-FX-0107"
+  ],
+  "WGW-FX-5.104-1": [
+   "WAG-FX-0108"
+  ],
+  "USAG-FX-8.102-1": [
+   "WAG-FX-0108"
+  ],
+  "WGW-FX-5.204-1": [
+   "WAG-FX-0109"
+  ],
+  "WGW-FX-5.304-1": [
+   "WAG-FX-0110"
+  ],
+  "USAG-FX-1.001-1": [
+   "WAG-FX-0111"
+  ],
+  "USAG-FX-1.101-1": [
+   "WAG-FX-0112"
+  ],
+  "USAG-FX-1.201-2": [
+   "WAG-FX-0113"
+  ],
+  "USAG-FX-1.202-1a": [
+   "WAG-FX-0114"
+  ],
+  "USAG-FX-1.202-1": [
+   "WAG-FX-0114"
+  ],
+  "USAG-FX-1.203-1": [
+   "WAG-FX-0115"
+  ],
+  "USAG-FX-1.104-2": [
+   "WAG-FX-0116"
+  ],
+  "USAG-FX-1.304-2": [
+   "WAG-FX-0117"
+  ],
+  "USAG-FX-1.305-2": [
+   "WAG-FX-0118"
+  ],
+  "USAG-FX-1.305-3": [
+   "WAG-FX-0119"
+  ],
+  "USAG-FX-1.306-1": [
+   "WAG-FX-0120"
+  ],
+  "WGW-FX-1.306-1": [
+   "WAG-FX-0120"
+  ],
+  "USAG-FX-1.407-1": [
+   "WAG-FX-0121"
+  ],
+  "WGW-FX-1.407-1": [
+   "WAG-FX-0121"
+  ],
+  "USAG-FX-1.308-1": [
+   "WAG-FX-0122"
+  ],
+  "WGW-FX-1.208-1": [
+   "WAG-FX-0122"
+  ],
+  "USAG-FX-1.408-1": [
+   "WAG-FX-0123"
+  ],
+  "USAG-FX-1.109-1": [
+   "WAG-FX-0124"
+  ],
+  "USAG-FX-1.109-2": [
+   "WAG-FX-0125"
+  ],
+  "USAG-FX-1.209-1": [
+   "WAG-FX-0126"
+  ],
+  "USAG-FX-1.209-2": [
+   "WAG-FX-0127"
+  ],
+  "WGW-FX-1.202-1": [
+   "WAG-FX-0127",
+   "WAG-FX-0130"
+  ],
+  "USAG-FX-1.409-1": [
+   "WAG-FX-0128"
+  ],
+  "WGW-FX-1.402-1": [
+   "WAG-FX-0128"
+  ],
+  "USAG-FX-1.210-1": [
+   "WAG-FX-0129"
+  ],
+  "USAG-FX-1.310-1": [
+   "WAG-FX-0130"
+  ],
+  "USAG-FX-1.310-2": [
+   "WAG-FX-0131"
+  ],
+  "USAG-FX-1.211-2": [
+   "WAG-FX-0132"
+  ],
+  "USAG-FX-1.311-2": [
+   "WAG-FX-0133"
+  ],
+  "USAG-FX-1.212-1": [
+   "WAG-FX-0134"
+  ],
+  "USAG-FX-1.412-1": [
+   "WAG-FX-0135"
+  ],
+  "USAG-FX-1.113-1": [
+   "WAG-FX-0136"
+  ],
+  "USAG-FX-1.313-1": [
+   "WAG-FX-0137"
+  ],
+  "USAG-FX-1.414-1": [
+   "WAG-FX-0138"
+  ],
+  "USAG-FX-1.315-1": [
+   "WAG-FX-0139"
+  ],
+  "USAG-FX-1.216-1": [
+   "WAG-FX-0140"
+  ],
+  "USAG-FX-1.416-1": [
+   "WAG-FX-0141"
+  ],
+  "USAG-FX-2.001-1": [
+   "WAG-FX-0142"
+  ],
+  "USAG-FX-2.002-1": [
+   "WAG-FX-0143"
+  ],
+  "USAG-FX-2.201-1": [
+   "WAG-FX-0144"
+  ],
+  "USAG-FX-2.202-1": [
+   "WAG-FX-0145"
+  ],
+  "USAG-FX-2.302-1": [
+   "WAG-FX-0146"
+  ],
+  "USAG-FX-2.402-1": [
+   "WAG-FX-0147"
+  ],
+  "USAG-FX-2.203-1": [
+   "WAG-FX-0148"
+  ],
+  "USAG-FX-2.303-1": [
+   "WAG-FX-0149"
+  ],
+  "USAG-FX-2.403-1": [
+   "WAG-FX-0150"
+  ],
+  "USAG-FX-2.304-1": [
+   "WAG-FX-0151"
+  ],
+  "USAG-FX-2.404-1": [
+   "WAG-FX-0152"
+  ],
+  "USAG-FX-2.105-1": [
+   "WAG-FX-0153"
+  ],
+  "USAG-FX-2.405-1": [
+   "WAG-FX-0154"
+  ],
+  "USAG-FX-2.206-1": [
+   "WAG-FX-0155"
+  ],
+  "USAG-FX-2.306-1": [
+   "WAG-FX-0156"
+  ],
+  "USAG-FX-2.406-1": [
+   "WAG-FX-0157"
+  ],
+  "USAG-FX-2.307-1": [
+   "WAG-FX-0158"
+  ],
+  "USAG-FX-2.308-1": [
+   "WAG-FX-0159"
+  ],
+  "USAG-FX-3.001-1": [
+   "WAG-FX-0160"
+  ],
+  "USAG-FX-3.002-1": [
+   "WAG-FX-0161"
+  ],
+  "USAG-FX-3.003-1": [
+   "WAG-FX-0162"
+  ],
+  "UCGM-wag-FX-handstand-any-entry-no-hold-forward-roll-out": [
+   "WAG-FX-0162",
+   "WAG-FX-0163",
+   "WAG-FX-0259"
+  ],
+  "WGW-FX-3.101-1": [
+   "WAG-FX-0162",
+   "WAG-FX-0163"
+  ],
+  "USAG-FX-3.101-1": [
+   "WAG-FX-0163"
+  ],
+  "USAG-FX-4.101-1a": [
+   "WAG-FX-0164"
+  ],
+  "USAG-FX-4.101-1": [
+   "WAG-FX-0164"
+  ],
+  "USAG-FX-4.101-1b": [
+   "WAG-FX-0165"
+  ],
+  "USAG-FX-4.201-1": [
+   "WAG-FX-0166"
+  ],
+  "USAG-FX-4.201-2": [
+   "WAG-FX-0167"
+  ],
+  "USAG-FX-4.301-1": [
+   "WAG-FX-0168"
+  ],
+  "USAG-FX-4.102-1a": [
+   "WAG-FX-0169"
+  ],
+  "USAG-FX-4.102-1": [
+   "WAG-FX-0169"
+  ],
+  "USAG-FX-4.102-1b": [
+   "WAG-FX-0170"
+  ],
+  "USAG-FX-4.102-2": [
+   "WAG-FX-0171"
+  ],
+  "USAG-FX-4.102-3a": [
+   "WAG-FX-0172"
+  ],
+  "USAG-FX-4.102-3": [
+   "WAG-FX-0172"
+  ],
+  "USAG-FX-4.102-3b": [
+   "WAG-FX-0173"
+  ],
+  "WGW-FX-3.103-1": [
+   "WAG-FX-0173"
+  ],
+  "USAG-FX-4.202-1": [
+   "WAG-FX-0174"
+  ],
+  "USAG-FX-5.001-1": [
+   "WAG-FX-0175"
+  ],
+  "USAG-FX-5.101-1a": [
+   "WAG-FX-0176"
+  ],
+  "USAG-FX-5.101-1": [
+   "WAG-FX-0176"
+  ],
+  "USAG-FX-5.101-1b": [
+   "WAG-FX-0177"
+  ],
+  "USAG-FX-5.101-1c": [
+   "WAG-FX-0178"
+  ],
+  "USAG-FX-5.101-1d": [
+   "WAG-FX-0179"
+  ],
+  "USAG-FX-5.101-1e": [
+   "WAG-FX-0180"
+  ],
+  "USAG-FX-5.101-1f": [
+   "WAG-FX-0181"
+  ],
+  "USAG-FX-5.201-1a": [
+   "WAG-FX-0182"
+  ],
+  "USAG-FX-5.201-1": [
+   "WAG-FX-0182"
+  ],
+  "USAG-FX-5.201-1b": [
+   "WAG-FX-0183"
+  ],
+  "USAG-FX-5.102-1": [
+   "WAG-FX-0184"
+  ],
+  "WGW-FX-3.105-1": [
+   "WAG-FX-0184",
+   "WAG-FX-0185",
+   "WAG-FX-0186"
+  ],
+  "USAG-FX-5.102-2": [
+   "WAG-FX-0185"
+  ],
+  "USAG-FX-5.202-2": [
+   "WAG-FX-0186"
+  ],
+  "USAG-FX-5.103-1": [
+   "WAG-FX-0187"
+  ],
+  "USAG-FX-5.303-1": [
+   "WAG-FX-0188"
+  ],
+  "USAG-FX-5.104-1a": [
+   "WAG-FX-0189"
+  ],
+  "USAG-FX-5.104-1": [
+   "WAG-FX-0189"
+  ],
+  "USAG-FX-5.104-1b": [
+   "WAG-FX-0190"
+  ],
+  "USAG-FX-5.104-1c": [
+   "WAG-FX-0191"
+  ],
+  "USAG-FX-5.104-1d": [
+   "WAG-FX-0192"
+  ],
+  "WGW-FX-4.104-1": [
+   "WAG-FX-0192",
+   "WAG-FX-0194"
+  ],
+  "USAG-FX-5.104-2": [
+   "WAG-FX-0193"
+  ],
+  "USAG-FX-5.105-1b": [
+   "WAG-FX-0194"
+  ],
+  "USAG-FX-5.106-1a": [
+   "WAG-FX-0195"
+  ],
+  "USAG-FX-5.106-1": [
+   "WAG-FX-0195"
+  ],
+  "USAG-FX-5.106-1b": [
+   "WAG-FX-0196"
+  ],
+  "USAG-FX-5.106-1c": [
+   "WAG-FX-0197"
+  ],
+  "USAG-FX-5.107-1": [
+   "WAG-FX-0198"
+  ],
+  "USAG-FX-6.101-1": [
+   "WAG-FX-0199"
+  ],
+  "WGW-FX-4.101-1": [
+   "WAG-FX-0199",
+   "WAG-FX-0201"
+  ],
+  "USAG-FX-6.201-1": [
+   "WAG-FX-0200"
+  ],
+  "WGW-FX-4.201-1": [
+   "WAG-FX-0200",
+   "WAG-FX-0203"
+  ],
+  "USAG-FX-6.201-2a": [
+   "WAG-FX-0201"
+  ],
+  "USAG-FX-6.201-2": [
+   "WAG-FX-0201"
+  ],
+  "USAG-FX-6.201-2b": [
+   "WAG-FX-0202"
+  ],
+  "WGW-FX-4.202-1": [
+   "WAG-FX-0202",
+   "WAG-FX-0204"
+  ],
+  "USAG-FX-6.201-2c": [
+   "WAG-FX-0203"
+  ],
+  "USAG-FX-6.201-2d": [
+   "WAG-FX-0204"
+  ],
+  "USAG-FX-6.301-1": [
+   "WAG-FX-0205"
+  ],
+  "USAG-FX-6.401-1": [
+   "WAG-FX-0206"
+  ],
+  "USAG-FX-7.101-1": [
+   "WAG-FX-0207"
+  ],
+  "USAG-FX-7.201-1": [
+   "WAG-FX-0208"
+  ],
+  "USAG-FX-7.202-1": [
+   "WAG-FX-0209"
+  ],
+  "USAG-FX-8.101-1a": [
+   "WAG-FX-0210"
+  ],
+  "USAG-FX-8.101-1": [
+   "WAG-FX-0210"
+  ],
+  "USAG-FX-8.101-1b": [
+   "WAG-FX-0211"
+  ],
+  "USAG-FX-8.101-1c": [
+   "WAG-FX-0212"
+  ],
+  "USAG-FX-8.201-1a": [
+   "WAG-FX-0213"
+  ],
+  "USAG-FX-8.201-1": [
+   "WAG-FX-0213"
+  ],
+  "USAG-FX-8.201-1b": [
+   "WAG-FX-0214"
+  ],
+  "USAG-FX-8.201-1c": [
+   "WAG-FX-0215"
+  ],
+  "WGW-FX-5.201-1": [
+   "WAG-FX-0215",
+   "WAG-FX-0216",
+   "WAG-FX-0218",
+   "WAG-FX-0222"
+  ],
+  "USAG-FX-8.201-1d": [
+   "WAG-FX-0216"
+  ],
+  "USAG-FX-8.201-1e": [
+   "WAG-FX-0217"
+  ],
+  "USAG-FX-8.201-1f": [
+   "WAG-FX-0218"
+  ],
+  "USAG-FX-8.301-1": [
+   "WAG-FX-0219"
+  ],
+  "USAG-FX-8.202-1": [
+   "WAG-FX-0220"
+  ],
+  "USAG-FX-8.105-1": [
+   "WAG-FX-0221"
+  ],
+  "USAG-FX-8.205-1": [
+   "WAG-FX-0222"
+  ],
+  "USAG-FX-8.206-1": [
+   "WAG-FX-0223"
+  ],
+  "USAG-FX-8.306-1": [
+   "WAG-FX-0224"
+  ],
+  "USAG-FX-1.307-1": [
+   "WAG-FX-0228",
+   "WAG-FX-0229"
+  ],
+  "WGW-FX-1.307-1": [
+   "WAG-FX-0228",
+   "WAG-FX-0229"
+  ],
+  "USAG-FX-1.208-1": [
+   "WAG-FX-0230",
+   "WAG-FX-0231"
+  ],
+  "WGW-FX-1.108-1": [
+   "WAG-FX-0230",
+   "WAG-FX-0231"
+  ],
+  "USAG-FX-1.112-1": [
+   "WAG-FX-0232"
+  ],
+  "WGW-FX-1.110-1": [
+   "WAG-FX-0232"
+  ],
+  "USAG-FX-1.312-1": [
+   "WAG-FX-0233",
+   "WAG-FX-0234"
+  ],
+  "WGW-FX-1.310-1": [
+   "WAG-FX-0233"
+  ],
+  "USAG-FX-1.514-1": [
+   "WAG-FX-0236"
+  ],
+  "USAG-FX-1.115-1": [
+   "WAG-FX-0237",
+   "WAG-FX-0238"
+  ],
+  "USAG-FX-1.415-1": [
+   "WAG-FX-0239",
+   "WAG-FX-0240"
+  ],
+  "WGW-FX-1.313-1": [
+   "WAG-FX-0239",
+   "WAG-FX-0240"
+  ],
+  "USAG-FX-8.503-2": [
+   "WAG-FX-0243"
+  ],
+  "UCGM-wag-FX-stag-or-double-stag-jump-with-1-2-180-turn-ineligible-for-na": [
+   "WAG-FX-0244"
+  ],
+  "UCGW-FX-2": [
+   "WAG-FX-0245"
+  ],
+  "UCGM-wag-FX-11-2-540-wolf-turn-to-l-turn-lim-1": [
+   "WAG-FX-0245"
+  ],
+  "UCGW-FX-3": [
+   "WAG-FX-0246"
+  ],
+  "UCGM-wag-FX-2-1-720-wolf-turn-to-l-turn-lim-2": [
+   "WAG-FX-0246"
+  ],
+  "UCGW-FX-4": [
+   "WAG-FX-0247"
+  ],
+  "UCGM-wag-FX-3-1-1080-turn-with-leg-in-back-attitude": [
+   "WAG-FX-0247"
+  ],
+  "UCGW-FX-5": [
+   "WAG-FX-0248"
+  ],
+  "UCGM-wag-FX-3-1-1080-l-turn": [
+   "WAG-FX-0248"
+  ],
+  "UCGW-FX-6": [
+   "WAG-FX-0249"
+  ],
+  "UCGM-wag-FX-wolf-jump-with-3-2-turn": [
+   "WAG-FX-0250"
+  ],
+  "UCGM-wag-FX-tuck-jump-with-1-2-turn": [
+   "WAG-FX-0251"
+  ],
+  "UCGM-wag-FX-tuck-jump-to-prone": [
+   "WAG-FX-0252"
+  ],
+  "UCGM-wag-FX-walkover-forward": [
+   "WAG-FX-0253"
+  ],
+  "UCGM-wag-FX-walkover-backward-also-valdez": [
+   "WAG-FX-0254"
+  ],
+  "UCGM-wag-FX-back-extension-roll": [
+   "WAG-FX-0255"
+  ],
+  "UCGM-wag-FX-tuck-jump": [
+   "WAG-FX-0256"
+  ],
+  "UCGM-wag-FX-straight-jump-with-1-2-twist": [
+   "WAG-FX-0257"
+  ],
+  "UCGM-wag-FX-headstand-2-s": [
+   "WAG-FX-0258"
+  ],
+  "UCGM-wag-FX-cartwheel": [
+   "WAG-FX-0260"
+  ],
+  "UCGM-wag-FX-one-arm-cartwheel-either-arm": [
+   "WAG-FX-0261"
+  ],
+  "UCGM-wag-FX-free-no-hands-forward-roll-to-stand": [
+   "WAG-FX-0262"
+  ],
+  "UCGM-wag-FX-forward-roll-to-stand": [
+   "WAG-FX-0263"
+  ],
+  "UCGM-wag-FX-backward-roll-to-stand": [
+   "WAG-FX-0264"
+  ],
+  "USAG-FX-7.502-2": [
+   "WAG-FX-0265"
+  ],
+  "WGW-UB-1.102-1": [
+   "WAG-UB-0001"
+  ],
+  "USAG-UB-1.102-1": [
+   "WAG-UB-0001"
+  ],
+  "WGW-UB-1.102-2": [
+   "WAG-UB-0002"
+  ],
+  "USAG-UB-1.202-1": [
+   "WAG-UB-0002",
+   "WAG-UB-0361"
+  ],
+  "WGW-UB-1.202-1": [
+   "WAG-UB-0003"
+  ],
+  "USAG-UB-1.203-1": [
+   "WAG-UB-0003"
+  ],
+  "WGW-UB-1.204-1": [
+   "WAG-UB-0004"
+  ],
+  "USAG-UB-1.206-1": [
+   "WAG-UB-0004"
+  ],
+  "USAG-UB-1.206-2": [
+   "WAG-UB-0005"
+  ],
+  "WGW-UB-1.204-2": [
+   "WAG-UB-0005",
+   "WAG-UB-0178",
+   "WAG-UB-0500"
+  ],
+  "WGW-UB-1.304-1": [
+   "WAG-UB-0006"
+  ],
+  "USAG-UB-1.306-1": [
+   "WAG-UB-0006"
+  ],
+  "WGW-UB-1.105-1": [
+   "WAG-UB-0007"
+  ],
+  "USAG-UB-1.107-1": [
+   "WAG-UB-0007",
+   "WAG-UB-0373"
+  ],
+  "WGW-UB-1.106-1": [
+   "WAG-UB-0008",
+   "WAG-UB-0374"
+  ],
+  "USAG-UB-1.108-1": [
+   "WAG-UB-0008",
+   "WAG-UB-0374"
+  ],
+  "WGW-UB-1.206-1": [
+   "WAG-UB-0009",
+   "WAG-UB-0375"
+  ],
+  "USAG-UB-1.208-1": [
+   "WAG-UB-0009",
+   "WAG-UB-0375"
+  ],
+  "WGW-UB-1.206-2": [
+   "WAG-UB-0010"
+  ],
+  "USAG-UB-1.209-1": [
+   "WAG-UB-0010"
+  ],
+  "WGW-UB-1.306-1": [
+   "WAG-UB-0011"
+  ],
+  "WGW-UB-1.406-1": [
+   "WAG-UB-0012"
+  ],
+  "WGW-UB-1.207-1": [
+   "WAG-UB-0013",
+   "WAG-UB-0474"
+  ],
+  "USAG-UB-1.310-1": [
+   "WAG-UB-0013",
+   "WAG-UB-0376"
+  ],
+  "WGW-UB-1.307-1": [
+   "WAG-UB-0014"
+  ],
+  "USAG-UB-1.307-1": [
+   "WAG-UB-0014"
+  ],
+  "WGW-UB-1.307-2": [
+   "WAG-UB-0015"
+  ],
+  "WGW-UB-1.407-1": [
+   "WAG-UB-0016"
+  ],
+  "WGW-UB-1.208-1": [
+   "WAG-UB-0017"
+  ],
+  "USAG-UB-1.211-1": [
+   "WAG-UB-0017"
+  ],
+  "WGW-UB-1.308-1": [
+   "WAG-UB-0018"
+  ],
+  "USAG-UB-1.311-1": [
+   "WAG-UB-0018"
+  ],
+  "WGW-UB-1.408-1": [
+   "WAG-UB-0019"
+  ],
+  "USAG-UB-1.411-1": [
+   "WAG-UB-0019"
+  ],
+  "WGW-UB-1.409-1": [
+   "WAG-UB-0020"
+  ],
+  "USAG-UB-1.412-1": [
+   "WAG-UB-0020"
+  ],
+  "WGW-UB-1.409-2": [
+   "WAG-UB-0021"
+  ],
+  "USAG-UB-1.412-2": [
+   "WAG-UB-0021"
+  ],
+  "WGW-UB-1.609-1": [
+   "WAG-UB-0022"
+  ],
+  "USAG-UB-1.513-1": [
+   "WAG-UB-0022",
+   "WAG-UB-0023"
+  ],
+  "WGW-UB-1.709-1": [
+   "WAG-UB-0023"
+  ],
+  "WGW-UB-1.310-1": [
+   "WAG-UB-0024"
+  ],
+  "USAG-UB-1.414-1": [
+   "WAG-UB-0024"
+  ],
+  "WGW-UB-1.410-1": [
+   "WAG-UB-0025"
+  ],
+  "WGW-UB-2.301-1": [
+   "WAG-UB-0026",
+   "WAG-UB-0201"
+  ],
+  "USAG-UB-2.401-1": [
+   "WAG-UB-0026",
+   "WAG-UB-0027"
+  ],
+  "WGW-UB-2.401-1": [
+   "WAG-UB-0027",
+   "WAG-UB-0203"
+  ],
+  "WGW-UB-2.202-1": [
+   "WAG-UB-0028",
+   "WAG-UB-0477"
+  ],
+  "USAG-UB-2.202-2": [
+   "WAG-UB-0028"
+  ],
+  "UCGW-UB-5": [
+   "WAG-UB-0028",
+   "WAG-UB-0478"
+  ],
+  "WGW-UB-2.303-1": [
+   "WAG-UB-0029"
+  ],
+  "USAG-UB-2.304-1": [
+   "WAG-UB-0029"
+  ],
+  "WGW-UB-2.403-1": [
+   "WAG-UB-0030"
+  ],
+  "USAG-UB-2.402-1": [
+   "WAG-UB-0030",
+   "WAG-UB-0386"
+  ],
+  "WGW-UB-2.503-1": [
+   "WAG-UB-0031"
+  ],
+  "USAG-UB-2.502-2": [
+   "WAG-UB-0031"
+  ],
+  "WGW-UB-2.104-1": [
+   "WAG-UB-0032"
+  ],
+  "USAG-UB-7.101-2": [
+   "WAG-UB-0032"
+  ],
+  "WGW-UB-2.504-1": [
+   "WAG-UB-0033",
+   "WAG-UB-0504"
+  ],
+  "WGW-UB-2.105-1": [
+   "WAG-UB-0034",
+   "WAG-UB-0179"
+  ],
+  "USAG-UB-7.101-1": [
+   "WAG-UB-0034"
+  ],
+  "WGW-UB-2.505-1": [
+   "WAG-UB-0035"
+  ],
+  "USAG-UB-3.505-2": [
+   "WAG-UB-0035"
+  ],
+  "WGW-UB-2.206-1": [
+   "WAG-UB-0036"
+  ],
+  "USAG-UB-3.301-1": [
+   "WAG-UB-0036",
+   "WAG-UB-0391"
+  ],
+  "WGW-UB-2.306-1": [
+   "WAG-UB-0037"
+  ],
+  "WGW-UB-2.406-1": [
+   "WAG-UB-0038"
+  ],
+  "USAG-UB-3.401-1": [
+   "WAG-UB-0038"
+  ],
+  "WGW-UB-2.506-1": [
+   "WAG-UB-0039"
+  ],
+  "USAG-UB-3.502-1": [
+   "WAG-UB-0039"
+  ],
+  "WGW-UB-2.506-2": [
+   "WAG-UB-0040"
+  ],
+  "WGW-UB-2.506-3": [
+   "WAG-UB-0041"
+  ],
+  "USAG-UB-3.501-1": [
+   "WAG-UB-0041"
+  ],
+  "WGW-UB-2.606-1": [
+   "WAG-UB-0042"
+  ],
+  "USAG-UB-3.502-2": [
+   "WAG-UB-0042"
+  ],
+  "WGW-UB-2.606-2": [
+   "WAG-UB-0043"
+  ],
+  "WGW-UB-2.307-1": [
+   "WAG-UB-0044"
+  ],
+  "USAG-UB-7.301-1": [
+   "WAG-UB-0044",
+   "WAG-UB-0045"
+  ],
+  "WGW-UB-2.407-1": [
+   "WAG-UB-0045"
+  ],
+  "WGW-UB-3.301-1": [
+   "WAG-UB-0046",
+   "WAG-UB-0247",
+   "WAG-UB-0249",
+   "WAG-UB-0410",
+   "WAG-UB-0411"
+  ],
+  "USAG-UB-4.403-1": [
+   "WAG-UB-0046"
+  ],
+  "WGW-UB-3.402-1": [
+   "WAG-UB-0047"
+  ],
+  "USAG-UB-4.404-1": [
+   "WAG-UB-0047"
+  ],
+  "WGW-UB-3.403-1": [
+   "WAG-UB-0048"
+  ],
+  "USAG-UB-4.405-1": [
+   "WAG-UB-0048"
+  ],
+  "WGW-UB-3.403-2": [
+   "WAG-UB-0049"
+  ],
+  "WGW-UB-3.403-3": [
+   "WAG-UB-0050"
+  ],
+  "WGW-UB-3.503-1": [
+   "WAG-UB-0051"
+  ],
+  "USAG-UB-4.505-1": [
+   "WAG-UB-0051"
+  ],
+  "WGW-UB-3.503-2": [
+   "WAG-UB-0052"
+  ],
+  "USAG-UB-4.505-2": [
+   "WAG-UB-0052"
+  ],
+  "WGW-UB-3.304-1": [
+   "WAG-UB-0053"
+  ],
+  "WGW-UB-3.404-1": [
+   "WAG-UB-0054"
+  ],
+  "USAG-UB-4.406-1": [
+   "WAG-UB-0054"
+  ],
+  "WGW-UB-3.504-1": [
+   "WAG-UB-0055"
+  ],
+  "USAG-UB-4.506-2": [
+   "WAG-UB-0055"
+  ],
+  "WGW-UB-3.604-1": [
+   "WAG-UB-0056"
+  ],
+  "USAG-UB-4.506-1": [
+   "WAG-UB-0056",
+   "WAG-UB-0110"
+  ],
+  "WGW-UB-3.405-2": [
+   "WAG-UB-0057",
+   "WAG-UB-0257"
+  ],
+  "USAG-UB-4.407-2": [
+   "WAG-UB-0057"
+  ],
+  "WGW-UB-3.505-1": [
+   "WAG-UB-0058"
+  ],
+  "USAG-UB-4.507-2": [
+   "WAG-UB-0058"
+  ],
+  "WGW-UB-3.705-1": [
+   "WAG-UB-0059"
+  ],
+  "USAG-UB-4.507-3": [
+   "WAG-UB-0059"
+  ],
+  "WGW-UB-3.306-1": [
+   "WAG-UB-0060",
+   "WAG-UB-0259",
+   "WAG-UB-0422"
+  ],
+  "USAG-UB-5.402-2": [
+   "WAG-UB-0060"
+  ],
+  "WGW-UB-3.307-1": [
+   "WAG-UB-0061",
+   "WAG-UB-0263",
+   "WAG-UB-0503"
+  ],
+  "WGW-UB-3.407-1": [
+   "WAG-UB-0062",
+   "WAG-UB-0219"
+  ],
+  "USAG-UB-5.503-1": [
+   "WAG-UB-0062"
+  ],
+  "WGW-UB-3.308-1": [
+   "WAG-UB-0063"
+  ],
+  "WGW-UB-3.408-1": [
+   "WAG-UB-0064"
+  ],
+  "USAG-UB-2.406-2": [
+   "WAG-UB-0064"
+  ],
+  "WGW-UB-3.408-2": [
+   "WAG-UB-0065"
+  ],
+  "USAG-UB-5.505-3": [
+   "WAG-UB-0065"
+  ],
+  "WGW-UB-3.608-1": [
+   "WAG-UB-0066"
+  ],
+  "USAG-UB-5.505-1": [
+   "WAG-UB-0066",
+   "WAG-UB-0426"
+  ],
+  "WGW-UB-3.708-1": [
+   "WAG-UB-0067"
+  ],
+  "USAG-UB-5.505-2": [
+   "WAG-UB-0067"
+  ],
+  "WGW-UB-3.309-1": [
+   "WAG-UB-0068",
+   "WAG-UB-0214"
+  ],
+  "USAG-UB-5.306-1": [
+   "WAG-UB-0068"
+  ],
+  "WGW-UB-3.510-1": [
+   "WAG-UB-0069"
+  ],
+  "USAG-UB-5.507-3": [
+   "WAG-UB-0069"
+  ],
+  "WGW-UB-4.201-1": [
+   "WAG-UB-0070"
+  ],
+  "WGW-UB-4.501-1": [
+   "WAG-UB-0071",
+   "WAG-UB-0273"
+  ],
+  "USAG-UB-6.501-1": [
+   "WAG-UB-0071"
+  ],
+  "WGW-UB-4.302-1": [
+   "WAG-UB-0072"
+  ],
+  "WGW-UB-4.402-1": [
+   "WAG-UB-0073"
+  ],
+  "WGW-UB-4.502-1": [
+   "WAG-UB-0074"
+  ],
+  "USAG-UB-6.505-1": [
+   "WAG-UB-0074"
+  ],
+  "WGW-UB-4.502-2": [
+   "WAG-UB-0075"
+  ],
+  "WGW-UB-4.602-1": [
+   "WAG-UB-0076"
+  ],
+  "WGW-UB-4.103-1": [
+   "WAG-UB-0077"
+  ],
+  "USAG-UB-6.303-1": [
+   "WAG-UB-0077"
+  ],
+  "WGW-UB-4.503-1": [
+   "WAG-UB-0078"
+  ],
+  "USAG-UB-6.503-1": [
+   "WAG-UB-0078"
+  ],
+  "WGW-UB-4.404-1": [
+   "WAG-UB-0079",
+   "WAG-UB-0285",
+   "WAG-UB-0288"
+  ],
+  "USAG-UB-6.504-1": [
+   "WAG-UB-0079"
+  ],
+  "WGW-UB-4.504-1": [
+   "WAG-UB-0080",
+   "WAG-UB-0436"
+  ],
+  "USAG-UB-6.504-2": [
+   "WAG-UB-0080"
+  ],
+  "WGW-UB-4.205-1": [
+   "WAG-UB-0081"
+  ],
+  "USAG-UB-6.305-1": [
+   "WAG-UB-0081"
+  ],
+  "WGW-UB-4.305-1": [
+   "WAG-UB-0082"
+  ],
+  "USAG-UB-6.305-2": [
+   "WAG-UB-0082"
+  ],
+  "WGW-UB-4.405-1": [
+   "WAG-UB-0083"
+  ],
+  "USAG-UB-6.405-1": [
+   "WAG-UB-0083"
+  ],
+  "WGW-UB-4.505-1": [
+   "WAG-UB-0084"
+  ],
+  "USAG-UB-6.505-2": [
+   "WAG-UB-0084"
+  ],
+  "WGW-UB-4.106-1": [
+   "WAG-UB-0085"
+  ],
+  "USAG-UB-7.104-1": [
+   "WAG-UB-0085",
+   "WAG-UB-0440"
+  ],
+  "WGW-UB-4.506-1": [
+   "WAG-UB-0086"
+  ],
+  "USAG-UB-7.512-1": [
+   "WAG-UB-0086"
+  ],
+  "WGW-UB-4.107-1": [
+   "WAG-UB-0087"
+  ],
+  "USAG-UB-7.106-1": [
+   "WAG-UB-0087",
+   "WAG-UB-0447"
+  ],
+  "WGW-UB-4.507-1": [
+   "WAG-UB-0088"
+  ],
+  "USAG-UB-7.513-1": [
+   "WAG-UB-0088"
+  ],
+  "WGW-UB-4.208-1": [
+   "WAG-UB-0089"
+  ],
+  "WGW-UB-4.308-1": [
+   "WAG-UB-0090"
+  ],
+  "WGW-UB-4.508-1": [
+   "WAG-UB-0091"
+  ],
+  "WGW-UB-4.508-2": [
+   "WAG-UB-0092"
+  ],
+  "WGW-UB-4.608-1": [
+   "WAG-UB-0093"
+  ],
+  "WGW-UB-4.708-1": [
+   "WAG-UB-0094"
+  ],
+  "WGW-UB-5.101-1": [
+   "WAG-UB-0095"
+  ],
+  "USAG-UB-7.205-1": [
+   "WAG-UB-0095"
+  ],
+  "WGW-UB-5.301-2": [
+   "WAG-UB-0096"
+  ],
+  "USAG-UB-7.305-2": [
+   "WAG-UB-0096"
+  ],
+  "WGW-UB-5.202-1": [
+   "WAG-UB-0097"
+  ],
+  "USAG-UB-7.206-2": [
+   "WAG-UB-0097",
+   "WAG-UB-0448"
+  ],
+  "WGW-UB-5.302-1": [
+   "WAG-UB-0098"
+  ],
+  "USAG-UB-7.306-1": [
+   "WAG-UB-0098"
+  ],
+  "WGW-UB-5.402-1": [
+   "WAG-UB-0099"
+  ],
+  "USAG-UB-7.406-1": [
+   "WAG-UB-0099"
+  ],
+  "WGW-UB-5.402-2": [
+   "WAG-UB-0100"
+  ],
+  "USAG-UB-7.406-4": [
+   "WAG-UB-0100"
+  ],
+  "WGW-UB-5.303-1": [
+   "WAG-UB-0101"
+  ],
+  "WGW-UB-5.403-1": [
+   "WAG-UB-0102"
+  ],
+  "WGW-UB-5.104-1": [
+   "WAG-UB-0103"
+  ],
+  "USAG-UB-3.106-1": [
+   "WAG-UB-0103"
+  ],
+  "WGW-UB-5.304-1": [
+   "WAG-UB-0104"
+  ],
+  "USAG-UB-3.306-1": [
+   "WAG-UB-0104"
+  ],
+  "WGW-UB-5.304-2": [
+   "WAG-UB-0105"
+  ],
+  "USAG-UB-3.306-3": [
+   "WAG-UB-0105"
+  ],
+  "WGW-UB-5.105-1": [
+   "WAG-UB-0106"
+  ],
+  "WGW-UB-5.106-1": [
+   "WAG-UB-0107"
+  ],
+  "WGW-UB-5.207-1": [
+   "WAG-UB-0108"
+  ],
+  "USAG-UB-7.310-1": [
+   "WAG-UB-0108"
+  ],
+  "WGW-UB-5.307-1": [
+   "WAG-UB-0109"
+  ],
+  "USAG-UB-3.503-1": [
+   "WAG-UB-0109",
+   "WAG-UB-0392",
+   "WAG-UB-0413"
+  ],
+  "WGW-UB-5.607-1": [
+   "WAG-UB-0110"
+  ],
+  "WGW-UB-5.408-1": [
+   "WAG-UB-0111",
+   "WAG-UB-0313"
+  ],
+  "USAG-UB-7.509-1": [
+   "WAG-UB-0111"
+  ],
+  "WGW-UB-5.409-1": [
+   "WAG-UB-0112"
+  ],
+  "USAG-UB-7.410-1": [
+   "WAG-UB-0112"
+  ],
+  "WGW-UB-5.410-1": [
+   "WAG-UB-0113"
+  ],
+  "USAG-UB-7.511-1": [
+   "WAG-UB-0113"
+  ],
+  "WGW-UB-5.410-2": [
+   "WAG-UB-0114"
+  ],
+  "USAG-UB-7.511-2a": [
+   "WAG-UB-0114"
+  ],
+  "USAG-UB-7.511-2": [
+   "WAG-UB-0114"
+  ],
+  "WGW-UB-5.510-1": [
+   "WAG-UB-0115"
+  ],
+  "USAG-UB-7.511-2b": [
+   "WAG-UB-0115"
+  ],
+  "WGW-UB-5.510-2": [
+   "WAG-UB-0116"
+  ],
+  "WGW-UB-5.610-1": [
+   "WAG-UB-0117"
+  ],
+  "WGW-UB-5.610-2": [
+   "WAG-UB-0118"
+  ],
+  "WGW-UB-6.101-1": [
+   "WAG-UB-0119"
+  ],
+  "USAG-UB-8.101-1": [
+   "WAG-UB-0119",
+   "WAG-UB-0124",
+   "WAG-UB-0462"
+  ],
+  "WGW-UB-6.201-1": [
+   "WAG-UB-0120"
+  ],
+  "USAG-UB-8.301-1": [
+   "WAG-UB-0120",
+   "WAG-UB-0121",
+   "WAG-UB-0125",
+   "WAG-UB-0126"
+  ],
+  "WGW-UB-6.301-1": [
+   "WAG-UB-0121"
+  ],
+  "USAG-UB-8.501-1": [
+   "WAG-UB-0121"
+  ],
+  "WGW-UB-6.401-1": [
+   "WAG-UB-0122"
+  ],
+  "USAG-UB-8.501-2": [
+   "WAG-UB-0122",
+   "WAG-UB-0130"
+  ],
+  "WGW-UB-6.401-2": [
+   "WAG-UB-0123"
+  ],
+  "WGW-UB-6.102-1": [
+   "WAG-UB-0124"
+  ],
+  "WGW-UB-6.302-1": [
+   "WAG-UB-0125"
+  ],
+  "WGW-UB-6.302-2": [
+   "WAG-UB-0126"
+  ],
+  "WGW-UB-6.402-1": [
+   "WAG-UB-0127"
+  ],
+  "WGW-UB-6.402-2": [
+   "WAG-UB-0128"
+  ],
+  "USAG-UB-8.401-4": [
+   "WAG-UB-0128"
+  ],
+  "WGW-UB-6.402-3": [
+   "WAG-UB-0129"
+  ],
+  "WGW-UB-6.502-1": [
+   "WAG-UB-0130"
+  ],
+  "WGW-UB-6.303-1": [
+   "WAG-UB-0131"
+  ],
+  "USAG-UB-8.302-1": [
+   "WAG-UB-0131"
+  ],
+  "WGW-UB-6.403-1": [
+   "WAG-UB-0132"
+  ],
+  "WGW-UB-6.403-2": [
+   "WAG-UB-0133"
+  ],
+  "WGW-UB-6.403-3": [
+   "WAG-UB-0134"
+  ],
+  "USAG-UB-8.502-1": [
+   "WAG-UB-0134"
+  ],
+  "WGW-UB-6.104-1": [
+   "WAG-UB-0135"
+  ],
+  "USAG-UB-8.103-1": [
+   "WAG-UB-0135"
+  ],
+  "WGW-UB-6.204-1": [
+   "WAG-UB-0136"
+  ],
+  "WGW-UB-6.304-1": [
+   "WAG-UB-0137"
+  ],
+  "USAG-UB-8.303-1": [
+   "WAG-UB-0137"
+  ],
+  "WGW-UB-6.404-1": [
+   "WAG-UB-0138"
+  ],
+  "USAG-UB-8.403-1": [
+   "WAG-UB-0138"
+  ],
+  "WGW-UB-6.504-1": [
+   "WAG-UB-0139"
+  ],
+  "USAG-UB-8.503-1": [
+   "WAG-UB-0139"
+  ],
+  "WGW-UB-6.205-1": [
+   "WAG-UB-0140"
+  ],
+  "WGW-UB-6.305-1": [
+   "WAG-UB-0141",
+   "WAG-UB-0342"
+  ],
+  "WGW-UB-6.505-1": [
+   "WAG-UB-0142"
+  ],
+  "WGW-UB-6.605-1": [
+   "WAG-UB-0143"
+  ],
+  "USAG-UB-8.504-3": [
+   "WAG-UB-0143"
+  ],
+  "WGW-UB-6.406-1": [
+   "WAG-UB-0144",
+   "WAG-UB-0466"
+  ],
+  "USAG-UB-8.505-1": [
+   "WAG-UB-0144"
+  ],
+  "WGW-UB-6.606-1": [
+   "WAG-UB-0145"
+  ],
+  "USAG-UB-8.505-4": [
+   "WAG-UB-0145",
+   "WAG-UB-0146"
+  ],
+  "WGW-UB-6.706-1": [
+   "WAG-UB-0146"
+  ],
+  "WGW-UB-6.407-1": [
+   "WAG-UB-0147"
+  ],
+  "USAG-UB-8.506-1": [
+   "WAG-UB-0147"
+  ],
+  "WGW-UB-6.407-2": [
+   "WAG-UB-0148"
+  ],
+  "USAG-UB-8.506-4": [
+   "WAG-UB-0148"
+  ],
+  "WGW-UB-6.507-1": [
+   "WAG-UB-0149"
+  ],
+  "USAG-UB-8.506-3": [
+   "WAG-UB-0149"
+  ],
+  "WGW-UB-6.507-2": [
+   "WAG-UB-0150"
+  ],
+  "WGW-UB-6.707-1": [
+   "WAG-UB-0151"
+  ],
+  "USAG-UB-8.504-4": [
+   "WAG-UB-0151"
+  ],
+  "WGW-UB-6.308-1": [
+   "WAG-UB-0152"
+  ],
+  "WGW-UB-6.308-2": [
+   "WAG-UB-0153"
+  ],
+  "WGW-UB-6.408-1": [
+   "WAG-UB-0154"
+  ],
+  "USAG-UB-8.507-2": [
+   "WAG-UB-0154"
+  ],
+  "WGW-UB-6.508-2": [
+   "WAG-UB-0155"
+  ],
+  "WGW-UB-6.608-1": [
+   "WAG-UB-0156"
+  ],
+  "WGW-UB-6.209-1": [
+   "WAG-UB-0157"
+  ],
+  "USAG-UB-8.208-1": [
+   "WAG-UB-0157"
+  ],
+  "WGW-UB-6.309-1": [
+   "WAG-UB-0158"
+  ],
+  "USAG-UB-8.308-1": [
+   "WAG-UB-0158"
+  ],
+  "WGW-UB-6.409-1": [
+   "WAG-UB-0159"
+  ],
+  "USAG-UB-8.408-1": [
+   "WAG-UB-0159"
+  ],
+  "WGW-UB-6.509-1": [
+   "WAG-UB-0160"
+  ],
+  "USAG-UB-8.508-1": [
+   "WAG-UB-0160"
+  ],
+  "WGW-UB-6.609-1": [
+   "WAG-UB-0161"
+  ],
+  "USAG-UB-8.508-2": [
+   "WAG-UB-0161"
+  ],
+  "WGW-UB-6.210-1": [
+   "WAG-UB-0162"
+  ],
+  "USAG-UB-8.209-1": [
+   "WAG-UB-0162"
+  ],
+  "USAG-UB-1.001-1": [
+   "WAG-UB-0163"
+  ],
+  "USAG-UB-1.002-1": [
+   "WAG-UB-0164"
+  ],
+  "USAG-UB-1.003a-1": [
+   "WAG-UB-0165"
+  ],
+  "USAG-UB-1.003b-1": [
+   "WAG-UB-0166"
+  ],
+  "USAG-UB-1.004-1": [
+   "WAG-UB-0167"
+  ],
+  "USAG-UB-1.005-1": [
+   "WAG-UB-0168"
+  ],
+  "WGW-UB-1.101-1": [
+   "WAG-UB-0168",
+   "WAG-UB-0170",
+   "WAG-UB-0357",
+   "WAG-UB-0358",
+   "WAG-UB-0489"
+  ],
+  "USAG-UB-1.006-1": [
+   "WAG-UB-0169"
+  ],
+  "USAG-UB-1.101-2": [
+   "WAG-UB-0170"
+  ],
+  "USAG-UB-1.301-1": [
+   "WAG-UB-0171"
+  ],
+  "USAG-UB-1.302-1": [
+   "WAG-UB-0172"
+  ],
+  "USAG-UB-1.303-1": [
+   "WAG-UB-0173"
+  ],
+  "USAG-UB-1.204-2": [
+   "WAG-UB-0174"
+  ],
+  "WGW-UB-1.103-1": [
+   "WAG-UB-0174",
+   "WAG-UB-0362"
+  ],
+  "USAG-UB-1.304-1": [
+   "WAG-UB-0175"
+  ],
+  "USAG-UB-1.304-2": [
+   "WAG-UB-0176"
+  ],
+  "USAG-UB-1.307-2": [
+   "WAG-UB-0177"
+  ],
+  "USAG-UB-1.308-1": [
+   "WAG-UB-0178"
+  ],
+  "USAG-UB-1.109-1": [
+   "WAG-UB-0179"
+  ],
+  "USAG-UB-1.410-1": [
+   "WAG-UB-0180"
+  ],
+  "USAG-UB-1.410-2": [
+   "WAG-UB-0181"
+  ],
+  "USAG-UB-1.413-1": [
+   "WAG-UB-0182"
+  ],
+  "USAG-UB-1.214-1": [
+   "WAG-UB-0183"
+  ],
+  "WGW-UB-1.210-1": [
+   "WAG-UB-0183",
+   "WAG-UB-0184"
+  ],
+  "USAG-UB-1.314-1": [
+   "WAG-UB-0184"
+  ],
+  "USAG-UB-1.414-2": [
+   "WAG-UB-0185"
+  ],
+  "WGW-UB-1.310-2": [
+   "WAG-UB-0185",
+   "WAG-UB-0186"
+  ],
+  "USAG-UB-1.414-3": [
+   "WAG-UB-0186"
+  ],
+  "USAG-UB-1.215-1": [
+   "WAG-UB-0187"
+  ],
+  "USAG-UB-1.315-1": [
+   "WAG-UB-0188"
+  ],
+  "WGW-UB-1.411-1": [
+   "WAG-UB-0188",
+   "WAG-UB-0189"
+  ],
+  "USAG-UB-1.415-1": [
+   "WAG-UB-0189"
+  ],
+  "USAG-UB-1.416-1": [
+   "WAG-UB-0190"
+  ],
+  "WGW-UB-2.404-1": [
+   "WAG-UB-0190",
+   "WAG-UB-0398",
+   "WAG-UB-0399"
+  ],
+  "USAG-UB-2.001-1": [
+   "WAG-UB-0191"
+  ],
+  "USAG-UB-2.001-2": [
+   "WAG-UB-0192"
+  ],
+  "USAG-UB-2.001-3": [
+   "WAG-UB-0193"
+  ],
+  "USAG-UB-2.001-4": [
+   "WAG-UB-0194"
+  ],
+  "USAG-UB-2.001-5": [
+   "WAG-UB-0195"
+  ],
+  "USAG-UB-2.001-6": [
+   "WAG-UB-0196"
+  ],
+  "USAG-UB-2.002-1": [
+   "WAG-UB-0197"
+  ],
+  "USAG-UB-2.003-1": [
+   "WAG-UB-0198"
+  ],
+  "USAG-UB-2.101-1": [
+   "WAG-UB-0199"
+  ],
+  "USAG-UB-2.301-1": [
+   "WAG-UB-0200"
+  ],
+  "USAG-UB-2.301-3": [
+   "WAG-UB-0201"
+  ],
+  "USAG-UB-2.401-2": [
+   "WAG-UB-0202"
+  ],
+  "USAG-UB-2.401-3": [
+   "WAG-UB-0203"
+  ],
+  "USAG-UB-2.202-1": [
+   "WAG-UB-0204"
+  ],
+  "USAG-UB-2.302-1": [
+   "WAG-UB-0205"
+  ],
+  "USAG-UB-2.402-2": [
+   "WAG-UB-0206"
+  ],
+  "USAG-UB-2.203-1": [
+   "WAG-UB-0207"
+  ],
+  "USAG-UB-2.203-2": [
+   "WAG-UB-0208"
+  ],
+  "USAG-UB-2.303-2": [
+   "WAG-UB-0209"
+  ],
+  "USAG-UB-2.403-1": [
+   "WAG-UB-0210"
+  ],
+  "USAG-UB-2.403-2": [
+   "WAG-UB-0211"
+  ],
+  "USAG-UB-2.403-3": [
+   "WAG-UB-0212"
+  ],
+  "USAG-UB-2.204-1": [
+   "WAG-UB-0213"
+  ],
+  "USAG-UB-2.404-1": [
+   "WAG-UB-0214"
+  ],
+  "USAG-UB-2.404-2": [
+   "WAG-UB-0215"
+  ],
+  "WGW-UB-3.409-1": [
+   "WAG-UB-0215",
+   "WAG-UB-0269",
+   "WAG-UB-0427",
+   "WAG-UB-0498"
+  ],
+  "USAG-UB-2.205-1": [
+   "WAG-UB-0216"
+  ],
+  "USAG-UB-2.205-2": [
+   "WAG-UB-0217"
+  ],
+  "USAG-UB-2.405-1": [
+   "WAG-UB-0218"
+  ],
+  "USAG-UB-2.405-2": [
+   "WAG-UB-0219"
+  ],
+  "USAG-UB-2.306-1": [
+   "WAG-UB-0220"
+  ],
+  "USAG-UB-2.406-1": [
+   "WAG-UB-0221"
+  ],
+  "USAG-UB-2.406-3": [
+   "WAG-UB-0222"
+  ],
+  "USAG-UB-3.201-1": [
+   "WAG-UB-0223"
+  ],
+  "USAG-UB-3.102-1": [
+   "WAG-UB-0224"
+  ],
+  "USAG-UB-3.202-1": [
+   "WAG-UB-0225"
+  ],
+  "USAG-UB-3.202-2": [
+   "WAG-UB-0226"
+  ],
+  "USAG-UB-3.302-1": [
+   "WAG-UB-0227"
+  ],
+  "USAG-UB-3.203-1": [
+   "WAG-UB-0228"
+  ],
+  "USAG-UB-3.303-1": [
+   "WAG-UB-0229"
+  ],
+  "USAG-UB-3.403-1": [
+   "WAG-UB-0230"
+  ],
+  "USAG-UB-3.204-1": [
+   "WAG-UB-0231"
+  ],
+  "USAG-UB-3.304-1": [
+   "WAG-UB-0232"
+  ],
+  "WGW-UB-2.305-1": [
+   "WAG-UB-0232",
+   "WAG-UB-0233",
+   "WAG-UB-0236",
+   "WAG-UB-0238"
+  ],
+  "USAG-UB-3.404-1": [
+   "WAG-UB-0233"
+  ],
+  "USAG-UB-3.105-1": [
+   "WAG-UB-0234"
+  ],
+  "USAG-UB-3.205-1": [
+   "WAG-UB-0235"
+  ],
+  "USAG-UB-3.305-1": [
+   "WAG-UB-0236"
+  ],
+  "USAG-UB-3.305-2": [
+   "WAG-UB-0237"
+  ],
+  "WGW-UB-2.405-1": [
+   "WAG-UB-0237",
+   "WAG-UB-0393"
+  ],
+  "USAG-UB-3.405-1": [
+   "WAG-UB-0238"
+  ],
+  "USAG-UB-3.207-1": [
+   "WAG-UB-0239"
+  ],
+  "USAG-UB-3.408-1": [
+   "WAG-UB-0240"
+  ],
+  "USAG-UB-4.101-1": [
+   "WAG-UB-0241"
+  ],
+  "USAG-UB-4.301-1": [
+   "WAG-UB-0242"
+  ],
+  "USAG-UB-4.102-2": [
+   "WAG-UB-0243"
+  ],
+  "WGW-UB-3.201-1": [
+   "WAG-UB-0243",
+   "WAG-UB-0244",
+   "WAG-UB-0245",
+   "WAG-UB-0246",
+   "WAG-UB-0404",
+   "WAG-UB-0405",
+   "WAG-UB-0407",
+   "WAG-UB-0408",
+   "WAG-UB-0409"
+  ],
+  "USAG-UB-4.302-1": [
+   "WAG-UB-0244"
+  ],
+  "USAG-UB-4.402-1": [
+   "WAG-UB-0245"
+  ],
+  "USAG-UB-4.203-1": [
+   "WAG-UB-0246"
+  ],
+  "USAG-UB-4.303-4": [
+   "WAG-UB-0247"
+  ],
+  "USAG-UB-4.403-2": [
+   "WAG-UB-0248"
+  ],
+  "WGW-UB-3.401-1": [
+   "WAG-UB-0248",
+   "WAG-UB-0406",
+   "WAG-UB-0412"
+  ],
+  "USAG-UB-4.403-3": [
+   "WAG-UB-0249"
+  ],
+  "USAG-UB-4.204-1": [
+   "WAG-UB-0250"
+  ],
+  "USAG-UB-4.304-1": [
+   "WAG-UB-0251"
+  ],
+  "USAG-UB-4.306-1": [
+   "WAG-UB-0252",
+   "WAG-UB-0505"
+  ],
+  "USAG-UB-4.306-2": [
+   "WAG-UB-0253"
+  ],
+  "USAG-UB-4.307-1": [
+   "WAG-UB-0254"
+  ],
+  "USAG-UB-4.307-2": [
+   "WAG-UB-0255"
+  ],
+  "USAG-UB-4.407-1": [
+   "WAG-UB-0256"
+  ],
+  "USAG-UB-4.407-3": [
+   "WAG-UB-0257"
+  ],
+  "USAG-UB-5.201-1": [
+   "WAG-UB-0258"
+  ],
+  "USAG-UB-5.302-2": [
+   "WAG-UB-0259"
+  ],
+  "USAG-UB-5.402-1": [
+   "WAG-UB-0260"
+  ],
+  "WGW-UB-3.206-1": [
+   "WAG-UB-0260",
+   "WAG-UB-0261",
+   "WAG-UB-0416",
+   "WAG-UB-0417",
+   "WAG-UB-0418",
+   "WAG-UB-0419",
+   "WAG-UB-0420",
+   "WAG-UB-0421"
+  ],
+  "USAG-UB-5.402-3": [
+   "WAG-UB-0261"
+  ],
+  "USAG-UB-5.303-1": [
+   "WAG-UB-0262"
+  ],
+  "USAG-UB-5.403-1": [
+   "WAG-UB-0263"
+  ],
+  "USAG-UB-5.304-1": [
+   "WAG-UB-0264"
+  ],
+  "USAG-UB-5.404-1": [
+   "WAG-UB-0265"
+  ],
+  "USAG-UB-5.305-1": [
+   "WAG-UB-0266"
+  ],
+  "USAG-UB-5.405-1": [
+   "WAG-UB-0267"
+  ],
+  "USAG-UB-5.405-2": [
+   "WAG-UB-0268"
+  ],
+  "USAG-UB-5.406-1": [
+   "WAG-UB-0269"
+  ],
+  "USAG-UB-6.101-1": [
+   "WAG-UB-0270"
+  ],
+  "WGW-UB-4.101-1": [
+   "WAG-UB-0270",
+   "WAG-UB-0271"
+  ],
+  "USAG-UB-6.201-1": [
+   "WAG-UB-0271"
+  ],
+  "USAG-UB-6.401-1": [
+   "WAG-UB-0272"
+  ],
+  "WGW-UB-4.401-1": [
+   "WAG-UB-0272",
+   "WAG-UB-0432",
+   "WAG-UB-0433"
+  ],
+  "USAG-UB-6.401-3": [
+   "WAG-UB-0273"
+  ],
+  "USAG-UB-6.202-1": [
+   "WAG-UB-0274"
+  ],
+  "USAG-UB-6.202-2": [
+   "WAG-UB-0275"
+  ],
+  "USAG-UB-6.302-1": [
+   "WAG-UB-0276"
+  ],
+  "USAG-UB-6.402-1": [
+   "WAG-UB-0277"
+  ],
+  "USAG-UB-6.402-2": [
+   "WAG-UB-0278"
+  ],
+  "USAG-UB-6.104-1": [
+   "WAG-UB-0279"
+  ],
+  "WGW-UB-4.104-1": [
+   "WAG-UB-0279",
+   "WAG-UB-0281"
+  ],
+  "USAG-UB-6.104-2": [
+   "WAG-UB-0280"
+  ],
+  "USAG-UB-6.204-1": [
+   "WAG-UB-0281"
+  ],
+  "USAG-UB-6.204-2": [
+   "WAG-UB-0282"
+  ],
+  "USAG-UB-6.304-1": [
+   "WAG-UB-0283"
+  ],
+  "WGW-UB-4.304-1": [
+   "WAG-UB-0283",
+   "WAG-UB-0284",
+   "WAG-UB-0286",
+   "WAG-UB-0287"
+  ],
+  "USAG-UB-6.304-2": [
+   "WAG-UB-0284"
+  ],
+  "USAG-UB-6.304-3": [
+   "WAG-UB-0285"
+  ],
+  "USAG-UB-6.404-1": [
+   "WAG-UB-0286"
+  ],
+  "USAG-UB-6.404-2": [
+   "WAG-UB-0287"
+  ],
+  "USAG-UB-6.404-3": [
+   "WAG-UB-0288"
+  ],
+  "USAG-UB-7.001-1": [
+   "WAG-UB-0289"
+  ],
+  "USAG-UB-7.002-1": [
+   "WAG-UB-0290"
+  ],
+  "USAG-UB-7.003-1": [
+   "WAG-UB-0291"
+  ],
+  "USAG-UB-7.004-1": [
+   "WAG-UB-0292"
+  ],
+  "USAG-UB-7.005-1": [
+   "WAG-UB-0293"
+  ],
+  "USAG-UB-7.006-1": [
+   "WAG-UB-0294"
+  ],
+  "WGW-UB-2.105-2": [
+   "WAG-UB-0295"
+  ],
+  "USAG-UB-7.102-1": [
+   "WAG-UB-0295"
+  ],
+  "USAG-UB-7.202-1": [
+   "WAG-UB-0296"
+  ],
+  "USAG-UB-7.203-1": [
+   "WAG-UB-0297"
+  ],
+  "USAG-UB-7.203-2": [
+   "WAG-UB-0298"
+  ],
+  "USAG-UB-7.204-1": [
+   "WAG-UB-0299"
+  ],
+  "USAG-UB-7.204-2": [
+   "WAG-UB-0300"
+  ],
+  "USAG-UB-7.204-3": [
+   "WAG-UB-0301"
+  ],
+  "USAG-UB-7.206-1": [
+   "WAG-UB-0302"
+  ],
+  "USAG-UB-7.406-2": [
+   "WAG-UB-0303"
+  ],
+  "USAG-UB-7.406-3": [
+   "WAG-UB-0304"
+  ],
+  "WGW-UB-5.502-1": [
+   "WAG-UB-0304"
+  ],
+  "USAG-UB-7.407-1": [
+   "WAG-UB-0305"
+  ],
+  "USAG-UB-7.308-2": [
+   "WAG-UB-0306"
+  ],
+  "WGW-UB-5.405-1": [
+   "WAG-UB-0306",
+   "WAG-UB-0307"
+  ],
+  "USAG-UB-7.408-2": [
+   "WAG-UB-0307"
+  ],
+  "USAG-UB-7.109-1": [
+   "WAG-UB-0308"
+  ],
+  "WGW-UB-5.108-1": [
+   "WAG-UB-0309"
+  ],
+  "USAG-UB-7.209-1": [
+   "WAG-UB-0309"
+  ],
+  "USAG-UB-7.209-2": [
+   "WAG-UB-0310"
+  ],
+  "USAG-UB-7.309-1": [
+   "WAG-UB-0311"
+  ],
+  "WGW-UB-5.308-1": [
+   "WAG-UB-0311",
+   "WAG-UB-0312",
+   "WAG-UB-0314",
+   "WAG-UB-0315"
+  ],
+  "USAG-UB-7.309-2": [
+   "WAG-UB-0312"
+  ],
+  "USAG-UB-7.309-3": [
+   "WAG-UB-0313"
+  ],
+  "USAG-UB-7.409-1": [
+   "WAG-UB-0314"
+  ],
+  "USAG-UB-7.409-2": [
+   "WAG-UB-0315"
+  ],
+  "USAG-UB-7.310-2": [
+   "WAG-UB-0316"
+  ],
+  "USAG-UB-7.410-2": [
+   "WAG-UB-0317"
+  ],
+  "USAG-UB-7.213-1": [
+   "WAG-UB-0318"
+  ],
+  "USAG-UB-7.313-1": [
+   "WAG-UB-0319"
+  ],
+  "USAG-UB-7.313-2": [
+   "WAG-UB-0320"
+  ],
+  "USAG-UB-8.001-1": [
+   "WAG-UB-0321"
+  ],
+  "USAG-UB-8.006-1": [
+   "WAG-UB-0322"
+  ],
+  "USAG-UB-8.006-2": [
+   "WAG-UB-0323"
+  ],
+  "USAG-UB-8.002-1": [
+   "WAG-UB-0324"
+  ],
+  "USAG-UB-8.007-1": [
+   "WAG-UB-0325"
+  ],
+  "USAG-UB-8.003-1": [
+   "WAG-UB-0326"
+  ],
+  "USAG-UB-8.008-1": [
+   "WAG-UB-0327"
+  ],
+  "USAG-UB-8.004-1": [
+   "WAG-UB-0328"
+  ],
+  "USAG-UB-8.009-1": [
+   "WAG-UB-0329"
+  ],
+  "USAG-UB-8.005-1": [
+   "WAG-UB-0330"
+  ],
+  "USAG-UB-8.010-1": [
+   "WAG-UB-0331"
+  ],
+  "USAG-UB-8.201-1": [
+   "WAG-UB-0332"
+  ],
+  "USAG-UB-8.401-1": [
+   "WAG-UB-0333"
+  ],
+  "USAG-UB-8.401-2": [
+   "WAG-UB-0334"
+  ],
+  "USAG-UB-8.401-3": [
+   "WAG-UB-0335"
+  ],
+  "USAG-UB-8.401-5": [
+   "WAG-UB-0336"
+  ],
+  "USAG-UB-8.402-1": [
+   "WAG-UB-0337"
+  ],
+  "USAG-UB-8.402-2": [
+   "WAG-UB-0338"
+  ],
+  "USAG-UB-8.203-1": [
+   "WAG-UB-0339"
+  ],
+  "USAG-UB-8.304-1": [
+   "WAG-UB-0340"
+  ],
+  "USAG-UB-8.404-1": [
+   "WAG-UB-0341"
+  ],
+  "USAG-UB-8.405-1": [
+   "WAG-UB-0342"
+  ],
+  "USAG-UB-8.107-1": [
+   "WAG-UB-0343"
+  ],
+  "WGW-UB-6.108-1": [
+   "WAG-UB-0343",
+   "WAG-UB-0344",
+   "WAG-UB-0468"
+  ],
+  "USAG-UB-8.107-2": [
+   "WAG-UB-0344"
+  ],
+  "USAG-UB-8.207-2": [
+   "WAG-UB-0345"
+  ],
+  "USAG-UB-8.307-1": [
+   "WAG-UB-0346"
+  ],
+  "USAG-UB-8.407-1": [
+   "WAG-UB-0347"
+  ],
+  "USAG-UB-8.407-2": [
+   "WAG-UB-0348"
+  ],
+  "USAG-UB-8.210-1": [
+   "WAG-UB-0349"
+  ],
+  "USAG-UB-8.310-1": [
+   "WAG-UB-0350"
+  ],
+  "WGW-UB-6.310-1": [
+   "WAG-UB-0350",
+   "WAG-UB-0353",
+   "WAG-UB-0472",
+   "WAG-UB-0473"
+  ],
+  "USAG-UB-8.310-2": [
+   "WAG-UB-0351"
+  ],
+  "USAG-UB-8.310-3": [
+   "WAG-UB-0352"
+  ],
+  "USAG-UB-8.410-1": [
+   "WAG-UB-0353"
+  ],
+  "USAG-UB-8.410-2": [
+   "WAG-UB-0354"
+  ],
+  "USAG-UB-8.410-3": [
+   "WAG-UB-0355"
+  ],
+  "USAG-UB-6.301-1": [
+   "WAG-UB-0356"
+  ],
+  "USAG-UB-1.101-1": [
+   "WAG-UB-0357",
+   "WAG-UB-0358"
+  ],
+  "USAG-UB-1.201-1": [
+   "WAG-UB-0359",
+   "WAG-UB-0360"
+  ],
+  "USAG-UB-1.104-1": [
+   "WAG-UB-0362",
+   "WAG-UB-0363",
+   "WAG-UB-0364"
+  ],
+  "USAG-UB-1.204-1": [
+   "WAG-UB-0365",
+   "WAG-UB-0366"
+  ],
+  "USAG-UB-1.205-1": [
+   "WAG-UB-0367",
+   "WAG-UB-0368",
+   "WAG-UB-0369"
+  ],
+  "WGW-UB-1.203-1": [
+   "WAG-UB-0367",
+   "WAG-UB-0368"
+  ],
+  "USAG-UB-1.106-1a": [
+   "WAG-UB-0370",
+   "WAG-UB-0371"
+  ],
+  "USAG-UB-1.106-1": [
+   "WAG-UB-0370",
+   "WAG-UB-0371"
+  ],
+  "WGW-UB-1.104-1": [
+   "WAG-UB-0370",
+   "WAG-UB-0371"
+  ],
+  "USAG-UB-1.106-1b": [
+   "WAG-UB-0372"
+  ],
+  "USAG-UB-1.512-1": [
+   "WAG-UB-0377"
+  ],
+  "WGW-UB-1.509-1": [
+   "WAG-UB-0377",
+   "WAG-UB-0378"
+  ],
+  "USAG-UB-1.512-2": [
+   "WAG-UB-0378"
+  ],
+  "USAG-UB-2.201-1": [
+   "WAG-UB-0379",
+   "WAG-UB-0380"
+  ],
+  "WGW-UB-2.101-1": [
+   "WAG-UB-0379"
+  ],
+  "WGW-UB-2.201-1": [
+   "WAG-UB-0380",
+   "WAG-UB-0381",
+   "WAG-UB-0382"
+  ],
+  "USAG-UB-2.301-2": [
+   "WAG-UB-0381",
+   "WAG-UB-0382"
+  ],
+  "USAG-UB-2.102-1": [
+   "WAG-UB-0383",
+   "WAG-UB-0384",
+   "WAG-UB-0385"
+  ],
+  "USAG-UB-2.502-1": [
+   "WAG-UB-0387"
+  ],
+  "USAG-UB-2.303-1": [
+   "WAG-UB-0388",
+   "WAG-UB-0389"
+  ],
+  "USAG-UB-2.305-1": [
+   "WAG-UB-0390",
+   "WAG-UB-0503"
+  ],
+  "USAG-UB-3.505-1": [
+   "WAG-UB-0393"
+  ],
+  "USAG-UB-3.306-2": [
+   "WAG-UB-0394",
+   "WAG-UB-0395"
+  ],
+  "USAG-UB-3.406-1": [
+   "WAG-UB-0396",
+   "WAG-UB-0397"
+  ],
+  "WGW-UB-5.404-1": [
+   "WAG-UB-0396",
+   "WAG-UB-0397"
+  ],
+  "USAG-UB-3.407-1": [
+   "WAG-UB-0398",
+   "WAG-UB-0399",
+   "WAG-UB-0504"
+  ],
+  "USAG-UB-3.508-1": [
+   "WAG-UB-0400"
+  ],
+  "USAG-UB-4.201-1": [
+   "WAG-UB-0401",
+   "WAG-UB-0402"
+  ],
+  "USAG-UB-4.102-1": [
+   "WAG-UB-0403"
+  ],
+  "USAG-UB-4.202-1": [
+   "WAG-UB-0404",
+   "WAG-UB-0405"
+  ],
+  "USAG-UB-4.502-1": [
+   "WAG-UB-0406"
+  ],
+  "USAG-UB-4.303-1": [
+   "WAG-UB-0407",
+   "WAG-UB-0408"
+  ],
+  "USAG-UB-4.303-2": [
+   "WAG-UB-0409"
+  ],
+  "USAG-UB-4.303-3": [
+   "WAG-UB-0410",
+   "WAG-UB-0411"
+  ],
+  "USAG-UB-4.503-1": [
+   "WAG-UB-0412"
+  ],
+  "WGW-UB-3.502-1": [
+   "WAG-UB-0413"
+  ],
+  "USAG-UB-4.504-1": [
+   "WAG-UB-0413"
+  ],
+  "USAG-UB-4.505-3": [
+   "WAG-UB-0414"
+  ],
+  "WGW-UB-3.405-1": [
+   "WAG-UB-0415"
+  ],
+  "USAG-UB-4.507-1": [
+   "WAG-UB-0415"
+  ],
+  "USAG-UB-5.202-1": [
+   "WAG-UB-0416",
+   "WAG-UB-0417"
+  ],
+  "USAG-UB-5.302-1": [
+   "WAG-UB-0418",
+   "WAG-UB-0419",
+   "WAG-UB-0420",
+   "WAG-UB-0421",
+   "WAG-UB-0422"
+  ],
+  "USAG-UB-5.502-1": [
+   "WAG-UB-0423"
+  ],
+  "WGW-UB-3.506-1": [
+   "WAG-UB-0423",
+   "WAG-UB-0424"
+  ],
+  "USAG-UB-5.502-2": [
+   "WAG-UB-0424"
+  ],
+  "USAG-UB-5.504-1": [
+   "WAG-UB-0426"
+  ],
+  "WGW-UB-3.408-3": [
+   "WAG-UB-0426"
+  ],
+  "USAG-UB-5.506-1": [
+   "WAG-UB-0427"
+  ],
+  "WGW-UB-3.310-1": [
+   "WAG-UB-0428",
+   "WAG-UB-0429"
+  ],
+  "USAG-UB-5.407-1": [
+   "WAG-UB-0428",
+   "WAG-UB-0429"
+  ],
+  "USAG-UB-5.507-1": [
+   "WAG-UB-0430"
+  ],
+  "WGW-UB-3.410-1": [
+   "WAG-UB-0430",
+   "WAG-UB-0431"
+  ],
+  "USAG-UB-5.507-2": [
+   "WAG-UB-0431"
+  ],
+  "USAG-UB-6.401-2": [
+   "WAG-UB-0432",
+   "WAG-UB-0433"
+  ],
+  "USAG-UB-6.403-1": [
+   "WAG-UB-0434",
+   "WAG-UB-0435"
+  ],
+  "WGW-UB-4.403-1": [
+   "WAG-UB-0434",
+   "WAG-UB-0435"
+  ],
+  "USAG-UB-6.504-3": [
+   "WAG-UB-0436"
+  ],
+  "USAG-UB-7.401-1": [
+   "WAG-UB-0437",
+   "WAG-UB-0438"
+  ],
+  "WGW-UB-2.302-1": [
+   "WAG-UB-0437",
+   "WAG-UB-0438"
+  ],
+  "USAG-UB-7.103-1": [
+   "WAG-UB-0439",
+   "WAG-UB-0506"
+  ],
+  "USAG-UB-7.404-1": [
+   "WAG-UB-0441",
+   "WAG-UB-0442"
+  ],
+  "USAG-UB-7.504-1": [
+   "WAG-UB-0443"
+  ],
+  "WGW-UB-5.501-1": [
+   "WAG-UB-0443",
+   "WAG-UB-0444"
+  ],
+  "USAG-UB-7.504-2": [
+   "WAG-UB-0444"
+  ],
+  "USAG-UB-7.305-1": [
+   "WAG-UB-0445",
+   "WAG-UB-0446"
+  ],
+  "WGW-UB-5.301-1": [
+   "WAG-UB-0445",
+   "WAG-UB-0446"
+  ],
+  "WGW-UB-5.305-1": [
+   "WAG-UB-0449",
+   "WAG-UB-0450"
+  ],
+  "USAG-UB-7.308-1": [
+   "WAG-UB-0449",
+   "WAG-UB-0450"
+  ],
+  "USAG-UB-7.408-1": [
+   "WAG-UB-0451",
+   "WAG-UB-0452"
+  ],
+  "WGW-UB-5.306-1": [
+   "WAG-UB-0451",
+   "WAG-UB-0452"
+  ],
+  "WGW-UB-5.406-1": [
+   "WAG-UB-0453"
+  ],
+  "USAG-UB-7.508-1": [
+   "WAG-UB-0453"
+  ],
+  "USAG-UB-7.509-2": [
+   "WAG-UB-0454"
+  ],
+  "WGW-UB-5.508-1": [
+   "WAG-UB-0454",
+   "WAG-UB-0455"
+  ],
+  "USAG-UB-7.509-3": [
+   "WAG-UB-0455"
+  ],
+  "USAG-UB-7.510-1": [
+   "WAG-UB-0456"
+  ],
+  "WGW-UB-5.509-1": [
+   "WAG-UB-0456",
+   "WAG-UB-0457"
+  ],
+  "USAG-UB-7.510-2": [
+   "WAG-UB-0457"
+  ],
+  "USAG-UB-7.412-1": [
+   "WAG-UB-0458",
+   "WAG-UB-0459"
+  ],
+  "WGW-UB-4.406-1": [
+   "WAG-UB-0458",
+   "WAG-UB-0459"
+  ],
+  "USAG-UB-7.413-1": [
+   "WAG-UB-0460",
+   "WAG-UB-0461"
+  ],
+  "WGW-UB-4.407-1": [
+   "WAG-UB-0460",
+   "WAG-UB-0461"
+  ],
+  "USAG-UB-8.504-1": [
+   "WAG-UB-0463"
+  ],
+  "WGW-UB-6.405-1": [
+   "WAG-UB-0463"
+  ],
+  "USAG-UB-8.504-2": [
+   "WAG-UB-0464"
+  ],
+  "USAG-UB-8.505-2": [
+   "WAG-UB-0465"
+  ],
+  "USAG-UB-8.505-3": [
+   "WAG-UB-0466"
+  ],
+  "USAG-UB-8.506-2": [
+   "WAG-UB-0467"
+  ],
+  "USAG-UB-8.207-1": [
+   "WAG-UB-0468",
+   "WAG-UB-0502"
+  ],
+  "USAG-UB-8.507-1": [
+   "WAG-UB-0469"
+  ],
+  "USAG-UB-8.507-3": [
+   "WAG-UB-0470"
+  ],
+  "WGW-UB-6.508-1": [
+   "WAG-UB-0470",
+   "WAG-UB-0471"
+  ],
+  "USAG-UB-8.507-4": [
+   "WAG-UB-0471"
+  ],
+  "USAG-UB-8.309-1": [
+   "WAG-UB-0472",
+   "WAG-UB-0473"
+  ],
+  "UCGW-UB-1": [
+   "WAG-UB-0474"
+  ],
+  "UCGM-wag-UB-3-4-salto-fwd-piked-to-basket-swing-on-lb": [
+   "WAG-UB-0474"
+  ],
+  "UCGW-UB-2": [
+   "WAG-UB-0475"
+  ],
+  "UCGM-wag-UB-jump-with-3-2-540-turn-kip-to-support-on-lb-victor": [
+   "WAG-UB-0475"
+  ],
+  "UCGW-UB-3": [
+   "WAG-UB-0476"
+  ],
+  "UCGW-UB-4": [
+   "WAG-UB-0477"
+  ],
+  "UCGM-wag-UB-front-support-free-squat-forward-over-bar-with-1-2-turn-to-h": [
+   "WAG-UB-0477"
+  ],
+  "UCGM-wag-UB-front-support-stoop-forward-over-bar-with-1-2-turn-to-clear-": [
+   "WAG-UB-0478"
+  ],
+  "UCGW-UB-6": [
+   "WAG-UB-0479"
+  ],
+  "UCGM-wag-UB-cast-from-lb-with-1-2-turn-to-hang-on-hb": [
+   "WAG-UB-0479"
+  ],
+  "UCGW-UB-7": [
+   "WAG-UB-0480"
+  ],
+  "UCGM-wag-UB-toe-on-to-salto-fwd-tucked-with-1-2-turn-180-to-hang-on-lb": [
+   "WAG-UB-0480"
+  ],
+  "UCGW-UB-8": [
+   "WAG-UB-0481"
+  ],
+  "UCGM-wag-UB-stalder-hecht-from-lb-to-hb-with-1-2-turn-180": [
+   "WAG-UB-0481"
+  ],
+  "UCGW-UB-9": [
+   "WAG-UB-0482"
+  ],
+  "UCGM-wag-UB-sole-circle-pike-or-straddle-on-hb-to-flight-to-clear-suppor": [
+   "WAG-UB-0482"
+  ],
+  "UCGM-wag-UB-from-handstand-on-hb-under-swing-toe-on-with-1-2-turn-and-fl": [
+   "WAG-UB-0483"
+  ],
+  "UCGM-wag-UB-from-rear-support-drop-backwards-and-jam-back-up-to-rear-sup": [
+   "WAG-UB-0484"
+  ],
+  "UCGM-wag-UB-mill-circle-fwd-or-bwd": [
+   "WAG-UB-0485"
+  ],
+  "UCGM-wag-UB-back-uprise": [
+   "WAG-UB-0486"
+  ],
+  "UCGM-wag-UB-pullover-mount-with-feet-together-mount-or-long-hang-pullove": [
+   "WAG-UB-0487"
+  ],
+  "UCGM-wag-UB-pullover-with-one-leg-kick-mount": [
+   "WAG-UB-0488"
+  ],
+  "UCGM-wag-UB-running-kip-mount": [
+   "WAG-UB-0489"
+  ],
+  "UCGM-wag-UB-single-leg-kip-mount-from-glide-or-run": [
+   "WAG-UB-0490"
+  ],
+  "UCGM-wag-UB-drop-kip-to-support": [
+   "WAG-UB-0491"
+  ],
+  "UCGM-wag-UB-squat-on-tuck-pike-straddle": [
+   "WAG-UB-0492"
+  ],
+  "UCGM-wag-UB-underswing-any-position-dismount-either-high-or-low-bar": [
+   "WAG-UB-0493"
+  ],
+  "UCGM-wag-UB-hop-from-high-bar-to-low-bar": [
+   "WAG-UB-0494"
+  ],
+  "UCGM-wag-UB-baby-giant": [
+   "WAG-UB-0495"
+  ],
+  "UCGM-wag-UB-on-lb-3-4-bwd-giant-with-release-and-1-2-turn-in-tuck-to-cat": [
+   "WAG-UB-0496"
+  ],
+  "UCGM-wag-UB-clear-hip-circle-forward-to-1-2-turn-and-straddle-backwards-": [
+   "WAG-UB-0497"
+  ],
+  "UCGM-wag-UB-back-uprise-release-with-1-2-turn-in-straddle-bwd-over-hb-fr": [
+   "WAG-UB-0498"
+  ],
+  "UCGM-wag-UB-on-lb-3-4-bwd-giant-with-release-and-1-1-turn-in-tuck-to-cat": [
+   "WAG-UB-0499"
+  ],
+  "WGW-UB-6.208-1": [
+   "WAG-UB-0502"
+  ],
+  "WGW-VT-1.01-1": [
+   "WAG-VT-0001",
+   "WAG-VT-0084"
+  ],
+  "1.01": [
+   "WAG-VT-0001",
+   "WAG-VT-0084"
+  ],
+  "USAG-VT-1.102-1": [
+   "WAG-VT-0001"
+  ],
+  "WGW-VT-1.02-1": [
+   "WAG-VT-0002",
+   "WAG-VT-0090"
+  ],
+  "1.02": [
+   "WAG-VT-0002",
+   "WAG-VT-0090"
+  ],
+  "USAG-VT-1.201-1": [
+   "WAG-VT-0002"
+  ],
+  "WGW-VT-1.03-1": [
+   "WAG-VT-0003"
+  ],
+  "1.03": [
+   "WAG-VT-0003"
+  ],
+  "USAG-VT-1.202-1": [
+   "WAG-VT-0003"
+  ],
+  "WGW-VT-1.04-1": [
+   "WAG-VT-0004"
+  ],
+  "1.04": [
+   "WAG-VT-0004"
+  ],
+  "USAG-VT-1.301-1": [
+   "WAG-VT-0004"
+  ],
+  "WGW-VT-1.05-1": [
+   "WAG-VT-0005"
+  ],
+  "1.05": [
+   "WAG-VT-0005"
+  ],
+  "WGW-VT-1.10-1": [
+   "WAG-VT-0006"
+  ],
+  "1.10": [
+   "WAG-VT-0006"
+  ],
+  "USAG-VT-1.103-1": [
+   "WAG-VT-0006"
+  ],
+  "WGW-VT-1.11-1": [
+   "WAG-VT-0007"
+  ],
+  "1.11": [
+   "WAG-VT-0007"
+  ],
+  "USAG-VT-1.104-1": [
+   "WAG-VT-0007"
+  ],
+  "WGW-VT-1.12-1": [
+   "WAG-VT-0008"
+  ],
+  "1.12": [
+   "WAG-VT-0008"
+  ],
+  "USAG-VT-1.203-1": [
+   "WAG-VT-0008"
+  ],
+  "WGW-VT-1.20-1": [
+   "WAG-VT-0009"
+  ],
+  "1.20": [
+   "WAG-VT-0009"
+  ],
+  "USAG-VT-Silver 2-1": [
+   "WAG-VT-0009"
+  ],
+  "WGW-VT-1.21-1": [
+   "WAG-VT-0010"
+  ],
+  "1.21": [
+   "WAG-VT-0010"
+  ],
+  "WGW-VT-1.22-1": [
+   "WAG-VT-0011"
+  ],
+  "1.22": [
+   "WAG-VT-0011"
+  ],
+  "WGW-VT-1.23-1": [
+   "WAG-VT-0012"
+  ],
+  "1.23": [
+   "WAG-VT-0012"
+  ],
+  "WGW-VT-1.24-1": [
+   "WAG-VT-0013"
+  ],
+  "1.24": [
+   "WAG-VT-0013"
+  ],
+  "WGW-VT-1.30-1": [
+   "WAG-VT-0014"
+  ],
+  "1.30": [
+   "WAG-VT-0014"
+  ],
+  "WGW-VT-1.31-1": [
+   "WAG-VT-0015"
+  ],
+  "1.31": [
+   "WAG-VT-0015"
+  ],
+  "USAG-VT-1.307-1": [
+   "WAG-VT-0015"
+  ],
+  "WGW-VT-1.40-1": [
+   "WAG-VT-0016"
+  ],
+  "1.40": [
+   "WAG-VT-0016"
+  ],
+  "USAG-VT-4.101-1": [
+   "WAG-VT-0016"
+  ],
+  "WGW-VT-1.50-1": [
+   "WAG-VT-0017"
+  ],
+  "1.50": [
+   "WAG-VT-0017"
+  ],
+  "USAG-VT-5.101-1": [
+   "WAG-VT-0017"
+  ],
+  "WGW-VT-1.51-1": [
+   "WAG-VT-0018"
+  ],
+  "1.51": [
+   "WAG-VT-0018"
+  ],
+  "USAG-VT-5.102-1": [
+   "WAG-VT-0018"
+  ],
+  "WGW-VT-1.52-1": [
+   "WAG-VT-0019"
+  ],
+  "1.52": [
+   "WAG-VT-0019"
+  ],
+  "USAG-VT-5.201-1": [
+   "WAG-VT-0019"
+  ],
+  "WGW-VT-1.53-1": [
+   "WAG-VT-0020"
+  ],
+  "1.53": [
+   "WAG-VT-0020"
+  ],
+  "USAG-VT-5.202-1": [
+   "WAG-VT-0020"
+  ],
+  "WGW-VT-1.60-1": [
+   "WAG-VT-0021"
+  ],
+  "1.60": [
+   "WAG-VT-0021"
+  ],
+  "USAG-VT-5.108-1": [
+   "WAG-VT-0021"
+  ],
+  "WGW-VT-1.61-1": [
+   "WAG-VT-0022"
+  ],
+  "1.61": [
+   "WAG-VT-0022"
+  ],
+  "USAG-VT-5.107-1": [
+   "WAG-VT-0022"
+  ],
+  "WGW-VT-1.62-1": [
+   "WAG-VT-0023"
+  ],
+  "1.62": [
+   "WAG-VT-0023"
+  ],
+  "USAG-VT-5.207-1": [
+   "WAG-VT-0023"
+  ],
+  "WGW-VT-2.10-1": [
+   "WAG-VT-0024",
+   "WAG-VT-0111"
+  ],
+  "2.10": [
+   "WAG-VT-0024",
+   "WAG-VT-0111"
+  ],
+  "WGW-VT-2.12-1": [
+   "WAG-VT-0025",
+   "WAG-VT-0106"
+  ],
+  "2.12": [
+   "WAG-VT-0025",
+   "WAG-VT-0106"
+  ],
+  "WGW-VT-2.13-1": [
+   "WAG-VT-0026"
+  ],
+  "2.13": [
+   "WAG-VT-0026"
+  ],
+  "WGW-VT-2.20-1": [
+   "WAG-VT-0027",
+   "WAG-VT-0113"
+  ],
+  "2.20": [
+   "WAG-VT-0027",
+   "WAG-VT-0113"
+  ],
+  "WGW-VT-2.22-1": [
+   "WAG-VT-0028"
+  ],
+  "2.22": [
+   "WAG-VT-0028"
+  ],
+  "WGW-VT-2.30-1": [
+   "WAG-VT-0029"
+  ],
+  "2.30": [
+   "WAG-VT-0029"
+  ],
+  "WGW-VT-2.31-1": [
+   "WAG-VT-0030",
+   "WAG-VT-0109"
+  ],
+  "2.31": [
+   "WAG-VT-0030",
+   "WAG-VT-0109"
+  ],
+  "WGW-VT-2.32-1": [
+   "WAG-VT-0031"
+  ],
+  "2.32": [
+   "WAG-VT-0031"
+  ],
+  "WGW-VT-2.33-1": [
+   "WAG-VT-0032"
+  ],
+  "2.33": [
+   "WAG-VT-0032"
+  ],
+  "WGW-VT-2.34-1": [
+   "WAG-VT-0033"
+  ],
+  "2.34": [
+   "WAG-VT-0033"
+  ],
+  "WGW-VT-2.40-1": [
+   "WAG-VT-0034"
+  ],
+  "2.40": [
+   "WAG-VT-0034"
+  ],
+  "WGW-VT-2.41-1": [
+   "WAG-VT-0035"
+  ],
+  "2.41": [
+   "WAG-VT-0035"
+  ],
+  "WGW-VT-2.50-1": [
+   "WAG-VT-0036"
+  ],
+  "2.50": [
+   "WAG-VT-0036"
+  ],
+  "WGW-VT-3.10-1": [
+   "WAG-VT-0037",
+   "WAG-VT-0115"
+  ],
+  "3.10": [
+   "WAG-VT-0037",
+   "WAG-VT-0115"
+  ],
+  "USAG-VT-3.201-1": [
+   "WAG-VT-0037"
+  ],
+  "WGW-VT-3.11-1": [
+   "WAG-VT-0038",
+   "WAG-VT-0119"
+  ],
+  "3.11": [
+   "WAG-VT-0038",
+   "WAG-VT-0119"
+  ],
+  "WGW-VT-3.12-1": [
+   "WAG-VT-0039",
+   "WAG-VT-0118",
+   "WAG-VT-0127"
+  ],
+  "3.12": [
+   "WAG-VT-0039",
+   "WAG-VT-0118",
+   "WAG-VT-0127"
+  ],
+  "WGW-VT-3.13-1": [
+   "WAG-VT-0040"
+  ],
+  "3.13": [
+   "WAG-VT-0040"
+  ],
+  "WGW-VT-3.14-1": [
+   "WAG-VT-0041"
+  ],
+  "3.14": [
+   "WAG-VT-0041"
+  ],
+  "WGW-VT-3.20-1": [
+   "WAG-VT-0042",
+   "WAG-VT-0117"
+  ],
+  "3.20": [
+   "WAG-VT-0042",
+   "WAG-VT-0117"
+  ],
+  "USAG-VT-3.303-1": [
+   "WAG-VT-0042"
+  ],
+  "WGW-VT-3.30-1": [
+   "WAG-VT-0043"
+  ],
+  "3.30": [
+   "WAG-VT-0043"
+  ],
+  "USAG-VT-3.304-1": [
+   "WAG-VT-0043"
+  ],
+  "WGW-VT-3.31-1": [
+   "WAG-VT-0044",
+   "WAG-VT-0124"
+  ],
+  "3.31": [
+   "WAG-VT-0044",
+   "WAG-VT-0124"
+  ],
+  "WGW-VT-3.32-1": [
+   "WAG-VT-0045"
+  ],
+  "3.32": [
+   "WAG-VT-0045"
+  ],
+  "WGW-VT-3.33-1": [
+   "WAG-VT-0046"
+  ],
+  "3.33": [
+   "WAG-VT-0046"
+  ],
+  "WGW-VT-3.34-1": [
+   "WAG-VT-0047"
+  ],
+  "3.34": [
+   "WAG-VT-0047"
+  ],
+  "WGW-VT-3.35-1": [
+   "WAG-VT-0048"
+  ],
+  "3.35": [
+   "WAG-VT-0048"
+  ],
+  "WGW-VT-4.10-1": [
+   "WAG-VT-0049"
+  ],
+  "4.10": [
+   "WAG-VT-0049"
+  ],
+  "USAG-VT-4.203-1": [
+   "WAG-VT-0049"
+  ],
+  "WGW-VT-4.12-1": [
+   "WAG-VT-0050",
+   "WAG-VT-0132"
+  ],
+  "4.12": [
+   "WAG-VT-0050",
+   "WAG-VT-0132"
+  ],
+  "WGW-VT-4.13-1": [
+   "WAG-VT-0051"
+  ],
+  "4.13": [
+   "WAG-VT-0051"
+  ],
+  "WGW-VT-4.14-1": [
+   "WAG-VT-0052"
+  ],
+  "4.14": [
+   "WAG-VT-0052"
+  ],
+  "WGW-VT-4.20-1": [
+   "WAG-VT-0053"
+  ],
+  "4.20": [
+   "WAG-VT-0053"
+  ],
+  "USAG-VT-4.304-1": [
+   "WAG-VT-0053"
+  ],
+  "WGW-VT-4.30-1": [
+   "WAG-VT-0054"
+  ],
+  "4.30": [
+   "WAG-VT-0054"
+  ],
+  "USAG-VT-4.305-1": [
+   "WAG-VT-0054"
+  ],
+  "WGW-VT-4.32-1": [
+   "WAG-VT-0055"
+  ],
+  "4.32": [
+   "WAG-VT-0055"
+  ],
+  "WGW-VT-4.33-1": [
+   "WAG-VT-0056"
+  ],
+  "4.33": [
+   "WAG-VT-0056"
+  ],
+  "WGW-VT-4.34-1": [
+   "WAG-VT-0057"
+  ],
+  "4.34": [
+   "WAG-VT-0057"
+  ],
+  "WGW-VT-4.35-1": [
+   "WAG-VT-0058"
+  ],
+  "4.35": [
+   "WAG-VT-0058"
+  ],
+  "WGW-VT-4.40-1": [
+   "WAG-VT-0059"
+  ],
+  "4.40": [
+   "WAG-VT-0059"
+  ],
+  "WGW-VT-4.41-1": [
+   "WAG-VT-0060"
+  ],
+  "4.41": [
+   "WAG-VT-0060"
+  ],
+  "WGW-VT-4.42-1": [
+   "WAG-VT-0061"
+  ],
+  "4.42": [
+   "WAG-VT-0061"
+  ],
+  "WGW-VT-4.50-1": [
+   "WAG-VT-0062"
+  ],
+  "4.50": [
+   "WAG-VT-0062"
+  ],
+  "WGW-VT-4.51-1": [
+   "WAG-VT-0063"
+  ],
+  "4.51": [
+   "WAG-VT-0063"
+  ],
+  "WGW-VT-4.52-1": [
+   "WAG-VT-0064"
+  ],
+  "4.52": [
+   "WAG-VT-0064"
+  ],
+  "WGW-VT-4.53-1": [
+   "WAG-VT-0065"
+  ],
+  "4.53": [
+   "WAG-VT-0065"
+  ],
+  "WGW-VT-4.62-1": [
+   "WAG-VT-0066"
+  ],
+  "4.62": [
+   "WAG-VT-0066"
+  ],
+  "WGW-VT-5.10-1": [
+   "WAG-VT-0067"
+  ],
+  "5.10": [
+   "WAG-VT-0067"
+  ],
+  "WGW-VT-5.12-1": [
+   "WAG-VT-0068"
+  ],
+  "5.12": [
+   "WAG-VT-0068"
+  ],
+  "WGW-VT-5.13-1": [
+   "WAG-VT-0069"
+  ],
+  "5.13": [
+   "WAG-VT-0069"
+  ],
+  "WGW-VT-5.20-1": [
+   "WAG-VT-0070"
+  ],
+  "5.20": [
+   "WAG-VT-0070"
+  ],
+  "WGW-VT-5.22-1": [
+   "WAG-VT-0071"
+  ],
+  "5.22": [
+   "WAG-VT-0071"
+  ],
+  "WGW-VT-5.30-1": [
+   "WAG-VT-0072"
+  ],
+  "5.30": [
+   "WAG-VT-0072"
+  ],
+  "WGW-VT-5.32-1": [
+   "WAG-VT-0073"
+  ],
+  "5.32": [
+   "WAG-VT-0073"
+  ],
+  "WGW-VT-5.33-1": [
+   "WAG-VT-0074"
+  ],
+  "5.33": [
+   "WAG-VT-0074"
+  ],
+  "WGW-VT-5.34-1": [
+   "WAG-VT-0075"
+  ],
+  "5.34": [
+   "WAG-VT-0075"
+  ],
+  "USAG-VT-Bronze 1-1": [
+   "WAG-VT-0076"
+  ],
+  "USAG-VT-Bronze 2-1": [
+   "WAG-VT-0077"
+  ],
+  "USAG-VT-Silver 1-1": [
+   "WAG-VT-0078"
+  ],
+  "WGW-VT-1.00-1": [
+   "WAG-VT-0078",
+   "WAG-VT-0079",
+   "WAG-VT-0083"
+  ],
+  "1.00": [
+   "WAG-VT-0078",
+   "WAG-VT-0079",
+   "WAG-VT-0083"
+  ],
+  "USAG-VT-1.101-1": [
+   "WAG-VT-0079"
+  ],
+  "USAG-VT-1.105-1": [
+   "WAG-VT-0080"
+  ],
+  "USAG-VT-1.106-1": [
+   "WAG-VT-0081"
+  ],
+  "USAG-VT-1.108-1": [
+   "WAG-VT-0082"
+  ],
+  "USAG-VT-1.109-1": [
+   "WAG-VT-0083"
+  ],
+  "USAG-VT-1.110-1": [
+   "WAG-VT-0084"
+  ],
+  "USAG-VT-1.111-1": [
+   "WAG-VT-0085"
+  ],
+  "USAG-VT-1.205-1": [
+   "WAG-VT-0086"
+  ],
+  "USAG-VT-1.206-1": [
+   "WAG-VT-0087"
+  ],
+  "USAG-VT-1.207-1": [
+   "WAG-VT-0088"
+  ],
+  "USAG-VT-1.208-1": [
+   "WAG-VT-0089"
+  ],
+  "USAG-VT-1.209-1": [
+   "WAG-VT-0090"
+  ],
+  "USAG-VT-1.211-1": [
+   "WAG-VT-0091"
+  ],
+  "USAG-VT-1.306-1": [
+   "WAG-VT-0092"
+  ],
+  "USAG-VT-1.311-1": [
+   "WAG-VT-0093"
+  ],
+  "USAG-VT-4.102-1": [
+   "WAG-VT-0094"
+  ],
+  "USAG-VT-4.201-1": [
+   "WAG-VT-0095"
+  ],
+  "USAG-VT-4.202-1": [
+   "WAG-VT-0096"
+  ],
+  "USAG-VT-4.301-1": [
+   "WAG-VT-0097"
+  ],
+  "USAG-VT-5.312-1": [
+   "WAG-VT-0098"
+  ],
+  "WGW-VT-2.11-1": [
+   "WAG-VT-0104",
+   "WAG-VT-0105",
+   "WAG-VT-0112"
+  ],
+  "2.11": [
+   "WAG-VT-0104",
+   "WAG-VT-0105",
+   "WAG-VT-0112"
+  ],
+  "WGW-VT-2.21-1": [
+   "WAG-VT-0107",
+   "WAG-VT-0108",
+   "WAG-VT-0114"
+  ],
+  "2.21": [
+   "WAG-VT-0107",
+   "WAG-VT-0108",
+   "WAG-VT-0114"
+  ],
+  "WGW-VT-4.11-1": [
+   "WAG-VT-0130",
+   "WAG-VT-0131"
+  ],
+  "4.11": [
+   "WAG-VT-0130",
+   "WAG-VT-0131"
+  ],
+  "WGW-VT-4.31-1": [
+   "WAG-VT-0136",
+   "WAG-VT-0137"
+  ],
+  "4.31": [
+   "WAG-VT-0136",
+   "WAG-VT-0137"
+  ],
+  "WGW-VT-5.11-1": [
+   "WAG-VT-0138",
+   "WAG-VT-0139"
+  ],
+  "5.11": [
+   "WAG-VT-0138",
+   "WAG-VT-0139"
+  ],
+  "WGW-VT-5.21-1": [
+   "WAG-VT-0140",
+   "WAG-VT-0141"
+  ],
+  "5.21": [
+   "WAG-VT-0140",
+   "WAG-VT-0141"
+  ],
+  "WGW-VT-5.31-1": [
+   "WAG-VT-0142",
+   "WAG-VT-0143"
+  ],
+  "5.31": [
+   "WAG-VT-0142",
+   "WAG-VT-0143"
+  ],
+  "UCGM-wag-squat-onto-table-straight-jump-down": [
+   "WAG-VT-0144"
+  ],
+  "UCGM-wag-roll-onto-and-over-the-table": [
+   "WAG-VT-0145"
+  ],
+  "UCGM-wag-straddle-hecht-over-table": [
+   "WAG-VT-0146"
+  ],
+  "UCGM-wag-tuck-hecht-over-table": [
+   "WAG-VT-0147"
+  ],
+  "UCGM-wag-pike-hecht-over-table": [
+   "WAG-VT-0148"
+  ],
+  "UCGM-wag-straight-hecht-over-table": [
+   "WAG-VT-0149"
+  ],
+  "UCGM-wag-front-handspring-sw-with-1-4-twist": [
+   "WAG-VT-0150"
+  ],
+  "UCGM-wag-front-handspring-sw-with-3-4-twist": [
+   "WAG-VT-0151"
+  ],
+  "UCGM-wag-front-handspring-sw-with-5-4-twist": [
+   "WAG-VT-0152"
+  ],
+  "UCGM-wag-forward-headspring": [
+   "WAG-VT-0153"
+  ]
+ },
+ "merged": {
+  "WAG-BB-0252": "WAG-BB-0067",
+  "WAG-UB-0501": "WAG-UB-0096"
+ }
+}

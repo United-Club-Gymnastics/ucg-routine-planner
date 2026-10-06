@@ -1,0 +1,232 @@
+{
+ "_doc": "UCG competition levels: which code values a skill and which element group it counts in. To re-value a catalog element at a level, take the first code in `value_codes` that has a record for the element (codes are listed in priority order); a skill with none of them is not creditable at that level. `eg` says how to turn that code's element group into the level's group. Sources: UCG Women's Rules v6.0 (2026-27), UCG WAG Open Scoring Level (Infinity) Rules v1.2, UCG MAG Rules Policy 2026-2028, UCG Masters Rules Policy, and the routine planner's scoring code (js/scoring/wag.js), which implements them. `planner_id` is the routine planner's level ID.",
+ "version": "2026-10-06",
+ "_version_doc": "Date of the last change to this file; bump it whenever a level, code priority or EG map changes.",
+ "WAG": {
+  "silver": {
+   "name": "Xcel Silver",
+   "planner_id": "silver",
+   "value_codes": [
+    "USAG-XCEL-2022",
+    "UCG-WAG-ADD"
+   ],
+   "eg": {
+    "from": "USAG"
+   },
+   "note": "Xcel Silver requirements and difficulty restrictions; division-limited elements as listed in Xcel."
+  },
+  "gold": {
+   "name": "Xcel Gold",
+   "planner_id": "gold",
+   "value_codes": [
+    "USAG-XCEL-2022",
+    "UCG-WAG-ADD"
+   ],
+   "eg": {
+    "from": "USAG"
+   },
+   "note": "Xcel Gold requirements and difficulty restrictions."
+  },
+  "platinum": {
+   "name": "Xcel Platinum",
+   "planner_id": "plat",
+   "value_codes": [
+    "USAG-XCEL-2022",
+    "UCG-WAG-ADD"
+   ],
+   "eg": {
+    "from": "USAG"
+   },
+   "note": "Xcel Platinum requirements and difficulty restrictions."
+  },
+  "diamond": {
+   "name": "Xcel Diamond",
+   "planner_id": "diamond",
+   "value_codes": [
+    "USAG-XCEL-2022",
+    "UCG-WAG-ADD"
+   ],
+   "eg": {
+    "from": "USAG"
+   },
+   "note": "Xcel Diamond requirements and difficulty restrictions."
+  },
+  "sapphire": {
+   "name": "Xcel Sapphire",
+   "planner_id": "sapphire",
+   "value_codes": [
+    "USAG-XCEL-2022",
+    "USAG-DP-2026",
+    "UCG-WAG-ADD"
+   ],
+   "eg": {
+    "from": "USAG"
+   },
+   "note": "No difficulty restrictions (unlimited D/E): Development Program E elements count (Women's Rules II.B.1). Vaults in the USAG Level 9/10 table but not the Xcel Sapphire table are allowed at 10.0 (II.B.2)."
+  },
+  "infinity": {
+   "name": "UCG Infinity (Open Scoring Level)",
+   "planner_id": "inf",
+   "value_codes": [
+    "USAG-DP-2026",
+    "USAG-XCEL-2022",
+    "UCG-WAG-ADD"
+   ],
+   "values": {
+    "A": 0.1,
+    "B": 0.3,
+    "C": 0.5,
+    "D": 0.7,
+    "E": 0.9
+   },
+   "eg": {
+    "from": "USAG",
+    "condensed": {
+     "UB": {
+      "I": [
+       "1",
+       "8"
+      ],
+      "II": [
+       "2"
+      ],
+      "III": [
+       "3",
+       "6",
+       "7"
+      ],
+      "IV": [
+       "4",
+       "5"
+      ]
+     },
+     "BB": {
+      "I": [
+       "1",
+       "9"
+      ],
+      "II": [
+       "2",
+       "3"
+      ],
+      "III": [
+       "4",
+       "5",
+       "6"
+      ],
+      "IV": [
+       "7",
+       "8"
+      ]
+     },
+     "FX": {
+      "I": [
+       "1",
+       "2"
+      ],
+      "II": [
+       "3",
+       "4",
+       "5"
+      ],
+      "III": [
+       "6",
+       "7"
+      ],
+      "IV": [
+       "8"
+      ]
+     }
+    }
+   },
+   "note": "Any Development Program, Xcel Sapphire or UCG skill at its existing value; the 8 highest count; each element earns credit once. Vault uses the Open level's own vault chart (by name), not a code value."
+  },
+  "masters": {
+   "name": "WAG Masters",
+   "planner_id": "masters",
+   "value_codes": [
+    "WG-WAG-2025",
+    "UCG-MASTERS-WAG"
+   ],
+   "eg": {
+    "from": "WG",
+    "map": {
+     "UB": {
+      "1": "I",
+      "2": "II",
+      "4": "II",
+      "5": "II",
+      "3": "III",
+      "6": "IV"
+     },
+     "BB": {
+      "2": "I",
+      "3": "II",
+      "4": "III",
+      "5": "III",
+      "1": "IV",
+      "6": "IV"
+     },
+     "FX": {
+      "1": "I",
+      "2": "II",
+      "3": "III",
+      "4": "IV",
+      "5": "IV"
+     }
+    },
+    "note": "UCG Masters additions carry their own Masters group (I-IV)."
+   },
+   "note": "WG letters (and Masters ME / Misc), valued by the gymnast's age decade (Masters Rules Policy; planner masters.js)."
+  }
+ },
+ "MAG": {
+  "developmental": {
+   "name": "UCG Developmental",
+   "planner_id": "dev",
+   "value_codes": [
+    "WG-MAG-2025",
+    "UCG-MAG-ADD"
+   ],
+   "eg": {
+    "from": "code"
+   },
+   "note": "WG + UCG MAG rules; vaults without saltos only."
+  },
+  "intermediate": {
+   "name": "UCG Intermediate",
+   "planner_id": "int",
+   "value_codes": [
+    "WG-MAG-2025",
+    "UCG-MAG-ADD"
+   ],
+   "eg": {
+    "from": "code"
+   }
+  },
+  "advanced": {
+   "name": "UCG Advanced (GymACT)",
+   "planner_id": "adv",
+   "value_codes": [
+    "WG-MAG-2025",
+    "UCG-MAG-ADD"
+   ],
+   "eg": {
+    "from": "code"
+   },
+   "note": "GymACT rules; GymACT raises some handspring vault values above WG (planner ADV_VAULT)."
+  },
+  "masters": {
+   "name": "MAG Masters",
+   "planner_id": "masters",
+   "value_codes": [
+    "WG-MAG-2025",
+    "UCG-MASTERS-MAG"
+   ],
+   "eg": {
+    "from": "code"
+   },
+   "note": "WG letters (and Masters ME / GE / Misc), valued by age decade."
+  }
+ }
+}

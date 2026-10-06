@@ -18,7 +18,7 @@ import {
   normalizeEntry,
   scoreEntry,
 } from './model.js';
-import { findSkill, searchSkills, wagSkillAllowed } from './skill-search.js';
+import { findSkill, magSkillAllowed, searchSkills, wagSkillAllowed } from './skill-search.js';
 import { EXAMPLES } from './data/examples.js';
 import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
 import * as mag from './scoring/mag.js';
@@ -1040,7 +1040,10 @@ addEventListener('scroll', () => tipFor && hideTip(), true);
 // Anything else typed is kept as a custom skill with values set by hand.
 
 const picker = { el: null, input: null, items: [], active: -1 };
-const SRC_LABEL = { UCG: 'UCG Code of Points', WG: 'World Gymnastics Code of Points', USAG: 'USAG Xcel / Development Program values' };
+const SRC_LABEL = { UCG: 'UCG Code of Points', WG: 'World Gymnastics Code of Points', USAG: 'USAG Xcel / Development Program values', UCGM: 'UCG Masters Code of Points' };
+const SRC_SHORT = { UCGM: 'Masters' };
+// "Masters PB 12 (page 7)": the Masters lists number their boxes per page.
+const boxTitle = (s) => `${SRC_LABEL[s.src] || s.src}${s.box ? `: box ${s.box.replace(/^\S+ /, '')}` : ''}${s.page ? `, page ${s.page}` : ''}`;
 
 function pickerEl() {
   if (!picker.el) {
@@ -1099,7 +1102,7 @@ function presetFilter(e, input) {
       const eg = String(row.eg);
       if (fam === 'mag') tests.push((s) => String(s.eg) === eg);
       else if (fam === 'infinity') tests.push((s) => String(s.group) === eg);
-      else if (fam === 'wagMasters') tests.push((s) => String(WG_TO_MASTERS[evId]?.[s.group]) === eg);
+      else if (fam === 'wagMasters') tests.push((s) => String(s.mgroup || WG_TO_MASTERS[evId]?.[s.group]) === eg);
       if (fam !== 'xcel') labels.push(fam === 'infinity' ? `group ${eg}` : `EG ${ROMAN[eg] || eg}`);
     }
   }
@@ -1115,7 +1118,9 @@ function openPicker(input, query) {
     makeRoom();
   }
   const fam = levelInfo(e.disc, e.level).family;
-  const all = searchSkills(e.disc, searchApp(e, input.dataset.ev), query).filter((s) => e.disc !== 'wag' || wagSkillAllowed(fam, e.level, s));
+  const all = searchSkills(e.disc, searchApp(e, input.dataset.ev), query).filter(
+    (s) => (e.disc !== 'wag' || wagSkillAllowed(fam, e.level, s)) && (e.disc !== 'mag' || magSkillAllowed(e.level, s))
+  );
   const filter = presetFilter(e, input);
   picker.filter = filter && !picker.showAll ? filter : null;
   picker.hidden = picker.filter ? all.length - all.filter(picker.filter.test).length : 0;
@@ -1154,23 +1159,23 @@ function renderPicker(query) {
   }
   let lastHead;
   picker.items.forEach((s, i) => {
-    const head = e.disc === 'tt' ? null : e.disc === 'mag' ? (s.eg ? `EG ${ROMAN[s.eg]} · ${spec.groups?.[s.eg - 1]?.label.replace(/^[IV]+\. /, '') || ''}` : 'No element group (no EG bonus)') : s.group ? (s.src === 'WG' ? `WG group ${s.group}` : `Group ${s.group}${s.groupName ? ` · ${s.groupName}` : ''}`) : 'Skills';
+    const head = e.disc === 'tt' ? null : e.disc === 'mag' ? (s.eg ? `EG ${ROMAN[s.eg]} · ${spec.groups?.[s.eg - 1]?.label.replace(/^[IV]+\. /, '') || ''}` : 'No element group (no EG bonus)') : s.mgroup ? `Masters group ${ROMAN[s.mgroup]}` : s.group ? (s.src === 'WG' ? `WG group ${s.group}` : `Group ${s.group}${s.groupName ? ` · ${s.groupName}` : ''}`) : 'Skills';
     if (!query && head && head !== lastHead) {
       html.push(`<div class="pop-head" role="presentation">${esc(head)}</div>`);
       lastHead = head;
     }
-    const meta = e.disc === 'tt' ? `${esc(s.notation || '')} · ${fmt(s.dd)}` : `${esc(s.value)}${s.eg ? ` · EG ${ROMAN[s.eg]}` : s.group ? ` · G${s.group}` : ''}`;
+    const meta = e.disc === 'tt' ? `${esc(s.notation || '')} · ${fmt(s.dd)}` : `${esc(s.value)}${s.eg ? ` · EG ${ROMAN[s.eg]}` : s.mgroup ? ` · ${ROMAN[s.mgroup]}` : s.group ? ` · G${s.group}` : ''}`;
     html.push(`
       <div class="pop-opt${i === picker.active ? ' active' : ''}" role="option" id="pop-opt-${i}" data-skill="${i}" aria-selected="${i === picker.active}"${s.note ? ` title="Note: ${esc(s.note)}"` : ''}>
-        <span class="src-badge ${s.src.toLowerCase()}">${s.src}</span>
-        <span class="pop-name">${esc(s.name)}${s.eponym ? ` <span class="pop-eponym">(${esc(s.eponym)})</span>` : ''}</span>
+        <span class="src-badge ${s.src.toLowerCase()}" title="${esc(boxTitle(s))}">${SRC_SHORT[s.src] || s.src}</span>
+        <span class="pop-name">${s.box ? `<span class="pop-box">${esc(s.box.replace(/^\S+ /, ''))}</span>` : ''}${esc(s.name)}${s.eponym ? ` <span class="pop-eponym">(${esc(s.eponym)})</span>` : ''}${s.aka?.length ? ` <span class="pop-aka">aka ${esc(s.aka.slice(0, 2).join(', '))}</span>` : ''}</span>
         <span class="pop-meta">${meta}</span>
       </div>`);
   });
   const srcs = [...new Set(picker.items.map((s) => s.src))];
   html.push(
     picker.items.length
-      ? `<div class="pop-foot">${srcs.map((s) => `<span class="src-badge ${s.toLowerCase()}">${s}</span> ${SRC_LABEL[s] || s}`).join(' ')}. Not listed? Type your own name and set the ${e.disc === 'tt' ? 'shorthand and DD' : 'value'} yourself.</div>`
+      ? `<div class="pop-foot">${srcs.map((s) => `<span class="src-badge ${s.toLowerCase()}">${SRC_SHORT[s] || s}</span> ${SRC_LABEL[s] || s}`).join(' ')}. Not listed? Type your own name and set the ${e.disc === 'tt' ? 'shorthand and DD' : 'value'} yourself.</div>`
       : `<div class="pop-empty">No listed skills match. That's fine: keep your own name and set the values yourself.</div>`
   );
   picker.el.innerHTML = html.join('');
@@ -1242,7 +1247,8 @@ function pickSkill(i) {
     if (letters.includes(s.value)) row.letter = s.value;
     if (fam === 'mag') row.eg = s.eg ? String(s.eg) : '';
     if (fam === 'infinity') row.eg = s.group ? String(s.group) : '';
-    if (fam === 'wagMasters') row.eg = s.group && WG_TO_MASTERS[evId]?.[s.group] ? String(WG_TO_MASTERS[evId][s.group]) : '';
+    // WAG Masters: UCG Masters skills carry their own condensed group; WG groups are mapped.
+    if (fam === 'wagMasters') row.eg = s.mgroup ? String(s.mgroup) : s.group && WG_TO_MASTERS[evId]?.[s.group] ? String(WG_TO_MASTERS[evId][s.group]) : '';
   }
   closePicker();
   renderRows(evId, pass, { row: Number(input.dataset.idx), part: 'name' });
@@ -1312,11 +1318,13 @@ function updateRows(container, items, spec, list) {
     flagEl.title = title;
     rowEl.classList.toggle('flagged', !!text);
     const row = list[it.idx];
-    const src = findSkill(row?.skillId)?.src || (it.name ? 'Custom' : '');
+    const listed = findSkill(row?.skillId);
+    const src = listed?.src || (it.name ? 'Custom' : '');
     const badge = $('[data-calc="src"]', rowEl);
-    badge.textContent = src;
+    // A listed skill shows its box number in its code ("WG I.75", "Xcel 7.104") so it can be checked.
+    badge.textContent = listed?.box || SRC_SHORT[src] || src;
     badge.className = `src-badge ${src.toLowerCase()}`;
-    badge.title = src === 'Custom' ? 'Not from the skill list: values are set by hand' : '';
+    badge.title = src === 'Custom' ? 'Not from the skill list: values are set by hand' : listed ? boxTitle(listed) : '';
     $('.skill-input', rowEl).title = it.name;
   }
 }

@@ -1,12 +1,17 @@
 // Skill search for the routine editor: the skills for a discipline's apparatus,
-// filtered by what's typed. MAG: UCG MAG CoP + WG skills. WAG: USAG Xcel and
-// Development Program skills + UCG WAG CoP additions (Xcel levels, Infinity) and
-// WG skills (Masters); see wagSkillAllowed. T&T: the UCG DD charts.
+// filtered by what's typed. MAG: WG skills + UCG MAG CoP additions, or the UCG Masters
+// MAG list at Masters (magSkillAllowed). WAG: USAG Xcel and Development Program skills
+// + UCG WAG CoP additions (Xcel levels, Infinity), WG skills + the UCG Masters WAG list
+// (Masters); see wagSkillAllowed. T&T: the UCG DD charts.
+// Every listed skill carries its box number in its own code (box: "WG I.75", "Xcel 7.104",
+// "UCG FX 12", "Masters PB 12") and other names coaches use (aka), from the skill catalog.
 // WG names use CoP shorthand ("Salto bwd. str. w. 1/1 t."), so common words are
 // mapped onto it: "back layout full" finds that skill.
 import { SKILLS as MAG_SKILLS } from './data/mag-skills.js';
 import { SKILLS as WAG_SKILLS } from './data/wag-skills.js';
 import { SKILLS as TT_SKILLS } from './data/tt-skills.js';
+import { SKILLS as MASTERS_SKILLS } from './data/masters-skills.js';
+import { INDEX } from './data/skill-index.js';
 
 const FRACTIONS = { '½': '1/2', '¼': '1/4', '¾': '3/4' };
 const ALIASES = {
@@ -44,14 +49,24 @@ function tokens(text) {
 
 export const skillLabel = (s) => (s.eponym ? `${s.name} (${s.eponym})` : s.name);
 
-const ALL = { mag: MAG_SKILLS, wag: WAG_SKILLS, tt: TT_SKILLS };
+const ALL = {
+  mag: [...MAG_SKILLS, ...MASTERS_SKILLS.filter((s) => s.disc === 'mag')],
+  wag: [...WAG_SKILLS, ...MASTERS_SKILLS.filter((s) => s.disc === 'wag')],
+  tt: TT_SKILLS,
+};
 const byApp = {};
 for (const [disc, list] of Object.entries(ALL)) {
   for (const s of list) {
     s.disc = disc;
     s.label = skillLabel(s);
-    s.tokens = tokens(`${s.label} ${s.note || ''} ${s.notation || ''}`);
+    const info = INDEX[s.id] || {};
+    s.box = info.l || '';
+    s.page = info.p || null;
+    s.aka = info.a || s.aka || [];
+    s.tokens = tokens(`${s.label} ${s.note || ''} ${s.notation || ''} ${s.aka.join(' ')} ${s.box}`);
     s.nameTokens = tokens(`${s.label} ${s.notation || ''}`); // ranking: a match in the name beats one only in the note
+    s.akaTokens = s.aka.map((a) => tokens(a)); // other names count as the name
+    s.boxTokens = tokens(s.box); // "7.104" or "I.75" finds the skill
     (byApp[`${disc}.${s.app}`] ||= []).push(s);
   }
 }
@@ -72,11 +87,17 @@ const order = (a, b) =>
 // Development Program or Xcel Sapphire skill) also get the Development Program E
 // elements. WAG Masters uses WG values.
 export function wagSkillAllowed(family, level, s) {
-  if (family === 'wagMasters') return s.src === 'WG';
-  if (s.src === 'WG') return false;
+  if (family === 'wagMasters') return s.src === 'WG' || s.src === 'UCGM';
+  if (s.src === 'WG' || s.src === 'UCGM') return false;
   const lvl = family === 'infinity' ? 'sapphire' : level;
   if (s.prog === 'dp' && lvl !== 'sapphire') return false;
   return !s.divisions || s.divisions.includes(lvl);
+}
+
+// MAG: WG + the UCG MAG additions, or at Masters WG + the UCG Masters MAG list (which
+// stands in for the UCG additions there, often re-valued as Masters Elements).
+export function magSkillAllowed(level, s) {
+  return level === 'masters' ? s.src !== 'UCG' : s.src !== 'UCGM';
 }
 
 export function findSkill(id) {
@@ -92,12 +113,13 @@ export function findSkill(id) {
 // triple that wasn't asked for is a big step away from the single skill.
 const FREE = new Set(['salto', 'saltos', 'somersault', 'or', 'also', 'with', 'w', 'to', 'and', 'the', 'a', 'of', 'in', 'on', 'from']);
 const MULTI = new Set(['dbl', 'triple', 'tpl', 'quad', 'quadruple']);
-const extra = (s, q) =>
-  s.nameTokens.reduce((c, t) => (q.some((w) => t.startsWith(w)) ? c : c + (FREE.has(t) ? 0 : MULTI.has(t) ? 3 : 1)), 0);
+const cost = (names, q) => names.reduce((c, t) => (q.some((w) => t.startsWith(w)) ? c : c + (FREE.has(t) ? 0 : MULTI.has(t) ? 3 : 1)), 0);
+// The closest of the skill's name and its other names (box numbers don't count as extra words).
+const extra = (s, q) => Math.min(cost(s.nameTokens, q), ...s.akaTokens.map((a) => cost(a, q)));
 
 export function searchSkills(disc, app, query) {
   const q = tokens(query);
   const list = (byApp[`${disc}.${app}`] || []).filter((s) => q.every((w) => s.tokens.some((t) => t.startsWith(w))));
-  const inName = (s) => q.every((w) => s.nameTokens.some((t) => t.startsWith(w)));
+  const inName = (s) => q.every((w) => [s.nameTokens, s.boxTokens, ...s.akaTokens].some((ts) => ts.some((t) => t.startsWith(w))));
   return list.sort(q.length ? (a, b) => inName(b) - inName(a) || extra(a, q) - extra(b, q) || order(a, b) : order);
 }

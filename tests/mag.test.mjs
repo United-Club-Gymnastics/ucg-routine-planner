@@ -242,3 +242,21 @@ test('Skill search: synonyms, any word order, compound words, plain skill first'
   for (const q of ['round off', 'roundoff', 'round-off']) assert.equal(first('tt', 'tu', q), 'Roundoff');
   for (const q of ['flip flop', 'bhs', 'back handspring']) assert.equal(first('tt', 'tu', q), 'Back handspring');
 });
+
+test('Catalog: box numbers, other names, Masters lists', async () => {
+  const { searchSkills, magSkillAllowed, findSkill } = await import('../js/skill-search.js');
+  const ids = (d, app, q) => searchSkills(d, app, q).map((s) => s.id);
+  assert.equal(findSkill('WG-SR-I-75').box, 'WG I.75');
+  assert.equal(findSkill('USAG-BB-7.104-1b').box, 'Xcel 7.104');
+  assert.equal(findSkill('UCG-FX-pancake-stop-required').box, 'UCG FX 1');
+  assert.ok(ids('mag', 'sr', 'I.75').includes('WG-SR-I-75'));
+  assert.ok(ids('wag', 'bb', '7.104').includes('USAG-BB-7.104-1a'));
+  assert.ok(searchSkills('mag', 'pb', 'peach basket').length > 0);
+  assert.ok(searchSkills('wag', 'ub', 'free hip').length > 0);
+  // MAG Masters offers WG + the UCG Masters list, not the main UCG additions (and the reverse below Masters).
+  const at = (level) => searchSkills('mag', 'fx', '').filter((s) => magSkillAllowed(level, s));
+  assert.ok(at('masters').some((s) => s.src === 'UCGM') && !at('masters').some((s) => s.src === 'UCG'));
+  assert.ok(at('adv').some((s) => s.src === 'UCG') && !at('adv').some((s) => s.src === 'UCGM'));
+  // Routines saved with a UCG addition at Masters still resolve.
+  assert.ok(findSkill('UCG-FX-pancake-stop-required'));
+});

@@ -119,7 +119,9 @@ test('WAG skill lists: Xcel levels, Sapphire and Infinity use USAG values; Maste
   assert.ok(!silver.some((s) => s.id === 'USAG-UB-1.001-1')); // Bronze only
   assert.ok(list('xcel', 'sapphire', 'ub').some((s) => s.prog === 'dp' && s.value === 'E'));
   assert.ok(list('infinity', 'inf', 'bb').some((s) => s.prog === 'dp'));
-  assert.ok(list('wagMasters', 'masters', 'fx').every((s) => s.src === 'WG'));
+  const masters = list('wagMasters', 'masters', 'fx');
+  assert.ok(masters.every((s) => s.src === 'WG' || s.src === 'UCGM') && masters.some((s) => s.src === 'UCGM'));
+  assert.ok(!silver.some((s) => s.src === 'UCGM'));
   // UCG additions keep their ids, so saved routines still find them.
   assert.equal(findSkill('UCGW-BB-4').eponym, 'Michaels');
 });

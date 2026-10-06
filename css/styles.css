@@ -361,7 +361,7 @@ input::placeholder { color: var(--fg-muted); }
 
 /* ---- Skill picker ---- */
 .skill-combo { position: relative; display: block; min-width: 0; }
-.skill-row .skill-input { padding-right: 96px; text-overflow: ellipsis; }
+.skill-row .skill-input { padding-right: 128px; text-overflow: ellipsis; }
 .skill-combo .src-badge { position: absolute; right: 32px; top: 50%; transform: translateY(-50%); pointer-events: none; }
 .combo-toggle {
   position: absolute; right: 3px; top: 50%; transform: translateY(-50%);
@@ -377,6 +377,7 @@ input::placeholder { color: var(--fg-muted); }
 .src-badge.ucg { background: var(--ucg-blue-green); color: var(--ucg-navy); }
 .src-badge.wg { background: var(--ucg-navy); color: var(--ucg-light-blue); }
 .src-badge.usag { background: var(--ucg-purple); color: var(--ucg-navy); }
+.src-badge.ucgm { background: #f3e3a6; color: var(--ucg-navy); }
 .src-badge.custom { box-shadow: inset 0 0 0 1px var(--border-default); color: var(--fg-secondary); text-transform: uppercase; }
 
 .skill-pop {
@@ -407,6 +408,9 @@ input::placeholder { color: var(--fg-muted); }
 .pop-opt:hover, .pop-opt.active { background: var(--ucg-light-blue); }
 .pop-name { min-width: 0; }
 .pop-eponym { color: var(--fg-secondary); }
+/* Box number in its code, before the name ("7.104", "I.75", "FX 12"). */
+.pop-box { display: inline-block; min-width: 3.4em; margin-right: 6px; color: var(--fg-secondary); font-size: var(--fs-xs); font-weight: 600; font-variant-numeric: tabular-nums; }
+.pop-aka { color: var(--fg-secondary); font-style: italic; font-size: var(--fs-xs); }
 .pop-meta { white-space: nowrap; font-weight: 600; font-variant-numeric: tabular-nums; }
 .pop-foot, .pop-empty {
   padding: 8px 12px; border-top: 1px solid var(--border-subtle); color: var(--fg-secondary); font-size: var(--fs-xs);
