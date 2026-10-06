@@ -639,6 +639,7 @@ input::placeholder { color: var(--fg-muted); }
 .field.inline { display: flex; align-items: center; gap: 8px; min-width: 0; }
 .field.inline select, .field.inline input { width: auto; }
 /* After copying from another level: what re-valuing did (navy text on white, gold edge). */
+.vault-flag { margin: 10px 20px 0; padding: 8px 12px; border-left: 4px solid var(--ucg-golden-yellow); background: var(--ucg-white); color: var(--ucg-navy); font-size: var(--fs-sm); }
 .revalue-notice { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 14px 18px; border-left: 4px solid var(--ucg-golden-yellow); }
 .revalue-notice p { flex: 1 1 300px; margin: 0; font-size: var(--fs-sm); color: var(--ucg-navy); }
 .start-panel { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; padding: 16px 18px; border: 1.5px solid var(--ucg-blue-green); }

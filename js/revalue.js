@@ -10,9 +10,14 @@
 //     to several elements: the value depends on which version was performed.
 //   - No entry in the level's codes: not credited there (kept, flagged, worth nothing).
 //   - Skills typed in by hand can't be looked up: kept as they are, flagged to check.
+// Vaults (revalueVault): the same element in the target level's own vault list, else that
+// level's rule for other vaults (Masters: "any other vault", 0.0 + age bonus; Sapphire: other
+// Level 9/10 vaults at 10.0; otherwise no vault).
 import { eventSpec, levelInfo } from './model.js';
 import { findSkill, magSkillAllowed, wagSkillAllowed } from './skill-search.js';
-import { WG_TO_MASTERS } from './scoring/wag.js';
+import { INFINITY_VAULT_LIST, WAG_MASTERS_VAULTS, WAG_WG_VAULTS, WG_TO_MASTERS, xcelVaults } from './scoring/wag.js';
+import { MAG_MASTERS_VAULTS } from './scoring/mag.js';
+import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
 
 const ROMAN = { I: '1', II: '2', III: '3', IV: '4', V: '5' };
 const FLAGS = ['approx', 'noCredit', 'check'];
@@ -20,7 +25,7 @@ const FLAGS = ['approx', 'noCredit', 'check'];
 /** Remove re-valuing flags from a skill row (when it's picked again or edited by hand). */
 export const clearRevalueFlags = (row) => FLAGS.forEach((f) => delete row[f]);
 
-export function revalueEntry(entry, fromLevel, catalog) {
+export function revalueEntry(entry, fromLevel, catalog, fromVault = '') {
   const fam = levelInfo(entry.disc, entry.level).family;
   const rule = Object.values(catalog.levelRules).find((r) => r.planner_id === entry.level);
   const allowed = (s) =>
@@ -105,6 +110,74 @@ export function revalueEntry(entry, fromLevel, catalog) {
       } else summary.exact++;
     }
   }
+  summary.vault = revalueVault(entry, fromLevel, fromVault, catalog);
   entry.revalued = { catalog: catalog.version, levels: catalog.levels, from: fromLevel, summary };
   return summary;
+}
+
+// The catalog records for a planner vault id at a level (Infinity vaults go by name, with
+// the USAG number in its table; Xcel by USAG number; Masters WAG by WG number; MAG by WG
+// number or UCG id). Generic choices ("other", "l9l10") have none.
+function vaultRids(disc, level, id, catalog) {
+  if (!id || id === 'other' || id === 'l9l10') return [];
+  const fam = levelInfo(disc, level).family;
+  const usag = (n) => Object.keys(catalog.vaultOf).filter((r) => r.startsWith(`USAG-VT-${n}-`) || r.startsWith(`USAGDP-VT-${n}-`));
+  if (disc === 'mag') return [/^\d+$/.test(id) ? `WG-VT-${id}` : id];
+  if (id.startsWith('UCGM-')) return [id];
+  if (id.startsWith('L910-')) return usag(id.slice(5));
+  if (fam === 'infinity') {
+    const v = INFINITY_VAULT_LIST.find((x) => x.name === id);
+    return v?.usag ? usag(v.usag) : [];
+  }
+  if (fam === 'wagMasters') return [`WGW-VT-${id}-1`];
+  return usag(id);
+}
+
+// The vault choices a level offers, by planner id.
+function vaultOptions(disc, level) {
+  const fam = levelInfo(disc, level).family;
+  if (disc === 'mag') return [...MAG_VAULTS.map((v) => v.id), ...(level === 'masters' ? MAG_MASTERS_VAULTS.map((v) => v.id) : [])];
+  if (fam === 'xcel') return xcelVaults(level).map((v) => v.id).filter((id) => id !== 'l9l10');
+  if (fam === 'infinity') return INFINITY_VAULT_LIST.map((v) => v.name);
+  return [...WAG_WG_VAULTS.map((v) => v.id), ...WAG_MASTERS_VAULTS.map((v) => v.id)];
+}
+
+/** Re-value the copied vault. Returns 'exact' | 'approx' | 'other' | 'none' | '' (no vault). */
+export function revalueVault(entry, fromLevel, fromVault, catalog) {
+  delete entry.vaultFlag;
+  if (!fromVault) return '';
+  const rule = Object.values(catalog.levelRules).find((r) => r.planner_id === entry.level);
+  const masters = levelInfo(entry.disc, entry.level).masters;
+  const option = {};
+  for (const id of vaultOptions(entry.disc, entry.level)) for (const r of vaultRids(entry.disc, entry.level, id, catalog)) option[r] ??= id;
+  const srcRids = vaultRids(entry.disc, fromLevel, fromVault, catalog);
+  const all = [...new Set(srcRids.flatMap((r) => catalog.vaultOf[r] || []))];
+  // The vault's own element (where its record is the element itself, not a broader record
+  // listed under neighbouring vaults); only if there's none is the match approximate.
+  const exact = all.filter((el) => catalog.vaults[el].some((x) => srcRids.includes(x.r) && !x.rel));
+  const rank = (x) => (rule.value_codes.indexOf(x.c) + 1 || 99) * 2 + (x.rel ? 1 : 0);
+  const find = (els) => els.flatMap((el) => catalog.vaults[el]).filter((x) => option[x.r]).sort((a, b) => rank(a) - rank(b));
+  // Its own element first; failing that, the elements its broader record covers (approximate).
+  let hits = exact.length ? find(exact) : [];
+  const viaBroad = !hits.length;
+  if (viaBroad) hits = find(all);
+  if (hits.length) {
+    entry.vault = option[hits[0].r];
+    const approx = viaBroad || exact.length !== 1;
+    if (approx) entry.vaultFlag = 'approx';
+    return approx ? 'approx' : 'exact';
+  }
+  // Not in this level's own list: the level's rule for other vaults.
+  if (masters) {
+    entry.vault = 'other';
+    entry.vaultFlag = 'other';
+    return 'other';
+  }
+  if (entry.level === 'sapphire' && els.some((el) => catalog.vaults[el].some((x) => x.c === 'USAG-DP-2026'))) {
+    entry.vault = 'l9l10';
+    return 'exact';
+  }
+  entry.vault = '';
+  entry.vaultFlag = 'none';
+  return 'none';
 }

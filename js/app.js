@@ -401,12 +401,13 @@ function revaluedNotice(e) {
     s.approximate && `${s.approximate} approximate (the value depends on the version performed)`,
     s.notCredited && `${s.notCredited} not credited at this level`,
     s.typed && `${s.typed} typed in by hand (check their values)`,
+    { approx: 'the vault is the closest match (check it)', other: 'the vault counts as any other vault (0.0 + age bonus)', none: "the vault isn't allowed here (pick one)" }[s.vault],
   ].filter(Boolean);
   const from = levelInfo(e.disc, r.from)?.name || r.from;
   return `
     <section class="card revalue-notice" role="status">
       <p><strong>Copied from ${esc(from)} and re-valued for ${esc(levelInfo(e.disc, e.level).name)}.</strong>
-        ${s.exact} skill${s.exact === 1 ? '' : 's'} matched exactly${parts.length ? `; ${esc(parts.join('; '))}. Those are flagged below.` : '.'}</p>
+        ${esc(([s.exact && `${s.exact} skill${s.exact === 1 ? '' : 's'} matched exactly`, ...parts].filter(Boolean).join('; ') || 'nothing needed changing').replace(/^./, (c) => c.toUpperCase()))}.${parts.length ? ' Those are flagged below.' : ''}</p>
       <button type="button" class="btn btn-ghost btn-sm" id="revalue-ok">OK</button>
     </section>`;
 }
@@ -635,7 +636,14 @@ function vaultBody(e, ev) {
       <optgroup label="UCG Masters vaults">${WAG_MASTERS_VAULTS.map(opt).join('')}</optgroup>
       ${Object.entries(groups).map(([g, list]) => `<optgroup label="WG vault group ${esc(g)}">${list.map(opt).join('')}</optgroup>`).join('')}</select>`;
   }
+  // After copying from another level: how the vault was carried over.
+  const flag = {
+    approx: "Copied from another level: the closest match in this level's vault list. Check it's the vault performed.",
+    other: "Copied from another level: this vault isn't in the WG or UCG Masters lists, so it counts as any other vault (0.0 plus the age bonus).",
+    none: "Copied from another level: that vault isn't allowed at this level, so pick one.",
+  }[e.vaultFlag];
   return `
+    ${flag ? `<p class="vault-flag" role="note">${esc(flag)}</p>` : ''}
     <div class="vault-body">
       <label class="field grow"><span>Select your vault</span>${control}</label>
       <dl class="vault-info" id="vault-info"></dl>
@@ -709,7 +717,7 @@ function bindEditor(a, e) {
       button.disabled = true;
       try {
         const [{ revalueEntry }, { CATALOG }] = await Promise.all([import('./revalue.js'), import(`./data/catalog-${e.disc}.js`)]);
-        revalueEntry(e, src.level, CATALOG);
+        revalueEntry(e, src.level, CATALOG, src.vault);
       } catch (err) {
         console.error(err);
         alert(`Copied, but the skills couldn't be re-valued for this level: ${err?.message || err}`);
@@ -808,6 +816,10 @@ function onChange(ev) {
   }
   if (t.id === 'f-vault') {
     e.vault = t.value;
+    if (e.vaultFlag) {
+      delete e.vaultFlag;
+      $('.vault-flag')?.remove();
+    }
     updateComputed();
     scheduleSave();
   } else if (t.dataset.start) {
