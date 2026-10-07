@@ -3347,10 +3347,11 @@
     "link_next": true
    },
    {
-    "number": "2.107",
+    "number": "2.0 Platinum-1",
     "vp": "A",
     "sr": [],
-    "link_next": false
+    "link_next": false,
+    "printed_number": "2.107"
    },
    {
     "number": "7.203",
@@ -3396,7 +3397,8 @@
   "all_sr": true,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "notes": "Row 3 printed \"2.107\", the sissonne's old number (it is now 2.207, B). At a 135° split it earns the Platinum \"leap or jump with cross or side split, min. 120°\" A, so it is mapped to that record (USAG-BB-2.0 Platinum-1)."
  },
  {
   "division": "Platinum",
@@ -6456,10 +6458,11 @@
     "link_next": false
    },
    {
-    "number": null,
+    "number": "1.407",
     "vp": "No VP",
     "sr": [],
-    "link_next": false
+    "link_next": false,
+    "printed_number": "Restricted – 2nd \"D\""
    },
    {
     "number": "5.102",
@@ -6519,7 +6522,7 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Row 5 element # cell says restricted (2nd D) instead of a number. Rows 4-5 share a blank SR cell. Merged SR cells read 'Part SR1/Part SR2'."
+  "notes": "Row 5 prints \"Restricted – 2nd D\" instead of its number; it is the straddle jump with 1½ turn, 1.407 (D). Merged SR cells read \"Part SR1/Part SR2\"."
  },
  {
   "division": "Diamond",

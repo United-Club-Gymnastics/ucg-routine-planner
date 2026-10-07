@@ -28,7 +28,8 @@ function candidates(app, row) {
   }
   const numberOf = (s) => s.id.replace(/^USAG-\w+-/, '').replace(/-\d+[a-z]?$/, '');
   const xcel = SKILLS.filter((s) => s.app === app && s.src === 'USAG' && !s.prog);
-  let all = xcel.filter((s) => numberOf(s) === row.number);
+  // A division stand-in is named by its whole record ("2.0 Platinum-1").
+  let all = xcel.filter((s) => numberOf(s) === row.number || s.id === `USAG-${app.toUpperCase()}-${row.number}`);
   // Printed without its letter (BB "5.106" for 5.106a / 5.106b).
   if (!all.length) all = xcel.filter((s) => /^[a-z]$/.test(numberOf(s).slice(row.number.length)) && numberOf(s).startsWith(row.number));
   const sameValue = LETTER.test(row.vp) ? all.filter((s) => s.value === row.vp) : all;
@@ -60,8 +61,8 @@ export function checkAll(fixtures) {
     // connection) - the rows a coach links in the planner.
     const linked = new Set(fx.routine.map((row, i) => (row.link_next ? i : null)).filter((i) => i != null));
     for (const cell of fx.sr_cells || []) for (const i of cell.elements.slice(0, -1)) linked.add(i);
-    // Bars: one continuous routine; the Code connects neighbouring skills without "+".
-    if (app === 'ub') fx.routine.forEach((row, i) => i < fx.routine.length - 1 && linked.add(i));
+    // ... and the pairs the Code awards connection bonus to (bars connections aren't printed).
+    for (const b of fx.bonus || []) if (b.kind === 'connection') for (const i of b.elements.slice(0, -1)) linked.add(i);
     const rows = fx.routine.map((row, i) => candidates(app, { ...row, link_next: linked.has(i) })).filter(Boolean);
     let combos = [[]];
     for (const opts of rows) {
