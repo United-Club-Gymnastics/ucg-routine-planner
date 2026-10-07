@@ -40,6 +40,14 @@ test('Xcel restricted skills: -0.50 and no VP credit; Diamond allows one D', () 
   assert.equal(d.items[1].status, 'restricted');
   assert.equal(d.sv, 9.5);
 });
+test('Xcel Platinum bars: C circles to handstand without turn count as B; with turn stay restricted', () => {
+  const sk = (skillId, letter) => ({ skillId, name: skillId, letter });
+  const r = scoreXcel('plat', 'ub', [sk('USAG-UB-3.304-1', 'C'), sk('USAG-UB-6.304-2', 'C'), s('a', 'A'), s('b', 'A'), s('c', 'A'), s('d', 'A'), s('e', 'A')], { srMet: [1, 1, 1, 1] });
+  assert.equal(r.items[0].status, 'counting');
+  assert.equal(r.items[0].vp, 'B');
+  assert.equal(r.items[1].status, 'restricted');
+  assert.equal(r.sv, 9.4); // one A short (the B fills the B part): -0.1, and -0.5 restricted
+});
 test('Xcel Sapphire starts at 9.6 plus up to 0.4 bonus', () => {
   const r = scoreXcel('sapphire', 'fx', [s('a', 'C'), s('b', 'B'), s('c', 'B'), s('d', 'B'), s('e', 'A'), s('f', 'A'), s('g', 'A')], { srMet: [1, 1, 1, 1], bonus: 0.3 });
   assert.equal(r.sv, 9.9);

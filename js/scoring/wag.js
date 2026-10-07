@@ -119,6 +119,9 @@ const XCEL_VALUE = { A: 0.1, B: 0.3, C: 0.5, D: 0.5, E: 0.5 };
 const RANK = { A: 1, B: 2, C: 3, D: 4, E: 5 };
 export const XCEL_RESTRICTED = 0.5;
 export const XCEL_MISSING_SR = 0.5;
+// Platinum bars: these "C" circles to handstand (without turn) are allowed and count as
+// "B" (Xcel Code, Uneven Bars Difficulty Restrictions). Their turning versions stay restricted.
+const PLAT_UB_AS_B = new Set(['USAG-UB-3.304-1', 'USAG-UB-6.304-1', 'USAG-UB-7.309-1']);
 
 /**
  * Xcel bars / beam / floor: start from 10.0 (Sapphire 9.6 + up to 0.4 bonus),
@@ -128,6 +131,11 @@ export const XCEL_MISSING_SR = 0.5;
 export function scoreXcel(level, event, skills = [], { srMet = [], bonus = 0 } = {}) {
   const items = baseItems(skills, (l) => XCEL_VALUE[l] ?? 0);
   markXcelRepeats(event, items);
+  if (level === 'plat' && event === 'ub') {
+    for (const it of items) {
+      if (it.letter === 'C' && PLAT_UB_AS_B.has(it.skillId)) Object.assign(it, { letter: 'B', value: XCEL_VALUE.B });
+    }
+  }
   const limit = XCEL_LIMITS[level][event];
   let topLetterCount = 0;
   for (const it of items) {
