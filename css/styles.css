@@ -531,15 +531,15 @@ input::placeholder { color: var(--fg-muted); }
 .cg-list li { display: flex; gap: 10px; align-items: center; }
 .cg-badge {
   display: inline-flex; align-items: center; justify-content: center; gap: 4px;
-  min-width: 42px; padding: 3px 10px; border-radius: var(--radius-pill);
+  min-width: 50px; padding: 3px 10px; border-radius: var(--radius-pill);
   font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em;
   background: var(--bg-surface); border: 1.5px solid var(--border-default); color: var(--fg-muted);
-  white-space: nowrap;
+  white-space: nowrap; flex: none; /* a two-line label beside it mustn't squeeze the badge or its check */
 }
 .cg-list li.earned { color: var(--fg-primary); }
 .cg-list li.earned .cg-badge { background: var(--ucg-navy); border-color: var(--ucg-navy); color: var(--ucg-light-blue); }
 .cg-list li.earned .cg-badge::after {
-  content: ''; width: 10px; height: 10px;
+  content: ''; flex: none; width: 10px; height: 10px;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a5c8cf' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
