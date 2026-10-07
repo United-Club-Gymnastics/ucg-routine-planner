@@ -1,6 +1,6 @@
 {
  "discipline": "WAG",
- "version": "d231b9833101",
+ "version": "aa6bfc8ea73e",
  "built": "2026-10-07",
  "elements": [
   {
@@ -38175,18 +38175,6 @@
       "value": "B",
       "element_group": "4",
       "eponym": ""
-     }
-    ],
-    "WG-WAG-2025": [
-     {
-      "rid": "WGW-UB-3.201-1",
-      "short_name": "Back giant",
-      "number": "3.201",
-      "variant": 1,
-      "value": "B=0.2",
-      "element_group": "3",
-      "eponym": "Liu",
-      "relation": "covers_more"
      }
     ]
    }

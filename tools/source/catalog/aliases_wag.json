@@ -1,6 +1,6 @@
 {
  "discipline": "WAG",
- "version": "d231b9833101",
+ "version": "aa6bfc8ea73e",
  "built": "2026-10-07",
  "aliases": {
   "WGW-BB-1.101-1": [
@@ -4440,7 +4440,6 @@
   "WGW-UB-3.201-1": [
    "WAG-UB-0244",
    "WAG-UB-0245",
-   "WAG-UB-0246",
    "WAG-UB-0404",
    "WAG-UB-0405",
    "WAG-UB-0407",
