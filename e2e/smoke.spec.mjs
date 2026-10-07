@@ -27,6 +27,22 @@ test('local mode: add an athlete and a level, pick a skill, export a PDF', async
   expect(errors).toEqual([]);
 });
 
+// Without the offline copy (a private window, say): the page's PDF code is gone from the server.
+test.describe('stale page', () => {
+  test.use({ serviceWorkers: 'block' });
+  test('a newer deploy replaced the PDF code: Export offers Reload instead of an error', async ({ page }) => {
+    await page.goto('./?local');
+    await page.route(/\/js\/chunks\/pdf-[^/]*\.js$/, (route) => route.fulfill({ status: 404, body: '' }));
+    let dialog = '';
+    page.on('dialog', (d) => { dialog = d.message(); d.dismiss(); });
+    await page.locator('.empty-editor').getByRole('button', { name: 'Add athlete' }).click();
+    await page.getByRole('button', { name: 'Xcel Gold' }).click();
+    await page.locator('#export-all').click();
+    await expect(page.locator('#error-toast')).toContainText('A new version of the planner is available');
+    expect(dialog).toBe('');
+  });
+});
+
 test('signed-out: the sign-in screen appears (Firebase loads)', async ({ page }) => {
   const errors = watchErrors(page);
   await page.goto('./');

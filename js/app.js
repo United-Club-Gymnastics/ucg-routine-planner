@@ -828,7 +828,8 @@ function bindEditor(a, e) {
         revalueEntry(e, src.level, CATALOG, src.vault);
       } catch (err) {
         console.error(err);
-        alert(`Copied, but the skills couldn't be re-valued for this level: ${err?.message || err}`);
+        if (isStale(err)) reportError(err);
+        alert(`Copied, but the skills couldn't be re-valued for this level${isStale(err) ? '. Reload the planner (a new version is available), then copy again' : `: ${err?.message || err}`}.`);
       }
     }
     scheduleSave();
@@ -1639,7 +1640,8 @@ async function runExport(button, events) {
     downloadPdf(await exportEntryPdf(a, e, events), a, e, events);
   } catch (err) {
     console.error(err);
-    alert(`Could not create the PDF: ${err?.message || err}`);
+    if (isStale(err)) reportError(err); // a newer version replaced this page's PDF code: offer Reload
+    else alert(`Could not create the PDF: ${err?.message || err}`);
   } finally {
     button.disabled = false;
     button.textContent = label;
@@ -1703,9 +1705,11 @@ const IGNORED_ERRORS = /ResizeObserver loop|AbortError|aborted|^Failed to fetch$
 function reportError(err) {
   const msg = String(err?.message || err || '');
   if (!msg || err?.name === 'AbortError' || IGNORED_ERRORS.test(msg)) return;
-  // A lazy part of the planner that no longer exists: a newer version has replaced this page's.
-  const stale = /dynamically imported module|Importing a module script failed|error loading dynamically imported/i.test(msg);
-  showToast('error-toast', stale ? 'A new version of the planner is available.' : 'Something went wrong.', 'Reload', () => location.reload());
+  showToast('error-toast', isStale(err) ? 'A new version of the planner is available.' : 'Something went wrong.', 'Reload', () => location.reload());
+}
+// A lazy part of the planner that no longer exists: a newer version has replaced this page's.
+function isStale(err) {
+  return /dynamically imported module|Importing a module script failed|error loading dynamically imported/i.test(String(err?.message || err || ''));
 }
 addEventListener('error', (ev) => reportError(ev.error || ev.message));
 addEventListener('unhandledrejection', (ev) => reportError(ev.reason));
