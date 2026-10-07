@@ -4,6 +4,7 @@ import * as mag from './scoring/mag.js';
 import * as wag from './scoring/wag.js';
 import * as tt from './scoring/tt.js';
 import { XCEL_SR } from './data/xcel.js';
+import { findSkill } from './skill-search.js';
 import { DECADES, DECADE_LABELS, DEFAULT_DECADE, MASTERS_LETTERS } from './scoring/masters.js';
 
 export { DECADES, DECADE_LABELS, DEFAULT_DECADE };
@@ -107,9 +108,9 @@ export function eventSpec(entry, evId) {
     spec.letters = wag.XCEL_LETTERS;
     spec.sr = XCEL_SR[level][evId];
     spec.columns = 'xcel';
-    // Beam and floor: the gymnast marks which skills are connected (bars routines are continuous).
-    spec.links = evId === 'bb' || evId === 'fx';
-    if (level === 'sapphire') spec.options = [{ id: 'bonus', kind: 'count', value: 0.1, max: 4, label: 'Sapphire bonus', help: 'Up to +0.40 (connection or difficulty bonus per the Xcel Code)' }];
+    // The coach marks which skills are directly connected: special requirements and the
+    // Sapphire bonus depend on it. (Repeats on bars go by the neighbouring skills either way.)
+    spec.links = true;
   }
   return spec;
 }
@@ -178,10 +179,18 @@ export function scoreEvent(entry, evId) {
     return { ...out, ...r, totals: [...r.totals, ['Start value', r.sv]] };
   }
   if (fam === 'xcel') {
-    const r = wag.scoreXcel(level, evId, rows, { srMet: opts.sr || [], bonus: (Number(opts.bonus) || 0) / 10 });
+    // The listed skill's group and tags tell what it is (special requirements, restrictions, bonus).
+    const listed = rows.map((row) => (row?.skillId ? { ...row, skill: findSkill(row.skillId) } : row));
+    const r = wag.scoreXcel(level, evId, listed, { srMet: opts.sr || [], srSet: opts.srSet || [] });
     if (r.missingVp.length) out.notes.push(`Missing value parts: ${r.missingVp.join(', ')} (−${fmt(r.vpMissing)}).`);
     if (r.restricted) out.notes.push(`${r.restricted} restricted skill${r.restricted > 1 ? 's' : ''}: −0.50 each, and they don't count as value parts.`);
-    return { ...out, ...r, optionValues: { bonus: r.bonus }, totals: [...r.totals, ['Start value', r.sv]] };
+    if (level === 'sapphire') {
+      const earned = r.bonusParts.filter((p) => p.value);
+      out.notes.push(earned.length
+        ? `Bonus +${fmt(r.bonus)}: ${earned.map((p) => p.text).join(' · ')}.${r.bonusParts.length > earned.length ? ' (The 0.40 maximum is reached.)' : ''}`
+        : 'No bonus yet: +0.10 for each "C", for one "D", and for each "B"+"B" (or higher) connection, up to +0.40.');
+    }
+    return { ...out, ...r, totals: [...r.totals, ['Start value', r.sv]] };
   }
   return out;
 }

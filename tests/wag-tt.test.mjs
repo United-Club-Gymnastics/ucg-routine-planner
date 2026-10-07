@@ -49,8 +49,11 @@ test('Xcel Platinum bars: C circles to handstand without turn count as B; with t
   assert.equal(r.sv, 9.4); // one A short (the B fills the B part): -0.1, and -0.5 restricted
 });
 test('Xcel Sapphire starts at 9.6 plus up to 0.4 bonus', () => {
-  const r = scoreXcel('sapphire', 'fx', [s('a', 'C'), s('b', 'B'), s('c', 'B'), s('d', 'B'), s('e', 'A'), s('f', 'A'), s('g', 'A')], { srMet: [1, 1, 1, 1], bonus: 0.3 });
-  assert.equal(r.sv, 9.9);
+  // One "C" (+0.1); the "B"s aren't connected.
+  const r = scoreXcel('sapphire', 'fx', [s('a', 'C'), s('b', 'B'), s('c', 'B'), s('d', 'B'), s('e', 'A'), s('f', 'A'), s('g', 'A')], { srMet: [1, 1, 1, 1] });
+  assert.equal(r.sv, 9.7);
+  const linkedBs = [s('a', 'C'), { ...s('b', 'B'), link: true }, { ...s('c', 'B'), link: true }, s('d', 'B'), s('e', 'A'), s('f', 'A'), s('g', 'A')];
+  assert.equal(scoreXcel('sapphire', 'fx', linkedBs, { srMet: [1, 1, 1, 1] }).sv, 9.9);
 });
 test('Xcel vaults by level; Gold alternative springboard is 9.5', () => {
   assert.equal(scoreXcelVault('gold', '1.201').sv, 10.0);

@@ -454,7 +454,7 @@ async function xcelPages(doc, fonts, athlete, entry, events, score) {
         w.text(vp, 474, ty, { size: 9, c: INK });
       }
       w.line(48, y + rowH * (i + 1), 564, y + rowH * (i + 1), 0.5);
-      // Beam / floor: "+" on the line between two connected skills.
+      // "+" on the line between two connected skills.
       if (it?.link && items[i + 1]) w.center('+', 66, y + rowH * (i + 1) + 4, { size: 12, font: fonts.bold, c: NAVY });
     }
     y += rowH * n + 12;
@@ -471,7 +471,7 @@ async function xcelPages(doc, fonts, athlete, entry, events, score) {
     w.text('Special requirements', 48, y, { size: 11, font: fonts.bold });
     w.text('-0.50 for each one missing', 190, y, { size: 10, c: MUTED });
     y += 8;
-    const met = entry.options?.[evId]?.sr || [];
+    const met = r.sr || [];
     XCEL_SR[entry.level][evId].forEach((t, i) => {
       y += 18;
       w.box(48, y - 11, 13, 13, { border: NAVY, thickness: 1 });

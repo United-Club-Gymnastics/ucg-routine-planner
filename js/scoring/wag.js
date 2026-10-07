@@ -7,6 +7,7 @@ import { MASTERS_LETTERS, mastersValue, meetsRequirement, vaultAgeBonus } from '
 import { VAULTS as WG_VAULTS } from '../data/wag-vaults.js';
 import { VAULTS as MASTERS_VAULTS } from '../data/masters-vaults.js';
 import { SAME_ELEMENT, HAND_SUPPORT_FLIGHT as HAND_SUPPORT_FLIGHT_IDS } from '../data/wag-same.js';
+import { detectSR, markKindRestrictions, sapphireBonus } from './xcel-rules.js';
 
 const HAND_SUPPORT_FLIGHT = new Set(HAND_SUPPORT_FLIGHT_IDS);
 
@@ -126,9 +127,13 @@ const PLAT_UB_AS_B = new Set(['USAG-UB-3.304-1', 'USAG-UB-6.304-1', 'USAG-UB-7.3
 /**
  * Xcel bars / beam / floor: start from 10.0 (Sapphire 9.6 + up to 0.4 bonus),
  * -0.50 per missing Special Requirement, minus the value of each missing Value
- * Part, -0.50 per restricted skill. srMet: [bool x4]. bonus: Sapphire only.
+ * Part, -0.50 per restricted skill.
+ * Special requirements are detected from the skills (xcel-rules.js); the coach can tick
+ * or untick any of them: srSet[i] (true / false) overrides the detection, and srMet[i]
+ * (ticks saved before detection existed) counts as ticked. The Sapphire bonus is worked
+ * out from the skills and their connections.
  */
-export function scoreXcel(level, event, skills = [], { srMet = [], bonus = 0 } = {}) {
+export function scoreXcel(level, event, skills = [], { srMet = [], srSet = [] } = {}) {
   const items = baseItems(skills, (l) => XCEL_VALUE[l] ?? 0);
   markXcelRepeats(event, items);
   if (level === 'plat' && event === 'ub') {
@@ -147,6 +152,7 @@ export function scoreXcel(level, event, skills = [], { srMet = [], bonus = 0 } =
       it.reason = 'restricted';
     }
   }
+  markKindRestrictions(level, event, items);
   const usable = items.filter((it) => !it.status && it.letter).sort((a, b) => RANK[b.letter] - RANK[a.letter] || a.idx - b.idx);
   const req = XCEL_VP[level];
   const used = new Set();
@@ -164,18 +170,21 @@ export function scoreXcel(level, event, skills = [], { srMet = [], bonus = 0 } =
     if (it.status === 'noncounting') it.reason = it.letter ? 'extraVp' : 'noValue';
   }
   const restricted = items.filter((it) => it.status === 'restricted').length;
+  const detected = detectSR(level, event, items, elementKey);
   const srCount = XCEL_SR[level][event].length;
-  const srMissing = Array.from({ length: srCount }, (_, i) => !srMet[i]).filter(Boolean).length;
+  const sr = Array.from({ length: srCount }, (_, i) => srSet[i] ?? (!!detected[i] || !!srMet[i]));
+  const srMissing = sr.filter((m) => !m).length;
   const vpMissing = round1(missing.reduce((t, l) => t + XCEL_VALUE[l], 0));
   const base = level === 'sapphire' ? 9.6 : 10;
-  const sapphireBonus = level === 'sapphire' ? Math.min(0.4, Math.max(0, Number(bonus) || 0)) : 0;
+  const bonus = level === 'sapphire' ? sapphireBonus(event, items, elementKey) : { total: 0, parts: [] };
   const any = items.some((it) => it.status !== 'blank');
-  const sv = any ? round1(base + sapphireBonus - srMissing * XCEL_MISSING_SR - vpMissing - restricted * XCEL_RESTRICTED) : null;
+  const sv = any ? round1(base + bonus.total - srMissing * XCEL_MISSING_SR - vpMissing - restricted * XCEL_RESTRICTED) : null;
   return {
-    items, sv, srMissing, vpMissing, missingVp: missing, restricted, base, bonus: sapphireBonus,
+    items, sv, sr, detectedSr: detected, srMissing, vpMissing, missingVp: missing, restricted, base,
+    bonus: bonus.total, bonusParts: bonus.parts,
     totals: [
       ['Start', base],
-      ...(level === 'sapphire' ? [['Bonus', sapphireBonus]] : []),
+      ...(level === 'sapphire' ? [['Bonus', bonus.total]] : []),
       ['Missing SRs', -srMissing * XCEL_MISSING_SR],
       ['Missing VPs', -vpMissing],
       ['Restricted', -restricted * XCEL_RESTRICTED],
@@ -276,7 +285,8 @@ function baseItems(skills, valueOf) {
     value: valueOf(s?.letter || ''),
     eg: s?.eg ? Number(s.eg) : null,
     skillId: s?.skillId || '',
-    link: !!s?.link, // beam / floor: connected to the next skill
+    skill: s?.skill || null, // the listed skill (group, tags), when the caller looked it up
+    link: !!s?.link, // connected to the next skill (bars, beam and floor)
     bonus: 0,
     status: isFilled(s) ? null : 'blank',
   }));
@@ -354,7 +364,9 @@ function markXcelRepeats(event, items) {
     pass = [];
   });
 
-  if (event === 'fx') for (const it of live) context.set(it, passSig.get(it));
+  // Floor: the context is the pass and the place in it, so the same element twice in one
+  // pass (wolf jump full + wolf jump full) is two different connections.
+  if (event === 'fx') for (const it of live) context.set(it, `${passSig.get(it)}#${passOf.get(it).i}`);
   const credited = new Map(); // element key -> items that earned credit
   for (const it of live) {
     const prior = credited.get(key.get(it)) || [];

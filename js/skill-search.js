@@ -58,6 +58,8 @@ function add(disc, list, index = {}) {
     s.box = info.l || '';
     s.page = info.p || null;
     s.aka = info.a || s.aka || [];
+    if (info.t) s.tags = info.t; // what the skill is (acro, salto, circle ...): Xcel special requirements
+    if (info.m) s.markers = info.m; // marks printed in the Code, e.g. "D" = counts as dance
     s.tokens = tokens(`${s.label} ${s.note || ''} ${s.notation || ''} ${s.aka.join(' ')} ${s.box}`);
     s.nameTokens = tokens(`${s.label} ${s.notation || ''}`); // ranking: a match in the name beats one only in the note
     s.akaTokens = s.aka.map((a) => tokens(a)); // other names count as the name

@@ -688,6 +688,10 @@ input::placeholder { color: var(--fg-muted); }
 .sr-list legend .muted { font-family: var(--font-body); font-weight: 400; text-transform: none; letter-spacing: 0; }
 .sr-item { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; font-size: var(--fs-sm); cursor: pointer; }
 .sr-item input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--ucg-navy); flex: none; }
+.sr-intro { margin: 0 0 4px; font-size: var(--fs-xs); color: var(--fg-secondary); }
+.sr-text { display: grid; gap: 2px; }
+.sr-how { font-size: var(--fs-xs); color: var(--fg-secondary); }
+.sr-how:empty { display: none; }
 
 @media (max-width: 700px) {
   .athlete-picker { margin-left: 0; width: 100%; }

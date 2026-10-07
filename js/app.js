@@ -18,6 +18,7 @@ import {
   newEntry,
   normalizeEntry,
   scoreEntry,
+  scoreEvent,
 } from './model.js';
 import { EXAMPLES, disciplineLoaded, findSkill, loadDiscipline, magSkillAllowed, searchSkills, wagSkillAllowed } from './skill-search.js';
 import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
@@ -553,7 +554,7 @@ function eventCard(e, ev, visible) {
 
 function routineHelp(e, ev, spec) {
   if (spec.columns === 'dd') return 'List the routine in order. Search the T&T skill list (it fills in the FIG shorthand and DD), or type your own skill and its DD.';
-  if (spec.family === 'xcel') return `List the routine in order. Search the Xcel skill list (it fills in the value), or type your own skill and pick its value. The planner checks the value parts and restricted skills for ${esc(levelInfo(e.disc, e.level).name)}, and you tick the special requirements below. An element earns credit at most twice, the second time only in a different connection${spec.links ? `: mark connected skills with <span class="grip-inline">${ICON_LINK}</span> between rows` : ''}.`;
+  if (spec.family === 'xcel') return `List the routine in order. Search the Xcel skill list (it fills in the value), or type your own skill and pick its value. Mark directly connected skills with <span class="grip-inline">${ICON_LINK}</span> between rows. The planner checks the value parts and restricted skills for ${esc(levelInfo(e.disc, e.level).name)}, ticks the special requirements the listed skills meet${e.level === 'sapphire' ? ' and works out the bonus' : ''}. An element earns credit at most twice, the second time only in a different connection.`;
   const max = spec.maxCounting;
   const more = e.disc === 'mag' ? ', with at most 4 from one element group' : '';
   return `List the whole routine in order, and drag <span class="grip-inline">${ICON_GRIP}</span> to reorder. <strong>Each skill counts only once</strong>. Your ${max} highest-value skills count toward difficulty${more}. Counting skills are highlighted; repeats and non-counting skills are shaded gray and flagged.`;
@@ -647,13 +648,23 @@ function skillRow(e, ev, spec, i, s, pass) {
     ${remove}<span class="row-flag" data-calc="flag"></span></div>`;
 }
 
+// Ticked by updateComputed: met by a listed skill (and what it assumes), or ticked by hand.
 function srList(e, ev, spec) {
-  const met = e.options?.[ev.id]?.sr || [];
   return `
     <fieldset class="sr-list">
       <legend>Special requirements <span class="muted">(−0.50 each one missing)</span></legend>
-      ${spec.sr.map((t, i) => `<label class="sr-item"><input type="checkbox" data-sr="${ev.id}" data-sr-idx="${i}"${met[i] ? ' checked' : ''} /><span><strong>SR ${i + 1}.</strong> ${esc(t)}</span></label>`).join('')}
+      <p class="sr-intro">Ticked when a listed skill meets one. Untick any the gymnast won't meet, or tick one met by a skill you typed in.</p>
+      ${spec.sr.map((t, i) => `<label class="sr-item" data-sr-row="${ev.id}:${i}"><input type="checkbox" data-sr="${ev.id}" data-sr-idx="${i}" /><span class="sr-text"><span><strong>SR ${i + 1}.</strong> ${esc(t)}</span><span class="sr-how" data-sr-how></span></span></label>`).join('')}
     </fieldset>`;
+}
+
+// Under a special requirement: which skills meet it, and what that assumes.
+function srHow(r, i, set) {
+  const d = r.detectedSr?.[i];
+  const names = d ? d.by.map((k) => r.items[k]?.name).filter(Boolean).join(' + ') : '';
+  if (d && set === false) return `Unticked by you (the planner found ${names}).`;
+  if (d) return `Met by ${names}${d.assumes ? `, assuming ${d.assumes}` : ''}.`;
+  return r.sr?.[i] ? 'Ticked by you.' : '';
 }
 
 function optionControl(e, evId, o) {
@@ -859,10 +870,14 @@ function onInput(ev) {
     const opts = ((e.options ||= {})[t.dataset.option] ||= {});
     opts[t.dataset.opt] = t.type === 'checkbox' ? t.checked : Number(t.value);
   } else if (t.dataset.sr) {
+    // Kept only where it differs from what the skills meet, so it follows routine changes.
     const opts = ((e.options ||= {})[t.dataset.sr] ||= {});
-    const sr = [...(opts.sr || [])];
-    sr[Number(t.dataset.srIdx)] = t.checked;
-    opts.sr = sr;
+    const i = Number(t.dataset.srIdx);
+    const auto = !!scoreEvent(e, t.dataset.sr).detectedSr?.[i];
+    const set = Array.from({ length: Math.max(i + 1, opts.srSet?.length || 0) }, (_, k) => opts.srSet?.[k] ?? null);
+    set[i] = t.checked === auto ? null : t.checked;
+    opts.srSet = set;
+    if (opts.sr?.[i]) opts.sr = opts.sr.map((v, k) => (k === i ? false : v)); // a tick saved before detection
   } else if (t.dataset.partner) {
     ((e.options ||= {})[t.dataset.partner] ||= {}).partner = t.value;
   } else if (t.dataset.ev && t.dataset.field) {
@@ -1137,8 +1152,8 @@ function scoreTip(e, ev, label) {
   } else if (fam === 'xcel') {
     Object.assign(tips, {
       Start: lvl === 'sapphire' ? 'Sapphire starts from 9.6, plus up to 0.4 bonus.' : 'Every routine starts from 10.0.',
-      Bonus: 'Sapphire: up to +0.4 connection or difficulty bonus, from the option below.',
-      'Missing SRs': '-0.50 for each special requirement not ticked.',
+      Bonus: 'Sapphire: +0.1 for each "C", for one "D", and for each "B"+"B" (or higher) connection, up to +0.4. Only skills in the Xcel Code earn bonus.',
+      'Missing SRs': '-0.50 for each special requirement not met (not ticked below).',
       'Missing VPs': 'Each required value part not covered costs its value: A 0.1, B 0.3, C 0.5. A higher skill can fill a lower value part.',
       Restricted: "-0.50 for each skill above this level's allowed difficulty (it earns no value part).",
     });
@@ -1438,7 +1453,7 @@ function flagFor(it, spec) {
     if (it.repeatWhy === 'pass') return ['Same pass', `This pass repeats the one with skill ${n}: flight elements with hand support only earn credit again in a different pass`];
     return [`Repeat of Skill ${n}`, `Repeat of skill ${n}: each element only earns value-part credit once`];
   }
-  if (it.status === 'restricted') return ['Restricted', 'Above this level’s allowed difficulty: −0.50, and no value part credit'];
+  if (it.status === 'restricted') return ['Restricted', `${it.restrictWhy || 'Above this level’s allowed difficulty'}: −0.50, and no value part credit`];
   if (it.flag === 'over') return ['Check level', 'This skill is outside what this level allows'];
   if (it.status !== 'noncounting') return ['', ''];
   if (it.reason === 'eg') return ['Over 4 in EG', 'Only 4 skills from one element group count, so this one adds no difficulty'];
@@ -1551,6 +1566,14 @@ function updateComputed() {
       const got = r.optionValues?.[o.id] || 0;
       el.textContent = got ? `+${fmt(got)}` : '';
       row.classList.toggle('on', !!got);
+    }
+    if (spec.sr) {
+      spec.sr.forEach((_, i) => {
+        const row = $(`[data-sr-row="${ev.id}:${i}"]`, card);
+        if (!row) return;
+        $('input', row).checked = !!r.sr?.[i];
+        $('[data-sr-how]', row).textContent = srHow(r, i, e.options?.[ev.id]?.srSet?.[i]);
+      });
     }
     const vrow = $(`[data-option-row="vt:altBoard"]`, card);
     if (vrow) vrow.classList.toggle('on', !!e.options?.vt?.altBoard);
