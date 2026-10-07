@@ -411,7 +411,7 @@ def catalog():
                 row["a"] = aka
             # What the skill is (acro, flight, salto, 360° circle ...), for the Xcel special
             # requirements, restrictions and Sapphire bonus (js/scoring/xcel-rules.js).
-            if x.get("tags"):
+            if "tags" in x:  # {} = tagged, nothing applies
                 row["t"] = x["tags"]
             if x.get("markers"):
                 row["m"] = x["markers"]

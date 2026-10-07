@@ -1152,7 +1152,7 @@ function scoreTip(e, ev, label) {
   } else if (fam === 'xcel') {
     Object.assign(tips, {
       Start: lvl === 'sapphire' ? 'Sapphire starts from 9.6, plus up to 0.4 bonus.' : 'Every routine starts from 10.0.',
-      Bonus: 'Sapphire: +0.1 for each "C", for one "D", and for each "B"+"B" (or higher) connection, up to +0.4. Only skills in the Xcel Code earn bonus.',
+      Bonus: 'Sapphire: +0.1 for each "C", for one "D", and for each "B"+"B" (or higher) connection, up to +0.4. Skills in the Xcel Code and UCG’s own additions earn bonus; Development / Level 9-10 skills don’t.',
       'Missing SRs': '-0.50 for each special requirement not met (not ticked below).',
       'Missing VPs': 'Each required value part not covered costs its value: A 0.1, B 0.3, C 0.5. A higher skill can fill a lower value part.',
       Restricted: "-0.50 for each skill above this level's allowed difficulty (it earns no value part).",

@@ -6,9 +6,9 @@ import assert from 'node:assert/strict';
 import { scoreXcel } from '../js/scoring/wag.js';
 
 // A listed skill: name, value, element group, tags; `link` = connected to the next skill.
-const sk = (name, letter, group, tags = {}, extra = {}) => ({
+const sk = (name, letter, group, tags = {}, { skill = {}, ...extra } = {}) => ({
   name, letter, skillId: `TEST-${name}`, link: false,
-  skill: { group, tags, src: 'USAG', ...extra.skill }, ...extra,
+  skill: { group, tags, src: 'USAG', ...skill }, ...extra,
 });
 const linked = (s) => ({ ...s, link: true });
 const by = (r, i) => r.detectedSr[i] && r.detectedSr[i].by;
@@ -34,7 +34,7 @@ test('Sapphire bonus: floor indirect acro connection (front pike + round-off + l
   ]);
   assert.equal(r.bonus, 0.1);
 });
-test('Sapphire bonus: one "D" per event, 0.40 maximum, and only Xcel-listed skills', () => {
+test('Sapphire bonus: one "D" per event, 0.40 maximum; Xcel and UCG skills, not Development ones', () => {
   const d = (n) => sk(n, 'D', 7, { acro: true });
   assert.equal(scoreXcel('sapphire', 'bb', [d('D1'), d('D2')]).bonus, 0.1);
   const cs = ['c1', 'c2', 'c3', 'c4', 'c5'].map((n) => sk(n, 'C', 2, {}));
@@ -43,6 +43,8 @@ test('Sapphire bonus: one "D" per event, 0.40 maximum, and only Xcel-listed skil
   const dp = sk('Development E', 'E', 7, { acro: true }, { skill: { prog: 'dp' } });
   const dpC = sk('Development C', 'C', 7, { acro: true }, { skill: { prog: 'dp' } });
   assert.equal(scoreXcel('sapphire', 'bb', [dp, dpC]).bonus, 0);
+  const ucg = sk('UCG addition', 'C', 7, { acro: true }, { skill: { src: 'UCG' } }); // UCG ruling: eligible
+  assert.equal(scoreXcel('sapphire', 'bb', [ucg]).bonus, 0.1);
 });
 test('Sapphire bonus: same B+B connection counts once; reversed order counts again', () => {
   const j = sk('Straddle jump', 'B', 2, { dance_type: 'jump', split: true });

@@ -18,8 +18,9 @@ const credited = (it) => it.status === 'counting' || it.status === 'noncounting'
 
 const MOUNT = { ub: 1, bb: 1 };
 const DISMOUNT = { ub: 8, bb: 9 };
-const isMount = (ev, it) => group(it) === MOUNT[ev];
-const isDismount = (ev, it) => group(it) === DISMOUNT[ev];
+// By element group; a few skills in other groups are tagged as mounts or dismounts.
+const isMount = (ev, it) => group(it) === MOUNT[ev] || !!T(it).mount;
+const isDismount = (ev, it) => group(it) === DISMOUNT[ev] || !!T(it).dismount;
 const inner = (ev, it) => !isMount(ev, it) && !isDismount(ev, it);
 
 // ---- connections -------------------------------------------------------------
@@ -103,9 +104,9 @@ const met = (by, assumes = null) => ({ by: [].concat(by).map((it) => it.idx), as
 const best = (list) => list.filter(Boolean).sort((a, b) => !!a.assumes - !!b.assumes)[0] || null;
 
 // Clear support / cast angle, lowest to highest.
-const ANGLE = { below: 0, h: 1, above_h: 2, 45: 3, hs: 4 };
+const ANGLE = { below_h: 0, h: 1, above_h: 2, 45: 3, hs: 4 };
 const ANGLE_TEXT = {
-  below: 'the cast reaches at least 45° below horizontal',
+  below_h: 'the cast reaches at least 45° below horizontal',
   h: 'it finishes in clear support at least at horizontal',
   above_h: 'it finishes in clear support above horizontal',
   45: 'it finishes in clear support within 45° of vertical',
@@ -115,11 +116,13 @@ function support(ev, it, need) {
   const t = T(it);
   if (!t.cast_sr || !inner(ev, it)) return null;
   const a = t.support_angle;
-  if (a && a !== 'any') return ANGLE[a] >= ANGLE[need] ? met(it) : null;
+  if (a && a !== 'any' && !t.varies?.includes('support_angle')) return ANGLE[a] >= ANGLE[need] ? met(it) : null;
   return met(it, ANGLE_TEXT[need]);
 }
 
-const circle = (ev, it) => T(it).circle360 && inner(ev, it);
+// A long hang pullover is a 360° circle only when a cast comes right before it (any cast,
+// e.g. cast to squat-on, jump to high bar: the Code's Gold bars examples).
+const circle = (ev, it, before) => T(it).circle360 && inner(ev, it) && (!T(it).circle_needs_cast || group(before || {}) === 2);
 const fromHB = (it, what = 'it is from the high bar') => (T(it).bar === 'LB' ? null : met(it, T(it).bar === 'HB' ? null : what));
 
 // Two circles for Gold SR 2/3: different elements, or the same one directly connected, or
@@ -161,6 +164,10 @@ function floorDancePassage(passes, level, key) {
     const leap = dance.find((it) => T(it).dance_type === 'leap' && T(it).split);
     const other = leap && dance.find((it) => key(it) !== key(leap));
     if (other) return met([leap, other], splitText(deg));
+    // One box covering a leap or a jump ("split leap or split jump"), listed twice: the
+    // gymnast may do one of each.
+    const twin = leap && T(leap).varies?.includes('dance_type') && dance.find((it) => it !== leap && key(it) === key(leap));
+    if (twin) return met([leap, twin], `${splitText(deg)}, and that the two are different (e.g. a leap and a jump)`);
   }
   return null;
 }
@@ -179,6 +186,7 @@ export function detectSR(level, ev, items, key) {
   const filled = items.filter((it) => it.status !== 'blank');
   filled.forEach((it, k) => (it.next = filled[k + 1]?.idx));
   const live = items.filter((it) => credited(it) && it.skill);
+  const before = new Map(filled.map((it, k) => [it, filled[k - 1]]));
   const passes = passesOf(items).map((p) => p.filter((it) => live.includes(it))).filter((p) => p.length);
   const find = (test) => live.find(test);
   const all = (test) => live.filter(test);
@@ -189,12 +197,12 @@ export function detectSR(level, ev, items, key) {
   const dismount = (test = () => true) => all((it) => isDismount(ev, it) && test(it));
 
   if (ev === 'ub') {
-    const circles = (l = 'A') => all((it) => circle(ev, it) && atLeast(it, l));
+    const circles = (l = 'A') => all((it) => circle(ev, it, before.get(it)) && atLeast(it, l));
     if (level === 'silver') {
       return [
         one((it) => isMount(ev, it)),
-        best(live.map((it) => support(ev, it, 'below'))),
-        one((it) => circle(ev, it)),
+        best(live.map((it) => support(ev, it, 'below_h'))),
+        one((it) => circle(ev, it, before.get(it))),
         one((it) => isDismount(ev, it) && tagged(it) && !salto(it)),
       ];
     }
@@ -210,7 +218,7 @@ export function detectSR(level, ev, items, key) {
     if (level === 'plat') {
       return [
         best(live.map((it) => support(ev, it, 'above_h'))),
-        one((it) => circle(ev, it)),
+        one((it) => circle(ev, it, before.get(it))),
         one((it) => T(it).kip),
         best(dismount(tagged).map((it) => fromHB(it))),
       ];
@@ -340,12 +348,13 @@ const FLOOR_ACRO_GROUPS = new Set([3, 4, 5, 6, 7, 8]);
  * - connection: +0.10 for each "B"+"B" (or higher) direct connection (each exact
  *   connection once); on floor also "B"+ acro skills in the same pass with lower-valued
  *   acro between them (an indirect acro connection).
- * Only credited skills listed in the Xcel Code earn bonus (UCG's added Development / Level
- * 9-10 skills don't); skills typed in by hand count on the value given.
+ * Only credited skills listed in the Xcel Code or in UCG's own WAG additions earn bonus (the
+ * Development / Level 9-10 skills UCG allows at Sapphire don't); skills typed in by hand
+ * count on the value given.
  * Sets it.bonus on the row that earns it and returns { total, parts }.
  */
 export function sapphireBonus(ev, items, key) {
-  const eligible = (it) => credited(it) && (!it.skill || (it.skill.src === 'USAG' && !it.skill.prog));
+  const eligible = (it) => credited(it) && (!it.skill || it.skill.src === 'UCG' || (it.skill.src === 'USAG' && !it.skill.prog));
   const parts = [];
   const seenC = new Set();
   let dUsed = false;
