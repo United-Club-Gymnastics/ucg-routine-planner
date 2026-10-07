@@ -61,7 +61,8 @@
   "all_sr": false,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": []
  },
  {
   "division": "Silver",
@@ -126,7 +127,8 @@
   "all_sr": false,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": []
  },
  {
   "division": "Silver",
@@ -190,7 +192,8 @@
   "all_sr": false,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": []
  },
  {
   "division": "Silver",
@@ -250,7 +253,8 @@
   "all_sr": true,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": []
  },
  {
   "division": "Silver",
@@ -316,7 +320,8 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Mentions a 0.10 amplitude execution deduction, not taken from start value."
+  "notes": "Mentions a 0.10 amplitude execution deduction, not taken from start value.",
+  "groups": []
  },
  {
   "division": "Silver",
@@ -382,7 +387,8 @@
   "all_sr": true,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": []
  },
  {
   "division": "Gold",
@@ -471,7 +477,8 @@
   "all_vp": false,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "'Not an element' label is printed in the Element # column; VP cell blank."
+  "notes": "'Not an element' label is printed in the Element # column; VP cell blank.",
+  "groups": []
  },
  {
   "division": "Gold",
@@ -542,7 +549,8 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Printed as missing 'SR 2/3' (only one circling element); SR2 is credited in the table, so 3 recorded. One SR deduction."
+  "notes": "Printed as missing 'SR 2/3' (only one circling element); SR2 is credited in the table, so 3 recorded. One SR deduction.",
+  "groups": []
  },
  {
   "division": "Gold",
@@ -628,7 +636,8 @@
   "all_vp": false,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Printed as missing SR1 and 'SR 2/3' (only one circling element); SR2 credited in table, so 3 recorded. 'Not an element' label is printed in the Element # column; VP cell blank."
+  "notes": "Printed as missing SR1 and 'SR 2/3' (only one circling element); SR2 credited in table, so 3 recorded. 'Not an element' label is printed in the Element # column; VP cell blank.",
+  "groups": []
  },
  {
   "division": "Gold",
@@ -705,7 +714,8 @@
   "all_sr": true,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": []
  },
  {
   "division": "Gold",
@@ -783,7 +793,8 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "'Not an element' label is printed in the Element # column; VP cell blank."
+  "notes": "'Not an element' label is printed in the Element # column; VP cell blank.",
+  "groups": []
  },
  {
   "division": "Gold",
@@ -849,7 +860,8 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Mentions a 0.10 amplitude execution deduction, not taken from start value."
+  "notes": "Mentions a 0.10 amplitude execution deduction, not taken from start value.",
+  "groups": []
  },
  {
   "division": "Platinum",
@@ -943,7 +955,8 @@
   "all_vp": false,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "'Not an element' label is printed in the Element # column; VP cell blank. Mentions a total 0.50 extra-swing execution deduction, not part of start value."
+  "notes": "'Not an element' label is printed in the Element # column; VP cell blank. Mentions a total 0.50 extra-swing execution deduction, not part of start value.",
+  "groups": []
  },
  {
   "division": "Platinum",
@@ -1016,7 +1029,8 @@
   "all_vp": false,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "row 2 printed \"SR3\" (repeating the kip's SR3) although every SR is stated met; corrected to SR2, the 360° circle"
+  "notes": "row 2 printed \"SR3\" (repeating the kip's SR3) although every SR is stated met; corrected to SR2, the 360° circle",
+  "groups": []
  },
  {
   "division": "Platinum",
@@ -1098,7 +1112,8 @@
   "all_vp": false,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "'Not an element' label is printed in the Element # column; VP cell blank. Mentions a 0.30 extra-swing execution deduction, not part of start value."
+  "notes": "'Not an element' label is printed in the Element # column; VP cell blank. Mentions a 0.30 extra-swing execution deduction, not part of start value.",
+  "groups": []
  },
  {
   "division": "Platinum",
@@ -1169,7 +1184,8 @@
   "all_sr": true,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": []
  },
  {
   "division": "Platinum",
@@ -1253,7 +1269,8 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "3.304 printed with VP B for this division."
+  "notes": "3.304 printed with VP B for this division.",
+  "groups": []
  },
  {
   "division": "Platinum",
@@ -1325,7 +1342,8 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Mentions a 0.30 extra-swing execution deduction, not part of start value."
+  "notes": "Mentions a 0.30 extra-swing execution deduction, not part of start value.",
+  "groups": []
  },
  {
   "division": "Diamond",
@@ -1401,7 +1419,8 @@
   "all_sr": false,
   "all_vp": false,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": []
  },
  {
   "division": "Diamond",
@@ -1489,7 +1508,8 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Restricted row: label printed in the Element # column, VP cell blank (second D element gets no VP/SR)."
+  "notes": "Restricted row: label printed in the Element # column, VP cell blank (second D element gets no VP/SR).",
+  "groups": []
  },
  {
   "division": "Diamond",
@@ -1560,7 +1580,8 @@
   "all_sr": true,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": []
  },
  {
   "division": "Diamond",
@@ -1643,7 +1664,8 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "'Not an element' label is printed in the Element # column; VP cell blank."
+  "notes": "'Not an element' label is printed in the Element # column; VP cell blank.",
+  "groups": []
  },
  {
   "division": "Sapphire",
@@ -1743,7 +1765,19 @@
   "all_sr": false,
   "all_vp": true,
   "all_bonus": false,
-  "bonus_total": 0.2
+  "bonus_total": 0.2,
+  "groups": [
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Sapphire",
@@ -1855,7 +1889,31 @@
   "all_sr": true,
   "all_vp": false,
   "all_bonus": false,
-  "bonus_total": 0.3
+  "bonus_total": 0.3,
+  "groups": [
+   {
+    "elements": [
+     0,
+     1
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     5,
+     6,
+     7
+    ],
+    "links": [
+     "direct",
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Sapphire",
@@ -1996,7 +2054,25 @@
   "all_sr": true,
   "all_vp": true,
   "all_bonus": true,
-  "bonus_total": 0.4
+  "bonus_total": 0.4,
+  "groups": [
+   {
+    "elements": [
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "links": [
+     "direct",
+     "direct",
+     "direct",
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Sapphire",
@@ -2117,7 +2193,31 @@
   "all_sr": true,
   "all_vp": true,
   "all_bonus": true,
-  "bonus_total": 0.4
+  "bonus_total": 0.4,
+  "groups": [
+   {
+    "elements": [
+     1,
+     2
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     5,
+     6,
+     7
+    ],
+    "links": [
+     "direct",
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Silver",
@@ -2188,7 +2288,8 @@
   "all_vp": false,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "row 2: \"No VP\" printed in the element-number column"
+  "notes": "row 2: \"No VP\" printed in the element-number column",
+  "groups": []
  },
  {
   "division": "Silver",
@@ -2265,7 +2366,8 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "row 0 element # column reads '*Other Mount'"
+  "notes": "row 0 element # column reads '*Other Mount'",
+  "groups": []
  },
  {
   "division": "Silver",
@@ -2340,7 +2442,8 @@
   "all_vp": false,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "row 1 element # cell marks it restricted (B value)"
+  "notes": "row 1 element # cell marks it restricted (B value)",
+  "groups": []
  },
  {
   "division": "Silver",
@@ -2400,7 +2503,8 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "SR2 credited with an 80 deg split; an optional split-angle execution deduction is mentioned, not applied to SV"
+  "notes": "SR2 credited with an 80 deg split; an optional split-angle execution deduction is mentioned, not applied to SV",
+  "groups": []
  },
  {
   "division": "Silver",
@@ -2460,7 +2564,8 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "row 0 element # column reads '*Other Mount'"
+  "notes": "row 0 element # column reads '*Other Mount'",
+  "groups": []
  },
  {
   "division": "Silver",
@@ -2528,7 +2633,8 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "row 0 element # column reads '*Other Mount'; SR1 is printed on both the mount row and the turn row (mount row looks like a misprint)"
+  "notes": "row 0 element # column reads '*Other Mount'; SR1 is printed on both the mount row and the turn row (mount row looks like a misprint)",
+  "groups": []
  },
  {
   "division": "Gold",
@@ -2606,7 +2712,19 @@
   "all_sr": false,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": [
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   }
+  ]
  },
  {
   "division": "Gold",
@@ -2691,7 +2809,8 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "row 0 element # column reads '*Other Mount'"
+  "notes": "row 0 element # column reads '*Other Mount'",
+  "groups": []
  },
  {
   "division": "Gold",
@@ -2787,7 +2906,8 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "row 6 element # cell marks it restricted (C value); a 0.30 no-dismount deduction is struck out (revision) and not counted"
+  "notes": "row 6 element # cell marks it restricted (C value); a 0.30 no-dismount deduction is struck out (revision) and not counted",
+  "groups": []
  },
  {
   "division": "Gold",
@@ -2873,7 +2993,19 @@
   "all_sr": true,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": [
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   }
+  ]
  },
  {
   "division": "Gold",
@@ -2960,7 +3092,8 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "no '+' printed between the elements of either merged SR cell"
+  "notes": "no '+' printed between the elements of either merged SR cell",
+  "groups": []
  },
  {
   "division": "Gold",
@@ -3047,7 +3180,19 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "row 0 element # column reads '*Other Mount'; SR2 credited with a 100 deg split (within 20 deg of 120)"
+  "notes": "row 0 element # column reads '*Other Mount'; SR2 credited with a 100 deg split (within 20 deg of 120)",
+  "groups": [
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   }
+  ]
  },
  {
   "division": "Platinum",
@@ -3131,7 +3276,19 @@
   "all_sr": false,
   "all_vp": false,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": [
+   {
+    "elements": [
+     3,
+     4
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Platinum",
@@ -3233,7 +3390,29 @@
   "all_vp": false,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "row 0 element # column reads '*Other Mount'; row 6 element # cell marks it restricted (C value); a 0.30 no-dismount deduction is struck out (revision) and not counted"
+  "notes": "row 0 element # column reads '*Other Mount'; row 6 element # cell marks it restricted (C value); a 0.30 no-dismount deduction is struck out (revision) and not counted",
+  "groups": [
+   {
+    "elements": [
+     1,
+     2
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     4,
+     5
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   }
+  ]
  },
  {
   "division": "Platinum",
@@ -3317,7 +3496,29 @@
   "all_sr": false,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": [
+   {
+    "elements": [
+     1,
+     2
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     3,
+     4
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   }
+  ]
  },
  {
   "division": "Platinum",
@@ -3398,7 +3599,29 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Row 3 printed \"2.107\", the sissonne's old number (it is now 2.207, B). At a 135° split it earns the Platinum \"leap or jump with cross or side split, min. 120°\" A, so it is mapped to that record (USAG-BB-2.0 Platinum-1)."
+  "notes": "Row 3 printed \"2.107\", the sissonne's old number (it is now 2.207, B). At a 135° split it earns the Platinum \"leap or jump with cross or side split, min. 120°\" A, so it is mapped to that record (USAG-BB-2.0 Platinum-1).",
+  "groups": [
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     5,
+     6
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Platinum",
@@ -3484,7 +3707,29 @@
   "all_sr": true,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": [
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     4,
+     5
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Platinum",
@@ -3578,7 +3823,29 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "row 0 element # column reads '*Other Mount'"
+  "notes": "row 0 element # column reads '*Other Mount'",
+  "groups": [
+   {
+    "elements": [
+     1,
+     2
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     3,
+     4
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   }
+  ]
  },
  {
   "division": "Diamond",
@@ -3680,7 +3947,29 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "row 4 element # cell marks it restricted (D value; second D not allowed); split angle in row 5 name revised 150 -> 155"
+  "notes": "row 4 element # cell marks it restricted (D value; second D not allowed); split angle in row 5 name revised 150 -> 155",
+  "groups": [
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     5,
+     6
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   }
+  ]
  },
  {
   "division": "Diamond",
@@ -3770,7 +4059,29 @@
   "all_sr": false,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": [
+   {
+    "elements": [
+     1,
+     2
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     5,
+     6
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "mixed"
+   }
+  ]
  },
  {
   "division": "Diamond",
@@ -3854,7 +4165,29 @@
   "all_sr": false,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": [
+   {
+    "elements": [
+     3,
+     4
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     5,
+     6
+    ],
+    "links": [
+     "unmarked"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Diamond",
@@ -3947,7 +4280,39 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "higher VP allowed to fill lower VP"
+  "notes": "higher VP allowed to fill lower VP",
+  "groups": [
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     4,
+     5
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     6,
+     7
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Diamond",
@@ -4048,7 +4413,39 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "150 deg split counts toward the 155 deg split SR (within 20 deg)"
+  "notes": "150 deg split counts toward the 155 deg split SR (within 20 deg)",
+  "groups": [
+   {
+    "elements": [
+     3,
+     4
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     5,
+     6
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     7,
+     8
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Diamond",
@@ -4142,7 +4539,29 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "row 0 element # column reads '*Other Mount'; no '+' printed after 6.204 though the SR3 cell spans rows 4-6"
+  "notes": "row 0 element # column reads '*Other Mount'; no '+' printed after 6.204 though the SR3 cell spans rows 4-6",
+  "groups": [
+   {
+    "elements": [
+     1,
+     2
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     4,
+     5
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Sapphire",
@@ -4260,7 +4679,39 @@
   "all_sr": true,
   "all_vp": true,
   "all_bonus": false,
-  "bonus_total": 0.3
+  "bonus_total": 0.3,
+  "groups": [
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     4,
+     5
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     6,
+     7
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Sapphire",
@@ -4377,7 +4828,29 @@
   "all_vp": false,
   "all_bonus": false,
   "bonus_total": 0.2,
-  "notes": "missing C VP deducted 0.50 at Sapphire"
+  "notes": "missing C VP deducted 0.50 at Sapphire",
+  "groups": [
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     4,
+     5
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Sapphire",
@@ -4515,7 +4988,29 @@
   "all_vp": true,
   "all_bonus": true,
   "bonus_total": 0.4,
-  "notes": "higher VP allowed to fill lower VP"
+  "notes": "higher VP allowed to fill lower VP",
+  "groups": [
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     4,
+     5
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Sapphire",
@@ -4651,7 +5146,39 @@
   "all_sr": true,
   "all_vp": true,
   "all_bonus": true,
-  "bonus_total": 0.4
+  "bonus_total": 0.4,
+  "groups": [
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     4,
+     5
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     6,
+     7
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "mixed"
+   }
+  ]
  },
  {
   "division": "Silver",
@@ -4736,7 +5263,29 @@
   "all_sr": false,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": [
+   {
+    "elements": [
+     0,
+     1
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     3,
+     4
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   }
+  ]
  },
  {
   "division": "Silver",
@@ -4826,7 +5375,29 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Row 5 element # cell marks it restricted (second salto/aerial). Row 1 1.202 annotated as A VP in this division."
+  "notes": "Row 5 element # cell marks it restricted (second salto/aerial). Row 1 1.202 annotated as A VP in this division.",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Silver",
@@ -4924,7 +5495,39 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Row 6 (repeat of the back walkover) has 'No VP' printed in the element # column instead of a number; its VP cell is blank."
+  "notes": "Row 6 (repeat of the back walkover) has 'No VP' printed in the element # column instead of a number; its VP cell is blank.",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1
+    ],
+    "links": [
+     "unmarked"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     3,
+     4
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     5,
+     6
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Silver",
@@ -5005,7 +5608,29 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Row 4 element # cell adds a parenthetical that 1.202 counts as A VP in this division."
+  "notes": "Row 4 element # cell adds a parenthetical that 1.202 counts as A VP in this division.",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     3,
+     4
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   }
+  ]
  },
  {
   "division": "Silver",
@@ -5086,7 +5711,29 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Row 3 element # cell adds a parenthetical that 1.207 counts as A VP in this division."
+  "notes": "Row 3 element # cell adds a parenthetical that 1.207 counts as A VP in this division.",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1
+    ],
+    "links": [
+     "unmarked"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   }
+  ]
  },
  {
   "division": "Silver",
@@ -5181,7 +5828,39 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Row 4 printed \"3.101\" for a 1/1 turn on one foot (FX turns are group 2; 3.101 is a handstand); corrected to 2.101."
+  "notes": "Row 4 printed \"3.101\" for a 1/1 turn on one foot (FX turns are group 2; 3.101 is a handstand); corrected to 2.101.",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     5,
+     6
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Gold",
@@ -5279,7 +5958,39 @@
   "all_vp": false,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Rows 3-4 (repeat of pass in rows 0-1) print 'Same Pass' / 'No VP/No SR' in the element # column instead of numbers; VP and SR blank. Row 6 printed as 1.101 (same as row 5)."
+  "notes": "Rows 3-4 (repeat of pass in rows 0-1) print 'Same Pass' / 'No VP/No SR' in the element # column instead of numbers; VP and SR blank. Row 6 printed as 1.101 (same as row 5).",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1
+    ],
+    "links": [
+     "unmarked"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     3,
+     4
+    ],
+    "links": [
+     "unmarked"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     5,
+     6
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   }
+  ]
  },
  {
   "division": "Gold",
@@ -5375,7 +6086,31 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Row 0 element # cell marks it restricted (C turn). SR1 cell covers rows 3-4 only; row 5 has its own blank SR cell. Row 1 1.204 annotated as A VP in this division."
+  "notes": "Row 0 element # cell marks it restricted (C turn). SR1 cell covers rows 3-4 only; row 5 has its own blank SR cell. Row 1 1.204 annotated as A VP in this division.",
+  "groups": [
+   {
+    "elements": [
+     1,
+     2
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     3,
+     4,
+     5
+    ],
+    "links": [
+     "direct",
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Gold",
@@ -5460,7 +6195,31 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Row 5 1.207 annotated as A VP in this division."
+  "notes": "Row 5 1.207 annotated as A VP in this division.",
+  "groups": [
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     4,
+     5,
+     6
+    ],
+    "links": [
+     "direct",
+     "direct"
+    ],
+    "kind": "mixed"
+   }
+  ]
  },
  {
   "division": "Gold",
@@ -5554,7 +6313,39 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Row 3 element # cell adds a parenthetical that 1.207 counts as A VP in this division."
+  "notes": "Row 3 element # cell adds a parenthetical that 1.207 counts as A VP in this division.",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1
+    ],
+    "links": [
+     "unmarked"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     5,
+     6
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Gold",
@@ -5634,7 +6425,29 @@
   "all_sr": true,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": [
+   {
+    "elements": [
+     1,
+     2
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     4,
+     5
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   }
+  ]
  },
  {
   "division": "Gold",
@@ -5722,7 +6535,31 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "SR1 cell covers only rows 0-1; row 2 has its own blank SR cell. Row 5 1.202 annotated as A VP in this division. Row 3 printed \"3.201\" for a 1½ turn on one foot (FX turns are group 2; 3.201 is a handstand); corrected to 2.201."
+  "notes": "SR1 cell covers only rows 0-1; row 2 has its own blank SR cell. Row 5 1.202 annotated as A VP in this division. Row 3 printed \"3.201\" for a 1½ turn on one foot (FX turns are group 2; 3.201 is a handstand); corrected to 2.201.",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1,
+     2
+    ],
+    "links": [
+     "direct",
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     4,
+     5
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   }
+  ]
  },
  {
   "division": "Platinum",
@@ -5807,7 +6644,31 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Rows 0-2 share one blank SR cell."
+  "notes": "Rows 0-2 share one blank SR cell.",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1,
+     2
+    ],
+    "links": [
+     "indirect",
+     "direct"
+    ],
+    "kind": "mixed"
+   },
+   {
+    "elements": [
+     3,
+     4
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Platinum",
@@ -5900,7 +6761,33 @@
   "all_sr": false,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": [
+   {
+    "elements": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "links": [
+     "direct",
+     "direct",
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     4,
+     5
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   }
+  ]
  },
  {
   "division": "Platinum",
@@ -6005,7 +6892,41 @@
   "all_sr": false,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": [
+   {
+    "elements": [
+     0,
+     1,
+     2
+    ],
+    "links": [
+     "direct",
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     3,
+     4
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     6,
+     7
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Platinum",
@@ -6092,7 +7013,31 @@
   "all_sr": true,
   "all_vp": true,
   "all_bonus": null,
-  "bonus_total": null
+  "bonus_total": null,
+  "groups": [
+   {
+    "elements": [
+     0,
+     1
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     3,
+     4,
+     5
+    ],
+    "links": [
+     "direct",
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Platinum",
@@ -6193,7 +7138,41 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Leap shown at 150 deg; start-value cell says it still gets SR credit (within 20 deg tolerance)."
+  "notes": "Leap shown at 150 deg; start-value cell says it still gets SR credit (within 20 deg tolerance).",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1,
+     2
+    ],
+    "links": [
+     "direct",
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     4,
+     5
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     6,
+     7
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Platinum",
@@ -6301,7 +7280,43 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Last pass (rows 6-8): VP cell is merged and shows only two A's for three elements; assigned to rows 6-7, row 8 left null."
+  "notes": "Last pass (rows 6-8): VP cell is merged and shows only two A's for three elements; assigned to rows 6-7, row 8 left null.",
+  "groups": [
+   {
+    "elements": [
+     1,
+     2,
+     3
+    ],
+    "links": [
+     "direct",
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     4,
+     5
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     6,
+     7,
+     8
+    ],
+    "links": [
+     "direct",
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Diamond",
@@ -6416,7 +7431,43 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Both SR1 cells read 'Part SR1'."
+  "notes": "Both SR1 cells read 'Part SR1'.",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "links": [
+     "direct",
+     "direct",
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Diamond",
@@ -6522,7 +7573,41 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Row 5 prints \"Restricted – 2nd D\" instead of its number; it is the straddle jump with 1½ turn, 1.407 (D). Merged SR cells read \"Part SR1/Part SR2\"."
+  "notes": "Row 5 prints \"Restricted – 2nd D\" instead of its number; it is the straddle jump with 1½ turn, 1.407 (D). Merged SR cells read \"Part SR1/Part SR2\".",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1,
+     2
+    ],
+    "links": [
+     "direct",
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     4,
+     5
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     6,
+     7
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Diamond",
@@ -6636,7 +7721,49 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Rows 5-6 (repeat of pass in rows 1-2) print 'No VP/No SR' in the element # column instead of numbers. SR cell rows 1-2 'Part SR1/Part SR2'; rows 3-4 'Part SR1'."
+  "notes": "Rows 5-6 (repeat of pass in rows 1-2) print 'No VP/No SR' in the element # column instead of numbers. SR cell rows 1-2 'Part SR1/Part SR2'; rows 3-4 'Part SR1'.",
+  "groups": [
+   {
+    "elements": [
+     1,
+     2
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     3,
+     4
+    ],
+    "links": [
+     "unmarked"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     5,
+     6
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     7,
+     8
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   }
+  ]
  },
  {
   "division": "Diamond",
@@ -6740,7 +7867,41 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Merged SR cells for rows 0-2 and 6-7 read 'Part SR1/Part SR2'. Row 2 number printed as 8.3101. Row 2 printed \"8.3101\"; it is Xcel FX 8.301 (C), so corrected."
+  "notes": "Merged SR cells for rows 0-2 and 6-7 read 'Part SR1/Part SR2'. Row 2 number printed as 8.3101. Row 2 printed \"8.3101\"; it is Xcel FX 8.301 (C), so corrected.",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1,
+     2
+    ],
+    "links": [
+     "direct",
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     4,
+     5
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     6,
+     7
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Diamond",
@@ -6836,7 +7997,39 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "Row 2 replaces a struck-through whole row (old 3.101, VP A). SR cell rows 0-1 reads 'Part SR1'; rows 5-6 reads 'Part SR1/SR2'. Leap at 150 deg still credited (within 20 deg)."
+  "notes": "Row 2 replaces a struck-through whole row (old 3.101, VP A). SR cell rows 0-1 reads 'Part SR1'; rows 5-6 reads 'Part SR1/SR2'. Leap at 150 deg still credited (within 20 deg).",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     3,
+     4
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     5,
+     6
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Diamond",
@@ -6939,7 +8132,41 @@
   "all_vp": true,
   "all_bonus": null,
   "bonus_total": null,
-  "notes": "SR cells rows 0-1 and 6-7 read 'Part SR1/Part SR2'; rows 6-7 add that it is not a B salto."
+  "notes": "SR cells rows 0-1 and 6-7 read 'Part SR1/Part SR2'; rows 6-7 add that it is not a B salto.",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     3,
+     4,
+     5
+    ],
+    "links": [
+     "indirect",
+     "indirect"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     6,
+     7
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Sapphire",
@@ -7064,7 +8291,43 @@
   "all_vp": true,
   "all_bonus": false,
   "bonus_total": 0.1,
-  "notes": "SR cell rows 0-1 reads 'Part SR2'; rows 5-8 'SR1/Part SR2'."
+  "notes": "SR cell rows 0-1 reads 'Part SR2'; rows 5-8 'SR1/Part SR2'.",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     2,
+     3
+    ],
+    "links": [
+     "indirect"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "links": [
+     "direct",
+     "direct",
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Sapphire",
@@ -7189,7 +8452,41 @@
   "all_vp": true,
   "all_bonus": false,
   "bonus_total": 0.2,
-  "notes": "SR cell rows 0-2 reads 'Part SR2'; rows 6-7 'SR1/ Part SR2'. Row 5 name ends with a caret marker (footnote about direct connection), not '+'."
+  "notes": "SR cell rows 0-2 reads 'Part SR2'; rows 6-7 'SR1/ Part SR2'. Row 5 name ends with a caret marker (footnote about direct connection), not '+'.",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1,
+     2
+    ],
+    "links": [
+     "direct",
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     4,
+     5
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     6,
+     7
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Sapphire",
@@ -7325,7 +8622,41 @@
   "all_vp": true,
   "all_bonus": true,
   "bonus_total": 0.4,
-  "notes": "SR cell rows 0-2 reads 'Part SR2'; rows 6-7 'SR1/Part SR2'."
+  "notes": "SR cell rows 0-2 reads 'Part SR2'; rows 6-7 'SR1/Part SR2'.",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1,
+     2
+    ],
+    "links": [
+     "direct",
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     4,
+     5
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     6,
+     7
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  },
  {
   "division": "Sapphire",
@@ -7467,6 +8798,40 @@
   "all_vp": true,
   "all_bonus": true,
   "bonus_total": 0.4,
-  "notes": "SR cell rows 0-1 reads 'SR1/Part SR2'; rows 7-8 'Part SR2'."
+  "notes": "SR cell rows 0-1 reads 'SR1/Part SR2'; rows 7-8 'Part SR2'.",
+  "groups": [
+   {
+    "elements": [
+     0,
+     1
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   },
+   {
+    "elements": [
+     4,
+     5,
+     6
+    ],
+    "links": [
+     "indirect",
+     "direct"
+    ],
+    "kind": "dance"
+   },
+   {
+    "elements": [
+     7,
+     8
+    ],
+    "links": [
+     "direct"
+    ],
+    "kind": "acro"
+   }
+  ]
  }
 ]

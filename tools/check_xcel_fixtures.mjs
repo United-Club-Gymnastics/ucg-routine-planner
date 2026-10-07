@@ -56,13 +56,10 @@ export function checkAll(fixtures) {
   return fixtures.map((fx) => {
     const app = fx.event.toLowerCase();
     const level = LEVEL[fx.division];
-    // Connected: "+" after the element, or rows the Code's merged SR cell spans (a pass or a
-    // dance passage; the Code doesn't always print "+" in a pass, and "-" marks an indirect
-    // connection) - the rows a coach links in the planner.
-    const linked = new Set(fx.routine.map((row, i) => (row.link_next ? i : null)).filter((i) => i != null));
-    for (const cell of fx.sr_cells || []) for (const i of cell.elements.slice(0, -1)) linked.add(i);
-    // ... and the pairs the Code awards connection bonus to (bars connections aren't printed).
-    for (const b of fx.bonus || []) if (b.kind === 'connection') for (const i of b.elements.slice(0, -1)) linked.add(i);
+    // Connected: the rows of each pass, passage or series the Code draws (its `groups`; direct,
+    // indirect or in one block) - the rows a coach links in the planner.
+    const linked = new Set();
+    for (const g of fx.groups || []) for (const i of g.elements.slice(0, -1)) linked.add(i);
     const rows = fx.routine.map((row, i) => candidates(app, { ...row, link_next: linked.has(i) })).filter(Boolean);
     let combos = [[]];
     for (const opts of rows) {
