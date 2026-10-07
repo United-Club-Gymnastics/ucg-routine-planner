@@ -1,6 +1,6 @@
 {
  "discipline": "MAG",
- "version": "956b7710bd52",
+ "version": "5fcada1c5172",
  "built": "2026-10-06",
  "elements": [
   {
@@ -6480,7 +6480,7 @@
       "short_name": "Hopping from forward to backward swing or vice versa with grip change",
       "number": "1",
       "variant": 1,
-      "value": "GE",
+      "value": "Misc",
       "element_group": "II",
       "eponym": "",
       "note": "",
@@ -18581,7 +18581,7 @@
       "short_name": "Swing forwards or backwards to bent arm hang in L",
       "number": "1",
       "variant": 1,
-      "value": "GE",
+      "value": "Misc",
       "element_group": "III",
       "eponym": "",
       "note": "",

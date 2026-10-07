@@ -1,6 +1,6 @@
 {
  "discipline": "WAG",
- "version": "a25f357c085e",
+ "version": "1e1b74f95e8a",
  "built": "2026-10-06",
  "elements": [
   {
@@ -33287,7 +33287,11 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Toe-on underswing on LB, counter flight to HB",
-   "aka": [],
+   "aka": [
+    "Toe-catch",
+    "Hiccup",
+    "Toe shoot"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -33309,7 +33313,12 @@
       "variant": 1,
       "value": "C",
       "element_group": "7",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Toe-catch",
+       "Hiccup",
+       "Toe shoot"
+      ]
      }
     ],
     "USAG-DP-2026": [
@@ -33320,7 +33329,12 @@
       "variant": 1,
       "value": "C",
       "element_group": "7",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Toe-catch",
+       "Hiccup",
+       "Toe shoot"
+      ]
      },
      {
       "rid": "USAGDP-UB-7.103-2",
@@ -42799,18 +42813,6 @@
       "eponym": "",
       "relation": "covers_more"
      }
-    ],
-    "WG-WAG-2025": [
-     {
-      "rid": "WGW-UB-1.106-1",
-      "short_name": "Straddle vault over LB to HB",
-      "number": "1.106",
-      "variant": 1,
-      "value": "A=0.1",
-      "element_group": "1",
-      "eponym": "",
-      "relation": "covers_more"
-     }
     ]
    }
   },
@@ -42840,18 +42842,6 @@
       "number": "1.208",
       "variant": 1,
       "value": "B",
-      "element_group": "1",
-      "eponym": "",
-      "relation": "covers_more"
-     }
-    ],
-    "WG-WAG-2025": [
-     {
-      "rid": "WGW-UB-1.206-1",
-      "short_name": "No-hands straddle jump to HB",
-      "number": "1.206",
-      "variant": 1,
-      "value": "B=0.2",
       "element_group": "1",
       "eponym": "",
       "relation": "covers_more"
@@ -46796,18 +46786,6 @@
       "video": "https://youtu.be/6lYz5B49094?si=ilJx9iE7ZntXm5Bh&t=15",
       "page": 3
      }
-    ],
-    "WG-WAG-2025": [
-     {
-      "rid": "WGW-UB-2.202-1",
-      "short_name": "Flying stoop or straddle over HB, ½ turn",
-      "number": "2.202",
-      "variant": 1,
-      "value": "B=0.2",
-      "element_group": "2",
-      "eponym": "",
-      "relation": "covers_more"
-     }
     ]
    }
   },
@@ -48157,21 +48135,6 @@
        "Level 9": "7.0",
        "Level 8": "9.0"
       }
-     },
-     {
-      "rid": "USAGDP-VT-1.111-1",
-      "short_name": "Front handspring entry, ¼–½ on, push-off",
-      "number": "1.111",
-      "variant": 1,
-      "value": null,
-      "element_group": "1",
-      "eponym": "",
-      "relation": "covers_more",
-      "start_values": {
-       "Level 10": "7.1",
-       "Level 9": "7.1",
-       "Level 8": "9.1"
-      }
      }
     ]
    }
@@ -48210,20 +48173,6 @@
        "Level 9": "8.6",
        "Level 8": "9.2"
       }
-     },
-     {
-      "rid": "USAGDP-VT-1.211-1",
-      "short_name": "Front handspring entry, ½ on, ½ off",
-      "number": "1.211",
-      "variant": 1,
-      "value": null,
-      "element_group": "1",
-      "eponym": "",
-      "relation": "covers_more",
-      "start_values": {
-       "Level 10": "8.3",
-       "Level 9": "8.7"
-      }
      }
     ]
    }
@@ -48260,20 +48209,6 @@
       "start_values": {
        "Level 10": "8.7",
        "Level 9": "8.9"
-      }
-     },
-     {
-      "rid": "USAGDP-VT-1.311-1",
-      "short_name": "Front handspring entry, ½ on, full off",
-      "number": "1.311",
-      "variant": 1,
-      "value": null,
-      "element_group": "1",
-      "eponym": "",
-      "relation": "covers_more",
-      "start_values": {
-       "Level 10": "8.8",
-       "Level 9": "9.0"
       }
      }
     ]
@@ -51059,18 +50994,6 @@
        "Level 8": "9.1"
       }
      }
-    ],
-    "WG-WAG-2025": [
-     {
-      "rid": "WGW-VT-1.00-1",
-      "short_name": "Front handspring",
-      "number": "1.00",
-      "variant": 1,
-      "value": "1.60",
-      "element_group": "1",
-      "eponym": "",
-      "relation": "covers_more"
-     }
     ]
    }
   },
@@ -51115,18 +51038,6 @@
        "Level 9": "8.7",
        "Level 8": "9.2"
       }
-     }
-    ],
-    "WG-WAG-2025": [
-     {
-      "rid": "WGW-VT-1.01-1",
-      "short_name": "Front handspring, ½ turn off",
-      "number": "1.01",
-      "variant": 1,
-      "value": "2.00",
-      "element_group": "1",
-      "eponym": "",
-      "relation": "covers_more"
      }
     ]
    }
@@ -51404,18 +51315,6 @@
        "Level 10": "8.9",
        "Level 9": "9.1"
       }
-     }
-    ],
-    "WG-WAG-2025": [
-     {
-      "rid": "WGW-VT-1.02-1",
-      "short_name": "Front handspring, full turn off",
-      "number": "1.02",
-      "variant": 1,
-      "value": "2.60",
-      "element_group": "1",
-      "eponym": "",
-      "relation": "covers_more"
      }
     ]
    }
@@ -52160,18 +52059,6 @@
        "Level 9": "10.0"
       }
      }
-    ],
-    "WG-WAG-2025": [
-     {
-      "rid": "WGW-VT-2.10-1",
-      "short_name": "Handspring front tuck",
-      "number": "2.10",
-      "variant": 1,
-      "value": "3.60",
-      "element_group": "2",
-      "eponym": "",
-      "relation": "covers_more"
-     }
     ]
    }
   },
@@ -52195,18 +52082,6 @@
       "start_values": {
        "Level 10": "10.0"
       }
-     }
-    ],
-    "WG-WAG-2025": [
-     {
-      "rid": "WGW-VT-2.11-1",
-      "short_name": "Handspring front tuck ½ twist",
-      "number": "2.11",
-      "variant": 1,
-      "value": "3.80",
-      "element_group": "2",
-      "eponym": "",
-      "relation": "covers_more"
      }
     ]
    }
@@ -52233,18 +52108,6 @@
        "Level 9": "10.0"
       }
      }
-    ],
-    "WG-WAG-2025": [
-     {
-      "rid": "WGW-VT-2.20-1",
-      "short_name": "Handspring front pike",
-      "number": "2.20",
-      "variant": 1,
-      "value": "3.80",
-      "element_group": "2",
-      "eponym": "",
-      "relation": "covers_more"
-     }
     ]
    }
   },
@@ -52268,18 +52131,6 @@
       "start_values": {
        "Level 10": "10.0"
       }
-     }
-    ],
-    "WG-WAG-2025": [
-     {
-      "rid": "WGW-VT-2.21-1",
-      "short_name": "Handspring front pike ½ twist",
-      "number": "2.21",
-      "variant": 1,
-      "value": "4.00",
-      "element_group": "2",
-      "eponym": "",
-      "relation": "covers_more"
      }
     ]
    }
@@ -52305,18 +52156,6 @@
        "Level 10": "9.5",
        "Level 9": "9.7"
       }
-     }
-    ],
-    "WG-WAG-2025": [
-     {
-      "rid": "WGW-VT-3.10-1",
-      "short_name": "Tsukahara tuck",
-      "number": "3.10",
-      "variant": 1,
-      "value": "3.20",
-      "element_group": "3",
-      "eponym": "Tourischeva",
-      "relation": "covers_more"
      }
     ]
    }
@@ -52367,18 +52206,6 @@
        "Level 9": "9.8"
       }
      }
-    ],
-    "WG-WAG-2025": [
-     {
-      "rid": "WGW-VT-3.20-1",
-      "short_name": "Tsukahara pike",
-      "number": "3.20",
-      "variant": 1,
-      "value": "3.40",
-      "element_group": "3",
-      "eponym": "",
-      "relation": "covers_more"
-     }
     ]
    }
   },
@@ -52402,18 +52229,6 @@
       "start_values": {
        "Level 10": "9.9"
       }
-     }
-    ],
-    "WG-WAG-2025": [
-     {
-      "rid": "WGW-VT-3.12-1",
-      "short_name": "Tsukahara tuck full twist",
-      "number": "3.12",
-      "variant": 1,
-      "value": "3.80",
-      "element_group": "3",
-      "eponym": "Kim",
-      "relation": "covers_more"
      }
     ]
    }
