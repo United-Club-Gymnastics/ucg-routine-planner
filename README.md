@@ -2,7 +2,7 @@
 
 One planner for every UCG discipline and level: **WAG** (Xcel Silver, Gold, Platinum, Diamond, Sapphire, UCG Infinity, Masters), **MAG** (Developmental, Intermediate, Advanced, Masters) and **T&T** (New, Intermediate and High Flyers). Gymnasts and coaches sign in with Google (or try it without signing in, which saves nothing), add athletes, add the levels each athlete competes, build routines, and export filled-in UCG worksheets and competition cards.
 
-**Live site:** https://united-club-gymnastics.github.io/ucg-routine-planner/
+**Live site:** https://routines.unitedclubgymnastics.org/ (custom domain on GitHub Pages: a CNAME for `routines` in the WordPress.com DNS for unitedclubgymnastics.org; the old `united-club-gymnastics.github.io/ucg-routine-planner/` address redirects there. The domain is also in Firebase Authentication &rarr; Authorized domains.)
 
 Grew out of the MAG planner ([ucg-mag-planner](https://github.com/United-Club-Gymnastics/ucg-mag-planner)) and Julia Sharpe's [UCG Infinity SV Sheets](https://github.com/jzsharpe/ucg-infinity-sv); both are still live and unchanged.
 
