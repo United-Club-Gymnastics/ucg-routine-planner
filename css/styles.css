@@ -157,6 +157,11 @@ h2 { font-size: var(--fs-h2); line-height: var(--leading-tight); letter-spacing:
 }
 .banner-guest { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; }
 .banner-guest[hidden] { display: none; }
+.banner-move { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding-top: 12px; padding-bottom: 12px; font-size: var(--fs-body); line-height: 1.45; }
+.banner-move[hidden] { display: none; }
+.banner-move > span:first-child { flex: 1 1 420px; }
+.banner-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.banner-link { background: none; border: 0; padding: 4px 2px; font: inherit; font-weight: 700; color: var(--ucg-navy); text-decoration: underline; cursor: pointer; }
 .banner-btn {
   background: var(--ucg-navy); color: var(--ucg-white); border: 0; border-radius: var(--radius-btn);
   padding: 6px 12px; font: inherit; font-weight: 700; cursor: pointer;

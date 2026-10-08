@@ -289,6 +289,34 @@ function renderAthletePicker() {
 // converts them; here they pick which to bring over. Not for guests (nothing is saved).
 const canImport = () => !!state.user && !state.user.guest;
 
+// Arriving from the old planner's address (it sends people here with ?from=infinity): a
+// bar across the top explains the move and how to bring athletes over. It stays until
+// they've brought athletes over or close it.
+if (new URLSearchParams(location.search).get('from') === 'infinity') {
+  writePref('rp-from-infinity', true);
+  const rest = location.search.slice(1).split('&').filter((p) => p !== 'from=infinity').join('&');
+  history.replaceState(null, '', `${location.pathname}${rest ? `?${rest}` : ''}${location.hash}`);
+}
+function renderMoveBanner() {
+  const el = $('#move-banner');
+  const show = readPref('rp-from-infinity', false) && !readPref('rp-move-closed', false) && !state.athletes.some((a) => a.importedFrom);
+  el.hidden = !show;
+  if (!show) return;
+  const intro = '<strong>The UCG Infinity planner has moved here, and grown.</strong> Same start values, now with every UCG level, skill search and offline use.';
+  if (!state.user || state.user.guest) {
+    el.innerHTML = `<span>${intro} To bring your athletes over: <strong>1.</strong> Sign in with Google, using the same account as in the old planner. <strong>2.</strong> Choose <strong>Bring over UCG Infinity routines</strong>.</span>
+      <span class="banner-actions"><button type="button" class="banner-btn" data-signin>Sign in with Google</button></span>`;
+    return;
+  }
+  el.innerHTML = `<span>${intro} Your athletes and routines are still in the old planner: bring them over here in a minute.</span>
+    <span class="banner-actions"><button type="button" class="banner-btn" id="move-import">Bring over UCG Infinity routines</button><button type="button" class="banner-link" id="move-close">Close</button></span>`;
+  $('#move-import').onclick = openImport;
+  $('#move-close').onclick = () => {
+    writePref('rp-move-closed', true);
+    renderMoveBanner();
+  };
+}
+
 function openImport() {
   $('#import-dialog')?.remove();
   const dlg = document.createElement('dialog');
@@ -368,6 +396,7 @@ function openImport() {
       dlg.close();
       if (!picked.length) return;
       selectAthlete(picked[0].id);
+      renderMoveBanner();
       showToast('import-toast', `Brought over ${picked.length} athlete${picked.length === 1 ? '' : 's'} from the UCG Infinity planner.`, 'OK', () => {});
     };
   };
@@ -1814,6 +1843,7 @@ async function onUser(user) {
     state.athletes = [];
     renderAthletePicker();
     renderSignIn();
+    renderMoveBanner();
     return;
   }
   $('#local-banner').hidden = !user.local;
@@ -1822,6 +1852,7 @@ async function onUser(user) {
     state.athleteId = null;
     state.entryId = null;
     renderAll();
+    renderMoveBanner();
     return;
   }
   app.innerHTML = `<p class="loading">Loading athletes…</p>`;
@@ -1844,6 +1875,7 @@ async function onUser(user) {
   state.entryId = first?.entries[0]?.id ?? null;
   state.showAdd = !!first && !first.entries.length;
   renderAll();
+  renderMoveBanner();
   if (!user.local) stopWatching = store.watchAthletes(applyRemote);
 }
 
