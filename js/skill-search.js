@@ -31,6 +31,7 @@ const COMPOUNDS = [
   [/(flic[\s-]*flac|flip[\s-]*flop)/g, 'flicflac'],
   [/hand[\s-]*spring/g, 'handspring'],
   [/lay[\s-]*out/g, 'layout'],
+  [/tour[\s-]*jet[eé]/g, 'tourjete'],
   // A back handspring is a flic-flac: keep both words so either name finds it.
   [/back(?:ward)?\s+handspring/g, 'back flicflac handspring'],
 ];
@@ -172,24 +173,32 @@ const cost = (names, q) => names.reduce((c, t) => (q.some((w) => t.startsWith(w)
 const extra = (s, q) => Math.min(cost(s.nameTokens, q), ...s.akaTokens.map((a) => cost(a, q)));
 
 // Matching a typed-in name to a listed skill (e.g. routines brought over from another
-// planner): "on one foot" doesn't count against a match (which bar does).
+// planner). The caller narrows the list first (same value and element group), so within
+// it the closest name wins: words the coach didn't type count against a skill, but words
+// that only describe how or where it's done ("landing", "step-out", "to stand", "jump",
+// "turn") count half, and "on one foot" not at all. Which bar counts in full.
 const MATCH_FREE = new Set([...FREE, 'one', 'foot', 'feet']);
-const matchCost = (names, q) => names.reduce((c, t) => (q.some((w) => hit(w, t)) || MATCH_FREE.has(t) ? c : c + (MULTI.has(t) ? 3 : 1)), 0);
+const QUALIFIERS = new Set(['landing', 'step', 'out', 'stepout', 'stand', 'end', 'side', 'support', 'two', 'sit', 'jump', 'leap', 'turn', 'hang']);
+const matchCost = (names, q) =>
+  names.reduce((c, t) => (q.some((w) => hit(w, t)) || MATCH_FREE.has(t) ? c : c + (MULTI.has(t) ? 3 : QUALIFIERS.has(t) ? 0.5 : 1)), 0);
+// Typed shorthand standing for several words of the listed name ("BHS": back handspring).
+const COVERS = { flicflac: ['bwd', 'handspring'], tourjete: ['tour', 'jete'] };
 
 /**
- * The listed skill a typed-in name means, or null. Only when it's clearly one skill: every
- * typed word is in its name (or another name it goes by), it has at most one word more
- * than was typed (none for a one-word name: "Kip" could be several kips), no other skill
- * is as close, and `accept` (same value, group, level) holds.
+ * The listed skill a typed-in name means, or null. Among the skills `accept` allows (same
+ * value, element group and level): those with every typed word in their name (or another
+ * name they go by), closest first. It must be close (at most 2 extra words; ½ for a
+ * one-word name, since "Kip" could be several kips) and closer than any other.
  */
 export function closestSkill(disc, app, text, accept = () => true) {
   const q = tokens(text).filter((w) => !FREE.has(w));
   if (!q.length) return null;
+  const covered = [...q, ...q.flatMap((w) => COVERS[w] || [])];
   const names = (s) => [s.nameTokens, ...s.akaTokens];
   const scored = (byApp[`${disc}.${app}`] || [])
     .filter(accept)
-    .map((s) => [s, Math.min(...names(s).filter((ts) => q.every((w) => ts.some((t) => hit(w, t)))).map((ts) => matchCost(ts, q)))])
-    .filter(([, c]) => c <= (q.length > 1 ? 1 : 0))
+    .map((s) => [s, Math.min(...names(s).filter((ts) => q.every((w) => ts.some((t) => hit(w, t)))).map((ts) => matchCost(ts, covered)))])
+    .filter(([, c]) => c <= (q.length > 1 ? 2 : 0.5))
     .sort((a, b) => a[1] - b[1]);
   if (!scored.length || (scored[1] && scored[1][1] === scored[0][1])) return null;
   return scored[0][0];
