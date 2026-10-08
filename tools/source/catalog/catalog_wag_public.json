@@ -1,7 +1,7 @@
 {
  "discipline": "WAG",
- "version": "c82a7ed7e32d",
- "built": "2026-10-07",
+ "version": "1e2d9d2b14b8",
+ "built": "2026-10-08",
  "elements": [
   {
    "id": "WAG-BB-0001",
@@ -342,7 +342,11 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Round-off, straddle over beam to back hip circle",
-   "aka": [],
+   "aka": [
+    "RO, straddle over beam to back hip circle",
+    "Roundoff, straddle over beam to back hip circle",
+    "Round-off, straddle over beam to BHC"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -929,7 +933,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Pike jump handstand to front walkover",
-   "aka": [],
+   "aka": [
+    "Pike jump handstand to FWO"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -985,7 +991,13 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Round-off, back handspring ½ turn to front walkover",
-   "aka": [],
+   "aka": [
+    "Round-off, BHS ½ turn to front walkover",
+    "Round-off, flic-flac ½ turn to front walkover",
+    "Round-off, back handspring ½ turn to FWO",
+    "RO, back handspring ½ turn to front walkover",
+    "Roundoff, back handspring ½ turn to front walkover"
+   ],
    "eponym": "Dunn",
    "codes": {
     "WG-WAG-2025": [
@@ -1666,7 +1678,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back handspring over beam to front support",
-   "aka": [],
+   "aka": [
+    "BHS over beam to front support",
+    "Flic-flac over beam to front support"
+   ],
    "eponym": "Beukes",
    "codes": {
     "WG-WAG-2025": [
@@ -1773,7 +1788,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Side-approach round-off, ½-turn jump to handstand",
-   "aka": [],
+   "aka": [
+    "Side-approach RO, ½-turn jump to handstand",
+    "Side-approach roundoff, ½-turn jump to handstand"
+   ],
    "eponym": "Gurova",
    "codes": {
     "WG-WAG-2025": [
@@ -1826,7 +1844,13 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Round-off, full-twisting back handspring to back hip circle",
-   "aka": [],
+   "aka": [
+    "Round-off, full-twisting BHS to back hip circle",
+    "Round-off, full-twisting flic-flac to back hip circle",
+    "RO, full-twisting back handspring to back hip circle",
+    "Roundoff, full-twisting back handspring to back hip circle",
+    "Round-off, full-twisting back handspring to BHC"
+   ],
    "eponym": "Zamolodchikova",
    "codes": {
     "WG-WAG-2025": [
@@ -1866,7 +1890,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Front handspring off board to rear support",
-   "aka": [],
+   "aka": [
+    "FHS off board to rear support"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -1940,7 +1966,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Aerial front walkover mount to rear support",
-   "aka": [],
+   "aka": [
+    "Aerial FWO mount to rear support"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -1995,7 +2023,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Aerial front walkover mount to stand",
-   "aka": [],
+   "aka": [
+    "Aerial FWO mount to stand"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -2161,7 +2191,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Round-off, Arabian mount landing on beam",
-   "aka": [],
+   "aka": [
+    "RO, Arabian mount landing on beam",
+    "Roundoff, Arabian mount landing on beam"
+   ],
    "eponym": "Erceg",
    "codes": {
     "WG-WAG-2025": [
@@ -2204,7 +2237,12 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Round-off, back handspring to straddle sit",
-   "aka": [],
+   "aka": [
+    "Round-off, BHS to straddle sit",
+    "Round-off, flic-flac to straddle sit",
+    "RO, back handspring to straddle sit",
+    "Roundoff, back handspring to straddle sit"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -2261,7 +2299,12 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Round-off, back handspring to stand on beam",
-   "aka": [],
+   "aka": [
+    "Round-off, BHS to stand on beam",
+    "Round-off, flic-flac to stand on beam",
+    "RO, back handspring to stand on beam",
+    "Roundoff, back handspring to stand on beam"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -2318,7 +2361,12 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Round-off, full-twisting back handspring to straddle sit",
-   "aka": [],
+   "aka": [
+    "Round-off, full-twisting BHS to straddle sit",
+    "Round-off, full-twisting flic-flac to straddle sit",
+    "RO, full-twisting back handspring to straddle sit",
+    "Roundoff, full-twisting back handspring to straddle sit"
+   ],
    "eponym": "Tsavdaridou",
    "codes": {
     "WG-WAG-2025": [
@@ -2358,7 +2406,12 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Round-off back handspring ¾ twist mount to stand",
-   "aka": [],
+   "aka": [
+    "Round-off BHS ¾ twist mount to stand",
+    "Round-off flic-flac ¾ twist mount to stand",
+    "RO back handspring ¾ twist mount to stand",
+    "Roundoff back handspring ¾ twist mount to stand"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -2379,7 +2432,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Round-off, back salto mount with step-out",
-   "aka": [],
+   "aka": [
+    "RO, back salto mount with step-out",
+    "Roundoff, back salto mount with step-out"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -2420,7 +2476,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Round-off back tuck full twist mount",
-   "aka": [],
+   "aka": [
+    "RO back tuck full twist mount",
+    "Roundoff back tuck full twist mount"
+   ],
    "eponym": "Garrison",
    "codes": {
     "WG-WAG-2025": [
@@ -2441,7 +2500,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Round-off, back layout mount to stand",
-   "aka": [],
+   "aka": [
+    "RO, back layout mount to stand",
+    "Roundoff, back layout mount to stand"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -2482,7 +2544,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Round-off, full-twisting layout mount to stand",
-   "aka": [],
+   "aka": [
+    "RO, full-twisting layout mount to stand",
+    "Roundoff, full-twisting layout mount to stand"
+   ],
    "eponym": "Garrison",
    "codes": {
     "WG-WAG-2025": [
@@ -3336,7 +3401,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Switch side leap with ¼ turn",
-   "aka": [],
+   "aka": [
+    "Switch side",
+    "Switch side leap"
+   ],
    "eponym": "Johnson",
    "codes": {
     "WG-WAG-2025": [
@@ -3359,6 +3427,10 @@
       "value": "D",
       "element_group": "2",
       "eponym": "Johnson",
+      "aka": [
+       "Switch side",
+       "Switch side leap"
+      ],
       "tags": {
        "dance": true,
        "dance_type": "leap",
@@ -3378,6 +3450,10 @@
       "element_group": "2",
       "eponym": "Johnson",
       "relation": "covers_more",
+      "aka": [
+       "Switch side",
+       "Switch side leap"
+      ],
       "tags": {
        "dance": true,
        "dance_type": "leap",
@@ -6328,7 +6404,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "One-arm front walkover",
-   "aka": [],
+   "aka": [
+    "One-arm FWO"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -6379,7 +6457,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Handstand ½ turn to front walkover",
-   "aka": [],
+   "aka": [
+    "Handstand ½ turn to FWO"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -6400,7 +6480,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Side front walkover",
-   "aka": [],
+   "aka": [
+    "Side FWO"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -6451,7 +6533,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "One-arm back walkover",
-   "aka": [],
+   "aka": [
+    "One-arm BWO"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -6503,7 +6587,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back walkover ½ turn to front walkover",
-   "aka": [],
+   "aka": [
+    "BWO ½ turn to front walkover",
+    "Back walkover ½ turn to FWO"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -6540,7 +6627,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Side back walkover",
-   "aka": [],
+   "aka": [
+    "Side BWO"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -6591,7 +6680,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back walkover, stoop one leg to split sit",
-   "aka": [],
+   "aka": [
+    "BWO, stoop one leg to split sit"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -6693,7 +6784,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Tuck-sit back walkover with full pirouette",
-   "aka": [],
+   "aka": [
+    "Tuck-sit BWO with full pirouette"
+   ],
    "eponym": "Diamidov",
    "codes": {
     "WG-WAG-2025": [
@@ -6744,7 +6837,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Front handspring switching legs in flight",
-   "aka": [],
+   "aka": [
+    "FHS switching legs in flight"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -6797,7 +6892,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back-handspring entry ½ twist to front handspring",
-   "aka": [],
+   "aka": [
+    "Back-handspring entry ½ twist to FHS"
+   ],
    "eponym": "Worley",
    "codes": {
     "WG-WAG-2025": [
@@ -6818,7 +6915,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back handspring to two feet",
-   "aka": [],
+   "aka": [
+    "BHS to two feet",
+    "Flic-flac to two feet"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -6871,7 +6971,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back handspring ½ twist to handstand",
-   "aka": [],
+   "aka": [
+    "BHS ½ twist to handstand",
+    "Flic-flac ½ twist to handstand"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -6945,7 +7048,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back handspring ¼ twist to side handstand",
-   "aka": [],
+   "aka": [
+    "BHS ¼ twist to side handstand",
+    "Flic-flac ¼ twist to side handstand"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -6998,7 +7104,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back handspring ¾ twist to side handstand",
-   "aka": [],
+   "aka": [
+    "BHS ¾ twist to side handstand",
+    "Flic-flac ¾ twist to side handstand"
+   ],
    "eponym": "Omelianchik",
    "codes": {
     "WG-WAG-2025": [
@@ -7035,7 +7144,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back handspring ½ twist after hands",
-   "aka": [],
+   "aka": [
+    "BHS ½ twist after hands",
+    "Flic-flac ½ twist after hands"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -7073,7 +7185,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back handspring, ¾ to full twist before hands",
-   "aka": [],
+   "aka": [
+    "BHS, ¾ to full twist before hands",
+    "Flic-flac, ¾ to full twist before hands"
+   ],
    "eponym": "Kochetkova",
    "codes": {
     "WG-WAG-2025": [
@@ -7110,7 +7225,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Side back handspring step-out",
-   "aka": [],
+   "aka": [
+    "Side BHS step-out",
+    "Side flic-flac step-out"
+   ],
    "eponym": "Tousek",
    "codes": {
     "WG-WAG-2025": [
@@ -7163,7 +7281,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Side back handspring to support or hip circle",
-   "aka": [],
+   "aka": [
+    "Side BHS to support or hip circle",
+    "Side flic-flac to support or hip circle"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -7216,7 +7337,11 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Side back handspring, full twist, back hip circle",
-   "aka": [],
+   "aka": [
+    "Side BHS, full twist, back hip circle",
+    "Side flic-flac, full twist, back hip circle",
+    "Side back handspring, full twist, BHC"
+   ],
    "eponym": "Teza",
    "codes": {
     "WG-WAG-2025": [
@@ -7253,7 +7378,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Gainer back handspring ¼ twist to handstand",
-   "aka": [],
+   "aka": [
+    "Gainer BHS ¼ twist to handstand",
+    "Gainer flic-flac ¼ twist to handstand"
+   ],
    "eponym": "Kitti",
    "codes": {
     "WG-WAG-2025": [
@@ -7274,7 +7402,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Lofted back handspring swinging down to straddle sit",
-   "aka": [],
+   "aka": [
+    "Lofted BHS swinging down to straddle sit",
+    "Lofted flic-flac swinging down to straddle sit"
+   ],
    "eponym": "Korbut flic-flac",
    "codes": {
     "WG-WAG-2025": [
@@ -7327,7 +7458,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Full-twisting back handspring to straddle sit",
-   "aka": [],
+   "aka": [
+    "Full-twisting BHS to straddle sit",
+    "Full-twisting flic-flac to straddle sit"
+   ],
    "eponym": "Rulfova",
    "codes": {
     "WG-WAG-2025": [
@@ -7364,7 +7498,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Round-off",
-   "aka": [],
+   "aka": [
+    "RO",
+    "Roundoff"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -7474,7 +7611,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Standing aerial round-off, tuck or pike",
-   "aka": [],
+   "aka": [
+    "Standing aerial RO, tuck or pike",
+    "Standing aerial roundoff, tuck or pike"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -10228,7 +10368,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Front handspring mount with hecht flight",
-   "aka": [],
+   "aka": [
+    "FHS mount with hecht flight"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -10640,7 +10782,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Hecht jump to round-off mount",
-   "aka": [],
+   "aka": [
+    "Hecht jump to RO mount",
+    "Hecht jump to roundoff mount"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -14200,7 +14345,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back walkover to one-arm handstand",
-   "aka": [],
+   "aka": [
+    "BWO to one-arm handstand"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -14716,7 +14863,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Front walkover to bridge, full turn to sit",
-   "aka": [],
+   "aka": [
+    "FWO to bridge, full turn to sit"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -14756,7 +14905,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Straddle support swing to handstand, front walkover",
-   "aka": [],
+   "aka": [
+    "Straddle support swing to handstand, FWO"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -14796,7 +14947,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Front walkover",
-   "aka": [],
+   "aka": [
+    "FWO"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -14848,7 +15001,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Front walkover with staggered hands",
-   "aka": [],
+   "aka": [
+    "FWO with staggered hands"
+   ],
    "eponym": "Tinsica",
    "codes": {
     "USAG-XCEL-2022": [
@@ -14900,7 +15055,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "One-arm front handspring",
-   "aka": [],
+   "aka": [
+    "One-arm FHS"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -15438,7 +15595,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back walkover",
-   "aka": [],
+   "aka": [
+    "BWO"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -15492,7 +15651,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back walkover to bridge, full turn to sit",
-   "aka": [],
+   "aka": [
+    "BWO to bridge, full turn to sit"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -15532,7 +15693,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Front scale ½ turn to back walkover",
-   "aka": [],
+   "aka": [
+    "Front scale ½ turn to BWO"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -15572,7 +15735,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Press to side handstand, front walkover",
-   "aka": [],
+   "aka": [
+    "Press to side handstand, FWO"
+   ],
    "eponym": "Phillips",
    "codes": {
     "USAG-XCEL-2022": [
@@ -15655,7 +15820,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back walkover lowering to straddle support",
-   "aka": [],
+   "aka": [
+    "BWO lowering to straddle support"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -15735,7 +15902,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Tuck-sit back walkover, ½ turn in handstand",
-   "aka": [],
+   "aka": [
+    "Tuck-sit BWO, ½ turn in handstand"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -15775,7 +15944,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back walkover, ½ turn in handstand, lower down",
-   "aka": [],
+   "aka": [
+    "BWO, ½ turn in handstand, lower down"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -15895,7 +16066,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back handspring step-out",
-   "aka": [],
+   "aka": [
+    "BHS step-out",
+    "Flic-flac step-out"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -15964,7 +16138,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "One-arm step-out or ½-turn back handspring",
-   "aka": [],
+   "aka": [
+    "One-arm step-out or ½-turn BHS",
+    "One-arm step-out or ½-turn flic-flac"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -16006,7 +16183,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "One-arm back handspring to two feet",
-   "aka": [],
+   "aka": [
+    "One-arm BHS to two feet",
+    "One-arm flic-flac to two feet"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -16075,7 +16255,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "One-arm gainer back handspring",
-   "aka": [],
+   "aka": [
+    "One-arm gainer BHS",
+    "One-arm gainer flic-flac"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -16129,7 +16312,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Tuck-open back handspring to straddle sit",
-   "aka": [],
+   "aka": [
+    "Tuck-open BHS to straddle sit",
+    "Tuck-open flic-flac to straddle sit"
+   ],
    "eponym": "Chen Flic",
    "codes": {
     "USAG-XCEL-2022": [
@@ -16183,7 +16369,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Pike-open back handspring to straddle sit",
-   "aka": [],
+   "aka": [
+    "Pike-open BHS to straddle sit",
+    "Pike-open flic-flac to straddle sit"
+   ],
    "eponym": "Rueda",
    "codes": {
     "USAG-XCEL-2022": [
@@ -16238,7 +16427,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Pike-open gainer back handspring",
-   "aka": [],
+   "aka": [
+    "Pike-open gainer BHS",
+    "Pike-open gainer flic-flac"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -16926,7 +17118,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Front handspring full twist dismount",
-   "aka": [],
+   "aka": [
+    "FHS full twist dismount"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -16968,7 +17162,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Front handspring 1½ twist dismount",
-   "aka": [],
+   "aka": [
+    "FHS 1½ twist dismount"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -17118,7 +17314,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Aerial round-off dismount",
-   "aka": [],
+   "aka": [
+    "Aerial RO dismount",
+    "Aerial roundoff dismount"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -17303,7 +17502,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Cartwheel ¼ twist (round-off) dismount",
-   "aka": [],
+   "aka": [
+    "Cartwheel ¼ twist (RO) dismount",
+    "Cartwheel ¼ twist (roundoff) dismount"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -18430,7 +18632,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Front walkover off springboard to rear sit",
-   "aka": [],
+   "aka": [
+    "FWO off springboard to rear sit"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -18645,7 +18849,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Gainer back handspring",
-   "aka": [],
+   "aka": [
+    "Gainer BHS",
+    "Gainer flic-flac"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -18964,7 +19171,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Front handspring, front tuck mount from end",
-   "aka": [],
+   "aka": [
+    "FHS, front tuck mount from end"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -18994,7 +19203,12 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Round-off, back handspring, tuck legs to straddle sit",
-   "aka": [],
+   "aka": [
+    "Round-off, BHS, tuck legs to straddle sit",
+    "Round-off, flic-flac, tuck legs to straddle sit",
+    "RO, back handspring, tuck legs to straddle sit",
+    "Roundoff, back handspring, tuck legs to straddle sit"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -19052,7 +19266,12 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Round-off, full-twisting back handspring to stand",
-   "aka": [],
+   "aka": [
+    "Round-off, full-twisting BHS to stand",
+    "Round-off, full-twisting flic-flac to stand",
+    "RO, full-twisting back handspring to stand",
+    "Roundoff, full-twisting back handspring to stand"
+   ],
    "eponym": "Luconi",
    "codes": {
     "USAG-DP-2026": [
@@ -19470,7 +19689,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Straddle jump to front support, back hip circle",
-   "aka": [],
+   "aka": [
+    "Straddle jump to front support, BHC"
+   ],
    "eponym": "Furnon",
    "codes": {
     "USAG-DP-2026": [
@@ -19660,7 +19881,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Straddle jump ½–¾ turn, back hip circle",
-   "aka": [],
+   "aka": [
+    "Straddle jump ½–¾ turn, BHC"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -19765,7 +19988,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Straddle jump full turn, back hip circle",
-   "aka": [],
+   "aka": [
+    "Straddle jump full turn, BHC"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -19956,7 +20181,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Switch leap ¼ turn, back hip circle",
-   "aka": [],
+   "aka": [
+    "Switch leap ¼ turn, BHC"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -20032,6 +20259,10 @@
       "element_group": "2",
       "eponym": "Johnson",
       "relation": "covers_more",
+      "aka": [
+       "Switch side",
+       "Switch side leap"
+      ],
       "tags": {
        "dance": true,
        "dance_type": "leap",
@@ -20893,7 +21124,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Side back walkover to one-arm handstand",
-   "aka": [],
+   "aka": [
+    "Side BWO to one-arm handstand"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -20934,7 +21167,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Side back walkover to one-arm planche",
-   "aka": [],
+   "aka": [
+    "Side BWO to one-arm planche"
+   ],
    "eponym": "Shaposhnikova",
    "codes": {
     "USAG-DP-2026": [
@@ -21168,7 +21403,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Front handspring",
-   "aka": [],
+   "aka": [
+    "FHS"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -21223,7 +21460,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Front handspring with staggered hands",
-   "aka": [],
+   "aka": [
+    "FHS with staggered hands"
+   ],
    "eponym": "Tinsica spring",
    "codes": {
     "USAG-DP-2026": [
@@ -21380,7 +21619,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back jump ½ turn to front walkover",
-   "aka": [],
+   "aka": [
+    "Back jump ½ turn to FWO"
+   ],
    "eponym": "Onodi",
    "codes": {
     "USAG-DP-2026": [
@@ -21638,7 +21879,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Aerial round-off to two feet",
-   "aka": [],
+   "aka": [
+    "Aerial RO to two feet",
+    "Aerial roundoff to two feet"
+   ],
    "eponym": "Burgess",
    "codes": {
     "USAG-DP-2026": [
@@ -21665,7 +21909,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back walkover with staggered hands",
-   "aka": [],
+   "aka": [
+    "BWO with staggered hands"
+   ],
    "eponym": "Tinsica",
    "codes": {
     "USAG-DP-2026": [
@@ -21720,7 +21966,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back walkover swinging down to sit",
-   "aka": [],
+   "aka": [
+    "BWO swinging down to sit"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -21775,7 +22023,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back walkover from tuck sit",
-   "aka": [],
+   "aka": [
+    "BWO from tuck sit"
+   ],
    "eponym": "Valdez",
    "codes": {
     "USAG-DP-2026": [
@@ -21828,7 +22078,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "One-arm back walkover from tuck sit",
-   "aka": [],
+   "aka": [
+    "One-arm BWO from tuck sit"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -21881,7 +22133,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Back handspring ¼ twist, handstand pirouette, lower",
-   "aka": [],
+   "aka": [
+    "BHS ¼ twist, handstand pirouette, lower",
+    "Flic-flac ¼ twist, handstand pirouette, lower"
+   ],
    "eponym": "Fortunato",
    "codes": {
     "USAG-DP-2026": [
@@ -21907,7 +22162,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Gainer back handspring with full twist before hands",
-   "aka": [],
+   "aka": [
+    "Gainer BHS with full twist before hands",
+    "Gainer flic-flac with full twist before hands"
+   ],
    "eponym": "Khorkina",
    "codes": {
     "USAG-DP-2026": [
@@ -22604,7 +22862,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Front handspring dismount",
-   "aka": [],
+   "aka": [
+    "FHS dismount"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -22647,7 +22907,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Front handspring ½ twist dismount",
-   "aka": [],
+   "aka": [
+    "FHS ½ twist dismount"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -23818,7 +24080,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Free round-off dismount",
-   "aka": [],
+   "aka": [
+    "Free RO dismount",
+    "Free roundoff dismount"
+   ],
    "eponym": "",
    "codes": {
     "UCG-MASTERS-WAG": [
@@ -23842,7 +24107,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Front handspring dismount",
-   "aka": [],
+   "aka": [
+    "FHS dismount"
+   ],
    "eponym": "",
    "codes": {
     "UCG-MASTERS-WAG": [
@@ -23866,7 +24133,10 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Round-off dismount",
-   "aka": [],
+   "aka": [
+    "RO dismount",
+    "Roundoff dismount"
+   ],
    "eponym": "",
    "codes": {
     "UCG-MASTERS-WAG": [
@@ -23914,7 +24184,9 @@
    "discipline": "WAG",
    "apparatus": "BB",
    "short_name": "Free front handspring dismount",
-   "aka": [],
+   "aka": [
+    "Free FHS dismount"
+   ],
    "eponym": "",
    "codes": {
     "UCG-MASTERS-WAG": [
@@ -24960,7 +25232,10 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "Switch side leap or switch straddle",
-   "aka": [],
+   "aka": [
+    "Switch side",
+    "Switch side leap"
+   ],
    "eponym": "Johnson",
    "codes": {
     "WG-WAG-2025": [
@@ -24983,6 +25258,10 @@
       "value": "C",
       "element_group": "1",
       "eponym": "",
+      "aka": [
+       "Switch side",
+       "Switch side leap"
+      ],
       "tags": {
        "dance": true,
        "dance_type": "leap",
@@ -25002,6 +25281,10 @@
       "element_group": "1",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Switch side",
+       "Switch side leap"
+      ],
       "tags": {
        "dance": true,
        "dance_type": "leap",
@@ -28066,7 +28349,9 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "Front handspring with full twist",
-   "aka": [],
+   "aka": [
+    "FHS with full twist"
+   ],
    "eponym": "Mostepanova",
    "codes": {
     "WG-WAG-2025": [
@@ -28119,7 +28404,10 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "Round-off",
-   "aka": [],
+   "aka": [
+    "RO",
+    "Roundoff"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -28179,7 +28467,10 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "Back handspring, any variation",
-   "aka": [],
+   "aka": [
+    "BHS, any variation",
+    "Flic-flac, any variation"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -28237,7 +28528,10 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "Back handspring, full twist before hands",
-   "aka": [],
+   "aka": [
+    "BHS, full twist before hands",
+    "Flic-flac, full twist before hands"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -28616,7 +28910,9 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "Aerial front walkover",
-   "aka": [],
+   "aka": [
+    "Aerial FWO"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -32539,7 +32835,9 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "Front walkover",
-   "aka": [],
+   "aka": [
+    "FWO"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -32581,7 +32879,9 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "Back walkover",
-   "aka": [],
+   "aka": [
+    "BWO"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -32623,7 +32923,9 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "Back walkover from tuck sit",
-   "aka": [],
+   "aka": [
+    "BWO from tuck sit"
+   ],
    "eponym": "Valdez",
    "codes": {
     "USAG-XCEL-2022": [
@@ -32664,7 +32966,9 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "One-arm front walkover",
-   "aka": [],
+   "aka": [
+    "One-arm FWO"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -32706,7 +33010,9 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "Front walkover, one hand then the other",
-   "aka": [],
+   "aka": [
+    "FWO, one hand then the other"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -32748,7 +33054,9 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "One-arm back walkover",
-   "aka": [],
+   "aka": [
+    "One-arm BWO"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -32790,7 +33098,9 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "Back walkover from stand, full turn in handstand",
-   "aka": [],
+   "aka": [
+    "BWO from stand, full turn in handstand"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -32844,7 +33154,9 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "Tuck-sit back walkover, full turn in handstand",
-   "aka": [],
+   "aka": [
+    "Tuck-sit BWO, full turn in handstand"
+   ],
    "eponym": "Valdez",
    "codes": {
     "USAG-XCEL-2022": [
@@ -32898,7 +33210,9 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "Front handspring off one foot, optional ½ twist",
-   "aka": [],
+   "aka": [
+    "FHS off one foot, optional ½ twist"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -33410,7 +33724,10 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "Aerial round-off",
-   "aka": [],
+   "aka": [
+    "Aerial RO",
+    "Aerial roundoff"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -33472,7 +33789,10 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "Back handspring",
-   "aka": [],
+   "aka": [
+    "BHS",
+    "Flic-flac"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -33530,7 +33850,10 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "Gainer back handspring",
-   "aka": [],
+   "aka": [
+    "Gainer BHS",
+    "Gainer flic-flac"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -33587,7 +33910,10 @@
    "discipline": "WAG",
    "apparatus": "FX",
    "short_name": "One-arm back handspring",
-   "aka": [],
+   "aka": [
+    "One-arm BHS",
+    "One-arm flic-flac"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -35270,6 +35596,10 @@
       "element_group": "1",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Switch side",
+       "Switch side leap"
+      ],
       "tags": {
        "dance": true,
        "dance_type": "leap",
@@ -37560,7 +37890,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Round-off, straddle back over LB via support",
-   "aka": [],
+   "aka": [
+    "RO, straddle back over LB via support",
+    "Roundoff, straddle back over LB via support"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -37609,7 +37942,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Round-off, back flight over LB to HB",
-   "aka": [],
+   "aka": [
+    "RO, back flight over LB to HB",
+    "Roundoff, back flight over LB to HB"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -37658,7 +37994,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Round-off, full-twisting flight over LB to HB",
-   "aka": [],
+   "aka": [
+    "RO, full-twisting flight over LB to HB",
+    "Roundoff, full-twisting flight over LB to HB"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -37709,7 +38048,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Round-off, back tuck over LB to LB hang",
-   "aka": [],
+   "aka": [
+    "RO, back tuck over LB to LB hang",
+    "Roundoff, back tuck over LB to LB hang"
+   ],
    "eponym": "Jentsch",
    "codes": {
     "WG-WAG-2025": [
@@ -37760,7 +38102,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Round-off, back handspring through LB handstand",
-   "aka": [],
+   "aka": [
+    "RO, back handspring through LB handstand",
+    "Roundoff, back handspring through LB handstand"
+   ],
    "eponym": "González",
    "codes": {
     "WG-WAG-2025": [
@@ -37809,7 +38154,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Round-off, arabian over LB to HB",
-   "aka": [],
+   "aka": [
+    "RO, arabian over LB to HB",
+    "Roundoff, arabian over LB to HB"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -37848,7 +38196,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Round-off piked arabian over LB to HB",
-   "aka": [],
+   "aka": [
+    "RO piked arabian over LB to HB",
+    "Roundoff piked arabian over LB to HB"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -37887,7 +38238,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Bent-hip jump to handstand, full turn",
-   "aka": [],
+   "aka": [
+    "Piked jump to LB handstand with full pirouette",
+    "Bent-hip jump to handstand, full pirouette"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -37910,6 +38264,9 @@
       "value": "D",
       "element_group": "1",
       "eponym": "",
+      "aka": [
+       "Piked jump to LB handstand with full pirouette"
+      ],
       "tags": {
        "bar": "LB",
        "turn_deg": 360
@@ -37925,6 +38282,9 @@
       "value": "D",
       "element_group": "1",
       "eponym": "",
+      "aka": [
+       "Bent-hip jump to handstand, full pirouette"
+      ],
       "tags": {
        "bar": "LB",
        "turn_deg": 360
@@ -37959,7 +38319,11 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Cast handstand with full turn",
-   "aka": [],
+   "aka": [
+    "Cast handstand with full pirouette",
+    "Full pirouette",
+    "Cast handstand full pirouette"
+   ],
    "eponym": "Pacheco",
    "codes": {
     "WG-WAG-2025": [
@@ -37982,6 +38346,11 @@
       "value": "D",
       "element_group": "2",
       "eponym": "Pacheco",
+      "aka": [
+       "Cast handstand with full pirouette",
+       "Full pirouette",
+       "Cast handstand full pirouette"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -38000,6 +38369,11 @@
       "element_group": "2",
       "eponym": "Pacheco/Miller",
       "relation": "covers_more",
+      "aka": [
+       "Cast handstand with full or 1½ pirouette",
+       "Full pirouette",
+       "Cast handstand full pirouette"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -38018,7 +38392,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Cast handstand with 1½ turns",
-   "aka": [],
+   "aka": [
+    "Cast handstand with 1½ pirouette"
+   ],
    "eponym": "Reeder",
    "codes": {
     "WG-WAG-2025": [
@@ -38041,6 +38417,9 @@
       "value": "D",
       "element_group": "2",
       "eponym": "Miller",
+      "aka": [
+       "Cast handstand with 1½ pirouette"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -38059,6 +38438,11 @@
       "element_group": "2",
       "eponym": "Pacheco/Miller",
       "relation": "covers_more",
+      "aka": [
+       "Cast handstand with full or 1½ pirouette",
+       "Full pirouette",
+       "Cast handstand full pirouette"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -38289,7 +38673,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Front hip circle",
-   "aka": [],
+   "aka": [
+    "FHC"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -38342,7 +38728,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Free front hip circle handstand, full turn",
-   "aka": [],
+   "aka": [
+    "Free FHC handstand, full turn"
+   ],
    "eponym": "Godwin",
    "codes": {
     "WG-WAG-2025": [
@@ -38363,7 +38751,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Back hip circle",
-   "aka": [],
+   "aka": [
+    "BHC"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -38417,6 +38807,7 @@
    "apparatus": "UB",
    "short_name": "Clear hip handstand with 1½ turns",
    "aka": [
+    "Clear hip handstand with 1½ pirouette",
     "Free hip handstand with 1½ turns"
    ],
    "eponym": "",
@@ -38441,6 +38832,9 @@
       "value": "E",
       "element_group": "3",
       "eponym": "",
+      "aka": [
+       "Clear hip handstand with 1½ pirouette"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -38877,7 +39271,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "HB back giant with full turn",
-   "aka": [],
+   "aka": [
+    "HB back giant with full pirouette"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -38900,6 +39296,9 @@
       "value": "D",
       "element_group": "4",
       "eponym": "",
+      "aka": [
+       "HB back giant with full pirouette"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -38919,6 +39318,9 @@
       "value": "D",
       "element_group": "4",
       "eponym": "",
+      "aka": [
+       "HB back giant with full pirouette"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -39494,7 +39896,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "HB front giant with full turn",
-   "aka": [],
+   "aka": [
+    "Front giant with full pirouette",
+    "HB front giant with full pirouette"
+   ],
    "eponym": "Portocarrero",
    "codes": {
     "WG-WAG-2025": [
@@ -39517,6 +39922,9 @@
       "value": "D",
       "element_group": "5",
       "eponym": "Portocarrero",
+      "aka": [
+       "Front giant with full pirouette"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -39536,6 +39944,9 @@
       "value": "D",
       "element_group": "5",
       "eponym": "Portocarrero",
+      "aka": [
+       "HB front giant with full pirouette"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -40022,7 +40433,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Forward stalder handstand with full turn",
-   "aka": [],
+   "aka": [
+    "Forward stalder handstand with full pirouette"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -40045,6 +40458,9 @@
       "value": "E",
       "element_group": "6",
       "eponym": "",
+      "aka": [
+       "Forward stalder handstand with full pirouette"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -40255,7 +40671,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "L-grip forward stalder, full turn",
-   "aka": [],
+   "aka": [
+    "L-grip forward stalder, full pirouette"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -40278,6 +40696,9 @@
       "value": "E",
       "element_group": "6",
       "eponym": "",
+      "aka": [
+       "L-grip forward stalder, full pirouette"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -40294,7 +40715,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Stalder full turn in handstand",
-   "aka": [],
+   "aka": [
+    "Stalder full pirouette in handstand"
+   ],
    "eponym": "Frederick",
    "codes": {
     "WG-WAG-2025": [
@@ -40317,6 +40740,9 @@
       "value": "E",
       "element_group": "6",
       "eponym": "",
+      "aka": [
+       "Stalder full pirouette in handstand"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -40333,7 +40759,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Stalder with 1½ turns in handstand",
-   "aka": [],
+   "aka": [
+    "Stalder with 1½ pirouette in handstand"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -40356,6 +40784,9 @@
       "value": "E",
       "element_group": "6",
       "eponym": "",
+      "aka": [
+       "Stalder with 1½ pirouette in handstand"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -40627,7 +41058,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Front clear pike circle, full turn in handstand",
-   "aka": [],
+   "aka": [
+    "Front clear pike circle, full pirouette in handstand"
+   ],
    "eponym": "Endo-piked",
    "codes": {
     "WG-WAG-2025": [
@@ -40650,6 +41083,9 @@
       "value": "E",
       "element_group": "7",
       "eponym": "Endo-piked",
+      "aka": [
+       "Front clear pike circle, full pirouette in handstand"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -40719,7 +41155,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Back clear pike circle, full turn in handstand",
-   "aka": [],
+   "aka": [
+    "Back clear pike circle, full pirouette in handstand"
+   ],
    "eponym": "Stalder-piked 1/1",
    "codes": {
     "WG-WAG-2025": [
@@ -40742,6 +41180,9 @@
       "value": "E",
       "element_group": "7",
       "eponym": "Stalder-piked 1/1",
+      "aka": [
+       "Back clear pike circle, full pirouette in handstand"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -41684,7 +42125,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Toe-on back, full turn in handstand",
-   "aka": [],
+   "aka": [
+    "Toe-on back, full pirouette in handstand"
+   ],
    "eponym": "Maloney",
    "codes": {
     "WG-WAG-2025": [
@@ -41707,6 +42150,9 @@
       "value": "E",
       "element_group": "7",
       "eponym": "Maloney",
+      "aka": [
+       "Toe-on back, full pirouette in handstand"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -43661,7 +44107,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Back hip circle hecht dismount",
-   "aka": [],
+   "aka": [
+    "BHC hecht dismount"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -44590,7 +45038,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Jump to support, immediate back hip circle",
-   "aka": [],
+   "aka": [
+    "Jump to support, immediate BHC"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -44711,7 +45161,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Round-off, Arabian over LB to brief sit",
-   "aka": [],
+   "aka": [
+    "RO, Arabian over LB to brief sit",
+    "Roundoff, Arabian over LB to brief sit"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -44805,7 +45258,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Bent-hip jump to handstand, ½ turn",
-   "aka": [],
+   "aka": [
+    "Piked jump to LB handstand with half pirouette",
+    "Bent-hip jump to handstand, half pirouette"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -44817,6 +45273,9 @@
       "value": "C",
       "element_group": "1",
       "eponym": "",
+      "aka": [
+       "Piked jump to LB handstand with half pirouette"
+      ],
       "tags": {
        "bar": "LB",
        "turn_deg": 180
@@ -44832,6 +45291,9 @@
       "value": "C",
       "element_group": "1",
       "eponym": "",
+      "aka": [
+       "Bent-hip jump to handstand, half pirouette"
+      ],
       "tags": {
        "bar": "LB",
        "turn_deg": 180
@@ -45058,6 +45520,8 @@
    "apparatus": "UB",
    "short_name": "HB jump mount, clear hip handstand ½ turn",
    "aka": [
+    "HB clear hip to handstand, half pirouette",
+    "HB jump mount, clear hip handstand half pirouette",
     "HB jump mount, free hip handstand ½ turn"
    ],
    "eponym": "McNamara",
@@ -45071,6 +45535,9 @@
       "value": "D",
       "element_group": "1",
       "eponym": "McNamara",
+      "aka": [
+       "HB clear hip to handstand, half pirouette"
+      ],
       "tags": {
        "bar": "HB",
        "circle360": true,
@@ -45087,6 +45554,9 @@
       "value": "D",
       "element_group": "1",
       "eponym": "McNamara",
+      "aka": [
+       "HB jump mount, clear hip handstand half pirouette"
+      ],
       "tags": {
        "bar": "HB",
        "circle360": true,
@@ -45114,6 +45584,8 @@
    "apparatus": "UB",
    "short_name": "LB jump, front clear hip handstand ½ turn",
    "aka": [
+    "Forward clear hip, half pirouette handstand",
+    "LB jump, front clear hip handstand half pirouette",
     "LB jump, front free hip handstand ½ turn"
    ],
    "eponym": "Garner",
@@ -45127,6 +45599,9 @@
       "value": "D",
       "element_group": "1",
       "eponym": "Garner",
+      "aka": [
+       "Forward clear hip, half pirouette handstand"
+      ],
       "tags": {
        "bar": "LB",
        "circle360": true,
@@ -45143,6 +45618,9 @@
       "value": "D",
       "element_group": "1",
       "eponym": "Garner",
+      "aka": [
+       "LB jump, front clear hip handstand half pirouette"
+      ],
       "tags": {
        "bar": "LB",
        "circle360": true,
@@ -45346,7 +45824,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Cast with shoot-through",
-   "aka": [],
+   "aka": [
+    "Shoot through",
+    "Cast shoot through"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -45362,6 +45843,10 @@
        "Bronze",
        "Silver",
        "Gold"
+      ],
+      "aka": [
+       "Shoot through",
+       "Cast shoot through"
       ],
       "tags": {
        "bar": "either"
@@ -45504,7 +45989,14 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Cast, one-arm full pirouette to L/mixed-L grip",
-   "aka": [],
+   "aka": [
+    "Cast handstand, Healy full pirouette to L grip",
+    "Cast handstand, Healy to L grip",
+    "Healy",
+    "Cast handstand Healy",
+    "Cast, Healy full pirouette to L/mixed-L grip",
+    "Cast, Healy to L/mixed-L grip"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -45516,6 +46008,12 @@
       "value": "C",
       "element_group": "2",
       "eponym": "",
+      "aka": [
+       "Cast handstand, Healy full pirouette to L grip",
+       "Cast handstand, Healy to L grip",
+       "Healy",
+       "Cast handstand Healy"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -45538,6 +46036,12 @@
       "value": "C",
       "element_group": "2",
       "eponym": "",
+      "aka": [
+       "Cast, Healy full pirouette to L/mixed-L grip",
+       "Cast, Healy to L/mixed-L grip",
+       "Healy",
+       "Cast handstand Healy"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -45884,7 +46388,12 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Back uprise, one-arm full pirouette to L grip",
-   "aka": [],
+   "aka": [
+    "Back uprise to handstand, Healy full pirouette",
+    "Back uprise to handstand, Healy",
+    "Back uprise, Healy full pirouette to L grip",
+    "Back uprise, Healy to L grip"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -45896,6 +46405,10 @@
       "value": "C",
       "element_group": "2",
       "eponym": "",
+      "aka": [
+       "Back uprise to handstand, Healy full pirouette",
+       "Back uprise to handstand, Healy"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -45914,6 +46427,10 @@
       "value": "C",
       "element_group": "2",
       "eponym": "",
+      "aka": [
+       "Back uprise, Healy full pirouette to L grip",
+       "Back uprise, Healy to L grip"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -45930,7 +46447,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Back uprise to handstand with full turn",
-   "aka": [],
+   "aka": [
+    "Back uprise to handstand with full pirouette"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -45942,6 +46461,9 @@
       "value": "D",
       "element_group": "2",
       "eponym": "",
+      "aka": [
+       "Back uprise to handstand with full pirouette"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -45959,6 +46481,9 @@
       "value": "D",
       "element_group": "2",
       "eponym": "",
+      "aka": [
+       "Back uprise to handstand with full pirouette"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -46028,7 +46553,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Back uprise to handstand with 1½ turns",
-   "aka": [],
+   "aka": [
+    "Back uprise to handstand, 1½ pirouette",
+    "Back uprise to handstand with 1½ pirouette"
+   ],
    "eponym": "Reeder",
    "codes": {
     "USAG-XCEL-2022": [
@@ -46040,6 +46568,9 @@
       "value": "D",
       "element_group": "2",
       "eponym": "Reeder",
+      "aka": [
+       "Back uprise to handstand, 1½ pirouette"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -46061,6 +46592,9 @@
       "value": "D",
       "element_group": "2",
       "eponym": "Reeder",
+      "aka": [
+       "Back uprise to handstand with 1½ pirouette"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -46231,7 +46765,8 @@
    "apparatus": "UB",
    "short_name": "HB counterswing, straddle/pike flight to LB hang",
    "aka": [
-    "Straddleback"
+    "Straddleback",
+    "Straddle back"
    ],
    "eponym": "",
    "codes": {
@@ -46245,7 +46780,8 @@
       "element_group": "2",
       "eponym": "",
       "aka": [
-       "Straddleback"
+       "Straddleback",
+       "Straddle back"
       ],
       "tags": {
        "bar": "HB",
@@ -46264,7 +46800,8 @@
       "element_group": "2",
       "eponym": "",
       "aka": [
-       "Straddleback"
+       "Straddleback",
+       "Straddle back"
       ],
       "tags": {
        "bar": "HB",
@@ -46324,7 +46861,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "HB counterswing to LB handstand with full turn",
-   "aka": [],
+   "aka": [
+    "Straddle back to handstand with turn"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -46336,6 +46875,9 @@
       "value": "D",
       "element_group": "2",
       "eponym": "",
+      "aka": [
+       "Straddle back to handstand with turn"
+      ],
       "tags": {
        "bar": "HB",
        "bar_change": true,
@@ -46372,7 +46914,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Counterswing, ½ twist flight to LB handstand",
-   "aka": [],
+   "aka": [
+    "Straddle back to handstand with turn"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -46384,6 +46928,9 @@
       "value": "D",
       "element_group": "2",
       "eponym": "",
+      "aka": [
+       "Straddle back to handstand with turn"
+      ],
       "tags": {
        "bar": "HB",
        "bar_change": true,
@@ -47197,6 +47744,8 @@
    "apparatus": "UB",
    "short_name": "Clear hip handstand ½ turn, regular grip",
    "aka": [
+    "Clear hip handstand, half pirouette, regular grip",
+    "Clear hip handstand half pirouette, regular grip",
     "Free hip handstand ½ turn, regular grip"
    ],
    "eponym": "",
@@ -47210,6 +47759,9 @@
       "value": "C",
       "element_group": "3",
       "eponym": "",
+      "aka": [
+       "Clear hip handstand, half pirouette, regular grip"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -47228,6 +47780,9 @@
       "value": "C",
       "element_group": "3",
       "eponym": "",
+      "aka": [
+       "Clear hip handstand half pirouette, regular grip"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -47257,6 +47812,10 @@
    "apparatus": "UB",
    "short_name": "Clear hip, one-arm full pirouette to L grip",
    "aka": [
+    "Clear hip handstand, Healy full pirouette",
+    "Clear hip handstand, Healy",
+    "Clear hip, Healy full pirouette to L grip",
+    "Clear hip, Healy to L grip",
     "Free hip, one-arm full pirouette to L grip"
    ],
    "eponym": "",
@@ -47270,6 +47829,10 @@
       "value": "C",
       "element_group": "3",
       "eponym": "",
+      "aka": [
+       "Clear hip handstand, Healy full pirouette",
+       "Clear hip handstand, Healy"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -47289,6 +47852,10 @@
       "value": "C",
       "element_group": "3",
       "eponym": "",
+      "aka": [
+       "Clear hip, Healy full pirouette to L grip",
+       "Clear hip, Healy to L grip"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -47319,6 +47886,8 @@
    "apparatus": "UB",
    "short_name": "Clear hip handstand ½ turn, reverse/L grip",
    "aka": [
+    "Clear hip handstand, half pirouette to reverse/L grip",
+    "Clear hip handstand half pirouette, reverse/L grip",
     "Free hip handstand ½ turn, reverse/L grip"
    ],
    "eponym": "",
@@ -47332,6 +47901,9 @@
       "value": "D",
       "element_group": "3",
       "eponym": "",
+      "aka": [
+       "Clear hip handstand, half pirouette to reverse/L grip"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -47350,6 +47922,9 @@
       "value": "D",
       "element_group": "3",
       "eponym": "",
+      "aka": [
+       "Clear hip handstand half pirouette, reverse/L grip"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -47550,7 +48125,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "LB back giant, tucked at bottom",
-   "aka": [],
+   "aka": [
+    "Baby giant"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -47562,6 +48139,9 @@
       "value": "A",
       "element_group": "4",
       "eponym": "",
+      "aka": [
+       "Baby giant"
+      ],
       "tags": {
        "bar": "LB",
        "cast_sr": true,
@@ -47580,6 +48160,9 @@
       "value": "A",
       "element_group": "4",
       "eponym": "",
+      "aka": [
+       "Baby giant"
+      ],
       "tags": {
        "bar": "LB",
        "cast_sr": true,
@@ -47716,7 +48299,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "LB back giant ½ turn to handstand",
-   "aka": [],
+   "aka": [
+    "LB back giant with half pirouette",
+    "LB back giant half pirouette to handstand"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -47728,6 +48314,9 @@
       "value": "B",
       "element_group": "4",
       "eponym": "",
+      "aka": [
+       "LB back giant with half pirouette"
+      ],
       "tags": {
        "bar": "LB",
        "cast_sr": true,
@@ -47747,6 +48336,9 @@
       "value": "B",
       "element_group": "4",
       "eponym": "",
+      "aka": [
+       "LB back giant half pirouette to handstand"
+      ],
       "tags": {
        "bar": "LB",
        "cast_sr": true,
@@ -47764,7 +48356,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "LB back giant, full turn in handstand",
-   "aka": [],
+   "aka": [
+    "LB back giant, full pirouette",
+    "LB back giant, full pirouette in handstand"
+   ],
    "eponym": "Borkan",
    "codes": {
     "USAG-XCEL-2022": [
@@ -47776,6 +48371,9 @@
       "value": "C",
       "element_group": "4",
       "eponym": "Borkan",
+      "aka": [
+       "LB back giant, full pirouette"
+      ],
       "tags": {
        "bar": "LB",
        "cast_sr": true,
@@ -47795,6 +48393,9 @@
       "value": "C",
       "element_group": "4",
       "eponym": "Borkan",
+      "aka": [
+       "LB back giant, full pirouette in handstand"
+      ],
       "tags": {
        "bar": "LB",
        "cast_sr": true,
@@ -47812,7 +48413,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Back giant 1½ pirouette, standard or one-arm",
-   "aka": [],
+   "aka": [
+    "Back giant, 1½ pirouette (or 1½ Healy)"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -47824,6 +48427,9 @@
       "value": "D",
       "element_group": "4",
       "eponym": "",
+      "aka": [
+       "Back giant, 1½ pirouette (or 1½ Healy)"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -47880,7 +48486,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Back giant full turn starting with hop",
-   "aka": [],
+   "aka": [
+    "Back giant, full pirouette with hop start",
+    "Back giant full pirouette starting with hop"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -47892,6 +48501,9 @@
       "value": "D",
       "element_group": "4",
       "eponym": "",
+      "aka": [
+       "Back giant, full pirouette with hop start"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -47912,6 +48524,9 @@
       "value": "D",
       "element_group": "4",
       "eponym": "",
+      "aka": [
+       "Back giant full pirouette starting with hop"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -48369,7 +48984,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "LB tucked front giant with full turn",
-   "aka": [],
+   "aka": [
+    "Tucked front giant on LB, full pirouette",
+    "LB tucked front giant with full pirouette"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -48381,6 +48999,9 @@
       "value": "C",
       "element_group": "5",
       "eponym": "",
+      "aka": [
+       "Tucked front giant on LB, full pirouette"
+      ],
       "tags": {
        "bar": "LB",
        "cast_sr": true,
@@ -48400,6 +49021,9 @@
       "value": "C",
       "element_group": "5",
       "eponym": "",
+      "aka": [
+       "LB tucked front giant with full pirouette"
+      ],
       "tags": {
        "bar": "LB",
        "cast_sr": true,
@@ -48536,7 +49160,9 @@
    "apparatus": "UB",
    "short_name": "Front swing, straddle/pike flight to LB hang",
    "aka": [
-    "Straddleback from handstand"
+    "Straddleback from handstand",
+    "Straddle back",
+    "Straddleback"
    ],
    "eponym": "",
    "codes": {
@@ -48550,7 +49176,9 @@
       "element_group": "5",
       "eponym": "",
       "aka": [
-       "Straddleback from handstand"
+       "Straddleback from handstand",
+       "Straddle back",
+       "Straddleback"
       ],
       "tags": {
        "bar": "HB",
@@ -48569,7 +49197,9 @@
       "element_group": "5",
       "eponym": "",
       "aka": [
-       "Straddleback from handstand"
+       "Straddleback from handstand",
+       "Straddle back",
+       "Straddleback"
       ],
       "tags": {
        "bar": "HB",
@@ -48585,7 +49215,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Front swing, straddle/pike flight to LB handstand",
-   "aka": [],
+   "aka": [
+    "Straddle back to handstand",
+    "Straddleback to handstand"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -48597,6 +49230,10 @@
       "value": "D",
       "element_group": "5",
       "eponym": "",
+      "aka": [
+       "Straddle back to handstand",
+       "Straddleback to handstand"
+      ],
       "tags": {
        "bar": "HB",
        "bar_change": true,
@@ -48615,6 +49252,10 @@
       "value": "D",
       "element_group": "5",
       "eponym": "",
+      "aka": [
+       "Straddle back to handstand",
+       "Straddleback to handstand"
+      ],
       "tags": {
        "bar": "HB",
        "bar_change": true,
@@ -48643,7 +49284,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Cross-grip ½ turn to handstand plus ½ turn",
-   "aka": [],
+   "aka": [
+    "Cross-grip half pirouette to handstand plus half pirouette"
+   ],
    "eponym": "Shahaf",
    "codes": {
     "USAG-XCEL-2022": [
@@ -48672,6 +49315,9 @@
       "value": "C",
       "element_group": "5",
       "eponym": "Shahaf",
+      "aka": [
+       "Cross-grip half pirouette to handstand plus half pirouette"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -49087,7 +49733,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Forward stalder, one-arm full pirouette to L",
-   "aka": [],
+   "aka": [
+    "Forward stalder, Healy full pirouette to L",
+    "Forward stalder, Healy to L"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -49118,6 +49767,10 @@
       "value": "D",
       "element_group": "6",
       "eponym": "",
+      "aka": [
+       "Forward stalder, Healy full pirouette to L",
+       "Forward stalder, Healy to L"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -49633,7 +50286,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Stalder to handstand, ½ turn to regular grip",
-   "aka": [],
+   "aka": [
+    "Back stalder, half pirouette to overgrip",
+    "Stalder to handstand, half pirouette to regular grip"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -49645,6 +50301,9 @@
       "value": "C",
       "element_group": "6",
       "eponym": "",
+      "aka": [
+       "Back stalder, half pirouette to overgrip"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -49663,6 +50322,9 @@
       "value": "C",
       "element_group": "6",
       "eponym": "",
+      "aka": [
+       "Stalder to handstand, half pirouette to regular grip"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -49691,7 +50353,12 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Stalder with one-arm full pirouette to L grip",
-   "aka": [],
+   "aka": [
+    "Back stalder, Healy full pirouette",
+    "Back stalder, Healy",
+    "Stalder with Healy full pirouette to L grip",
+    "Stalder with Healy to L grip"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -49703,6 +50370,10 @@
       "value": "C",
       "element_group": "6",
       "eponym": "",
+      "aka": [
+       "Back stalder, Healy full pirouette",
+       "Back stalder, Healy"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -49722,6 +50393,10 @@
       "value": "C",
       "element_group": "6",
       "eponym": "",
+      "aka": [
+       "Stalder with Healy full pirouette to L grip",
+       "Stalder with Healy to L grip"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -49809,7 +50484,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Stalder ½ turn to reverse or L grip",
-   "aka": [],
+   "aka": [
+    "Back stalder, half pirouette to reverse/L grip",
+    "Stalder half pirouette to reverse or L grip"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -49821,6 +50499,9 @@
       "value": "D",
       "element_group": "6",
       "eponym": "",
+      "aka": [
+       "Back stalder, half pirouette to reverse/L grip"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -49839,6 +50520,9 @@
       "value": "D",
       "element_group": "6",
       "eponym": "",
+      "aka": [
+       "Stalder half pirouette to reverse or L grip"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -49867,7 +50551,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Stalder hop change, one-arm full pirouette",
-   "aka": [],
+   "aka": [
+    "Stalder hop change, Healy full pirouette",
+    "Stalder hop change, Healy"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -49899,6 +50586,10 @@
       "value": "D",
       "element_group": "6",
       "eponym": "",
+      "aka": [
+       "Stalder hop change, Healy full pirouette",
+       "Stalder hop change, Healy"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -50015,7 +50706,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Stride (mill) circle",
-   "aka": [],
+   "aka": [
+    "Mill circle",
+    "Stride circle"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -50031,6 +50725,10 @@
        "Bronze",
        "Silver",
        "Gold"
+      ],
+      "aka": [
+       "Mill circle",
+       "Stride circle"
       ],
       "tags": {
        "bar": "either",
@@ -50633,7 +51331,12 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Toe-on front, one-arm full pirouette to L grip",
-   "aka": [],
+   "aka": [
+    "Toe-on front, Healy full pirouette",
+    "Toe-on front, Healy",
+    "Toe-on front, Healy full pirouette to L grip",
+    "Toe-on front, Healy to L grip"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -50645,6 +51348,10 @@
       "value": "C",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "Toe-on front, Healy full pirouette",
+       "Toe-on front, Healy"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -50664,6 +51371,10 @@
       "value": "C",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "Toe-on front, Healy full pirouette to L grip",
+       "Toe-on front, Healy to L grip"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -50693,7 +51404,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Toe-on front, full turn in handstand",
-   "aka": [],
+   "aka": [
+    "Toe-on front, full pirouette in handstand"
+   ],
    "eponym": "Hoefnagel",
    "codes": {
     "WG-WAG-2025": [
@@ -50716,6 +51429,9 @@
       "value": "D",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "Toe-on front, full pirouette in handstand"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -50734,6 +51450,9 @@
       "value": "D",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "Toe-on front, full pirouette in handstand"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -50965,7 +51684,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Toe-on back, ½ turn to regular grip",
-   "aka": [],
+   "aka": [
+    "Toe-on back, half pirouette to overgrip",
+    "Toe-on back, half pirouette to regular grip"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -50977,6 +51699,9 @@
       "value": "C",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "Toe-on back, half pirouette to overgrip"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -50995,6 +51720,9 @@
       "value": "C",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "Toe-on back, half pirouette to regular grip"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -51023,7 +51751,12 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Toe-on back, one-arm full pirouette to L grip",
-   "aka": [],
+   "aka": [
+    "Toe-on back, Healy full pirouette",
+    "Toe-on back, Healy",
+    "Toe-on back, Healy full pirouette to L grip",
+    "Toe-on back, Healy to L grip"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -51035,6 +51768,10 @@
       "value": "C",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "Toe-on back, Healy full pirouette",
+       "Toe-on back, Healy"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -51054,6 +51791,10 @@
       "value": "C",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "Toe-on back, Healy full pirouette to L grip",
+       "Toe-on back, Healy to L grip"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -51141,7 +51882,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Toe-on back, ½ turn to reverse/L grip",
-   "aka": [],
+   "aka": [
+    "Toe-on back, half pirouette to reverse/L grip"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -51153,6 +51896,9 @@
       "value": "D",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "Toe-on back, half pirouette to reverse/L grip"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -51171,6 +51917,9 @@
       "value": "D",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "Toe-on back, half pirouette to reverse/L grip"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -53988,7 +54737,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Round-off, full-twisting back handspring to LB support",
-   "aka": [],
+   "aka": [
+    "RO, full-twisting back handspring to LB support",
+    "Roundoff, full-twisting back handspring to LB support"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -54025,7 +54777,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Round-off, full-twisting back handspring through LB handstand",
-   "aka": [],
+   "aka": [
+    "RO, full-twisting back handspring through LB handstand",
+    "Roundoff, full-twisting back handspring through LB handstand"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -54242,7 +54997,12 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Cast handstand with ½ turn",
-   "aka": [],
+   "aka": [
+    "Cast handstand with half pirouette",
+    "Pirouette",
+    "Half pirouette",
+    "Cast handstand pirouette"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -54254,6 +55014,12 @@
       "value": "C",
       "element_group": "2",
       "eponym": "",
+      "aka": [
+       "Cast handstand with half pirouette",
+       "Pirouette",
+       "Half pirouette",
+       "Cast handstand pirouette"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -54307,6 +55073,12 @@
       "element_group": "2",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Cast handstand with half pirouette",
+       "Pirouette",
+       "Half pirouette",
+       "Cast handstand pirouette"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -54399,6 +55171,12 @@
       "element_group": "2",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Cast handstand with half pirouette",
+       "Pirouette",
+       "Half pirouette",
+       "Cast handstand pirouette"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -54426,7 +55204,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Cast squat-on LB, jump to HB",
-   "aka": [],
+   "aka": [
+    "Squat on",
+    "Cast squat on"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -54438,6 +55219,10 @@
       "value": "A",
       "element_group": "2",
       "eponym": "",
+      "aka": [
+       "Squat on",
+       "Cast squat on"
+      ],
       "tags": {
        "bar": "LB",
        "bar_change": true,
@@ -54457,6 +55242,14 @@
       "element_group": "2",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Squat on",
+       "Stoop on",
+       "Straddle on",
+       "Cast squat on",
+       "Cast stoop on",
+       "Cast straddle on"
+      ],
       "tags": {
        "bar": "either",
        "bar_change": true,
@@ -54473,7 +55266,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Cast stoop-on LB, jump to HB",
-   "aka": [],
+   "aka": [
+    "Stoop on",
+    "Cast stoop on"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -54485,6 +55281,10 @@
       "value": "A",
       "element_group": "2",
       "eponym": "",
+      "aka": [
+       "Stoop on",
+       "Cast stoop on"
+      ],
       "tags": {
        "bar": "LB",
        "bar_change": true,
@@ -54504,6 +55304,14 @@
       "element_group": "2",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Squat on",
+       "Stoop on",
+       "Straddle on",
+       "Cast squat on",
+       "Cast stoop on",
+       "Cast straddle on"
+      ],
       "tags": {
        "bar": "either",
        "bar_change": true,
@@ -54520,7 +55328,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Cast straddle-on LB, jump to HB",
-   "aka": [],
+   "aka": [
+    "Straddle on",
+    "Cast straddle on"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -54532,6 +55343,10 @@
       "value": "A",
       "element_group": "2",
       "eponym": "",
+      "aka": [
+       "Straddle on",
+       "Cast straddle on"
+      ],
       "tags": {
        "bar": "LB",
        "bar_change": true,
@@ -54551,6 +55366,14 @@
       "element_group": "2",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Squat on",
+       "Stoop on",
+       "Straddle on",
+       "Cast squat on",
+       "Cast stoop on",
+       "Cast straddle on"
+      ],
       "tags": {
        "bar": "either",
        "bar_change": true,
@@ -54734,7 +55557,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "HB counterswing to LB handstand with ½ turn",
-   "aka": [],
+   "aka": [
+    "Straddle back to handstand with ½ turn"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -54746,6 +55571,9 @@
       "value": "C",
       "element_group": "2",
       "eponym": "",
+      "aka": [
+       "Straddle back to handstand with ½ turn"
+      ],
       "tags": {
        "bar": "HB",
        "bar_change": true,
@@ -54766,6 +55594,10 @@
       "element_group": "2",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Straddle back to handstand",
+       "Straddleback to handstand"
+      ],
       "tags": {
        "bar": "HB",
        "bar_change": true,
@@ -54860,6 +55692,7 @@
    "apparatus": "UB",
    "short_name": "Clear hip handstand with full turn",
    "aka": [
+    "Clear hip handstand with full pirouette",
     "Free hip handstand with full turn"
    ],
    "eponym": "Ma",
@@ -54873,6 +55706,9 @@
       "value": "E",
       "element_group": "3",
       "eponym": "Ma",
+      "aka": [
+       "Clear hip handstand with full pirouette"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -55170,6 +56006,7 @@
    "apparatus": "UB",
    "short_name": "Forward clear hip handstand with ½ turn",
    "aka": [
+    "Forward clear hip handstand with half pirouette",
     "Forward free hip handstand with ½ turn"
    ],
    "eponym": "",
@@ -55183,6 +56020,9 @@
       "value": "D",
       "element_group": "3",
       "eponym": "",
+      "aka": [
+       "Forward clear hip handstand with half pirouette"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -55562,7 +56402,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "HB back giant with ½ turn",
-   "aka": [],
+   "aka": [
+    "HB back giant with half pirouette"
+   ],
    "eponym": "Liu",
    "codes": {
     "WG-WAG-2025": [
@@ -55585,6 +56427,9 @@
       "value": "C",
       "element_group": "4",
       "eponym": "",
+      "aka": [
+       "HB back giant with half pirouette"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -55605,6 +56450,9 @@
       "element_group": "4",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "HB back giant, half pirouette handstand"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -55662,6 +56510,9 @@
       "element_group": "4",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "HB back giant, half pirouette handstand"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -55695,7 +56546,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Back giant, two opposite ½ turns",
-   "aka": [],
+   "aka": [
+    "Back giant, two opposite half pirouettes"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -55707,6 +56560,9 @@
       "value": "C",
       "element_group": "4",
       "eponym": "",
+      "aka": [
+       "Back giant, two opposite half pirouettes"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -55756,7 +56612,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Back giant, one-arm full pirouette to L grip",
-   "aka": [],
+   "aka": [
+    "Back giant, Healy full pirouette to L grip",
+    "Back giant, Healy to L grip"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -55768,6 +56627,10 @@
       "value": "C",
       "element_group": "4",
       "eponym": "",
+      "aka": [
+       "Back giant, Healy full pirouette to L grip",
+       "Back giant, Healy to L grip"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -55789,6 +56652,10 @@
       "element_group": "4",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Back giant, Healy full pirouette",
+       "Back giant, Healy"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -55857,6 +56724,10 @@
       "element_group": "4",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Back giant, Healy full pirouette",
+       "Back giant, Healy"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -56118,7 +56989,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "LB tucked front giant with ½ turn",
-   "aka": [],
+   "aka": [
+    "LB tucked front giant with half pirouette"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -56130,6 +57003,9 @@
       "value": "B",
       "element_group": "5",
       "eponym": "",
+      "aka": [
+       "LB tucked front giant with half pirouette"
+      ],
       "tags": {
        "bar": "LB",
        "cast_sr": true,
@@ -56301,7 +57177,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "HB front giant with ½ turn",
-   "aka": [],
+   "aka": [
+    "HB front giant with half pirouette"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -56313,6 +57191,9 @@
       "value": "C",
       "element_group": "5",
       "eponym": "",
+      "aka": [
+       "HB front giant with half pirouette"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -56435,7 +57316,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Front giant, one-arm full pirouette to L grip",
-   "aka": [],
+   "aka": [
+    "Front giant, Healy full pirouette to L grip",
+    "Front giant, Healy to L grip"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -56447,6 +57331,10 @@
       "value": "C",
       "element_group": "5",
       "eponym": "",
+      "aka": [
+       "Front giant, Healy full pirouette to L grip",
+       "Front giant, Healy to L grip"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -56503,7 +57391,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Front giant, one-arm full turn before handstand",
-   "aka": [],
+   "aka": [
+    "Front giant, one-arm full pirouette before handstand"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -56515,6 +57405,9 @@
       "value": "E",
       "element_group": "5",
       "eponym": "",
+      "aka": [
+       "Front giant, one-arm full pirouette before handstand"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -56545,7 +57438,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Front giant with 1½ turns",
-   "aka": [],
+   "aka": [
+    "Front giant with 1½ pirouette"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -56557,6 +57452,9 @@
       "value": "E",
       "element_group": "5",
       "eponym": "",
+      "aka": [
+       "Front giant with 1½ pirouette"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -56766,7 +57664,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "L-grip front giant, ½ turn to regular grip",
-   "aka": [],
+   "aka": [
+    "L-grip front giant, half pirouette to regular grip"
+   ],
    "eponym": "Zaytseva",
    "codes": {
     "USAG-DP-2026": [
@@ -56778,6 +57678,9 @@
       "value": "D",
       "element_group": "5",
       "eponym": "Zaytseva",
+      "aka": [
+       "L-grip front giant, half pirouette to regular grip"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -56829,7 +57732,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Hop full turn from L-grip front giant",
-   "aka": [],
+   "aka": [
+    "Hop full pirouette from L-grip front giant"
+   ],
    "eponym": "Karpenko/Ling",
    "codes": {
     "USAG-DP-2026": [
@@ -56841,6 +57746,9 @@
       "value": "E",
       "element_group": "5",
       "eponym": "Karpenko/Ling",
+      "aka": [
+       "Hop full pirouette from L-grip front giant"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -56871,7 +57779,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "L-grip front giant, one-arm full turn, arm flared",
-   "aka": [],
+   "aka": [
+    "L-grip front giant, one-arm full pirouette, arm flared"
+   ],
    "eponym": "Bi",
    "codes": {
     "USAG-DP-2026": [
@@ -56883,6 +57793,9 @@
       "value": "E",
       "element_group": "5",
       "eponym": "Bi",
+      "aka": [
+       "L-grip front giant, one-arm full pirouette, arm flared"
+      ],
       "tags": {
        "bar": "HB",
        "cast_sr": true,
@@ -56973,7 +57886,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Forward stalder handstand with ½ turn",
-   "aka": [],
+   "aka": [
+    "Forward stalder handstand with half pirouette"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -56985,6 +57900,9 @@
       "value": "D",
       "element_group": "6",
       "eponym": "",
+      "aka": [
+       "Forward stalder handstand with half pirouette"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -57094,7 +58012,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "L-grip forward stalder handstand, ½ turn",
-   "aka": [],
+   "aka": [
+    "L-grip forward stalder handstand, half pirouette"
+   ],
    "eponym": "White",
    "codes": {
     "USAG-DP-2026": [
@@ -57106,6 +58026,9 @@
       "value": "D",
       "element_group": "6",
       "eponym": "White",
+      "aka": [
+       "L-grip forward stalder handstand, half pirouette"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -57836,7 +58759,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Toe-on front to handstand, ½ turn",
-   "aka": [],
+   "aka": [
+    "Toe-on front to handstand, half pirouette"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -57848,6 +58773,9 @@
       "value": "C",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "Toe-on front to handstand, half pirouette"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -58018,7 +58946,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "L-grip toe-on front with full turn",
-   "aka": [],
+   "aka": [
+    "L-grip toe-on front with full pirouette"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -58041,6 +58971,9 @@
       "value": "E",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "L-grip toe-on front with full pirouette"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -58057,7 +58990,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Toe-on back, 1½ turns in handstand",
-   "aka": [],
+   "aka": [
+    "Toe-on back, 1½ pirouette in handstand"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -58069,6 +59004,9 @@
       "value": "E",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "Toe-on back, 1½ pirouette in handstand"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -58275,7 +59213,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Front clear pike circle, ½ turn in handstand",
-   "aka": [],
+   "aka": [
+    "Front clear pike circle, half pirouette in handstand"
+   ],
    "eponym": "Endo-piked",
    "codes": {
     "USAG-DP-2026": [
@@ -58287,6 +59227,9 @@
       "value": "D",
       "element_group": "7",
       "eponym": "Endo-piked",
+      "aka": [
+       "Front clear pike circle, half pirouette in handstand"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -58396,7 +59339,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Back clear pike circle, ½ turn in handstand",
-   "aka": [],
+   "aka": [
+    "Back clear pike circle, half pirouette in handstand"
+   ],
    "eponym": "Stalder-piked",
    "codes": {
     "USAG-DP-2026": [
@@ -58408,6 +59353,9 @@
       "value": "D",
       "element_group": "7",
       "eponym": "Stalder-piked",
+      "aka": [
+       "Back clear pike circle, half pirouette in handstand"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
@@ -59858,7 +60806,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "HB counterswing, flight to LB handstand",
-   "aka": [],
+   "aka": [
+    "Straddle back to handstand",
+    "Straddleback to handstand"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -59870,6 +60821,10 @@
       "value": "C",
       "element_group": "2",
       "eponym": "",
+      "aka": [
+       "Straddle back to handstand",
+       "Straddleback to handstand"
+      ],
       "tags": {
        "bar": "HB",
        "bar_change": true,
@@ -59889,6 +60844,10 @@
       "element_group": "2",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Straddle back to handstand",
+       "Straddleback to handstand"
+      ],
       "tags": {
        "bar": "HB",
        "bar_change": true,
@@ -59921,6 +60880,8 @@
    "apparatus": "UB",
    "short_name": "Forward clear hip, one-arm full pirouette",
    "aka": [
+    "Forward clear hip, Healy full pirouette",
+    "Forward clear hip, Healy",
     "Forward free hip, one-arm full pirouette"
    ],
    "eponym": "McAllister",
@@ -59934,6 +60895,10 @@
       "value": "D",
       "element_group": "3",
       "eponym": "McAllister",
+      "aka": [
+       "Forward clear hip, Healy full pirouette",
+       "Forward clear hip, Healy"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
