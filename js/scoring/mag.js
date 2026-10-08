@@ -124,8 +124,8 @@ export const APPARATUS = {
 export function eventOptions(event, level) {
   const o = [];
   if (event === 'fx') {
-    o.push({ id: 'conn1', kind: 'count', value: 0.1, max: 5, label: 'D or higher + B/C connection', help: '+0.1 each' });
-    o.push({ id: 'conn2', kind: 'count', value: 0.2, max: 5, label: 'D or higher + D or higher connection', help: '+0.2 each' });
+    o.push({ id: 'conn1', kind: 'count', connect: true, value: 0.1, max: 5, label: 'D or higher + B/C connection', help: '+0.1 each. Link connected skills (the link between rows) to count them.' });
+    o.push({ id: 'conn2', kind: 'count', connect: true, value: 0.2, max: 5, label: 'D or higher + D or higher connection', help: '+0.2 each. Link connected skills (the link between rows) to count them.' });
     if (level === 'adv') {
       o.push({ id: 'dblDismount', kind: 'check', value: 0.1, detect: true, label: 'Double flipping dismount',
         help: '+0.1. Ticked automatically when the last skill listed is a double or triple salto.' });
@@ -144,9 +144,24 @@ export function eventOptions(event, level) {
     }
   }
   if (event === 'hb') {
-    o.push({ id: 'connCC', kind: 'count', value: 0.1, max: 5, label: 'C + C connection', help: 'Flight to flight, or in bar to flight / flight to in bar with no intermediate swing: +0.1 each' });
+    o.push({ id: 'connCC', kind: 'count', connect: true, value: 0.1, max: 5, label: 'C + C connection', help: 'Flight to flight, or in bar to flight / flight to in bar with no intermediate swing: +0.1 each. Link connected skills (the link between rows) to count them.' });
   }
   return o;
+}
+
+// Connection bonuses, from the skills the gymnast links (`link`: connected to the next
+// skill): which linked pairs earn each option. Rank: A=1, B=2, ... (Masters letters 0).
+const RANK = (it) => 'ABCDEFGHIJ'.indexOf(String(it.letter || '').toUpperCase()) + 1;
+const B_OR_C = (it) => RANK(it) === 2 || RANK(it) === 3;
+const CONNECT = {
+  conn1: ([a, b]) => (RANK(a) >= 4 && B_OR_C(b)) || (B_OR_C(a) && RANK(b) >= 4),
+  conn2: ([a, b]) => RANK(a) >= 4 && RANK(b) >= 4,
+  // High bar: flight (EG II) to flight, or in bar (EG III) to flight and back.
+  connCC: ([a, b]) => RANK(a) >= 3 && RANK(b) >= 3 && (a.eg === 2 || b.eg === 2) && [2, 3].includes(a.eg) && [2, 3].includes(b.eg),
+};
+function linkedPairs(items) {
+  const live = items.filter((it) => it.status !== 'blank');
+  return live.slice(1).map((b, k) => [live[k], b]).filter(([a, b]) => a.link && a.status !== 'repeat' && b.status !== 'repeat');
 }
 
 // Avoid floating point noise (0.1 + 0.2 etc.).
@@ -210,6 +225,7 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
     value: value(s?.letter),
     eg: s?.eg ? Number(s.eg) : null,
     skillId: s?.skillId || '',
+    link: !!s?.link, // floor / high bar: connected to the next skill
     bonus: 0,
     status: isFilled(s) ? null : 'blank',
   }));
@@ -291,7 +307,13 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
       continue;
     }
     if (o.kind === 'check' && (v || detected[o.id])) got = o.value;
-    if (o.kind === 'count') got = Math.min(Math.max(0, Number(v) || 0), o.max) * o.value;
+    if (o.kind === 'count' && o.connect) {
+      // Each different pair of skills counts once.
+      const seen = new Set();
+      const hits = linkedPairs(items).filter((p) => CONNECT[o.id](p) && !seen.has(p.map((x) => skillKey(x.name)).join('>')) && seen.add(p.map((x) => skillKey(x.name)).join('>')));
+      if (hits.length) detected[o.id] = hits.map(([a, b]) => `${a.name.replace(/\.+$/, '')} + ${b.name.replace(/\.+$/, '')}`).join('; ');
+      got = Math.min(hits.length, o.max) * o.value;
+    } else if (o.kind === 'count') got = Math.min(Math.max(0, Number(v) || 0), o.max) * o.value;
     if (o.kind === 'mushroom') got = Math.min(Math.max(0, Number(v) || 0), 1);
     optionValues[o.id] = round1(got);
     bonus += got;

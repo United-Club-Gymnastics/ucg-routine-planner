@@ -20,7 +20,7 @@ import {
   scoreEntry,
   scoreEvent,
 } from './model.js';
-import { EXAMPLES, disciplineLoaded, findSkill, loadDiscipline, magSkillAllowed, searchSkills, wagSkillAllowed } from './skill-search.js';
+import { EXAMPLES, disciplineLoaded, findSkill, loadDiscipline, magSkillAllowed, matchesQuery, searchSkills, wagSkillAllowed } from './skill-search.js';
 import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
 import * as mag from './scoring/mag.js';
 import { MAG_MASTERS_VAULTS, OTHER_VAULT } from './scoring/mag.js';
@@ -631,11 +631,11 @@ function skillRow(e, ev, spec, i, s, pass) {
   }
   const letters = `<select class="col-letter" aria-label="${label} difficulty" ${data} data-field="letter">
       <option value="">–</option>${spec.letters.map((l) => `<option${l === s.letter ? ' selected' : ''}>${l}</option>`).join('')}</select>`;
+  // Connected to the next skill (sits on the line between the two rows).
+  const link = spec.links
+    ? `<button type="button" class="link-toggle" ${data} data-link aria-pressed="${!!s.link}" aria-label="${label} connected to the next skill" title="${s.link ? 'Connected to the next skill (click to separate)' : 'Not connected to the next skill (click to connect)'}">${ICON_LINK}</button>`
+    : '';
   if (spec.columns === 'xcel') {
-    // Beam / floor: connected to the next skill (sits on the line between the two rows).
-    const link = spec.links
-      ? `<button type="button" class="link-toggle" ${data} data-link aria-pressed="${!!s.link}" aria-label="${label} connected to the next skill" title="${s.link ? 'Connected to the next skill (click to separate)' : 'Not connected to the next skill (click to connect)'}">${ICON_LINK}</button>`
-      : '';
     return `<div class="skill-row${cls}${s.link ? ' linked' : ''}" data-row="${i}">${handle}${combo}${letters}
       <span class="col-value calc" data-calc="value"></span>${remove}<span class="row-flag" data-calc="flag"></span>${link}</div>`;
   }
@@ -643,9 +643,9 @@ function skillRow(e, ev, spec, i, s, pass) {
     ? `<select class="col-eg" aria-label="${label} element group" ${data} data-field="eg">
         <option value="">EG –</option>${spec.groups.map((g) => `<option value="${g.value}"${String(g.value) === String(s.eg) ? ' selected' : ''}>${esc(g.label)}</option>`).join('')}</select>`
     : '<span class="col-eg"></span>';
-  return `<div class="skill-row${cls}" data-row="${i}">${handle}${combo}${letters}${eg}
+  return `<div class="skill-row${cls}${s.link ? ' linked' : ''}" data-row="${i}">${handle}${combo}${letters}${eg}
     <span class="col-value calc" data-calc="value"></span><span class="col-bonus calc" data-calc="bonus"></span>
-    ${remove}<span class="row-flag" data-calc="flag"></span></div>`;
+    ${remove}<span class="row-flag" data-calc="flag"></span>${link}</div>`;
 }
 
 // Ticked by updateComputed: met by a listed skill (and what it assumes), or ticked by hand.
@@ -671,7 +671,9 @@ function optionControl(e, evId, o) {
   const v = e.options?.[evId]?.[o.id];
   const data = `data-option="${evId}" data-opt="${o.id}"`;
   let control;
-  if (o.kind === 'count') {
+  if (o.connect) {
+    control = ''; // worked out from the linked skills
+  } else if (o.kind === 'count') {
     control = `<select ${data} aria-label="${esc(o.label)}">${Array.from({ length: o.max + 1 }, (_, n) => `<option value="${n}"${Number(v || 0) === n ? ' selected' : ''}>${o.id === 'bonus' ? `+${(n / 10).toFixed(1)}` : n}</option>`).join('')}</select>`;
   } else if (o.kind === 'mushroom') {
     control = `<select ${data} aria-label="${esc(o.label)}">${Array.from({ length: 11 }, (_, n) => {
@@ -691,50 +693,56 @@ function optionControl(e, evId, o) {
     </label>`;
 }
 
+// The vaults a level offers, in list order: { id, name, meta (value), head (list heading) }.
+function vaultChoices(e) {
+  const fam = levelInfo(e.disc, e.level).family;
+  const out = [];
+  if (fam === 'mag') {
+    if (e.level === 'masters') {
+      out.push({ id: 'other', name: OTHER_VAULT.name, meta: '0.0', head: 'Other' });
+      for (const v of MAG_MASTERS_VAULTS) out.push({ id: v.id, name: v.name, meta: fmt(v.value), head: 'UCG Masters vaults' });
+    }
+    for (const v of MAG_VAULTS) {
+      const banned = e.level === 'dev' && v.flipping;
+      out.push({
+        id: v.id, name: `${v.src === 'WG' ? `${v.id} · ` : ''}${v.name}${v.eponym ? ` (${v.eponym})` : ''}`,
+        meta: banned ? 'not allowed' : fmt(e.level === 'adv' ? v.adv : v.value), head: v.eg ? `WG element group ${v.eg}` : 'UCG Code of Points',
+      });
+    }
+  } else if (fam === 'infinity') {
+    for (const v of INFINITY_VAULT_LIST) out.push({ id: v.name, name: v.name, meta: fmt(v.dv), head: v.entry });
+  } else if (fam === 'xcel') {
+    const list = xcelVaults(e.level);
+    const l910 = list.some((v) => v.l910);
+    for (const v of list) out.push({ id: v.id, name: v.label, meta: fmt(v.sv), head: !l910 ? '' : v.l910 ? 'USAG Level 9/10 vaults (10.0 at UCG Sapphire)' : 'Xcel Sapphire vault chart' });
+  } else if (fam === 'wagMasters') {
+    const item = (v, head) => ({ id: v.id, name: `${v.src === 'WG' ? `${v.id} · ` : ''}${v.name}${v.eponym ? ` (${v.eponym})` : ''}`, meta: fmt(v.value), head });
+    out.push(item(WAG_OTHER_VAULT, 'Other'));
+    for (const v of WAG_MASTERS_VAULTS) out.push(item(v, 'UCG Masters vaults'));
+    for (const v of WAG_WG_VAULTS) out.push(item(v, `WG vault group ${v.eg}`));
+  }
+  return out;
+}
+const vaultName = (e) => vaultChoices(e).find((v) => v.id === String(e.vault))?.name || '';
+// Names coaches type for vaults the lists write in shorthand ("RO-FF; 1/1 Off" is a Yurchenko full).
+const VAULT_WORDS = [
+  [/\bRO-?FF\b|round-?off,? flic-?flac/i, 'yurchenko roundoff flicflac'],
+  [/\bFHS\b|\b(Ft|Fr)\.? ?Hspr|front handspring|^handspring/i, 'front handspring'],
+  [/\bHspr\b/i, 'handspring'],
+  [/\b(Ft|Fr)\./, 'front'],
+  [/\b1\/[24] On\b.*\b(tuck|pike|layout|salto)|tsuk/i, 'tsukahara'],
+];
+const vaultSearchText = (name) => [name, ...VAULT_WORDS.filter(([re]) => re.test(name)).map(([, w]) => w)].join(' ');
+
 function vaultBody(e, ev) {
   const fam = levelInfo(e.disc, e.level).family;
-  let control = '';
-  if (fam === 'mag') {
-    const groups = {};
-    for (const v of MAG_VAULTS) (groups[v.eg] ||= []).push(v);
-    const opts = Object.entries(groups)
-      .map(([eg, list]) => `<optgroup label="${eg ? `WG element group ${esc(eg)}` : 'UCG Code of Points'}">${list
-        .map((v) => {
-          const banned = e.level === 'dev' && v.flipping;
-          const dv = e.level === 'adv' ? v.adv : v.value;
-          const name = `${v.src === 'WG' ? `${v.id} · ` : ''}${v.name}${v.eponym ? ` (${v.eponym})` : ''}`;
-          return `<option value="${esc(v.id)}"${v.id === String(e.vault) ? ' selected' : ''}>${esc(name)} — ${banned ? 'not allowed' : fmt(dv)}</option>`;
-        })
-        .join('')}</optgroup>`)
-      .join('');
-    const masters = e.level === 'masters'
-      ? `<option value="other"${e.vault === 'other' ? ' selected' : ''}>${esc(OTHER_VAULT.name)} — 0.0</option>
-         <optgroup label="UCG Masters vaults">${MAG_MASTERS_VAULTS.map((v) => `<option value="${esc(v.id)}"${v.id === e.vault ? ' selected' : ''}>${esc(v.name)} — ${fmt(v.value)}</option>`).join('')}</optgroup>`
-      : '';
-    control = `<select id="f-vault"><option value="">— No vault —</option>${masters}${opts}</select>`;
-  } else if (fam === 'infinity') {
-    const groups = {};
-    for (const v of INFINITY_VAULT_LIST) (groups[v.entry] ||= []).push(v);
-    control = `<select id="f-vault"><option value="">— No vault —</option>${Object.entries(groups)
-      .map(([g, list]) => `<optgroup label="${esc(g)}">${list.map((v) => `<option value="${esc(v.name)}"${v.name === e.vault ? ' selected' : ''}>${esc(v.name)} (${fmt(v.dv)})</option>`).join('')}</optgroup>`)
-      .join('')}</select>`;
-  } else if (fam === 'xcel') {
-    const opt = (v) => `<option value="${esc(v.id)}"${v.id === e.vault ? ' selected' : ''}>${esc(v.label)} — ${fmt(v.sv)}</option>`;
-    const list = xcelVaults(e.level);
-    const l910 = list.filter((v) => v.l910);
-    control = `<select id="f-vault"><option value="">— No vault —</option>${
-      l910.length
-        ? `<optgroup label="Xcel Sapphire vault chart">${list.filter((v) => !v.l910).map(opt).join('')}</optgroup><optgroup label="USAG Level 9/10 vaults (10.0 at UCG Sapphire)">${l910.map(opt).join('')}</optgroup>`
-        : list.map(opt).join('')
-    }</select>`;
-  } else if (fam === 'wagMasters') {
-    const opt = (v) => `<option value="${esc(v.id)}"${v.id === e.vault ? ' selected' : ''}>${esc(v.src === 'WG' ? `${v.id} · ` : '')}${esc(v.name)}${v.eponym ? ` (${esc(v.eponym)})` : ''} — ${fmt(v.value)}</option>`;
-    const groups = {};
-    for (const v of WAG_WG_VAULTS) (groups[v.eg] ||= []).push(v);
-    control = `<select id="f-vault"><option value="">— No vault —</option>${opt(WAG_OTHER_VAULT)}
-      <optgroup label="UCG Masters vaults">${WAG_MASTERS_VAULTS.map(opt).join('')}</optgroup>
-      ${Object.entries(groups).map(([g, list]) => `<optgroup label="WG vault group ${esc(g)}">${list.map(opt).join('')}</optgroup>`).join('')}</select>`;
-  }
+  // Searched like the skills: type any words of the vault's name or number.
+  const control = `
+    <span class="skill-combo vault-combo">
+      <input class="skill-input" id="f-vault" data-vault type="text" placeholder="Search vaults or pick from the list" aria-label="Vault"
+        role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="skill-pop" autocomplete="off" value="${esc(vaultName(e))}" />
+      <button type="button" class="combo-toggle" data-combo tabindex="-1" aria-label="Show the vault list">${ICON_CHEVRON}</button>
+    </span>`;
   // After copying from another level: how the vault was carried over.
   const flag = {
     approx: "Copied from another level: the closest match in this level's vault list. Check it's the vault performed.",
@@ -744,7 +752,7 @@ function vaultBody(e, ev) {
   return `
     ${flag ? `<p class="vault-flag" role="note">${esc(flag)}</p>` : ''}
     <div class="vault-body">
-      <label class="field grow"><span>Select your vault</span>${control}</label>
+      <div class="field grow"><label for="f-vault">Select your vault</label>${control}</div>
       <dl class="vault-info" id="vault-info"></dl>
     </div>
     ${fam === 'xcel' && e.level === 'gold' ? optionControl(e, 'vt', { id: 'altBoard', kind: 'check', label: 'Alternative springboard (mini-trampoline)', help: '9.5 start value if used' }) : ''}
@@ -824,7 +832,8 @@ function bindEditor(a, e) {
     if (e.disc !== 'tt' && src.level !== e.level) {
       button.disabled = true;
       try {
-        const [{ revalueEntry }, { CATALOG }] = await Promise.all([import('./revalue.js'), import(`./data/catalog-${e.disc}.js`)]);
+        // The skill list must be there to look skills up (it is when the level is shown; be sure).
+        const [{ revalueEntry }, { CATALOG }] = await Promise.all([import('./revalue.js'), import(`./data/catalog-${e.disc}.js`), loadDiscipline(e.disc)]);
         revalueEntry(e, src.level, CATALOG, src.vault);
       } catch (err) {
         console.error(err);
@@ -856,7 +865,10 @@ function bindEditor(a, e) {
   ed.onkeydown = onKey;
   ed.onpointerdown = onPointerDown;
   ed.onmousedown = (ev) => ev.target.closest('[data-combo]') && ev.preventDefault();
-  ed.onfocusout = (ev) => ev.target === picker.input && closePicker();
+  ed.onfocusout = (ev) => {
+    if (ev.target === picker.input) closePicker();
+    if (ev.target.dataset?.vault != null) ev.target.value = vaultName(entry()); // typed but not picked
+  };
   $$('[data-export]').forEach((b) => (b.onclick = () => runExport(b, [b.dataset.export])));
 }
 
@@ -879,6 +891,9 @@ function onInput(ev) {
     set[i] = t.checked === auto ? null : t.checked;
     opts.srSet = set;
     if (opts.sr?.[i]) opts.sr = opts.sr.map((v, k) => (k === i ? false : v)); // a tick saved before detection
+  } else if (t.dataset.vault != null) {
+    openPicker(t, t.value); // the vault changes when one is picked
+    return;
   } else if (t.dataset.partner) {
     ((e.options ||= {})[t.dataset.partner] ||= {}).partner = t.value;
   } else if (t.dataset.ev && t.dataset.field) {
@@ -930,15 +945,7 @@ function onChange(ev) {
     const listed = row?.skillId && findSkill(row.skillId);
     if (listed && Number(listed.dd) !== Number(row.dd)) return clearListedSkill(t, row);
   }
-  if (t.id === 'f-vault') {
-    e.vault = t.value;
-    if (e.vaultFlag) {
-      delete e.vaultFlag;
-      $('.vault-flag')?.remove();
-    }
-    updateComputed();
-    scheduleSave();
-  } else if (t.dataset.start) {
+  if (t.dataset.start) {
     e.passes.dmt[Number(t.dataset.start)].start = t.value;
     updateComputed();
     scheduleSave();
@@ -1284,6 +1291,20 @@ function openPicker(input, query) {
     picker.input = input;
     makeRoom();
   }
+  if (input.dataset.vault != null) {
+    picker.vault = true;
+    picker.filter = null;
+    const all = [{ id: '', name: '— No vault —', meta: '' }, ...vaultChoices(e)];
+    picker.items = query ? all.filter((v) => v.id && matchesQuery(query, vaultSearchText(v.name))) : all;
+    picker.active = query && picker.items.length ? 0 : -1;
+    input.setAttribute('aria-expanded', 'true');
+    renderPicker(query);
+    el.hidden = false;
+    el.scrollTop = 0;
+    placePicker();
+    return;
+  }
+  picker.vault = false;
   const fam = levelInfo(e.disc, e.level).family;
   const all = searchSkills(e.disc, searchApp(e, input.dataset.ev), query).filter(
     (s) => (e.disc !== 'wag' || wagSkillAllowed(fam, e.level, s)) && (e.disc !== 'mag' || magSkillAllowed(e.level, s))
@@ -1318,8 +1339,20 @@ function closePicker() {
 
 function renderPicker(query) {
   const e = entry();
-  const spec = eventSpec(e, picker.input.dataset.ev);
   const html = [];
+  if (picker.vault) {
+    let last;
+    picker.items.forEach((v, i) => {
+      if (!query && v.head && v.head !== last) html.push(`<div class="pop-head" role="presentation">${esc((last = v.head))}</div>`);
+      html.push(`<div class="pop-opt${i === picker.active ? ' active' : ''}" role="option" id="pop-opt-${i}" data-skill="${i}" aria-selected="${i === picker.active}">
+        <span class="pop-name">${esc(v.name)}</span><span class="pop-meta">${esc(v.meta)}</span></div>`);
+    });
+    if (!picker.items.length) html.push(`<div class="pop-empty">No vaults at this level match. Try other words, or open the list.</div>`);
+    picker.el.innerHTML = html.join('');
+    setActive(picker.active);
+    return;
+  }
+  const spec = eventSpec(e, picker.input.dataset.ev);
   if (picker.notice) html.push(`<div class="pop-notice" role="status">${esc(picker.notice)}</div>`);
   if (picker.filter) {
     html.push(`<div class="pop-filter" role="presentation"><span>Only ${esc(picker.filter.label)} skills${picker.hidden ? ` (${picker.hidden} hidden)` : ''}</span><button type="button" class="pop-filter-btn" data-show-all>Show all</button></div>`);
@@ -1401,6 +1434,18 @@ function pickSkill(i) {
   const input = picker.input;
   if (!s || !input) return;
   const e = entry();
+  if (picker.vault) {
+    e.vault = s.id;
+    if (e.vaultFlag) {
+      delete e.vaultFlag;
+      $('.vault-flag')?.remove();
+    }
+    input.value = vaultName(e);
+    closePicker();
+    updateComputed();
+    scheduleSave();
+    return;
+  }
   const evId = input.dataset.ev;
   const pass = input.dataset.pass;
   const row = rowsOf(e, evId, pass)[Number(input.dataset.idx)];
@@ -1548,7 +1593,8 @@ function updateComputed() {
       if (!row || !el) continue;
       // Met by a skill in the routine (rings swing to handstand, floor double flips):
       // tick it and say which skill.
-      const met = o.detect ? r.detected?.[o.id] : null;
+      const met = o.detect || o.connect ? r.detected?.[o.id] : null;
+      if (o.connect) $('[data-help]', row).textContent = met ? `Earned by ${met}.` : o.help;
       if (o.detect) {
         const box = $(`[data-opt="${o.id}"]`, row);
         box.checked = !!met || !!e.options?.[ev.id]?.[o.id];

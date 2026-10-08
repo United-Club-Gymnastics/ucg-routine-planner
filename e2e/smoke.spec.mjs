@@ -21,6 +21,12 @@ test('local mode: add an athlete and a level, pick a skill, export a PDF', async
   await page.locator('#skill-pop .pop-opt').first().click();
   await expect(skill).toHaveValue(/walkover/i);
   await expect(page.locator('[data-routine="bb"] [data-calc="src"]').first()).toHaveText(/7\.104/);
+  // Vaults are searched like skills.
+  await page.getByRole('tab', { name: /Vault/ }).click();
+  await page.locator('#f-vault').fill('handspring full');
+  await page.locator('#skill-pop .pop-opt').first().click();
+  await expect(page.locator('#f-vault')).toHaveValue(/1\.201 · Handspring 1\/1 twist/);
+  await expect(page.locator('[data-sv="vt"]')).toHaveText('10.0');
   const download = page.waitForEvent('download');
   await page.locator('#export-all').click();
   expect((await download).suggestedFilename()).toMatch(/\.pdf$/);

@@ -173,7 +173,7 @@ export function revalueVault(entry, fromLevel, fromVault, catalog) {
     entry.vaultFlag = 'other';
     return 'other';
   }
-  if (entry.level === 'sapphire' && els.some((el) => catalog.vaults[el].some((x) => x.c === 'USAG-DP-2026'))) {
+  if (entry.level === 'sapphire' && all.some((el) => catalog.vaults[el].some((x) => x.c === 'USAG-DP-2026'))) {
     entry.vault = 'l9l10';
     return 'exact';
   }

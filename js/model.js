@@ -92,6 +92,8 @@ export function eventSpec(entry, evId) {
     spec.legend = Object.entries(mag.APPARATUS[evId].groups).map(([k, v]) => ({ key: Number(k), roman: ROMAN[k], label: v }));
     spec.options = mag.eventOptions(evId, level);
     spec.maxCounting = mag.LEVELS[level].maxSkills;
+    // Floor and high bar: linked skills earn the connection bonuses.
+    spec.links = spec.options.some((o) => o.connect);
   } else if (fam === 'infinity') {
     const g = wag.INFINITY_GROUPS[evId];
     spec.letters = Object.keys(wag.INFINITY_VALUES);

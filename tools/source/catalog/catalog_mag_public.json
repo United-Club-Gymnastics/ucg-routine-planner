@@ -1,7 +1,7 @@
 {
  "discipline": "MAG",
- "version": "5fcada1c5172",
- "built": "2026-10-06",
+ "version": "3d4e9c2963e2",
+ "built": "2026-10-08",
  "elements": [
   {
    "id": "MAG-FX-0001",
@@ -1310,7 +1310,10 @@
    "discipline": "MAG",
    "apparatus": "FX",
    "short_name": "Double back tuck with triple twist",
-   "aka": [],
+   "aka": [
+    "Ri Jongsong",
+    "Ri Jong-song"
+   ],
    "eponym": "Ri Jong Song",
    "codes": {
     "WG-MAG-2025": [
@@ -1321,7 +1324,11 @@
       "variant": 1,
       "value": "G=0.7",
       "element_group": "III",
-      "eponym": "Ri Jong Song"
+      "eponym": "Ri Jong Song",
+      "aka": [
+       "Ri Jongsong",
+       "Ri Jong-song"
+      ]
      }
     ]
    }
@@ -2692,7 +2699,10 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Back uprise full turn to handstand",
-   "aka": [],
+   "aka": [
+    "Back uprise full pirouette",
+    "Back uprise full turn"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -2703,7 +2713,11 @@
       "variant": 1,
       "value": "B=0.2",
       "element_group": "I",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Back uprise full pirouette",
+       "Back uprise full turn"
+      ]
      }
     ]
    }
@@ -2713,7 +2727,10 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Back uprise ½ turn to handstand",
-   "aka": [],
+   "aka": [
+    "Back uprise half pirouette",
+    "Back uprise half turn"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -2724,7 +2741,11 @@
       "variant": 1,
       "value": "A=0.1",
       "element_group": "I",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Back uprise half pirouette",
+       "Back uprise half turn"
+      ]
      }
     ]
    }
@@ -2797,7 +2818,10 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Full pirouette through handstand, mixed grip",
-   "aka": [],
+   "aka": [
+    "Full pirouette",
+    "Full turn"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -2808,7 +2832,11 @@
       "variant": 1,
       "value": "B=0.2",
       "element_group": "I",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Full pirouette",
+       "Full turn"
+      ]
      }
     ]
    }
@@ -2818,7 +2846,9 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Full pirouette through handstand, double eagle grip",
-   "aka": [],
+   "aka": [
+    "Full pirouette to double eagle grip"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -2829,7 +2859,10 @@
       "variant": 1,
       "value": "C=0.3",
       "element_group": "I",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Full pirouette to double eagle grip"
+      ]
      }
     ]
    }
@@ -2839,7 +2872,11 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "½ turn through handstand",
-   "aka": [],
+   "aka": [
+    "Half pirouette",
+    "Pirouette",
+    "Half turn"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -2850,7 +2887,12 @@
       "variant": 1,
       "value": "A=0.1",
       "element_group": "I",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Half pirouette",
+       "Pirouette",
+       "Half turn"
+      ]
      }
     ]
    }
@@ -2923,7 +2965,9 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "One-arm front giant with two full pirouettes",
-   "aka": [],
+   "aka": [
+    "Zou Limin"
+   ],
    "eponym": "Zou Li Min",
    "codes": {
     "WG-MAG-2025": [
@@ -2934,7 +2978,10 @@
       "variant": 1,
       "value": "C=0.3",
       "element_group": "I",
-      "eponym": "Zou Li Min"
+      "eponym": "Zou Li Min",
+      "aka": [
+       "Zou Limin"
+      ]
      }
     ]
    }
@@ -2986,7 +3033,11 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Backward ½ turn through handstand",
-   "aka": [],
+   "aka": [
+    "Blind change",
+    "Blind",
+    "Blind half"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -2997,7 +3048,12 @@
       "variant": 1,
       "value": "A=0.1",
       "element_group": "I",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Blind change",
+       "Blind",
+       "Blind half"
+      ]
      }
     ]
    }
@@ -3070,7 +3126,10 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Back giant, ½-turn hop to eagle grip",
-   "aka": [],
+   "aka": [
+    "Hop half pirouette to eagle grip",
+    "Hop half to eagle"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -3081,7 +3140,11 @@
       "variant": 1,
       "value": "B=0.2",
       "element_group": "I",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Hop half pirouette to eagle grip",
+       "Hop half to eagle"
+      ]
      }
     ]
    }
@@ -3091,7 +3154,9 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Back giant 1½-turn hop, undergrip or mixed-eagle",
-   "aka": [],
+   "aka": [
+    "Hop 1½ pirouette"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -3102,7 +3167,10 @@
       "variant": 1,
       "value": "C=0.3",
       "element_group": "I",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Hop 1½ pirouette"
+      ]
      }
     ]
    }
@@ -3133,7 +3201,10 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Backward ½ turn through handstand to eagle grip",
-   "aka": [],
+   "aka": [
+    "Blind change to eagle grip",
+    "Blind to eagle"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -3144,7 +3215,11 @@
       "variant": 1,
       "value": "B=0.2",
       "element_group": "I",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Blind change to eagle grip",
+       "Blind to eagle"
+      ]
      }
     ]
    }
@@ -3259,7 +3334,9 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Eagle giant, full pirouette, mixed grip",
-   "aka": [],
+   "aka": [
+    "Eagle full pirouette"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -3270,7 +3347,10 @@
       "variant": 1,
       "value": "C=0.3",
       "element_group": "I",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Eagle full pirouette"
+      ]
      }
     ]
    }
@@ -3616,7 +3696,9 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Front salto release, tucked or straddled",
-   "aka": [],
+   "aka": [
+    "Jaeger"
+   ],
    "eponym": "Jäger",
    "codes": {
     "WG-MAG-2025": [
@@ -3627,7 +3709,10 @@
       "variant": 1,
       "value": "C=0.3",
       "element_group": "II",
-      "eponym": "Jäger"
+      "eponym": "Jäger",
+      "aka": [
+       "Jaeger"
+      ]
      }
     ]
    }
@@ -3742,7 +3827,9 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Straddled counter front salto release",
-   "aka": [],
+   "aka": [
+    "Xiao Rui Zhi"
+   ],
    "eponym": "Xiao Ruizhi",
    "codes": {
     "WG-MAG-2025": [
@@ -3753,7 +3840,10 @@
       "variant": 1,
       "value": "D=0.4",
       "element_group": "II",
-      "eponym": "Xiao Ruizhi"
+      "eponym": "Xiao Ruizhi",
+      "aka": [
+       "Xiao Rui Zhi"
+      ]
      }
     ]
    }
@@ -4273,7 +4363,9 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Back free circle hop 1½ turns, mixed el-grip",
-   "aka": [],
+   "aka": [
+    "Stalder hop 1½ pirouette"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -4284,7 +4376,10 @@
       "variant": 1,
       "value": "D=0.4",
       "element_group": "III",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Stalder hop 1½ pirouette"
+      ]
      }
     ]
    }
@@ -4294,7 +4389,9 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Back free circle hop 1½ turns to el-grip",
-   "aka": [],
+   "aka": [
+    "Stalder hop 1½ pirouette"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -4305,7 +4402,10 @@
       "variant": 1,
       "value": "E=0.5",
       "element_group": "III",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Stalder hop 1½ pirouette"
+      ]
      }
     ]
    }
@@ -4399,7 +4499,10 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Forward stoop circle with ½ turn to overgrip",
-   "aka": [],
+   "aka": [
+    "Adler half",
+    "Adler half pirouette"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -4410,7 +4513,11 @@
       "variant": 1,
       "value": "D=0.4",
       "element_group": "III",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Adler half",
+       "Adler half pirouette"
+      ]
      }
     ]
    }
@@ -4420,7 +4527,10 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Forward stoop circle full turn to undergrip",
-   "aka": [],
+   "aka": [
+    "Adler full",
+    "Adler full pirouette"
+   ],
    "eponym": "Fuentes",
    "codes": {
     "WG-MAG-2025": [
@@ -4431,7 +4541,11 @@
       "variant": 1,
       "value": "E=0.5",
       "element_group": "III",
-      "eponym": "Fuentes"
+      "eponym": "Fuentes",
+      "aka": [
+       "Adler full",
+       "Adler full pirouette"
+      ]
      }
     ]
    }
@@ -4462,7 +4576,10 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Forward stoop circle full turn to mixed grip",
-   "aka": [],
+   "aka": [
+    "Adler full",
+    "Adler full pirouette"
+   ],
    "eponym": "Baldauf",
    "codes": {
     "WG-MAG-2025": [
@@ -4473,7 +4590,11 @@
       "variant": 1,
       "value": "D=0.4",
       "element_group": "III",
-      "eponym": "Baldauf"
+      "eponym": "Baldauf",
+      "aka": [
+       "Adler full",
+       "Adler full pirouette"
+      ]
      }
     ]
    }
@@ -4546,7 +4667,9 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Rear hang uprise with stoop or to handstand",
-   "aka": [],
+   "aka": [
+    "Koeste"
+   ],
    "eponym": "Köste",
    "codes": {
     "WG-MAG-2025": [
@@ -4557,7 +4680,10 @@
       "variant": 1,
       "value": "C=0.3",
       "element_group": "III",
-      "eponym": "Köste"
+      "eponym": "Köste",
+      "aka": [
+       "Koeste"
+      ]
      }
     ]
    }
@@ -4882,7 +5008,9 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Layout double front dismount",
-   "aka": [],
+   "aka": [
+    "Röthlisberger"
+   ],
    "eponym": "Roethlisberger 2",
    "codes": {
     "WG-MAG-2025": [
@@ -4893,7 +5021,10 @@
       "variant": 1,
       "value": "D=0.4",
       "element_group": "IV",
-      "eponym": "Roethlisberger 2"
+      "eponym": "Roethlisberger 2",
+      "aka": [
+       "Röthlisberger"
+      ]
      }
     ]
    }
@@ -4945,7 +5076,9 @@
    "discipline": "MAG",
    "apparatus": "HB",
    "short_name": "Double front over bar, full or 1½ twists",
-   "aka": [],
+   "aka": [
+    "Röthlisberger"
+   ],
    "eponym": "Roethlisberger 1",
    "codes": {
     "WG-MAG-2025": [
@@ -4956,7 +5089,10 @@
       "variant": 1,
       "value": "D=0.4",
       "element_group": "IV",
-      "eponym": "Roethlisberger 1"
+      "eponym": "Roethlisberger 1",
+      "aka": [
+       "Röthlisberger"
+      ]
      }
     ]
    }
@@ -6714,7 +6850,9 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "Front uprise ¾+¾ pirouettes to upper arms",
-   "aka": [],
+   "aka": [
+    "Front uprise Makuts to upper arms"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -6725,7 +6863,10 @@
       "variant": 1,
       "value": "E=0.5",
       "element_group": "I",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Front uprise Makuts to upper arms"
+      ]
      }
     ]
    }
@@ -6735,7 +6876,9 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "Front uprise ¾+¾ pirouettes to support",
-   "aka": [],
+   "aka": [
+    "Front uprise Makuts to support"
+   ],
    "eponym": "Tsolakidis 1",
    "codes": {
     "WG-MAG-2025": [
@@ -6746,7 +6889,10 @@
       "variant": 1,
       "value": "G=0.7",
       "element_group": "I",
-      "eponym": "Tsolakidis 1"
+      "eponym": "Tsolakidis 1",
+      "aka": [
+       "Front uprise Makuts to support"
+      ]
      }
     ]
    }
@@ -7365,7 +7511,9 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "¾ one-arm pirouette, half turn, upper arms",
-   "aka": [],
+   "aka": [
+    "¾ Diamidov"
+   ],
    "eponym": "Salazar",
    "codes": {
     "WG-MAG-2025": [
@@ -7376,7 +7524,10 @@
       "variant": 1,
       "value": "C=0.3",
       "element_group": "II",
-      "eponym": "Salazar"
+      "eponym": "Salazar",
+      "aka": [
+       "¾ Diamidov"
+      ]
      }
     ]
    }
@@ -7386,7 +7537,9 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "¾ one-arm pirouette, rear vault, one-bar hang",
-   "aka": [],
+   "aka": [
+    "¾ Diamidov"
+   ],
    "eponym": "De Freitas",
    "codes": {
     "WG-MAG-2025": [
@@ -7397,7 +7550,10 @@
       "variant": 1,
       "value": "D=0.4",
       "element_group": "II",
-      "eponym": "De Freitas"
+      "eponym": "De Freitas",
+      "aka": [
+       "¾ Diamidov"
+      ]
      }
     ]
    }
@@ -7512,7 +7668,9 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "One-arm full pirouette plus ¼ or ½ turn",
-   "aka": [],
+   "aka": [
+    "Diamidov with ¼ or ½ turn"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -7523,7 +7681,10 @@
       "variant": 1,
       "value": "D=0.4",
       "element_group": "II",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Diamidov with ¼ or ½ turn"
+      ]
      }
     ]
    }
@@ -7554,7 +7715,9 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "1¼ one-arm pirouette, swing-down pirouette, upper arms",
-   "aka": [],
+   "aka": [
+    "1¼ Diamidov and Healy to upper arms"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -7565,7 +7728,10 @@
       "variant": 1,
       "value": "D=0.4",
       "element_group": "II",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "1¼ Diamidov and Healy to upper arms"
+      ]
      }
     ]
    }
@@ -7575,7 +7741,9 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "¾ one-arm pirouette, ¾ swing-down pirouette, support",
-   "aka": [],
+   "aka": [
+    "¾ Diamidov and ¾ Healy"
+   ],
    "eponym": "Makuts",
    "codes": {
     "WG-MAG-2025": [
@@ -7586,7 +7754,10 @@
       "variant": 1,
       "value": "E=0.5",
       "element_group": "II",
-      "eponym": "Makuts"
+      "eponym": "Makuts",
+      "aka": [
+       "¾ Diamidov and ¾ Healy"
+      ]
      }
     ]
    }
@@ -7596,7 +7767,9 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "1¼ one-arm pirouette, swing-down pirouette, support",
-   "aka": [],
+   "aka": [
+    "1¼ Diamidov and Healy to support"
+   ],
    "eponym": "Zonderland",
    "codes": {
     "WG-MAG-2025": [
@@ -7607,7 +7780,10 @@
       "variant": 1,
       "value": "F=0.6",
       "element_group": "II",
-      "eponym": "Zonderland"
+      "eponym": "Zonderland",
+      "aka": [
+       "1¼ Diamidov and Healy to support"
+      ]
      }
     ]
    }
@@ -7743,7 +7919,9 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "Double salto piked to upper arms",
-   "aka": [],
+   "aka": [
+    "Huang Li Ping"
+   ],
    "eponym": "Huang Liping",
    "codes": {
     "WG-MAG-2025": [
@@ -7754,7 +7932,10 @@
       "variant": 1,
       "value": "F=0.6",
       "element_group": "II",
-      "eponym": "Huang Liping"
+      "eponym": "Huang Liping",
+      "aka": [
+       "Huang Li Ping"
+      ]
      }
     ]
    }
@@ -7827,7 +8008,9 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "Handstand ¾ turn, ¼-turn drop to support",
-   "aka": [],
+   "aka": [
+    "Brandstrom"
+   ],
    "eponym": "Brändström",
    "codes": {
     "WG-MAG-2025": [
@@ -7838,7 +8021,10 @@
       "variant": 1,
       "value": "C=0.3",
       "element_group": "II",
-      "eponym": "Brändström"
+      "eponym": "Brändström",
+      "aka": [
+       "Brandstrom"
+      ]
      }
     ]
    }
@@ -7911,7 +8097,10 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "Swing-down pirouette to upper arms",
-   "aka": [],
+   "aka": [
+    "Healy",
+    "Healy to upper arms"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -7922,7 +8111,11 @@
       "variant": 1,
       "value": "A=0.1",
       "element_group": "II",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Healy",
+       "Healy to upper arms"
+      ]
      }
     ]
    }
@@ -7932,7 +8125,10 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "One-rail handstand entry, swing-down pirouette, upper arms",
-   "aka": [],
+   "aka": [
+    "Healy",
+    "Healy to upper arms"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -7943,7 +8139,11 @@
       "variant": 1,
       "value": "B=0.2",
       "element_group": "II",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Healy",
+       "Healy to upper arms"
+      ]
      }
     ]
    }
@@ -7953,7 +8153,10 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "Swing-down pirouette to support",
-   "aka": [],
+   "aka": [
+    "Healy",
+    "Healy to support"
+   ],
    "eponym": "Healy",
    "codes": {
     "WG-MAG-2025": [
@@ -7964,7 +8167,11 @@
       "variant": 1,
       "value": "C=0.3",
       "element_group": "II",
-      "eponym": "Healy"
+      "eponym": "Healy",
+      "aka": [
+       "Healy",
+       "Healy to support"
+      ]
      }
     ]
    }
@@ -7974,7 +8181,10 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "One-rail handstand entry, 360° swing-down pirouette, support",
-   "aka": [],
+   "aka": [
+    "Healy",
+    "Full Healy to support"
+   ],
    "eponym": "Bejenaru",
    "codes": {
     "WG-MAG-2025": [
@@ -7985,7 +8195,11 @@
       "variant": 1,
       "value": "D=0.4",
       "element_group": "II",
-      "eponym": "Bejenaru"
+      "eponym": "Bejenaru",
+      "aka": [
+       "Healy",
+       "Full Healy to support"
+      ]
      }
     ]
    }
@@ -8079,7 +8293,9 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "One-rail handstand ½ or ¾ pirouette",
-   "aka": [],
+   "aka": [
+    "One-rail pirouette"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -8090,7 +8306,10 @@
       "variant": 1,
       "value": "B=0.2",
       "element_group": "II",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "One-rail pirouette"
+      ]
      }
     ]
    }
@@ -8100,7 +8319,10 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "Handstand ½ pirouette",
-   "aka": [],
+   "aka": [
+    "Half pirouette",
+    "Pirouette"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -8111,7 +8333,11 @@
       "variant": 1,
       "value": "A=0.1",
       "element_group": "II",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Half pirouette",
+       "Pirouette"
+      ]
      }
     ]
    }
@@ -8121,7 +8347,9 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "Two-rail handstand full pirouette",
-   "aka": [],
+   "aka": [
+    "Full pirouette"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -8132,7 +8360,10 @@
       "variant": 1,
       "value": "B=0.2",
       "element_group": "II",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Full pirouette"
+      ]
      }
     ]
    }
@@ -8163,7 +8394,10 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "1¼ front straddle to hang",
-   "aka": [],
+   "aka": [
+    "Lee Chulhon",
+    "Lee Chul-hon"
+   ],
    "eponym": "Lee Chul Hon/Sasaki",
    "codes": {
     "WG-MAG-2025": [
@@ -8174,7 +8408,11 @@
       "variant": 1,
       "value": "E=0.5",
       "element_group": "II",
-      "eponym": "Lee Chul Hon/Sasaki"
+      "eponym": "Lee Chul Hon/Sasaki",
+      "aka": [
+       "Lee Chulhon",
+       "Lee Chul-hon"
+      ]
      }
     ]
    }
@@ -8583,7 +8821,10 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "Back giant with one-arm full pirouette",
-   "aka": [],
+   "aka": [
+    "Giant Diamidov",
+    "Back giant Diamidov"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -8594,7 +8835,11 @@
       "variant": 1,
       "value": "E=0.5",
       "element_group": "III",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Giant Diamidov",
+       "Back giant Diamidov"
+      ]
      }
     ]
    }
@@ -8604,7 +8849,9 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "Back giant, one-arm pirouette with extra ¼/½ turn",
-   "aka": [],
+   "aka": [
+    "Giant Diamidov with ¼ or ½ turn"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -8615,7 +8862,10 @@
       "variant": 1,
       "value": "F=0.6",
       "element_group": "III",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Giant Diamidov with ¼ or ½ turn"
+      ]
      }
     ]
    }
@@ -8688,7 +8938,9 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "Back giant one-arm pirouette to one-rail handstand",
-   "aka": [],
+   "aka": [
+    "Giant Diamidov to one rail"
+   ],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
@@ -8699,7 +8951,10 @@
       "variant": 1,
       "value": "F=0.6",
       "element_group": "III",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Giant Diamidov to one rail"
+      ]
      }
     ]
    }
@@ -9192,7 +9447,9 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "Glide kip, V-sit, ½-turn hop to other rail",
-   "aka": [],
+   "aka": [
+    "Li Dong Hua"
+   ],
    "eponym": "Li Donghua",
    "codes": {
     "WG-MAG-2025": [
@@ -9203,7 +9460,10 @@
       "variant": 1,
       "value": "B=0.2",
       "element_group": "III",
-      "eponym": "Li Donghua"
+      "eponym": "Li Donghua",
+      "aka": [
+       "Li Dong Hua"
+      ]
      }
     ]
    }
@@ -9398,6 +9658,7 @@
    "apparatus": "PB",
    "short_name": "Peach full turn to handstand",
    "aka": [
+    "Teng Haibin",
     "Peach basket full turn to handstand",
     "Basket full turn to handstand",
     "Felge full turn to handstand"
@@ -9412,7 +9673,10 @@
       "variant": 1,
       "value": "F=0.6",
       "element_group": "III",
-      "eponym": "Teng Hai Bin"
+      "eponym": "Teng Hai Bin",
+      "aka": [
+       "Teng Haibin"
+      ]
      }
     ]
    }
@@ -9444,6 +9708,7 @@
    "apparatus": "PB",
    "short_name": "Peach 1¼ turn to handstand",
    "aka": [
+    "Zhou Shi Xiong",
     "Peach basket 1¼ turn to handstand",
     "Basket 1¼ turn to handstand",
     "Felge 1¼ turn to handstand"
@@ -9458,7 +9723,10 @@
       "variant": 1,
       "value": "G=0.7",
       "element_group": "III",
-      "eponym": "Zhou Shixiong"
+      "eponym": "Zhou Shixiong",
+      "aka": [
+       "Zhou Shi Xiong"
+      ]
      }
     ]
    }
@@ -10081,7 +10349,9 @@
    "discipline": "MAG",
    "apparatus": "PB",
    "short_name": "High wende into back salto tuck or pike",
-   "aka": [],
+   "aka": [
+    "Röthlisberger"
+   ],
    "eponym": "Roethlisberger",
    "codes": {
     "WG-MAG-2025": [
@@ -10092,7 +10362,10 @@
       "variant": 1,
       "value": "D=0.4",
       "element_group": "IV",
-      "eponym": "Roethlisberger"
+      "eponym": "Roethlisberger",
+      "aka": [
+       "Röthlisberger"
+      ]
      }
     ]
    }
@@ -13556,7 +13829,9 @@
    "discipline": "MAG",
    "apparatus": "PH",
    "short_name": "Russian travel 720°+ with hands between pommels",
-   "aka": [],
+   "aka": [
+    "Wu Guo Nian"
+   ],
    "eponym": "Wu Guonian",
    "codes": {
     "WG-MAG-2025": [
@@ -13567,7 +13842,10 @@
       "variant": 1,
       "value": "E=0.5",
       "element_group": "III",
-      "eponym": "Wu Guonian"
+      "eponym": "Wu Guonian",
+      "aka": [
+       "Wu Guo Nian"
+      ]
      }
     ]
    }
@@ -16003,7 +16281,10 @@
    "discipline": "MAG",
    "apparatus": "SR",
    "short_name": "Back lever pull-up to any cross",
-   "aka": [],
+   "aka": [
+    "Ng Kiuchung",
+    "Ng Kiu-chung"
+   ],
    "eponym": "Nakayama/NG Kiu Chung",
    "codes": {
     "WG-MAG-2025": [
@@ -16014,7 +16295,11 @@
       "variant": 1,
       "value": "D=0.4",
       "element_group": "II",
-      "eponym": "Nakayama/NG Kiu Chung"
+      "eponym": "Nakayama/NG Kiu Chung",
+      "aka": [
+       "Ng Kiuchung",
+       "Ng Kiu-chung"
+      ]
      }
     ]
    }
@@ -16066,7 +16351,9 @@
    "discipline": "MAG",
    "apparatus": "SR",
    "short_name": "Slow lower to hang, straight-arm pull to cross",
-   "aka": [],
+   "aka": [
+    "Li Xiao Shuang"
+   ],
    "eponym": "Li Xiaoshuang",
    "codes": {
     "WG-MAG-2025": [
@@ -16077,7 +16364,10 @@
       "variant": 1,
       "value": "C=0.3",
       "element_group": "II",
-      "eponym": "Li Xiaoshuang"
+      "eponym": "Li Xiaoshuang",
+      "aka": [
+       "Li Xiao Shuang"
+      ]
      }
     ]
    }
@@ -16381,7 +16671,9 @@
    "discipline": "MAG",
    "apparatus": "SR",
    "short_name": "Inverted cross, back felge to iron cross",
-   "aka": [],
+   "aka": [
+    "Vorobev"
+   ],
    "eponym": "Vorobiov/Zou",
    "codes": {
     "WG-MAG-2025": [
@@ -16392,7 +16684,10 @@
       "variant": 1,
       "value": "D=0.4",
       "element_group": "II",
-      "eponym": "Vorobiov/Zou"
+      "eponym": "Vorobiov/Zou",
+      "aka": [
+       "Vorobev"
+      ]
      }
     ]
    }
@@ -16486,7 +16781,10 @@
    "discipline": "MAG",
    "apparatus": "SR",
    "short_name": "Slow forward roll via cross to planche",
-   "aka": [],
+   "aka": [
+    "Ng Kiuchung 2",
+    "Ng Kiu-chung 2"
+   ],
    "eponym": "Ng Kiu Chung 2",
    "codes": {
     "WG-MAG-2025": [
@@ -16497,7 +16795,11 @@
       "variant": 1,
       "value": "D=0.4",
       "element_group": "II",
-      "eponym": "Ng Kiu Chung 2"
+      "eponym": "Ng Kiu Chung 2",
+      "aka": [
+       "Ng Kiuchung 2",
+       "Ng Kiu-chung 2"
+      ]
      }
     ]
    }
@@ -18896,7 +19198,10 @@
    "discipline": "MAG",
    "apparatus": "VT",
    "short_name": "Handspring front layout triple twist",
-   "aka": [],
+   "aka": [
+    "Yang Hakseon",
+    "Yang Hak-seon"
+   ],
    "eponym": "Yang Hak Seon",
    "codes": {
     "WG-MAG-2025": [
@@ -18907,7 +19212,11 @@
       "variant": 1,
       "value": "5.6",
       "element_group": "I",
-      "eponym": "Yang Hak Seon"
+      "eponym": "Yang Hak Seon",
+      "aka": [
+       "Yang Hakseon",
+       "Yang Hak-seon"
+      ]
      }
     ]
    }
@@ -19400,7 +19709,10 @@
    "discipline": "MAG",
    "apparatus": "VT",
    "short_name": "Handspring double front pike ½ twist",
-   "aka": [],
+   "aka": [
+    "Ri Segwang 2",
+    "Ri Se-gwang 2"
+   ],
    "eponym": "RI Se Gwang 2",
    "codes": {
     "WG-MAG-2025": [
@@ -19411,7 +19723,11 @@
       "variant": 1,
       "value": "5.6",
       "element_group": "II",
-      "eponym": "RI Se Gwang 2"
+      "eponym": "RI Se Gwang 2",
+      "aka": [
+       "Ri Segwang 2",
+       "Ri Se-gwang 2"
+      ]
      }
     ]
    }
@@ -19610,7 +19926,9 @@
    "discipline": "MAG",
    "apparatus": "VT",
    "short_name": "Double Tsukahara pike",
-   "aka": [],
+   "aka": [
+    "Lu Yufu"
+   ],
    "eponym": "Lu Yu Fu",
    "codes": {
     "WG-MAG-2025": [
@@ -19621,7 +19939,10 @@
       "variant": 1,
       "value": "5.2",
       "element_group": "III",
-      "eponym": "Lu Yu Fu"
+      "eponym": "Lu Yu Fu",
+      "aka": [
+       "Lu Yufu"
+      ]
      }
     ]
    }
@@ -19631,7 +19952,10 @@
    "discipline": "MAG",
    "apparatus": "VT",
    "short_name": "Full-twisting double Tsukahara",
-   "aka": [],
+   "aka": [
+    "Ri Segwang",
+    "Ri Se-gwang"
+   ],
    "eponym": "Ri Se Gwang",
    "codes": {
     "WG-MAG-2025": [
@@ -19642,7 +19966,11 @@
       "variant": 1,
       "value": "5.6",
       "element_group": "III",
-      "eponym": "Ri Se Gwang"
+      "eponym": "Ri Se Gwang",
+      "aka": [
+       "Ri Segwang",
+       "Ri Se-gwang"
+      ]
      }
     ]
    }
@@ -19820,7 +20148,10 @@
    "discipline": "MAG",
    "apparatus": "VT",
    "short_name": "Yurchenko layout triple twist",
-   "aka": [],
+   "aka": [
+    "Kim Heehoon",
+    "Kim Hee-hoon"
+   ],
    "eponym": "Shirai - KIM Hee Hoon",
    "codes": {
     "WG-MAG-2025": [
@@ -19831,7 +20162,11 @@
       "variant": 1,
       "value": "5.2",
       "element_group": "IV",
-      "eponym": "Shirai - KIM Hee Hoon"
+      "eponym": "Shirai - KIM Hee Hoon",
+      "aka": [
+       "Kim Heehoon",
+       "Kim Hee-hoon"
+      ]
      }
     ]
    }
@@ -19988,7 +20323,9 @@
    "discipline": "MAG",
    "apparatus": "VT",
    "short_name": "Round-off ½-on, handspring front layout 2½ twists",
-   "aka": [],
+   "aka": [
+    "Li Xiaopeng"
+   ],
    "eponym": "Li Xiao Peng",
    "codes": {
     "WG-MAG-2025": [
@@ -19999,7 +20336,10 @@
       "variant": 1,
       "value": "5.4",
       "element_group": "IV",
-      "eponym": "Li Xiao Peng"
+      "eponym": "Li Xiao Peng",
+      "aka": [
+       "Li Xiaopeng"
+      ]
      }
     ]
    }

@@ -20,8 +20,8 @@ const ALIASES = {
   double: 'dbl', dbl: 'dbl',
   bhs: 'flicflac',
   full: '1/1', half: '1/2',
-  twist: 'turn', twists: 'turn', turns: 'turn', turn: 'turn', t: 'turn',
-  tucked: 'tuck', tuck: 'tuck', piked: 'pike', pike: 'pike',
+  twist: 'turn', twists: 'turn', turns: 'turn', turn: 'turn',
+  tucked: 'tuck', tuck: 'tuck', piked: 'pike', pike: 'pike', p: 'pike',
   straddled: 'straddle', straddle: 'straddle', strad: 'straddle',
 };
 
@@ -42,8 +42,34 @@ function tokens(text) {
     .replace(/[̀-ͯ]/g, '') // Stöckli -> stockli
     .split(/[^a-z0-9/]+/)
     .filter(Boolean)
-    .map((w) => ALIASES[w] || w);
+    // WG shorthand "t." is a turn after a fraction ("½ t.", "1/1 t."), otherwise tucked
+    // ("salto bwd. t.", "fwd. t. or p.").
+    .map((w, i, all) => (w === 't' ? (/^\d+\/\d+$/.test(all[i - 1] || '') ? 'turn' : 'tuck') : ALIASES[w] || w));
 }
+
+// A typed word of 5+ letters one letter off a word of the skill's ("Varonin" for Voronin).
+function near(w, t) {
+  if (w.length < 5 || Math.abs(w.length - t.length) > 1 || t.length < 5) return false;
+  let i = 0;
+  let j = 0;
+  let edits = 0;
+  while (i < w.length && j < t.length) {
+    if (w[i] === t[j]) {
+      i++;
+      j++;
+      continue;
+    }
+    if (++edits > 1) return false;
+    if (w.length > t.length) i++;
+    else if (t.length > w.length) j++;
+    else {
+      i++;
+      j++;
+    }
+  }
+  return edits + (w.length - i) + (t.length - j) <= 1;
+}
+const hit = (w, t) => t.startsWith(w) || near(w, t);
 
 export const skillLabel = (s) => (s.eponym ? `${s.name} (${s.eponym})` : s.name);
 
@@ -145,9 +171,15 @@ const cost = (names, q) => names.reduce((c, t) => (q.some((w) => t.startsWith(w)
 // The closest of the skill's name and its other names (box numbers don't count as extra words).
 const extra = (s, q) => Math.min(cost(s.nameTokens, q), ...s.akaTokens.map((a) => cost(a, q)));
 
+/** Does `text` match every typed word, the way skill search does (any order, word starts, synonyms)? */
+export function matchesQuery(query, text) {
+  const ts = tokens(text);
+  return tokens(query).every((w) => ts.some((t) => hit(w, t)));
+}
+
 export function searchSkills(disc, app, query) {
   const q = tokens(query);
-  const list = (byApp[`${disc}.${app}`] || []).filter((s) => q.every((w) => s.tokens.some((t) => t.startsWith(w))));
-  const inName = (s) => q.every((w) => [s.nameTokens, s.boxTokens, ...s.akaTokens].some((ts) => ts.some((t) => t.startsWith(w))));
+  const list = (byApp[`${disc}.${app}`] || []).filter((s) => q.every((w) => s.tokens.some((t) => hit(w, t))));
+  const inName = (s) => q.every((w) => [s.nameTokens, s.boxTokens, ...s.akaTokens].some((ts) => ts.some((t) => hit(w, t))));
   return list.sort(q.length ? (a, b) => inName(b) - inName(a) || extra(a, q) - extra(b, q) || order(a, b) : order);
 }

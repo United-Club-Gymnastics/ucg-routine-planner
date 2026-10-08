@@ -125,9 +125,22 @@ test('repeats do not count', () => {
 
 test('bonuses: rings strength +0.3, floor and high bar connections; no stick bonus', () => {
   assert.equal(scoreRoutine('sr', 'int', advRings, { strength: true }).bonus, 0.3);
-  assert.equal(scoreRoutine('fx', 'int', advFloor, { conn1: 2, conn2: 1 }).bonus, 0.4);
-  assert.equal(scoreRoutine('hb', 'int', advHbar, { connCC: 2 }).bonus, 0.2);
   assert.equal(scoreRoutine('hb', 'int', advHbar, { stick: true }).bonus, 0);
+});
+
+test('connection bonuses come from linked skills (typed-in counts are ignored)', () => {
+  const L = (x) => ({ ...x, link: true });
+  // Floor: D + C (+0.1), then D + D (+0.2); an unlinked D + B earns nothing.
+  const fx = scoreRoutine('fx', 'adv', [L(s('Double back', 'D', 3)), s('Front full', 'C', 4), L(s('Arabian double', 'D', 3)), s('Double front', 'D', 4), s('Back full', 'B', 3)], { conn1: 5 });
+  assert.equal(fx.optionValues.conn1, 0.1);
+  assert.equal(fx.optionValues.conn2, 0.2);
+  assert.match(fx.detected.conn1, /Double back \+ Front full/);
+  // High bar: flight to flight and in bar to flight count; in bar to in bar doesn't.
+  const hb = scoreRoutine('hb', 'adv', [L(s('Kovacs', 'D', 2)), s('Gaylord', 'D', 2), L(s('Stalder 1/1', 'C', 3)), s('Tkatchev', 'C', 2), L(s('Endo', 'C', 3)), s('Stalder', 'C', 3)]);
+  assert.equal(hb.optionValues.connCC, 0.2);
+  // The same pair twice counts once.
+  const twice = scoreRoutine('hb', 'adv', [L(s('Tkatchev', 'C', 2)), s('Kovacs', 'D', 2), L(s('Tkatchev', 'C', 2)), s('Kovacs', 'D', 2)]);
+  assert.equal(twice.optionValues.connCC, 0.1);
 });
 
 test('rings: only 3 EG II/III skills count before a B or higher EG I skill', () => {
@@ -265,4 +278,13 @@ test('Catalog: box numbers, other names, Masters lists', async () => {
   assert.ok(at('adv').some((s) => s.src === 'UCG') && !at('adv').some((s) => s.src === 'UCGM'));
   // Routines saved with a UCG addition at Masters still resolve.
   assert.ok(findSkill('UCG-FX-pancake-stop-required'));
+});
+
+test('WG shorthand: "t." is tucked unless it follows a fraction; one-letter typos in names are forgiven', async () => {
+  const { searchSkills } = await import('../js/skill-search.js');
+  const names = (q) => searchSkills('mag', 'hb', q).map((s) => s.name);
+  assert.ok(names('back tuck').includes('Double salto bwd. t. over the bar.'));
+  assert.ok(names('half turn handstand').includes('½ t. thr. hdst.'));
+  assert.ok(!names('back tuck').includes('½ t. thr. hdst.'));
+  assert.equal(searchSkills('mag', 'hb', 'varonin')[0]?.eponym, 'Voronin');
 });
