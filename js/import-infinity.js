@@ -45,6 +45,9 @@ export function convertOldAthlete(old, newId, match = () => null) {
   }
   // Vaults are named the same in both (the same reference table).
   e.vault = INFINITY_VAULT_LIST.some((v) => v.name === old.vault) ? old.vault : '';
+  // For the one-time "check the matched skills" notice on the level (app.js importNotice).
+  const rows = Object.values(e.routines).flat().filter((r) => r.name);
+  e.imported = { from: 'infinity-sv', matched: rows.filter((r) => r.matchedFrom).length, typed: rows.filter((r) => !r.matchedFrom).length };
   normalizeEntry(e);
   return {
     id: newId(),

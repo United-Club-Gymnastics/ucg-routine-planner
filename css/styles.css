@@ -800,5 +800,5 @@ input::placeholder { color: var(--fg-muted); }
 .import-item input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--ucg-navy); flex: none; }
 .import-item.done { cursor: default; background: var(--bg-page); }
 .import-meta { display: block; font-size: var(--fs-xs); color: var(--fg-secondary); }
-.empty-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.empty-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 16px; }
 .ath-foot { display: grid; gap: 8px; }

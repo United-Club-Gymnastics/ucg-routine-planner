@@ -51,7 +51,7 @@ test('typed skills become the listed skill they clearly are; unclear ones stay a
   const a = convertOldAthlete({
     id: 'm', routines: {
       bars: [s('Cast handstand', 'B', '2'), s('Kip', 'A', '1'), s('Front giant', 'C', '5')],
-      floor: [s('Round off', 'A', '5'), s('Back tuck', 'B', '8')], // a "B" back tuck isn't the listed (A) one
+      floor: [s('Round off', 'A', '5'), s('Back tuck', 'B', '8'), s('Wolf 1.5', 'D', '1'), s('Popa', 'C', '1')], // a "B" back tuck isn't the listed (A) one
     },
   }, ids(), match);
   const ub = a.entries[0].routines.ub;
@@ -60,9 +60,11 @@ test('typed skills become the listed skill they clearly are; unclear ones stay a
   assert.equal(ub[0].letter, 'B');
   assert.ok(ub[0].skillId);
   assert.equal(ub[1].skillId, undefined); // "Kip" could be several kips
-  assert.equal(ub[2].skillId, undefined);
+  assert.equal(ub[2].name, 'Front giant on HB (reverse grip)'); // "reverse grip" only describes it
   const fx = a.entries[0].routines.fx;
   assert.equal(fx[0].name, 'Round-off');
   assert.equal(fx[1].name, 'Back tuck');
-  assert.equal(fx[1].skillId, undefined);
+  assert.equal(fx[1].skillId, undefined); // nor "Back tuck with ½ twist": a twist wasn't typed
+  assert.equal(fx[2].name, 'Wolf jump with 1½ turns'); // 1.5 = 1½
+  assert.equal(fx[3].name, 'Straddle jump, full turn (Popa)'); // by its eponym
 });

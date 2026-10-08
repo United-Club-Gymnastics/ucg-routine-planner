@@ -32,13 +32,28 @@ const COMPOUNDS = [
   [/hand[\s-]*spring/g, 'handspring'],
   [/lay[\s-]*out/g, 'layout'],
   [/tour[\s-]*jet[eé]/g, 'tourjete'],
+  [/clear[\s-]*hip/g, 'clearhip'],
+  [/straddle[\s-]*back/g, 'straddleback'],
+  // "Scale on toe" is a scale on relevé.
+  [/\bon (?:her |the )?toes?\b/g, 'on releve'],
   // A back handspring is a flic-flac: keep both words so either name finds it.
   [/back(?:ward)?\s+handspring/g, 'back flicflac handspring'],
 ];
 
+// Turns written as mixed numbers or decimals read as the Codes write them: "1½", "1 1/2"
+// and "1.5" are all 3/2 (and "½" is 1/2).
+function improper(whole, num, den) {
+  const n = Number(whole) * Number(den) + Number(num);
+  return `${n}/${den}`;
+}
 function tokens(text) {
   return COMPOUNDS.reduce((t, [re, word]) => t.replace(re, word), String(text || '').toLowerCase())
+    .replace(/(\d+)\s*([½¼¾])/g, (_, w, f) => improper(w, ...FRACTIONS[f].split('/')))
+    .replace(/\b(\d+) (\d)\/(\d)\b/g, (_, w, n, d) => improper(w, n, d))
+    .replace(/\b(\d+)\.5\b/g, (_, w) => improper(w, 1, 2))
     .replace(/[½¼¾]/g, (c) => FRACTIONS[c])
+    // Options written with a slash ("squat-on/stoop-on") are alternatives.
+    .replace(/([a-z])\/([a-z])/g, '$1 or $2')
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '') // Stöckli -> stockli
     .split(/[^a-z0-9/]+/)
@@ -173,35 +188,70 @@ const cost = (names, q) => names.reduce((c, t) => (q.some((w) => t.startsWith(w)
 const extra = (s, q) => Math.min(cost(s.nameTokens, q), ...s.akaTokens.map((a) => cost(a, q)));
 
 // Matching a typed-in name to a listed skill (e.g. routines brought over from another
-// planner). The caller narrows the list first (same value and element group), so within
-// it the closest name wins: words the coach didn't type count against a skill, but words
-// that only describe how or where it's done ("landing", "step-out", "to stand", "jump",
-// "turn") count half, and "on one foot" not at all. Which bar counts in full.
+// planner). The caller narrows the list first (same value and element group). Within it,
+// words of the listed name that weren't typed count against it, except: words that only
+// describe how or where ("landing", "step-out", "to stand", "jump", "turn", "reverse grip")
+// count half; an amount of turn or twist that wasn't typed counts double (it's another
+// skill); "on one foot" and the other options of "X or Y" / "X to Y" don't count; and a
+// typed eponym is a match by itself.
 const MATCH_FREE = new Set([...FREE, 'one', 'foot', 'feet']);
-const QUALIFIERS = new Set(['landing', 'step', 'out', 'stepout', 'stand', 'end', 'side', 'support', 'two', 'sit', 'jump', 'leap', 'turn', 'hang']);
-const matchCost = (names, q) =>
-  names.reduce((c, t) => (q.some((w) => hit(w, t)) || MATCH_FREE.has(t) ? c : c + (MULTI.has(t) ? 3 : QUALIFIERS.has(t) ? 0.5 : 1)), 0);
+const QUALIFIERS = new Set(['landing', 'step', 'out', 'stepout', 'stand', 'end', 'side', 'support', 'two', 'sit', 'jump', 'leap', 'turn', 'hang',
+  'grip', 'reverse', 'regular', 'mixed', 'el', 'overgrip', 'undergrip', 'extra']);
 // Typed shorthand standing for several words of the listed name ("BHS": back handspring).
 const COVERS = { flicflac: ['bwd', 'handspring'], tourjete: ['tour', 'jete'] };
+const isFrac = (x) => /^\d+\/\d+$/.test(x || '');
+function matchCost(tokensOfName, typed) {
+  const typedWord = (t) => typed.some((w) => hit(w, t));
+  // Filler words don't count; "or" and "to" stay to mark options and ranges.
+  const ts = tokensOfName.filter((t) => t === 'or' || t === 'to' || !MATCH_FREE.has(t));
+  // Options: "squat-on or stoop-on or straddle-on", "tucked or piked", a range "1/1 to 3/2".
+  // When one option was typed, the others are free.
+  const free = new Set();
+  for (let i = 0; i < ts.length; i++) {
+    if (!(ts[i] === 'or' || (ts[i] === 'to' && isFrac(ts[i - 1]) && isFrac(ts[i + 1])))) continue;
+    let a = i - 1;
+    let b = i + 1;
+    while (ts[b + 1] === 'or' && ts[b + 2]) b += 2; // the whole run X or Y or Z
+    const run = [];
+    for (let j = a; j <= b; j += 2) run.push(j);
+    if (run.some((j) => typedWord(ts[j]))) run.forEach((j) => free.add(j));
+  }
+  let c = 0;
+  ts.forEach((t, i) => {
+    if (t === 'or' || t === 'to' || free.has(i) || typedWord(t)) return;
+    c += MULTI.has(t) ? 3 : isFrac(t) ? 2 : QUALIFIERS.has(t) ? 0.5 : 1;
+  });
+  return c;
+}
 
 /**
  * The listed skill a typed-in name means, or null. Among the skills `accept` allows (same
- * value, element group and level): those with every typed word in their name (or another
- * name they go by), closest first. It must be close (at most 2 extra words; ½ for a
- * one-word name, since "Kip" could be several kips) and closer than any other.
+ * value, element group and level), those with every typed word in their name, eponym or
+ * other names. It must be close (at most 2 extra words; and if several qualify, ½ for a
+ * one-word name, since "Kip" could be several kips) and closer than the rest (versions of
+ * one box tying: the first).
  */
 export function closestSkill(disc, app, text, accept = () => true) {
   const q = tokens(text).filter((w) => !FREE.has(w));
   if (!q.length) return null;
-  const covered = [...q, ...q.flatMap((w) => COVERS[w] || [])];
-  const names = (s) => [s.nameTokens, ...s.akaTokens];
-  const scored = (byApp[`${disc}.${app}`] || [])
-    .filter(accept)
-    .map((s) => [s, Math.min(...names(s).filter((ts) => q.every((w) => ts.some((t) => hit(w, t)))).map((ts) => matchCost(ts, covered)))])
-    .filter(([, c]) => c <= (q.length > 1 ? 2 : 0.5))
-    .sort((a, b) => a[1] - b[1]);
-  if (!scored.length || (scored[1] && scored[1][1] === scored[0][1])) return null;
-  return scored[0][0];
+  const typed = [...q, ...q.flatMap((w) => COVERS[w] || [])];
+  const has = (ts) => q.every((w) => ts.some((t) => hit(w, t)));
+  const scored = [];
+  for (const s of byApp[`${disc}.${app}`] || []) {
+    if (!accept(s)) continue;
+    const name = tokens(s.name);
+    const epo = tokens(s.eponym || '');
+    const options = [[name, [...name, ...epo]], ...s.akaTokens.map((a) => [a, a])]; // [what costs, what can match]
+    const named = epo.length && epo.every((t) => typed.some((w) => hit(w, t))); // "Popa"
+    const costs = options.filter(([, all]) => has(all)).map(([ts]) => (named ? 0 : matchCost(ts, typed)));
+    if (costs.length) scored.push([s, Math.min(...costs)]);
+  }
+  if (scored.length === 1) return scored[0][1] <= 2 ? scored[0][0] : null;
+  scored.sort((a, b) => a[1] - b[1]);
+  const [best, cost] = scored[0] || [];
+  if (!best || cost > (q.length > 1 ? 2 : 0.5)) return null;
+  const rivals = scored.slice(1).filter(([s, c]) => c === cost && (s.box || s.id) !== (best.box || best.id));
+  return rivals.length ? null : best;
 }
 
 /** Does `text` match every typed word, the way skill search does (any order, word starts, synonyms)? */

@@ -403,7 +403,7 @@ function openImport() {
       renderMoveBanner();
       const rows = picked.flatMap((a) => Object.values(a.entries[0].routines).flat()).filter((r) => r.name);
       const matched = rows.filter((r) => r.matchedFrom).length;
-      showToast('import-toast', `Brought over ${picked.length} athlete${picked.length === 1 ? '' : 's'}. ${matched} of ${rows.length} skills matched to the skill list (flagged "Matched"); the rest stay as typed.`, 'OK', () => {});
+      showToast('import-toast', `Brought over ${picked.length} athlete${picked.length === 1 ? '' : 's'}: ${matched} of ${rows.length} skills matched to the skill list.`, 'OK', () => {});
     };
   };
 
@@ -612,7 +612,7 @@ function entryBody(a, e) {
         <select id="f-decade">${DECADES.map((d) => `<option value="${d}"${d === e.decade ? ' selected' : ''}>${DECADE_LABELS[d]}</option>`).join('')}</select></label>` : ''}
       ${a.entries.length > 1 ? `<button type="button" class="btn btn-quiet btn-sm" id="remove-entry">Remove this level</button>` : ''}
     </section>
-    ${startPanel(a, e)}${revaluedNotice(e)}
+    ${startPanel(a, e)}${revaluedNotice(e)}${importNotice(e)}
     <div class="summary" id="summary" role="tablist" aria-label="Events"></div>
     ${D.events.map((x) => eventCard(e, x, x.id === ev)).join('')}`;
 }
@@ -636,6 +636,22 @@ function revaluedNotice(e) {
       <p><strong>Copied from ${esc(from)} and re-valued for ${esc(levelInfo(e.disc, e.level).name)}.</strong>
         ${esc(([s.exact && `${s.exact} skill${s.exact === 1 ? '' : 's'} matched exactly`, ...parts].filter(Boolean).join('; ') || 'nothing needed changing').replace(/^./, (c) => c.toUpperCase()))}.${parts.length ? ' Those are flagged below.' : ''}</p>
       <button type="button" class="btn btn-ghost btn-sm" id="revalue-ok">OK</button>
+    </section>`;
+}
+
+// Brought over from the original UCG Infinity planner: check the skills matched to the
+// list once, then "Done" clears the notice and every "Matched" flag on the level (each
+// flag also clears when its skill is edited or picked again).
+function importNotice(e) {
+  const r = e.imported;
+  if (!r) return '';
+  const left = Object.values(e.routines || {}).flat().filter((x) => x.matchedFrom).length;
+  return `
+    <section class="card revalue-notice" role="status">
+      <p><strong>Brought over from the UCG Infinity planner.</strong>
+        ${left ? `${left} skill${left === 1 ? ' was' : 's were'} matched to the skill list from the name typed there: they're flagged <em>Matched</em>, so check each is the skill performed (hover the flag to see the old name).` : 'All matched skills are checked.'}
+        ${r.typed ? `${r.typed} kept as typed: click one to pick it from the list, already filtered to its value and group.` : ''}</p>
+      <button type="button" class="btn btn-ghost btn-sm" id="import-done">${left ? 'Done checking' : 'OK'}</button>
     </section>`;
 }
 
@@ -979,6 +995,12 @@ function bindEditor(a, e) {
         alert(`Copied, but the skills couldn't be re-valued for this level${isStale(err) ? '. Reload the planner (a new version is available), then copy again' : `: ${err?.message || err}`}.`);
       }
     }
+    scheduleSave();
+    renderAll();
+  });
+  $('#import-done')?.addEventListener('click', () => {
+    delete e.imported;
+    for (const row of Object.values(e.routines || {}).flat()) delete row.matchedFrom;
     scheduleSave();
     renderAll();
   });
