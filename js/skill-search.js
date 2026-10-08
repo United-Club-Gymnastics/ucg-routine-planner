@@ -171,6 +171,30 @@ const cost = (names, q) => names.reduce((c, t) => (q.some((w) => t.startsWith(w)
 // The closest of the skill's name and its other names (box numbers don't count as extra words).
 const extra = (s, q) => Math.min(cost(s.nameTokens, q), ...s.akaTokens.map((a) => cost(a, q)));
 
+// Matching a typed-in name to a listed skill (e.g. routines brought over from another
+// planner): "on one foot" doesn't count against a match (which bar does).
+const MATCH_FREE = new Set([...FREE, 'one', 'foot', 'feet']);
+const matchCost = (names, q) => names.reduce((c, t) => (q.some((w) => hit(w, t)) || MATCH_FREE.has(t) ? c : c + (MULTI.has(t) ? 3 : 1)), 0);
+
+/**
+ * The listed skill a typed-in name means, or null. Only when it's clearly one skill: every
+ * typed word is in its name (or another name it goes by), it has at most one word more
+ * than was typed (none for a one-word name: "Kip" could be several kips), no other skill
+ * is as close, and `accept` (same value, group, level) holds.
+ */
+export function closestSkill(disc, app, text, accept = () => true) {
+  const q = tokens(text).filter((w) => !FREE.has(w));
+  if (!q.length) return null;
+  const names = (s) => [s.nameTokens, ...s.akaTokens];
+  const scored = (byApp[`${disc}.${app}`] || [])
+    .filter(accept)
+    .map((s) => [s, Math.min(...names(s).filter((ts) => q.every((w) => ts.some((t) => hit(w, t)))).map((ts) => matchCost(ts, q)))])
+    .filter(([, c]) => c <= (q.length > 1 ? 1 : 0))
+    .sort((a, b) => a[1] - b[1]);
+  if (!scored.length || (scored[1] && scored[1][1] === scored[0][1])) return null;
+  return scored[0][0];
+}
+
 /** Does `text` match every typed word, the way skill search does (any order, word starts, synonyms)? */
 export function matchesQuery(query, text) {
   const ts = tokens(text);

@@ -20,7 +20,7 @@ import { MAG_MASTERS_VAULTS } from './scoring/mag.js';
 import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
 
 const ROMAN = { I: '1', II: '2', III: '3', IV: '4', V: '5' };
-const FLAGS = ['approx', 'noCredit', 'check'];
+const FLAGS = ['approx', 'noCredit', 'check', 'matchedFrom'];
 
 /** Remove re-valuing flags from a skill row (when it's picked again or edited by hand). */
 export const clearRevalueFlags = (row) => FLAGS.forEach((f) => delete row[f]);

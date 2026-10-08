@@ -20,7 +20,7 @@ import {
   scoreEntry,
   scoreEvent,
 } from './model.js';
-import { EXAMPLES, disciplineLoaded, findSkill, loadDiscipline, magSkillAllowed, matchesQuery, searchSkills, wagSkillAllowed } from './skill-search.js';
+import { EXAMPLES, closestSkill, disciplineLoaded, findSkill, loadDiscipline, magSkillAllowed, matchesQuery, searchSkills, wagSkillAllowed } from './skill-search.js';
 import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
 import * as mag from './scoring/mag.js';
 import { MAG_MASTERS_VAULTS, OTHER_VAULT } from './scoring/mag.js';
@@ -380,9 +380,13 @@ function openImport() {
     $$('[data-pick]', dlg).forEach((b) => (b.onchange = sync));
     sync();
     run.onclick = async () => {
-      const picked = $$('[data-pick]:checked', dlg).map((b) => m.convertOldAthlete(athletes[Number(b.dataset.pick)], uid));
       run.disabled = true;
       run.textContent = 'Bringing them over…';
+      // Typed-in skills become the listed skill they clearly are (same value and group).
+      await loadDiscipline('wag');
+      const match = (ev, row) =>
+        closestSkill('wag', ev, row.name, (s) => wagSkillAllowed('infinity', 'inf', s) && s.value === row.letter && (!row.eg || String(s.group) === row.eg));
+      const picked = $$('[data-pick]:checked', dlg).map((b) => m.convertOldAthlete(athletes[Number(b.dataset.pick)], uid, match));
       for (const a of picked) {
         state.athletes.push(a);
         try {
@@ -397,7 +401,9 @@ function openImport() {
       if (!picked.length) return;
       selectAthlete(picked[0].id);
       renderMoveBanner();
-      showToast('import-toast', `Brought over ${picked.length} athlete${picked.length === 1 ? '' : 's'} from the UCG Infinity planner.`, 'OK', () => {});
+      const rows = picked.flatMap((a) => Object.values(a.entries[0].routines).flat()).filter((r) => r.name);
+      const matched = rows.filter((r) => r.matchedFrom).length;
+      showToast('import-toast', `Brought over ${picked.length} athlete${picked.length === 1 ? '' : 's'}. ${matched} of ${rows.length} skills matched to the skill list (flagged "Matched"); the rest stay as typed.`, 'OK', () => {});
     };
   };
 
@@ -1666,6 +1672,8 @@ function updateRows(container, items, spec, list) {
           ? ['Approximate', 'Re-valued from a broader entry: the value depends on which version is performed. Check it.']
           : row?.check
             ? ['Check value', "Typed in by hand, so it couldn't be re-valued for this level."]
+            : row?.matchedFrom
+              ? ['Matched', `Brought over as “${row.matchedFrom}” and matched to this listed skill (same value and group). Check it's the skill performed.`]
             : ['', ''];
     const flagEl = $('[data-calc="flag"]', rowEl);
     flagEl.textContent = text;

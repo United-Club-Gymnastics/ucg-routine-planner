@@ -25,16 +25,22 @@ const isBlank = (s) => !String(s?.name || '').trim() && !s?.letter;
 export const importKey = (old) => `infinity-sv:${old.id}`;
 
 /**
- * One old-planner athlete as a planner athlete with a UCG Infinity level. Skills come over
- * as typed (the old planner had no skill list): name, difficulty and element group (the
- * same USAG group numbers), so start values are unchanged. `newId` makes ids.
+ * One old-planner athlete as a planner athlete with a UCG Infinity level. The old planner had
+ * no skill list, so skills were typed in: each comes over as the listed skill it clearly
+ * is (same value and USAG group, closestSkill in skill-search.js), flagged "Matched" with
+ * the name it was typed as, or else as typed. Values and groups stay the same either way,
+ * so start values are unchanged. `newId` makes ids; `match(eventId, row)` finds the skill.
  */
-export function convertOldAthlete(old, newId) {
+export function convertOldAthlete(old, newId, match = () => null) {
   const e = newEntry(newId(), 'wag', 'inf');
   for (const [from, ev] of Object.entries(EVENTS)) {
     // Very old records kept extra element-group skills apart (egSkills): they go at the end.
     const rows = [...(old.routines?.[from] || []), ...(old.egSkills?.[from] || [])].filter((s) => !isBlank(s));
-    e.routines[ev] = rows.map((s) => ({ name: String(s.name || '').trim(), letter: s.letter || '', eg: s.eg ? String(s.eg) : '' }));
+    e.routines[ev] = rows.map((s) => {
+      const row = { name: String(s.name || '').trim(), letter: s.letter || '', eg: s.eg ? String(s.eg) : '' };
+      const found = row.name && match(ev, row);
+      return found ? { ...row, name: found.label, skillId: found.id, fromList: true, matchedFrom: row.name } : row;
+    });
     if (old.eventBonus?.[from]) e.options[ev] = { ...e.options[ev], eventBonus: true };
   }
   // Vaults are named the same in both (the same reference table).

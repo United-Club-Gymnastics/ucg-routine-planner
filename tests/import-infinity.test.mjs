@@ -43,3 +43,26 @@ test('an old Infinity athlete becomes an athlete with a UCG Infinity level, same
 test('a vault the table no longer has is left empty', () => {
   assert.equal(convertOldAthlete({ ...old, vault: 'Not a vault' }, ids()).entries[0].vault, '');
 });
+
+test('typed skills become the listed skill they clearly are; unclear ones stay as typed', async () => {
+  const { loadDiscipline, closestSkill, wagSkillAllowed } = await import('../js/skill-search.js');
+  await loadDiscipline('wag');
+  const match = (ev, row) => closestSkill('wag', ev, row.name, (sk) => wagSkillAllowed('infinity', 'inf', sk) && sk.value === row.letter && (!row.eg || String(sk.group) === row.eg));
+  const a = convertOldAthlete({
+    id: 'm', routines: {
+      bars: [s('Cast handstand', 'B', '2'), s('Kip', 'A', '1'), s('Front giant', 'C', '5')],
+      floor: [s('Round off', 'A', '5'), s('Back tuck', 'B', '8')], // a "B" back tuck isn't the listed (A) one
+    },
+  }, ids(), match);
+  const ub = a.entries[0].routines.ub;
+  assert.equal(ub[0].name, 'Cast to handstand');
+  assert.equal(ub[0].matchedFrom, 'Cast handstand');
+  assert.equal(ub[0].letter, 'B');
+  assert.ok(ub[0].skillId);
+  assert.equal(ub[1].skillId, undefined); // "Kip" could be several kips
+  assert.equal(ub[2].skillId, undefined);
+  const fx = a.entries[0].routines.fx;
+  assert.equal(fx[0].name, 'Round-off');
+  assert.equal(fx[1].name, 'Back tuck');
+  assert.equal(fx[1].skillId, undefined);
+});
