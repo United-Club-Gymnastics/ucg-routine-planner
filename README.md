@@ -81,6 +81,10 @@ npm test       # scoring tests (Node 20+)
 
 Open <http://localhost:8080/?local> to try it without signing in (saved in that browser only). In development the files load as they are: Firebase and pdf-lib come from their CDNs, and there's no service worker.
 
+## Bringing athletes over from the original UCG Infinity planner
+
+Julia Sharpe's *UCG Infinity SV Sheets* (jzsharpe.github.io/ucg-infinity-sv, Firebase project `ucg-infinity-sv-generator`) is replaced by this planner. Signed-in members use **Bring over UCG Infinity routines** (athlete menu, or the first-run screen): [`js/import-infinity.js`](js/import-infinity.js) signs them in to the old project with Google (a second Firebase app), reads `users/{uid}/athletes`, and converts each into an athlete with a UCG Infinity level (bars/beam/floor -> ub/bb/fx, skills as typed with value and USAG group, apparatus bonus, vault by name). Imported athletes carry `importedFrom: "infinity-sv:<old id>"`, so they aren't brought twice. Start values are identical: the conversion was checked against the old planner's own scoring on 8,000+ random routines. The old project must list `routines.unitedclubgymnastics.org` under Authentication -> Authorized domains, and must stay in place for as long as members may still import.
+
 ## Build and deploy
 
 Pushing to `main` runs `.github/workflows/pages.yml`: `npm ci`, the scoring tests, `npm run build`, a browser smoke test of the build, then publishes `_site/` to GitHub Pages. To do the same locally:

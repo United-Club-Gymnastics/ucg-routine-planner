@@ -245,7 +245,7 @@ function renderAthletePicker() {
           .join('')}
         ${list.length ? '' : `<p class="ath-none">${state.athletes.length ? 'No athletes match.' : 'No athletes yet.'}</p>`}
       </div>
-      <div class="ath-foot"><button type="button" class="btn btn-primary btn-sm btn-block" id="ath-add">Add athlete</button></div>
+      <div class="ath-foot"><button type="button" class="btn btn-primary btn-sm btn-block" id="ath-add">Add athlete</button>${canImport() ? '<button type="button" class="btn btn-ghost btn-sm btn-block" id="ath-import">Bring over UCG Infinity routines</button>' : ''}</div>
     </div>`;
   $('#ath-button').onclick = () => {
     state.athOpen = !state.athOpen;
@@ -276,6 +276,104 @@ function renderAthletePicker() {
     closeAthletePicker();
     addAthlete();
   };
+  if ($('#ath-import')) {
+    $('#ath-import').onclick = () => {
+      closeAthletePicker();
+      openImport();
+    };
+  }
+}
+
+// ---- Bringing athletes over from the original UCG Infinity planner -------------------
+// js/import-infinity.js reads the member's athletes there (one more Google sign-in) and
+// converts them; here they pick which to bring over. Not for guests (nothing is saved).
+const canImport = () => !!state.user && !state.user.guest;
+
+function openImport() {
+  $('#import-dialog')?.remove();
+  const dlg = document.createElement('dialog');
+  dlg.id = 'import-dialog';
+  dlg.className = 'modal';
+  dlg.setAttribute('aria-labelledby', 'import-title');
+  document.body.appendChild(dlg);
+  dlg.addEventListener('close', () => dlg.remove());
+  const mod = import('./import-infinity.js'); // loaded before the sign-in click
+  const show = (body) => {
+    dlg.innerHTML = `<div class="modal-body"><h2 id="import-title" class="card-subtitle">Bring over UCG Infinity routines</h2>${body}</div>`;
+    $('[data-close]', dlg)?.addEventListener('click', () => dlg.close());
+  };
+  const summary = (o) =>
+    [o.vault ? 'Vault' : '', ...['bars', 'beam', 'floor'].map((ev) => {
+      const n = (o.routines?.[ev] || []).filter((x) => String(x?.name || '').trim() || x?.letter).length;
+      return n ? `${ev[0].toUpperCase()}${ev.slice(1)} ${n}` : '';
+    })].filter(Boolean).join(' · ') || 'No routines yet';
+
+  const start = (note = '') => {
+    show(`
+      <p>Athletes from the original UCG Infinity planner (jzsharpe.github.io/ucg-infinity-sv) can come over here with their vault and routines. Sign in there with the same Google account you used, then pick which athletes to bring.</p>
+      ${note ? `<p class="error" role="alert">${esc(note)}</p>` : ''}
+      <div class="modal-actions"><button type="button" class="btn btn-ghost" data-close>Cancel</button><button type="button" class="btn btn-primary" id="import-signin">Sign in to the old planner</button></div>`);
+    $('#import-signin', dlg).onclick = async () => {
+      try {
+        const m = await mod;
+        const { email, athletes } = await m.readOldAthletes(state.user.email);
+        choose(m, email, athletes);
+      } catch (err) {
+        console.error(err);
+        const code = err?.code || '';
+        if (/popup-closed|cancelled-popup/.test(code)) return start();
+        start(
+          /popup-blocked/.test(code) ? 'The sign-in window was blocked. Allow pop-ups for this site, then try again.'
+            : /unauthorized-domain/.test(code) ? 'The old planner does not allow sign-in from this address yet. Please let UCG know.'
+              : `Could not read the old planner: ${err?.message || err}`
+        );
+      }
+    };
+  };
+
+  const choose = (m, email, athletes) => {
+    if (!athletes.length) return start(`No athletes found for ${email} in the old planner. Did you use a different Google account there?`);
+    const have = new Set(state.athletes.map((a) => a.importedFrom).filter(Boolean));
+    const done = (o) => have.has(m.importKey(o));
+    show(`
+      <p>Found ${athletes.length} athlete${athletes.length === 1 ? '' : 's'} for ${esc(email)}. Each comes in with a UCG Infinity level. Skills come over as typed, with their values and element groups, so start values stay the same.</p>
+      <div class="import-list">${athletes.map((o, i) => `
+        <label class="import-item${done(o) ? ' done' : ''}">
+          <input type="checkbox" data-pick="${i}"${done(o) ? ' disabled' : ' checked'} />
+          <span><strong>${esc(o.name || 'Unnamed athlete')}</strong>${o.club ? ` · ${esc(o.club)}` : ''}<span class="import-meta">${done(o) ? 'Already brought over' : esc(summary(o))}</span></span>
+        </label>`).join('')}</div>
+      <div class="modal-actions"><button type="button" class="btn btn-ghost" data-close>Cancel</button><button type="button" class="btn btn-primary" id="import-run"></button></div>`);
+    const run = $('#import-run', dlg);
+    const sync = () => {
+      const n = $$('[data-pick]:checked', dlg).length;
+      run.disabled = !n;
+      run.textContent = n ? `Bring over ${n} athlete${n === 1 ? '' : 's'}` : 'Nothing to bring over';
+    };
+    $$('[data-pick]', dlg).forEach((b) => (b.onchange = sync));
+    sync();
+    run.onclick = async () => {
+      const picked = $$('[data-pick]:checked', dlg).map((b) => m.convertOldAthlete(athletes[Number(b.dataset.pick)], uid));
+      run.disabled = true;
+      run.textContent = 'Bringing them over…';
+      for (const a of picked) {
+        state.athletes.push(a);
+        try {
+          const saved = await store.saveAthlete(a);
+          ownSaves.set(a.id, saved.updatedAt);
+          a.updatedAt = saved.updatedAt;
+        } catch (err) {
+          console.error(err);
+        }
+      }
+      dlg.close();
+      if (!picked.length) return;
+      selectAthlete(picked[0].id);
+      showToast('import-toast', `Brought over ${picked.length} athlete${picked.length === 1 ? '' : 's'} from the UCG Infinity planner.`, 'OK', () => {});
+    };
+  };
+
+  start();
+  dlg.showModal();
 }
 function closeAthletePicker() {
   if (!state.athOpen) return;
@@ -384,9 +482,14 @@ function renderAll() {
       <div class="wrap"><div class="card empty-editor">
         <h2>Add your first athlete</h2>
         <p>Add an athlete, choose the levels they compete, and build each routine. Start values update as you type, and you can export filled-in UCG worksheets and competition cards.</p>
-        <button class="btn btn-primary" type="button" id="empty-add">Add athlete</button>
+        <div class="empty-actions">
+          <button class="btn btn-primary" type="button" id="empty-add">Add athlete</button>
+          ${canImport() ? '<button class="btn btn-ghost" type="button" id="empty-import">Bring over UCG Infinity routines</button>' : ''}
+        </div>
+        ${canImport() ? '<p class="muted">Used the original UCG Infinity planner? Bring your athletes and routines over here.</p>' : ''}
       </div></div>`;
     $('#empty-add').onclick = addAthlete;
+    if ($('#empty-import')) $('#empty-import').onclick = openImport;
     return;
   }
   const e = entry();

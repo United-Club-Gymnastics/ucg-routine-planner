@@ -779,3 +779,21 @@ input::placeholder { color: var(--fg-muted); }
   background: var(--ucg-white); color: var(--ucg-navy); font: inherit; font-weight: 700;
 }
 .toast-btn:hover { background: var(--ucg-light-blue); }
+
+/* Dialogs (bringing athletes over from the original UCG Infinity planner) */
+.modal {
+  border: 0; padding: 0; width: min(560px, calc(100vw - 32px)); max-height: calc(100dvh - 48px);
+  border-radius: var(--radius-lg); background: var(--bg-surface); color: var(--fg-primary);
+  box-shadow: 0 24px 64px rgba(20, 30, 39, 0.35);
+}
+.modal::backdrop { background: rgba(20, 30, 39, 0.5); }
+.modal-body { padding: 24px; display: grid; gap: 14px; }
+.modal-body h2, .modal-body p { margin: 0; }
+.modal-actions { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
+.import-list { display: grid; gap: 8px; max-height: 50dvh; overflow: auto; }
+.import-item { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border: 1.5px solid var(--border-default); border-radius: var(--radius-sm); cursor: pointer; }
+.import-item input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--ucg-navy); flex: none; }
+.import-item.done { cursor: default; background: var(--bg-page); }
+.import-meta { display: block; font-size: var(--fs-xs); color: var(--fg-secondary); }
+.empty-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.ath-foot { display: grid; gap: 8px; }
