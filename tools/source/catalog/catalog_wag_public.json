@@ -1,6 +1,6 @@
 {
  "discipline": "WAG",
- "version": "1e2d9d2b14b8",
+ "version": "df62c984d410",
  "built": "2026-10-08",
  "elements": [
   {
@@ -16067,6 +16067,9 @@
    "apparatus": "BB",
    "short_name": "Back handspring step-out",
    "aka": [
+    "BHS",
+    "Back handspring",
+    "Flic-flac",
     "BHS step-out",
     "Flic-flac step-out"
    ],
@@ -16081,6 +16084,11 @@
       "value": "B",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "BHS",
+       "Back handspring",
+       "Flic-flac"
+      ],
       "tags": {
        "acro": true,
        "flight": true,
@@ -16097,6 +16105,11 @@
       "value": "B",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "BHS",
+       "Back handspring",
+       "Flic-flac"
+      ],
       "tags": {
        "acro": true,
        "flight": true,
@@ -48125,9 +48138,7 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "LB back giant, tucked at bottom",
-   "aka": [
-    "Baby giant"
-   ],
+   "aka": [],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -48139,9 +48150,6 @@
       "value": "A",
       "element_group": "4",
       "eponym": "",
-      "aka": [
-       "Baby giant"
-      ],
       "tags": {
        "bar": "LB",
        "cast_sr": true,
@@ -48160,9 +48168,6 @@
       "value": "A",
       "element_group": "4",
       "eponym": "",
-      "aka": [
-       "Baby giant"
-      ],
       "tags": {
        "bar": "LB",
        "cast_sr": true,
@@ -56190,7 +56195,10 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Long hang pullover from HB cast",
-   "aka": [],
+   "aka": [
+    "Baby giant",
+    "Long hang pullover"
+   ],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -56202,6 +56210,10 @@
       "value": "A",
       "element_group": "4",
       "eponym": "",
+      "aka": [
+       "Baby giant",
+       "Long hang pullover"
+      ],
       "tags": {
        "bar": "HB",
        "circle360": true,
@@ -56219,6 +56231,10 @@
       "element_group": "4",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Baby giant",
+       "Long hang pullover"
+      ],
       "tags": {
        "bar": "HB",
        "circle360": true,
