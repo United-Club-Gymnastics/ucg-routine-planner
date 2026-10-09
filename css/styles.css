@@ -785,6 +785,25 @@ input::placeholder { color: var(--fg-muted); }
 }
 .toast-btn:hover { background: var(--ucg-light-blue); }
 
+/* Feedback: a small tab in the bottom-left corner (toasts use the bottom centre). */
+.feedback-btn {
+  position: fixed; left: 12px; bottom: 12px; z-index: 50;
+  background: var(--ucg-navy); color: var(--ucg-white); border: 0; border-radius: var(--radius-pill);
+  padding: 7px 14px; font-family: var(--font-display); font-weight: 700; font-size: 0.8rem;
+  letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; box-shadow: 0 4px 14px rgba(20, 30, 39, 0.25);
+}
+.feedback-btn:hover { background: var(--ucg-navy-deep); }
+.feedback-btn:focus-visible { outline: 3px solid var(--ucg-golden-yellow); outline-offset: 2px; }
+@media print { .feedback-btn { display: none; } }
+.feedback-type { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.feedback-type legend { font-weight: 700; margin-bottom: 6px; padding: 0; }
+.feedback-type label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+.feedback-type input { accent-color: var(--ucg-navy); }
+.modal textarea { width: 100%; box-sizing: border-box; font: inherit; padding: 10px 12px; border: 1.5px solid var(--border-default); border-radius: var(--radius-sm); color: var(--fg-primary); background: var(--bg-surface); resize: vertical; }
+.modal .field { display: grid; gap: 6px; }
+.modal .field > span { font-weight: 700; }
+.feedback-note { font-size: var(--fs-xs); color: var(--fg-secondary); }
+
 /* Dialogs (bringing athletes over from the original UCG Infinity planner) */
 .modal {
   border: 0; padding: 0; width: min(560px, calc(100vw - 32px)); max-height: calc(100dvh - 48px);

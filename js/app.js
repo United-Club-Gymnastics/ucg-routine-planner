@@ -1909,6 +1909,22 @@ async function onUser(user) {
   if (!user.local) stopWatching = store.watchAthletes(applyRemote);
 }
 
+// ---- Feedback -----------------------------------------------------------------------
+// The corner button: js/feedback.js sends it with who and where it came from.
+function feedbackContext() {
+  const u = state.user;
+  const a = athlete();
+  const e = entry();
+  return {
+    name: !u ? 'Not signed in' : u.guest ? 'Guest (not signed in)' : u.local ? 'Local mode' : u.displayName || '',
+    email: u && !u.guest && !u.local ? u.email || '' : '',
+    athlete: a ? a.name || 'Unnamed athlete' : '',
+    level: e ? levelInfo(e.disc, e.level)?.name || e.level : '',
+    apparatus: e ? eventInfo(e.disc, currentEvent(e))?.label || '' : '',
+  };
+}
+$('#feedback-btn').onclick = () => import('./feedback.js').then((m) => m.openFeedback(feedbackContext), reportError);
+
 // ---- Errors -------------------------------------------------------------------------
 // Anything unexpected shows a message with a Reload button instead of failing silently.
 // Harmless browser noise and dropped connections (handled where they happen) are ignored.

@@ -13,6 +13,7 @@
 import { build } from 'esbuild';
 import { createHash } from 'node:crypto';
 import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';
+import { execSync } from 'node:child_process';
 import { createRequire } from 'node:module';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -83,7 +84,13 @@ html = html.replace(
   '<script type="module">import "./js/app.js";</script>',
   `<script type="module" src="${rel(entry)}"></script>`
 );
+// Which build this is, for feedback reports: the commit (and its date).
+let commit = process.env.GITHUB_SHA?.slice(0, 7);
+try {
+  commit ||= execSync('git rev-parse --short HEAD', { cwd: ROOT }).toString().trim();
+} catch {}
 const head = [
+  `<meta name="planner-version" content="${commit || 'local'} · ${new Date().toISOString().slice(0, 10)}" />`,
   ...preload.map((f) => `<link rel="modulepreload" href="${f}" />`),
   // Sign-in and the database talk to these as soon as Firebase starts.
   '<link rel="preconnect" href="https://firestore.googleapis.com" crossorigin />',
