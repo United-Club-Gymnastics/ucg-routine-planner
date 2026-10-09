@@ -750,8 +750,9 @@ input::placeholder { color: var(--fg-muted); }
   .skill-row {
     grid-template-columns: 44px 1fr 1fr 1fr 28px;
     grid-template-areas: 'num name name name remove' '. letter eg eg eg' '. value bonus bonus bonus';
-    padding: 10px 4px; border-bottom: 1px solid var(--border-subtle); border-radius: 0;
+    padding: 10px 6px; /* rounded like on wider screens; a small gap separates the rows */
   }
+  .skill-row[data-row] + .skill-row[data-row] { margin-top: 6px; }
   .skill-row .col-num { grid-area: num; }
   .skill-row .remove-skill { grid-area: remove; }
   .skill-row .col-bonus, .skill-row .remove-skill { grid-column: auto; }
@@ -792,7 +793,16 @@ input::placeholder { color: var(--fg-muted); }
   padding: 7px 14px; font-family: var(--font-display); font-weight: 700; font-size: 0.8rem;
   letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; box-shadow: 0 4px 14px rgba(20, 30, 39, 0.25);
 }
+.feedback-btn { display: inline-flex; align-items: center; gap: 7px; }
+.feedback-btn svg { display: none; }
 .feedback-btn:hover { background: var(--ucg-navy-deep); }
+/* Phones: a small round icon, and room at the end of the page so it never hides the last controls. */
+@media (max-width: 640px) {
+  .feedback-btn { width: 42px; height: 42px; padding: 0; justify-content: center; left: 10px; bottom: 10px; }
+  .feedback-btn svg { display: block; }
+  .feedback-btn span { display: none; }
+  body { padding-bottom: 60px; }
+}
 .feedback-btn:focus-visible { outline: 3px solid var(--ucg-golden-yellow); outline-offset: 2px; }
 @media print { .feedback-btn { display: none; } }
 .feedback-type { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; }
