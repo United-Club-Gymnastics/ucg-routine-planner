@@ -96,13 +96,13 @@ export function revalueEntry(entry, fromLevel, catalog, fromVault = '') {
       const g = String(pick.g || '');
       let eg = '';
       if (fam === 'mag') eg = ROMAN[g] || '';
-      else if (fam === 'infinity') eg = /^\d+$/.test(g) ? g : ''; // the USAG group; scoring condenses it
+      else if (fam === 'infinity' || fam === 'xcel') eg = /^\d+$/.test(g) ? g : ''; // the USAG group; scoring condenses it
       else if (fam === 'wagMasters') eg = code === 'WG-WAG-2025' ? String(WG_TO_MASTERS[evId]?.[g] || '') : ROMAN[g] || '';
 
       row.name = listed.label;
       row.skillId = listed.id;
       row.letter = letters.includes(value) ? value : '';
-      if (fam !== 'xcel') row.eg = eg;
+      row.eg = eg;
       row.fromList = true;
       if (approx) {
         row.approx = true;

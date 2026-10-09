@@ -417,6 +417,7 @@ input::placeholder { color: var(--fg-muted); }
 .pop-filter-btn:hover { background: var(--ucg-light-blue); }
 .pop-opt { display: grid; grid-template-columns: 40px 1fr auto; gap: 10px; align-items: center; padding: 6px 12px; cursor: pointer; }
 .pop-opt .src-badge { justify-self: start; }
+.pop-opt.vault-opt { grid-template-columns: 1fr auto; } /* no source badge */
 .pop-opt:hover, .pop-opt.active { background: var(--ucg-light-blue); }
 .pop-name { min-width: 0; }
 .pop-eponym { color: var(--fg-secondary); }
@@ -676,8 +677,9 @@ input::placeholder { color: var(--fg-muted); }
 .skill-row.dd .remove-skill { grid-column: 5; }
 .skill-row.dd .row-flag { grid-column: 2; grid-row: 2; justify-self: start; }
 .skill-row.dd input.col-letter, .skill-row.dd input.col-eg { text-align: center; }
-.skill-row.xcel { grid-template-columns: 50px minmax(160px, 1fr) 76px 64px 28px; }
-.skill-row.xcel .remove-skill { grid-column: 5; }
+.skill-row.xcel { grid-template-columns: 50px minmax(160px, 1fr) 76px minmax(150px, 230px) 64px 28px; }
+.skill-row.xcel .remove-skill { grid-column: 6; }
+.skill-head .col-value { display: inline-flex; align-items: center; justify-content: center; gap: 3px; }
 .skill-row.xcel .row-flag { grid-column: 2; grid-row: 2; justify-self: start; }
 .skill-row.flagged .row-flag { display: inline-block; }
 .pass { padding: 4px 0 6px; }
@@ -716,7 +718,8 @@ input::placeholder { color: var(--fg-muted); }
   }
   .skill-row.dd .remove-skill, .skill-row.xcel .remove-skill { grid-column: auto; }
   .skill-row.dd .row-flag, .skill-row.xcel .row-flag { grid-row: 3; grid-column: 2 / span 4; justify-self: start; }
-  .skill-row.xcel .col-value { grid-area: eg; }
+  .skill-row.xcel { grid-template-columns: 44px 72px 1fr auto 28px; grid-template-areas: 'num name name name remove' '. letter eg value value'; }
+  .skill-row.xcel .col-value { grid-area: value; white-space: nowrap; }
   .skill-row.xcel .col-value:not(:empty)::before { content: ''; }
 }
 

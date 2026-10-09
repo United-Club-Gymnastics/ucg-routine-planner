@@ -3,7 +3,7 @@
 import * as mag from './scoring/mag.js';
 import * as wag from './scoring/wag.js';
 import * as tt from './scoring/tt.js';
-import { XCEL_SR } from './data/xcel.js';
+import { XCEL_SR, XCEL_VP } from './data/xcel.js';
 import { findSkill } from './skill-search.js';
 import { DECADES, DECADE_LABELS, DEFAULT_DECADE, MASTERS_LETTERS } from './scoring/masters.js';
 
@@ -108,6 +108,9 @@ export function eventSpec(entry, evId) {
     spec.maxCounting = 6;
   } else if (fam === 'xcel') {
     spec.letters = wag.XCEL_LETTERS;
+    // USAG element groups: no requirement at Xcel, but choosing one narrows the skill search.
+    spec.groups = groupList(wag.INFINITY_GROUPS[evId].groups, false);
+    spec.vp = XCEL_VP[level];
     spec.sr = XCEL_SR[level][evId];
     spec.columns = 'xcel';
     // The coach marks which skills are directly connected: special requirements and the

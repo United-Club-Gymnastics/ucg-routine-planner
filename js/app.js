@@ -751,13 +751,20 @@ function startSelect(e, p) {
 
 function headCells(spec) {
   if (spec.columns === 'dd') return `<span class="col-num">#</span><span class="col-name">Skill</span><span class="col-letter">Shorthand</span><span class="col-eg">DD</span><span></span>`;
-  if (spec.columns === 'xcel') return `<span class="col-num">#</span><span class="col-name">Skill</span><span class="col-letter">Value</span><span class="col-value">VP</span><span></span>`;
+  if (spec.columns === 'xcel') return `<span class="col-num">#</span><span class="col-name">Skill</span><span class="col-letter">Value</span><span class="col-eg">Element group</span><span class="col-value">VP${spec.vp ? infoButton('value parts', vpTip(spec.vp)) : ''}</span><span></span>`;
   return `<span class="col-num">#</span><span class="col-name">Skill</span><span class="col-letter">Diff.</span><span class="col-eg">Element group</span><span class="col-value">Value</span><span class="col-bonus">EG bonus</span><span></span>`;
+}
+
+// "Value parts needed: 1 C, 3 B, 4 A." A higher skill can fill a lower value part.
+function vpTip(vp) {
+  const n = {};
+  for (const l of vp) n[l] = (n[l] || 0) + 1;
+  return `Value parts needed: ${Object.entries(n).map(([l, c]) => `${c} ${l}`).join(', ')} (${vp.length} skills). A higher-value skill can fill a lower value part.`;
 }
 
 function rowsMarkup(e, ev, spec, rows, pass) {
   const cls = spec.columns === 'dd' ? ' dd' : spec.columns === 'xcel' ? ' xcel' : '';
-  return `<div class="skill-row skill-head${cls}" aria-hidden="true">${headCells(spec)}</div>${rows.map((s, i) => skillRow(e, ev, spec, i, s, pass)).join('')}`;
+  return `<div class="skill-row skill-head${cls}"${spec.vp ? '' : ' aria-hidden="true"'}>${headCells(spec)}</div>${rows.map((s, i) => skillRow(e, ev, spec, i, s, pass)).join('')}`;
 }
 
 function skillRow(e, ev, spec, i, s, pass) {
@@ -789,14 +796,14 @@ function skillRow(e, ev, spec, i, s, pass) {
   const link = spec.links
     ? `<button type="button" class="link-toggle" ${data} data-link aria-pressed="${!!s.link}" aria-label="${label} connected to the next skill" title="${s.link ? 'Connected to the next skill (click to separate)' : 'Not connected to the next skill (click to connect)'}">${ICON_LINK}</button>`
     : '';
-  if (spec.columns === 'xcel') {
-    return `<div class="skill-row${cls}${s.link ? ' linked' : ''}" data-row="${i}">${handle}${combo}${letters}
-      <span class="col-value calc" data-calc="value"></span>${remove}<span class="row-flag" data-calc="flag"></span>${link}</div>`;
-  }
   const eg = spec.groups
     ? `<select class="col-eg" aria-label="${label} element group" ${data} data-field="eg">
         <option value="">EG –</option>${spec.groups.map((g) => `<option value="${g.value}"${String(g.value) === String(s.eg) ? ' selected' : ''}>${esc(g.label)}</option>`).join('')}</select>`
     : '<span class="col-eg"></span>';
+  if (spec.columns === 'xcel') {
+    return `<div class="skill-row${cls}${s.link ? ' linked' : ''}" data-row="${i}">${handle}${combo}${letters}${eg}
+      <span class="col-value calc" data-calc="value"></span>${remove}<span class="row-flag" data-calc="flag"></span>${link}</div>`;
+  }
   return `<div class="skill-row${cls}${s.link ? ' linked' : ''}" data-row="${i}">${handle}${combo}${letters}${eg}
     <span class="col-value calc" data-calc="value"></span><span class="col-bonus calc" data-calc="bonus"></span>
     ${remove}<span class="row-flag" data-calc="flag"></span>${link}</div>`;
@@ -1435,9 +1442,9 @@ function presetFilter(e, input) {
     if (row.eg) {
       const eg = String(row.eg);
       if (fam === 'mag') tests.push((s) => String(s.eg) === eg);
-      else if (fam === 'infinity') tests.push((s) => String(s.group) === eg);
+      else if (fam === 'infinity' || fam === 'xcel') tests.push((s) => String(s.group) === eg);
       else if (fam === 'wagMasters') tests.push((s) => String(s.mgroup || WG_TO_MASTERS[evId]?.[s.group]) === eg);
-      if (fam !== 'xcel') labels.push(fam === 'infinity' ? `group ${eg}` : `EG ${ROMAN[eg] || eg}`);
+      labels.push(fam === 'infinity' || fam === 'xcel' ? `group ${eg}` : `EG ${ROMAN[eg] || eg}`);
     }
   }
   return tests.length ? { test: (s) => tests.every((t) => t(s)), label: labels.join(' · ') } : null;
@@ -1504,7 +1511,7 @@ function renderPicker(query) {
     let last;
     picker.items.forEach((v, i) => {
       if (!query && v.head && v.head !== last) html.push(`<div class="pop-head" role="presentation">${esc((last = v.head))}</div>`);
-      html.push(`<div class="pop-opt${i === picker.active ? ' active' : ''}" role="option" id="pop-opt-${i}" data-skill="${i}" aria-selected="${i === picker.active}">
+      html.push(`<div class="pop-opt vault-opt${i === picker.active ? ' active' : ''}" role="option" id="pop-opt-${i}" data-skill="${i}" aria-selected="${i === picker.active}">
         <span class="pop-name">${esc(v.name)}</span><span class="pop-meta">${esc(v.meta)}</span></div>`);
     });
     if (!picker.items.length) html.push(`<div class="pop-empty">No vaults at this level match. Try other words, or open the list.</div>`);
@@ -1619,7 +1626,7 @@ function pickSkill(i) {
     const letters = eventSpec(e, evId).letters;
     if (letters.includes(s.value)) row.letter = s.value;
     if (fam === 'mag') row.eg = s.eg ? String(s.eg) : '';
-    if (fam === 'infinity') row.eg = s.group ? String(s.group) : '';
+    if (fam === 'infinity' || fam === 'xcel') row.eg = s.group ? String(s.group) : '';
     // WAG Masters: UCG Masters skills carry their own condensed group; WG groups are mapped.
     if (fam === 'wagMasters') row.eg = s.mgroup ? String(s.mgroup) : s.group && WG_TO_MASTERS[evId]?.[s.group] ? String(WG_TO_MASTERS[evId][s.group]) : '';
   }
