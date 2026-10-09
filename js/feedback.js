@@ -69,7 +69,9 @@ export function openFeedback(context) {
   document.body.appendChild(dlg);
   dlg.addEventListener('close', () => dlg.remove());
   const ctx = context();
-  const where = [ctx.athlete, ctx.level, ctx.apparatus].filter(Boolean).join(' · ');
+  // Placeholders like "(no athlete open)" fill the Sheet's columns; the summary skips them.
+  const real = (v) => v && !String(v).startsWith('(');
+  const where = [ctx.athlete, ctx.level, ctx.apparatus].filter(real).join(' · ');
   dlg.innerHTML = `
     <form class="modal-body" method="dialog" novalidate>
       <h2 id="feedback-title" class="card-subtitle">Send feedback</h2>
@@ -81,7 +83,7 @@ export function openFeedback(context) {
       </fieldset>
       <label class="field"><span>Tell us more</span>
         <textarea name="message" rows="5" required placeholder="What happened, or what would help? For a wrong value or skill, say which skill and what you expected."></textarea></label>
-      <p class="muted feedback-note">Sent with it: ${esc(ctx.name || 'not signed in')}${ctx.email ? ` (${esc(ctx.email)})` : ''}${where ? `, ${esc(where)}` : ''}, this page's address, and your browser and device.</p>
+      <p class="muted feedback-note">Sent with it: ${esc(ctx.name || 'not signed in')}${real(ctx.email) ? ` (${esc(ctx.email)})` : ''}${where ? `, ${esc(where)}` : ''}, this page's address, and your browser and device.</p>
       <p class="error" role="alert" hidden></p>
       <div class="modal-actions"><button type="button" class="btn btn-ghost" data-close>Cancel</button><button type="submit" class="btn btn-primary">Send</button></div>
     </form>`;

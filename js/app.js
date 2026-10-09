@@ -1915,12 +1915,14 @@ function feedbackContext() {
   const u = state.user;
   const a = athlete();
   const e = entry();
+  // Every column says something, so a blank never looks like a lost answer.
+  const signedIn = u && !u.guest && !u.local;
   return {
-    name: !u ? 'Not signed in' : u.guest ? 'Guest (not signed in)' : u.local ? 'Local mode' : u.displayName || '',
-    email: u && !u.guest && !u.local ? u.email || '' : '',
-    athlete: a ? a.name || 'Unnamed athlete' : '',
-    level: e ? levelInfo(e.disc, e.level)?.name || e.level : '',
-    apparatus: e ? eventInfo(e.disc, currentEvent(e))?.label || '' : '',
+    name: !u ? 'Not signed in' : u.guest ? 'Guest (not signed in)' : u.local ? 'Local mode' : u.displayName || '(no name)',
+    email: signedIn ? u.email || '(no email)' : '(not signed in)',
+    athlete: a ? a.name || 'Unnamed athlete' : !u ? '(sign-in screen)' : '(no athlete open)',
+    level: e ? levelInfo(e.disc, e.level)?.name || e.level : a ? '(no level yet)' : '(none)',
+    apparatus: e ? eventInfo(e.disc, currentEvent(e))?.label || '' : '(none)',
   };
 }
 $('#feedback-btn').onclick = () => import('./feedback.js').then((m) => m.openFeedback(feedbackContext), reportError);
