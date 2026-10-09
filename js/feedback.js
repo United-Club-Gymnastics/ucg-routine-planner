@@ -7,8 +7,8 @@
 const FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSc8_pQ1hDb9DhVsn2iv6O_RJKEN78Rs5rgSABGE8w8GYfafuA/formResponse';
 // The form's questions (entry ids from the form; a question added there needs its id here).
 const ENTRY = {
-  type: null, // "Type" (bug / idea / question): add to the form, then its id here
-  message: null, // "Message" (paragraph): add to the form, then its id here
+  type: 2111223531,
+  message: 66434965,
   name: 1855114294,
   email: 1631089420,
   athlete: 1917588411,
@@ -48,10 +48,7 @@ export function describeClient(nav = navigator, scr = screen) {
 /** The form fields for a report. */
 export function formBody(report) {
   const body = new URLSearchParams();
-  for (const [k, id] of Object.entries(ENTRY)) if (id && report[k] != null && report[k] !== '') body.append(`entry.${id}`, String(report[k]));
-  // Until the form has its own Type / Message questions, they go in the first free field.
-  const missing = ['type', 'message'].filter((k) => !ENTRY[k] && report[k]);
-  if (missing.length) body.set(`entry.${ENTRY.page}`, `${missing.map((k) => `${k.toUpperCase()}: ${report[k]}`).join('\n')}\n\nPAGE: ${report.page}`);
+  for (const [k, id] of Object.entries(ENTRY)) if (report[k] != null && report[k] !== '') body.append(`entry.${id}`, String(report[k]));
   return body;
 }
 

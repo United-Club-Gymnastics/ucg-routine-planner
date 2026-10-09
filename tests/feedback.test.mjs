@@ -9,9 +9,9 @@ test('a report fills the form fields by their entry ids', () => {
   assert.equal(body.get('entry.1855114294'), 'Nate');
   assert.equal(body.get('entry.1917588411'), 'Julia');
   assert.equal(body.get('entry.171607110'), 'Chrome 141');
-  // Type and message always arrive somewhere (their own questions once the form has them).
-  assert.ok([...body.values()].some((v) => v.includes('Wrong value')));
-  assert.ok([...body.values()].some((v) => v.includes('Bug')));
+  assert.equal(body.get('entry.2111223531'), 'Bug');
+  assert.equal(body.get('entry.66434965'), 'Wrong value');
+  assert.equal(body.get('entry.742666991'), 'https://routines.unitedclubgymnastics.org/');
 });
 
 test('browser and device are readable', () => {
