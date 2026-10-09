@@ -1960,13 +1960,23 @@ function watchForUpdates() {
   sw.getRegistration().then((reg) => {
     if (!reg) return;
     const offer = (worker) => worker && sw.controller && showUpdate(worker);
-    offer(reg.waiting);
+    // Safe to switch versions without asking: nothing is waiting to save, and no guest
+    // work would be lost by the reload.
+    const idle = () => !saveTimer && !guestHasWork() && !$('dialog[open]');
+    // Downloaded on an earlier visit and the page has only just opened: switch now
+    // (phones rarely see the "new version" bar, and a plain refresh keeps the old copy).
+    if (reg.waiting && sw.controller && idle()) reg.waiting.postMessage('skipWaiting');
+    else offer(reg.waiting);
     reg.addEventListener('updatefound', () => {
       const w = reg.installing;
       w?.addEventListener('statechange', () => w.state === 'installed' && offer(w));
     });
-    // Look for a new version whenever the planner comes back to the foreground.
-    document.addEventListener('visibilitychange', () => document.visibilityState === 'visible' && reg.update().catch(() => {}));
+    document.addEventListener('visibilitychange', () => {
+      // Back in the foreground: look for a new version.
+      if (document.visibilityState === 'visible') return reg.update().catch(() => {});
+      // Going to the background with a new version ready: switch while nobody's looking.
+      if (reg.waiting && sw.controller && idle()) reg.waiting.postMessage('skipWaiting');
+    });
   });
 }
 function showUpdate(worker) {
