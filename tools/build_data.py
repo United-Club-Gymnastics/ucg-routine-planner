@@ -3,7 +3,7 @@
 tools/source/:
 
   wag_wg_skills.json   the WG (FIG) WAG Code of Points 2025-2028, from the
-                       extractor in Dropbox Misc/Gymnastics/Reference/gym_skill_extract/WG WAG CoP Extraction
+                       extractor in Dropbox Gymnastics/Reference/gym_skill_extract/WG WAG CoP Extraction
   Masters Vault Values.xlsx  UCG Masters vault values (Men / Women sheets)
   ucg_wag_skills_simplified.json  every skill UCG's Xcel levels and UCG Infinity credit:
                        USAG Xcel 2022-2028, USAG Development Program 2026-2030 E elements,
