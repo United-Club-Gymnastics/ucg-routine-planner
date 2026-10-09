@@ -698,12 +698,23 @@ function eventCard(e, ev, visible) {
       ${ev.kind === 'vault' ? vaultBody(e, ev, spec) : ev.kind === 'passes' ? passesBody(e, ev) : routineBody(e, ev, spec)}
       ${spec.sr ? srList(e, ev, spec) : ''}
       ${spec.options.map((o) => optionControl(e, ev.id, o)).join('')}
+      ${spec.legend.length ? cgSection(e, ev, spec) : ''}
       <div class="event-foot">
-        ${spec.legend.length ? `<ul class="cg-list">${spec.legend.map((g) => `<li data-cg="${g.key}"><span class="cg-badge">${g.roman}</span><span>${esc(g.label)}</span></li>`).join('')}</ul>` : ''}
         <dl class="totals" data-totals="${ev.id}"></dl>
         <div class="foot-notes" data-notes="${ev.id}"></div>
       </div>
     </article>`;
+}
+
+// The groups the EG bonus counts (condensed I-IV at Infinity and WAG Masters), ticked when earned.
+function cgSection(e, ev, spec) {
+  const title = spec.family === 'mag' ? 'Element groups' : 'Condensed element groups';
+  const tip = scoreTip(e, ev, 'EG bonus');
+  return `
+    <section class="cg-card" aria-label="${title}">
+      <h3 class="cg-title">${title}${tip ? infoButton(title, tip) : ''}</h3>
+      <ul class="cg-list">${spec.legend.map((g) => `<li data-cg="${g.key}"><span class="cg-badge">${g.roman}</span><span>${esc(g.label)}</span></li>`).join('')}</ul>
+    </section>`;
 }
 
 function routineHelp(e, ev, spec) {
