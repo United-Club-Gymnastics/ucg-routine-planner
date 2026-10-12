@@ -4,7 +4,7 @@ import * as mag from './scoring/mag.js';
 import * as wag from './scoring/wag.js';
 import * as tt from './scoring/tt.js';
 import { XCEL_SR, XCEL_VP } from './data/xcel.js';
-import { findSkill } from './skill-search.js';
+import { findSkill, wagSkillAllowed } from './skill-search.js';
 import { DECADES, DECADE_LABELS, DEFAULT_DECADE, MASTERS_LETTERS } from './scoring/masters.js';
 
 export { DECADES, DECADE_LABELS, DEFAULT_DECADE };
@@ -175,8 +175,15 @@ export function scoreEvent(entry, evId) {
       deductions: r.deductions,
     };
   }
+  // WAG Infinity and Xcel: the listed skill (its group and tags tell what it is) and whether
+  // this level allows it. Search hides the others, but a copied or imported routine can have them.
+  const listed = () =>
+    rows.map((row) => {
+      const skill = row?.skillId ? findSkill(row.skillId) : null;
+      return skill ? { ...row, skill, offLevel: !wagSkillAllowed(fam, level, skill) } : row;
+    });
   if (fam === 'infinity') {
-    const r = wag.scoreInfinity(evId, rows, { eventBonus: !!opts.eventBonus });
+    const r = wag.scoreInfinity(evId, listed(), { eventBonus: !!opts.eventBonus });
     return { ...out, ...r, optionValues: { eventBonus: r.bonus }, totals: [...r.totals, ['Start value', r.sv]] };
   }
   if (fam === 'wagMasters') {
@@ -184,9 +191,7 @@ export function scoreEvent(entry, evId) {
     return { ...out, ...r, totals: [...r.totals, ['Start value', r.sv]] };
   }
   if (fam === 'xcel') {
-    // The listed skill's group and tags tell what it is (special requirements, restrictions, bonus).
-    const listed = rows.map((row) => (row?.skillId ? { ...row, skill: findSkill(row.skillId) } : row));
-    const r = wag.scoreXcel(level, evId, listed, { srMet: opts.sr || [], srSet: opts.srSet || [] });
+    const r = wag.scoreXcel(level, evId, listed(), { srMet: opts.sr || [], srSet: opts.srSet || [] });
     if (r.missingVp.length) out.notes.push(`Missing value parts: ${r.missingVp.join(', ')} (−${fmt(r.vpMissing)}).`);
     if (r.restricted) out.notes.push(`${r.restricted} restricted skill${r.restricted > 1 ? 's' : ''}: −0.50 each, and they don't count as value parts.`);
     if (level === 'sapphire') {

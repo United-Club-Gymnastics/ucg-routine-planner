@@ -1683,6 +1683,8 @@ function flagFor(it, spec) {
   if (it.reason === 'eg') return ['Over 4 in EG', 'Only 4 skills from one element group count, so this one adds no difficulty'];
   if (it.reason === 'sr') return ['Over 3 EG II/III', 'Only 3 EG II or III skills count before a B or higher EG I skill'];
   if (it.reason === 'egOnly') return ['EG credit only', 'Not one of your counting skills, but it earns its element group bonus'];
+  if (it.reason === 'offLevel') return ['Not at this level', "Not allowed at this level (search hides it), so it earns no credit: no value, element group, requirement or bonus"];
+  if (it.reason === 'onlyOne') return ['Only one allowed', 'Only one tap swing or underswing with counterswing is allowed at Platinum, so this one earns no credit'];
   if (it.reason === 'extraVp') return ['Extra', 'Not needed for this level’s value parts'];
   if (it.reason === 'noValue') return ['', ''];
   return [`Not in top ${spec.maxCounting}`, `Not in your top ${spec.maxCounting}, so it doesn't count toward difficulty`];

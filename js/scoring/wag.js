@@ -74,6 +74,7 @@ export function scoreInfinity(event, skills = [], { eventBonus = false } = {}) {
   const items = baseItems(skills, (l) => INFINITY_VALUES[l] ?? 0);
   for (const it of items) it.condensed = it.eg ? condensedOf(event, it.eg) : null;
   markOnce(items);
+  markOffLevel(items);
   const cand = items.filter((it) => !it.status);
   const counting = new Set([...cand].sort((a, b) => b.value - a.value || a.idx - b.idx).slice(0, INFINITY_MAX_SKILLS).map((it) => it.idx));
   for (const it of cand) {
@@ -82,7 +83,7 @@ export function scoreInfinity(event, skills = [], { eventBonus = false } = {}) {
   }
   const rows = items.filter((it) => it.status === 'counting');
   const earned = new Set();
-  for (const list of [rows, items.filter((it) => it.status === 'noncounting')]) {
+  for (const list of [rows, items.filter((it) => it.status === 'noncounting' && it.reason !== 'offLevel')]) {
     for (const r of list) {
       if (r.condensed && r.value >= 0.3 && !earned.has(r.condensed)) {
         earned.add(r.condensed);
@@ -136,7 +137,12 @@ const PLAT_UB_AS_B = new Set(['USAG-UB-3.304-1', 'USAG-UB-6.304-1', 'USAG-UB-7.3
 export function scoreXcel(level, event, skills = [], { srMet = [], srSet = [] } = {}) {
   const items = baseItems(skills, (l) => XCEL_VALUE[l] ?? 0);
   markXcelRepeats(event, items);
+  markOffLevel(items);
   if (level === 'plat' && event === 'ub') {
+    // Xcel bars division table: "Platinum Only one (1) allowed" tap swing / underswing - counterswing.
+    for (const it of items.filter((x) => !x.status && /^USAG-UB-2\.003-/.test(x.skillId)).slice(1)) {
+      Object.assign(it, { status: 'noncounting', reason: 'onlyOne' });
+    }
     for (const it of items) {
       if (it.letter === 'C' && PLAT_UB_AS_B.has(it.skillId)) Object.assign(it, { letter: 'B', value: XCEL_VALUE.B });
     }
@@ -286,6 +292,7 @@ function baseItems(skills, valueOf) {
     eg: s?.eg ? Number(s.eg) : null,
     skillId: s?.skillId || '',
     skill: s?.skill || null, // the listed skill (group, tags), when the caller looked it up
+    offLevel: !!s?.offLevel, // a listed skill this level doesn't allow (see markOffLevel)
     link: !!s?.link, // connected to the next skill (bars, beam and floor)
     bonus: 0,
     status: isFilled(s) ? null : 'blank',
@@ -316,6 +323,13 @@ const isHandSupportFlight = (it) => (it.skillId ? HAND_SUPPORT_FLIGHT.has(it.ski
 const repeat = (it, of, why) => Object.assign(it, { status: 'repeat', repeatOf: of.idx, repeatWhy: why });
 
 // UCG Infinity: an element earns value-part credit once, whatever its connection.
+// A listed skill outside the level's divisions (e.g. an "Additional A" element for Bronze to
+// Diamond only, at Sapphire or Infinity) earns no credit: no difficulty, value part, group,
+// special requirement or bonus. It can still be in the routine (copied or imported).
+function markOffLevel(items) {
+  for (const it of items) if (!it.status && it.offLevel) Object.assign(it, { status: 'noncounting', reason: 'offLevel' });
+}
+
 function markOnce(items) {
   const seen = new Map();
   for (const it of items) {

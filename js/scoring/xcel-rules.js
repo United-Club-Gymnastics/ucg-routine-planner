@@ -14,7 +14,8 @@ const atLeast = (it, l) => (RANK[it.letter] || 0) >= RANK[l];
 const T = (it) => it.skill?.tags || {};
 const tagged = (it) => !!it.skill?.tags;
 const group = (it) => Number(it.skill?.group) || null;
-const credited = (it) => it.status === 'counting' || it.status === 'noncounting';
+// Skills with no credit at all (outside the level's divisions, or over a per-level limit) meet nothing.
+const credited = (it) => it.status === 'counting' || (it.status === 'noncounting' && !['offLevel', 'onlyOne'].includes(it.reason));
 
 const MOUNT = { ub: 1, bb: 1 };
 const DISMOUNT = { ub: 8, bb: 9 };
