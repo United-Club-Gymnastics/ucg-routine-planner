@@ -445,19 +445,37 @@ input::placeholder { color: var(--fg-muted); }
 }
 .drag-handle { cursor: grab; touch-action: none; }
 
-/* Xcel beam / floor: "connected to the next skill", a small round toggle on the line between two rows. */
+/* Connected skills (Xcel; MAG floor / high bar). Out of connect mode, two connected rows are
+   joined into one block: square facing corners, the gap filled in, a navy stripe down the left.
+   In connect mode, a pill on the line between two rows: dashed "+ Connect", or navy "Connected".
+   Neither adds height between rows. */
+.connect-bar { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 12px; margin: 10px 20px 0; }
+.connect-btn svg { flex: none; }
+.connect-hint { font-size: var(--fs-xs); color: var(--fg-secondary); }
 .skill-row:has(.link-toggle) { position: relative; }
-.link-toggle {
-  position: absolute; z-index: 2; left: 20px; bottom: -15px; width: 22px; height: 16px; padding: 0;
-  display: grid; place-items: center; cursor: pointer;
-  border: 1.5px solid var(--border-default); border-radius: var(--radius-pill);
-  background: var(--ucg-white); color: var(--fg-muted);
+.skill-row.linked:not(.is-blank):has(+ .skill-row[data-row]:not(.is-blank)) { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.skill-row.linked:not(.is-blank):has(+ .skill-row[data-row]:not(.is-blank))::after {
+  content: ''; position: absolute; left: 0; right: 0; top: calc(100% - 1px); height: 8px; /* 1px over each edge: no hairline */
+  background: inherit; box-shadow: inset 4px 0 0 var(--ucg-navy); pointer-events: none;
 }
-.link-toggle::before { content: ''; position: absolute; inset: -8px -6px; } /* bigger tap area */
+.skill-row.linked:not(.is-blank) + .skill-row[data-row]:not(.is-blank) { border-top-left-radius: 0; border-top-right-radius: 0; }
+.skill-row.linked:not(.is-blank):has(+ .skill-row[data-row]:not(.is-blank)),
+.skill-row.linked:not(.is-blank) + .skill-row[data-row]:not(.is-blank) { box-shadow: inset 4px 0 0 var(--ucg-navy); }
+.link-toggle {
+  display: none; position: absolute; z-index: 2; left: 12px; bottom: -14px; height: 22px; padding: 0 10px 0 8px;
+  align-items: center; gap: 5px; cursor: pointer; white-space: nowrap;
+  border: 1.5px dashed var(--fg-secondary); border-radius: var(--radius-pill);
+  background: var(--ucg-white); color: var(--fg-secondary); box-shadow: 0 2px 8px rgba(30, 43, 56, 0.18);
+  font-family: var(--font-body); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.02em;
+}
+.link-toggle svg { flex: none; }
+.skill-table.connecting .link-toggle { display: inline-flex; }
+.link-toggle::before { content: ''; position: absolute; inset: -6px -8px; } /* bigger tap area */
 .link-toggle:hover { border-color: var(--ucg-navy); color: var(--ucg-navy); }
-.link-toggle[aria-pressed='true'] { background: var(--ucg-navy); border-color: var(--ucg-navy); color: var(--ucg-white); }
-.skill-row[data-row]:last-child .link-toggle, .skill-row.is-blank .link-toggle { display: none; }
-.skill-table:has(.link-toggle) .skill-row[data-row] + .skill-row[data-row] { margin-top: 14px; }
+.link-toggle[aria-pressed='true'] { border-style: solid; border-color: var(--ucg-navy); background: var(--ucg-navy); color: var(--ucg-white); }
+.skill-table.connecting .skill-row[data-row]:last-child .link-toggle,
+.skill-table.connecting .skill-row.is-blank .link-toggle,
+.skill-table.connecting .skill-row:has(+ .is-blank) .link-toggle { display: none; }
 .remove-skill { cursor: pointer; width: 28px; }
 .drag-handle:hover, .remove-skill:hover { background: rgba(173, 186, 233, 0.25); color: var(--fg-primary); }
 .skill-row.dragging {
@@ -768,6 +786,7 @@ input::placeholder { color: var(--fg-muted); }
   .skill-row.is-repeat .row-flag,
   .skill-row.non-counting .row-flag { grid-column: 2 / span 4; }
   .routine-help { margin: 12px 14px 2px; }
+  .connect-bar { margin: 10px 14px 0; }
   .routine-actions { margin: 6px 14px 14px; }
   .skill-row .col-name { grid-area: name; }
   .skill-row .col-letter { grid-area: letter; }
