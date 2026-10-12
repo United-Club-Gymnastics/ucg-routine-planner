@@ -1,8 +1,8 @@
-// Feedback and bug reports: the "Feedback" button in the corner opens a short form; it's
+// Feedback and bug reports: "Send feedback" in the account menu (top right) opens a short form; it's
 // sent to UCG's feedback Google Form (responses go to a Google Sheet, which emails the
 // planner's maintainers). Who sent it and what they were looking at are added for them.
 // Google doesn't let a page read the form's reply (no-cors), so "sent" means it went out.
-// Loaded only when the button is used.
+// Loaded only when it is used.
 
 const FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSc8_pQ1hDb9DhVsn2iv6O_RJKEN78Rs5rgSABGE8w8GYfafuA/formResponse';
 // The form's questions (entry ids from the form; a question added there needs its id here).

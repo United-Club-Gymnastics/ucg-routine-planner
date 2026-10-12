@@ -6,7 +6,8 @@
 import { firebaseConfig } from './firebase-config.js';
 
 // Add ?local to the address to try the app without signing in (saves in this browser only).
-const forceLocal = new URLSearchParams(location.search).has('local');
+// A copy published for testing says so in its page instead: <meta name="planner-mode" content="local">.
+const forceLocal = new URLSearchParams(location.search).has('local') || !!document.querySelector('meta[name="planner-mode"][content="local"]');
 export const isConfigured = !forceLocal && !String(firebaseConfig.apiKey || '').startsWith('YOUR_');
 
 let auth, db, fb;

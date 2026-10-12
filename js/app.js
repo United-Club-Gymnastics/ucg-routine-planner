@@ -192,24 +192,64 @@ function showToast(id, text, label, onClick) {
 
 // ---- Header: user + athlete picker ------------------------------------------
 
+// The account button at the right of the header: who is signed in, feedback, sign in or out.
+// Nothing on the sign-in screen.
 function renderUserArea() {
   const area = $('#user-area');
   const u = state.user;
-  if (!u || u.local) {
+  if (!u) {
     area.innerHTML = '';
     return;
   }
-  if (u.guest) {
-    area.innerHTML = `<span class="user-name">Not signed in</span>
-      <button class="topbar-link" type="button" data-signin>Sign in to save</button>`;
+  const initials = (u.displayName || u.email || '').split(/[\s@.]+/).filter(Boolean).slice(0, 2).map((w) => w[0].toUpperCase()).join('');
+  const face = u.guest || u.local || (!u.photoURL && !initials)
+    ? ICON_PERSON
+    : u.photoURL ? `<img class="avatar" src="${esc(u.photoURL)}" alt="" referrerpolicy="no-referrer" />` : `<span>${esc(initials)}</span>`;
+  const who = u.guest ? 'Not signed in: nothing is saved' : u.local ? 'Local mode: saved in this browser only' : esc(u.displayName || u.email);
+  area.innerHTML = `
+    ${u.guest ? '<button class="btn btn-ghost btn-sm header-signin" type="button" data-signin>Sign in to save</button>' : ''}
+    <div class="menu-wrap">
+      <button type="button" class="account-btn" data-menu="account-menu" aria-haspopup="menu" aria-expanded="false" aria-label="Account and feedback">${face}</button>
+      <div class="menu" id="account-menu" role="menu" hidden>
+        <p class="menu-who">${who}${u.email && !u.guest && !u.local && u.displayName ? `<span>${esc(u.email)}</span>` : ''}</p>
+        <button type="button" role="menuitem" data-action="feedback">Send feedback</button>
+        ${u.guest ? '<button type="button" role="menuitem" data-signin>Sign in with Google</button>' : ''}
+        ${!u.guest && !u.local ? '<button type="button" role="menuitem" data-action="signout">Sign out</button>' : ''}
+      </div>
+    </div>`;
+}
+
+// Menus (the account menu, the athlete's "more" menu): a button with data-menu opens the
+// element with that id; a click anywhere else, or Escape, closes it.
+function closeMenus(except) {
+  $$('.menu').forEach((m) => {
+    if (m === except) return;
+    m.hidden = true;
+    $(`[data-menu="${m.id}"]`)?.setAttribute('aria-expanded', 'false');
+  });
+}
+document.addEventListener('click', (ev) => {
+  const opener = ev.target.closest('[data-menu]');
+  if (opener) {
+    const menu = $(`#${opener.dataset.menu}`);
+    closeMenus(menu);
+    menu.hidden = !menu.hidden;
+    opener.setAttribute('aria-expanded', String(!menu.hidden));
+    if (!menu.hidden) $('[role="menuitem"]', menu)?.focus();
     return;
   }
-  area.innerHTML = `
-    ${u.photoURL ? `<img class="avatar" src="${esc(u.photoURL)}" alt="" referrerpolicy="no-referrer" />` : ''}
-    <span class="user-name">${esc(u.displayName || u.email)}</span>
-    <button class="topbar-link" id="signout-btn" type="button">Sign out</button>`;
-  $('#signout-btn').onclick = () => store.signOut();
-}
+  const item = ev.target.closest('.menu [role="menuitem"]');
+  if (!ev.target.closest('.menu') || item) closeMenus();
+  const action = item?.dataset.action;
+  if (action === 'feedback') import('./feedback.js').then((m) => m.openFeedback(feedbackContext), reportError);
+  else if (action === 'signout') store.signOut();
+});
+document.addEventListener('keydown', (ev) => {
+  if (ev.key !== 'Escape' || !$('.menu:not([hidden])')) return;
+  const open = $('.menu:not([hidden])');
+  closeMenus();
+  $(`[data-menu="${open.id}"]`)?.focus();
+});
 
 const discChip = (e) =>
   `<span class="chip chip-${e.disc}">${esc(DISCIPLINES[e.disc].name)} · ${esc(levelInfo(e.disc, e.level)?.short || '')}</span>`;
@@ -225,11 +265,8 @@ function renderAthletePicker() {
   const q = state.athQuery.trim().toLowerCase();
   const list = sortedAthletes().filter((x) => !q || `${x.name} ${x.club}`.toLowerCase().includes(q));
   host.innerHTML = `
-    <button type="button" class="ath-button" id="ath-button" aria-haspopup="listbox" aria-expanded="${state.athOpen}">
-      <span class="ath-button-text">
-        <span class="ath-count">Athlete · ${state.athletes.length}</span>
-        <span class="ath-current">${esc(a ? a.name || 'Unnamed athlete' : 'No athletes yet')}</span>
-      </span>
+    <button type="button" class="ath-button" id="ath-button" aria-haspopup="listbox" aria-expanded="${state.athOpen}" aria-label="Athlete: ${esc(a ? a.name || 'Unnamed athlete' : 'none yet')}. ${state.athletes.length} in all. Switch athlete">
+      <span class="ath-current">${esc(a ? a.name || 'Unnamed athlete' : 'No athletes yet')}</span>
       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
     </button>
     <div class="ath-pop" ${state.athOpen ? '' : 'hidden'}>
@@ -513,43 +550,49 @@ function renderAll() {
   }
   if (!a) {
     app.innerHTML = `
-      <section class="page-head"><div class="page-head-inner"><p class="eyebrow">WAG · MAG · T&amp;T</p><h1>Routine planner</h1></div></section>
-      <div class="wrap"><div class="card empty-editor">
-        <h2>Add your first athlete</h2>
-        <p>Add an athlete, choose the levels they compete, and build each routine. Start values update as you type, and you can export filled-in UCG worksheets and competition cards.</p>
+      <section class="empty-editor">
+        <h1>Add your first athlete</h1>
+        <p class="lead">Choose the levels they compete and build each routine. The start value updates as you type.</p>
         <div class="empty-actions">
           <button class="btn btn-primary" type="button" id="empty-add">Add athlete</button>
-          ${canImport() ? '<button class="btn btn-ghost" type="button" id="empty-import">Bring over UCG Infinity routines</button>' : ''}
+          ${canImport() ? '<button class="btn btn-ghost" type="button" id="empty-import">Import from UCG Infinity</button>' : ''}
         </div>
-        ${canImport() ? '<p class="muted">Used the original UCG Infinity planner? Bring your athletes and routines over here.</p>' : ''}
-      </div></div>`;
+        <ol class="empty-steps">
+          <li><span>1</span>Add an athlete</li>
+          <li><span>2</span>Choose their levels</li>
+          <li><span>3</span>Build routines, export worksheets</li>
+        </ol>
+      </section>`;
     $('#empty-add').onclick = addAthlete;
     if ($('#empty-import')) $('#empty-import').onclick = openImport;
     return;
   }
   const e = entry();
   if (e) state.entryId = e.id;
+  // The athlete's name and club sit on a navy band; the name is the page's title.
   app.innerHTML = `
-    <section class="page-head">
-      <div class="page-head-inner">
-        <p class="eyebrow">${esc(a.club || 'Routine planner')}</p>
-        <h1 id="hero-name">${esc(a.name || 'New athlete')}</h1>
+    <section class="athlete-band" aria-label="Athlete">
+      <div class="band-inner">
+        <div class="band-fields">
+          <label class="band-name"><span class="sr-only">Gymnast name</span>
+            <input id="f-name" type="text" value="${esc(a.name)}" placeholder="Athlete name" autocomplete="off" /></label>
+          <label class="band-club"><span class="sr-only">Club or school</span>
+            <input id="f-club" type="text" value="${esc(a.club)}" placeholder="Add club or school" /></label>
+        </div>
+        <div class="band-actions">
+          <span id="save-status" class="save-status"${state.user?.guest ? ` data-kind="guest">Not saved: sign in to keep this` : '>'}</span>
+          ${e ? `<button class="btn btn-accent" type="button" id="export-all">Export PDF</button>` : ''}
+          <div class="menu-wrap">
+            <button type="button" class="icon-btn on-dark" data-menu="athlete-menu" aria-haspopup="menu" aria-expanded="false" aria-label="More for this athlete">${ICON_DOTS}</button>
+            <div class="menu" id="athlete-menu" role="menu" hidden>
+              ${e && a.entries.length > 1 ? `<button type="button" role="menuitem" id="remove-entry">Remove ${esc(entryName(e))}</button>` : ''}
+              <button type="button" role="menuitem" id="delete-athlete" class="danger">Delete athlete</button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <div class="wrap editor" id="editor">
-      <div class="editor-head">
-        <div class="fields">
-          <label class="field grow"><span>Gymnast name</span>
-            <input id="f-name" type="text" value="${esc(a.name)}" placeholder="Name" autocomplete="off" /></label>
-          <label class="field"><span>Club</span>
-            <input id="f-club" type="text" value="${esc(a.club)}" placeholder="Club / school" /></label>
-        </div>
-        <div class="editor-actions">
-          <span id="save-status" class="save-status"${state.user?.guest ? ` data-kind="guest">Not saved: sign in to keep this` : '>'}</span>
-          ${e ? `<button class="btn btn-primary" type="button" id="export-all">Export PDF</button>` : ''}
-          <button class="btn btn-quiet" type="button" id="delete-athlete">Delete athlete</button>
-        </div>
-      </div>
       ${entriesRow(a, e)}
       ${state.showAdd || !e ? addLevelPanel(a) : ''}
       ${e ? entryBody(a, e) : ''}
@@ -560,8 +603,7 @@ function renderAll() {
 
 function entriesRow(a, cur) {
   return `
-    <div class="entries" role="tablist" aria-label="Levels">
-      <span class="label">Competes in</span>
+    <div class="entries" role="tablist" aria-label="Levels this athlete competes">
       ${a.entries
         .map(
           (e) => `<button type="button" role="tab" class="entry-tab${cur && e.id === cur.id ? ' active' : ''}" data-entry="${esc(e.id)}" aria-selected="${cur && e.id === cur.id}">
@@ -569,7 +611,9 @@ function entriesRow(a, cur) {
           </button>`
         )
         .join('')}
-      <button type="button" class="entry-add" id="toggle-add" aria-expanded="${state.showAdd}">${state.showAdd && a.entries.length ? 'Close' : '+ Add level'}</button>
+      <button type="button" class="entry-add" id="toggle-add" aria-expanded="${state.showAdd}">${state.showAdd && a.entries.length ? 'Close' : `${ICON_PLUS}<span>Add level</span>`}</button>
+      ${cur && levelInfo(cur.disc, cur.level)?.masters ? `<label class="field inline decade"><span>Age decade</span>
+        <select id="f-decade">${DECADES.map((d) => `<option value="${d}"${d === cur.decade ? ' selected' : ''}>${DECADE_LABELS[d]}</option>`).join('')}</select></label>` : ''}
     </div>`;
 }
 
@@ -599,22 +643,15 @@ function addLevelPanel(a) {
 
 function entryBody(a, e) {
   const D = DISCIPLINES[e.disc];
-  const L = levelInfo(e.disc, e.level);
   const ev = currentEvent(e);
   return `
-    <section class="card level-bar">
-      <span class="disc-badge disc-${e.disc} xl">${esc(D.name)}</span>
-      <div class="level-bar-text">
-        <div class="level-name">${esc(L.name)}</div>
-        <div class="muted">${esc(D.full)}</div>
-      </div>
-      ${L.masters ? `<label class="field inline"><span>Age decade</span>
-        <select id="f-decade">${DECADES.map((d) => `<option value="${d}"${d === e.decade ? ' selected' : ''}>${DECADE_LABELS[d]}</option>`).join('')}</select></label>` : ''}
-      ${a.entries.length > 1 ? `<button type="button" class="btn btn-quiet btn-sm" id="remove-entry">Remove this level</button>` : ''}
-    </section>
     ${startPanel(a, e)}${revaluedNotice(e)}${importNotice(e)}
     <div class="summary" id="summary" role="tablist" aria-label="Events"></div>
-    ${D.events.map((x) => eventCard(e, x, x.id === ev)).join('')}`;
+    ${D.events.map((x) => eventCard(e, x, x.id === ev)).join('')}
+    <div class="sv-bar" id="sv-bar">
+      <div class="sv-bar-text"><span id="sv-bar-label"></span><strong id="sv-bar-value"></strong></div>
+      <button type="button" class="btn btn-ghost btn-sm" id="sv-breakdown" aria-haspopup="dialog">Breakdown</button>
+    </div>`;
 }
 
 // Offered while a level is empty: copy from another level in the discipline,
@@ -693,16 +730,23 @@ const ICON_EXT = `<svg viewBox="0 0 24 24" width="12" height="12" fill="none" st
 const ICON_PLUS = `<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>`;
 const ICON_X = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>`;
 const ICON_CHEVRON = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>`;
+const ICON_DOTS = `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></svg>`;
+const ICON_PERSON = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>`;
+const ICON_TRASH = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>`;
+// "How is this scored?": the event's instructions, behind a ? beside its title.
+const helpButton = (label, text) => `<button type="button" class="help-tip" data-tip="${esc(text)}" data-tip-wide aria-label="How ${esc(label)} works: ${esc(text)}">?</button>`;
+const plain = (html) => html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 
 // ---- Event cards ---------------------------------------------------------------
 
 function eventCard(e, ev, visible) {
   const spec = eventSpec(e, ev.id);
   const examples = EXAMPLES.filter((x) => x.disc === e.disc && x.level === e.level && x.event === ev.id);
+  const help = ev.kind === 'vault' ? '' : plain(ev.kind === 'passes' ? passesHelp(ev) : routineHelp(e, ev, spec));
   return `
     <article class="card event-card" data-event-card="${ev.id}" id="panel-${ev.id}" role="tabpanel" aria-labelledby="tab-${ev.id}" ${visible ? '' : 'hidden'}>
       <header class="card-head">
-        <h2 class="card-title">${esc(ev.label)}</h2>
+        <div class="card-title-row"><h2 class="card-title">${esc(ev.label)}</h2>${help ? helpButton(ev.label.toLowerCase(), help) : ''}</div>
         <div class="card-head-right">
           ${examples.length && e.disc === 'tt' ? `<a class="ext-link examples-sheet" href="${esc(exampleSheetUrl(e, ev.id))}" target="_blank" rel="noopener" title="See every ${esc(ev.label)} example side by side in Google Sheets">Compare all${ICON_EXT}</a>` : ''}
           ${examples.length ? `<label class="examples-menu"><span class="sr-only">Insert an example routine</span>
@@ -722,16 +766,33 @@ function eventCard(e, ev, visible) {
     </article>`;
 }
 
-// The groups the EG bonus counts (condensed I-IV at Infinity and WAG Masters), ticked when earned.
+// The groups the EG bonus counts (condensed I-IV at Infinity and WAG Masters), filled in
+// when earned, each with what it adds; the card's header shows the total.
 function cgSection(e, ev, spec) {
   const title = spec.family === 'mag' ? 'Element groups' : 'Condensed element groups';
   const tip = scoreTip(e, ev, 'EG bonus');
   return `
     <section class="cg-card" aria-label="${title}">
-      <h3 class="cg-title">${title}${tip ? infoButton(title, tip) : ''}</h3>
-      <ul class="cg-list">${spec.legend.map((g) => `<li data-cg="${g.key}"><span class="cg-badge">${g.roman}</span><span>${esc(g.label)}</span></li>`).join('')}</ul>
+      <div class="cg-head"><h3 class="cg-title">${title}${tip ? infoButton(title, tip) : ''}</h3><span class="cg-total">EG bonus <strong data-cg-total></strong></span></div>
+      <ul class="cg-list">${spec.legend.map((g) => `<li data-cg="${g.key}" title="${esc(`${g.roman}. ${g.label}`)}"><span class="cg-badge">${g.roman}</span><span class="cg-label">${esc(shortGroup(g.label))}</span><span class="cg-val" data-cg-val></span></li>`).join('')}</ul>
     </section>`;
 }
+
+// Group names short enough that the four fit on one line (the full name is the pill's title).
+const SHORT_GROUPS = {
+  'Non acrobatic elements': 'Non-acro', 'Forward acrobatic elements': 'Forward acro', 'Backward acrobatic elements': 'Backward acro',
+  'Single saltos with at least one twist': 'Twisting saltos', 'Single leg swings and scissors': 'Single leg & scissors',
+  'Circles, kehrs, russians, and flops': 'Circles & flops', 'Kips and swings': 'Kips & swings', 'Basket and long hang swings': 'Basket & long hang',
+  'Casts, clear hip, stalder and pike circles': 'Casts & circles', 'Giant circles': 'Giants', 'Leaps, jumps and hops': 'Leaps & jumps',
+  'Holds and acro (non-flight and flight)': 'Holds & acro', 'Mounts and dismounts': 'Mounts & dismounts', 'Hand support elements': 'Hand support',
+  'Saltos forward, sideward and backward': 'Saltos',
+  // UCG Infinity: the condensed groups, from the USAG groups they combine.
+  'Mounts · Dismounts': 'Mounts & dismounts', 'Casts/Counterswings': 'Casts', 'Underswings/Clear Hips · Stalder Circles · Circle Swings/Hechts': 'Underswings & circles',
+  'Giant Swings Backward · Giant Swings/Circles Fwd.': 'Giants', 'Leaps/Jumps/Hops · Turns': 'Leaps, jumps & turns', 'Waves · Holds/Stands · Rolls': 'Waves, holds & rolls',
+  'Walkovers/Cartwheels etc. · Saltos': 'Walkovers & saltos', 'Handstands · Rolls · Walkovers/Cartwheels etc.': 'Handstands & walkovers',
+  'Saltos Forward · Saltos Sideward/Arabians': 'Front & side saltos', 'Saltos Backward': 'Back saltos',
+};
+const shortGroup = (label) => SHORT_GROUPS[label] || label;
 
 function routineHelp(e, ev, spec) {
   if (spec.columns === 'dd') return 'List the routine in order. Search the T&T skill list (it fills in the FIG shorthand and DD), or type your own skill and its DD.';
@@ -744,13 +805,13 @@ function routineHelp(e, ev, spec) {
 function routineBody(e, ev, spec) {
   const rows = e.routines[ev.id];
   return `
-    <p class="routine-help">${routineHelp(e, ev, spec)}</p>
     ${ev.synchro ? `<label class="field inline partner"><span>Synchro partner</span><input type="text" data-partner="${ev.id}" value="${esc(e.options?.[ev.id]?.partner || '')}" placeholder="Partner's name" /></label>` : ''}
-    ${spec.links ? connectBar(ev.id) : ''}
     <div class="skill-table${connecting.has(ev.id) ? ' connecting' : ''}" data-routine="${ev.id}">${rowsMarkup(e, ev, spec, rows, null)}</div>
     <div class="routine-actions">
+      ${spec.links ? connectButton(ev.id) : ''}
       <button class="btn btn-ghost btn-sm" type="button" data-add-skill="${ev.id}">Add skill</button>
       <span class="routine-count" data-calc="count"></span>
+      ${spec.links ? `<span class="connect-hint">${connecting.has(ev.id) ? 'Tap between two skills to connect or separate them.' : ''}</span>` : ''}
     </div>`;
 }
 
@@ -758,12 +819,9 @@ function routineBody(e, ev, spec) {
 // only while it is on. Outside it, connected skills show as one joined block.
 const connecting = new Set();
 
-function connectBar(evId) {
+function connectButton(evId) {
   const on = connecting.has(evId);
-  return `<div class="connect-bar">
-      <button class="btn btn-ghost btn-sm connect-btn" type="button" data-connect-mode="${evId}" aria-pressed="${on}">${ICON_LINK}<span>${on ? 'Done connecting' : 'Connect skills'}</span></button>
-      <span class="connect-hint">${on ? 'Tap between two skills to connect or separate them.' : ''}</span>
-    </div>`;
+  return `<button class="btn btn-ghost btn-sm connect-btn" type="button" data-connect-mode="${evId}" aria-pressed="${on}">${ICON_LINK}<span>${on ? 'Done connecting' : 'Connect skills'}</span></button>`;
 }
 
 const linkInner = (on) => (on ? `${ICON_LINK}<span>Connected</span>` : `${ICON_PLUS}<span>Connect</span>`);
@@ -772,7 +830,6 @@ const linkTitle = (on) => (on ? 'Connected to the next skill (tap to separate)' 
 function passesBody(e, ev) {
   const spec = eventSpec(e, ev.id);
   return `
-    <p class="routine-help">${ev.id === 'dmt' ? 'Two passes of two skills: a mounter or spotter, then a dismount. A mounter is done from the angled bed onto the flat bed; a spotter comes after a straight jump onto the flat bed, taking off and landing there. A skill repeated in the same position gets no difficulty.' : 'Two passes. Search the T&T skill list or type your own skill and its DD.'}</p>
     ${[0, 1]
       .map(
         (p) => `<div class="pass" data-pass-block="${p}">
@@ -783,6 +840,11 @@ function passesBody(e, ev) {
       )
       .join('')}`;
 }
+
+const passesHelp = (ev) =>
+  ev.id === 'dmt'
+    ? 'Two passes of two skills: a mounter or spotter, then a dismount. A mounter is done from the angled bed onto the flat bed; a spotter comes after a straight jump onto the flat bed, taking off and landing there. A skill repeated in the same position gets no difficulty.'
+    : 'Two passes. Search the T&T skill list or type your own skill and its DD.';
 
 // Double mini: the first skill of a pass is a mounter or a spotter. A repeat only
 // loses its difficulty in the same position.
@@ -827,11 +889,19 @@ function skillRow(e, ev, spec, i, s, pass) {
       <button type="button" class="drag-handle" ${data} data-drag aria-label="Move ${label}. Drag, or use the up and down arrow keys." title="Drag to reorder">${ICON_GRIP}</button>
       <span class="num">${i + 1}</span></span>`;
   const remove = `<button type="button" class="remove-skill" ${data} data-remove aria-label="Remove ${label}" title="Remove skill">${ICON_X}</button>`;
+  // Phones: the row folds to two lines (name, then its values) until tapped; tapped, it
+  // opens its fields with Remove skill and Done.
+  const summary = `<button type="button" class="row-summary" ${data} data-expand aria-label="Edit ${label}">
+      <span class="sum-name" data-calc="sum-name"></span><span class="sum-meta" data-calc="sum-meta"></span></button>`;
+  const edit = `<div class="row-edit">
+      <button type="button" class="row-remove" ${data} data-remove>${ICON_TRASH}<span>Remove skill</span></button>
+      <button type="button" class="btn btn-primary btn-sm" data-done>Done</button></div>`;
+  const open = editing === rowKey(ev.id, pass, i) ? ' editing' : '';
   if (dd) {
-    return `<div class="skill-row${cls}" data-row="${i}">${handle}${combo}
+    return `<div class="skill-row${cls}${open}" data-row="${i}">${handle}${summary}${combo}
       <input class="col-letter" type="text" aria-label="${label} shorthand" ${data} data-field="notation" value="${esc(s.notation)}" placeholder="Shorthand" />
       <input class="col-eg" type="number" inputmode="decimal" step="0.1" min="0" aria-label="${label} DD" ${data} data-field="dd" value="${esc(s.dd)}" placeholder="DD" />
-      ${remove}<span class="row-flag" data-calc="flag"></span></div>`;
+      ${remove}<span class="row-flag" data-calc="flag"></span>${edit}</div>`;
   }
   const letters = `<select class="col-letter" aria-label="${label} difficulty" ${data} data-field="letter">
       <option value="">–</option>${spec.letters.map((l) => `<option${l === s.letter ? ' selected' : ''}>${l}</option>`).join('')}</select>`;
@@ -844,12 +914,23 @@ function skillRow(e, ev, spec, i, s, pass) {
         <option value="">EG –</option>${spec.groups.map((g) => `<option value="${g.value}"${String(g.value) === String(s.eg) ? ' selected' : ''}>${esc(g.label)}</option>`).join('')}</select>`
     : '<span class="col-eg"></span>';
   if (spec.columns === 'xcel') {
-    return `<div class="skill-row${cls}${s.link ? ' linked' : ''}" data-row="${i}">${handle}${combo}${letters}${eg}
-      <span class="col-value calc" data-calc="value"></span>${remove}<span class="row-flag" data-calc="flag"></span>${link}</div>`;
+    return `<div class="skill-row${cls}${open}${s.link ? ' linked' : ''}" data-row="${i}">${handle}${summary}${combo}${letters}${eg}
+      <span class="col-value calc" data-calc="value"></span>${remove}<span class="row-flag" data-calc="flag"></span>${edit}${link}</div>`;
   }
-  return `<div class="skill-row${cls}${s.link ? ' linked' : ''}" data-row="${i}">${handle}${combo}${letters}${eg}
+  return `<div class="skill-row${cls}${open}${s.link ? ' linked' : ''}" data-row="${i}">${handle}${summary}${combo}${letters}${eg}
     <span class="col-value calc" data-calc="value"></span><span class="col-bonus calc" data-calc="bonus"></span>
-    ${remove}<span class="row-flag" data-calc="flag"></span>${link}</div>`;
+    ${remove}<span class="row-flag" data-calc="flag"></span>${edit}${link}</div>`;
+}
+
+// The row open for editing on a phone ("event|pass|index"), or null.
+let editing = null;
+const rowKey = (evId, pass, i) => `${evId}|${pass ?? ''}|${i}`;
+function setEditing(key) {
+  editing = key;
+  $$('.skill-row[data-row]').forEach((r) => {
+    const i = $('[data-expand]', r);
+    r.classList.toggle('editing', !!i && rowKey(i.dataset.ev, i.dataset.pass, Number(i.dataset.idx)) === key);
+  });
 }
 
 // Ticked by updateComputed: met by a listed skill (and what it assumes), or ticked by hand.
@@ -969,7 +1050,6 @@ function bindEditor(a, e) {
   const name = $('#f-name');
   name.oninput = () => {
     a.name = name.value;
-    $('#hero-name').textContent = a.name || 'New athlete';
     renderAthletePicker();
     scheduleSave();
   };
@@ -1189,12 +1269,25 @@ function onClick(ev) {
     }
     return;
   }
+  const expand = ev.target.closest('[data-expand]');
+  if (expand) {
+    if (dragJustEnded) return;
+    setEditing(rowKey(expand.dataset.ev, expand.dataset.pass, Number(expand.dataset.idx)));
+    $('.skill-input', expand.closest('.skill-row'))?.focus();
+    return;
+  }
+  if (ev.target.closest('[data-done]')) {
+    closePicker();
+    setEditing(null);
+    return;
+  }
   const add = ev.target.closest('[data-add-skill]');
   if (add) {
     const evId = add.dataset.addSkill;
     const list = rowsOf(e, evId, add.dataset.pass);
     if (list.length >= MAX_ROWS) return;
     list.push(e.disc === 'tt' ? blankTT() : blankSkill());
+    editing = rowKey(evId, add.dataset.pass, list.length - 1);
     renderRows(evId, add.dataset.pass, { row: list.length - 1, part: 'name' });
     scheduleSave();
     return;
@@ -1225,14 +1318,29 @@ function onClick(ev) {
   }
   const remove = ev.target.closest('[data-remove]');
   if (remove) {
-    const list = rowsOf(e, remove.dataset.ev, remove.dataset.pass);
+    const { ev: evId, pass } = remove.dataset;
+    const list = rowsOf(e, evId, pass);
     const i = Number(remove.dataset.idx);
-    list.splice(i, 1);
+    const before = JSON.stringify(list);
+    const [gone] = list.splice(i, 1);
     normalizeEntry(e);
-    renderRows(remove.dataset.ev, remove.dataset.pass, { row: Math.min(i, list.length - 1), part: 'name' });
+    editing = null;
+    renderRows(evId, pass, { row: Math.min(i, list.length - 1), part: isPhone() ? null : 'name' });
     scheduleSave();
+    // Removed at once; Undo puts the routine back as it was (while the same level is open).
+    if (gone && (gone.name || gone.letter || gone.notation)) {
+      showToast('undo-toast', `Removed ${gone.name || 'a skill'}.`, 'Undo', () => {
+        if (entry() !== e) return;
+        list.splice(0, list.length, ...JSON.parse(before));
+        renderRows(evId, pass, null);
+        scheduleSave();
+      });
+      clearTimeout(undoTimer);
+      undoTimer = setTimeout(() => $('#undo-toast')?.remove(), 8000);
+    }
   }
 }
+let undoTimer;
 
 // Re-draw one routine (after add / remove / reorder / pick) and focus a row.
 function renderRows(evId, pass, focus) {
@@ -1243,7 +1351,7 @@ function renderRows(evId, pass, focus) {
   const sel = `[data-routine="${evId}"]${pass != null && pass !== '' ? `[data-pass="${pass}"]` : ''}`;
   $(sel).innerHTML = rowsMarkup(e, ev, spec, rowsOf(e, evId, pass), pass != null && pass !== '' ? Number(pass) : null);
   updateComputed();
-  if (focus) {
+  if (focus?.part) {
     const row = $(`${sel} [data-row="${focus.row}"]`);
     $(focus.part === 'handle' ? '.drag-handle' : '.skill-input', row)?.focus();
   }
@@ -1267,15 +1375,45 @@ function onKey(ev) {
   moveSkill(h.dataset.ev, h.dataset.pass, from, from + (ev.key === 'ArrowUp' ? -1 : 1), 'handle');
 }
 
-// Drag to reorder: pointer events, so it works with a mouse and on touch screens.
+// Drag to reorder: pointer events, so it works with a mouse and on touch screens. The grip
+// starts a drag at once; on a phone, so does a long press anywhere on a folded skill (a
+// quick swipe still scrolls the page).
+let dragJustEnded = false;
 function onPointerDown(ev) {
   const handle = ev.target.closest('.drag-handle');
-  if (!handle || ev.button > 0) return;
-  ev.preventDefault();
+  if (handle && ev.button <= 0) {
+    ev.preventDefault();
+    return startDrag(handle, ev);
+  }
+  const summary = ev.target.closest('[data-expand]');
+  if (!summary || ev.pointerType === 'mouse' || summary.closest('.is-blank')) return;
+  const x0 = ev.clientX;
+  const y0 = ev.clientY;
+  const cancel = () => {
+    clearTimeout(timer);
+    removeEventListener('pointermove', moved);
+    removeEventListener('pointerup', cancel);
+    removeEventListener('pointercancel', cancel);
+  };
+  const moved = (m) => Math.hypot(m.clientX - x0, m.clientY - y0) > 8 && cancel();
+  const timer = setTimeout(() => {
+    cancel();
+    navigator.vibrate?.(10);
+    startDrag(summary, ev);
+  }, 450);
+  addEventListener('pointermove', moved);
+  addEventListener('pointerup', cancel);
+  addEventListener('pointercancel', cancel);
+}
+
+function startDrag(handle, ev) {
   const evId = handle.dataset.ev;
   const pass = handle.dataset.pass;
   const from = Number(handle.dataset.idx);
   const container = handle.closest('.skill-table');
+  // While dragging on a touch screen the page mustn't scroll under the finger.
+  const noScroll = (t) => t.preventDefault();
+  addEventListener('touchmove', noScroll, { passive: false });
   const rows = $$('.skill-row[data-row]', container);
   const dragged = rows[from];
   const others = rows.filter((r) => r !== dragged);
@@ -1312,6 +1450,9 @@ function onPointerDown(ev) {
     removeEventListener('pointermove', move);
     removeEventListener('pointerup', end);
     removeEventListener('pointercancel', end);
+    removeEventListener('touchmove', noScroll);
+    dragJustEnded = true;
+    setTimeout(() => (dragJustEnded = false), 350);
     container.classList.remove('reordering');
     rows.forEach((r, k) => {
       r.style.transform = '';
@@ -1404,7 +1545,7 @@ function showTip(btn) {
   tipEl.textContent = btn.dataset.tip;
   tipEl.hidden = false;
   const r = btn.getBoundingClientRect();
-  const w = Math.min(260, innerWidth - 16);
+  const w = Math.min(btn.dataset.tipWide != null ? 380 : 260, innerWidth - 16);
   tipEl.style.maxWidth = `${w}px`;
   const left = Math.min(Math.max(8, r.left + r.width / 2 - tipEl.offsetWidth / 2), innerWidth - tipEl.offsetWidth - 8);
   const above = r.top - tipEl.offsetHeight - 8;
@@ -1591,7 +1732,7 @@ function renderPicker(query) {
     html.push(`
       <div class="pop-opt${i === picker.active ? ' active' : ''}" role="option" id="pop-opt-${i}" data-skill="${i}" aria-selected="${i === picker.active}"${s.note ? ` title="Note: ${esc(s.note)}"` : ''}>
         <span class="src-badge ${s.src.toLowerCase()}" title="${esc(boxTitle(s))}">${SRC_SHORT[s.src] || s.src}</span>
-        <span class="pop-name">${s.box ? `<span class="pop-box">${esc(s.box.replace(/^\S+ /, ''))}</span>` : ''}${esc(s.name)}${s.eponym ? ` <span class="pop-eponym">(${esc(s.eponym)})</span>` : ''}${s.aka?.length ? ` <span class="pop-aka">aka ${esc(s.aka.slice(0, 2).join(', '))}</span>` : ''}</span>
+        <span class="pop-name">${s.box ? `<span class="pop-box">${esc(s.box.replace(/^\S+ /, ''))}</span>` : ''}<span class="pop-text">${esc(s.name)}${s.eponym ? ` <span class="pop-eponym">(${esc(s.eponym)})</span>` : ''}${s.aka?.length ? `<span class="pop-aka">aka ${esc(s.aka.slice(0, 2).join(', '))}</span>` : ''}</span></span>
         <span class="pop-meta">${meta}</span>
       </div>`);
   });
@@ -1621,8 +1762,12 @@ function setActive(i) {
 // covers the bottom (window.visualViewport), and the sticky header covers the top.
 function visibleArea() {
   const vv = window.visualViewport;
-  const top = Math.max(vv ? vv.offsetTop : 0, $('.site-header')?.getBoundingClientRect().bottom || 0);
-  const bottom = vv ? vv.offsetTop + vv.height : innerHeight;
+  // On phones the event chips stay pinned under the header, and the start value bar at the bottom.
+  const chips = isPhone() ? $('#summary')?.getBoundingClientRect().bottom || 0 : 0;
+  const bar = $('#sv-bar');
+  const barTop = bar && getComputedStyle(bar).position === 'fixed' ? bar.getBoundingClientRect().top : Infinity;
+  const top = Math.max(vv ? vv.offsetTop : 0, $('.site-header')?.getBoundingClientRect().bottom || 0, chips);
+  const bottom = Math.min(vv ? vv.offsetTop + vv.height : innerHeight, barTop);
   return { top, bottom };
 }
 const isPhone = () => matchMedia('(max-width: 640px), (pointer: coarse)').matches;
@@ -1774,8 +1919,20 @@ function updateRows(container, items, spec, list) {
     badge.className = `src-badge ${src.toLowerCase()}`;
     badge.title = src === 'Custom' ? 'Not from the skill list: values are set by hand' : listed ? boxTitle(listed) : '';
     $('.skill-input', rowEl).title = it.name;
+    // The folded row on phones: the name, then difficulty · group · where it's from.
+    $('[data-calc="sum-name"]', rowEl).textContent = row?.name || 'Add a skill';
+    const group = spec.groups && row?.eg ? spec.groups.find((g) => String(g.value) === String(row.eg))?.label : '';
+    const meta = spec.columns === 'dd'
+      ? [row?.notation || '', row?.dd !== '' && row?.dd != null ? `DD ${fmt(row.dd)}` : '']
+      : [row?.letter || '–', spec.groups ? (group ? shortGroupRow(group) : 'EG –') : '', listed?.box || (it.name ? (SRC_SHORT[src] || src) : '')];
+    $('[data-calc="sum-meta"]', rowEl).textContent = row?.name || row?.letter || row?.notation ? meta.filter(Boolean).join(' · ') : '';
   }
 }
+// "II. Forward acrobatic elements" -> "II Forward acro"; "7. Walkovers/Cartwheels etc." -> "G7 Walkovers/Cartwheels etc."
+const shortGroupRow = (label) => {
+  const [, k, name] = label.match(/^(\w+)\. (.*)$/) || [, '', label];
+  return /^\d+$/.test(k) ? `G${k} ${name}` : `${k} ${shortGroup(name)}`;
+};
 
 function updateComputed() {
   const a = athlete();
@@ -1852,7 +2009,15 @@ function updateComputed() {
     const vrow = $(`[data-option-row="vt:altBoard"]`, card);
     if (vrow) vrow.classList.toggle('on', !!e.options?.vt?.altBoard);
 
-    $$('.cg-list li', card).forEach((li) => li.classList.toggle('earned', (r.earnedGroups || []).includes(Number(li.dataset.cg))));
+    const perGroup = groupBonuses(r);
+    $$('.cg-list li', card).forEach((li) => {
+      const k = Number(li.dataset.cg);
+      li.classList.toggle('earned', (r.earnedGroups || []).includes(k));
+      $('[data-cg-val]', li).textContent = perGroup[k] ? `+${fmt(perGroup[k])}` : '';
+    });
+    const egTotal = (r.totals || []).find(([label]) => label === 'EG bonus')?.[1];
+    const totalEl = $('[data-cg-total]', card);
+    if (totalEl) totalEl.textContent = egTotal ? `+${fmt(egTotal)}` : '0.0';
     const totals = r.totals || [];
     $(`[data-totals="${ev.id}"]`, card).innerHTML = totals
       .map(([label, value], i) => {
@@ -1873,13 +2038,71 @@ function updateComputed() {
           aria-selected="${on}" aria-controls="panel-${ev.id}" tabindex="${on ? 0 : -1}">
           <span>${esc(ev.short)}</span><strong>${sv == null ? '—' : fmt(sv)}</strong></button>`;
       })
-      .join('') + (score.allAround == null ? '' : `<div class="stat stat-aa"><span>All-Around</span><strong>${fmt(score.allAround)}</strong></div>`);
-  $('#summary').dataset.count = D.events.length + (score.allAround == null ? 0 : 1);
+      .join('') + (score.allAround == null ? '' : `<div class="stat stat-aa"><span>All-around</span><strong>${fmt(score.allAround)}</strong></div>`);
+  const n = D.events.length + (score.allAround == null ? 0 : 1);
+  $('#summary').dataset.count = n;
+  $('#summary').style.setProperty('--n', n);
+  // Phones: the chips scroll sideways; keep the open event's chip in view.
+  const chips = $('#summary');
+  const open = $('.stat-tab.active', chips);
+  if (isPhone() && open && (open.offsetLeft < chips.scrollLeft || open.offsetLeft + open.offsetWidth > chips.scrollLeft + chips.clientWidth)) {
+    chips.scrollLeft = open.offsetLeft - 16;
+  }
+  // Phones: the open event's start value stays in a bar at the bottom of the screen.
+  const curEv = eventInfo(e.disc, cur);
+  const curSv = score.events[cur].sv;
+  $('#sv-bar-label').textContent = `${curEv.short} ${e.disc === 'tt' ? 'difficulty' : 'start value'}`;
+  $('#sv-bar-value').textContent = curSv == null ? '—' : e.disc === 'tt' ? `DD ${fmt(curSv)}` : fmt(curSv);
+  $('#sv-breakdown').onclick = () => openBreakdown(cur);
   $('#summary').onclick = (ev) => {
     const t = ev.target.closest('[data-tab]');
     if (t) selectTab(t.dataset.tab);
   };
   $('#summary').onkeydown = onTabKey;
+}
+
+// What each element group adds: MAG reports it per group; UCG Infinity and WAG Masters
+// credit it to the skill that earned it.
+const ROMAN_KEY = { I: 1, II: 2, III: 3, IV: 4 };
+function groupBonuses(r) {
+  if (r.egBonus) return Object.fromEntries(Object.entries(r.egBonus).map(([k, v]) => [Number(k), v]));
+  const out = {};
+  for (const it of r.items || []) {
+    if (!it.bonus) continue;
+    const k = it.condensed ? ROMAN_KEY[it.condensed] ?? Number(it.condensed) : Number(it.eg);
+    if (k) out[k] = (out[k] || 0) + it.bonus;
+  }
+  return out;
+}
+
+// Phones: "Breakdown" opens a sheet with the parts of the start value and the element groups.
+function openBreakdown(evId) {
+  const e = entry();
+  const ev = eventInfo(e.disc, evId);
+  const r = scoreEvent(e, evId);
+  $('#breakdown')?.remove();
+  const dlg = document.createElement('dialog');
+  dlg.id = 'breakdown';
+  dlg.className = 'modal sheet';
+  dlg.setAttribute('aria-label', `${ev.label} breakdown`);
+  const totals = r.totals || [];
+  const last = totals.length - 1;
+  const cg = $(`[data-event-card="${evId}"] .cg-card`);
+  const notes = [...(r.notes || []), ...(r.warnings || [])];
+  dlg.innerHTML = `
+    <div class="modal-body">
+      <div class="sheet-head">
+        <div><span class="sheet-label">${esc(ev.label)}</span><strong class="sheet-value">${r.sv == null ? '—' : e.disc === 'tt' ? `DD ${fmt(r.sv)}` : fmt(r.sv)}</strong></div>
+        <button type="button" class="icon-btn" data-close aria-label="Close">${ICON_X}</button>
+      </div>
+      <dl class="sheet-totals">${totals.map(([label, value], i) => `<div${i === last ? ' class="grand"' : ''}><dt>${esc(label)}</dt><dd>${i === last ? fmt(value) : signed(value)}</dd></div>`).join('')}</dl>
+      ${cg ? `<div class="sheet-cg">${cg.innerHTML}</div>` : ''}
+      ${notes.length ? `<ul class="sheet-notes">${notes.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+    </div>`;
+  document.body.appendChild(dlg);
+  dlg.addEventListener('close', () => dlg.remove());
+  dlg.addEventListener('click', (x) => (x.target === dlg || x.target.closest('[data-close]')) && dlg.close());
+  dlg.showModal();
 }
 
 function selectTab(tab, focus = false) {
@@ -1975,7 +2198,7 @@ async function onUser(user) {
 }
 
 // ---- Feedback -----------------------------------------------------------------------
-// The corner button: js/feedback.js sends it with who and where it came from.
+// "Send feedback" in the account menu: js/feedback.js sends it with who and where it came from.
 function feedbackContext() {
   const u = state.user;
   const a = athlete();
@@ -1990,7 +2213,6 @@ function feedbackContext() {
     apparatus: e ? eventInfo(e.disc, currentEvent(e))?.label || '' : '(none)',
   };
 }
-$('#feedback-btn').onclick = () => import('./feedback.js').then((m) => m.openFeedback(feedbackContext), reportError);
 
 // ---- Errors -------------------------------------------------------------------------
 // Anything unexpected shows a message with a Reload button instead of failing silently.
