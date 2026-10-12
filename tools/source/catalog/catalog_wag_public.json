@@ -1,7 +1,7 @@
 {
  "discipline": "WAG",
- "version": "df62c984d410",
- "built": "2026-10-08",
+ "version": "1d3317b3e905",
+ "built": "2026-10-11",
  "elements": [
   {
    "id": "WAG-BB-0001",
@@ -13712,9 +13712,7 @@
       "element_group": "5",
       "eponym": "",
       "divisions": [
-       "Bronze",
-       "Silver",
-       "Gold"
+       "Bronze"
       ],
       "tags": {
        "acro": true
@@ -45672,6 +45670,13 @@
       "value": "A",
       "element_group": "2",
       "eponym": "",
+      "divisions": [
+       "Bronze",
+       "Silver",
+       "Gold",
+       "Platinum",
+       "Diamond"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,

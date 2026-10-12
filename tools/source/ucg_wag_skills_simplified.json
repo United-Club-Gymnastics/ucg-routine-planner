@@ -1563,7 +1563,14 @@
     "element_group": "2",
     "group_name": "Casts / Counterswings",
     "apparatus": "UB",
-    "source": "USAG Xcel 2022-2028"
+    "source": "USAG Xcel 2022-2028",
+    "divisions": [
+      "Bronze",
+      "Silver",
+      "Gold",
+      "Platinum",
+      "Diamond"
+    ]
   },
   {
     "number": "2.001",
@@ -6300,9 +6307,7 @@
     "source": "USAG Xcel 2022-2028",
     "revised": true,
     "divisions": [
-      "Bronze",
-      "Silver",
-      "Gold"
+      "Bronze"
     ]
   },
   {
