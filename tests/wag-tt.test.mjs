@@ -205,3 +205,26 @@ test('Trampoline: a ¾ somersault is not a repeat of the full somersault', () =>
   const r = scoreTramp('if', [t('Front somersault tuck', 0.5, '40o'), t('¾ front somersault tuck', 0.3, '30o'), t('Front somersault tuck', 0.5, '40o')]);
   assert.deepEqual(r.items.map((it) => it.status), ['counting', 'counting', 'repeat']);
 });
+test('UCG Infinity beam and floor: the apparatus bonus is met by connected listed skills', async () => {
+  const { findSkill } = await import('../js/skill-search.js');
+  const L = (id, link = false) => { const skill = findSkill(id); return { name: skill.name, letter: skill.value, skillId: id, skill, link }; };
+  // Beam: two connected acro flight elements (USAG tags, or WG element groups 5-6).
+  const bhs = 'USAG-BB-7.208-1';
+  assert.equal(scoreInfinity('bb', [L(bhs), L('USAG-BB-7.211-1')]).bonus, 0); // not connected
+  const bb = scoreInfinity('bb', [L(bhs, true), L('USAG-BB-7.211-1')]);
+  assert.equal(bb.bonus, 0.3);
+  assert.match(bb.detected.eventBonus, /Back handspring step-out \+ Gainer/);
+  assert.equal(scoreInfinity('bb', [L('USAG-BB-7.104-1a', true), L(bhs)]).bonus, 0); // back walkover: no flight
+  assert.equal(scoreInfinity('bb', [L('WGW-BB-5.204-1', true), L('WGW-BB-6.101-1')]).bonus, 0.3);
+  // Floor: two saltos in one connected pass, directly or not.
+  const ro = 'USAG-FX-5.105-1a';
+  const fx = scoreInfinity('fx', [L(ro, true), L('USAG-FX-5.106-1a', true), L('USAG-FX-8.101-1a', true), L('USAG-FX-8.101-1c')]);
+  assert.equal(fx.bonus, 0.3);
+  assert.equal(fx.detected.eventBonus, 'Back tuck + Back layout');
+  assert.equal(scoreInfinity('fx', [L(ro, true), L('USAG-FX-8.101-1a'), L('USAG-FX-6.101-1')]).bonus, 0); // two passes
+  assert.equal(scoreInfinity('fx', [L('WGW-FX-4.101-1', true), L('WGW-FX-5.101-1')]).bonus, 0.3);
+  // Typed-in skills are never detected; the coach's tick still counts. Bars stay a tick.
+  assert.equal(scoreInfinity('fx', [{ name: 'Back tuck', letter: 'A', link: true }, { name: 'Back layout', letter: 'A' }]).bonus, 0);
+  assert.equal(scoreInfinity('fx', [{ name: 'Back tuck', letter: 'A' }], { eventBonus: true }).bonus, 0.3);
+  assert.deepEqual(scoreInfinity('ub', bars).detected, {});
+});

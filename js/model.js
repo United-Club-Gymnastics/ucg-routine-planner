@@ -99,7 +99,14 @@ export function eventSpec(entry, evId) {
     spec.letters = Object.keys(wag.INFINITY_VALUES);
     spec.groups = groupList(g.groups, false);
     spec.legend = Object.entries(g.condensed).map(([r, nums]) => ({ key: { I: 1, II: 2, III: 3, IV: 4 }[r], roman: r, label: nums.map((n) => g.groups[n]).join(' · ') }));
-    spec.options = [{ id: 'eventBonus', kind: 'check', value: wag.INFINITY_EVENT_BONUS, label: 'Apparatus bonus', help: g.eventBonus }];
+    // Beam and floor: the apparatus bonus is a connection, so the coach marks connected
+    // skills and the bonus is ticked when listed skills meet it.
+    const auto = evId !== 'ub';
+    spec.options = [{
+      id: 'eventBonus', kind: 'check', value: wag.INFINITY_EVENT_BONUS, label: 'Apparatus bonus', help: g.eventBonus, detect: auto,
+      tip: auto ? `Ticked automatically when skills from the list, marked as connected, meet it: ${evId === 'bb' ? 'two directly connected acro flight elements (not the mount or dismount)' : 'two saltos in the same connected pass'}. A skill you typed in can't be checked: tick the box yourself.` : null,
+    }];
+    spec.links = auto;
     spec.maxCounting = wag.INFINITY_MAX_SKILLS;
   } else if (fam === 'wagMasters') {
     spec.letters = MASTERS_LETTERS;

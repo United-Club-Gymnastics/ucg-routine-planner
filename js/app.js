@@ -655,6 +655,19 @@ function importNotice(e) {
     </section>`;
 }
 
+// The UCG sheet the T&T examples come from, opened on the tab for the level and event,
+// so people can compare every example side by side.
+const TT_EXAMPLE_SHEET = 'https://docs.google.com/spreadsheets/d/1xV7YCE3GB7DZdBJOZO5wLKNPNlHSYkbz82dybMd0yu4/edit';
+const TT_EXAMPLE_TABS = {
+  'nf-tr': 1435406756, 'nf-dmt': 1981485949, 'nf-tu': 191551846,
+  'if-tr': 1276161485, 'if-dmt': 533484477, 'if-tu': 1541825099,
+  'hf-tr': 794122378, 'hf-dmt': 2128556051, 'hf-tu': 413171885,
+};
+function exampleSheetUrl(e, event) {
+  const gid = TT_EXAMPLE_TABS[`${e.level}-${event}`];
+  return gid ? `${TT_EXAMPLE_SHEET}#gid=${gid}` : TT_EXAMPLE_SHEET;
+}
+
 function startPanel(a, e) {
   if (hasContent(e)) return '';
   const sources = a.entries.filter((x) => x.id !== e.id && x.disc === e.disc && hasContent(x));
@@ -664,7 +677,7 @@ function startPanel(a, e) {
     <section class="card start-panel">
       <div class="start-text">
         <h2 class="card-subtitle">Start from something?</h2>
-        <p class="muted">${sources.length ? `Copy every event from another ${esc(DISCIPLINES[e.disc].name)} level; values and start values are recalculated for ${esc(levelInfo(e.disc, e.level).name)}. ` : ''}${examples.length ? 'Or fill each event with an example routine, then edit it. Each event also has an Examples menu.' : ''}</p>
+        <p class="muted">${sources.length ? `Copy every event from another ${esc(DISCIPLINES[e.disc].name)} level; values and start values are recalculated for ${esc(levelInfo(e.disc, e.level).name)}. ` : ''}${examples.length ? 'Or fill each event with an example routine, then edit it. Each event also has an Examples menu.' : ''}${examples.length && e.disc === 'tt' ? ` To compare them first, <a class="ext-link" href="${esc(exampleSheetUrl(e, examples[0].event))}" target="_blank" rel="noopener">browse all the T&amp;T examples in Google Sheets${ICON_EXT}</a>.` : ''}</p>
       </div>
       <div class="start-actions">
         ${sources.length > 1 ? `<label class="field inline"><span>Copy from</span><select id="copy-src">${sources.map((s) => `<option value="${esc(s.id)}">${esc(levelInfo(s.disc, s.level).name)}</option>`).join('')}</select></label>` : ''}
@@ -676,6 +689,7 @@ function startPanel(a, e) {
 
 const ICON_GRIP = `<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><circle cx="9" cy="6" r="1.7"/><circle cx="15" cy="6" r="1.7"/><circle cx="9" cy="12" r="1.7"/><circle cx="15" cy="12" r="1.7"/><circle cx="9" cy="18" r="1.7"/><circle cx="15" cy="18" r="1.7"/></svg>`;
 const ICON_LINK = `<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>`;
+const ICON_EXT = `<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>`;
 const ICON_PLUS = `<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>`;
 const ICON_X = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>`;
 const ICON_CHEVRON = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>`;
@@ -690,6 +704,7 @@ function eventCard(e, ev, visible) {
       <header class="card-head">
         <h2 class="card-title">${esc(ev.label)}</h2>
         <div class="card-head-right">
+          ${examples.length && e.disc === 'tt' ? `<a class="ext-link examples-sheet" href="${esc(exampleSheetUrl(e, ev.id))}" target="_blank" rel="noopener" title="See every ${esc(ev.label)} example side by side in Google Sheets">Compare all${ICON_EXT}</a>` : ''}
           ${examples.length ? `<label class="examples-menu"><span class="sr-only">Insert an example routine</span>
             <select data-example="${ev.id}"><option value="">Examples…</option>${examples.map((x) => `<option value="${esc(x.id)}">${esc(x.title)}</option>`).join('')}</select></label>` : ''}
           <span class="sv-pill" data-sv="${ev.id}"></span>
@@ -876,7 +891,7 @@ function optionControl(e, evId, o) {
   return `
     <label class="event-bonus${o.deduction ? ' requirement' : ''}" data-option-row="${evId}:${o.id}">
       ${leading ? control : ''}
-      <span class="event-bonus-text"><strong>${esc(o.label)}</strong><span data-help>${esc(o.help)}</span></span>
+      <span class="event-bonus-text"><strong>${esc(o.label)}${o.tip ? infoButton(o.label, o.tip) : ''}</strong><span data-help>${esc(o.help)}</span></span>
       ${leading ? '' : control}
       <span class="event-bonus-value calc" data-calc="opt-${o.id}"></span>
     </label>`;

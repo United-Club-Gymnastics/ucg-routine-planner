@@ -7,7 +7,7 @@ import { MASTERS_LETTERS, mastersValue, meetsRequirement, vaultAgeBonus } from '
 import { VAULTS as WG_VAULTS } from '../data/wag-vaults.js';
 import { VAULTS as MASTERS_VAULTS } from '../data/masters-vaults.js';
 import { SAME_ELEMENT, HAND_SUPPORT_FLIGHT as HAND_SUPPORT_FLIGHT_IDS } from '../data/wag-same.js';
-import { detectSR, markKindRestrictions, sapphireBonus } from './xcel-rules.js';
+import { detectSR, infinityApparatusBonus, markKindRestrictions, sapphireBonus } from './xcel-rules.js';
 
 const HAND_SUPPORT_FLIGHT = new Set(HAND_SUPPORT_FLIGHT_IDS);
 
@@ -68,7 +68,8 @@ const condensedOf = (event, eg) => {
 /**
  * UCG Infinity bars / beam / floor. The 8 highest-value skills count; +0.3 per
  * condensed group with a B or higher skill (counting or not); +0.3 apparatus
- * bonus; -1.0 per skill under 6.
+ * bonus (ticked by the coach, or on beam and floor met by connected listed skills);
+ * -1.0 per skill under 6.
  */
 export function scoreInfinity(event, skills = [], { eventBonus = false } = {}) {
   const items = baseItems(skills, (l) => INFINITY_VALUES[l] ?? 0);
@@ -94,11 +95,13 @@ export function scoreInfinity(event, skills = [], { eventBonus = false } = {}) {
   }
   const difficulty = round1(rows.reduce((t, r) => t + r.value, 0));
   const egTotal = round1(earned.size * INFINITY_EG_BONUS);
-  const bonus = eventBonus ? INFINITY_EVENT_BONUS : 0;
+  const hit = infinityApparatusBonus(event, items);
+  const detected = hit ? { eventBonus: hit.map((it) => it.name.replace(/\.+$/, '')).join(' + ') } : {};
+  const bonus = eventBonus || hit ? INFINITY_EVENT_BONUS : 0;
   const shortBy = Math.max(0, MIN_SKILLS - rows.length);
   const sv = rows.length ? round1(EXECUTION + difficulty + egTotal + bonus - shortBy) : null;
   return {
-    items, rows, difficulty, egTotal, bonus, shortBy, sv,
+    items, rows, difficulty, egTotal, bonus, shortBy, sv, detected,
     earnedGroups: [...earned].map((k) => ({ I: 1, II: 2, III: 3, IV: 4 })[k]),
     totals: [['Execution', 10], ['Difficulty', difficulty], ['EG bonus', egTotal], ['Apparatus bonus', bonus], [`Short of ${MIN_SKILLS}`, -shortBy]],
   };

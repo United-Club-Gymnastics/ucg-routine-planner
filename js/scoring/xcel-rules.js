@@ -179,6 +179,25 @@ const salto = (it) => T(it).salto;
 const saltoOrAerial = (it) => T(it).salto || T(it).aerial;
 
 /**
+ * UCG Infinity apparatus bonus on beam and floor, from the connected skills: the skills
+ * that meet it, or null. Beam: an acro series with 2 directly connected flight elements
+ * (mounts and dismounts aside). Floor: an acro pass with at least 2 saltos, directly or
+ * indirectly connected. Listed skills only (a typed-in skill could be anything: the coach ticks it).
+ */
+export function infinityApparatusBonus(ev, items) {
+  const live = (it) => it.skill && !it.offLevel;
+  const passes = passesOf(items).map((p) => p.filter(live)).filter((p) => p.length > 1);
+  if (ev === 'bb') return passes.map((p) => pairs(p).find(([x, y]) => wgFlight(x) && wgFlight(y))).find(Boolean) || null;
+  if (ev === 'fx') return passes.map((p) => p.filter(wgSalto)).find((s) => s.length >= 2)?.slice(0, 2) || null;
+  return null;
+}
+// WG Code skills have no tags; their element group says what they are. Beam: 5 and 6 are
+// acro flight. Floor: 5 is saltos backward, 4 saltos forward / sideward (with aerials).
+const fromWG = (it) => it.skill?.src === 'WG';
+const wgFlight = (it) => (fromWG(it) ? [5, 6].includes(group(it)) : flight('bb', it));
+const wgSalto = (it) => (fromWG(it) ? group(it) === 5 || (group(it) === 4 && /salto/i.test(it.skill.name)) : salto(it));
+
+/**
  * Which special requirements the routine meets. Uses credited skills only (restricted
  * skills and repeats without credit never meet one). Returns 4 entries:
  * { by: [row indexes], assumes: text | null } or null.
