@@ -517,7 +517,7 @@ function renderSignIn() {
   $('#guest-btn').onclick = () => onUser(GUEST);
 }
 
-// "Sign in to save" buttons in the top bar and the guest banner.
+// "Sign in to save" buttons in the header, the account menu and the guest banner.
 document.addEventListener('click', async (ev) => {
   if (!ev.target.closest('[data-signin]')) return;
   const msg = await signIn();
@@ -611,7 +611,7 @@ function entriesRow(a, cur) {
           </button>`
         )
         .join('')}
-      <button type="button" class="entry-add" id="toggle-add" aria-expanded="${state.showAdd}">${state.showAdd && a.entries.length ? 'Close' : `${ICON_PLUS}<span>Add level</span>`}</button>
+      ${a.entries.length ? `<button type="button" class="entry-add" id="toggle-add" aria-expanded="${state.showAdd}">${state.showAdd ? 'Close' : `${ICON_PLUS}<span>Add level</span>`}</button>` : ''}
       ${cur && levelInfo(cur.disc, cur.level)?.masters ? `<label class="field inline decade"><span>Age decade</span>
         <select id="f-decade">${DECADES.map((d) => `<option value="${d}"${d === cur.decade ? ' selected' : ''}>${DECADE_LABELS[d]}</option>`).join('')}</select></label>` : ''}
     </div>`;
@@ -621,7 +621,6 @@ function addLevelPanel(a) {
   return `
     <section class="card add-panel">
       <h2 class="card-subtitle">Add a level</h2>
-      <p class="muted">Add every level you might compete. If a meet doesn't offer your usual level, add the one it does; you can copy your routines over from a level you already have.</p>
       <div class="add-grid">
         ${DISC_IDS.map((d) => {
           const D = DISCIPLINES[d];
@@ -734,7 +733,8 @@ const ICON_DOTS = `<svg viewBox="0 0 24 24" width="18" height="18" fill="current
 const ICON_PERSON = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>`;
 const ICON_TRASH = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>`;
 // "How is this scored?": the event's instructions, behind a ? beside its title.
-const helpButton = (label, text) => `<button type="button" class="help-tip" data-tip="${esc(text)}" data-tip-wide aria-label="How ${esc(label)} works: ${esc(text)}">?</button>`;
+const ICON_HELP = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>`;
+const helpButton = (label, text) => `<button type="button" class="help-tip" data-tip="${esc(text)}" data-tip-wide aria-label="How ${esc(label)} works: ${esc(text)}">${ICON_HELP}</button>`;
 const plain = (html) => html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 
 // ---- Event cards ---------------------------------------------------------------
@@ -799,7 +799,7 @@ function routineHelp(e, ev, spec) {
   if (spec.family === 'xcel') return `List the routine in order. Search the Xcel skill list (it fills in the value), or type your own skill and pick its value. To mark directly connected skills, tap <strong>Connect skills</strong>, then tap between two skills: connected skills are joined into one block. The planner checks the value parts and restricted skills for ${esc(levelInfo(e.disc, e.level).name)}, ticks the special requirements the listed skills meet${e.level === 'sapphire' ? ' and works out the bonus' : ''}. An element earns credit at most twice, the second time only in a different connection.`;
   const max = spec.maxCounting;
   const more = e.disc === 'mag' ? ', with at most 4 from one element group' : '';
-  return `List the whole routine in order, and drag <span class="grip-inline">${ICON_GRIP}</span> to reorder. <strong>Each skill counts only once</strong>. Your ${max} highest-value skills count toward difficulty${more}. Counting skills are highlighted; repeats and non-counting skills are shaded gray and flagged.${spec.links ? ' To mark connected skills, tap <strong>Connect skills</strong>, then tap between two skills.' : ''}`;
+  return `List the whole routine in order, and drag the grip to reorder. <strong>Each skill counts only once</strong>. Your ${max} highest-value skills count toward difficulty${more}. Counting skills are highlighted; repeats and non-counting skills are shaded gray and flagged.${spec.links ? ' To mark connected skills, tap <strong>Connect skills</strong>, then tap between two skills.' : ''}`;
 }
 
 function routineBody(e, ev, spec) {
@@ -1059,10 +1059,10 @@ function bindEditor(a, e) {
     scheduleSave();
   };
   $('#delete-athlete').onclick = removeAthlete;
-  $('#toggle-add').onclick = () => {
+  $('#toggle-add')?.addEventListener('click', () => {
     state.showAdd = !state.showAdd;
     renderAll();
-  };
+  });
   $$('[data-entry]').forEach((b) => (b.onclick = () => {
     state.entryId = b.dataset.entry;
     state.showAdd = false;
@@ -1360,8 +1360,13 @@ function renderRows(evId, pass, focus) {
 function moveSkill(evId, pass, from, to, focusPart) {
   const list = rowsOf(entry(), evId, pass);
   if (to < 0 || to >= list.length || to === from) return;
+  // A moved skill leaves its connections behind: the one before it and its own both break,
+  // and so does the one it lands after (it was connected to the skill now following).
+  if (from > 0) list[from - 1].link = false;
   const [s] = list.splice(from, 1);
+  s.link = false;
   list.splice(to, 0, s);
+  if (to > 0) list[to - 1].link = false;
   renderRows(evId, pass, { row: to, part: focusPart });
   scheduleSave();
 }
@@ -1541,7 +1546,12 @@ tipEl.hidden = true;
 document.body.appendChild(tipEl);
 let tipFor = null;
 function showTip(btn) {
+  tipFor?.classList.remove('tip-open');
   tipFor = btn;
+  btn.classList.add('tip-open');
+  // Inside the breakdown sheet (a modal dialog), the bubble must be in the dialog to show above it.
+  const host = btn.closest('dialog[open]') || document.body;
+  if (tipEl.parentNode !== host) host.appendChild(tipEl);
   tipEl.textContent = btn.dataset.tip;
   tipEl.hidden = false;
   const r = btn.getBoundingClientRect();
@@ -1553,20 +1563,23 @@ function showTip(btn) {
   tipEl.style.top = `${above > 8 ? above : r.bottom + 8}px`;
 }
 function hideTip() {
+  tipFor?.classList.remove('tip-open');
   tipFor = null;
   tipEl.hidden = true;
 }
+const canHover = () => matchMedia('(hover: hover)').matches;
 document.addEventListener('mouseover', (ev) => {
+  if (!canHover()) return; // a tap also fires mouseover: taps are handled on click
   const b = ev.target.closest('[data-tip]');
   if (b && b !== tipFor) showTip(b);
-  else if (!b && tipFor && matchMedia('(hover: hover)').matches) hideTip();
+  else if (!b && tipFor) hideTip();
 });
-document.addEventListener('focusin', (ev) => ev.target.matches?.('[data-tip]') && showTip(ev.target));
+document.addEventListener('focusin', (ev) => ev.target.matches?.('[data-tip]:focus-visible') && showTip(ev.target));
 document.addEventListener('focusout', (ev) => ev.target === tipFor && hideTip());
 document.addEventListener('click', (ev) => {
   const b = ev.target.closest('[data-tip]');
   if (b) {
-    if (tipFor === b && !matchMedia('(hover: hover)').matches) hideTip();
+    if (tipFor === b && !canHover()) hideTip();
     else showTip(b);
   } else if (tipFor) hideTip();
 });

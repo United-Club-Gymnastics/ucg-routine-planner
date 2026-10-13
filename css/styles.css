@@ -93,7 +93,7 @@ input, select, button { font: inherit; color: inherit; }
 ::selection { background: var(--ucg-blue-green); color: var(--ucg-navy); }
 
 /* ---- Type roles ---- */
-h1, h2, .subhead, .card-title {
+h1, h2, .card-title {
   font-family: var(--font-display);
   font-weight: 700;
   text-transform: uppercase;
@@ -102,7 +102,6 @@ h1, h2, .subhead, .card-title {
 }
 h1 { font-size: var(--fs-h1); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); }
 h2 { font-size: var(--fs-h2); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); }
-.subhead { font-size: 1.05rem; letter-spacing: var(--tracking-subhead); line-height: 1.25; }
 .card-title { font-size: 1.75rem; line-height: 1; letter-spacing: var(--tracking-display); }
 .eyebrow {
   font-size: var(--fs-xs);
@@ -207,8 +206,6 @@ main { padding: 0 0 clamp(48px, 6vw, 80px); }
 .btn-accent:hover { background: var(--ucg-light-blue-deep); }
 .btn-ghost { background: transparent; border-color: var(--ucg-navy); color: var(--ucg-navy); }
 .btn-ghost:hover { background: rgba(173, 186, 233, 0.18); }
-.btn-quiet { background: transparent; color: var(--fg-secondary); padding-left: 10px; padding-right: 10px; }
-.btn-quiet:hover { color: var(--fg-primary); background: rgba(173, 186, 233, 0.18); }
 .btn-google { background: var(--ucg-white); border-color: var(--ucg-navy); color: var(--ucg-navy); padding: 14px 22px; }
 .btn-google:hover { background: var(--ucg-white); box-shadow: var(--shadow); }
 
@@ -324,11 +321,14 @@ input::placeholder { color: var(--fg-muted); }
 }
 .card-title-row { display: flex; align-items: center; gap: 10px; }
 .help-tip {
-  width: 22px; height: 22px; display: grid; place-items: center; padding: 0; flex: none; cursor: help;
-  border: 1.5px solid var(--fg-secondary); border-radius: 50%; background: transparent; color: var(--fg-secondary);
-  font-family: var(--font-body); font-size: 0.8rem; font-weight: 700; line-height: 1;
+  width: 24px; height: 24px; display: grid; place-items: center; padding: 0; flex: none; cursor: help;
+  border: 0; border-radius: 50%; background: transparent; color: var(--fg-secondary); position: relative;
 }
-.help-tip:hover, .help-tip:focus-visible { background: var(--ucg-navy); border-color: var(--ucg-navy); color: var(--ucg-white); }
+.help-tip::before { content: ''; position: absolute; inset: -10px; } /* bigger tap area */
+.help-tip.tip-open, .help-tip:focus-visible { color: var(--ucg-navy); }
+.help-tip.tip-open svg circle { fill: var(--ucg-navy); }
+.help-tip.tip-open svg path { stroke: var(--ucg-white); }
+@media (hover: hover) { .help-tip:hover { color: var(--ucg-navy); } }
 .card-head-right { display: flex; align-items: center; gap: 10px; }
 .sv-pill {
   font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; line-height: 1;
@@ -523,8 +523,6 @@ input::placeholder { color: var(--fg-muted); }
 .event-bonus.requirement.missing { background: #fbe9e4; border-color: #e7b3a6; }
 .event-bonus.requirement.missing .event-bonus-value { color: #8f2f1c; }
 
-.sv-note, .vault-note { flex-basis: 100%; margin: 0; font-size: var(--fs-sm); color: var(--fg-secondary); text-align: right; }
-.vault-note { margin: 0 20px 16px; text-align: left; color: #8f2f1c; }
 
 /* ---- Element groups (the EG bonus), then the totals footer ---- */
 .cg-card { margin: 6px 20px 16px; padding: 12px 16px 14px; border: 1.5px solid var(--border-default); border-radius: var(--radius); }
@@ -564,7 +562,8 @@ input::placeholder { color: var(--fg-muted); }
   border: 0; border-radius: 50%; background: transparent; color: var(--fg-secondary); cursor: help; flex: none;
 }
 .info-tip::before { content: ''; position: absolute; inset: -8px; } /* bigger tap area */
-.info-tip:hover, .info-tip:focus-visible { color: var(--ucg-navy); }
+.info-tip.tip-open, .info-tip:focus-visible { color: var(--ucg-navy); }
+@media (hover: hover) { .info-tip:hover { color: var(--ucg-navy); } }
 .tip-bubble {
   position: fixed; z-index: 60; padding: 8px 10px; border-radius: var(--radius-sm);
   background: var(--ucg-navy); color: var(--ucg-white); box-shadow: var(--shadow);
@@ -621,7 +620,6 @@ input::placeholder { color: var(--fg-muted); }
   font-family: var(--font-display); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.06em;
 }
 .disc-badge.lg { height: 34px; min-width: 46px; border-radius: 10px; font-size: 0.95rem; }
-.disc-badge.xl { height: 52px; min-width: 64px; border-radius: 12px; font-size: 1.3rem; }
 .disc-wag { background: var(--ucg-purple); color: var(--ucg-navy); }
 .disc-mag { background: var(--ucg-navy); color: var(--ucg-light-blue); }
 .disc-tt { background: var(--ucg-dark-blue-green); color: var(--ucg-white); }
