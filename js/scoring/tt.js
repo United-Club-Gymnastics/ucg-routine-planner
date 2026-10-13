@@ -26,7 +26,8 @@ const NF_TRAMP_LIST = ['porpoise', 'front tuck', 'front pike', 'front straight',
  * per somersault.
  */
 export function quarterSomersaults(notation) {
-  const digits = String(notation || '').replace(/[^0-9]/g, '');
+  // "-" is a 0 twist digit ("4-o" pullover to back, "2-o" full-in).
+  const digits = String(notation || '').replace(/-/g, '0').replace(/[^0-9]/g, '');
   for (const len of [1, 2]) {
     const q = Number(digits.slice(0, len));
     const rest = digits.length - len;
@@ -79,10 +80,11 @@ export function scoreTramp(level, skills = []) {
   if (it.some((s) => s.status === 'repeat')) warnings.push('Repeated skills get no difficulty and a 2.0 penalty.');
   if (level === 'nf') {
     const listed = counting.filter((s) => s.dd > 0.4);
-    const offList = listed.filter((s) => !NF_TRAMP_LIST.some((n) => skillKey(s.name).startsWith(skillKey(n))));
-    for (const s of listed) s.flag = 'over';
+    // The list names single saltos (0.5-0.6): "Barani-out" or "Barani ball out" only start like one.
+    const offList = listed.filter((s) => s.dd > 0.6 || !NF_TRAMP_LIST.some((n) => skillKey(s.name).startsWith(skillKey(n))));
+    for (const s of [...offList, ...listed.slice(2)]) s.flag = 'over';
     if (listed.length > 2) warnings.push(`New Flyers: only 2 skills above 0.4 DD (from the allowed salto list); this routine has ${listed.length}.`);
-    if (offList.length) warnings.push(`New Flyers: skills above 0.4 DD must be from the allowed list (porpoise, front/back somersaults, back pullover to back, barani). Check: ${offList.map((s) => s.name || s.notation).join(', ')}.`);
+    if (offList.length) warnings.push(`New Flyers: skills above 0.4 DD must be single saltos from the allowed list (0.5-0.6 DD: porpoise, front/back somersaults, back pullover to back, barani). Check: ${offList.map((s) => s.name || s.notation).join(', ')}.`);
   }
   if (level === 'if') {
     const over = counting.filter((s) => s.dd > 0.8);
@@ -114,9 +116,19 @@ export function scorePasses(event, level, passes = [[], []], starts = []) {
       if (a && b && a.status !== 'blank' && b.status !== 'blank' && b.dd > 0 && skillKey(a.name || a.notation) === skillKey(b.name || b.notation)) {
         b.status = 'repeat';
         b.repeatOf = pos;
+        b.repeatWhy = pos ? 'dmtDismount' : 'dmtFirst';
         warnings.push(`Pass 2 repeats the ${pos ? 'dismount' : 'first skill'} of pass 1 in the same position, so it gets no difficulty.`);
       }
     }
+  }
+  // Tumbling: fulls (back or front full, FIG 42 / .42) earn difficulty at most 3 times per pass.
+  const extraFulls = [];
+  if (event === 'tu') {
+    ps.forEach((p, i) => {
+      const fulls = p.filter((s) => s.status === 'counting' && (/^(back |front )?full( twist)?$/i.test(s.name) || /^\.?42$/.test(s.notation)));
+      for (const s of fulls.slice(3)) Object.assign(s, { status: 'repeat', repeatOf: fulls[0].idx, repeatWhy: 'fulls' });
+      if (fulls.length > 3) extraFulls.push(i);
+    });
   }
   const sums = ps.map((p) => round1(p.filter((s) => s.status === 'counting').reduce((t, s) => t + s.dd, 0)));
   const all = ps.flat().filter((s) => s.status === 'counting');
@@ -130,7 +142,7 @@ export function scorePasses(event, level, passes = [[], []], starts = []) {
       for (const s of all) if (s.dd > 0.7) s.flag = 'over';
       if (all.some((s) => s.dd > 0.7)) warnings.push('New Flyers: skills may be at most 0.7 DD.');
       if (mid.length > 1) warnings.push('New Flyers: only one skill valued at 0.6 or 0.7.');
-      ps.forEach((p, i) => { if (p.filter((s) => s.status === 'counting' && isSalto(s)).length > 1) warnings.push(`${label(i)}: New Flyers may do at most one salto per pass.`); });
+      ps.forEach((p, i) => { if (p.filter((s) => s.status !== 'blank' && isSalto(s)).length > 1) warnings.push(`${label(i)}: New Flyers may do at most one salto per pass.`); });
     }
     if (level === 'if') {
       for (const s of all) if (s.dd > 1.2) s.flag = 'over';
@@ -160,10 +172,7 @@ export function scorePasses(event, level, passes = [[], []], starts = []) {
       if (sums[1] > 2.9) warnings.push(`Pass 2: Intermediate Flyers may not exceed 2.9 DD (${sums[1].toFixed(1)}).`);
     }
     if (level === 'hf') sums.forEach((d, i) => { if (n[i] && d < 2.0) warnings.push(`${label(i)}: High Flyers passes need at least 2.0 DD (${d.toFixed(1)}).`); });
-    ps.forEach((p, i) => {
-      const fulls = p.filter((s) => s.status === 'counting' && /^full\b|full twist/i.test(s.name)).length;
-      if (fulls > 3) warnings.push(`${label(i)}: fulls earn difficulty at most 3 times per pass.`);
-    });
+    for (const i of extraFulls) warnings.push(`${label(i)}: fulls earn difficulty at most 3 times per pass; the 4th and later get none.`);
   }
 
   const total = round1(sums[0] + sums[1]);

@@ -540,7 +540,7 @@ export async function exportEntryPdf(athlete, entry, events) {
     }
   }
   if (!doc.getPageCount()) throw new Error('There is no worksheet for this event.');
-  doc.setTitle(`${athlete.name || 'Athlete'} - UCG ${DISCIPLINES[entry.disc].name} ${levelInfo(entry.disc, entry.level).name}`);
+  doc.setTitle(`${athlete.name || 'Athlete'} - UCG ${DISCIPLINES[entry.disc].name} ${levelInfo(entry.disc, entry.level).name.replace(/^UCG /, '')}`);
   return doc.save();
 }
 
@@ -549,7 +549,7 @@ export function downloadPdf(bytes, athlete, entry, events) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  const lvl = levelInfo(entry.disc, entry.level).short;
+  const lvl = levelInfo(entry.disc, entry.level).short.replace(/\.$/, ''); // "Inter.": no "..pdf"
   const suffix = events.length === 1 ? ` ${eventInfo(entry.disc, events[0]).short}` : '';
   a.download = `${(athlete.name || 'Athlete').trim()} ${DISCIPLINES[entry.disc].name} ${lvl}${suffix}.pdf`;
   document.body.appendChild(a);

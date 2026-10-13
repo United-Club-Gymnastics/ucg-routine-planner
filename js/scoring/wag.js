@@ -218,7 +218,7 @@ export function scoreXcelVault(level, id, { altBoard = false } = {}) {
   const v = xcelVaults(level).find((x) => x.id === id);
   if (!v) return null;
   const sv = level === 'gold' && altBoard ? 9.5 : v.sv;
-  return { ...v, sv };
+  return { ...v, sv, chart: v.sv };
 }
 
 // ---- WAG Masters -------------------------------------------------------------
@@ -232,7 +232,9 @@ export function scoreWagMasters(event, skills = [], { decade } = {}) {
   const items = baseItems(skills, (l) => mastersValue(l, decade) ?? 0);
   markRepeats(items);
   const cand = items.filter((it) => !it.status);
-  const counting = new Set([...cand].sort((a, b) => b.value - a.value || a.idx - b.idx).slice(0, MIN_SKILLS).map((it) => it.idx));
+  // On a tie, a skill that counts toward routine length (meets the decade's requirement) wins.
+  const meets = (it) => (meetsRequirement(it.letter, decade) ? 1 : 0);
+  const counting = new Set([...cand].sort((a, b) => b.value - a.value || meets(b) - meets(a) || a.idx - b.idx).slice(0, MIN_SKILLS).map((it) => it.idx));
   for (const it of cand) {
     it.status = counting.has(it.idx) ? 'counting' : 'noncounting';
     if (it.status === 'noncounting') it.reason = 'top';
@@ -241,7 +243,7 @@ export function scoreWagMasters(event, skills = [], { decade } = {}) {
   const earned = new Set();
   for (const list of [rows, items.filter((it) => it.status === 'noncounting')]) {
     for (const r of list) {
-      if (r.eg && meetsRequirement(r.letter, decade) && !earned.has(r.eg)) {
+      if (r.eg >= 1 && r.eg <= 4 && meetsRequirement(r.letter, decade) && !earned.has(r.eg)) {
         earned.add(r.eg);
         r.bonus = 0.5;
         if (r.status === 'noncounting') r.reason = 'egOnly';

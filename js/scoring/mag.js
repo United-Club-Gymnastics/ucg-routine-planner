@@ -123,7 +123,9 @@ export const APPARATUS = {
 // Stick bonuses aren't here: they depend on the live routine, not the plan.
 export function eventOptions(event, level) {
   const o = [];
-  if (event === 'fx') {
+  // Masters (UCG Masters Rules Policy): skill values, group bonuses and the short deduction
+  // only; no connection, strength or other bonuses.
+  if (event === 'fx' && level !== 'masters') {
     o.push({ id: 'conn1', kind: 'count', connect: true, value: 0.1, max: 5, label: 'D or higher + B/C connection', help: '+0.1 each. Mark connected skills with Connect skills (under the routine) to count them.' });
     o.push({ id: 'conn2', kind: 'count', connect: true, value: 0.2, max: 5, label: 'D or higher + D or higher connection', help: '+0.2 each. Mark connected skills with Connect skills (under the routine) to count them.' });
     if (level === 'adv') {
@@ -143,7 +145,7 @@ export function eventOptions(event, level) {
         help: 'Required: -0.3 neutral deduction if missing. Ticked automatically for I.75, I.81, I.86, I.87 or I.88 from the skill list.' });
     }
   }
-  if (event === 'hb') {
+  if (event === 'hb' && level !== 'masters') {
     o.push({ id: 'connCC', kind: 'count', connect: true, value: 0.1, max: 5, label: 'C + C connection', help: 'Flight to flight, or in bar to flight / flight to in bar with no intermediate swing: +0.1 each. Mark connected skills with Connect skills (under the routine) to count them.' });
   }
   return o;
@@ -258,7 +260,9 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
   const perGroup = {};
   let counted = 0;
   const candidates = items.filter((it) => !it.status);
-  for (const it of [...candidates].sort((a, b) => b.value - a.value || a.idx - b.idx)) {
+  // Masters: on a tie, a skill that counts toward routine length wins.
+  const meets = (it) => (L.masters && meetsRequirement(it.letter, decade) ? 1 : 0);
+  for (const it of [...candidates].sort((a, b) => b.value - a.value || meets(b) - meets(a) || a.idx - b.idx)) {
     if (it.eg && (perGroup[it.eg] || 0) >= MAX_PER_EG) {
       it.status = 'noncounting';
       it.reason = 'eg';
@@ -311,7 +315,7 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
       // Each different pair of skills counts once.
       const seen = new Set();
       const hits = linkedPairs(items).filter((p) => CONNECT[o.id](p) && !seen.has(p.map((x) => skillKey(x.name)).join('>')) && seen.add(p.map((x) => skillKey(x.name)).join('>')));
-      if (hits.length) detected[o.id] = hits.map(([a, b]) => `${a.name.replace(/\.+$/, '')} + ${b.name.replace(/\.+$/, '')}`).join('; ');
+      if (hits.length) detected[o.id] = hits.map((p) => p.map((x) => (x.name || `Skill ${x.idx + 1}`).replace(/\.+$/, '')).join(' + ')).join('; ');
       got = Math.min(hits.length, o.max) * o.value;
     } else if (o.kind === 'count') got = Math.min(Math.max(0, Number(v) || 0), o.max) * o.value;
     if (o.kind === 'mushroom') got = Math.min(Math.max(0, Number(v) || 0), 1);

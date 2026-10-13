@@ -28,6 +28,7 @@ export const clearRevalueFlags = (row) => FLAGS.forEach((f) => delete row[f]);
 // `events`: re-value only these events (a single event copied from another level); all by default.
 export function revalueEntry(entry, fromLevel, catalog, fromVault = '', events = null) {
   const fam = levelInfo(entry.disc, entry.level).family;
+  const fromFam = levelInfo(entry.disc, fromLevel)?.family;
   const rule = Object.values(catalog.levelRules).find((r) => r.planner_id === entry.level);
   const allowed = (s) =>
     !!s && (entry.disc === 'wag' ? wagSkillAllowed(fam, entry.level, s) : magSkillAllowed(entry.level, s));
@@ -43,6 +44,9 @@ export function revalueEntry(entry, fromLevel, catalog, fromVault = '', events =
       const ids = (row.skillId && catalog.aliases[row.skillId]) || [];
       const els = ids.map(element).filter(Boolean);
       if (!els.length) {
+        // A typed skill's element group is in its own level's numbering: WAG Masters numbers
+        // WG condensed groups I-IV, the other WAG levels number USAG groups. Pick it again.
+        if (entry.disc === 'wag' && (fam === 'wagMasters') !== (fromFam === 'wagMasters')) row.eg = '';
         row.check = true;
         summary.typed++;
         continue;
