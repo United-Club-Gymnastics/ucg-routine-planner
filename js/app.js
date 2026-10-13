@@ -219,7 +219,7 @@ function renderUserArea() {
     </div>`;
 }
 
-// Menus (the account menu, the athlete's "more" menu): a button with data-menu opens the
+// The account menu: a button with data-menu opens the
 // element with that id; a click anywhere else, or Escape, closes it.
 function closeMenus(except) {
   $$('.menu').forEach((m) => {
@@ -282,7 +282,7 @@ function renderAthletePicker() {
           .join('')}
         ${list.length ? '' : `<p class="ath-none">${state.athletes.length ? 'No athletes match.' : 'No athletes yet.'}</p>`}
       </div>
-      <div class="ath-foot"><button type="button" class="btn btn-primary btn-sm btn-block" id="ath-add">Add athlete</button>${canImport() ? '<button type="button" class="btn btn-ghost btn-sm btn-block" id="ath-import">Bring over UCG Infinity routines</button>' : ''}</div>
+      <div class="ath-foot"><button type="button" class="btn btn-primary btn-sm btn-block" id="ath-add">Add athlete</button>${canImport() ? '<button type="button" class="btn btn-ghost btn-sm btn-block" id="ath-import">Bring over UCG Infinity routines</button>' : ''}${a ? `<button type="button" class="ath-delete" id="delete-athlete">${ICON_TRASH}<span>Delete ${esc(a.name || 'this athlete')}</span></button>` : ''}</div>
     </div>`;
   $('#ath-button').onclick = () => {
     state.athOpen = !state.athOpen;
@@ -309,6 +309,10 @@ function renderAthletePicker() {
     selectAthlete(b.dataset.ath);
     closeAthletePicker();
   }));
+  $('#delete-athlete')?.addEventListener('click', () => {
+    closeAthletePicker();
+    removeAthlete();
+  });
   $('#ath-add').onclick = () => {
     closeAthletePicker();
     addAthlete();
@@ -582,13 +586,6 @@ function renderAll() {
         <div class="band-actions">
           <span id="save-status" class="save-status"${state.user?.guest ? ` data-kind="guest">Not saved: sign in to keep this` : '>'}</span>
           ${e ? `<button class="btn btn-accent" type="button" id="export-all">Export PDF</button>` : ''}
-          <div class="menu-wrap">
-            <button type="button" class="icon-btn on-dark" data-menu="athlete-menu" aria-haspopup="menu" aria-expanded="false" aria-label="More for this athlete">${ICON_DOTS}</button>
-            <div class="menu" id="athlete-menu" role="menu" hidden>
-              ${e && a.entries.length > 1 ? `<button type="button" role="menuitem" id="remove-entry">Remove ${esc(entryName(e))}</button>` : ''}
-              <button type="button" role="menuitem" id="delete-athlete" class="danger">Delete athlete</button>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -606,9 +603,9 @@ function entriesRow(a, cur) {
     <div class="entries" role="tablist" aria-label="Levels this athlete competes">
       ${a.entries
         .map(
-          (e) => `<button type="button" role="tab" class="entry-tab${cur && e.id === cur.id ? ' active' : ''}" data-entry="${esc(e.id)}" aria-selected="${cur && e.id === cur.id}">
+          (e) => `<span class="entry" role="presentation"><button type="button" role="tab" class="entry-tab${cur && e.id === cur.id ? ' active' : ''}" data-entry="${esc(e.id)}" aria-selected="${cur && e.id === cur.id}">
             <span class="disc-badge disc-${e.disc}">${esc(DISCIPLINES[e.disc].name)}</span><span>${esc(levelInfo(e.disc, e.level)?.name || e.level)}</span>
-          </button>`
+          </button><button type="button" class="entry-remove" data-remove-entry="${esc(e.id)}" aria-label="Remove ${esc(entryName(e))}" title="Remove this level">${ICON_X_SMALL}</button></span>`
         )
         .join('')}
       ${a.entries.length ? `<button type="button" class="entry-add" id="toggle-add" aria-expanded="${state.showAdd}">${state.showAdd ? 'Close' : `${ICON_PLUS}<span>Add level</span>`}</button>` : ''}
@@ -729,7 +726,7 @@ const ICON_EXT = `<svg viewBox="0 0 24 24" width="12" height="12" fill="none" st
 const ICON_PLUS = `<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>`;
 const ICON_X = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>`;
 const ICON_CHEVRON = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>`;
-const ICON_DOTS = `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></svg>`;
+const ICON_X_SMALL = `<svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>`;
 const ICON_PERSON = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>`;
 const ICON_TRASH = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>`;
 // "How is this scored?": the event's instructions, behind a ? beside its title.
@@ -1058,11 +1055,21 @@ function bindEditor(a, e) {
     renderAthletePicker();
     scheduleSave();
   };
-  $('#delete-athlete').onclick = removeAthlete;
   $('#toggle-add')?.addEventListener('click', () => {
     state.showAdd = !state.showAdd;
     renderAll();
   });
+  $$('[data-remove-entry]').forEach((b) => (b.onclick = () => {
+    const gone = a.entries.find((x) => x.id === b.dataset.removeEntry);
+    if (!gone) return;
+    const routines = hasContent(gone) ? ' Its routines will be deleted too.' : '';
+    if (!confirm(`Are you sure you want to remove ${entryName(gone)} from ${a.name || 'this athlete'}?${routines}`)) return;
+    a.entries = a.entries.filter((x) => x.id !== gone.id);
+    if (state.entryId === gone.id) state.entryId = a.entries[0]?.id || null;
+    state.showAdd = !a.entries.length;
+    scheduleSave();
+    renderAll();
+  }));
   $$('[data-entry]').forEach((b) => (b.onclick = () => {
     state.entryId = b.dataset.entry;
     state.showAdd = false;
@@ -1089,13 +1096,6 @@ function bindEditor(a, e) {
   if (!e) return;
 
   $('#export-all').onclick = (ev) => runExport(ev.currentTarget, DISCIPLINES[e.disc].events.map((x) => x.id));
-  $('#remove-entry')?.addEventListener('click', () => {
-    if (hasContent(e) && !confirm(`Remove ${entryName(e)} and its routines?`)) return;
-    a.entries = a.entries.filter((x) => x.id !== e.id);
-    state.entryId = a.entries[0]?.id || null;
-    scheduleSave();
-    renderAll();
-  });
   $('#f-decade')?.addEventListener('change', (ev) => {
     e.decade = ev.target.value;
     scheduleSave();
