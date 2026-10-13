@@ -1736,6 +1736,11 @@ function pickerEl() {
         openPicker(picker.input, picker.input.value);
         return;
       }
+      const more = e.target.closest('.pop-note.more');
+      if (more) {
+        more.classList.replace('more', 'open');
+        return;
+      }
       const o = e.target.closest('[data-skill]');
       if (o) pickSkill(Number(o.dataset.skill));
     });
@@ -1822,6 +1827,15 @@ function openPicker(input, query) {
   el.hidden = false;
   el.scrollTop = 0;
   placePicker();
+  markLongNotes();
+}
+
+// Touch screens: a note cut off at two lines shows "More", and a tap on it shows the rest
+// (the tap doesn't pick the skill; once the note is open, tapping it picks as usual).
+// With a mouse the whole note is in the row's tooltip.
+function markLongNotes() {
+  if (canHover()) return;
+  $$('.pop-note', picker.el).forEach((n) => n.classList.toggle('more', n.scrollHeight > n.clientHeight + 1));
 }
 
 // Close the skill list on a click anywhere outside it and its own skill box.
@@ -1871,7 +1885,7 @@ function renderPicker(query) {
     html.push(`
       <div class="pop-opt${i === picker.active ? ' active' : ''}" role="option" id="pop-opt-${i}" data-skill="${i}" aria-selected="${i === picker.active}"${s.note ? ` title="Note: ${esc(s.note)}"` : ''}>
         <span class="src-badge ${s.src.toLowerCase()}" title="${esc(boxTitle(s))}">${SRC_SHORT[s.src] || s.src}</span>
-        <span class="pop-name">${s.box ? `<span class="pop-box">${esc(s.box.replace(/^\S+ /, ''))}</span>` : ''}<span class="pop-text">${esc(s.name)}${s.eponym ? ` <span class="pop-eponym">(${esc(s.eponym)})</span>` : ''}${s.aka?.length ? `<span class="pop-aka">aka ${esc(s.aka.slice(0, 2).join(', '))}</span>` : ''}${s.note && !canHover() ? `<span class="pop-aka pop-note">Note: ${esc(s.note)}</span>` : ''}</span></span>
+        <span class="pop-name">${s.box ? `<span class="pop-box">${esc(s.box.replace(/^\S+ /, ''))}</span>` : ''}<span class="pop-text">${esc(s.name)}${s.eponym ? ` <span class="pop-eponym">(${esc(s.eponym)})</span>` : ''}${s.aka?.length ? `<span class="pop-aka">aka ${esc(s.aka.slice(0, 2).join(', '))}</span>` : ''}${s.note ? `<span class="pop-aka pop-note">Note: ${esc(s.note)}</span>` : ''}</span></span>
         <span class="pop-meta">${meta}</span>
       </div>`);
   });

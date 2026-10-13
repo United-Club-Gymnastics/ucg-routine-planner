@@ -416,8 +416,18 @@ input::placeholder { color: var(--fg-muted); }
 .pop-box { display: inline-block; flex: none; min-width: 3.4em; margin-right: 6px; color: var(--fg-secondary); font-size: var(--fs-xs); font-weight: 600; font-variant-numeric: tabular-nums; }
 /* Other names on a quieter second line under the skill's name. */
 .pop-aka { display: block; margin-top: 1px; color: var(--fg-secondary); font-size: var(--fs-xs); }
-/* Touch screens show a skill's note in the list: two lines at most, so long ones don't crowd it. */
+/* A skill's note, like its other names, on a quieter line: two lines at most, so long ones don't crowd the list
+   (the whole note is in the row's tooltip, or a tap away on touch screens). */
 .pop-note { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
+/* Touch screens: "More" over the end of a cut-off note; tapped, the note opens in full. */
+.pop-opt { --pop-bg: var(--ucg-white); }
+.pop-opt.active { --pop-bg: var(--ucg-light-blue); }
+.pop-note.more { position: relative; }
+.pop-note.more::after {
+  content: 'More'; position: absolute; right: 0; bottom: 0; padding-left: 2.5em;
+  background: linear-gradient(90deg, transparent, var(--pop-bg) 2em); color: var(--ucg-navy); font-weight: 600;
+}
+.pop-note.open { display: block; }
 .pop-meta { white-space: nowrap; font-weight: 600; font-variant-numeric: tabular-nums; }
 .pop-foot, .pop-empty {
   padding: 8px 12px; border-top: 1px solid var(--border-subtle); color: var(--fg-secondary); font-size: var(--fs-xs);

@@ -25,6 +25,9 @@ COP_DEFAULT = r"C:\dev\ucg-code-of-points"
 OUT = os.path.join(os.path.dirname(__file__), "..", "js", "data", "mag-skills.js")
 VAULT_OUT = os.path.join(os.path.dirname(__file__), "..", "js", "data", "mag-vaults.js")
 
+# Our edits to the Code's skill notes, as the skill picker shows them (see build_data.py).
+NOTE_EDITS = json.load(open(os.path.join(os.path.dirname(__file__), "source", "note_edits.json"), encoding="utf-8"))["mag"]
+
 # Advanced (GymACT) values that differ from the WG value, by WG vault number.
 ADV_VAULT = {107: 3.6, 108: 4.4, 109: 4.8, 113: 4.0, 114: 4.4, 115: 4.8, 116: 5.2, 117: 5.6, 118: 6.0,
              213: 2.8, 219: 3.8, 225: 5.2, 226: 5.6, 228: 5.6, 231: 5.6, 232: 6.0}
@@ -99,7 +102,7 @@ def ucg_skills(cop_dir):
                 "value": "Sub-A" if value.upper().startswith("SUB") else value.upper(),
                 "eg": ROMAN.get(r["eg"]),
                 "src": "UCG",
-                "note": " ".join(note).replace("Note: ", ""),
+                "note": NOTE_EDITS.get(n := " ".join(note).replace("Note: ", ""), n),
             })
     return out
 
