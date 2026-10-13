@@ -44,22 +44,24 @@ for (const r of routines) {
     const acro = (k) => { const x = skills[k]; const sk = x?.skillId && ss.findSkill(x.skillId); return sk && (r.event === 'fx' ? sk.group >= 4 : sk.group >= 6); };
     const g = (k) => { const x = skills[k]; const sk = x?.skillId && ss.findSkill(x.skillId); return sk ? sk.group : null; };
     for (let k = 0; k < skills.length - 1; k++) {
-      const floorG5 = r.event === 'fx' && g(k) === 5 && g(k + 1) >= 4 && g(k + 1) <= 8;
+      // Floor: a roll or a Group 5 skill (handspring, walkover, cartwheel, round-off) into the next acro skill.
+      const floorG5 = r.event === 'fx' && [4, 5].includes(g(k)) && g(k + 1) >= 4 && g(k + 1) <= 8;
       if ((CONNECTOR.test(r.skills[k].name) && acro(k) && acro(k + 1)) || floorG5) skills[k].link = true;
     }
-    // Back-to-back skills the sheet lists as a series: leaps and jumps (floor Group 1, beam
-    // Group 2: dance passage / series), beam acro before the dismount (Groups 6-7), and a
-    // front salto straight into another on floor (Group 6).
+    // Back-to-back skills the sheet lists as a series: see series() below.
   }
   const grp = (k) => { const x = skills[k]; const sk = x?.skillId && ss.findSkill(x.skillId); return sk ? sk.group : null; };
   // keep(k): whether linking k -> k+1 may stay (at Sapphire: not past the sheet's bonus).
+  // Beam acro: any two acro skills before the dismount (a handstand into a back walkover,
+  // round-off or back handspring is an acro series too).
+  const beamAcro = (k) => { const sk = skills[k]?.skillId && ss.findSkill(skills[k].skillId); return !!sk?.tags?.acro && sk.group !== 9 && sk.group !== 1; };
   const series = (keep = () => true) => {
     if (r.event === 'ub') return;
     for (let k = 0; k < skills.length - 1; k++) {
       const [g1, g2] = [grp(k), grp(k + 1)];
-      const pair = r.event === 'fx' ? (g1 === 1 && g2 === 1) || (g1 === 6 && g2 === 6) : (g1 === 2 && g2 === 2) || ([6, 7].includes(g1) && [6, 7].includes(g2));
-      const salto = r.event === 'fx' && g1 === 6 && g2 === 6;
-      if (!pair || (!salto && skills[k].skillId === skills[k + 1].skillId) || skills[k].link) continue;
+      const pair = r.event === 'fx' ? (g1 === 1 && g2 === 1) || (g1 === 6 && g2 === 6) : (g1 === 2 && g2 === 2) || (beamAcro(k) && beamAcro(k + 1));
+      // The same skill twice in a row is linked too: the second earns credit in a different connection.
+      if (!pair || skills[k].link) continue;
       skills[k].link = true;
       if (keep(k)) report.series.push(`${r.level} ${r.event} R${r.n}: ${r.skills[k].name} → ${r.skills[k + 1].name}`);
       else { delete skills[k].link; report.series.push(`${r.level} ${r.event} R${r.n}: not linked ${r.skills[k].name} → ${r.skills[k + 1].name} (bonus past the sheet's)`); }

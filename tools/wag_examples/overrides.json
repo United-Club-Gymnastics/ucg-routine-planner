@@ -45,7 +45,9 @@
   "ub|Clear Hip Circle": "USAG-UB-3.204-1",
   "ub|Clear Hip": "USAG-UB-3.204-1",
   "ub|Clear Hip to Handstand": "USAG-UB-3.304-1",
-  "ub|Sole Circle - Jump to HB": { "typed": "" },
+  "ub|Sole Circle - Jump to HB": {
+    "typed": ""
+  },
   "ub|Toe Up": "USAG-UB-7.309-1",
   "ub|Toe Circle to Handstand": "USAG-UB-7.309-1",
   "ub|Toe on Circle to Stand": "USAG-UB-7.103-1",
@@ -54,9 +56,15 @@
   "ub|Counterswing to Straddle Back": "USAG-UB-2.205-1",
   "ub|Straddle Back": "USAG-UB-2.205-1",
   "ub|Free Straddle Jump over LB to hang on HB Mount": "USAG-UB-1.208-1",
-  "ub|Jump to HB Mount": { "typed": "A" },
-  "ub|Jump to HB": { "typed": "A" },
-  "ub|Tap Swing": { "typed": "" },
+  "ub|Jump to HB Mount": {
+    "typed": "A"
+  },
+  "ub|Jump to HB": {
+    "typed": "A"
+  },
+  "ub|Tap Swing": {
+    "typed": ""
+  },
   "ub|Bail": "USAG-UB-4.304-1",
   "ub|Bail (not to HS)": "USAG-UB-4.304-1",
   "ub|Double Back": "USAG-UB-8.304-1",
@@ -65,8 +73,9 @@
   "ub|Cast Handstand": "USAG-UB-2.201-1",
   "ub|Cast Handstand; Half Pirouette": "USAG-UB-2.301-2",
   "ub|Single Leg Jam Kip": "USAG-UB-1.006-1",
-
-  "bb|Mount": { "typed": "A" },
+  "bb|Mount": {
+    "typed": "A"
+  },
   "silver|bb|Split Jump": "USAG-BB-2.0 Silver-2",
   "gold|bb|Split Jump": "USAG-BB-2.0 Gold-1",
   "plat|bb|Split Jump": "USAG-BB-2.0 Platinum-1",
@@ -114,7 +123,6 @@
   "bb|Front Pike Dismount": "USAG-BB-9.104-1",
   "bb|Front Tuck Dismount": "USAG-BB-9.104-1",
   "bb|Front Handspring Dismount": "USAG-BB-9.101-1",
-
   "fx|Front Handspring Stepout": "USAG-FX-5.102-1",
   "fx|Front Handspring": "USAG-FX-5.102-1",
   "fx|FHS": "USAG-FX-5.102-1",
@@ -139,5 +147,7 @@
   "fx|Front Layout": "USAG-FX-6.201-2b",
   "fx|Back Handspring": "USAG-FX-5.106-1a",
   "fx|Roundoff": "USAG-FX-5.105-1a",
-  "fx|Flyspring": "USAG-FX-5.102-2"
+  "fx|Flyspring": "USAG-FX-5.102-2",
+  "fx|Roundoff Rebound": "USAG-FX-5.105-1a",
+  "ub|Toe On Underswing 1.5 Turn Dismount": "USAG-UB-8.201-1"
 }

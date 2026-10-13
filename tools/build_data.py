@@ -341,13 +341,6 @@ EXCLUDE = {
     "tt-if-tu-5", "tt-if-tu-7",  # pass 2 has fewer than 8 skills
     "tt-if-tu-9",  # pass 2: 7 skills, a 0.1 skill and 3.0 DD (max 2.9)
     "tt-if-tu-10",  # pass 2 is 3.0 DD (max 2.9)
-    # WAG Xcel: an element earns credit once, so these routines repeat one
-    "wag-silver-fx-2", "wag-gold-fx-2",  # split leap and split jump are one floor element (1.101)
-    "wag-plat-bb-1",  # split leap and split jump are one Platinum beam element
-    "wag-plat-bb-3",  # two cartwheels
-    "wag-plat-fx-5",  # two front tucks
-    "wag-diamond-ub-7",  # three cast handstands
-    "wag-diamond-fx-6",  # two front layouts
 }
 
 
@@ -429,6 +422,15 @@ def own_record(pid, entries):
     return None
 
 
+# Local corrections to the catalog's skill tags (the catalog is generated elsewhere), from
+# UCG's WAG rules lead: a sissonne is a leap, and 1.207's "or side split" is a side leap, so
+# both can be the floor dance passage's split leap.
+TAG_FIXES = {
+    "USAG-FX-1.110-1": {"dance_type": "leap"},  # Sissonne
+    "USAG-FX-1.207-1": {"dance_type": "leap", "varies": ["dance_type"]},  # Straddle jump (or side split)
+}
+
+
 def catalog():
     levels = json.load(open(os.path.join(CAT, "levels.json"), encoding="utf-8"))
     out = {}
@@ -455,7 +457,7 @@ def catalog():
             # What the skill is (acro, flight, salto, 360° circle ...), for the Xcel special
             # requirements, restrictions and Sapphire bonus (js/scoring/xcel-rules.js).
             if "tags" in x:  # {} = tagged, nothing applies
-                row["t"] = x["tags"]
+                row["t"] = {**x["tags"], **TAG_FIXES.get(pid, {})}
             if x.get("markers"):
                 row["m"] = x["markers"]
             index[pid] = row

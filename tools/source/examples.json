@@ -6500,21 +6500,13 @@
     "skillId": "USAG-UB-7.101-1",
     "letter": "A",
     "eg": "7",
-    "fromList": true
-   },
-   {
-    "sheetName": "Cast Squat On",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
-    "letter": "A",
-    "eg": "2",
     "fromList": true,
     "link": true
    },
    {
-    "sheetName": "Straight Jump off Low Bar",
-    "name": "Straight jump off LB to stand",
-    "skillId": "USAG-UB-8.004-1",
+    "sheetName": "Underswing Dismount",
+    "name": "Underswing dismount from LB",
+    "skillId": "USAG-UB-8.006-1",
     "letter": "A",
     "eg": "8",
     "fromList": true
@@ -7169,7 +7161,8 @@
     "skillId": "USAG-BB-5.106a-1",
     "letter": "A",
     "eg": "5",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Cartwheel",
@@ -7289,7 +7282,8 @@
     "skillId": "USAG-BB-5.106a-1",
     "letter": "A",
     "eg": "5",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Forward Roll",
@@ -7373,7 +7367,7 @@
   "title": "Xcel Silver Floor Exercise Routine 1",
   "skills": [
    {
-    "sheetName": "Roundoff",
+    "sheetName": "Roundoff Rebound",
     "name": "Round-off",
     "skillId": "USAG-FX-5.105-1a",
     "letter": "A",
@@ -7437,7 +7431,8 @@
     "skillId": "USAG-FX-4.101-1b",
     "letter": "A",
     "eg": "4",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Roundoff",
@@ -7461,7 +7456,8 @@
     "skillId": "USAG-FX-1.101-1",
     "letter": "A",
     "eg": "1",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Split Jump",
@@ -8207,11 +8203,11 @@
     "fromList": true
    },
    {
-    "sheetName": "Cast",
-    "name": "Cast to horizontal or higher",
-    "skillId": "USAG-UB-2.001-4",
+    "sheetName": "Front Hip Circle",
+    "name": "Front hip circle",
+    "skillId": "USAG-UB-7.101-2",
     "letter": "A",
-    "eg": "2",
+    "eg": "7",
     "fromList": true
    },
    {
@@ -8448,7 +8444,8 @@
     "skillId": "USAG-BB-5.002-2",
     "letter": "A",
     "eg": "5",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Cartwheel",
@@ -8528,7 +8525,8 @@
     "skillId": "USAG-BB-5.106a-1",
     "letter": "A",
     "eg": "5",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Cartwheel",
@@ -8592,7 +8590,8 @@
     "skillId": "USAG-BB-5.106a-1",
     "letter": "A",
     "eg": "5",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Forward Roll",
@@ -8719,7 +8718,8 @@
     "skillId": "USAG-BB-5.106a-1",
     "letter": "A",
     "eg": "5",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Back Walkover",
@@ -9039,7 +9039,8 @@
     "skillId": "USAG-FX-1.101-1",
     "letter": "A",
     "eg": "1",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Split Jump",
@@ -10027,7 +10028,8 @@
     "skillId": "USAG-BB-7.103-1a",
     "letter": "A",
     "eg": "7",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Handstand",
@@ -10051,7 +10053,8 @@
     "skillId": "USAG-BB-2.0 Platinum-1",
     "letter": "A",
     "eg": "2",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Split Jump",
@@ -10155,7 +10158,8 @@
     "skillId": "USAG-BB-7.103-1a",
     "letter": "A",
     "eg": "7",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Cartwheel",
@@ -10228,7 +10232,8 @@
     "skillId": "USAG-BB-5.106a-1",
     "letter": "A",
     "eg": "5",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Back Walkover",
@@ -11190,10 +11195,10 @@
     "link": true
    },
    {
-    "sheetName": "Toe On Underswing Half Turn Dismount",
-    "name": "HB underswing dismount, up to full twist",
-    "skillId": "USAG-UB-8.101-1",
-    "letter": "A",
+    "sheetName": "Toe On Underswing 1.5 Turn Dismount",
+    "name": "HB underswing with 1½ or double twist",
+    "skillId": "USAG-UB-8.201-1",
+    "letter": "B",
     "eg": "8",
     "fromList": true
    }
@@ -11683,15 +11688,23 @@
     "skillId": "USAG-BB-2.108-1",
     "letter": "A",
     "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
     "fromList": true,
     "link": true
    },
    {
-    "sheetName": "Split Jump",
-    "name": "Split jump in place",
-    "skillId": "USAG-BB-2.201-2",
-    "letter": "B",
-    "eg": "2",
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
     "fromList": true
    },
    {
@@ -11723,7 +11736,8 @@
     "skillId": "USAG-BB-7.103-1a",
     "letter": "A",
     "eg": "7",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Handstand",
@@ -11795,7 +11809,8 @@
     "skillId": "USAG-BB-5.106a-1",
     "letter": "A",
     "eg": "5",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Back Handspring",
@@ -13467,6 +13482,14 @@
     "fromList": true
    },
    {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
     "sheetName": "Back Tuck 1/2 Dismount",
     "name": "Back salto ½ or full twist dismount",
     "skillId": "USAG-BB-9.206-1",
@@ -13568,7 +13591,8 @@
     "skillId": "USAG-BB-5.106a-1",
     "letter": "A",
     "eg": "5",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Roundoff",
@@ -13636,7 +13660,8 @@
     "skillId": "USAG-BB-5.106a-1",
     "letter": "A",
     "eg": "5",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Back Handspring",
@@ -13739,7 +13764,8 @@
     "skillId": "USAG-BB-2.201-2",
     "letter": "B",
     "eg": "2",
-    "fromList": true
+    "fromList": true,
+    "link": true
    },
    {
     "sheetName": "Split Jump",
