@@ -632,7 +632,6 @@ input::placeholder { color: var(--fg-muted); }
   border: 1.5px solid var(--border-default); border-radius: var(--radius-btn); background: var(--bg-surface); color: var(--ucg-navy);
   padding: 0 14px 0 4px;
 }
-.entry-tab:hover { border-color: var(--ucg-navy); }
 .entry-tab .disc-badge { height: 26px; }
 .entry-tab.active { background: var(--ucg-navy); border-color: var(--ucg-navy); color: var(--ucg-white); }
 .entry-tab.active .disc-badge { background: transparent; color: var(--ucg-blue-green); padding: 0 2px 0 10px; }
@@ -646,7 +645,13 @@ input::placeholder { color: var(--fg-muted); }
 }
 .entry-remove::before { content: ''; position: absolute; inset: -6px; } /* bigger tap area */
 .entry-remove:hover { background: #8f2f1c; }
-.entry:hover .entry-remove, .entry:focus-within .entry-remove { opacity: 1; pointer-events: auto; }
+.entry:has(:focus-visible) .entry-remove { opacity: 1; pointer-events: auto; }
+/* Hover only where there's a mouse: on iPhones a tap first "hovers", and a tap that reveals
+   something is spent on the hover instead of opening the level. Touch shows the open level's x. */
+@media (hover: hover) {
+  .entry-tab:hover { border-color: var(--ucg-navy); }
+  .entry:hover .entry-remove { opacity: 1; pointer-events: auto; }
+}
 @media (hover: none) { .entry:has(.entry-tab.active) .entry-remove { opacity: 1; pointer-events: auto; } }
 .entry-add {
   display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px; cursor: pointer;
