@@ -1155,10 +1155,14 @@ function bindEditor(a, e) {
   ed.onkeydown = onKey;
   ed.onpointerdown = onPointerDown;
   ed.onmousedown = (ev) => ev.target.closest('[data-combo]') && ev.preventDefault();
-  ed.onfocusout = (ev) => {
-    if (ev.target === picker.input) closePicker();
-    if (ev.target.dataset?.vault != null) ev.target.value = vaultName(entry()); // typed but not picked
-  };
+  // There's no onfocusout property, so this is a listener, added once per editor element.
+  if (!ed.dataset.focusWired) {
+    ed.dataset.focusWired = '1';
+    ed.addEventListener('focusout', (ev) => {
+      if (ev.target === picker.input) closePicker();
+      if (ev.target.dataset?.vault != null) ev.target.value = vaultName(entry()); // typed but not picked
+    });
+  }
   $$('[data-export]').forEach((b) => (b.onclick = () => runExport(b, [b.dataset.export])));
 }
 
@@ -1269,11 +1273,19 @@ function onClick(ev) {
     }
     return;
   }
+  // Tapping or clicking the skill box itself opens its list too, not only the arrow.
+  const box = ev.target.closest('.skill-input');
+  if (box) {
+    if (picker.input !== box) openPicker(box, '');
+    return;
+  }
   const expand = ev.target.closest('[data-expand]');
   if (expand) {
     if (dragJustEnded) return;
     setEditing(rowKey(expand.dataset.ev, expand.dataset.pass, Number(expand.dataset.idx)));
-    $('.skill-input', expand.closest('.skill-row'))?.focus();
+    const input = $('.skill-input', expand.closest('.skill-row'));
+    input?.focus();
+    if (input && !input.value) openPicker(input, ''); // a blank row: straight to the skill list
     return;
   }
   if (ev.target.closest('[data-done]')) {
@@ -1666,6 +1678,7 @@ function openPicker(input, query) {
   if (picker.input !== input) {
     picker.showAll = false;
     picker.input = input;
+    picker.openedAt = performance.now();
     makeRoom();
   }
   if (input.dataset.vault != null) {
@@ -1786,19 +1799,28 @@ function visibleArea() {
 const isPhone = () => matchMedia('(max-width: 640px), (pointer: coarse)').matches;
 
 // Phones: scroll the skill box up under the header so the list fits below it, above
-// the keyboard (the usual pattern for a search box with suggestions on mobile).
+// the keyboard (the usual pattern for a search box with suggestions on mobile). Also
+// when the phone's own scroll to the focused box left it behind the pinned header.
 function makeRoom() {
   if (!picker.input || !isPhone()) return;
   const r = picker.input.getBoundingClientRect();
   const { top, bottom } = visibleArea();
-  if (bottom - r.bottom < 260) window.scrollBy({ top: r.top - top - 8 });
+  if (bottom - r.bottom < 260 || r.top < top) window.scrollBy({ top: r.top - top - 8 });
 }
+// Just after the list opens, the keyboard is still sliding up and the phone scrolls the
+// page, which can briefly hide the box: that isn't the gymnast scrolling away.
+const justOpened = () => isPhone() && performance.now() - (picker.openedAt || 0) < 1500;
 
 function placePicker() {
   if (!picker.input) return;
   const r = picker.input.getBoundingClientRect();
   const { top, bottom } = visibleArea();
-  if (r.bottom < top || r.top > bottom) return closePicker();
+  if (r.bottom < top || r.top > bottom) {
+    if (!justOpened()) return closePicker();
+    picker.el.hidden = true; // until the box is back in view
+    return makeRoom();
+  }
+  picker.el.hidden = false;
   const w = Math.min(Math.max(r.width + 60, 440), innerWidth - 16);
   const left = Math.min(Math.max(8, r.left), innerWidth - w - 8);
   const below = bottom - r.bottom - 8;
