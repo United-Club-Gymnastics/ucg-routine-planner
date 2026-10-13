@@ -140,7 +140,7 @@ h2 { font-size: var(--fs-h2); line-height: var(--leading-tight); letter-spacing:
 }
 .account-btn:hover { box-shadow: 0 0 0 3px var(--ucg-blue-green); }
 
-/* Menus: the account menu and the athlete's "more" menu. */
+/* Menus (the account menu). */
 .menu-wrap { position: relative; }
 .menu {
   position: absolute; right: 0; top: calc(100% + 8px); z-index: 60; min-width: 230px; padding: 6px;
@@ -152,7 +152,6 @@ h2 { font-size: var(--fs-h2); line-height: var(--leading-tight); letter-spacing:
   background: transparent; color: inherit; font: inherit; font-size: 0.95rem; text-align: left; cursor: pointer;
 }
 .menu [role='menuitem']:hover, .menu [role='menuitem']:focus-visible { background: var(--ucg-light-blue); outline: none; }
-.menu .danger { color: #8f2f1c; }
 .menu-who { margin: 0 0 4px; padding: 8px 12px 10px; border-bottom: 1px solid var(--border-subtle); font-size: var(--fs-xs); color: var(--fg-secondary); }
 .menu-who span { display: block; }
 .icon-btn {
@@ -160,8 +159,6 @@ h2 { font-size: var(--fs-h2); line-height: var(--leading-tight); letter-spacing:
   border: 1px solid var(--border-default); border-radius: var(--radius-btn); background: var(--bg-surface); color: var(--fg-primary);
 }
 .icon-btn:hover { border-color: var(--ucg-navy); }
-.icon-btn.on-dark { background: transparent; border-color: rgba(219, 235, 238, 0.3); color: var(--ucg-light-blue); }
-.icon-btn.on-dark:hover { border-color: var(--ucg-light-blue); }
 
 .banner {
   background: var(--ucg-golden-yellow); color: var(--ucg-navy);
@@ -614,10 +611,13 @@ input::placeholder { color: var(--fg-muted); }
 .chip-tt { background: #d9eef0; }
 
 /* Discipline badges: WAG purple, MAG navy, T&T dark blue green */
+/* Centred on the capitals themselves: the text box is trimmed to cap height (no room kept for
+   descenders), and text-indent balances the tracking added after the last letter. */
+.disc-badge, .cg-badge, .src-badge, .sv-pill { line-height: 1; text-box: trim-both cap alphabetic; }
 .disc-badge {
   display: inline-flex; align-items: center; justify-content: center; flex: none; box-sizing: border-box;
-  min-width: 30px; height: 26px; padding: 0 8px; border-radius: var(--radius-pill);
-  font-family: var(--font-display); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.06em;
+  min-width: 30px; height: 26px; padding: 0 8px; border-radius: var(--radius-sm);
+  font-family: var(--font-display); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.06em; text-indent: 0.06em;
 }
 .disc-badge.lg { height: 34px; min-width: 46px; border-radius: 10px; font-size: 0.95rem; }
 .disc-wag { background: var(--ucg-purple); color: var(--ucg-navy); }
@@ -626,18 +626,31 @@ input::placeholder { color: var(--fg-muted); }
 
 /* Levels the athlete competes */
 .entries { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.entry { position: relative; display: inline-flex; }
 .entry-tab {
   display: inline-flex; align-items: center; gap: 8px; height: 36px; cursor: pointer; font: inherit; font-weight: 600; font-size: var(--fs-sm);
-  border: 1.5px solid var(--border-default); border-radius: var(--radius-pill); background: var(--bg-surface); color: var(--ucg-navy);
-  padding: 0 16px 0 4px;
+  border: 1.5px solid var(--border-default); border-radius: var(--radius-btn); background: var(--bg-surface); color: var(--ucg-navy);
+  padding: 0 14px 0 4px;
 }
 .entry-tab:hover { border-color: var(--ucg-navy); }
 .entry-tab .disc-badge { height: 26px; }
 .entry-tab.active { background: var(--ucg-navy); border-color: var(--ucg-navy); color: var(--ucg-white); }
 .entry-tab.active .disc-badge { background: transparent; color: var(--ucg-blue-green); padding: 0 2px 0 10px; }
+/* Remove a level: a round x at the tab's top right, shown on hover or keyboard focus (and on
+   the open level where there's no mouse). It asks before removing. */
+.entry-remove {
+  position: absolute; top: -8px; right: -8px; z-index: 1; width: 22px; height: 22px; padding: 0; cursor: pointer;
+  display: grid; place-items: center; border: 2px solid var(--bg-page); border-radius: 50%;
+  background: var(--ucg-navy); color: var(--ucg-white); opacity: 0; pointer-events: none;
+  transition: opacity var(--duration-1) var(--ease);
+}
+.entry-remove::before { content: ''; position: absolute; inset: -6px; } /* bigger tap area */
+.entry-remove:hover { background: #8f2f1c; }
+.entry:hover .entry-remove, .entry:focus-within .entry-remove { opacity: 1; pointer-events: auto; }
+@media (hover: none) { .entry:has(.entry-tab.active) .entry-remove { opacity: 1; pointer-events: auto; } }
 .entry-add {
   display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px; cursor: pointer;
-  border: 0; border-radius: var(--radius-pill); background: transparent; color: var(--fg-accent); font: inherit; font-weight: 600; font-size: var(--fs-sm);
+  border: 0; border-radius: var(--radius-btn); background: transparent; color: var(--fg-accent); font: inherit; font-weight: 600; font-size: var(--fs-sm);
 }
 .entry-add:hover { background: rgba(165, 200, 207, 0.35); }
 .entries .decade { margin-left: auto; }
@@ -880,3 +893,8 @@ input::placeholder { color: var(--fg-muted); }
 .empty-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 32px; }
 .empty-actions .btn { height: 48px; padding: 0 24px; }
 .ath-foot { display: grid; gap: 8px; }
+.ath-delete {
+  display: flex; align-items: center; justify-content: center; gap: 8px; height: 36px; padding: 0 12px; cursor: pointer;
+  border: 0; border-radius: var(--radius-btn); background: transparent; color: #8f2f1c; font: inherit; font-size: var(--fs-sm); font-weight: 600;
+}
+.ath-delete:hover { background: #fbe9e4; }
