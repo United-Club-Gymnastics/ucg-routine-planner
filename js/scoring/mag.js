@@ -128,9 +128,12 @@ export function eventOptions(event, level) {
   if (event === 'fx' && level !== 'masters') {
     o.push({ id: 'conn1', kind: 'count', connect: true, value: 0.1, max: 5, label: 'D or higher + B/C connection', help: '+0.1 each. Mark connected skills with Connect skills (under the routine) to count them.' });
     o.push({ id: 'conn2', kind: 'count', connect: true, value: 0.2, max: 5, label: 'D or higher + D or higher connection', help: '+0.2 each. Mark connected skills with Connect skills (under the routine) to count them.' });
-    if (level === 'adv') {
+    // Double flipping dismount: Intermediate and Advanced (both worksheets list it).
+    if (level === 'int' || level === 'adv') {
       o.push({ id: 'dblDismount', kind: 'check', value: 0.1, detect: true, label: 'Double flipping dismount',
         help: '+0.1. Ticked automatically when the last skill listed is a double or triple salto.' });
+    }
+    if (level === 'adv') {
       o.push({ id: 'dblFlip', kind: 'check', value: 0.3, deduction: true, detect: true, label: 'Routine includes a double flip',
         help: 'Required: -0.3 neutral deduction if missing. Ticked automatically for a double salto from the skill list.' });
     }

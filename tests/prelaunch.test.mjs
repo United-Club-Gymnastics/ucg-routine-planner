@@ -93,3 +93,40 @@ test('FIG "-" is a zero twist: pullover to back (4-o) is a salto', () => {
   assert.equal(quarterSomersaults('4-o'), 4);
   assert.equal(quarterSomersaults('40o'), 4);
 });
+
+// Rules settled by Nate on 2026-10-13.
+import { scoreXcel } from '../js/scoring/wag.js';
+import { eventOptions } from '../js/scoring/mag.js';
+import { maxRows } from '../js/model.js';
+
+test('Sapphire: an E earns the one-D bonus; no Restricted line', () => {
+  const r = scoreXcel('sapphire', 'fx', [{ name: 'E turn', letter: 'E', eg: '' }]);
+  assert.equal(r.bonus, 0.1);
+  assert.ok(!r.totals.some(([l]) => l === 'Restricted'));
+  assert.ok(scoreXcel('gold', 'fx', [{ name: 'A', letter: 'A', eg: '' }]).totals.some(([l]) => l === 'Restricted'));
+});
+
+test('MAG Intermediate floor offers the double flipping dismount bonus, not the double flip requirement', () => {
+  const ids = eventOptions('fx', 'int').map((o) => o.id);
+  assert.ok(ids.includes('dblDismount'));
+  assert.ok(!ids.includes('dblFlip'));
+});
+
+test('Intermediate Flyers tumbling pass 2: one salto, as the dismount', () => {
+  const p1 = [t('Roundoff', 0.2), t('Back handspring', 0.2), t('Back somersault tuck', 0.5)];
+  const ok = [t('Roundoff', 0.2), ...Array.from({ length: 5 }, () => t('Back handspring', 0.2)), t('Whipback (whip)', 0.3, '^'), t('Back full', 0.9, '42')];
+  assert.ok(!scorePasses('tu', 'if', [p1, ok]).warnings.some((w) => /only 1 salto/.test(w)));
+  const front = [t('Front somersault tuck', 0.6, '.4o'), ...ok.slice(1)];
+  const r = scorePasses('tu', 'if', [p1, front]);
+  assert.ok(r.warnings.some((w) => /only 1 salto/.test(w)));
+  assert.equal(r.passes[1][0].flag, 'over');
+});
+
+test('T&T rows stop at the card size', () => {
+  const e = newEntry('a', 'tt', 'nf');
+  assert.equal(maxRows(e, 'tr'), 10);
+  assert.equal(maxRows(e, 'dmt', 0), 2);
+  assert.equal(maxRows(e, 'tu', 0), 7);
+  assert.equal(maxRows(newEntry('b', 'tt', 'if'), 'tu', 1), 8);
+  assert.equal(maxRows(newEntry('c', 'wag', 'gold'), 'fx', null, 20), 20);
+});

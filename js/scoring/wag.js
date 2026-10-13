@@ -196,7 +196,8 @@ export function scoreXcel(level, event, skills = [], { srMet = [], srSet = [] } 
       ...(level === 'sapphire' ? [['Bonus', bonus.total]] : []),
       ['Missing SRs', -srMissing * XCEL_MISSING_SR],
       ['Missing VPs', -vpMissing],
-      ['Restricted', -restricted * XCEL_RESTRICTED],
+      // Sapphire has no difficulty restrictions (UCG WAG Rules).
+      ...(level === 'sapphire' ? [] : [['Restricted', -restricted * XCEL_RESTRICTED]]),
     ],
   };
 }

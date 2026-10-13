@@ -44,6 +44,12 @@ export const isSalto = (s) => {
   return FLIP_NAME.test(s.name || '') && !NOT_FLIP.test(s.name || '');
 };
 
+// Tumbling: a salto is any skill that isn't a roundoff, handspring, whip, jump, roll,
+// cartwheel, walkover or flyspring (FIG tumbling notation doesn't mark saltos apart).
+const TU_NOT_SALTO = /round ?-?off|handspring|whip|jump|rebound|roll|cartwheel|walkover|flyspring|extension/i;
+export const isTumblingSalto = (s) =>
+  !TU_NOT_SALTO.test(s.name || '') && (FLIP_NAME.test(s.name || '') || /\bfull|twist|aerial/i.test(s.name || '') || s.dd >= 0.5);
+
 function items(list) {
   return (list || []).map((s, idx) => ({
     idx,
@@ -170,6 +176,12 @@ export function scorePasses(event, level, passes = [[], []], starts = []) {
       if (all.some((s) => s.dd < 0.2 && !/rebound/i.test(s.name))) warnings.push('Intermediate Flyers: skills must be 0.2 DD or higher (a rebound, 0.1, is allowed).');
       if (sums[0] > 2.6) warnings.push(`Pass 1: Intermediate Flyers may not exceed 2.6 DD (${sums[0].toFixed(1)}).`);
       if (sums[1] > 2.9) warnings.push(`Pass 2: Intermediate Flyers may not exceed 2.9 DD (${sums[1].toFixed(1)}).`);
+      // Pass 2: any handsprings or whips, but only 1 non-whip salto, as the dismount.
+      const filled2 = ps[1].filter((s) => s.status !== 'blank');
+      const saltos2 = filled2.filter(isTumblingSalto);
+      const bad2 = saltos2.filter((s, k) => k > 0 || s !== filled2[filled2.length - 1]);
+      for (const s of bad2) s.flag = 'over';
+      if (bad2.length) warnings.push('Pass 2: Intermediate Flyers may do only 1 salto (whips aside), as the dismount.');
     }
     if (level === 'hf') sums.forEach((d, i) => { if (n[i] && d < 2.0) warnings.push(`${label(i)}: High Flyers passes need at least 2.0 DD (${d.toFixed(1)}).`); });
     for (const i of extraFulls) warnings.push(`${label(i)}: fulls earn difficulty at most 3 times per pass; the 4th and later get none.`);

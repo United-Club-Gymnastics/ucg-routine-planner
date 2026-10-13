@@ -232,6 +232,17 @@ export function newEntry(id, disc, level) {
 export const blankSkill = () => ({ name: '', letter: '', eg: '' });
 export const blankTT = () => ({ name: '', notation: '', dd: '' });
 
+/**
+ * Most rows an event can hold. T&T: the card's rows (trampoline 10, double mini 2 per pass,
+ * tumbling the level's pass size), so a routine always fits its printed card.
+ */
+export function maxRows(entry, evId, pass, fallback = 20) {
+  if (entry.disc !== 'tt') return fallback;
+  if (evId === 'tu') return tt.PASS_SIZES.tu[entry.level]?.[Number(pass) || 0]?.[1] ?? fallback;
+  if (evId === 'dmt') return 2;
+  return tt.TRAMP_SKILLS;
+}
+
 export function minRows(entry, ev) {
   const spec = eventSpec(entry, ev.id);
   if (ev.kind === 'tramp') return tt.TRAMP_SKILLS;
