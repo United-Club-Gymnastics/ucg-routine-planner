@@ -65,7 +65,7 @@ There are three tabs.
 
 ## Sheet 3: "WAG Example Routines" (1B9TjeFnU-cZYmuCcBaUs-OOpIXrxv66LHrqHYrb2Gsg)
 
-Restricted to UCG accounts; read from an .xlsx download. One tab per Xcel level (Silver, Gold, Platinum, Diamond, Sapphire), each with Uneven Bars, Balance Beam and Floor Exercise sections of up to 8 routines across. There is no vault. A sixth tab, "Sheet4", repeats Sapphire beam Routine 1 and is skipped.
+Shared view-only (the planner links to it); read from an .xlsx download. The import is in `tools/wag_examples/` (re-run it when the sheet changes). One tab per Xcel level (Silver, Gold, Platinum, Diamond, Sapphire), each with Uneven Bars, Balance Beam and Floor Exercise sections of up to 8 routines across. There is no vault. A sixth tab, "Sheet4", repeats Sapphire beam Routine 1 and is skipped.
 
 | Tabs | Layout |
 |---|---|

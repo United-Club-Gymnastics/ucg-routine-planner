@@ -728,17 +728,46 @@ function importNotice(e) {
     </section>`;
 }
 
-// The UCG sheet the T&T examples come from, opened on the tab for the level and event,
-// so people can compare every example side by side.
-const TT_EXAMPLE_SHEET = 'https://docs.google.com/spreadsheets/d/1xV7YCE3GB7DZdBJOZO5wLKNPNlHSYkbz82dybMd0yu4/edit';
-const TT_EXAMPLE_TABS = {
-  'nf-tr': 1435406756, 'nf-dmt': 1981485949, 'nf-tu': 191551846,
-  'if-tr': 1276161485, 'if-dmt': 533484477, 'if-tu': 1541825099,
-  'hf-tr': 794122378, 'hf-dmt': 2128556051, 'hf-tu': 413171885,
+// The UCG sheets the T&T and WAG examples come from, opened where the level and event's
+// routines are, so people can compare every example side by side. T&T has a tab per level
+// and event; WAG a tab per level, with bars, beam and floor down it (the range is the
+// event's heading).
+const EXAMPLE_SHEETS = {
+  tt: {
+    url: 'https://docs.google.com/spreadsheets/d/1xV7YCE3GB7DZdBJOZO5wLKNPNlHSYkbz82dybMd0yu4/edit',
+    at: {
+      'nf-tr': 1435406756, 'nf-dmt': 1981485949, 'nf-tu': 191551846,
+      'if-tr': 1276161485, 'if-dmt': 533484477, 'if-tu': 1541825099,
+      'hf-tr': 794122378, 'hf-dmt': 2128556051, 'hf-tu': 413171885,
+    },
+  },
+  wag: {
+    url: 'https://docs.google.com/spreadsheets/d/1B9TjeFnU-cZYmuCcBaUs-OOpIXrxv66LHrqHYrb2Gsg/edit',
+    at: {
+      'silver-ub': '961199611&range=A1', 'silver-bb': '961199611&range=A16', 'silver-fx': '961199611&range=A31',
+      'gold-ub': '0&range=A1', 'gold-bb': '0&range=A16', 'gold-fx': '0&range=A31',
+      'plat-ub': '1843736686&range=A1', 'plat-bb': '1843736686&range=A16', 'plat-fx': '1843736686&range=A31',
+      'diamond-ub': '994048238&range=A1', 'diamond-bb': '994048238&range=A21', 'diamond-fx': '994048238&range=A41',
+      'sapphire-ub': '498742149&range=A1', 'sapphire-bb': '498742149&range=A25', 'sapphire-fx': '498742149&range=A46',
+    },
+  },
 };
+// The link to an event's examples, or '' where there's no sheet to show.
 function exampleSheetUrl(e, event) {
-  const gid = TT_EXAMPLE_TABS[`${e.level}-${event}`];
-  return gid ? `${TT_EXAMPLE_SHEET}#gid=${gid}` : TT_EXAMPLE_SHEET;
+  const sheet = EXAMPLE_SHEETS[e.disc];
+  if (!sheet) return '';
+  const at = sheet.at[`${e.level}-${event}`];
+  return at != null ? `${sheet.url}#gid=${at}` : sheet.url;
+}
+
+// An example that, as written, earns everything its level asks for (no missing special
+// requirement or value part, nothing restricted, not short): what "Use example routines"
+// puts in. Some UCG examples fall short; they stay in each event's Examples menu.
+function meetsRequirements(ex) {
+  const t = newEntry('x', ex.disc, ex.level);
+  applyExample(t, ex);
+  const r = scoreEvent(t, ex.event);
+  return !(r.srMissing || r.vpMissing || r.restricted || r.shortBy);
 }
 
 function startPanel(a, e) {
@@ -750,7 +779,7 @@ function startPanel(a, e) {
     <section class="card start-panel">
       <div class="start-text">
         <h2 class="card-subtitle">Start from something?</h2>
-        <p class="muted">${sources.length ? `Copy every event from another ${esc(DISCIPLINES[e.disc].name)} level; values and start values are recalculated for ${esc(levelInfo(e.disc, e.level).name)}. ` : ''}${examples.length ? 'Or fill each event with an example routine, then edit it. Each event also has an Examples menu.' : ''}${examples.length && e.disc === 'tt' ? ` To compare them first, <a class="ext-link" href="${esc(exampleSheetUrl(e, examples[0].event))}" target="_blank" rel="noopener">browse all the T&amp;T examples in Google Sheets${ICON_EXT}</a>.` : ''}</p>
+        <p class="muted">${sources.length ? `Copy every event from another ${esc(DISCIPLINES[e.disc].name)} level; values and start values are recalculated for ${esc(levelInfo(e.disc, e.level).name)}. ` : ''}${examples.length ? 'Or fill each event with an example routine, then edit it. Each event also has an Examples menu.' : ''}${examples.length && exampleSheetUrl(e, examples[0].event) ? ` To compare them first, <a class="ext-link" href="${esc(exampleSheetUrl(e, examples[0].event))}" target="_blank" rel="noopener">browse all the ${esc(DISCIPLINES[e.disc].name)} examples in Google Sheets${ICON_EXT}</a>.` : ''}</p>
       </div>
       <div class="start-actions">
         ${sources.length > 1 ? `<label class="field inline"><span>Copy from</span><select id="copy-src">${sources.map((s) => `<option value="${esc(s.id)}">${esc(levelInfo(s.disc, s.level).name)}</option>`).join('')}</select></label>` : ''}
@@ -785,7 +814,7 @@ function eventCard(e, ev, visible) {
       <header class="card-head">
         <div class="card-title-row"><h2 class="card-title">${esc(ev.label)}</h2>${help ? helpButton(ev.label.toLowerCase(), help) : ''}</div>
         <div class="card-head-right">
-          ${examples.length && e.disc === 'tt' ? `<a class="ext-link examples-sheet" href="${esc(exampleSheetUrl(e, ev.id))}" target="_blank" rel="noopener" title="See every ${esc(ev.label)} example side by side in Google Sheets">Compare all${ICON_EXT}</a>` : ''}
+          ${examples.length && exampleSheetUrl(e, ev.id) ? `<a class="ext-link examples-sheet" href="${esc(exampleSheetUrl(e, ev.id))}" target="_blank" rel="noopener" title="See every ${esc(ev.label)} example side by side in Google Sheets">Compare all${ICON_EXT}</a>` : ''}
           ${examples.length ? `<label class="examples-menu"><span class="sr-only">Insert an example routine</span>
             <select data-example="${ev.id}"><option value="">Examples…</option>${examples.map((x) => `<option value="${esc(x.id)}">${esc(x.title)}</option>`).join('')}</select></label>` : ''}
           <span class="sv-pill" data-sv="${ev.id}"></span>
@@ -1181,7 +1210,8 @@ function bindEditor(a, e) {
   });
   $('#examples-all')?.addEventListener('click', () => {
     for (const x of DISCIPLINES[e.disc].events) {
-      const ex = EXAMPLES.find((y) => y.disc === e.disc && y.level === e.level && y.event === x.id);
+      const list = EXAMPLES.filter((y) => y.disc === e.disc && y.level === e.level && y.event === x.id);
+      const ex = list.find(meetsRequirements) || list[0];
       if (ex) applyExample(e, ex);
     }
     scheduleSave();
