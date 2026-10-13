@@ -1,7 +1,7 @@
 {
  "discipline": "WAG",
- "version": "1d3317b3e905",
- "built": "2026-10-11",
+ "version": "c54dffa00c38",
+ "built": "2026-10-13",
  "elements": [
   {
    "id": "WAG-BB-0001",
@@ -15608,7 +15608,7 @@
       "element_group": "7",
       "eponym": "",
       "form": "a",
-      "note": "also with alternating hands (the variation named Tinsica), or swinging down to cross sit",
+      "note": "Also with alternating hands (Tinsica) or swinging down to cross sit.",
       "tags": {
        "acro": true,
        "inverted": true
@@ -21951,7 +21951,7 @@
       "eponym": "",
       "form": "a",
       "relation": "covers_more",
-      "note": "also with alternating hands (the variation named Tinsica), or swinging down to cross sit",
+      "note": "Also with alternating hands (Tinsica) or swinging down to cross sit.",
       "tags": {
        "acro": true,
        "inverted": true
@@ -22008,7 +22008,7 @@
       "eponym": "",
       "form": "a",
       "relation": "covers_more",
-      "note": "also with alternating hands (the variation named Tinsica), or swinging down to cross sit",
+      "note": "Also with alternating hands (Tinsica) or swinging down to cross sit.",
       "tags": {
        "acro": true,
        "inverted": true
@@ -33582,7 +33582,7 @@
       "element_group": "5",
       "eponym": "",
       "form": "c",
-      "note": "flight before or after the hands; flagged as hand-support flight by the plain meaning of the term (the Code gives no list)",
+      "note": "Flight before or after the hands; counts as a flight element with hand support.",
       "hand_support_flight": true,
       "tags": {
        "acro": true,
@@ -33816,7 +33816,6 @@
       "element_group": "5",
       "eponym": "",
       "form": "a",
-      "note": "two-foot landing or step-out",
       "hand_support_flight": true,
       "tags": {
        "acro": true,
@@ -34241,7 +34240,6 @@
       "element_group": "6",
       "eponym": "",
       "form": "b",
-      "note": "step-out or two-foot landing",
       "tags": {
        "acro": true,
        "flight": true,
@@ -34718,7 +34716,6 @@
       "element_group": "8",
       "eponym": "",
       "form": "a",
-      "note": "step-out or two-foot landing",
       "tags": {
        "acro": true,
        "flight": true,
@@ -34835,7 +34832,6 @@
       "element_group": "8",
       "eponym": "",
       "form": "c",
-      "note": "step-out or two-foot landing",
       "tags": {
        "acro": true,
        "flight": true,
@@ -54436,7 +54432,7 @@
       "eponym": "",
       "form": "a",
       "relation": "covers_more",
-      "note": "also with reverse grip",
+      "note": "Also with reverse grip.",
       "aka": [
        "Long hang kip",
        "High bar kip",
@@ -54496,7 +54492,7 @@
       "eponym": "",
       "form": "a",
       "relation": "covers_more",
-      "note": "also with reverse grip",
+      "note": "Also with reverse grip.",
       "aka": [
        "Long hang kip",
        "High bar kip",
