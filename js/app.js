@@ -1817,7 +1817,7 @@ function renderPicker(query) {
     html.push(`
       <div class="pop-opt${i === picker.active ? ' active' : ''}" role="option" id="pop-opt-${i}" data-skill="${i}" aria-selected="${i === picker.active}"${s.note ? ` title="Note: ${esc(s.note)}"` : ''}>
         <span class="src-badge ${s.src.toLowerCase()}" title="${esc(boxTitle(s))}">${SRC_SHORT[s.src] || s.src}</span>
-        <span class="pop-name">${s.box ? `<span class="pop-box">${esc(s.box.replace(/^\S+ /, ''))}</span>` : ''}<span class="pop-text">${esc(s.name)}${s.eponym ? ` <span class="pop-eponym">(${esc(s.eponym)})</span>` : ''}${s.aka?.length ? `<span class="pop-aka">aka ${esc(s.aka.slice(0, 2).join(', '))}</span>` : ''}${s.note && !canHover() ? `<span class="pop-aka">Note: ${esc(s.note)}</span>` : ''}</span></span>
+        <span class="pop-name">${s.box ? `<span class="pop-box">${esc(s.box.replace(/^\S+ /, ''))}</span>` : ''}<span class="pop-text">${esc(s.name)}${s.eponym ? ` <span class="pop-eponym">(${esc(s.eponym)})</span>` : ''}${s.aka?.length ? `<span class="pop-aka">aka ${esc(s.aka.slice(0, 2).join(', '))}</span>` : ''}${s.note && !canHover() ? `<span class="pop-aka pop-note">Note: ${esc(s.note)}</span>` : ''}</span></span>
         <span class="pop-meta">${meta}</span>
       </div>`);
   });

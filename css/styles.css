@@ -416,6 +416,8 @@ input::placeholder { color: var(--fg-muted); }
 .pop-box { display: inline-block; flex: none; min-width: 3.4em; margin-right: 6px; color: var(--fg-secondary); font-size: var(--fs-xs); font-weight: 600; font-variant-numeric: tabular-nums; }
 /* Other names on a quieter second line under the skill's name. */
 .pop-aka { display: block; margin-top: 1px; color: var(--fg-secondary); font-size: var(--fs-xs); }
+/* Touch screens show a skill's note in the list: two lines at most, so long ones don't crowd it. */
+.pop-note { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
 .pop-meta { white-space: nowrap; font-weight: 600; font-variant-numeric: tabular-nums; }
 .pop-foot, .pop-empty {
   padding: 8px 12px; border-top: 1px solid var(--border-subtle); color: var(--fg-secondary); font-size: var(--fs-xs);
