@@ -115,3 +115,17 @@ test('One event copied from another level: only that event is replaced and re-va
   assert.equal(to.revalued.event, 'bb');
   assert.ok(eventHasContent(to, 'bb') && !eventHasContent(to, 'vt'));
 });
+
+test('Infinity -> WAG Masters: split leap, handstand forward roll and arabesque full turn are credited (stand-ins)', () => {
+  const fx = copyTo('wag', 'inf', 'masters', 'fx', [
+    pick('USAG-FX-1.101-1', 'Split leap or split jump', 'A'),
+    pick('USAG-FX-4.101-1b', 'Handstand forward roll', 'A'),
+  ], WAG);
+  assert.equal(fx.rows[0].skillId, 'WGW-FX-1.101-1');
+  assert.ok(fx.rows[0].approx && !fx.rows[0].noCredit);
+  assert.equal(fx.rows[1].letter, 'ME');
+  assert.ok(!fx.rows[1].noCredit);
+  const bb = copyTo('wag', 'inf', 'masters', 'bb', [pick('USAG-BB-3.304-1', 'Full turn in arabesque', 'C')], WAG);
+  assert.equal(bb.rows[0].skillId, 'WGW-BB-3.302-1');
+  assert.ok(bb.rows[0].approx && bb.rows[0].letter === 'C');
+});

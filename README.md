@@ -50,6 +50,8 @@ Athletes are saved in Firestore at `users/{user id}/athletes/{athlete}`. Each at
 
 Routines store the planner's skill ids, which the catalog's aliases resolve (with `merged`), so catalog rebuilds don't break saved routines. To update: copy the new public files into `tools/source/catalog/` and run `python tools/build_data.py`.
 
+**Planner-side additions (2026-10-13), not yet in the Dropbox catalog:** stand-ins so these copy to WAG Masters instead of "not credited": `WAG-FX-0112` (Xcel split leap or split jump) gets WG FX 1.101 split leap and `WAG-BB-0283` (full turn in arabesque) gets WG BB 3.302 full turn in back attitude, both with `"relation": "stand_in"` (re-valued as approximate); `WAG-FX-0165` (handstand forward roll) gets the UCG Masters ME "Handstand (any entry, no hold) forward roll out". Add the same entries in the Dropbox catalog before the next copy, or they are lost.
+
 ## Data and how to rebuild it
 
 | Data | Source | Rebuild |

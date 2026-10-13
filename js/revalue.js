@@ -62,7 +62,7 @@ export function revalueEntry(entry, fromLevel, catalog, fromVault = '', events =
         summary.exact++;
         continue;
       }
-      const approx = ids.length > 1 || own?.rel === 'covers_more';
+      let approx = ids.length > 1 || own?.rel === 'covers_more';
 
       let code, pick;
       for (const c of rule.value_codes) {
@@ -98,6 +98,8 @@ export function revalueEntry(entry, fromLevel, catalog, fromVault = '', events =
         continue;
       }
 
+      // A stand-in: the level's code has no such element, so the nearest one is used.
+      if (pick.rel === 'stand_in') approx = true;
       const value = String(pick.x || pick.v || '').split('=')[0];
       const g = String(pick.g || '');
       let eg = '';
