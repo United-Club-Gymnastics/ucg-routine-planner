@@ -124,8 +124,8 @@ export const APPARATUS = {
 export function eventOptions(event, level) {
   const o = [];
   if (event === 'fx') {
-    o.push({ id: 'conn1', kind: 'count', connect: true, value: 0.1, max: 5, label: 'D or higher + B/C connection', help: '+0.1 each. Mark connected skills with Connect skills (above the routine) to count them.' });
-    o.push({ id: 'conn2', kind: 'count', connect: true, value: 0.2, max: 5, label: 'D or higher + D or higher connection', help: '+0.2 each. Mark connected skills with Connect skills (above the routine) to count them.' });
+    o.push({ id: 'conn1', kind: 'count', connect: true, value: 0.1, max: 5, label: 'D or higher + B/C connection', help: '+0.1 each. Mark connected skills with Connect skills (under the routine) to count them.' });
+    o.push({ id: 'conn2', kind: 'count', connect: true, value: 0.2, max: 5, label: 'D or higher + D or higher connection', help: '+0.2 each. Mark connected skills with Connect skills (under the routine) to count them.' });
     if (level === 'adv') {
       o.push({ id: 'dblDismount', kind: 'check', value: 0.1, detect: true, label: 'Double flipping dismount',
         help: '+0.1. Ticked automatically when the last skill listed is a double or triple salto.' });
@@ -144,7 +144,7 @@ export function eventOptions(event, level) {
     }
   }
   if (event === 'hb') {
-    o.push({ id: 'connCC', kind: 'count', connect: true, value: 0.1, max: 5, label: 'C + C connection', help: 'Flight to flight, or in bar to flight / flight to in bar with no intermediate swing: +0.1 each. Mark connected skills with Connect skills (above the routine) to count them.' });
+    o.push({ id: 'connCC', kind: 'count', connect: true, value: 0.1, max: 5, label: 'C + C connection', help: 'Flight to flight, or in bar to flight / flight to in bar with no intermediate swing: +0.1 each. Mark connected skills with Connect skills (under the routine) to count them.' });
   }
   return o;
 }

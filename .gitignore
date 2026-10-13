@@ -4,3 +4,7 @@ _site/
 test-results/
 playwright-report/
 .claude/
+
+# Licensed brand typefaces: added by tools/build_site.mjs when present, never committed.
+assets/fonts/GreedCondensed-*
+assets/fonts/SuisseIntl-*

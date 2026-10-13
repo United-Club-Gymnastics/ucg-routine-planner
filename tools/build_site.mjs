@@ -65,7 +65,21 @@ const result = await build({
 
 // Static files: assets (fonts, logos, worksheets) as they are; the stylesheet with a hash.
 cpSync(join(ROOT, 'assets'), join(OUT, 'assets'), { recursive: true });
-const css = readFileSync(join(ROOT, 'css', 'styles.css'));
+// The brand typefaces (Greed Condensed, Suisse Intl) are licensed and kept out of git: when
+// their files are in assets/fonts/, the stylesheet loads them; otherwise the planner uses
+// Saira Condensed and Arial (the stylesheet's fallbacks).
+const BRAND_FONTS = [
+  ['Greed Condensed', 'GreedCondensed-Bold.woff2', '700', 'normal'],
+  ['Suisse Intl', 'SuisseIntl-Regular.woff2', '400', 'normal'],
+  ['Suisse Intl', 'SuisseIntl-RegularIt.woff2', '400', 'italic'],
+  ['Suisse Intl', 'SuisseIntl-Bold.woff2', '600 700', 'normal'],
+];
+const brandFonts = BRAND_FONTS.filter(([, file]) => existsSync(join(ROOT, 'assets', 'fonts', file)));
+const fontFaces = brandFonts
+  .map(([family, file, weight, style]) => `@font-face{font-family:'${family}';font-style:${style};font-weight:${weight};font-display:swap;src:url('../assets/fonts/${file}') format('woff2')}`)
+  .join('\n');
+console.log(brandFonts.length ? `brand fonts: ${brandFonts.map((f) => f[1]).join(', ')}` : 'brand fonts: none in assets/fonts (using the fallbacks)');
+const css = Buffer.concat([Buffer.from(fontFaces ? `${fontFaces}\n` : ''), readFileSync(join(ROOT, 'css', 'styles.css'))]);
 const cssName = `css/styles-${hash(css)}.css`;
 mkdirSync(join(OUT, 'css'), { recursive: true });
 writeFileSync(join(OUT, cssName), css);
