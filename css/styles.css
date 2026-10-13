@@ -679,6 +679,13 @@ input::placeholder { color: var(--fg-muted); }
   padding: 6px 10px; font: inherit; font-size: 0.82rem; max-width: 220px; cursor: pointer;
 }
 .card-head { flex-wrap: wrap; }
+/* Links out (opens a new tab): dark blue green on white, with an arrow-out icon. */
+.ext-link { display: inline-flex; align-items: center; gap: 4px; color: var(--fg-accent); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.ext-link:hover { color: var(--ucg-navy); }
+.ext-link svg { flex: none; }
+.examples-sheet { font-size: var(--fs-xs); white-space: nowrap; }
+.start-text .ext-link { display: inline; }
+.start-text .ext-link svg { margin-left: 3px; vertical-align: -1px; }
 .card-head-right { flex-wrap: wrap; }
 .partner { margin: 10px 20px 0; }
 .partner input { max-width: 260px; text-transform: uppercase; }
