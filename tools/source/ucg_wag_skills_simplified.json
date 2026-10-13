@@ -1225,14 +1225,13 @@
       {
         "form": "a",
         "name": "Jump to HB hang, kip",
-        "note": "also with reverse grip"
+        "note": "Also with reverse grip."
       },
       {
         "form": "b",
         "name": "Jump to HB, hop down to LB kip"
       }
     ],
-    "forms_rule": "The paragraph runs two different mounts together: a kip on the high bar after a jump to hang, and a jump to the high bar that drops to a kip on the low bar.",
     "forms_citation": "Development Program 2026 UB 1.106 prints them as separate paragraphs (-1/-2 and -3); user review Oct 2026"
   },
   {
@@ -4337,7 +4336,7 @@
         "name": "Jump mount to stand, two-foot take-off"
       }
     ],
-    "forms_rule": "Leap vs jump: take-off from one leg vs both legs makes a leap/jump different.",
+    "forms_rule": "The leap and jump mounts are different elements.",
     "forms_citation": "Xcel BALANCE BEAM - 10, Chapter 2 B.2.e"
   },
   {
@@ -6936,7 +6935,7 @@
         "name": "Bent-arm or forearm cartwheel through chest stand"
       }
     ],
-    "forms_rule": "Box note: all of these variations are considered different elements.",
+    "forms_rule": "Each variation in this box is a different element.",
     "forms_citation": "Xcel BALANCE BEAM ELEMENTS - 39, 7.103 note; DP BALANCE BEAM ELEMENTS - 31, 7.103 note"
   },
   {
@@ -6981,7 +6980,7 @@
         "name": "Swing-through side aerial from one-leg stand"
       }
     ],
-    "forms_rule": "Box note (2026 DP): the aerial cartwheel and the swing-through aerial cartwheel are different elements; other swing-through variations are the same. The Xcel cell has no note, but Xcel's matching note on the aerial walkover (7.402) says the same.",
+    "forms_rule": "The side aerial and the swing-through side aerial are different elements; other swing-through variations are the same element.",
     "forms_citation": "DP BALANCE BEAM ELEMENTS - 31, 7.403 note; Xcel BALANCE BEAM ELEMENTS - 38, aerial walkover note"
   },
   {
@@ -7043,7 +7042,7 @@
         "form": "a",
         "name": "Back walkover",
         "eponym": "",
-        "note": "also with alternating hands (the variation named Tinsica), or swinging down to cross sit"
+        "note": "Also with alternating hands (Tinsica) or swinging down to cross sit."
       },
       {
         "form": "b",
@@ -7051,7 +7050,7 @@
         "eponym": ""
       }
     ],
-    "forms_rule": "Support on one arm vs both arms makes an element different. Alternate hand support and the swing down to cross sit stay with the two-arm form: no Code rule separates them.",
+    "forms_rule": "One-arm and two-arm back walkovers are different elements.",
     "forms_citation": "Xcel BALANCE BEAM - 10, Chapter 2 B.2.c"
   },
   {
@@ -7362,7 +7361,7 @@
         "eponym": ""
       }
     ],
-    "forms_rule": "An acro element taking off from one leg vs both legs is different: the gainer takes off from one leg.",
+    "forms_rule": "The gainer (one-foot take-off) is a different element.",
     "forms_citation": "Xcel BALANCE BEAM - 10, Chapter 2 B.2.f"
   },
   {
@@ -7429,7 +7428,7 @@
         "name": "Swing-through side somi piked"
       }
     ],
-    "forms_rule": "Box note: all of the above are considered different elements (salto body position also differs: tucked vs piked).",
+    "forms_rule": "Each variation in this box is a different element.",
     "forms_citation": "Xcel BALANCE BEAM ELEMENTS - 47, 8.402 note; Xcel BALANCE BEAM - 10, Chapter 2 B.2.d"
   },
   {
@@ -8059,7 +8058,7 @@
         "name": "Split jump with ½ turn"
       }
     ],
-    "forms_rule": "Box note: the split leap with ¼ or ½ turn and the split jump with ½ turn are different elements; the two leap turn amounts are the same element (adding a ¼ turn does not make an element different).",
+    "forms_rule": "The split leap and split jump are different elements; the leap with ¼ or ½ turn is the same element.",
     "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 3, 1.202 note; DP FLOOR EXERCISE ELEMENTS - 1, 1.202 note"
   },
   {
@@ -9103,7 +9102,7 @@
         "name": "Dive (hecht) roll"
       }
     ],
-    "forms_rule": "Box note: all are considered different elements.",
+    "forms_rule": "Each variation in this box is a different element.",
     "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 16, 4.101 note"
   },
   {
@@ -9160,7 +9159,7 @@
         "name": "Backward roll, piked"
       }
     ],
-    "forms_rule": "Box note: all are considered different elements.",
+    "forms_rule": "Each variation in this box is a different element.",
     "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 16, 4.102 note"
   },
   {
@@ -9196,7 +9195,7 @@
         "name": "Back extension roll, ½ turn in handstand"
       }
     ],
-    "forms_rule": "Box note: all are considered different elements; a different degree of turn also makes an element different.",
+    "forms_rule": "Each variation in this box is a different element.",
     "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 16, 4.102 note; Xcel FLOOR EXERCISE - 9, Chapter 2 B.2.a"
   },
   {
@@ -9263,7 +9262,7 @@
         "name": "One-arm back walkover"
       }
     ],
-    "forms_rule": "Box note: all are considered as different elements. The box pictures six variations: front walkover, one-arm front walkover, front walkover from one arm to the other, back walkover, one-arm back walkover, and back walkover from tuck sit (identified by Nate from the drawings).",
+    "forms_rule": "Each variation in this box is a different element.",
     "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 17, 5.101 note"
   },
   {
@@ -9287,7 +9286,7 @@
         "name": "Tuck-sit back walkover, full turn in handstand"
       }
     ],
-    "forms_rule": "Box note: considered as different elements (from stand vs from extended tuck sit).",
+    "forms_rule": "Each variation in this box is a different element.",
     "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 17, 5.201 note"
   },
   {
@@ -9390,7 +9389,7 @@
       {
         "form": "c",
         "name": "Cartwheel with flight phase",
-        "note": "flight before or after the hands; flagged as hand-support flight by the plain meaning of the term (the Code gives no list)",
+        "note": "Flight before or after the hands; counts as a flight element with hand support.",
         "hand_support_flight": true
       },
       {
@@ -9399,7 +9398,7 @@
         "hand_support_flight": false
       }
     ],
-    "forms_rule": "Box note: all considered as different elements.",
+    "forms_rule": "Each variation in this box is a different element.",
     "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 19, 5.104 note"
   },
   {
@@ -9436,7 +9435,7 @@
         "hand_support_flight": false
       }
     ],
-    "forms_rule": "Box note: considered as different elements. Only the round-off is a flight element with hand support.",
+    "forms_rule": "Each variation in this box is a different element; only the round-off counts as a flight element with hand support.",
     "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 19, 5.105 note"
   },
   {
@@ -9454,7 +9453,6 @@
       {
         "form": "a",
         "name": "Back handspring",
-        "note": "two-foot landing or step-out",
         "hand_support_flight": true
       },
       {
@@ -9468,7 +9466,7 @@
         "hand_support_flight": true
       }
     ],
-    "forms_rule": "Box note: the variations are considered different elements; a flic-flac to two feet and with step-out are the same element.",
+    "forms_rule": "Each variation in this box is a different element; two-foot landing or step-out is the same.",
     "forms_citation": "Xcel FLOOR EXERCISE ELEMENTS - 20, 5.106 note"
   },
   {
@@ -9532,8 +9530,7 @@
       },
       {
         "form": "b",
-        "name": "Front layout",
-        "note": "step-out or two-foot landing"
+        "name": "Front layout"
       },
       {
         "form": "c",
@@ -9544,7 +9541,7 @@
         "name": "Front layout with ½ twist"
       }
     ],
-    "forms_rule": "Saltos in different body positions (tuck / pike / stretched) and with different degrees of turn are different elements; step-out vs two-foot landing is the same.",
+    "forms_rule": "Each body position and twist is a different element; step-out or two-foot landing is the same.",
     "forms_citation": "Xcel FLOOR EXERCISE - 9 and - 10, Chapter 2 B.2.a and B.2.b"
   },
   {
@@ -9616,8 +9613,7 @@
     "forms": [
       {
         "form": "a",
-        "name": "Back tuck",
-        "note": "step-out or two-foot landing"
+        "name": "Back tuck"
       },
       {
         "form": "b",
@@ -9625,11 +9621,10 @@
       },
       {
         "form": "c",
-        "name": "Back layout",
-        "note": "step-out or two-foot landing"
+        "name": "Back layout"
       }
     ],
-    "forms_rule": "Saltos in different body positions are different elements; step-out vs two-foot landing is the same.",
+    "forms_rule": "Each body position is a different element; step-out or two-foot landing is the same.",
     "forms_citation": "Xcel FLOOR EXERCISE - 10, Chapter 2 B.2.b and C.1"
   },
   {
@@ -9668,7 +9663,7 @@
         "name": "Back layout full twist"
       }
     ],
-    "forms_rule": "Saltos in different body positions and with different degrees of turn are different elements.",
+    "forms_rule": "Each body position and twist is a different element.",
     "forms_citation": "Xcel FLOOR EXERCISE - 9 and - 10, Chapter 2 B.2.a and B.2.b"
   },
   {
@@ -9855,7 +9850,7 @@
         ]
       }
     ],
-    "forms_rule": "Division stand-in for the regular stag and split leaps (A value at Bronze, any split angle).",
+    "forms_rule": "Bronze version of the regular leap; counts as the same element.",
     "forms_citation": "Xcel BALANCE BEAM ELEMENTS - 1, split angles by division"
   },
   {
@@ -9925,7 +9920,7 @@
         ]
       }
     ],
-    "forms_rule": "Division stand-in for the regular stag and split leaps (A value at Silver, minimum 90° split).",
+    "forms_rule": "Silver version of the regular leap; counts as the same element.",
     "forms_citation": "Xcel BALANCE BEAM ELEMENTS - 1, split angles by division"
   },
   {
@@ -10601,7 +10596,7 @@
         ]
       }
     ],
-    "forms_rule": "The ½-turn form is different (degree of turn). The piked form is the same element as the straddled version in variant 1: legs together vs separated does not make a bars element different (saltos aside).",
+    "forms_rule": "The ½ turn makes a different element; piked is the same element as straddled.",
     "forms_citation": "Xcel UNEVEN BARS - 11, Chapter 2 C.2 (same); DP UNEVEN BAR ELEMENTS - 35"
   },
   {
