@@ -1,6 +1,6 @@
 # examples.json: source notes
 
-Both sheets were exported in full from Google Drive as .xlsx and parsed with openpyxl. The build script is `examples_work/build_examples.py`, which reads `examples_work/tt.xlsx` and `examples_work/mag.xlsx`. In total there are 131 examples.
+The first two sheets were exported in full from Google Drive as .xlsx and parsed with openpyxl. The build script is `examples_work/build_examples.py`, which reads `examples_work/tt.xlsx` and `examples_work/mag.xlsx`; together they have 131 examples. The WAG sheet (Sheet 3) adds 117.
 
 ## Sheet 1: T&T "Example Routines Website Spreadsheet" (1xV7YCE3GB7DZdBJOZO5wLKNPNlHSYkbz82dybMd0yu4)
 
@@ -63,8 +63,42 @@ There are three tabs.
 - **Bonus/Deduction:** Dev Pommel has two entries in this column: "5 Mushroom Circles" on skill 1 and "+(0.5)" on skill 2. They are recorded in that example's `note`.
 - **Video URLs:** the two High Bar URLs are malformed in the sheet (`watch?v=…?feature=share`) and are kept as-is.
 
+## Sheet 3: "WAG Example Routines" (1B9TjeFnU-cZYmuCcBaUs-OOpIXrxv66LHrqHYrb2Gsg)
+
+Restricted to UCG accounts; read from an .xlsx download. One tab per Xcel level (Silver, Gold, Platinum, Diamond, Sapphire), each with Uneven Bars, Balance Beam and Floor Exercise sections of up to 8 routines across. There is no vault. A sixth tab, "Sheet4", repeats Sapphire beam Routine 1 and is skipped.
+
+| Tabs | Layout |
+|---|---|
+| Silver, Gold, Platinum | One column per routine, skill names only (no values). |
+| Diamond | Name, value letter, gap per routine; an A/B/C count block under each event. |
+| Sapphire | Name, value letter, bonus, gap per routine; A–D counts and a "Bonus" total under each event. |
+
+117 routines (empty columns skipped: Platinum beam 8, Diamond bars 8; Sapphire bars has 7). Ids are `wag-<level>-<event>-<n>`, titles "<Level> <Event> Routine N", and each skill keeps the sheet's name as `sheetName`.
+
+### Mapping choices
+
+- **Every skill is matched to the Xcel skill list** for its level and event (division-limited entries respected), and stored as the skill picker sets it: the list's name, `skillId`, value, group and `fromList`. So values, groups and the special requirements follow the list, not the sheet. Names were matched automatically where unambiguous and by hand otherwise. Main hand choices:
+  - "Cast" is each division's own cast entry (2.001 Silver / Gold / Platinum; Diamond's "Cast above 45°" is the Diamond one). Squat-on / stoop-on casts, with or without "jump to HB", are 2.102.
+  - Underswing dismounts: from the low bar (8.006) at Silver, otherwise the HB underswing dismount (8.101). "Kip" after a jump to the high bar is the HB kip (1.106); the Silver routine that opens with "Kip" is a glide kip.
+  - Beam leaps and jumps at Silver–Platinum use the division entries ("2.0 Silver / Gold / Platinum"). The last beam skill is the dismount even when the sheet doesn't say so (e.g. "Back Tuck", "Back Layout", "Gainer Back Tuck" → back salto dismount 9.106).
+  - "Toe Up" and "Toe Circle to Handstand" are both toe-on back to handstand (7.309). "Giant" is the back giant to handstand (4.202).
+- **Typed in, not from the list:** beam "Mount" (value A, as Diamond gives it), Sapphire bars "Jump to HB (Mount)" (A, a jump to hang before a separate long-hang kip), Platinum "Sole Circle - Jump to HB" and Diamond "Tap Swing" (no value given).
+- **Links (connections):** the sheet doesn't mark connections, so they are inferred from the order skills are listed in:
+  - Floor and beam acro: a round-off, handspring, step-out or whip into the next acro skill; on floor any Group 5 skill (handspring, walkover, cartwheel, round-off) into the next acro skill, and a front salto into another.
+  - Dance: back-to-back different leaps and jumps (floor Group 1, beam Group 2) are a dance passage / series. Beam acro (Groups 6–7) back to back is an acro series.
+  - Bars: the skill before the closing dismount is connected into it.
+  - Sapphire: the bonus column puts a connection series' bonus on its first skill, so those links come first (added until the app's bonus equals the sheet's total), and an inferred link that would earn more bonus than the sheet gives is left out. One exception is forced: floor 6's switch side leap into the Popa, which the sheet counts; there the app's bonus is 0.4 to the sheet's 0.3, because the Popa is a C in the Code (the sheet says B).
+- **Still short of a requirement as written (kept; the planner shows what's missing):** Platinum bars 1 and 2 and beam 2 (no B), Gold bars 6 (no second circling skill), Gold floor 4 and Platinum floor 2 (dance passage without a big enough split leap), Platinum beam 4 and Diamond beam 1–3, Sapphire beam 3–4 (no acro series), Diamond bars 2 (A underswing dismount), Sapphire beam 1 (no full turn).
+- **Left out (repeats; `EXCLUDE` in build_data.py):** Silver and Gold floor 2 (split leap and split jump are one element), Platinum beam 1 (same) and 3 (two cartwheels), Platinum floor 5 (two front tucks), Diamond bars 7 (three cast handstands), Diamond floor 6 (two front layouts).
+
+### Anomalies
+
+- Diamond bars Routines 5 and 6: the sheet's A/B/C counts don't match the skills listed (5 B listed, count says 4; 6 A listed, count says 5). The listed skills are used.
+- Values the sheet gives that differ from the Xcel list (the list's are used): Diamond beam 8 "Tuck Jump" B (list A), Sapphire floor 2 "Wolf Turn" A (list B, full turn in tuck stand) and "Split Leap" B (list A), Sapphire floor 6 "Straddle Jump Full" B (list C).
+
 ## Unsure / for review
 
 - Whether the hidden IF Power Tumbling tab is meant to be public. It is included here.
 - Whether to show the `tt-nf-tr-18` Straddle Jump 0.2 and the `tt-nf-dmt-13` Front Pike 0.7 as the sheet gives them, or correct them.
 - What the two unnamed skills in HF Trampoline Routine 10 are.
+- WAG: the hand-matched names above, especially Platinum "Swing Half Turn" (long-swing ½ turn, 4.101), "Front Tucked Flyaway" (reverse-grip front salto, 8.107), "Clear Hip Circle" at Gold/Platinum (clear hip to support, 3.204, a B), and the Sapphire links inferred from the bonus column.

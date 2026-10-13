@@ -113,13 +113,13 @@ function add(disc, list, index = {}) {
   }
 }
 
-// Example routines (T&T, MAG Developmental / Intermediate) load with those disciplines.
+// Example routines (T&T, MAG Developmental / Intermediate, WAG Xcel) load with those disciplines.
 export let EXAMPLES = [];
 const examples = () => import('./data/examples.js').then((m) => (EXAMPLES = m.EXAMPLES));
 
 const LOADERS = {
   wag: () =>
-    Promise.all([import('./data/wag-skills.js'), import('./data/masters-skills-wag.js'), import('./data/skill-index-wag.js')]).then(
+    Promise.all([import('./data/wag-skills.js'), import('./data/masters-skills-wag.js'), import('./data/skill-index-wag.js'), examples()]).then(
       ([a, b, ix]) => add('wag', [...a.SKILLS, ...b.SKILLS], ix.INDEX)
     ),
   mag: () =>

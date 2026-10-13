@@ -6462,5 +6462,8246 @@
   ],
   "video": "https://youtube.com/watch?v=2keQH9G2-0w?feature=share",
   "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 13.2."
+ },
+ {
+  "id": "wag-silver-ub-1",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "ub",
+  "title": "Xcel Silver Uneven Bars Routine 1",
+  "skills": [
+   {
+    "sheetName": "Glide Swing",
+    "name": "Glide swing, return to stand",
+    "skillId": "USAG-UB-1.004-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Pullover",
+    "name": "Pullover mount on LB",
+    "skillId": "USAG-UB-1.003a-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast, at least 45° below horizontal",
+    "skillId": "USAG-UB-2.001-3",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Hip Circle",
+    "name": "Back hip circle",
+    "skillId": "USAG-UB-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straight Jump off Low Bar",
+    "name": "Straight jump off LB to stand",
+    "skillId": "USAG-UB-8.004-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-ub-2",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "ub",
+  "title": "Xcel Silver Uneven Bars Routine 2",
+  "skills": [
+   {
+    "sheetName": "Pullover",
+    "name": "Pullover mount on LB",
+    "skillId": "USAG-UB-1.003a-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast, at least 45° below horizontal",
+    "skillId": "USAG-UB-2.001-3",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast, at least 45° below horizontal",
+    "skillId": "USAG-UB-2.001-3",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Hip Circle",
+    "name": "Back hip circle",
+    "skillId": "USAG-UB-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Underswing Dismount",
+    "name": "Underswing dismount from LB",
+    "skillId": "USAG-UB-8.006-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-ub-3",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "ub",
+  "title": "Xcel Silver Uneven Bars Routine 3",
+  "skills": [
+   {
+    "sheetName": "Pullover",
+    "name": "Pullover mount on LB",
+    "skillId": "USAG-UB-1.003a-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast, at least 45° below horizontal",
+    "skillId": "USAG-UB-2.001-3",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Hip Circle",
+    "name": "Back hip circle",
+    "skillId": "USAG-UB-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to High Bar",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tap Swing - Counter Swing",
+    "name": "Tap or underswing with counterswing",
+    "skillId": "USAG-UB-2.003-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Swing Half Turn Dismount",
+    "name": "Tap swing ½ turn dismount",
+    "skillId": "USAG-UB-8.005-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-ub-4",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "ub",
+  "title": "Xcel Silver Uneven Bars Routine 4",
+  "skills": [
+   {
+    "sheetName": "Single Leg Jam Kip",
+    "name": "Single-leg jam kip mount",
+    "skillId": "USAG-UB-1.006-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Stride Circle Forward",
+    "name": "Stride (mill) circle",
+    "skillId": "USAG-UB-7.004-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Leg Cut Backward",
+    "name": "One-leg cut front or back",
+    "skillId": "USAG-UB-7.002-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast, at least 45° below horizontal",
+    "skillId": "USAG-UB-2.001-3",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straight Jump off Low Bar",
+    "name": "Straight jump off LB to stand",
+    "skillId": "USAG-UB-8.004-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-ub-5",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "ub",
+  "title": "Xcel Silver Uneven Bars Routine 5",
+  "skills": [
+   {
+    "sheetName": "Kip",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Hip Circle",
+    "name": "Front hip circle",
+    "skillId": "USAG-UB-7.101-2",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast, at least 45° below horizontal",
+    "skillId": "USAG-UB-2.001-3",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Stoop On",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straddle Underswing Dismount",
+    "name": "Underswing dismount from LB",
+    "skillId": "USAG-UB-8.006-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-ub-6",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "ub",
+  "title": "Xcel Silver Uneven Bars Routine 6",
+  "skills": [
+   {
+    "sheetName": "Pullover",
+    "name": "Pullover mount on LB",
+    "skillId": "USAG-UB-1.003a-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast, at least 45° below horizontal",
+    "skillId": "USAG-UB-2.001-3",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Hip Circle",
+    "name": "Back hip circle",
+    "skillId": "USAG-UB-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tap Swing - Counterswing",
+    "name": "Tap or underswing with counterswing",
+    "skillId": "USAG-UB-2.003-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tap Swing ½ Turn Dismount",
+    "name": "Tap swing ½ turn dismount",
+    "skillId": "USAG-UB-8.005-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-ub-7",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "ub",
+  "title": "Xcel Silver Uneven Bars Routine 7",
+  "skills": [
+   {
+    "sheetName": "Pullover",
+    "name": "Pullover mount on LB",
+    "skillId": "USAG-UB-1.003a-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast, at least 45° below horizontal",
+    "skillId": "USAG-UB-2.001-3",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Hip Circle",
+    "name": "Back hip circle",
+    "skillId": "USAG-UB-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Long Hang Pullover",
+    "name": "Long-hang pullover",
+    "skillId": "USAG-UB-7.005-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Underswing Dismount to Stand",
+    "name": "HB underswing dismount, up to full twist",
+    "skillId": "USAG-UB-8.101-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-ub-8",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "ub",
+  "title": "Xcel Silver Uneven Bars Routine 8",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Hip Circle",
+    "name": "Front hip circle",
+    "skillId": "USAG-UB-7.101-2",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast, at least 45° below horizontal",
+    "skillId": "USAG-UB-2.001-3",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Hip Circle",
+    "name": "Back hip circle",
+    "skillId": "USAG-UB-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tap Swing - Counterswing",
+    "name": "Tap or underswing with counterswing",
+    "skillId": "USAG-UB-2.003-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tap Swing ½ Turn Dismount",
+    "name": "Tap swing ½ turn dismount",
+    "skillId": "USAG-UB-8.005-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-bb-1",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "bb",
+  "title": "Xcel Silver Balance Beam Routine 1",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split jump, 90°+",
+    "skillId": "USAG-BB-2.0 Silver-2",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Forward Swing Turn on One foot",
+    "name": "Swing turn",
+    "skillId": "USAG-BB-3.004-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Partial Handstand",
+    "name": "Partial handstand, legs joined at 45°",
+    "skillId": "USAG-BB-5.002-2",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tuck Jump Dismount",
+    "name": "Jump dismount, up to full turn",
+    "skillId": "USAG-BB-9.001-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-bb-2",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "bb",
+  "title": "Xcel Silver Balance Beam Routine 2",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Half Turn on one foot",
+    "name": "½ turn on one foot",
+    "skillId": "USAG-BB-3.003-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Headstand",
+    "name": "Headstand",
+    "skillId": "USAG-BB-5.107-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split jump, 90°+",
+    "skillId": "USAG-BB-2.0 Silver-2",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cartwheel to Partial Handstand Dismount",
+    "name": "Cartwheel to partial handstand dismount",
+    "skillId": "USAG-BB-9.002-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-bb-3",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "bb",
+  "title": "Xcel Silver Balance Beam Routine 3",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Partial Handstand",
+    "name": "Partial handstand, legs joined at 45°",
+    "skillId": "USAG-BB-5.002-2",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Beat Jump",
+    "name": "Straight jump with leg beat",
+    "skillId": "USAG-BB-2.108-3",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap, 90° split",
+    "skillId": "USAG-BB-2.0 Silver-1b",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff Dismount",
+    "name": "Cartwheel ¼ turn (or round-off) dismount",
+    "skillId": "USAG-BB-9.103-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-bb-4",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "bb",
+  "title": "Xcel Silver Balance Beam Routine 4",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap, 90° split",
+    "skillId": "USAG-BB-2.0 Silver-1b",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump",
+    "name": "Tuck jump",
+    "skillId": "USAG-BB-2.110-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Heel Snap Half Turn",
+    "name": "Heel snap turn",
+    "skillId": "USAG-BB-3.003-2",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Shoulder Roll",
+    "name": "Backward shoulder roll",
+    "skillId": "USAG-BB-6.104-2",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff Dismount",
+    "name": "Cartwheel ¼ turn (or round-off) dismount",
+    "skillId": "USAG-BB-9.103-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-bb-5",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "bb",
+  "title": "Xcel Silver Balance Beam Routine 5",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Tuck Jump",
+    "name": "Tuck jump",
+    "skillId": "USAG-BB-2.110-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split jump, 90°+",
+    "skillId": "USAG-BB-2.0 Silver-2",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Half Turn on one foot",
+    "name": "½ turn on one foot",
+    "skillId": "USAG-BB-3.003-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cross Handstand",
+    "name": "Kick to cross handstand",
+    "skillId": "USAG-BB-5.106a-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cartwheel to Handstand; 1/4 Turn to Stand Dismount",
+    "name": "Cartwheel to handstand, ¼ turn dismount",
+    "skillId": "USAG-BB-9.003-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-bb-6",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "bb",
+  "title": "Xcel Silver Balance Beam Routine 6",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap, 90° split",
+    "skillId": "USAG-BB-2.0 Silver-1b",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straddle Jump",
+    "name": "Straddle jump, 90°+",
+    "skillId": "USAG-BB-2.0 Silver-3",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Walkover",
+    "name": "Back walkover",
+    "skillId": "USAG-BB-7.104-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Tuck Dismount",
+    "name": "Front tuck or pike dismount",
+    "skillId": "USAG-BB-9.104-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-bb-7",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "bb",
+  "title": "Xcel Silver Balance Beam Routine 7",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Straight Jump",
+    "name": "Straight or arch jump",
+    "skillId": "USAG-BB-2.108-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split jump, 90°+",
+    "skillId": "USAG-BB-2.0 Silver-2",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Handstand",
+    "name": "Kick to cross handstand",
+    "skillId": "USAG-BB-5.106a-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Forward Roll",
+    "name": "Forward roll",
+    "skillId": "USAG-BB-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Tuck Dismount",
+    "name": "Front tuck or pike dismount",
+    "skillId": "USAG-BB-9.104-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-bb-8",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "bb",
+  "title": "Xcel Silver Balance Beam Routine 8",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Back Walkover",
+    "name": "Back walkover",
+    "skillId": "USAG-BB-7.104-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap, 90° split",
+    "skillId": "USAG-BB-2.0 Silver-1b",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump",
+    "name": "Tuck jump",
+    "skillId": "USAG-BB-2.110-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Tuck Dismount",
+    "name": "Back salto dismount (any shape)",
+    "skillId": "USAG-BB-9.106-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-fx-1",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "fx",
+  "title": "Xcel Silver Floor Exercise Routine 1",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Backward Roll",
+    "name": "Backward roll, tucked",
+    "skillId": "USAG-FX-4.102-1a",
+    "letter": "A",
+    "eg": "4",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or split jump (stag allowed)",
+    "skillId": "USAG-FX-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Side Leap",
+    "name": "Straddle jump (or side split)",
+    "skillId": "USAG-FX-1.207-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-fx-2",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "fx",
+  "title": "Xcel Silver Floor Exercise Routine 2",
+  "skills": [
+   {
+    "sheetName": "Handstand Forward Roll",
+    "name": "Handstand forward roll",
+    "skillId": "USAG-FX-4.101-1b",
+    "letter": "A",
+    "eg": "4",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or split jump (stag allowed)",
+    "skillId": "USAG-FX-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split leap or split jump (stag allowed)",
+    "skillId": "USAG-FX-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-FX-5.104-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Walkover",
+    "name": "Back walkover",
+    "skillId": "USAG-FX-5.101-1b",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-fx-3",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "fx",
+  "title": "Xcel Silver Floor Exercise Routine 3",
+  "skills": [
+   {
+    "sheetName": "Front Handspring Stepout",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-FX-5.104-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Sissonne",
+    "name": "Sissonne",
+    "skillId": "USAG-FX-1.110-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or split jump (stag allowed)",
+    "skillId": "USAG-FX-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-fx-4",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "fx",
+  "title": "Xcel Silver Floor Exercise Routine 4",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Backward Roll",
+    "name": "Backward roll, tucked",
+    "skillId": "USAG-FX-4.102-1a",
+    "letter": "A",
+    "eg": "4",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or split jump (stag allowed)",
+    "skillId": "USAG-FX-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump",
+    "name": "Tuck jump, also with ½ turn",
+    "skillId": "USAG-FX-1.115-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Walkover",
+    "name": "Front walkover",
+    "skillId": "USAG-FX-5.101-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-FX-5.104-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-fx-5",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "fx",
+  "title": "Xcel Silver Floor Exercise Routine 5",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-FX-1.204-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Wolf Jump",
+    "name": "Wolf jump or hop",
+    "skillId": "USAG-FX-1.116-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Side Aerial",
+    "name": "Side salto (side aerial)",
+    "skillId": "USAG-FX-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-fx-6",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "fx",
+  "title": "Xcel Silver Floor Exercise Routine 6",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or split jump (stag allowed)",
+    "skillId": "USAG-FX-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straddle Jump",
+    "name": "Straddle jump (or side split)",
+    "skillId": "USAG-FX-1.207-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Handspring",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-fx-7",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "fx",
+  "title": "Xcel Silver Floor Exercise Routine 7",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-FX-1.204-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straddle Jump",
+    "name": "Straddle jump (or side split)",
+    "skillId": "USAG-FX-1.207-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Tuck",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-silver-fx-8",
+  "discipline": "wag",
+  "level": "silver",
+  "event": "fx",
+  "title": "Xcel Silver Floor Exercise Routine 8",
+  "skills": [
+   {
+    "sheetName": "Front Handspring",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Dive Roll",
+    "name": "Dive (hecht) roll",
+    "skillId": "USAG-FX-4.101-1c",
+    "letter": "A",
+    "eg": "4",
+    "fromList": true
+   },
+   {
+    "sheetName": "Ring Leap",
+    "name": "Ring leap or jump, also stag-ring",
+    "skillId": "USAG-FX-1.210-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Wolf Hop",
+    "name": "Wolf jump or hop",
+    "skillId": "USAG-FX-1.116-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Handspring",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-ub-1",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "ub",
+  "title": "Xcel Gold Uneven Bars Routine 1",
+  "skills": [
+   {
+    "sheetName": "Glide Swing Mount",
+    "name": "Glide swing, return to stand",
+    "skillId": "USAG-UB-1.004-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Pullover",
+    "name": "Pullover mount on LB",
+    "skillId": "USAG-UB-1.003a-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast to horizontal or higher",
+    "skillId": "USAG-UB-2.001-4",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Hip Circle",
+    "name": "Back hip circle",
+    "skillId": "USAG-UB-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Hip Circle",
+    "name": "Back hip circle",
+    "skillId": "USAG-UB-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tap Swing - Counterswing",
+    "name": "Tap or underswing with counterswing",
+    "skillId": "USAG-UB-2.003-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tap Swing ½ Turn Dismount",
+    "name": "Tap swing ½ turn dismount",
+    "skillId": "USAG-UB-8.005-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-ub-2",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "ub",
+  "title": "Xcel Gold Uneven Bars Routine 2",
+  "skills": [
+   {
+    "sheetName": "Pullover",
+    "name": "Pullover mount on LB",
+    "skillId": "USAG-UB-1.003a-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast to horizontal or higher",
+    "skillId": "USAG-UB-2.001-4",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Hip Circle",
+    "name": "Back hip circle",
+    "skillId": "USAG-UB-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Long Hang Pullover",
+    "name": "Long-hang pullover",
+    "skillId": "USAG-UB-7.005-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Underswing Dismount to Stand",
+    "name": "HB underswing dismount, up to full twist",
+    "skillId": "USAG-UB-8.101-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-ub-3",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "ub",
+  "title": "Xcel Gold Uneven Bars Routine 3",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Hip Circle",
+    "name": "Front hip circle",
+    "skillId": "USAG-UB-7.101-2",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast to horizontal or higher",
+    "skillId": "USAG-UB-2.001-4",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Hip Circle",
+    "name": "Back hip circle",
+    "skillId": "USAG-UB-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tap Swing - Counterswing",
+    "name": "Tap or underswing with counterswing",
+    "skillId": "USAG-UB-2.003-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tap Swing ½ Turn Dismount",
+    "name": "Tap swing ½ turn dismount",
+    "skillId": "USAG-UB-8.005-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-ub-4",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "ub",
+  "title": "Xcel Gold Uneven Bars Routine 4",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast to horizontal or higher",
+    "skillId": "USAG-UB-2.001-4",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Hip Circle",
+    "name": "Back hip circle",
+    "skillId": "USAG-UB-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast to horizontal or higher",
+    "skillId": "USAG-UB-2.001-4",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Hip Circle",
+    "name": "Back hip circle",
+    "skillId": "USAG-UB-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Underswing Dismount to Stand",
+    "name": "HB underswing dismount, up to full twist",
+    "skillId": "USAG-UB-8.101-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-ub-5",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "ub",
+  "title": "Xcel Gold Uneven Bars Routine 5",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast to horizontal or higher",
+    "skillId": "USAG-UB-2.001-4",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Hip Circle",
+    "name": "Back hip circle",
+    "skillId": "USAG-UB-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Hip Circle",
+    "name": "Back hip circle",
+    "skillId": "USAG-UB-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tap Swing - Counterswing",
+    "name": "Tap or underswing with counterswing",
+    "skillId": "USAG-UB-2.003-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tucked Flyaway",
+    "name": "Flyaway from HB",
+    "skillId": "USAG-UB-8.103-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-ub-6",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "ub",
+  "title": "Xcel Gold Uneven Bars Routine 6",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast to horizontal or higher",
+    "skillId": "USAG-UB-2.001-4",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Clear Hip Circle",
+    "name": "Clear hip to support",
+    "skillId": "USAG-UB-3.204-1",
+    "letter": "B",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Glide Kip",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tap Swing - Counterswing",
+    "name": "Tap or underswing with counterswing",
+    "skillId": "USAG-UB-2.003-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tucked Flyaway",
+    "name": "Flyaway from HB",
+    "skillId": "USAG-UB-8.103-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-ub-7",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "ub",
+  "title": "Xcel Gold Uneven Bars Routine 7",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast to horizontal or higher",
+    "skillId": "USAG-UB-2.001-4",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Clear Hip Circle",
+    "name": "Clear hip to support",
+    "skillId": "USAG-UB-3.204-1",
+    "letter": "B",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Glide Kip",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Long Hang Pullover",
+    "name": "Long-hang pullover",
+    "skillId": "USAG-UB-7.005-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast to horizontal or higher",
+    "skillId": "USAG-UB-2.001-4",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tucked Flyaway",
+    "name": "Flyaway from HB",
+    "skillId": "USAG-UB-8.103-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-ub-8",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "ub",
+  "title": "Xcel Gold Uneven Bars Routine 8",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast to horizontal or higher",
+    "skillId": "USAG-UB-2.001-4",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Clear Hip Circle",
+    "name": "Clear hip to support",
+    "skillId": "USAG-UB-3.204-1",
+    "letter": "B",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Glide Kip",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast to horizontal or higher",
+    "skillId": "USAG-UB-2.001-4",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Hip Circle",
+    "name": "Back hip circle",
+    "skillId": "USAG-UB-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Underswing - Counterswing",
+    "name": "Tap or underswing with counterswing",
+    "skillId": "USAG-UB-2.003-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tucked Flyaway",
+    "name": "Flyaway from HB",
+    "skillId": "USAG-UB-8.103-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-bb-1",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "bb",
+  "title": "Xcel Gold Balance Beam Routine 1",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Partial Handstand",
+    "name": "Partial handstand, legs joined at 45°",
+    "skillId": "USAG-BB-5.002-2",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cat Leap",
+    "name": "Cat leap or hitch kick",
+    "skillId": "USAG-BB-2.109-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or jump, 120°+ (Gold)",
+    "skillId": "USAG-BB-2.0 Gold-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff Dismount",
+    "name": "Cartwheel ¼ turn (or round-off) dismount",
+    "skillId": "USAG-BB-9.103-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-bb-2",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "bb",
+  "title": "Xcel Gold Balance Beam Routine 2",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Wolf Jump",
+    "name": "Wolf jump",
+    "skillId": "USAG-BB-2.111-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split leap or jump, 120°+ (Gold)",
+    "skillId": "USAG-BB-2.0 Gold-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Handstand",
+    "name": "Kick to cross handstand",
+    "skillId": "USAG-BB-5.106a-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Handstand 1/4 Turn",
+    "name": "Cartwheel to handstand, ¼ turn dismount",
+    "skillId": "USAG-BB-9.003-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-bb-3",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "bb",
+  "title": "Xcel Gold Balance Beam Routine 3",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Straight Jump",
+    "name": "Straight or arch jump",
+    "skillId": "USAG-BB-2.108-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split leap or jump, 120°+ (Gold)",
+    "skillId": "USAG-BB-2.0 Gold-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Handstand",
+    "name": "Kick to cross handstand",
+    "skillId": "USAG-BB-5.106a-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Forward Roll",
+    "name": "Forward roll",
+    "skillId": "USAG-BB-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Tuck Dismount",
+    "name": "Front tuck or pike dismount",
+    "skillId": "USAG-BB-9.104-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-bb-4",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "bb",
+  "title": "Xcel Gold Balance Beam Routine 4",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Straight Jump",
+    "name": "Straight or arch jump",
+    "skillId": "USAG-BB-2.108-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Handstand",
+    "name": "Kick to cross handstand",
+    "skillId": "USAG-BB-5.106a-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or jump, 120°+ (Gold)",
+    "skillId": "USAG-BB-2.0 Gold-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Tuck Dismount",
+    "name": "Back salto dismount (any shape)",
+    "skillId": "USAG-BB-9.106-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-bb-5",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "bb",
+  "title": "Xcel Gold Balance Beam Routine 5",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split leap or jump, 120°+ (Gold)",
+    "skillId": "USAG-BB-2.0 Gold-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Beat Jump",
+    "name": "Straight jump with leg beat",
+    "skillId": "USAG-BB-2.108-3",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Handstand",
+    "name": "Kick to cross handstand",
+    "skillId": "USAG-BB-5.106a-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Walkover",
+    "name": "Back walkover",
+    "skillId": "USAG-BB-7.104-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Handspring Dismount",
+    "name": "Front handspring dismount (or ½ twist)",
+    "skillId": "USAG-BB-9.101-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-bb-6",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "bb",
+  "title": "Xcel Gold Balance Beam Routine 6",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Back Shoulder Roll",
+    "name": "Backward shoulder roll",
+    "skillId": "USAG-BB-6.104-2",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or jump, 120°+ (Gold)",
+    "skillId": "USAG-BB-2.0 Gold-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Beat Jump",
+    "name": "Straight jump with leg beat",
+    "skillId": "USAG-BB-2.108-3",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Tuck Dismount",
+    "name": "Front tuck or pike dismount",
+    "skillId": "USAG-BB-9.104-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-bb-7",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "bb",
+  "title": "Xcel Gold Balance Beam Routine 7",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Forward Roll",
+    "name": "Forward roll",
+    "skillId": "USAG-BB-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tuck Jump",
+    "name": "Tuck jump",
+    "skillId": "USAG-BB-2.110-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Sissonne",
+    "name": "Sissonne",
+    "skillId": "USAG-BB-2.207-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Tuck Dismount",
+    "name": "Back salto dismount (any shape)",
+    "skillId": "USAG-BB-9.106-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-bb-8",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "bb",
+  "title": "Xcel Gold Balance Beam Routine 8",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "1.5 Turn",
+    "name": "1½ turns on one foot",
+    "skillId": "USAG-BB-3.201-1",
+    "letter": "B",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tuck Jump",
+    "name": "Tuck jump",
+    "skillId": "USAG-BB-2.110-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split leap or jump, 120°+ (Gold)",
+    "skillId": "USAG-BB-2.0 Gold-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-BB-7.203-2",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Shoulder Roll",
+    "name": "Backward shoulder roll",
+    "skillId": "USAG-BB-6.104-2",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Aerial Dismount",
+    "name": "Front aerial dismount (or ½ twist)",
+    "skillId": "USAG-BB-9.102-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-fx-1",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "fx",
+  "title": "Xcel Gold Floor Exercise Routine 1",
+  "skills": [
+   {
+    "sheetName": "Front Handspring Stepout",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-FX-1.204-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump",
+    "name": "Tuck jump, also with ½ turn",
+    "skillId": "USAG-FX-1.115-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-fx-2",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "fx",
+  "title": "Xcel Gold Floor Exercise Routine 2",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or split jump (stag allowed)",
+    "skillId": "USAG-FX-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split leap or split jump (stag allowed)",
+    "skillId": "USAG-FX-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-fx-3",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "fx",
+  "title": "Xcel Gold Floor Exercise Routine 3",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or split jump (stag allowed)",
+    "skillId": "USAG-FX-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straddle Jump",
+    "name": "Straddle jump (or side split)",
+    "skillId": "USAG-FX-1.207-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Tuck",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-fx-4",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "fx",
+  "title": "Xcel Gold Floor Exercise Routine 4",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Tuck",
+    "name": "Back tuck",
+    "skillId": "USAG-FX-8.101-1a",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Sissonne",
+    "name": "Sissonne",
+    "skillId": "USAG-FX-1.110-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Side Leap",
+    "name": "Straddle jump (or side split)",
+    "skillId": "USAG-FX-1.207-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Side Aerial",
+    "name": "Side salto (side aerial)",
+    "skillId": "USAG-FX-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-fx-5",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "fx",
+  "title": "Xcel Gold Floor Exercise Routine 5",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Tuck",
+    "name": "Back tuck",
+    "skillId": "USAG-FX-8.101-1a",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or split jump (stag allowed)",
+    "skillId": "USAG-FX-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Hitch Kick",
+    "name": "Hitch-kick, straight legs",
+    "skillId": "USAG-FX-1.109-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-fx-6",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "fx",
+  "title": "Xcel Gold Floor Exercise Routine 6",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Tuck",
+    "name": "Back tuck",
+    "skillId": "USAG-FX-8.101-1a",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-FX-1.204-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump",
+    "name": "Tuck jump, also with ½ turn",
+    "skillId": "USAG-FX-1.115-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Tuck",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-fx-7",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "fx",
+  "title": "Xcel Gold Floor Exercise Routine 7",
+  "skills": [
+   {
+    "sheetName": "Front Tuck",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or split jump (stag allowed)",
+    "skillId": "USAG-FX-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump",
+    "name": "Tuck jump, also with ½ turn",
+    "skillId": "USAG-FX-1.115-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Tuck",
+    "name": "Back tuck",
+    "skillId": "USAG-FX-8.101-1a",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-gold-fx-8",
+  "discipline": "wag",
+  "level": "gold",
+  "event": "fx",
+  "title": "Xcel Gold Floor Exercise Routine 8",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Layout",
+    "name": "Back layout",
+    "skillId": "USAG-FX-8.101-1c",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "1.5 Turn",
+    "name": "1½ turn on one foot",
+    "skillId": "USAG-FX-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-FX-1.204-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straddle Jump",
+    "name": "Straddle jump (or side split)",
+    "skillId": "USAG-FX-1.207-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Pike",
+    "name": "Front pike",
+    "skillId": "USAG-FX-6.201-2a",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-ub-1",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "ub",
+  "title": "Xcel Platinum Uneven Bars Routine 1",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast 89°–21° off vertical",
+    "skillId": "USAG-UB-2.001-5",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Hip Circle",
+    "name": "Back hip circle",
+    "skillId": "USAG-UB-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tap Swing - Counterswing",
+    "name": "Tap or underswing with counterswing",
+    "skillId": "USAG-UB-2.003-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tucked Flyaway",
+    "name": "Flyaway from HB",
+    "skillId": "USAG-UB-8.103-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-ub-2",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "ub",
+  "title": "Xcel Platinum Uneven Bars Routine 2",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Long Hang Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast 89°–21° off vertical",
+    "skillId": "USAG-UB-2.001-5",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Long Hang Pullover",
+    "name": "Cast, long-hang pullover to support",
+    "skillId": "USAG-UB-4.102-1",
+    "letter": "A",
+    "eg": "4",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Underswing Dismount",
+    "name": "HB underswing dismount, up to full twist",
+    "skillId": "USAG-UB-8.101-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-ub-3",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "ub",
+  "title": "Xcel Platinum Uneven Bars Routine 3",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast 89°–21° off vertical",
+    "skillId": "USAG-UB-2.001-5",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Clear Hip Circle",
+    "name": "Clear hip to support",
+    "skillId": "USAG-UB-3.204-1",
+    "letter": "B",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Glide Kip",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tap Swing - Counterswing",
+    "name": "Tap or underswing with counterswing",
+    "skillId": "USAG-UB-2.003-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tucked Flyaway",
+    "name": "Flyaway from HB",
+    "skillId": "USAG-UB-8.103-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-ub-4",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "ub",
+  "title": "Xcel Platinum Uneven Bars Routine 4",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast 89°–21° off vertical",
+    "skillId": "USAG-UB-2.001-5",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Clear Hip Circle",
+    "name": "Clear hip to support",
+    "skillId": "USAG-UB-3.204-1",
+    "letter": "B",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Glide Kip",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Long Hang Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast 89°–21° off vertical",
+    "skillId": "USAG-UB-2.001-5",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Toe-On Underswing Dismount",
+    "name": "HB underswing dismount, up to full twist",
+    "skillId": "USAG-UB-8.101-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-ub-5",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "ub",
+  "title": "Xcel Platinum Uneven Bars Routine 5",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Hip Circle",
+    "name": "Front hip circle",
+    "skillId": "USAG-UB-7.101-2",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast 89°–21° off vertical",
+    "skillId": "USAG-UB-2.001-5",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Uprise to Clear Support",
+    "name": "Back uprise to HB clear support",
+    "skillId": "USAG-UB-2.203-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Hip Circle",
+    "name": "Back hip circle",
+    "skillId": "USAG-UB-7.101-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Underswing Dismount",
+    "name": "HB underswing dismount, up to full twist",
+    "skillId": "USAG-UB-8.101-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-ub-6",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "ub",
+  "title": "Xcel Platinum Uneven Bars Routine 6",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Hip Circle",
+    "name": "Front hip circle",
+    "skillId": "USAG-UB-7.101-2",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Long Hang Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast 89°–21° off vertical",
+    "skillId": "USAG-UB-2.001-5",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Clear Hip Circle",
+    "name": "Clear hip to support",
+    "skillId": "USAG-UB-3.204-1",
+    "letter": "B",
+    "eg": "3",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tucked Flyaway",
+    "name": "Flyaway from HB",
+    "skillId": "USAG-UB-8.103-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-ub-7",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "ub",
+  "title": "Xcel Platinum Uneven Bars Routine 7",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast",
+    "name": "Cast 89°–21° off vertical",
+    "skillId": "USAG-UB-2.001-5",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Clear Hip Circle",
+    "name": "Clear hip to support",
+    "skillId": "USAG-UB-3.204-1",
+    "letter": "B",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Glide Kip",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Swing Half Turn",
+    "name": "Long-swing ½ turn (horizontal to 45°)",
+    "skillId": "USAG-UB-4.101-1",
+    "letter": "A",
+    "eg": "4",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tap Swing - Counter Swing",
+    "name": "Tap or underswing with counterswing",
+    "skillId": "USAG-UB-2.003-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Tucked Flyaway",
+    "name": "Reverse-grip front salto dismount from HB",
+    "skillId": "USAG-UB-8.107-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-ub-8",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "ub",
+  "title": "Xcel Platinum Uneven Bars Routine 8",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Clear Hip to Handstand",
+    "name": "Clear hip to handstand",
+    "skillId": "USAG-UB-3.304-1",
+    "letter": "C",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Sole Circle - Jump to HB",
+    "name": "Sole Circle - Jump to HB",
+    "letter": "",
+    "eg": ""
+   },
+   {
+    "sheetName": "Long Hang Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Giant",
+    "name": "Back giant to handstand (Dussier/Liu)",
+    "skillId": "USAG-UB-4.202-1",
+    "letter": "B",
+    "eg": "4",
+    "fromList": true
+   },
+   {
+    "sheetName": "Giant",
+    "name": "Back giant to handstand (Dussier/Liu)",
+    "skillId": "USAG-UB-4.202-1",
+    "letter": "B",
+    "eg": "4",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Layout Flyaway",
+    "name": "Flyaway from HB",
+    "skillId": "USAG-UB-8.103-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-bb-1",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "bb",
+  "title": "Xcel Platinum Balance Beam Routine 1",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Handstand",
+    "name": "Kick to cross handstand",
+    "skillId": "USAG-BB-5.106a-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or jump, 120°+ (Platinum)",
+    "skillId": "USAG-BB-2.0 Platinum-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split leap or jump, 120°+ (Platinum)",
+    "skillId": "USAG-BB-2.0 Platinum-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff Dismount",
+    "name": "Cartwheel ¼ turn (or round-off) dismount",
+    "skillId": "USAG-BB-9.103-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-bb-2",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "bb",
+  "title": "Xcel Platinum Balance Beam Routine 2",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Forward Roll",
+    "name": "Forward roll",
+    "skillId": "USAG-BB-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split leap or jump, 120°+ (Platinum)",
+    "skillId": "USAG-BB-2.0 Platinum-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump",
+    "name": "Tuck jump",
+    "skillId": "USAG-BB-2.110-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Aerial Dismount",
+    "name": "Front aerial dismount (or ½ twist)",
+    "skillId": "USAG-BB-9.102-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-bb-3",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "bb",
+  "title": "Xcel Platinum Balance Beam Routine 3",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Sissonne",
+    "name": "Sissonne",
+    "skillId": "USAG-BB-2.207-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straight Jump",
+    "name": "Straight or arch jump",
+    "skillId": "USAG-BB-2.108-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump 1/2",
+    "name": "Tuck jump with ½ turn",
+    "skillId": "USAG-BB-2.210-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Tuck Dismount",
+    "name": "Front tuck or pike dismount",
+    "skillId": "USAG-BB-9.104-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-bb-4",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "bb",
+  "title": "Xcel Platinum Balance Beam Routine 4",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Handstand",
+    "name": "Kick to cross handstand",
+    "skillId": "USAG-BB-5.106a-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Walkover",
+    "name": "Back walkover",
+    "skillId": "USAG-BB-7.104-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn w/ leg at 45°",
+    "name": "Full turn, leg forward below horizontal",
+    "skillId": "USAG-BB-3.203-1",
+    "letter": "B",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Straight Jump",
+    "name": "Straight or arch jump",
+    "skillId": "USAG-BB-2.108-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Sissonne",
+    "name": "Sissonne",
+    "skillId": "USAG-BB-2.207-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Tuck",
+    "name": "Back salto dismount (any shape)",
+    "skillId": "USAG-BB-9.106-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-bb-5",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "bb",
+  "title": "Xcel Platinum Balance Beam Routine 5",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Pike Jump",
+    "name": "Pike jump, cross position",
+    "skillId": "USAG-BB-2.206-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Dive Cartwheel",
+    "name": "Flighted cartwheel",
+    "skillId": "USAG-BB-7.203-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-BB-2.305-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Beat Jump",
+    "name": "Straight jump with leg beat",
+    "skillId": "USAG-BB-2.108-3",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Aerial Roundoff Dismount",
+    "name": "Aerial round-off dismount",
+    "skillId": "USAG-BB-9.102-2",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-bb-6",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "bb",
+  "title": "Xcel Platinum Balance Beam Routine 6",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Wolf Turn",
+    "name": "Full turn, tuck stand",
+    "skillId": "USAG-BB-3.206-1",
+    "letter": "B",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-BB-2.305-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-BB-7.203-2",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tuck Jump",
+    "name": "Tuck jump",
+    "skillId": "USAG-BB-2.110-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Beat Jump",
+    "name": "Straight jump with leg beat",
+    "skillId": "USAG-BB-2.108-3",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Pike Dismount",
+    "name": "Front tuck or pike dismount",
+    "skillId": "USAG-BB-9.104-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-bb-7",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "bb",
+  "title": "Xcel Platinum Balance Beam Routine 7",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Wolf Jump",
+    "name": "Wolf jump",
+    "skillId": "USAG-BB-2.111-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straddle Jump",
+    "name": "Straddle jump, cross position (Hill)",
+    "skillId": "USAG-BB-2.202-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring step-out",
+    "skillId": "USAG-BB-7.208-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-BB-7.203-2",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Tuck",
+    "name": "Back salto dismount (any shape)",
+    "skillId": "USAG-BB-9.106-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-fx-1",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "fx",
+  "title": "Xcel Platinum Floor Exercise Routine 1",
+  "skills": [
+   {
+    "sheetName": "Front Handspring",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Tuck",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or split jump (stag allowed)",
+    "skillId": "USAG-FX-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Sissonne",
+    "name": "Sissonne",
+    "skillId": "USAG-FX-1.110-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tuck Jump Full",
+    "name": "Tuck jump with full turn",
+    "skillId": "USAG-FX-1.215-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Handspring Stepout",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-fx-2",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "fx",
+  "title": "Xcel Platinum Floor Exercise Routine 2",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Tuck",
+    "name": "Back tuck",
+    "skillId": "USAG-FX-8.101-1a",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Hitch Kick",
+    "name": "Hitch-kick, straight legs",
+    "skillId": "USAG-FX-1.109-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Side Leap",
+    "name": "Straddle jump (or side split)",
+    "skillId": "USAG-FX-1.207-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "1.5 Turn",
+    "name": "1½ turn on one foot",
+    "skillId": "USAG-FX-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-fx-3",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "fx",
+  "title": "Xcel Platinum Floor Exercise Routine 3",
+  "skills": [
+   {
+    "sheetName": "Front Tuck Stepout",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Wolf Turn",
+    "name": "Full turn in tuck stand",
+    "skillId": "USAG-FX-2.206-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-FX-1.204-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straddle Jump",
+    "name": "Straddle jump (or side split)",
+    "skillId": "USAG-FX-1.207-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Handspring Stepout",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Handspring",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-fx-4",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "fx",
+  "title": "Xcel Platinum Floor Exercise Routine 4",
+  "skills": [
+   {
+    "sheetName": "Front Handspring",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Flyspring",
+    "name": "Flyspring to one foot",
+    "skillId": "USAG-FX-5.102-2",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or split jump (stag allowed)",
+    "skillId": "USAG-FX-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Side Leap",
+    "name": "Straddle jump (or side split)",
+    "skillId": "USAG-FX-1.207-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Tuck",
+    "name": "Back tuck",
+    "skillId": "USAG-FX-8.101-1a",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-fx-5",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "fx",
+  "title": "Xcel Platinum Floor Exercise Routine 5",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Layout",
+    "name": "Back layout",
+    "skillId": "USAG-FX-8.101-1c",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-FX-1.204-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump",
+    "name": "Tuck jump, also with ½ turn",
+    "skillId": "USAG-FX-1.115-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Tuck",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Tuck",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-fx-6",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "fx",
+  "title": "Xcel Platinum Floor Exercise Routine 6",
+  "skills": [
+   {
+    "sheetName": "Front Handspring",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Tuck",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or split jump (stag allowed)",
+    "skillId": "USAG-FX-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump",
+    "name": "Tuck jump, also with ½ turn",
+    "skillId": "USAG-FX-1.115-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-FX-2.101-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tuck Jump Full",
+    "name": "Tuck jump with full turn",
+    "skillId": "USAG-FX-1.215-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Pike",
+    "name": "Front pike",
+    "skillId": "USAG-FX-6.201-2a",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-fx-7",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "fx",
+  "title": "Xcel Platinum Floor Exercise Routine 7",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Full",
+    "name": "Back tuck full twist",
+    "skillId": "USAG-FX-8.201-1d",
+    "letter": "B",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full L Turn",
+    "name": "Full turn, free leg forward horizontal",
+    "skillId": "USAG-FX-2.202-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-FX-1.204-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Pike Jump",
+    "name": "Pike jump, also with ½ turn",
+    "skillId": "USAG-FX-1.206-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Layout",
+    "name": "Front layout",
+    "skillId": "USAG-FX-6.201-2b",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-plat-fx-8",
+  "discipline": "wag",
+  "level": "plat",
+  "event": "fx",
+  "title": "Xcel Platinum Floor Exercise Routine 8",
+  "skills": [
+   {
+    "sheetName": "Front Tuck Stepout",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Layout",
+    "name": "Back layout",
+    "skillId": "USAG-FX-8.101-1c",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Side Leap",
+    "name": "Switch leap ¼ turn to side split",
+    "skillId": "USAG-FX-1.305-1",
+    "letter": "C",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straddle Jump",
+    "name": "Straddle jump (or side split)",
+    "skillId": "USAG-FX-1.207-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Double Turn",
+    "name": "Double turn on one foot",
+    "skillId": "USAG-FX-2.301-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Handspring",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Layout",
+    "name": "Front layout",
+    "skillId": "USAG-FX-6.201-2b",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-ub-1",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "ub",
+  "title": "Xcel Diamond Uneven Bars Routine 1",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Clear Hip",
+    "name": "Clear hip to support",
+    "skillId": "USAG-UB-3.204-1",
+    "letter": "B",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Glide Kip",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Long Hang Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Clear Hip",
+    "name": "Clear hip to support",
+    "skillId": "USAG-UB-3.204-1",
+    "letter": "B",
+    "eg": "3",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tucked Flyaway",
+    "name": "Flyaway from HB",
+    "skillId": "USAG-UB-8.103-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-ub-2",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "ub",
+  "title": "Xcel Diamond Uneven Bars Routine 2",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand; Half Pirouette",
+    "name": "Cast handstand with ½ turn",
+    "skillId": "USAG-UB-2.301-2",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Glide Kip",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Long Hang Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Giant",
+    "name": "Back giant to handstand (Dussier/Liu)",
+    "skillId": "USAG-UB-4.202-1",
+    "letter": "B",
+    "eg": "4",
+    "fromList": true
+   },
+   {
+    "sheetName": "Toe Circle to Handstand",
+    "name": "Toe-on back to handstand",
+    "skillId": "USAG-UB-7.309-1",
+    "letter": "C",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Toe On Underswing Half Turn Dismount",
+    "name": "HB underswing dismount, up to full twist",
+    "skillId": "USAG-UB-8.101-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-ub-3",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "ub",
+  "title": "Xcel Diamond Uneven Bars Routine 3",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Glide Kip",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Giant",
+    "name": "Back giant to handstand (Dussier/Liu)",
+    "skillId": "USAG-UB-4.202-1",
+    "letter": "B",
+    "eg": "4",
+    "fromList": true
+   },
+   {
+    "sheetName": "Giant",
+    "name": "Back giant to handstand (Dussier/Liu)",
+    "skillId": "USAG-UB-4.202-1",
+    "letter": "B",
+    "eg": "4",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Layout Flyaway",
+    "name": "Flyaway from HB",
+    "skillId": "USAG-UB-8.103-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-ub-4",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "ub",
+  "title": "Xcel Diamond Uneven Bars Routine 4",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Long Hang Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast above 45°",
+    "name": "Cast 45°–21° off vertical",
+    "skillId": "USAG-UB-2.001-6",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Clear Hip to Handstand",
+    "name": "Clear hip to handstand",
+    "skillId": "USAG-UB-3.304-1",
+    "letter": "C",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Giant",
+    "name": "Back giant to handstand (Dussier/Liu)",
+    "skillId": "USAG-UB-4.202-1",
+    "letter": "B",
+    "eg": "4",
+    "fromList": true
+   },
+   {
+    "sheetName": "Giant",
+    "name": "Back giant to handstand (Dussier/Liu)",
+    "skillId": "USAG-UB-4.202-1",
+    "letter": "B",
+    "eg": "4",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Layout Flyaway Half",
+    "name": "Flyaway with ½ or full twist",
+    "skillId": "USAG-UB-8.203-1",
+    "letter": "B",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-ub-5",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "ub",
+  "title": "Xcel Diamond Uneven Bars Routine 5",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand; Half Pirouette",
+    "name": "Cast handstand with ½ turn",
+    "skillId": "USAG-UB-2.301-2",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Glide Kip",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Clear Hip to Handstand",
+    "name": "Clear hip to handstand",
+    "skillId": "USAG-UB-3.304-1",
+    "letter": "C",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Toe Up",
+    "name": "Toe-on back to handstand",
+    "skillId": "USAG-UB-7.309-1",
+    "letter": "C",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Long Hang Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Giant",
+    "name": "Back giant to handstand (Dussier/Liu)",
+    "skillId": "USAG-UB-4.202-1",
+    "letter": "B",
+    "eg": "4",
+    "fromList": true
+   },
+   {
+    "sheetName": "Giant",
+    "name": "Back giant to handstand (Dussier/Liu)",
+    "skillId": "USAG-UB-4.202-1",
+    "letter": "B",
+    "eg": "4",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Layout Flyaway Full",
+    "name": "Flyaway with ½ or full twist",
+    "skillId": "USAG-UB-8.203-1",
+    "letter": "B",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-ub-6",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "ub",
+  "title": "Xcel Diamond Uneven Bars Routine 6",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tap Swing",
+    "name": "Tap Swing",
+    "letter": "",
+    "eg": ""
+   },
+   {
+    "sheetName": "Straddle Back",
+    "name": "Counterswing from HB, fly to LB hang",
+    "skillId": "USAG-UB-2.205-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Glide Kip",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Long Hang Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Clear Hip to Handstand",
+    "name": "Clear hip to handstand",
+    "skillId": "USAG-UB-3.304-1",
+    "letter": "C",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Giant",
+    "name": "Back giant to handstand (Dussier/Liu)",
+    "skillId": "USAG-UB-4.202-1",
+    "letter": "B",
+    "eg": "4",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Layout Flyaway",
+    "name": "Flyaway from HB",
+    "skillId": "USAG-UB-8.103-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-ub-7",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "ub",
+  "title": "Xcel Diamond Uneven Bars Routine 7",
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Bail",
+    "name": "Handstand bail with ½ turn to LB hang",
+    "skillId": "USAG-UB-4.304-1",
+    "letter": "C",
+    "eg": "4",
+    "fromList": true
+   },
+   {
+    "sheetName": "Glide Kip",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Long Hang Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Clear Hip to Handstand",
+    "name": "Clear hip to handstand",
+    "skillId": "USAG-UB-3.304-1",
+    "letter": "C",
+    "eg": "3",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Double Back",
+    "name": "Double back flyaway (tuck/pike)",
+    "skillId": "USAG-UB-8.304-1",
+    "letter": "C",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-bb-1",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "bb",
+  "title": "Xcel Diamond Balance Beam Routine 1",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Wolf Turn",
+    "name": "Full turn, tuck stand",
+    "skillId": "USAG-BB-3.206-1",
+    "letter": "B",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Scale on Toe B",
+    "name": "Front scale on relevé",
+    "skillId": "USAG-BB-5.201-1",
+    "letter": "B",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring step-out",
+    "skillId": "USAG-BB-7.208-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-BB-2.305-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straight Jump",
+    "name": "Straight or arch jump",
+    "skillId": "USAG-BB-2.108-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split jump in place",
+    "skillId": "USAG-BB-2.201-2",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Tuck Dismount",
+    "name": "Front tuck or pike dismount",
+    "skillId": "USAG-BB-9.104-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-bb-2",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "bb",
+  "title": "Xcel Diamond Balance Beam Routine 2",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Handstand",
+    "name": "Kick to cross handstand",
+    "skillId": "USAG-BB-5.106a-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-BB-7.203-2",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Wolf Jump",
+    "name": "Wolf jump",
+    "skillId": "USAG-BB-2.111-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Jump 1/4",
+    "name": "Split jump, then ¼ turn to land sideways",
+    "skillId": "USAG-BB-2.201-3",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Tuck",
+    "name": "Back salto dismount (any shape)",
+    "skillId": "USAG-BB-9.106-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-bb-3",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "bb",
+  "title": "Xcel Diamond Balance Beam Routine 3",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Handstand",
+    "name": "Kick to cross handstand",
+    "skillId": "USAG-BB-5.106a-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring step-out",
+    "skillId": "USAG-BB-7.208-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Straddle Jump",
+    "name": "Straddle jump, cross position (Hill)",
+    "skillId": "USAG-BB-2.202-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Beat Jump",
+    "name": "Straight jump with leg beat",
+    "skillId": "USAG-BB-2.108-3",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Aerial Dismount",
+    "name": "Front aerial dismount (or ½ twist)",
+    "skillId": "USAG-BB-9.102-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-bb-4",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "bb",
+  "title": "Xcel Diamond Balance Beam Routine 4",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Wolf Turn",
+    "name": "Full turn, tuck stand",
+    "skillId": "USAG-BB-3.206-1",
+    "letter": "B",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Walkover",
+    "name": "Back walkover",
+    "skillId": "USAG-BB-7.104-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring step-out",
+    "skillId": "USAG-BB-7.208-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split jump in place",
+    "skillId": "USAG-BB-2.201-2",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump",
+    "name": "Tuck jump",
+    "skillId": "USAG-BB-2.110-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Aerial Full Dismount",
+    "name": "Front aerial full twist off end",
+    "skillId": "USAG-BB-9.202-1",
+    "letter": "B",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-bb-5",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "bb",
+  "title": "Xcel Diamond Balance Beam Routine 5",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Sissonne",
+    "name": "Sissonne",
+    "skillId": "USAG-BB-2.207-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Wolf Jump",
+    "name": "Wolf jump",
+    "skillId": "USAG-BB-2.111-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Dive Cartwheel",
+    "name": "Flighted cartwheel",
+    "skillId": "USAG-BB-7.203-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Pike Dismount",
+    "name": "Front tuck or pike dismount",
+    "skillId": "USAG-BB-9.104-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-bb-6",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "bb",
+  "title": "Xcel Diamond Balance Beam Routine 6",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-BB-7.203-2",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-BB-2.305-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straight Jump",
+    "name": "Straight or arch jump",
+    "skillId": "USAG-BB-2.108-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Gainer Back Tuck",
+    "name": "Back salto dismount (any shape)",
+    "skillId": "USAG-BB-9.106-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-bb-7",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "bb",
+  "title": "Xcel Diamond Balance Beam Routine 7",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring step-out",
+    "skillId": "USAG-BB-7.208-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring step-out",
+    "skillId": "USAG-BB-7.208-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-BB-2.305-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Beat Jump",
+    "name": "Straight jump with leg beat",
+    "skillId": "USAG-BB-2.108-3",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split jump in place",
+    "skillId": "USAG-BB-2.201-2",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-BB-7.203-2",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Layout",
+    "name": "Back salto dismount (any shape)",
+    "skillId": "USAG-BB-9.106-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-bb-8",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "bb",
+  "title": "Xcel Diamond Balance Beam Routine 8",
+  "skills": [
+   {
+    "sheetName": "Mount",
+    "name": "Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring step-out",
+    "skillId": "USAG-BB-7.208-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring step-out",
+    "skillId": "USAG-BB-7.208-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split jump in place",
+    "skillId": "USAG-BB-2.201-2",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump",
+    "name": "Tuck jump",
+    "skillId": "USAG-BB-2.110-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-BB-2.305-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Gainer Back Tuck",
+    "name": "Back salto dismount (any shape)",
+    "skillId": "USAG-BB-9.106-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-fx-1",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "fx",
+  "title": "Xcel Diamond Floor Exercise Routine 1",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-FX-1.204-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Wolf Jump",
+    "name": "Wolf jump or hop",
+    "skillId": "USAG-FX-1.116-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Handspring",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Pike",
+    "name": "Front pike",
+    "skillId": "USAG-FX-6.201-2a",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "1.5 Turn",
+    "name": "1½ turn on one foot",
+    "skillId": "USAG-FX-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Tuck",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-fx-2",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "fx",
+  "title": "Xcel Diamond Floor Exercise Routine 2",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Full",
+    "name": "Back tuck full twist",
+    "skillId": "USAG-FX-8.201-1d",
+    "letter": "B",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full L Turn",
+    "name": "Full turn, free leg forward horizontal",
+    "skillId": "USAG-FX-2.202-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-FX-1.204-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump Full",
+    "name": "Tuck jump with full turn",
+    "skillId": "USAG-FX-1.215-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Handspring",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Pike",
+    "name": "Front pike",
+    "skillId": "USAG-FX-6.201-2a",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-fx-3",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "fx",
+  "title": "Xcel Diamond Floor Exercise Routine 3",
+  "skills": [
+   {
+    "sheetName": "Front Tuck",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Pike",
+    "name": "Front pike",
+    "skillId": "USAG-FX-6.201-2a",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Wolf Turn",
+    "name": "Full turn in tuck stand",
+    "skillId": "USAG-FX-2.206-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or split jump (stag allowed)",
+    "skillId": "USAG-FX-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Side Leap",
+    "name": "Straddle jump (or side split)",
+    "skillId": "USAG-FX-1.207-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Layout",
+    "name": "Back layout",
+    "skillId": "USAG-FX-8.101-1c",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-fx-4",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "fx",
+  "title": "Xcel Diamond Floor Exercise Routine 4",
+  "skills": [
+   {
+    "sheetName": "Front Full",
+    "name": "Front full",
+    "skillId": "USAG-FX-6.301-1",
+    "letter": "C",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Hitch Kick",
+    "name": "Hitch-kick, straight legs",
+    "skillId": "USAG-FX-1.109-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Switch Side Leap",
+    "name": "Switch leap ¼ turn to side split",
+    "skillId": "USAG-FX-1.305-1",
+    "letter": "C",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straddle Jump",
+    "name": "Straddle jump (or side split)",
+    "skillId": "USAG-FX-1.207-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Layout",
+    "name": "Back layout",
+    "skillId": "USAG-FX-8.101-1c",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full L Turn",
+    "name": "Full turn, free leg forward horizontal",
+    "skillId": "USAG-FX-2.202-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-fx-5",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "fx",
+  "title": "Xcel Diamond Floor Exercise Routine 5",
+  "skills": [
+   {
+    "sheetName": "Front Tuck Stepout",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Tuck",
+    "name": "Back tuck",
+    "skillId": "USAG-FX-8.101-1a",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Sissonne",
+    "name": "Sissonne",
+    "skillId": "USAG-FX-1.110-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-FX-1.204-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Layout",
+    "name": "Back layout",
+    "skillId": "USAG-FX-8.101-1c",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Double Turn",
+    "name": "Double turn on one foot",
+    "skillId": "USAG-FX-2.301-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Handspring",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Pike",
+    "name": "Front pike",
+    "skillId": "USAG-FX-6.201-2a",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-fx-6",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "fx",
+  "title": "Xcel Diamond Floor Exercise Routine 6",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Layout",
+    "name": "Back layout",
+    "skillId": "USAG-FX-8.101-1c",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-FX-1.204-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straddle Jump",
+    "name": "Straddle jump (or side split)",
+    "skillId": "USAG-FX-1.207-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Layout",
+    "name": "Front layout",
+    "skillId": "USAG-FX-6.201-2b",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Layout",
+    "name": "Front layout",
+    "skillId": "USAG-FX-6.201-2b",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full L Turn",
+    "name": "Full turn, free leg forward horizontal",
+    "skillId": "USAG-FX-2.202-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Full",
+    "name": "Back tuck full twist",
+    "skillId": "USAG-FX-8.201-1d",
+    "letter": "B",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-fx-7",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "fx",
+  "title": "Xcel Diamond Floor Exercise Routine 7",
+  "skills": [
+   {
+    "sheetName": "Front Handspring",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Full",
+    "name": "Front full",
+    "skillId": "USAG-FX-6.301-1",
+    "letter": "C",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Sissonne",
+    "name": "Sissonne",
+    "skillId": "USAG-FX-1.110-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Switch Side Leap",
+    "name": "Switch leap ¼ turn to side split",
+    "skillId": "USAG-FX-1.305-1",
+    "letter": "C",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Double Turn",
+    "name": "Double turn on one foot",
+    "skillId": "USAG-FX-2.301-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Layout",
+    "name": "Back layout",
+    "skillId": "USAG-FX-8.101-1c",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-diamond-fx-8",
+  "discipline": "wag",
+  "level": "diamond",
+  "event": "fx",
+  "title": "Xcel Diamond Floor Exercise Routine 8",
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back 1.5",
+    "name": "Back 1½ or double twist",
+    "skillId": "USAG-FX-8.301-1",
+    "letter": "C",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Tuck",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Side Leap",
+    "name": "Switch leap ¼ turn to side split",
+    "skillId": "USAG-FX-1.305-1",
+    "letter": "C",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straddle Jump",
+    "name": "Straddle jump (or side split)",
+    "skillId": "USAG-FX-1.207-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Layout",
+    "name": "Front layout",
+    "skillId": "USAG-FX-6.201-2b",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Pike",
+    "name": "Front pike",
+    "skillId": "USAG-FX-6.201-2a",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "1.5 Turn",
+    "name": "1½ turn on one foot",
+    "skillId": "USAG-FX-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-ub-1",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "ub",
+  "title": "Xcel Sapphire Uneven Bars Routine 1",
+  "sheetBonus": 0.4,
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand; Half Pirouette",
+    "name": "Cast handstand with ½ turn",
+    "skillId": "USAG-UB-2.301-2",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Glide Kip",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Long Hang Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Giant",
+    "name": "Back giant to handstand (Dussier/Liu)",
+    "skillId": "USAG-UB-4.202-1",
+    "letter": "B",
+    "eg": "4",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Giant",
+    "name": "Back giant to handstand (Dussier/Liu)",
+    "skillId": "USAG-UB-4.202-1",
+    "letter": "B",
+    "eg": "4",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Layout Flyaway Full",
+    "name": "Flyaway with ½ or full twist",
+    "skillId": "USAG-UB-8.203-1",
+    "letter": "B",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-ub-2",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "ub",
+  "title": "Xcel Sapphire Uneven Bars Routine 2",
+  "sheetBonus": 0.4,
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Clear Hip to Handstand",
+    "name": "Clear hip to handstand",
+    "skillId": "USAG-UB-3.304-1",
+    "letter": "C",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Toe on Circle to Stand",
+    "name": "Toe-on circle to stand",
+    "skillId": "USAG-UB-7.103-1",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Jump to HB",
+    "name": "Jump to HB",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Long Hang Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Giant",
+    "name": "Back giant to handstand (Dussier/Liu)",
+    "skillId": "USAG-UB-4.202-1",
+    "letter": "B",
+    "eg": "4",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Toe-Front Dismount",
+    "name": "HB underswing to front salto (tuck/pike)",
+    "skillId": "USAG-UB-8.301-1",
+    "letter": "C",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-ub-3",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "ub",
+  "title": "Xcel Sapphire Uneven Bars Routine 3",
+  "sheetBonus": 0.4,
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Clear Hip to Handstand",
+    "name": "Clear hip to handstand",
+    "skillId": "USAG-UB-3.304-1",
+    "letter": "C",
+    "eg": "3",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Toe Up",
+    "name": "Toe-on back to handstand",
+    "skillId": "USAG-UB-7.309-1",
+    "letter": "C",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Clear Hip to Handstand",
+    "name": "Clear hip to handstand",
+    "skillId": "USAG-UB-3.304-1",
+    "letter": "C",
+    "eg": "3",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tucked Flyaway",
+    "name": "Flyaway from HB",
+    "skillId": "USAG-UB-8.103-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-ub-4",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "ub",
+  "title": "Xcel Sapphire Uneven Bars Routine 4",
+  "sheetBonus": 0.4,
+  "skills": [
+   {
+    "sheetName": "Cut Catch",
+    "name": "Back kip-up, straddle cut to LB hang",
+    "skillId": "USAG-UB-1.204-2",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Glide Kip",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Long Hang Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Toe Circle to Handstand",
+    "name": "Toe-on back to handstand",
+    "skillId": "USAG-UB-7.309-1",
+    "letter": "C",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Giant",
+    "name": "Back giant to handstand (Dussier/Liu)",
+    "skillId": "USAG-UB-4.202-1",
+    "letter": "B",
+    "eg": "4",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Double Tuck",
+    "name": "Double back flyaway (tuck/pike)",
+    "skillId": "USAG-UB-8.304-1",
+    "letter": "C",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-ub-5",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "ub",
+  "title": "Xcel Sapphire Uneven Bars Routine 5",
+  "sheetBonus": 0.4,
+  "skills": [
+   {
+    "sheetName": "Glide Kip Mount",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Toe Up",
+    "name": "Toe-on back to handstand",
+    "skillId": "USAG-UB-7.309-1",
+    "letter": "C",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Long Hang Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Giant",
+    "name": "Back giant to handstand (Dussier/Liu)",
+    "skillId": "USAG-UB-4.202-1",
+    "letter": "B",
+    "eg": "4",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Clear Hip to Handstand",
+    "name": "Clear hip to handstand",
+    "skillId": "USAG-UB-3.304-1",
+    "letter": "C",
+    "eg": "3",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Layout Flyaway",
+    "name": "Flyaway from HB",
+    "skillId": "USAG-UB-8.103-1",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-ub-6",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "ub",
+  "title": "Xcel Sapphire Uneven Bars Routine 6",
+  "sheetBonus": 0.4,
+  "skills": [
+   {
+    "sheetName": "Jump to HB Mount",
+    "name": "Jump to HB Mount",
+    "letter": "A",
+    "eg": ""
+   },
+   {
+    "sheetName": "Long Hang Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Bail (not to HS)",
+    "name": "Handstand bail with ½ turn to LB hang",
+    "skillId": "USAG-UB-4.304-1",
+    "letter": "C",
+    "eg": "4",
+    "fromList": true
+   },
+   {
+    "sheetName": "Glide Kip",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Long Hang Kip",
+    "name": "Jump to HB hang, kip",
+    "skillId": "USAG-UB-1.106-1a",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cast Handstand",
+    "name": "Cast to handstand",
+    "skillId": "USAG-UB-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Giant",
+    "name": "Back giant to handstand (Dussier/Liu)",
+    "skillId": "USAG-UB-4.202-1",
+    "letter": "B",
+    "eg": "4",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Layout Flyaway Full",
+    "name": "Flyaway with ½ or full twist",
+    "skillId": "USAG-UB-8.203-1",
+    "letter": "B",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-ub-7",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "ub",
+  "title": "Xcel Sapphire Uneven Bars Routine 7",
+  "sheetBonus": 0.4,
+  "skills": [
+   {
+    "sheetName": "Free Straddle Jump over LB to hang on HB Mount",
+    "name": "Free tuck/straddle jump clearing LB, catch HB",
+    "skillId": "USAG-UB-1.208-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Counterswing to Straddle Back",
+    "name": "Counterswing from HB, fly to LB hang",
+    "skillId": "USAG-UB-2.205-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Glide Kip",
+    "name": "Glide kip on LB",
+    "skillId": "USAG-UB-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Squat On - Jump to HB",
+    "name": "Squat-on/stoop-on/straddle-on from cast",
+    "skillId": "USAG-UB-2.102-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Uprise to Clear Support",
+    "name": "Back uprise to HB clear support",
+    "skillId": "USAG-UB-2.203-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Clear Hip to Handstand",
+    "name": "Clear hip to handstand",
+    "skillId": "USAG-UB-3.304-1",
+    "letter": "C",
+    "eg": "3",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Giant",
+    "name": "Back giant to handstand (Dussier/Liu)",
+    "skillId": "USAG-UB-4.202-1",
+    "letter": "B",
+    "eg": "4",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Layout Flyaway Half",
+    "name": "Flyaway with ½ or full twist",
+    "skillId": "USAG-UB-8.203-1",
+    "letter": "B",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-bb-1",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "bb",
+  "title": "Xcel Sapphire Balance Beam Routine 1",
+  "sheetBonus": 0.2,
+  "skills": [
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-BB-7.203-2",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Tuck",
+    "name": "Back tuck",
+    "skillId": "USAG-BB-8.303-1",
+    "letter": "C",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Straight Jump",
+    "name": "Straight or arch jump",
+    "skillId": "USAG-BB-2.108-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump 1/2",
+    "name": "Tuck jump with ½ turn",
+    "skillId": "USAG-BB-2.210-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Jump 1/4",
+    "name": "Split jump, then ¼ turn to land sideways",
+    "skillId": "USAG-BB-2.201-3",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Tuck 1/2 Dismount",
+    "name": "Back salto ½ or full twist dismount",
+    "skillId": "USAG-BB-9.206-1",
+    "letter": "B",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-bb-2",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "bb",
+  "title": "Xcel Sapphire Balance Beam Routine 2",
+  "sheetBonus": 0.4,
+  "skills": [
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Side Split Jump",
+    "name": "Split jump, side position (Heinrich)",
+    "skillId": "USAG-BB-2.301-3",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-BB-2.305-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split jump in place",
+    "skillId": "USAG-BB-2.201-2",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Dive Cartwheel",
+    "name": "Flighted cartwheel",
+    "skillId": "USAG-BB-7.203-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-BB-7.203-2",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Aerial Full Dismount",
+    "name": "Front aerial full twist off end",
+    "skillId": "USAG-BB-9.202-1",
+    "letter": "B",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-bb-3",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "bb",
+  "title": "Xcel Sapphire Balance Beam Routine 3",
+  "sheetBonus": 0.3,
+  "skills": [
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-BB-2.305-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Handstand",
+    "name": "Kick to cross handstand",
+    "skillId": "USAG-BB-5.106a-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-BB-7.203-2",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split jump in place",
+    "skillId": "USAG-BB-2.201-2",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump 3/4",
+    "name": "Tuck jump with ¾ turn",
+    "skillId": "USAG-BB-2.310-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-BB-7.203-2",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Tuck Dismount",
+    "name": "Back salto dismount (any shape)",
+    "skillId": "USAG-BB-9.106-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-bb-4",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "bb",
+  "title": "Xcel Sapphire Balance Beam Routine 4",
+  "sheetBonus": 0.3,
+  "skills": [
+   {
+    "sheetName": "Handstand",
+    "name": "Kick to cross handstand",
+    "skillId": "USAG-BB-5.106a-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring step-out",
+    "skillId": "USAG-BB-7.208-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-BB-2.305-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split jump in place",
+    "skillId": "USAG-BB-2.201-2",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straddle Jump",
+    "name": "Straddle jump, cross position (Hill)",
+    "skillId": "USAG-BB-2.202-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "BHS",
+    "name": "Back handspring step-out",
+    "skillId": "USAG-BB-7.208-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Tuck Dismount",
+    "name": "Back salto dismount (any shape)",
+    "skillId": "USAG-BB-9.106-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-bb-5",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "bb",
+  "title": "Xcel Sapphire Balance Beam Routine 5",
+  "sheetBonus": 0.4,
+  "skills": [
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Walkover",
+    "name": "Front walkover",
+    "skillId": "USAG-BB-7.201-2",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "BHS",
+    "name": "Back handspring step-out",
+    "skillId": "USAG-BB-7.208-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split jump in place",
+    "skillId": "USAG-BB-2.201-2",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split jump in place",
+    "skillId": "USAG-BB-2.201-2",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-BB-2.305-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump 3/4",
+    "name": "Tuck jump with ¾ turn",
+    "skillId": "USAG-BB-2.310-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Punch Front Layout Dismount",
+    "name": "Front layout dismount (or ½ twist)",
+    "skillId": "USAG-BB-9.204-1",
+    "letter": "B",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-bb-6",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "bb",
+  "title": "Xcel Sapphire Balance Beam Routine 6",
+  "sheetBonus": 0.3,
+  "skills": [
+   {
+    "sheetName": "Split Jump",
+    "name": "Split jump in place",
+    "skillId": "USAG-BB-2.201-2",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straddle Jump",
+    "name": "Straddle jump, cross position (Hill)",
+    "skillId": "USAG-BB-2.202-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "BHS",
+    "name": "Back handspring step-out",
+    "skillId": "USAG-BB-7.208-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "BHS",
+    "name": "Back handspring step-out",
+    "skillId": "USAG-BB-7.208-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-BB-2.305-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-BB-7.203-2",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Tuck Dismount",
+    "name": "Back salto dismount (any shape)",
+    "skillId": "USAG-BB-9.106-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-bb-7",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "bb",
+  "title": "Xcel Sapphire Balance Beam Routine 7",
+  "sheetBonus": 0.4,
+  "skills": [
+   {
+    "sheetName": "BHS",
+    "name": "Back handspring step-out",
+    "skillId": "USAG-BB-7.208-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "BHS",
+    "name": "Back handspring step-out",
+    "skillId": "USAG-BB-7.208-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-BB-2.305-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump 3/4",
+    "name": "Tuck jump with ¾ turn",
+    "skillId": "USAG-BB-2.310-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split jump in place",
+    "skillId": "USAG-BB-2.201-2",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Tuck Jump",
+    "name": "Tuck jump",
+    "skillId": "USAG-BB-2.110-1",
+    "letter": "A",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Cartwheel",
+    "name": "Cartwheel",
+    "skillId": "USAG-BB-7.103-1a",
+    "letter": "A",
+    "eg": "7",
+    "fromList": true
+   },
+   {
+    "sheetName": "Back Tuck 1/2 Dismount",
+    "name": "Back salto ½ or full twist dismount",
+    "skillId": "USAG-BB-9.206-1",
+    "letter": "B",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-bb-8",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "bb",
+  "title": "Xcel Sapphire Balance Beam Routine 8",
+  "sheetBonus": 0.4,
+  "skills": [
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-BB-2.305-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Jump",
+    "name": "Split jump in place",
+    "skillId": "USAG-BB-2.201-2",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "BHS",
+    "name": "Back handspring step-out",
+    "skillId": "USAG-BB-7.208-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Tuck",
+    "name": "Back tuck",
+    "skillId": "USAG-BB-8.303-1",
+    "letter": "C",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Full Turn",
+    "name": "Full turn on one foot",
+    "skillId": "USAG-BB-3.101-1",
+    "letter": "A",
+    "eg": "3",
+    "fromList": true
+   },
+   {
+    "sheetName": "BHS",
+    "name": "Back handspring step-out",
+    "skillId": "USAG-BB-7.208-1",
+    "letter": "B",
+    "eg": "7",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Tuck Dismount",
+    "name": "Back salto dismount (any shape)",
+    "skillId": "USAG-BB-9.106-1",
+    "letter": "A",
+    "eg": "9",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-fx-1",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "fx",
+  "title": "Xcel Sapphire Floor Exercise Routine 1",
+  "sheetBonus": 0.2,
+  "skills": [
+   {
+    "sheetName": "Front Handspring",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Pike",
+    "name": "Front pike",
+    "skillId": "USAG-FX-6.201-2a",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-FX-1.204-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straddle Jump",
+    "name": "Straddle jump (or side split)",
+    "skillId": "USAG-FX-1.207-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Double Turn",
+    "name": "Double turn on one foot",
+    "skillId": "USAG-FX-2.301-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Tuck Stepout",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Tuck",
+    "name": "Back tuck",
+    "skillId": "USAG-FX-8.101-1a",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-fx-2",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "fx",
+  "title": "Xcel Sapphire Floor Exercise Routine 2",
+  "sheetBonus": 0.4,
+  "skills": [
+   {
+    "sheetName": "Front Tuck",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Pike",
+    "name": "Front pike",
+    "skillId": "USAG-FX-6.201-2a",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Tuck Jump 1.5",
+    "name": "Tuck jump with 1½ turns",
+    "skillId": "USAG-FX-1.315-1",
+    "letter": "C",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Wolf Turn",
+    "name": "Full turn in tuck stand",
+    "skillId": "USAG-FX-2.206-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Split Leap",
+    "name": "Split leap or split jump (stag allowed)",
+    "skillId": "USAG-FX-1.101-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Wolf Hop Full",
+    "name": "Wolf jump with full turn",
+    "skillId": "USAG-FX-1.316-1",
+    "letter": "C",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Jump Full",
+    "name": "Split jump, full turn",
+    "skillId": "USAG-FX-1.302-1",
+    "letter": "C",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Layout",
+    "name": "Back layout",
+    "skillId": "USAG-FX-8.101-1c",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-fx-3",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "fx",
+  "title": "Xcel Sapphire Floor Exercise Routine 3",
+  "sheetBonus": 0.4,
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back 1.5",
+    "name": "Back 1½ or double twist",
+    "skillId": "USAG-FX-8.301-1",
+    "letter": "C",
+    "eg": "8",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Switch Leap Half",
+    "name": "Switch leap with ½ turn",
+    "skillId": "USAG-FX-1.304-1",
+    "letter": "C",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Jump Half",
+    "name": "Split jump with ½ turn",
+    "skillId": "USAG-FX-1.202-1b",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Layout",
+    "name": "Front layout",
+    "skillId": "USAG-FX-6.201-2b",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Pike",
+    "name": "Front pike",
+    "skillId": "USAG-FX-6.201-2a",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Double Turn",
+    "name": "Double turn on one foot",
+    "skillId": "USAG-FX-2.301-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-fx-4",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "fx",
+  "title": "Xcel Sapphire Floor Exercise Routine 4",
+  "sheetBonus": 0.4,
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Half",
+    "name": "Back tuck with ½ twist",
+    "skillId": "USAG-FX-8.201-1a",
+    "letter": "B",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Double Turn",
+    "name": "Double turn on one foot",
+    "skillId": "USAG-FX-2.301-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Switch Leap",
+    "name": "Switch leap",
+    "skillId": "USAG-FX-1.204-1",
+    "letter": "B",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Jump Full",
+    "name": "Split jump, full turn",
+    "skillId": "USAG-FX-1.302-1",
+    "letter": "C",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Full",
+    "name": "Front full",
+    "skillId": "USAG-FX-6.301-1",
+    "letter": "C",
+    "eg": "6",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Tuck",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-fx-5",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "fx",
+  "title": "Xcel Sapphire Floor Exercise Routine 5",
+  "sheetBonus": 0.4,
+  "skills": [
+   {
+    "sheetName": "Front Layout",
+    "name": "Front layout",
+    "skillId": "USAG-FX-6.201-2b",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Pike",
+    "name": "Front pike",
+    "skillId": "USAG-FX-6.201-2a",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "1.5 Turn",
+    "name": "1½ turn on one foot",
+    "skillId": "USAG-FX-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Ring Leap",
+    "name": "Switch ring leap",
+    "skillId": "USAG-FX-1.311-1",
+    "letter": "C",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Split Jump Full",
+    "name": "Split jump, full turn",
+    "skillId": "USAG-FX-1.302-1",
+    "letter": "C",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "FHS",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Full",
+    "name": "Front full",
+    "skillId": "USAG-FX-6.301-1",
+    "letter": "C",
+    "eg": "6",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-fx-6",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "fx",
+  "title": "Xcel Sapphire Floor Exercise Routine 6",
+  "sheetBonus": 0.3,
+  "skills": [
+   {
+    "sheetName": "1.5 Turn",
+    "name": "1½ turn on one foot",
+    "skillId": "USAG-FX-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Layout",
+    "name": "Front layout",
+    "skillId": "USAG-FX-6.201-2b",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Layout",
+    "name": "Front layout",
+    "skillId": "USAG-FX-6.201-2b",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Side Leap",
+    "name": "Switch leap ¼ turn to side split",
+    "skillId": "USAG-FX-1.305-1",
+    "letter": "C",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Straddle Jump Full",
+    "name": "Straddle jump, full turn (Popa)",
+    "skillId": "USAG-FX-1.307-1",
+    "letter": "C",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Handspring",
+    "name": "Back handspring",
+    "skillId": "USAG-FX-5.106-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Full",
+    "name": "Back tuck full twist",
+    "skillId": "USAG-FX-8.201-1d",
+    "letter": "B",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Tuck Stepout",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back Layout",
+    "name": "Back layout",
+    "skillId": "USAG-FX-8.101-1c",
+    "letter": "A",
+    "eg": "8",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-fx-7",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "fx",
+  "title": "Xcel Sapphire Floor Exercise Routine 7",
+  "sheetBonus": 0.4,
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Whip 1/2",
+    "name": "Whip with ½ or full twist",
+    "skillId": "USAG-FX-8.202-1",
+    "letter": "B",
+    "eg": "8",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Tuck",
+    "name": "Front tuck",
+    "skillId": "USAG-FX-6.101-1",
+    "letter": "A",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap Full",
+    "name": "Switch leap, full turn (Frolova)",
+    "skillId": "USAG-FX-1.404-1",
+    "letter": "D",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Wolf Full",
+    "name": "Wolf jump with full turn",
+    "skillId": "USAG-FX-1.316-1",
+    "letter": "C",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Sissonne",
+    "name": "Sissonne",
+    "skillId": "USAG-FX-1.110-1",
+    "letter": "A",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back 1.5",
+    "name": "Back 1½ or double twist",
+    "skillId": "USAG-FX-8.301-1",
+    "letter": "C",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "1.5 Turn",
+    "name": "1½ turn on one foot",
+    "skillId": "USAG-FX-2.201-1",
+    "letter": "B",
+    "eg": "2",
+    "fromList": true
+   }
+  ]
+ },
+ {
+  "id": "wag-sapphire-fx-8",
+  "discipline": "wag",
+  "level": "sapphire",
+  "event": "fx",
+  "title": "Xcel Sapphire Floor Exercise Routine 8",
+  "sheetBonus": 0.4,
+  "skills": [
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Double Pike",
+    "name": "Double back pike",
+    "skillId": "USAG-FX-8.403-2",
+    "letter": "D",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Double Turn",
+    "name": "Double turn on one foot",
+    "skillId": "USAG-FX-2.301-1",
+    "letter": "C",
+    "eg": "2",
+    "fromList": true
+   },
+   {
+    "sheetName": "Switch Leap Half",
+    "name": "Switch leap with ½ turn",
+    "skillId": "USAG-FX-1.304-1",
+    "letter": "C",
+    "eg": "1",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Switch Side Leap",
+    "name": "Switch leap ¼ turn to side split",
+    "skillId": "USAG-FX-1.305-1",
+    "letter": "C",
+    "eg": "1",
+    "fromList": true
+   },
+   {
+    "sheetName": "FHS",
+    "name": "Front handspring, one-foot take-off",
+    "skillId": "USAG-FX-5.102-1",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Layout",
+    "name": "Front layout",
+    "skillId": "USAG-FX-6.201-2b",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Front Layout",
+    "name": "Front layout",
+    "skillId": "USAG-FX-6.201-2b",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true
+   },
+   {
+    "sheetName": "Roundoff",
+    "name": "Round-off",
+    "skillId": "USAG-FX-5.105-1a",
+    "letter": "A",
+    "eg": "5",
+    "fromList": true,
+    "link": true
+   },
+   {
+    "sheetName": "Back 1.5",
+    "name": "Back 1½ or double twist",
+    "skillId": "USAG-FX-8.301-1",
+    "letter": "C",
+    "eg": "8",
+    "fromList": true
+   },
+   {
+    "sheetName": "Front Pike",
+    "name": "Front pike",
+    "skillId": "USAG-FX-6.201-2a",
+    "letter": "B",
+    "eg": "6",
+    "fromList": true
+   }
+  ]
  }
 ]

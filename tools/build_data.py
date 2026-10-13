@@ -13,8 +13,9 @@ tools/source/:
                        the full one has the Code's text, and this repo is public.
   tt_skills.json       the UCG T&T DD charts (trampoline, double mini, tumbling),
                        including the UCG addendum's values
-  examples.json        example routines: T&T (New / Intermediate / High Flyers)
-                       and MAG (Developmental / Intermediate) Google Sheets
+  examples.json        example routines: T&T (New / Intermediate / High Flyers),
+                       MAG (Developmental / Intermediate) and WAG (Xcel Silver to
+                       Sapphire) Google Sheets
 
 Run: python tools/build_data.py   (then commit the js/data files)
 """
@@ -316,6 +317,13 @@ EXCLUDE = {
     "tt-if-tu-5", "tt-if-tu-7",  # pass 2 has fewer than 8 skills
     "tt-if-tu-9",  # pass 2: 7 skills, a 0.1 skill and 3.0 DD (max 2.9)
     "tt-if-tu-10",  # pass 2 is 3.0 DD (max 2.9)
+    # WAG Xcel: an element earns credit once, so these routines repeat one
+    "wag-silver-fx-2", "wag-gold-fx-2",  # split leap and split jump are one floor element (1.101)
+    "wag-plat-bb-1",  # split leap and split jump are one Platinum beam element
+    "wag-plat-bb-3",  # two cartwheels
+    "wag-plat-fx-5",  # two front tucks
+    "wag-diamond-ub-7",  # three cast handstands
+    "wag-diamond-fx-6",  # two front layouts
 }
 
 
@@ -329,6 +337,17 @@ def examples():
         if "skills" in e:
             if e["discipline"] == "tt":
                 r["skills"] = [match_tt(e["event"], {"name": s.get("name", ""), "notation": s.get("notation", ""), "dd": s.get("dd", "")}) for s in e["skills"]]
+            elif e["discipline"] == "wag":
+                # Matched to the Xcel list already (see examples_notes.md): kept as the skill
+                # picker would set it, so values, groups and special requirements follow the list.
+                r["skills"] = [
+                    {
+                        "name": s.get("name", ""), "letter": s.get("letter", ""), "eg": s.get("eg", ""),
+                        **({"skillId": s["skillId"], "fromList": True} if s.get("skillId") else {}),
+                        **({"link": True} if s.get("link") else {}),
+                    }
+                    for s in e["skills"]
+                ]
             else:
                 r["skills"] = [{"name": s.get("name", ""), "letter": s.get("letter", ""), "eg": str(s["eg"]) if s.get("eg") else ""} for s in e["skills"]]
         if "passes" in e:
