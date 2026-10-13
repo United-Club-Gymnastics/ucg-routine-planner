@@ -8,8 +8,10 @@ import {
   DECADE_LABELS,
   blankSkill,
   blankTT,
+  copyEvent,
   copyRoutines,
   entryName,
+  eventHasContent,
   eventInfo,
   eventSpec,
   fmt,
@@ -683,7 +685,7 @@ function entryBody(a, e) {
   return `
     ${startPanel(a, e)}${revaluedNotice(e)}${importNotice(e)}
     <div class="summary" id="summary" role="tablist" aria-label="Events"></div>
-    ${D.events.map((x) => eventCard(e, x, x.id === ev)).join('')}
+    ${D.events.map((x) => eventCard(a, e, x, x.id === ev)).join('')}
     <div class="sv-bar" id="sv-bar">
       <div class="sv-bar-text"><span id="sv-bar-label"></span><strong id="sv-bar-value"></strong></div>
       <button type="button" class="btn btn-ghost btn-sm" id="sv-breakdown" aria-haspopup="dialog">Breakdown</button>
@@ -704,9 +706,10 @@ function revaluedNotice(e) {
     { approx: 'the vault is the closest match (check it)', other: 'the vault counts as any other vault (0.0 + age bonus)', none: "the vault isn't allowed here (pick one)" }[s.vault],
   ].filter(Boolean);
   const from = levelInfo(e.disc, r.from)?.name || r.from;
+  const what = r.event ? `${eventInfo(e.disc, r.event)?.label || r.event} ` : '';
   return `
     <section class="card revalue-notice" role="status">
-      <p><strong>Copied from ${esc(from)} and re-valued for ${esc(levelInfo(e.disc, e.level).name)}.</strong>
+      <p><strong>Copied ${esc(what)}from ${esc(from)} and re-valued for ${esc(levelInfo(e.disc, e.level).name)}.</strong>
         ${esc(([s.exact && `${s.exact} skill${s.exact === 1 ? '' : 's'} matched exactly`, ...parts].filter(Boolean).join('; ') || 'nothing needed changing').replace(/^./, (c) => c.toUpperCase()))}.${parts.length ? ' Those are flagged below.' : ''}</p>
       <button type="button" class="btn btn-ghost btn-sm" id="revalue-ok">OK</button>
     </section>`;
@@ -805,9 +808,13 @@ const plain = (html) => html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
 
 // ---- Event cards ---------------------------------------------------------------
 
-function eventCard(e, ev, visible) {
+function eventCard(a, e, ev, visible) {
   const spec = eventSpec(e, ev.id);
   const examples = EXAMPLES.filter((x) => x.disc === e.disc && x.level === e.level && x.event === ev.id);
+  // The athlete's other levels in the discipline with this event filled in: copy just this event.
+  const sources = a.entries.filter((x) => x.id !== e.id && x.disc === e.disc && eventHasContent(x, ev.id));
+  const levelOpts = sources.map((s) => `<option value="level:${esc(s.id)}">${esc(levelInfo(s.disc, s.level).name)}</option>`).join('');
+  const exampleOpts = examples.map((x) => `<option value="${esc(x.id)}">${esc(x.title)}</option>`).join('');
   const help = ev.kind === 'vault' ? '' : plain(ev.kind === 'passes' ? passesHelp(ev) : routineHelp(e, ev, spec));
   return `
     <article class="card event-card" data-event-card="${ev.id}" id="panel-${ev.id}" role="tabpanel" aria-labelledby="tab-${ev.id}" ${visible ? '' : 'hidden'}>
@@ -815,8 +822,8 @@ function eventCard(e, ev, visible) {
         <div class="card-title-row"><h2 class="card-title">${esc(ev.label)}</h2>${help ? helpButton(ev.label.toLowerCase(), help) : ''}</div>
         <div class="card-head-right">
           ${examples.length && exampleSheetUrl(e, ev.id) ? `<a class="ext-link examples-sheet" href="${esc(exampleSheetUrl(e, ev.id))}" target="_blank" rel="noopener" title="See every ${esc(ev.label)} example side by side in Google Sheets">Compare all${ICON_EXT}</a>` : ''}
-          ${examples.length ? `<label class="examples-menu"><span class="sr-only">Insert an example routine</span>
-            <select data-example="${ev.id}"><option value="">Examples…</option>${examples.map((x) => `<option value="${esc(x.id)}">${esc(x.title)}</option>`).join('')}</select></label>` : ''}
+          ${examples.length || sources.length ? `<label class="examples-menu"><span class="sr-only">${sources.length ? `Copy this ${esc(ev.label.toLowerCase())} routine from another level${examples.length ? ' or an example' : ''}` : 'Insert an example routine'}</span>
+            <select data-example="${ev.id}"><option value="">${sources.length ? 'Copy from…' : 'Examples…'}</option>${sources.length && examples.length ? `<optgroup label="Another level">${levelOpts}</optgroup><optgroup label="Examples">${exampleOpts}</optgroup>` : levelOpts + exampleOpts}</select></label>` : ''}
           <span class="sv-pill" data-sv="${ev.id}"></span>
           ${ev.kind !== 'vault' || ['infinity', 'xcel'].includes(spec.family) ? `<button class="btn btn-ghost btn-sm" type="button" data-export="${ev.id}">Export PDF</button>` : ''}
         </div>
@@ -1173,7 +1180,7 @@ function bindEditor(a, e) {
   // Fetch ahead: the PDF code when Export is about to be used; the catalog with the copy panel.
   const warmPdf = () => import('./pdf.js').catch(() => {});
   $$('#export-all, [data-export]').forEach((b) => ['pointerenter', 'focus', 'touchstart'].forEach((ev) => b.addEventListener(ev, warmPdf, { once: true, passive: true })));
-  if ($('#copy-run') && e.disc !== 'tt') import(`./data/catalog-${e.disc}.js`).catch(() => {});
+  if (($('#copy-run') || $('[data-example] option[value^="level:"]')) && e.disc !== 'tt') import(`./data/catalog-${e.disc}.js`).catch(() => {});
   const copySrc = $('#copy-src');
   if (copySrc) copySrc.onchange = () => ($('#copy-run').dataset.src = copySrc.value);
   $('#copy-run')?.addEventListener('click', async (ev) => {
@@ -1181,19 +1188,8 @@ function bindEditor(a, e) {
     const src = a.entries.find((x) => x.id === button.dataset.src);
     if (!src) return;
     copyRoutines(src, e);
-    // Another level's code values the skills differently: re-value them with the skill catalog.
-    if (e.disc !== 'tt' && src.level !== e.level) {
-      button.disabled = true;
-      try {
-        // The skill list must be there to look skills up (it is when the level is shown; be sure).
-        const [{ revalueEntry }, { CATALOG }] = await Promise.all([import('./revalue.js'), import(`./data/catalog-${e.disc}.js`), loadDiscipline(e.disc)]);
-        revalueEntry(e, src.level, CATALOG, src.vault);
-      } catch (err) {
-        console.error(err);
-        if (isStale(err)) reportError(err);
-        alert(`Copied, but the skills couldn't be re-valued for this level${isStale(err) ? '. Reload the planner (a new version is available), then copy again' : `: ${err?.message || err}`}.`);
-      }
-    }
+    button.disabled = true;
+    await revalueCopy(src, e);
     scheduleSave();
     renderAll();
   });
@@ -1330,6 +1326,19 @@ function onChange(ev) {
     e.passes.dmt[Number(t.dataset.start)].start = t.value;
     updateComputed();
     scheduleSave();
+  } else if (t.dataset.example && t.value.startsWith('level:')) {
+    const evId = t.dataset.example;
+    const src = athlete()?.entries.find((x) => x.id === t.value.slice(6));
+    t.value = '';
+    if (!src) return;
+    const label = eventInfo(e.disc, evId).label.toLowerCase();
+    if (eventHasContent(e, evId) && !confirm(`Replace this ${label} routine with the ${levelInfo(src.disc, src.level).name} ${label} routine?`)) return;
+    t.disabled = true;
+    copyEvent(src, e, evId);
+    revalueCopy(src, e, [evId]).then(() => {
+      scheduleSave();
+      renderAll();
+    });
   } else if (t.dataset.example) {
     const ex = EXAMPLES.find((x) => x.id === t.value);
     t.value = '';
@@ -1339,6 +1348,21 @@ function onChange(ev) {
     applyExample(e, ex);
     scheduleSave();
     renderAll();
+  }
+}
+
+// After copying from another level: another level's code values the skills differently,
+// so re-value them with the skill catalog (all events, or just the ones copied).
+async function revalueCopy(src, e, events = null) {
+  if (e.disc === 'tt' || src.level === e.level) return;
+  try {
+    // The skill list must be there to look skills up (it is when the level is shown; be sure).
+    const [{ revalueEntry }, { CATALOG }] = await Promise.all([import('./revalue.js'), import(`./data/catalog-${e.disc}.js`), loadDiscipline(e.disc)]);
+    revalueEntry(e, src.level, CATALOG, src.vault, events);
+  } catch (err) {
+    console.error(err);
+    if (isStale(err)) reportError(err);
+    alert(`Copied, but the skills couldn't be re-valued for this level${isStale(err) ? '. Reload the planner (a new version is available), then copy again' : `: ${err?.message || err}`}.`);
   }
 }
 

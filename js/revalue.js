@@ -25,7 +25,8 @@ const FLAGS = ['approx', 'noCredit', 'check', 'matchedFrom'];
 /** Remove re-valuing flags from a skill row (when it's picked again or edited by hand). */
 export const clearRevalueFlags = (row) => FLAGS.forEach((f) => delete row[f]);
 
-export function revalueEntry(entry, fromLevel, catalog, fromVault = '') {
+// `events`: re-value only these events (a single event copied from another level); all by default.
+export function revalueEntry(entry, fromLevel, catalog, fromVault = '', events = null) {
   const fam = levelInfo(entry.disc, entry.level).family;
   const rule = Object.values(catalog.levelRules).find((r) => r.planner_id === entry.level);
   const allowed = (s) =>
@@ -34,6 +35,7 @@ export function revalueEntry(entry, fromLevel, catalog, fromVault = '') {
   const summary = { exact: 0, approximate: 0, notCredited: 0, typed: 0 };
 
   for (const [evId, rows] of Object.entries(entry.routines || {})) {
+    if (events && !events.includes(evId)) continue;
     const letters = eventSpec(entry, evId).letters || [];
     for (const row of rows) {
       if (!String(row.name || '').trim() && !row.letter) continue;
@@ -110,8 +112,8 @@ export function revalueEntry(entry, fromLevel, catalog, fromVault = '') {
       } else summary.exact++;
     }
   }
-  summary.vault = revalueVault(entry, fromLevel, fromVault, catalog);
-  entry.revalued = { catalog: catalog.version, levels: catalog.levels, from: fromLevel, summary };
+  summary.vault = !events || events.includes('vt') ? revalueVault(entry, fromLevel, fromVault, catalog) : '';
+  entry.revalued = { catalog: catalog.version, levels: catalog.levels, from: fromLevel, ...(events?.length === 1 ? { event: events[0] } : {}), summary };
   return summary;
 }
 

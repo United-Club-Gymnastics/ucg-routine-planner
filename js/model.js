@@ -301,3 +301,26 @@ export function copyRoutines(from, to) {
   if (from.disc === 'mag' || from.level === to.level) to.vault = from.vault;
   normalizeEntry(to);
 }
+
+/** True if an entry has anything filled in for one event. */
+export function eventHasContent(e, evId) {
+  const ev = eventInfo(e.disc, evId);
+  if (ev.kind === 'vault') return !!e.vault;
+  if (ev.kind === 'passes') return (e.passes?.[evId] || []).some((p) => (p.skills || []).some((s) => s.name || s.notation));
+  return (e.routines?.[evId] || []).some((s) => s.name || s.letter || s.notation);
+}
+
+/**
+ * Copy one event's routine from another entry (same discipline), replacing that
+ * event only. Like copyRoutines: the vault copies only within the same vault list.
+ */
+export function copyEvent(from, to, evId) {
+  const clone = (x) => JSON.parse(JSON.stringify(x));
+  const ev = eventInfo(to.disc, evId);
+  if (ev.kind === 'vault') {
+    to.vault = from.disc === 'mag' || from.level === to.level ? from.vault : '';
+    delete to.vaultFlag;
+  } else if (ev.kind === 'passes') to.passes[evId] = clone(from.passes?.[evId] || []);
+  else to.routines[evId] = clone(from.routines?.[evId] || []);
+  normalizeEntry(to);
+}
