@@ -82,7 +82,7 @@ Shared view-only (the planner links to it); read from an .xlsx download. The imp
   - Underswing dismounts: from the low bar (8.006) at Silver, otherwise the HB underswing dismount (8.101). "Kip" after a jump to the high bar is the HB kip (1.106); the Silver routine that opens with "Kip" is a glide kip.
   - Beam leaps and jumps at Silver–Platinum use the division entries ("2.0 Silver / Gold / Platinum"). The last beam skill is the dismount even when the sheet doesn't say so (e.g. "Back Tuck", "Back Layout", "Gainer Back Tuck" → back salto dismount 9.106).
   - "Toe Up" and "Toe Circle to Handstand" are both toe-on back to handstand (7.309). "Giant" is the back giant to handstand (4.202).
-  - Confirmed in review: "Clear Hip Circle" at Gold / Platinum is clear hip to support (3.204, a B); "Front Tucked Flyaway" is the reverse-grip front salto dismount (8.107).
+  - Confirmed in review: "Clear Hip Circle" at Gold / Platinum is clear hip to support (3.204, a B); "Front Tucked Flyaway" is the reverse-grip front salto dismount (8.107); Platinum bars 7's "Swing Half Turn" is the long-swing ½ turn (4.101).
   - Silver floor's "Roundoff Rebound" is the round-off (5.105) connected into the backward roll after it: no WAG skill carries the rebound tag the rules code supports.
   - Diamond bars 2's "Toe On Underswing 1.5 Turn Dismount" is the HB underswing with 1½ or double twist (8.201, B).
 - **Typed in, not from the list:** beam "Mount" (value A: a Silver–Platinum mount counts as an A, confirmed in review), Sapphire bars "Jump to HB (Mount)" (A, a jump to hang before a separate long-hang kip), Platinum "Sole Circle - Jump to HB" and Diamond "Tap Swing" (no value given).
@@ -106,4 +106,3 @@ Shared view-only (the planner links to it); read from an .xlsx download. The imp
 - Whether the hidden IF Power Tumbling tab is meant to be public. It is included here.
 - Whether to show the `tt-nf-tr-18` Straddle Jump 0.2 and the `tt-nf-dmt-13` Front Pike 0.7 as the sheet gives them, or correct them.
 - What the two unnamed skills in HF Trampoline Routine 10 are.
-- WAG: Platinum bars 7's "Swing Half Turn" (mid-routine, before a tap swing counterswing): review says it's the tap swing ½ turn dismount, which the Xcel list allows at Silver and Gold only; kept as the long-swing ½ turn (4.101) until that's settled.
