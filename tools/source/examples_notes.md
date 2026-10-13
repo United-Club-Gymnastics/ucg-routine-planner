@@ -77,28 +77,33 @@ Shared view-only (the planner links to it); read from an .xlsx download. The imp
 
 ### Mapping choices
 
-- **Every skill is matched to the Xcel skill list** for its level and event (division-limited entries respected), and stored as the skill picker sets it: the list's name, `skillId`, value, group and `fromList`. So values, groups and the special requirements follow the list, not the sheet. Names were matched automatically where unambiguous and by hand otherwise. Main hand choices:
+- **Every skill is matched to the Xcel skill list** for its level and event (division-limited entries respected), and stored as the skill picker sets it: the list's name, `skillId`, value, group and `fromList`. So values, groups and the special requirements follow the list, not the sheet. Names were matched automatically where unambiguous and by hand otherwise; UCG's WAG rules lead (Amanda) reviewed the matches in October 2026. Main hand choices:
   - "Cast" is each division's own cast entry (2.001 Silver / Gold / Platinum; Diamond's "Cast above 45°" is the Diamond one). Squat-on / stoop-on casts, with or without "jump to HB", are 2.102.
   - Underswing dismounts: from the low bar (8.006) at Silver, otherwise the HB underswing dismount (8.101). "Kip" after a jump to the high bar is the HB kip (1.106); the Silver routine that opens with "Kip" is a glide kip.
   - Beam leaps and jumps at Silver–Platinum use the division entries ("2.0 Silver / Gold / Platinum"). The last beam skill is the dismount even when the sheet doesn't say so (e.g. "Back Tuck", "Back Layout", "Gainer Back Tuck" → back salto dismount 9.106).
   - "Toe Up" and "Toe Circle to Handstand" are both toe-on back to handstand (7.309). "Giant" is the back giant to handstand (4.202).
-- **Typed in, not from the list:** beam "Mount" (value A, as Diamond gives it), Sapphire bars "Jump to HB (Mount)" (A, a jump to hang before a separate long-hang kip), Platinum "Sole Circle - Jump to HB" and Diamond "Tap Swing" (no value given).
+  - Confirmed in review: "Clear Hip Circle" at Gold / Platinum is clear hip to support (3.204, a B); "Front Tucked Flyaway" is the reverse-grip front salto dismount (8.107).
+  - Silver floor's "Roundoff Rebound" is the round-off (5.105) connected into the backward roll after it: no WAG skill carries the rebound tag the rules code supports.
+  - Diamond bars 2's "Toe On Underswing 1.5 Turn Dismount" is the HB underswing with 1½ or double twist (8.201, B).
+- **Typed in, not from the list:** beam "Mount" (value A: a Silver–Platinum mount counts as an A, confirmed in review), Sapphire bars "Jump to HB (Mount)" (A, a jump to hang before a separate long-hang kip), Platinum "Sole Circle - Jump to HB" and Diamond "Tap Swing" (no value given).
 - **Links (connections):** the sheet doesn't mark connections, so they are inferred from the order skills are listed in:
-  - Floor and beam acro: a round-off, handspring, step-out or whip into the next acro skill; on floor any Group 5 skill (handspring, walkover, cartwheel, round-off) into the next acro skill, and a front salto into another.
-  - Dance: back-to-back different leaps and jumps (floor Group 1, beam Group 2) are a dance passage / series. Beam acro (Groups 6–7) back to back is an acro series.
+  - Floor and beam acro: a round-off, handspring, step-out or whip into the next acro skill; on floor a roll or any Group 5 skill (handspring, walkover, cartwheel, round-off) into the next acro skill, and a front salto into another.
+  - Dance: back-to-back leaps and jumps (floor Group 1, beam Group 2) are a dance passage / series. On beam any two acro skills back to back before the dismount are an acro series (a handstand into a back walkover, round-off or back handspring counts, per review).
+  - The same skill twice in a row is linked too: Xcel credits an element twice, the second time in a different connection (review: these routines all work).
   - Bars: the skill before the closing dismount is connected into it.
   - Sapphire: the bonus column puts a connection series' bonus on its first skill, so those links come first (added until the app's bonus equals the sheet's total), and an inferred link that would earn more bonus than the sheet gives is left out. One exception is forced: floor 6's switch side leap into the Popa, which the sheet counts; there the app's bonus is 0.4 to the sheet's 0.3, because the Popa is a C in the Code (the sheet says B).
-- **Still short of a requirement as written (kept; the planner shows what's missing):** Platinum bars 1 and 2 and beam 2 (no B), Gold bars 6 (no second circling skill), Gold floor 4 and Platinum floor 2 (dance passage without a big enough split leap), Platinum beam 4 and Diamond beam 1–3, Sapphire beam 3–4 (no acro series), Diamond bars 2 (A underswing dismount), Sapphire beam 1 (no full turn).
-- **Left out (repeats; `EXCLUDE` in build_data.py):** Silver and Gold floor 2 (split leap and split jump are one element), Platinum beam 1 (same) and 3 (two cartwheels), Platinum floor 5 (two front tucks), Diamond bars 7 (three cast handstands), Diamond floor 6 (two front layouts).
+- **Skill tags corrected for the rules (`TAG_FIXES` in build_data.py):** floor sissonne (1.110) is a leap, and 1.207 ("straddle jump or side split") can be a side leap, so either can be the dance passage's split leap (review: Gold floor 4, Platinum floor 2).
+- **All 117 routines are in.** Diamond bars 7's third cast handstand earns nothing (an element counts twice at most) but the routine meets everything without it; the example check accepts an Xcel repeat for that reason.
+- **Still short of a requirement as written (kept, may be fixed in the sheet later):** Platinum bars 1 and 2, beam 1 and 2 have no B. "Use example routines" skips them.
 
 ### Anomalies
 
-- Diamond bars Routines 5 and 6: the sheet's A/B/C counts don't match the skills listed (5 B listed, count says 4; 6 A listed, count says 5). The listed skills are used.
-- Values the sheet gives that differ from the Xcel list (the list's are used): Diamond beam 8 "Tuck Jump" B (list A), Sapphire floor 2 "Wolf Turn" A (list B, full turn in tuck stand) and "Split Leap" B (list A), Sapphire floor 6 "Straddle Jump Full" B (list C).
+- Values the sheet gives that differ from the Xcel list are typos (confirmed in review); the list's are used: Diamond beam 8 "Tuck Jump" B (list A), Sapphire floor 2 "Wolf Turn" A (list B, full turn in tuck stand) and "Split Leap" B (list A), Sapphire floor 6 "Straddle Jump Full" B (list C).
+- The October 2026 review corrected Gold bars 6 (front hip circle added), Diamond bars 2 (B dismount), Diamond beam 1 (cartwheel series), Sapphire beam 1 (full turn), Silver bars 1 and floor 1, and the sheet's Diamond A/B/C counts.
 
 ## Unsure / for review
 
 - Whether the hidden IF Power Tumbling tab is meant to be public. It is included here.
 - Whether to show the `tt-nf-tr-18` Straddle Jump 0.2 and the `tt-nf-dmt-13` Front Pike 0.7 as the sheet gives them, or correct them.
 - What the two unnamed skills in HF Trampoline Routine 10 are.
-- WAG: the hand-matched names above, especially Platinum "Swing Half Turn" (long-swing ½ turn, 4.101), "Front Tucked Flyaway" (reverse-grip front salto, 8.107), "Clear Hip Circle" at Gold/Platinum (clear hip to support, 3.204, a B), and the Sapphire links inferred from the bonus column.
+- WAG: Platinum bars 7's "Swing Half Turn" (mid-routine, before a tap swing counterswing): review says it's the tap swing ½ turn dismount, which the Xcel list allows at Silver and Gold only; kept as the long-swing ½ turn (4.101) until that's settled.

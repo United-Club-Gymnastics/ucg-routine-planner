@@ -1,7 +1,7 @@
 // Scores every example routine at its own level and lists the ones that break the level's rules.
 // Run with: node tools/check_examples.mjs   (the build's exclusion list in build_data.py comes from this)
 import { EXAMPLES } from '../js/data/examples.js';
-import { applyExample, eventInfo, newEntry, scoreEvent } from '../js/model.js';
+import { applyExample, eventInfo, levelInfo, newEntry, scoreEvent } from '../js/model.js';
 
 const OK = new Set(['counting', 'noncounting', 'blank', 'extra', 'ok', 'empty', undefined]);
 
@@ -14,7 +14,9 @@ export function problems(ex) {
   const out = [...(r.warnings || [])];
   if (r.shortBy) out.push(`short by ${r.shortBy} skills`);
   const items = r.items || (r.passes || []).flat();
-  for (const it of items) if (!OK.has(it.status)) out.push(`${it.status}: ${it.name || it.skill?.name || ''}`);
+  // Xcel: a repeat earns nothing but isn't a deduction (the requirements are checked without it).
+  const repeatOk = levelInfo(ex.disc, ex.level)?.family === 'xcel';
+  for (const it of items) if (!OK.has(it.status) && !(repeatOk && it.status === 'repeat')) out.push(`${it.status}: ${it.name || it.skill?.name || ''}`);
   const all = ev.kind === 'passes' ? (ex.passes || []).flat() : ex.skills || [];
   for (const s of all) if (!s.name && !s.skillId) out.push(`unnamed skill ${s.notation || ''} ${s.dd ?? ''}`.trim());
   return out;
