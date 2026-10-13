@@ -1668,8 +1668,6 @@ function hideTip() {
   tipFor = null;
   tipEl.hidden = true;
 }
-// A skill's note for the list, without the "Box note:" its source starts some with (the row already says "Note:").
-const noteText = (s) => s.note.replace(/^Box note:\s*(\w)/, (_, c) => c.toUpperCase());
 const canHover = () => matchMedia('(hover: hover)').matches;
 document.addEventListener('mouseover', (ev) => {
   if (!canHover()) return; // a tap also fires mouseover: taps are handled on click
@@ -1847,9 +1845,9 @@ function renderPicker(query) {
     }
     const meta = e.disc === 'tt' ? `${esc(s.notation || '')} · ${fmt(s.dd)}` : `${esc(s.value)}${s.eg ? ` · EG ${ROMAN[s.eg]}` : s.mgroup ? ` · ${ROMAN[s.mgroup]}` : s.group ? ` · G${s.group}` : ''}`;
     html.push(`
-      <div class="pop-opt${i === picker.active ? ' active' : ''}" role="option" id="pop-opt-${i}" data-skill="${i}" aria-selected="${i === picker.active}"${s.note ? ` title="Note: ${esc(noteText(s))}"` : ''}>
+      <div class="pop-opt${i === picker.active ? ' active' : ''}" role="option" id="pop-opt-${i}" data-skill="${i}" aria-selected="${i === picker.active}"${s.note ? ` title="Note: ${esc(s.note)}"` : ''}>
         <span class="src-badge ${s.src.toLowerCase()}" title="${esc(boxTitle(s))}">${SRC_SHORT[s.src] || s.src}</span>
-        <span class="pop-name">${s.box ? `<span class="pop-box">${esc(s.box.replace(/^\S+ /, ''))}</span>` : ''}<span class="pop-text">${esc(s.name)}${s.eponym ? ` <span class="pop-eponym">(${esc(s.eponym)})</span>` : ''}${s.aka?.length ? `<span class="pop-aka">aka ${esc(s.aka.slice(0, 2).join(', '))}</span>` : ''}${s.note ? `<span class="pop-aka pop-note">Note: ${esc(noteText(s))}</span>` : ''}</span></span>
+        <span class="pop-name">${s.box ? `<span class="pop-box">${esc(s.box.replace(/^\S+ /, ''))}</span>` : ''}<span class="pop-text">${esc(s.name)}${s.eponym ? ` <span class="pop-eponym">(${esc(s.eponym)})</span>` : ''}${s.aka?.length ? `<span class="pop-aka">aka ${esc(s.aka.slice(0, 2).join(', '))}</span>` : ''}${s.note ? `<span class="pop-aka pop-note">Note: ${esc(s.note)}</span>` : ''}</span></span>
         <span class="pop-meta">${meta}</span>
       </div>`);
   });
