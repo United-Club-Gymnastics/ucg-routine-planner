@@ -85,7 +85,7 @@ function normalizeAthlete(a) {
 
 // ---- Saving ---------------------------------------------------------------
 
-let saveTimer;
+const saveTimers = new Map(); // athlete id -> pending save (each athlete saves on its own)
 function setStatus(text, kind = '') {
   const el = $('#save-status');
   if (el) {
@@ -98,28 +98,46 @@ function scheduleSave() {
     setStatus('Not saved: sign in to keep this', 'guest');
     return;
   }
-  setStatus('Saving…');
-  clearTimeout(saveTimer);
   const a = athlete();
-  saveTimer = setTimeout(async () => {
-    saveTimer = null;
-    const failed = (err) => {
-      console.error(err);
-      setStatus('Could not save. Check your connection.', 'error');
-    };
-    try {
-      const saved = await store.saveAthlete(a);
-      ownSaves.set(a.id, saved.updatedAt);
-      if (saved.pending) {
-        // No signal: kept on this phone, and sent when the connection is back.
-        setStatus('Saved on this device · will sync when online', 'pending');
-        saved.pending.then(() => setStatus('All changes saved', 'ok'), failed);
-      } else setStatus('All changes saved', 'ok');
-    } catch (err) {
-      failed(err);
-    }
-  }, 600);
+  if (!a) return;
+  setStatus('Saving…');
+  clearTimeout(saveTimers.get(a.id));
+  saveTimers.set(a.id, setTimeout(() => saveNow(a), 600));
 }
+async function saveNow(a) {
+  clearTimeout(saveTimers.get(a.id));
+  saveTimers.delete(a.id);
+  const failed = (err) => {
+    console.error(err);
+    setStatus('Could not save. Check your connection.', 'error');
+  };
+  try {
+    const saved = await store.saveAthlete(a);
+    ownSaves.set(a.id, saved.updatedAt);
+    // An offer to load another device's copy is out of date once this one is saved over it.
+    if ($('#remote-toast')?.dataset.athlete === a.id) $('#remote-toast').remove();
+    if (saved.pending) {
+      // No signal: kept on this phone, and sent when the connection is back.
+      setStatus('Saved on this device · will sync when online', 'pending');
+      saved.pending.then(() => setStatus('All changes saved', 'ok'), failed);
+    } else setStatus('All changes saved', 'ok');
+  } catch (err) {
+    failed(err);
+  }
+}
+// Send every waiting save now (the page is going to the background, or may be closed).
+function flushSaves() {
+  for (const id of [...saveTimers.keys()]) {
+    const a = state.athletes.find((x) => x.id === id);
+    if (a) saveNow(a);
+    else {
+      clearTimeout(saveTimers.get(id));
+      saveTimers.delete(id);
+    }
+  }
+}
+addEventListener('pagehide', flushSaves);
+document.addEventListener('visibilitychange', () => document.visibilityState === 'hidden' && flushSaves());
 
 // ---- Live updates from other devices ------------------------------------------------
 // When the same athlete is edited on another phone, its changes arrive here. Other
@@ -127,7 +145,7 @@ function scheduleSave() {
 // saved, otherwise a prompt offers to load the latest (nothing is redrawn under the cursor).
 const ownSaves = new Map(); // athlete id -> updatedAt of this device's last save
 let stopWatching = () => {};
-const typing = () => !!saveTimer || !!document.activeElement?.closest?.('#app input, #app select, #app textarea');
+const typing = () => saveTimers.size > 0 || !!document.activeElement?.closest?.('#app input, #app select, #app textarea');
 
 function applyRemote(changes) {
   let redraw = false;
@@ -168,11 +186,14 @@ function applyRemote(changes) {
 
 function offerRemote(data) {
   showToast('remote-toast', `${data.name || 'This athlete'} was changed on another device.`, 'Load latest', () => {
+    // Saved here since the offer, or about to be: this device's copy is the newer one now.
+    if (saveTimers.has(data.id) || (ownSaves.get(data.id) || 0) > (data.updatedAt || 0)) return;
     const i = state.athletes.findIndex((x) => x.id === data.id);
     if (i >= 0) state.athletes[i] = data;
     if (!data.entries.some((x) => x.id === state.entryId)) state.entryId = data.entries[0]?.id ?? null;
     renderAll();
   });
+  $('#remote-toast').dataset.athlete = data.id;
 }
 
 // A message at the bottom of the screen with one button (new version, remote change).
@@ -244,6 +265,10 @@ document.addEventListener('click', (ev) => {
   if (action === 'feedback') import('./feedback.js').then((m) => m.openFeedback(feedbackContext), reportError);
   else if (action === 'signout') store.signOut();
 });
+// iOS sends no click for a tap on something that isn't clickable, so outside taps use pointerdown.
+document.addEventListener('pointerdown', (ev) => {
+  if ($('.menu:not([hidden])') && !ev.target.closest('.menu, [data-menu]')) closeMenus();
+});
 document.addEventListener('keydown', (ev) => {
   if (ev.key !== 'Escape' || !$('.menu:not([hidden])')) return;
   const open = $('.menu:not([hidden])');
@@ -270,7 +295,7 @@ function renderAthletePicker() {
       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
     </button>
     <div class="ath-pop" ${state.athOpen ? '' : 'hidden'}>
-      <div class="ath-search"><input id="ath-search" type="search" placeholder="Search name or club" aria-label="Search athletes" value="${esc(state.athQuery)}" autocomplete="off" /></div>
+      <div class="ath-search"><input id="ath-search" type="search" placeholder="Search name or club" aria-label="Search athletes" value="${esc(state.athQuery)}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" /></div>
       <div class="ath-list" role="listbox" aria-label="Athletes">
         ${list
           .map(
@@ -456,7 +481,7 @@ function closeAthletePicker() {
   state.athOpen = false;
   renderAthletePicker();
 }
-document.addEventListener('mousedown', (ev) => {
+document.addEventListener('pointerdown', (ev) => {
   if (state.athOpen && !ev.target.closest('#athlete-picker')) closeAthletePicker();
 });
 
@@ -486,6 +511,8 @@ async function addAthlete() {
 async function removeAthlete() {
   const a = athlete();
   if (!a || !confirm(`Delete ${a.name || 'this athlete'} and all of their routines? This can't be undone.`)) return;
+  clearTimeout(saveTimers.get(a.id)); // a late save would bring it back
+  saveTimers.delete(a.id);
   await store.deleteAthlete(a.id);
   state.athletes = state.athletes.filter((x) => x.id !== a.id);
   const next = sortedAthletes()[0];
@@ -530,8 +557,9 @@ document.addEventListener('click', async (ev) => {
 
 // Guests lose everything when the page closes: ask first.
 const guestHasWork = () => state.user?.guest && state.athletes.some((a) => a.name || a.entries.some(hasContent));
+let reloadConfirmed = false; // already asked (guestOkToReload): don't ask twice
 window.addEventListener('beforeunload', (ev) => {
-  if (!guestHasWork()) return;
+  if (!guestHasWork() || reloadConfirmed) return;
   ev.preventDefault();
   ev.returnValue = '';
 });
@@ -548,7 +576,9 @@ function renderAll() {
     app.innerHTML = `<p class="loading">Loading…</p>`;
     Promise.all(missing.map(loadDiscipline)).then(renderAll, (err) => {
       console.error(err);
-      app.innerHTML = `<p class="error">Couldn't load the skill lists. Check your connection, then <a href="">reload</a>.</p>`;
+      // Not a reload: that would lose a guest's routines (still in memory here).
+      app.innerHTML = `<p class="error">Couldn't load the skill lists. Check your connection, then <button type="button" class="btn btn-ghost btn-sm" id="load-retry">Try again</button></p>`;
+      $('#load-retry').onclick = renderAll;
     });
     return;
   }
@@ -682,7 +712,7 @@ function importNotice(e) {
   return `
     <section class="card revalue-notice" role="status">
       <p><strong>Brought over from the UCG Infinity planner.</strong>
-        ${left ? `${left} skill${left === 1 ? ' was' : 's were'} matched to the skill list from the name typed there: they're flagged <em>Matched</em>, so check each is the skill performed (hover the flag to see the old name).` : 'All matched skills are checked.'}
+        ${left ? `${left} skill${left === 1 ? ' was' : 's were'} matched to the skill list from the name typed there: they're flagged <em>Matched</em>, so check each is the skill performed (tap the flag to see the old name).` : 'All matched skills are checked.'}
         ${r.typed ? `${r.typed} kept as typed: click one to pick it from the list, already filtered to its value and group.` : ''}</p>
       <button type="button" class="btn btn-ghost btn-sm" id="import-done">${left ? 'Done checking' : 'OK'}</button>
     </section>`;
@@ -877,7 +907,7 @@ function skillRow(e, ev, spec, i, s, pass) {
   const combo = `
     <span class="col-name skill-combo">
       <input class="skill-input" type="text" placeholder="Search or type a skill" aria-label="${label} name"
-        role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="skill-pop" autocomplete="off"
+        role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="skill-pop" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
         ${data} data-field="name" value="${esc(s.name)}" />
       <span class="src-badge" data-calc="src"></span>
       <button type="button" class="combo-toggle" ${data} data-combo tabindex="-1" aria-label="Show ${label} skill list">${ICON_CHEVRON}</button>
@@ -896,7 +926,7 @@ function skillRow(e, ev, spec, i, s, pass) {
   const open = editing === rowKey(ev.id, pass, i) ? ' editing' : '';
   if (dd) {
     return `<div class="skill-row${cls}${open}" data-row="${i}">${handle}${summary}${combo}
-      <input class="col-letter" type="text" aria-label="${label} shorthand" ${data} data-field="notation" value="${esc(s.notation)}" placeholder="Shorthand" />
+      <input class="col-letter" type="text" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="${label} shorthand" ${data} data-field="notation" value="${esc(s.notation)}" placeholder="Shorthand" />
       <input class="col-eg" type="number" inputmode="decimal" step="0.1" min="0" aria-label="${label} DD" ${data} data-field="dd" value="${esc(s.dd)}" placeholder="DD" />
       ${remove}<span class="row-flag" data-calc="flag"></span>${edit}</div>`;
   }
@@ -1022,7 +1052,7 @@ function vaultBody(e, ev) {
   const control = `
     <span class="skill-combo vault-combo">
       <input class="skill-input" id="f-vault" data-vault type="text" placeholder="Search vaults or pick from the list" aria-label="Vault"
-        role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="skill-pop" autocomplete="off" value="${esc(vaultName(e))}" />
+        role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="skill-pop" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="${esc(vaultName(e))}" />
       <button type="button" class="combo-toggle" data-combo tabindex="-1" aria-label="Show the vault list">${ICON_CHEVRON}</button>
     </span>`;
   // After copying from another level: how the vault was carried over.
@@ -1221,6 +1251,23 @@ function clearListedSkill(t, row) {
   delete row.fromList;
   clearRevalueFlags(row);
   if (e.disc === 'tt') row.notation = '';
+  // The box was already left (a DD's change fires on blur): clear the row where it is and
+  // say so, rather than redrawing and pulling the cursor back from where it went.
+  if (document.activeElement !== t) {
+    const rowEl = t.closest('.skill-row');
+    $('.skill-input', rowEl).value = '';
+    const notation = $('[data-field="notation"]', rowEl);
+    if (notation) notation.value = '';
+    updateComputed();
+    scheduleSave();
+    showToast('cleared-toast', `Skill ${idx + 1} was cleared because its ${e.disc === 'tt' ? 'DD' : 'value'} changed.`, 'Pick a skill', () => {
+      const input = $(`[data-routine="${evId}"]${pass != null && pass !== '' ? `[data-pass="${pass}"]` : ''} [data-row="${idx}"] .skill-input`);
+      if (!input) return;
+      input.focus();
+      openPicker(input, '');
+    });
+    return;
+  }
   renderRows(evId, pass, { row: idx, part: 'name' });
   const input = $(`[data-routine="${evId}"]${pass != null && pass !== '' ? `[data-pass="${pass}"]` : ''} [data-row="${idx}"] .skill-input`);
   if (input) {
@@ -1301,6 +1348,8 @@ function onClick(ev) {
     list.push(e.disc === 'tt' ? blankTT() : blankSkill());
     editing = rowKey(evId, add.dataset.pass, list.length - 1);
     renderRows(evId, add.dataset.pass, { row: list.length - 1, part: 'name' });
+    const added = $(`[data-routine="${evId}"]${add.dataset.pass != null ? `[data-pass="${add.dataset.pass}"]` : ''} [data-row="${list.length - 1}"] .skill-input`);
+    if (added) openPicker(added, '');
     scheduleSave();
     return;
   }
@@ -1758,7 +1807,7 @@ function renderPicker(query) {
     html.push(`
       <div class="pop-opt${i === picker.active ? ' active' : ''}" role="option" id="pop-opt-${i}" data-skill="${i}" aria-selected="${i === picker.active}"${s.note ? ` title="Note: ${esc(s.note)}"` : ''}>
         <span class="src-badge ${s.src.toLowerCase()}" title="${esc(boxTitle(s))}">${SRC_SHORT[s.src] || s.src}</span>
-        <span class="pop-name">${s.box ? `<span class="pop-box">${esc(s.box.replace(/^\S+ /, ''))}</span>` : ''}<span class="pop-text">${esc(s.name)}${s.eponym ? ` <span class="pop-eponym">(${esc(s.eponym)})</span>` : ''}${s.aka?.length ? `<span class="pop-aka">aka ${esc(s.aka.slice(0, 2).join(', '))}</span>` : ''}</span></span>
+        <span class="pop-name">${s.box ? `<span class="pop-box">${esc(s.box.replace(/^\S+ /, ''))}</span>` : ''}<span class="pop-text">${esc(s.name)}${s.eponym ? ` <span class="pop-eponym">(${esc(s.eponym)})</span>` : ''}${s.aka?.length ? `<span class="pop-aka">aka ${esc(s.aka.slice(0, 2).join(', '))}</span>` : ''}${s.note && !canHover() ? `<span class="pop-aka">Note: ${esc(s.note)}</span>` : ''}</span></span>
         <span class="pop-meta">${meta}</span>
       </div>`);
   });
@@ -1867,7 +1916,7 @@ function pickSkill(i) {
     if (fam === 'wagMasters') row.eg = s.mgroup ? String(s.mgroup) : s.group && WG_TO_MASTERS[evId]?.[s.group] ? String(WG_TO_MASTERS[evId][s.group]) : '';
   }
   closePicker();
-  renderRows(evId, pass, { row: Number(input.dataset.idx), part: 'name' });
+  renderRows(evId, pass, { row: Number(input.dataset.idx), part: isPhone() ? null : 'name' });
   scheduleSave();
 }
 
@@ -1944,7 +1993,13 @@ function updateRows(container, items, spec, list) {
             : ['', ''];
     const flagEl = $('[data-calc="flag"]', rowEl);
     flagEl.textContent = text;
-    flagEl.title = title;
+    // A tap (or hover, or keyboard focus) shows why, in the tip bubble.
+    if (title) flagEl.dataset.tip = title;
+    else delete flagEl.dataset.tip;
+    flagEl.tabIndex = title ? 0 : -1;
+    flagEl.setAttribute('role', title ? 'button' : 'presentation');
+    if (title) flagEl.setAttribute('aria-label', `${text}: ${title}`);
+    else flagEl.removeAttribute('aria-label');
     rowEl.classList.toggle('flagged', !!text);
     const listed = findSkill(row?.skillId);
     const src = listed?.src || (it.name ? 'Custom' : '');
@@ -2091,7 +2146,7 @@ function updateComputed() {
   $('#sv-breakdown').onclick = () => openBreakdown(cur);
   $('#summary').onclick = (ev) => {
     const t = ev.target.closest('[data-tab]');
-    if (t) selectTab(t.dataset.tab);
+    if (t) selectTab(t.dataset.tab, ev.detail === 0); // Enter / Space: keep focus on the redrawn tab
   };
   $('#summary').onkeydown = onTabKey;
 }
@@ -2256,7 +2311,7 @@ const IGNORED_ERRORS = /ResizeObserver loop|AbortError|aborted|^Failed to fetch$
 function reportError(err) {
   const msg = String(err?.message || err || '');
   if (!msg || err?.name === 'AbortError' || IGNORED_ERRORS.test(msg)) return;
-  showToast('error-toast', isStale(err) ? 'A new version of the planner is available.' : 'Something went wrong.', 'Reload', () => location.reload());
+  showToast('error-toast', isStale(err) ? 'A new version of the planner is available.' : 'Something went wrong.', 'Reload', () => guestOkToReload() && location.reload());
 }
 // A lazy part of the planner that no longer exists: a newer version has replaced this page's.
 function isStale(err) {
@@ -2273,18 +2328,21 @@ function watchForUpdates() {
   if (!sw) return;
   const hadController = !!sw.controller; // the very first install doesn't need a reload
   let reloading = false;
+  // Safe to switch versions without asking: nothing is waiting to save, and no guest
+  // work would be lost by the reload.
+  const idle = () => !saveTimers.size && !guestHasWork() && !$('dialog[open]');
+  // Another tab switched to the new version (every tab gets this): reload only if nothing
+  // would be lost, otherwise offer it.
   sw.addEventListener('controllerchange', () => {
-    if (hadController && !reloading) {
+    if (!hadController || reloading) return;
+    if (idle()) {
       reloading = true;
       location.reload();
-    }
+    } else showReload();
   });
   sw.getRegistration().then((reg) => {
     if (!reg) return;
     const offer = (worker) => worker && sw.controller && showUpdate(worker);
-    // Safe to switch versions without asking: nothing is waiting to save, and no guest
-    // work would be lost by the reload.
-    const idle = () => !saveTimer && !guestHasWork() && !$('dialog[open]');
     // Downloaded on an earlier visit and the page has only just opened: switch now
     // (phones rarely see the "new version" bar, and a plain refresh keeps the old copy).
     if (reg.waiting && sw.controller && idle()) reg.waiting.postMessage('skipWaiting');
@@ -2302,8 +2360,14 @@ function watchForUpdates() {
   });
 }
 function showUpdate(worker) {
-  if (!$('#update-toast')) showToast('update-toast', 'A new version of the planner is ready.', 'Reload', () => worker.postMessage('skipWaiting'));
+  if (!$('#update-toast')) showToast('update-toast', 'A new version of the planner is ready.', 'Reload', () => guestOkToReload() && worker.postMessage('skipWaiting'));
 }
+function showReload() {
+  if (!$('#update-toast')) showToast('update-toast', 'A new version of the planner is ready.', 'Reload', () => guestOkToReload() && location.reload());
+}
+// Not signed in, a reload loses everything: ask first (iPhones show no "leave page" warning).
+const guestOkToReload = () =>
+  !guestHasWork() || (reloadConfirmed = confirm("You're not signed in, so reloading clears your athletes and routines. Reload anyway?"));
 watchForUpdates();
 
 store.init(onUser).catch((e) => {
