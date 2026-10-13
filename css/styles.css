@@ -303,7 +303,7 @@ input::placeholder { color: var(--fg-muted); }
 @media (hover: hover) { .stat-tab:hover { background: #f4f9fa; } }
 .stat-tab.active::after {
   content: ''; position: absolute; left: 20px; right: 20px; bottom: 0;
-  height: 3px; border-radius: 3px 3px 0 0; background: var(--ucg-purple);
+  height: 3px; border-radius: 3px 3px 0 0; background: var(--ucg-navy); /* 14:1 on white (purple was 1.9:1) */
 }
 .stat-tab.active span { color: var(--fg-primary); font-weight: 600; }
 [data-panel][hidden] { display: none; }
@@ -397,6 +397,7 @@ input::placeholder { color: var(--fg-muted); }
   color: var(--ucg-navy); font-size: var(--fs-xs); font-weight: 600;
 }
 .skill-pop:has(.pop-filter) .pop-head { top: 33px; }
+.skill-pop.in-page { position: absolute; } /* phones: placed in the page under its box */
 .pop-notice { padding: 8px 12px; background: #fff4d1; border-bottom: 1px solid #e7c65a; color: var(--ucg-navy); font-size: var(--fs-xs); font-weight: 600; }
 .pop-filter-btn {
   flex: none; border: 1.5px solid var(--ucg-navy); border-radius: var(--radius-btn); background: var(--ucg-white);

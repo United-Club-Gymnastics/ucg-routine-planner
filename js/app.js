@@ -279,6 +279,26 @@ document.addEventListener('keydown', (ev) => {
 const discChip = (e) =>
   `<span class="chip chip-${e.disc}">${esc(DISCIPLINES[e.disc].name)} · ${esc(levelInfo(e.disc, e.level)?.short || '')}</span>`;
 
+function athListMarkup() {
+  const q = state.athQuery.trim().toLowerCase();
+  const list = sortedAthletes().filter((x) => !q || `${x.name} ${x.club}`.toLowerCase().includes(q));
+  return `${list
+    .map(
+      (x) => `<button type="button" role="option" class="ath-option${x.id === state.athleteId ? ' active' : ''}" data-ath="${esc(x.id)}" aria-selected="${x.id === state.athleteId}">
+          <span class="ath-option-top"><span class="ath-option-name">${esc(x.name || 'Unnamed athlete')}</span><span class="ath-option-club">${esc(x.club || '')}</span></span>
+          <span class="chips">${x.entries.map(discChip).join('')}</span>
+        </button>`
+    )
+    .join('')}
+    ${list.length ? '' : `<p class="ath-none">${state.athletes.length ? 'No athletes match.' : 'No athletes yet.'}</p>`}`;
+}
+function bindAthOptions(host) {
+  $$('[data-ath]', host).forEach((b) => (b.onclick = () => {
+    selectAthlete(b.dataset.ath);
+    closeAthletePicker();
+  }));
+}
+
 function renderAthletePicker() {
   const host = $('#athlete-picker');
   if (!host) return;
@@ -287,8 +307,6 @@ function renderAthletePicker() {
     host.innerHTML = '';
     return;
   }
-  const q = state.athQuery.trim().toLowerCase();
-  const list = sortedAthletes().filter((x) => !q || `${x.name} ${x.club}`.toLowerCase().includes(q));
   host.innerHTML = `
     <button type="button" class="ath-button" id="ath-button" aria-haspopup="listbox" aria-expanded="${state.athOpen}" aria-label="Athlete: ${esc(a ? a.name || 'Unnamed athlete' : 'none yet')}. ${state.athletes.length} in all. Switch athlete">
       <span class="ath-current">${esc(a ? a.name || 'Unnamed athlete' : 'No athletes yet')}</span>
@@ -296,44 +314,29 @@ function renderAthletePicker() {
     </button>
     <div class="ath-pop" ${state.athOpen ? '' : 'hidden'}>
       <div class="ath-search"><input id="ath-search" type="search" placeholder="Search name or club" aria-label="Search athletes" value="${esc(state.athQuery)}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" /></div>
-      <div class="ath-list" role="listbox" aria-label="Athletes">
-        ${list
-          .map(
-            (x) => `<button type="button" role="option" class="ath-option${x.id === state.athleteId ? ' active' : ''}" data-ath="${esc(x.id)}" aria-selected="${x.id === state.athleteId}">
-              <span class="ath-option-top"><span class="ath-option-name">${esc(x.name || 'Unnamed athlete')}</span><span class="ath-option-club">${esc(x.club || '')}</span></span>
-              <span class="chips">${x.entries.map(discChip).join('')}</span>
-            </button>`
-          )
-          .join('')}
-        ${list.length ? '' : `<p class="ath-none">${state.athletes.length ? 'No athletes match.' : 'No athletes yet.'}</p>`}
-      </div>
+      <div class="ath-list" role="listbox" aria-label="Athletes">${athListMarkup()}</div>
       <div class="ath-foot"><button type="button" class="btn btn-primary btn-sm btn-block" id="ath-add">Add athlete</button>${canImport() ? '<button type="button" class="btn btn-ghost btn-sm btn-block" id="ath-import">Bring over UCG Infinity routines</button>' : ''}${a ? `<button type="button" class="ath-delete" id="delete-athlete">${ICON_TRASH}<span>Delete ${esc(a.name || 'this athlete')}</span></button>` : ''}</div>
     </div>`;
   $('#ath-button').onclick = () => {
     state.athOpen = !state.athOpen;
     state.athQuery = '';
     renderAthletePicker();
-    if (state.athOpen) $('#ath-search')?.focus();
+    // Phones: show the list first; the keyboard would cover it (tap the search box to type).
+    if (state.athOpen && !isPhone()) $('#ath-search')?.focus();
   };
   const search = $('#ath-search');
   if (search) {
     search.oninput = () => {
       state.athQuery = search.value;
-      const pos = search.selectionStart;
-      renderAthletePicker();
-      const s2 = $('#ath-search');
-      s2.focus();
-      s2.setSelectionRange(pos, pos);
+      $('.ath-list', host).innerHTML = athListMarkup();
+      bindAthOptions(host);
     };
     search.onkeydown = (ev) => {
       if (ev.key === 'Escape') closeAthletePicker();
       if (ev.key === 'Enter') $('.ath-option')?.click();
     };
   }
-  $$('[data-ath]', host).forEach((b) => (b.onclick = () => {
-    selectAthlete(b.dataset.ath);
-    closeAthletePicker();
-  }));
+  bindAthOptions(host);
   $('#delete-athlete')?.addEventListener('click', () => {
     closeAthletePicker();
     removeAthlete();
@@ -513,12 +516,19 @@ async function removeAthlete() {
   if (!a || !confirm(`Delete ${a.name || 'this athlete'} and all of their routines? This can't be undone.`)) return;
   clearTimeout(saveTimers.get(a.id)); // a late save would bring it back
   saveTimers.delete(a.id);
-  await store.deleteAthlete(a.id);
+  // Off the screen straight away: with no signal the delete only confirms once the
+  // connection is back, and waiting for that looked like nothing happened.
   state.athletes = state.athletes.filter((x) => x.id !== a.id);
   const next = sortedAthletes()[0];
   state.athleteId = next?.id ?? null;
   state.entryId = next?.entries[0]?.id ?? null;
   renderAll();
+  try {
+    await store.deleteAthlete(a.id);
+  } catch (err) {
+    console.error(err);
+    setStatus(`Could not delete ${a.name || 'the athlete'}. Check your connection.`, 'error');
+  }
 }
 
 // ---- Sign in ----------------------------------------------------------------
@@ -1848,13 +1858,17 @@ function visibleArea() {
 const isPhone = () => matchMedia('(max-width: 640px), (pointer: coarse)').matches;
 
 // Phones: scroll the skill box up under the header so the list fits below it, above
-// the keyboard (the usual pattern for a search box with suggestions on mobile). Also
-// when the phone's own scroll to the focused box left it behind the pinned header.
+// the keyboard (the usual pattern for a search box with suggestions on mobile), also
+// after the phone's own scroll to the focused box (which can leave it behind the header).
 function makeRoom() {
   if (!picker.input || !isPhone()) return;
   const r = picker.input.getBoundingClientRect();
   const { top, bottom } = visibleArea();
-  if (bottom - r.bottom < 260 || r.top < top) window.scrollBy({ top: r.top - top - 8 });
+  // Just opened (keyboard sliding up): right up to the top, so the list gets all the room
+  // down to the keyboard. Later (e.g. the toolbar resizing as the page scrolls), only when
+  // the list has no room or the box is hidden, so it doesn't fight the gymnast's scrolling.
+  const want = justOpened() ? Math.abs(r.top - top - 8) > 2 : bottom - r.bottom < 260 || r.top < top;
+  if (want) window.scrollBy({ top: r.top - top - 8 });
 }
 // Just after the list opens, the keyboard is still sliding up and the phone scrolls the
 // page, which can briefly hide the box: that isn't the gymnast scrolling away.
@@ -1875,10 +1889,17 @@ function placePicker() {
   const below = bottom - r.bottom - 8;
   const above = r.top - top - 8;
   // Below the box unless there's clearly more room above (never on phones: there the box is moved up instead).
-  const up = !isPhone() && below < 240 && above > below;
-  const maxHeight = Math.max(120, Math.min(380, up ? above : below));
-  Object.assign(picker.el.style, { left: `${left}px`, width: `${w}px`, maxHeight: `${maxHeight}px`, bottom: '' });
-  picker.el.style.top = up ? `${Math.max(top, r.top - 4 - Math.min(picker.el.scrollHeight, maxHeight))}px` : `${r.bottom + 4}px`;
+  const phone = isPhone();
+  const up = !phone && below < 240 && above > below;
+  // Phones: the list fills the space down to the keyboard.
+  const maxHeight = phone ? Math.max(120, below) : Math.max(120, Math.min(380, up ? above : below));
+  // Phones: the list sits in the page right under its box (position: absolute), so it stays
+  // attached however iOS pans the screen for the keyboard; a fixed list can end up over the box.
+  picker.el.classList.toggle('in-page', phone);
+  const dx = phone ? scrollX : 0;
+  const dy = phone ? scrollY : 0;
+  Object.assign(picker.el.style, { left: `${left + dx}px`, width: `${w}px`, maxHeight: `${maxHeight}px`, bottom: '' });
+  picker.el.style.top = up ? `${Math.max(top, r.top - 4 - Math.min(picker.el.scrollHeight, maxHeight))}px` : `${r.bottom + 4 + dy}px`;
 }
 
 function pickSkill(i) {
