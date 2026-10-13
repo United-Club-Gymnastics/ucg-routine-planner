@@ -341,6 +341,7 @@ EXCLUDE = {
     "tt-if-tu-5", "tt-if-tu-7",  # pass 2 has fewer than 8 skills
     "tt-if-tu-9",  # pass 2: 7 skills, a 0.1 skill and 3.0 DD (max 2.9)
     "tt-if-tu-10",  # pass 2 is 3.0 DD (max 2.9)
+    "tt-if-tu-6", "tt-if-tu-8",  # pass 2 opens with a front salto step-out (1 salto, as the dismount)
 }
 
 

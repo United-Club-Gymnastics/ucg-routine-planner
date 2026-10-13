@@ -228,6 +228,8 @@ function drawEventPage(doc, fonts, logo, athlete, event, r) {
   });
 
   // ---- Totals row
+  // An event with no skills prints a blank sheet to fill in by hand, not a 0.00 start value.
+  const empty = !r.rows.length;
   const totals = [
     ['Execution', '10.0'],
     ['Total Difficulty', fmt(r.difficulty)],
@@ -235,7 +237,7 @@ function drawEventPage(doc, fonts, logo, athlete, event, r) {
     ['Apparatus Bonus', fmt(r.eventBonus)],
     [`Skills short of ${MIN_SKILLS}`, fmt(r.shortBy)],
     ['Start Value', r.startValue.toFixed(2)],
-  ];
+  ].map(([label, val]) => [label, empty ? '' : val]);
   const ops = ['+', '+', '+', '-', '='];
   const bw = 82;
   const gap = 19.6;

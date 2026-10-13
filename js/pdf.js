@@ -384,7 +384,9 @@ async function ttPage(doc, fonts, athlete, entry, evId) {
   const lists = evId === 'tu' || evId === 'dmt' ? (entry.passes?.[evId] || []).map((p) => p.skills || []) : [entry.routines?.[evId] || []];
   const [x0, x1, x2, x3] = C.cols;
   C.passes.forEach((P, pi) => {
-    (lists[pi] || []).filter((s) => s.name || s.notation).slice(0, P.n).forEach((s, i) => {
+    // Each skill on its own row of the card (a row left blank stays blank).
+    (lists[pi] || []).slice(0, P.n).forEach((s, i) => {
+      if (!(s.name || s.notation)) return;
       const y = P.top + i * P.h + P.h / 2 + 4;
       // Double mini: say whether the first skill is a mounter or a spotter.
       const role = evId === 'dmt' && i === 0 && s === lists[pi][0] ? ` (${entry.passes.dmt[pi].start || 'mounter'})` : '';
@@ -489,7 +491,7 @@ async function xcelPages(doc, fonts, athlete, entry, events, score) {
       ...(entry.level === 'sapphire' ? [['+ Bonus', fmt(r.bonus)]] : []),
       ['- SRs', fmt(r.srMissing * 0.5)],
       ['- VPs', fmt(r.vpMissing)],
-      ['- Restricted', fmt(r.restricted * 0.5)],
+      ...(entry.level === 'sapphire' ? [] : [['- Restricted', fmt(r.restricted * 0.5)]]), // no restrictions at Sapphire
       ['= Start value', r.sv == null ? '' : fmt(r.sv)],
     ];
     const bw = 516 / parts.length;
@@ -540,7 +542,7 @@ export async function exportEntryPdf(athlete, entry, events) {
     }
   }
   if (!doc.getPageCount()) throw new Error('There is no worksheet for this event.');
-  doc.setTitle(`${athlete.name || 'Athlete'} - UCG ${DISCIPLINES[entry.disc].name} ${levelInfo(entry.disc, entry.level).name}`);
+  doc.setTitle(`${athlete.name || 'Athlete'} - UCG ${DISCIPLINES[entry.disc].name} ${levelInfo(entry.disc, entry.level).name.replace(/^UCG /, '')}`);
   return doc.save();
 }
 
@@ -549,7 +551,7 @@ export function downloadPdf(bytes, athlete, entry, events) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  const lvl = levelInfo(entry.disc, entry.level).short;
+  const lvl = levelInfo(entry.disc, entry.level).short.replace(/\.$/, ''); // "Inter.": no "..pdf"
   const suffix = events.length === 1 ? ` ${eventInfo(entry.disc, events[0]).short}` : '';
   a.download = `${(athlete.name || 'Athlete').trim()} ${DISCIPLINES[entry.disc].name} ${lvl}${suffix}.pdf`;
   document.body.appendChild(a);

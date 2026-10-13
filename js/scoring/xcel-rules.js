@@ -383,9 +383,10 @@ export function sapphireBonus(ev, items, key) {
     if (it.letter === 'C' && !seenC.has(key(it))) {
       seenC.add(key(it));
       parts.push({ kind: 'difficulty', at: it.idx, rows: [it.idx], text: `"C" ${it.name}` });
-    } else if (it.letter === 'D' && !dUsed) {
+    } else if (atLeast(it, 'D') && !dUsed) {
+      // "One D": an E (no restrictions at UCG Sapphire) earns it too.
       dUsed = true;
-      parts.push({ kind: 'difficulty', at: it.idx, rows: [it.idx], text: `"D" ${it.name}` });
+      parts.push({ kind: 'difficulty', at: it.idx, rows: [it.idx], text: `"${it.letter}" ${it.name}` });
     }
   }
   const seenPair = new Set();

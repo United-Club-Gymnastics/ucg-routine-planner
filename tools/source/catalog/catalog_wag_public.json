@@ -13138,6 +13138,18 @@
        "turn_position": "arabesque"
       }
      }
+    ],
+    "WG-WAG-2025": [
+     {
+      "rid": "WGW-BB-3.302-1",
+      "short_name": "Full turn in back attitude",
+      "number": "3.302",
+      "variant": 1,
+      "value": "C=0.3",
+      "element_group": "3",
+      "eponym": "",
+      "relation": "stand_in"
+     }
     ]
    }
   },
@@ -29964,6 +29976,18 @@
        ]
       }
      }
+    ],
+    "WG-WAG-2025": [
+     {
+      "rid": "WGW-FX-1.101-1",
+      "short_name": "Split leap",
+      "number": "1.101",
+      "variant": 1,
+      "value": "A=0.1",
+      "element_group": "1",
+      "eponym": "",
+      "relation": "stand_in"
+     }
     ]
    }
   },
@@ -32417,6 +32441,20 @@
         "inverted"
        ]
       }
+     }
+    ],
+    "UCG-MASTERS-WAG": [
+     {
+      "rid": "UCGM-wag-FX-handstand-any-entry-no-hold-forward-roll-out",
+      "short_name": "Handstand (any entry, no hold) forward roll out",
+      "number": "4",
+      "variant": 1,
+      "value": "ME",
+      "element_group": "III",
+      "eponym": "",
+      "note": "",
+      "video": "https://www.youtube.com/watch?v=09tK3j1V9Xc",
+      "page": 5
      }
     ]
    }

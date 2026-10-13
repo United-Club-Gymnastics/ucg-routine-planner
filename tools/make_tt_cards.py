@@ -22,8 +22,9 @@ FIXES = {
         (["Max Skill DD:", "1 @ 0.6 or 0.7"], ["Max Skill DD: 0.5,", "plus one at 0.6-0.7"], 9.5),
         (["Min. 2 Saltos"], ["2 of 4 skills", "at 0.5 DD or more"], 11),
     ],
-    3: [(["Any skill can be done 2x per pass if it", "has different entry/exit"],
-         ["Handsprings/whips: any number; fulls: 3 per pass;", "other skills: 1 repeat with a different entry"], 10)],
+    3: [(["Pass can have 4-7 skills for 10.0 start", "Any skill can be done 2x per pass if it", "has different entry/exit"],
+         ["Pass can have 4-7 skills for 10.0 start", "Handsprings/whips: any number; fulls: 3 per pass;",
+          "other skills: 1 repeat with a different entry"], 10)],
 }
 
 

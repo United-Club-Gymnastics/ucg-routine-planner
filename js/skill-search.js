@@ -103,6 +103,8 @@ function add(disc, list, index = {}) {
     if (info.t) s.tags = info.t; // what the skill is (acro, salto, circle ...): Xcel special requirements
     if (info.m) s.markers = info.m; // marks printed in the Code, e.g. "D" = counts as dance
     s.tokens = tokens(`${s.label} ${s.note || ''} ${s.notation || ''} ${s.aka.join(' ')} ${s.box}`);
+    // WG names say only "flic-flac": "back handspring" (searched as "back flicflac handspring") finds them too.
+    if (s.tokens.includes('flicflac') && !s.tokens.includes('fwd')) s.tokens.push(...['bwd', 'handspring'].filter((w) => !s.tokens.includes(w)));
     s.nameTokens = tokens(`${s.label} ${s.notation || ''}`); // ranking: a match in the name beats one only in the note
     s.akaTokens = s.aka.map((a) => tokens(a)); // other names count as the name
     s.boxTokens = tokens(s.box); // "7.104" or "I.75" finds the skill

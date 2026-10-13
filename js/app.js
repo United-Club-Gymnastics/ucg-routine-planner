@@ -17,6 +17,7 @@ import {
   fmt,
   hasContent,
   levelInfo,
+  maxRows,
   newEntry,
   normalizeEntry,
   scoreEntry,
@@ -282,8 +283,10 @@ const discChip = (e) =>
   `<span class="chip chip-${e.disc}">${esc(DISCIPLINES[e.disc].name)} · ${esc(levelInfo(e.disc, e.level)?.short || '')}</span>`;
 
 function athListMarkup() {
-  const q = state.athQuery.trim().toLowerCase();
-  const list = sortedAthletes().filter((x) => !q || `${x.name} ${x.club}`.toLowerCase().includes(q));
+  // Accents don't matter: "emile" finds Émile.
+  const fold = (t) => t.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '');
+  const q = fold(state.athQuery.trim());
+  const list = sortedAthletes().filter((x) => !q || fold(`${x.name} ${x.club}`).includes(q));
   return `${list
     .map(
       (x) => `<button type="button" role="option" class="ath-option${x.id === state.athleteId ? ' active' : ''}" data-ath="${esc(x.id)}" aria-selected="${x.id === state.athleteId}">
@@ -504,6 +507,7 @@ async function addAthlete() {
   state.athleteId = a.id;
   state.entryId = null;
   state.showAdd = true;
+  writePref('rp-athlete', a.id);
   renderAll();
   $('#f-name')?.focus();
   try {
@@ -869,7 +873,7 @@ const shortGroup = (label) => SHORT_GROUPS[label] || label;
 
 function routineHelp(e, ev, spec) {
   if (spec.columns === 'dd') return 'List the routine in order. Search the T&T skill list (it fills in the FIG shorthand and DD), or type your own skill and its DD.';
-  if (spec.family === 'xcel') return `List the routine in order. Search the Xcel skill list (it fills in the value), or type your own skill and pick its value. To mark directly connected skills, tap <strong>Connect skills</strong>, then tap between two skills: connected skills are joined into one block. The planner checks the value parts and restricted skills for ${esc(levelInfo(e.disc, e.level).name)}, ticks the special requirements the listed skills meet${e.level === 'sapphire' ? ' and works out the bonus' : ''}. An element earns credit at most twice, the second time only in a different connection.`;
+  if (spec.family === 'xcel') return `List the routine in order. Search the Xcel skill list (it fills in the value), or type your own skill and pick its value. To mark directly connected skills, tap <strong>Connect skills</strong>, then tap between two skills: connected skills are joined into one block. The planner checks the value parts${e.level === 'sapphire' ? '' : ' and restricted skills'} for ${esc(levelInfo(e.disc, e.level).name)}, ticks the special requirements the listed skills meet${e.level === 'sapphire' ? ' and works out the bonus' : ''}. An element earns credit at most twice, the second time only in a different connection.`;
   const max = spec.maxCounting;
   const more = e.disc === 'mag' ? ', with at most 4 from one element group' : '';
   return `List the whole routine in order, and drag the grip to reorder. <strong>Each skill counts only once</strong>. Your ${max} highest-value skills count toward difficulty${more}. Counting skills are highlighted; repeats and non-counting skills are shaded gray and flagged.${spec.links ? ' To mark connected skills, tap <strong>Connect skills</strong>, then tap between two skills.' : ''}`;
@@ -1408,7 +1412,7 @@ function onClick(ev) {
   if (add) {
     const evId = add.dataset.addSkill;
     const list = rowsOf(e, evId, add.dataset.pass);
-    if (list.length >= MAX_ROWS) return;
+    if (list.length >= maxRows(e, evId, add.dataset.pass, MAX_ROWS)) return;
     list.push(e.disc === 'tt' ? blankTT() : blankSkill());
     editing = rowKey(evId, add.dataset.pass, list.length - 1);
     renderRows(evId, add.dataset.pass, { row: list.length - 1, part: 'name' });
@@ -1448,6 +1452,8 @@ function onClick(ev) {
     const i = Number(remove.dataset.idx);
     const before = JSON.stringify(list);
     const [gone] = list.splice(i, 1);
+    // The skill before it was connected to the removed one, not to the one now following.
+    if (i > 0) list[i - 1].link = false;
     normalizeEntry(e);
     editing = null;
     renderRows(evId, pass, { row: Math.min(i, list.length - 1), part: isPhone() ? null : 'name' });
@@ -1615,7 +1621,7 @@ function scoreTip(e, ev, label) {
     if (label === 'Execution') return 'Every vault starts from 10.0 for execution.';
     if (label === 'D score') return "The vault's difficulty value from the vault table.";
     if (label === 'Age bonus') return `Masters: added by age decade (${decade}gymnasts get +${fmt(vaultAgeBonus(e.disc, e.decade))}).`;
-    if (label === 'Start value') return fam === 'xcel' ? "From the Xcel vault chart for this level." : 'Execution + D score' + (L.masters ? ' + age bonus.' : '.');
+    if (label === 'Start value') return fam === 'xcel' ? (e.options?.vt?.altBoard && e.level === 'gold' ? "The Xcel vault chart value, with the alternative springboard (9.5)." : "From the Xcel vault chart for this level.") : 'Execution + D score' + (L.masters ? ' + age bonus.' : '.');
     return '';
   }
   const tips = {
@@ -2038,6 +2044,9 @@ function flagFor(it, spec) {
     if (it.repeatWhy === 'connection') return ['Same connection', `Same element and same connection as skill ${n}: the second time only earns value-part credit in a different connection (a different skill before or after it, or on floor a different pass)`];
     if (it.repeatWhy === 'third') return ['Third time', 'An element earns value-part credit at most twice in a routine'];
     if (it.repeatWhy === 'pass') return ['Same pass', `This pass repeats the one with skill ${n}: flight elements with hand support only earn credit again in a different pass`];
+    if (it.repeatWhy === 'dmtFirst' || it.repeatWhy === 'dmtDismount') return ['Repeat', `Repeats pass 1's ${it.repeatWhy === 'dmtFirst' ? 'first skill' : 'dismount'} in the same position: no difficulty`];
+    if (it.repeatWhy === 'fulls') return ['4th full', 'Fulls earn difficulty at most 3 times per pass'];
+    if ('dd' in it) return [`Repeat of Skill ${n}`, `Repeat of skill ${n}: a repeated skill gets no difficulty`];
     return [`Repeat of Skill ${n}`, `Repeat of skill ${n}: each element only earns value-part credit once`];
   }
   if (it.status === 'restricted') return ['Restricted', `${it.restrictWhy || 'Above this level’s allowed difficulty'}: −0.50, and no value part credit`];
@@ -2140,6 +2149,8 @@ function updateComputed() {
       r.passes.forEach((items, p) => {
         updateRows($(`[data-routine="${ev.id}"][data-pass="${p}"]`, card), items, spec, e.passes[ev.id][p].skills);
         $(`[data-pass-dd="${p}"]`, card).textContent = `DD ${fmt(r.sums[p])}`;
+        const addBtn = $(`[data-add-skill="${ev.id}"][data-pass="${p}"]`, card);
+        if (addBtn) addBtn.hidden = e.passes[ev.id][p].skills.length >= maxRows(e, ev.id, p, MAX_ROWS);
       });
     } else {
       updateRows($(`[data-routine="${ev.id}"]`, card), r.items, spec, e.routines[ev.id]);
@@ -2147,7 +2158,7 @@ function updateComputed() {
       const listed = r.items.filter((it) => it.status !== 'blank').length;
       const count = $('[data-calc="count"]', card);
       if (count) count.textContent = spec.columns === 'dd' ? `${listed} skill${listed === 1 ? '' : 's'} listed` : spec.maxCounting ? `${counting} of ${spec.maxCounting} counting · ${listed} listed` : `${listed} listed`;
-      $(`[data-add-skill="${ev.id}"]`, card).hidden = e.routines[ev.id].length >= MAX_ROWS;
+      $(`[data-add-skill="${ev.id}"]`, card).hidden = e.routines[ev.id].length >= maxRows(e, ev.id, null, MAX_ROWS);
     }
 
     for (const o of spec.options) {

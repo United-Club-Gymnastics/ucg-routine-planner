@@ -152,7 +152,7 @@ export function scoreEvent(entry, evId) {
       if (v) Object.assign(out, { sv: v.sv, vault: v, totals: [['Execution', 10], ['D score', v.dv]] });
     } else if (fam === 'xcel') {
       const v = wag.scoreXcelVault(level, entry.vault, { altBoard: !!opts.altBoard });
-      if (v) Object.assign(out, { sv: v.sv, vault: v, totals: [['Start value', v.sv]] });
+      if (v) Object.assign(out, { sv: v.sv, vault: v, totals: v.sv !== v.chart ? [['Vault chart', v.chart], ['Alternative springboard', v.sv - v.chart]] : [] });
     } else if (fam === 'wagMasters') {
       const v = wag.scoreWagMastersVault(entry.vault, ctx);
       if (v) Object.assign(out, { sv: v.sv, vault: v, totals: [['Execution', 10], ['D score', v.dv], ['Age bonus', v.ageBonus]] });
@@ -232,6 +232,17 @@ export function newEntry(id, disc, level) {
 export const blankSkill = () => ({ name: '', letter: '', eg: '' });
 export const blankTT = () => ({ name: '', notation: '', dd: '' });
 
+/**
+ * Most rows an event can hold. T&T: the card's rows (trampoline 10, double mini 2 per pass,
+ * tumbling the level's pass size), so a routine always fits its printed card.
+ */
+export function maxRows(entry, evId, pass, fallback = 20) {
+  if (entry.disc !== 'tt') return fallback;
+  if (evId === 'tu') return tt.PASS_SIZES.tu[entry.level]?.[Number(pass) || 0]?.[1] ?? fallback;
+  if (evId === 'dmt') return 2;
+  return tt.TRAMP_SKILLS;
+}
+
 export function minRows(entry, ev) {
   const spec = eventSpec(entry, ev.id);
   if (ev.kind === 'tramp') return tt.TRAMP_SKILLS;
@@ -278,6 +289,8 @@ export function applyExample(e, ex) {
   } else {
     e.routines[ex.event] = (ex.skills || []).map((s) => ({ ...(ev.kind === 'tramp' ? blankTT() : blankSkill()), ...s }));
   }
+  markFromList(e, ex.event);
+  resetSrTicks(e, ex.event);
   normalizeEntry(e);
 }
 
@@ -322,5 +335,20 @@ export function copyEvent(from, to, evId) {
     delete to.vaultFlag;
   } else if (ev.kind === 'passes') to.passes[evId] = clone(from.passes?.[evId] || []);
   else to.routines[evId] = clone(from.routines?.[evId] || []);
+  resetSrTicks(to, evId);
   normalizeEntry(to);
+}
+
+// A new routine in an event starts from the detected special requirements: ticks and
+// unticks the coach made for the routine it replaces don't carry over.
+function resetSrTicks(e, evId) {
+  const o = e.options?.[evId];
+  if (o) { delete o.srSet; delete o.sr; }
+}
+
+// Skills that came from a list (an example's skills) don't filter the picker by their
+// value when they are retyped, the same as skills picked by hand.
+function markFromList(e, evId) {
+  const rows = [...(e.routines?.[evId] || []), ...(e.passes?.[evId] || []).flatMap((p) => p.skills || [])];
+  for (const s of rows) if (s.skillId) s.fromList = true;
 }
