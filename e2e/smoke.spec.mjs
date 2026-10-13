@@ -33,6 +33,30 @@ test('local mode: add an athlete and a level, pick a skill, export a PDF', async
   expect(errors).toEqual([]);
 });
 
+test('local mode: copy one event from another level into a level already started', async ({ page }) => {
+  const errors = watchErrors(page);
+  page.on('dialog', (d) => d.accept());
+  await page.goto('./?local');
+  await page.locator('.empty-editor').getByRole('button', { name: 'Add athlete' }).click();
+  await page.locator('#f-name').fill('Copy Test');
+  await page.getByRole('button', { name: 'Xcel Gold' }).click();
+  await page.getByRole('tab', { name: /Beam/ }).click();
+  await page.locator('input.skill-input[data-ev="bb"]').first().fill('back walkover');
+  await page.locator('#skill-pop .pop-opt').first().click();
+  // A second level with floor started: beam copies over from Gold, floor is left alone.
+  await page.locator('#toggle-add').click();
+  await page.getByRole('button', { name: 'Xcel Platinum' }).click();
+  await page.getByRole('tab', { name: /Floor/ }).click();
+  await page.locator('input.skill-input[data-ev="fx"]').first().fill('round off');
+  await page.locator('#skill-pop .pop-opt').first().click();
+  await page.getByRole('tab', { name: /Beam/ }).click();
+  await page.locator('select[data-example="bb"]').selectOption({ label: 'Xcel Gold' });
+  await expect(page.locator('input.skill-input[data-ev="bb"]').first()).toHaveValue(/walkover/i);
+  await expect(page.locator('.revalue-notice')).toContainText('Copied Balance Beam from Xcel Gold');
+  await expect(page.locator('input.skill-input[data-ev="fx"]').first()).toHaveValue(/round/i);
+  expect(errors).toEqual([]);
+});
+
 // Without the offline copy (a private window, say): the page's PDF code is gone from the server.
 test.describe('stale page', () => {
   test.use({ serviceWorkers: 'block' });

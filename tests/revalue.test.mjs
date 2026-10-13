@@ -5,7 +5,7 @@ import { loadDiscipline } from '../js/skill-search.js';
 
 // Skill lists load per discipline (as the app does before showing an athlete).
 await Promise.all(['wag', 'mag', 'tt'].map(loadDiscipline));
-import { newEntry, copyRoutines, scoreEntry } from '../js/model.js';
+import { newEntry, copyEvent, copyRoutines, eventHasContent, scoreEntry } from '../js/model.js';
 import { revalueEntry } from '../js/revalue.js';
 import { CATALOG as WAG } from '../js/data/catalog-wag.js';
 import { CATALOG as MAG } from '../js/data/catalog-mag.js';
@@ -93,4 +93,25 @@ test('Masters MAG "GE" (gymnastics element) is a Miscellaneous skill, valued by 
   const { searchSkills } = await import('../js/skill-search.js');
   const s = searchSkills('mag', 'hb', 'hopping grip change').find((x) => x.src === 'UCGM');
   assert.equal(s.value, 'Misc');
+});
+
+test('One event copied from another level: only that event is replaced and re-valued', () => {
+  const from = newEntry('a', 'wag', 'gold');
+  from.routines.bb = [pick('USAG-BB-1.101-2', 'Leap mount lowering into scale', 'A')];
+  from.routines.fx = [pick('USAG-BB-1.101-2', 'Should not be copied', 'A')];
+  from.vault = 'x';
+  const to = newEntry('b', 'wag', 'masters');
+  to.decade = '40';
+  to.routines.fx = [{ name: 'Kept as it was', letter: 'B', eg: '' }];
+  to.routines.bb = [{ name: 'Replaced', letter: 'C', eg: '' }];
+  copyEvent(from, to, 'bb');
+  const summary = revalueEntry(to, 'gold', WAG, from.vault, ['bb']);
+  assert.equal(to.routines.bb[0].skillId, 'WGW-BB-1.101-1');
+  assert.ok(!to.routines.bb.some((r) => r.name === 'Replaced'));
+  assert.equal(to.routines.fx[0].name, 'Kept as it was');
+  assert.ok(!to.routines.fx[0].check); // not re-valued: not flagged as typed in
+  assert.equal(to.vault, '');
+  assert.deepEqual(summary, { exact: 1, approximate: 0, notCredited: 0, typed: 0, vault: '' });
+  assert.equal(to.revalued.event, 'bb');
+  assert.ok(eventHasContent(to, 'bb') && !eventHasContent(to, 'vt'));
 });
