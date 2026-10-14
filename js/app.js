@@ -1887,7 +1887,7 @@ function renderPicker(query) {
       html.push(`<div class="pop-head" role="presentation">${esc(head)}</div>`);
       lastHead = head;
     }
-    const meta = e.disc === 'tt' ? `${esc(s.notation || '')} · ${fmt(s.dd)}` : `${esc(s.value)}${s.eg ? ` · EG ${ROMAN[s.eg]}` : s.mgroup ? ` · ${ROMAN[s.mgroup]}` : s.group ? ` · G${s.group}` : ''}`;
+    const meta = e.disc === 'tt' ? `${esc(s.notation || '')} · ${fmt(s.dd)}` : `${esc(s.value || 'No value')}${s.eg ? ` · EG ${ROMAN[s.eg]}` : s.mgroup ? ` · ${ROMAN[s.mgroup]}` : s.group ? ` · G${s.group}` : ''}`;
     html.push(`
       <div class="pop-opt${i === picker.active ? ' active' : ''}" role="option" id="pop-opt-${i}" data-skill="${i}" aria-selected="${i === picker.active}"${s.note ? ` title="Note: ${esc(s.note)}"` : ''}>
         <span class="src-badge ${s.src.toLowerCase()}" title="${esc(boxTitle(s))}">${SRC_SHORT[s.src] || s.src}</span>
@@ -2005,6 +2005,7 @@ function pickSkill(i) {
   else {
     const letters = eventSpec(e, evId).letters;
     if (letters.includes(s.value)) row.letter = s.value;
+    else if (!s.value) row.letter = ''; // a listed skill with no value (Sapphire / Infinity no-value cast)
     if (fam === 'mag') row.eg = s.eg ? String(s.eg) : '';
     if (fam === 'infinity' || fam === 'xcel') row.eg = s.group ? String(s.group) : '';
     // WAG Masters: UCG Masters skills carry their own condensed group; WG groups are mapped.
@@ -2058,7 +2059,7 @@ function flagFor(it, spec) {
   if (it.reason === 'offLevel') return ['Not at this level', "Not allowed at this level (search hides it), so it earns no credit: no value, element group, requirement or bonus"];
   if (it.reason === 'onlyOne') return ['Only one allowed', 'Only one tap swing or underswing with counterswing is allowed at Platinum, so this one earns no credit'];
   if (it.reason === 'extraVp') return ['Extra', 'Not needed for this level’s value parts'];
-  if (it.reason === 'noValue') return ['', ''];
+  if (it.reason === 'noValue') return it.skillId ? ['No value', 'This skill has no value, so it adds nothing to the D score'] : ['', ''];
   return [`Not in top ${spec.maxCounting}`, `Not in your top ${spec.maxCounting}, so it doesn't count toward difficulty`];
 }
 

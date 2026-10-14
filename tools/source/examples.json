@@ -6596,8 +6596,8 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to High Bar",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
@@ -6762,8 +6762,8 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
@@ -6820,8 +6820,8 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
@@ -6886,8 +6886,8 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
@@ -7898,8 +7898,8 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
@@ -7956,8 +7956,8 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
@@ -8022,8 +8022,8 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
@@ -8080,16 +8080,16 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
    },
    {
     "sheetName": "Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -8162,8 +8162,8 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
@@ -8228,8 +8228,8 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
@@ -8294,8 +8294,8 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
@@ -8368,16 +8368,16 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
    },
    {
     "sheetName": "Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -9500,8 +9500,8 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
@@ -9542,16 +9542,16 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
    },
    {
     "sheetName": "Long Hang Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -9624,8 +9624,8 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
@@ -9690,16 +9690,16 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
    },
    {
     "sheetName": "Long Hang Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -9756,8 +9756,8 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
@@ -9814,16 +9814,16 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
    },
    {
     "sheetName": "Long Hang Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -9896,8 +9896,8 @@
    },
    {
     "sheetName": "Cast Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
@@ -9968,8 +9968,8 @@
    },
    {
     "sheetName": "Long Hang Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -11089,16 +11089,16 @@
    },
    {
     "sheetName": "Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
    },
    {
     "sheetName": "Long Hang Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -11155,16 +11155,16 @@
    },
    {
     "sheetName": "Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
    },
    {
     "sheetName": "Long Hang Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -11221,8 +11221,8 @@
    },
    {
     "sheetName": "Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
@@ -11287,16 +11287,16 @@
    },
    {
     "sheetName": "Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
    },
    {
     "sheetName": "Long Hang Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -11401,8 +11401,8 @@
    },
    {
     "sheetName": "Long Hang Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -11459,8 +11459,8 @@
    },
    {
     "sheetName": "Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
@@ -11489,16 +11489,16 @@
    },
    {
     "sheetName": "Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
    },
    {
     "sheetName": "Long Hang Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -11587,16 +11587,16 @@
    },
    {
     "sheetName": "Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
    },
    {
     "sheetName": "Long Hang Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -12896,16 +12896,16 @@
    },
    {
     "sheetName": "Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
    },
    {
     "sheetName": "Long Hang Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -12996,8 +12996,8 @@
    },
    {
     "sheetName": "Long Hang Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -13125,16 +13125,16 @@
    },
    {
     "sheetName": "Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
    },
    {
     "sheetName": "Long Hang Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -13211,8 +13211,8 @@
    },
    {
     "sheetName": "Long Hang Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -13269,8 +13269,8 @@
    },
    {
     "sheetName": "Long Hang Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -13302,16 +13302,16 @@
    },
    {
     "sheetName": "Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true
    },
    {
     "sheetName": "Long Hang Kip",
-    "name": "Jump to HB hang, kip",
-    "skillId": "USAG-UB-1.106-1a",
+    "name": "Long hang kip",
+    "skillId": "USAG-UB-1.101-3",
     "letter": "A",
     "eg": "1",
     "fromList": true
@@ -13379,8 +13379,8 @@
    },
    {
     "sheetName": "Squat On - Jump to HB",
-    "name": "Squat-on/stoop-on/straddle-on from cast",
-    "skillId": "USAG-UB-2.102-1",
+    "name": "Cast squat/stoop/straddle on, jump to HB",
+    "skillId": "USAG-UB-2.102-2",
     "letter": "A",
     "eg": "2",
     "fromList": true

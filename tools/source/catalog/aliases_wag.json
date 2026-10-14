@@ -5983,6 +5983,32 @@
   ],
   "UCGM-wag-forward-headspring": [
    "WAG-VT-0153"
+  ],
+  "USAG-UB-2.301-4": [
+   "WAG-UB-0382"
+  ],
+  "USAG-UB-1.101-3": [
+   "WAG-UB-0507"
+  ],
+  "USAG-UB-2.001-7": [
+   "WAG-UB-0508"
+  ],
+  "USAG-UB-2.102-2": [
+   "WAG-UB-0383",
+   "WAG-UB-0384",
+   "WAG-UB-0385"
+  ],
+  "USAG-BB-2.0 Gold-2": [
+   "WAG-BB-0542"
+  ],
+  "USAG-BB-2.0 Gold-3": [
+   "WAG-BB-0543"
+  ],
+  "USAG-BB-2.0 Platinum-2": [
+   "WAG-BB-0544"
+  ],
+  "USAG-BB-2.0 Platinum-3": [
+   "WAG-BB-0545"
   ]
  },
  "merged": {
