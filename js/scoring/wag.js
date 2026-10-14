@@ -76,6 +76,9 @@ export function scoreInfinity(event, skills = [], { eventBonus = false } = {}) {
   for (const it of items) it.condensed = it.eg ? condensedOf(event, it.eg) : null;
   markOnce(items);
   markOffLevel(items);
+  // A listed skill with no value (the Sapphire / Infinity no-value cast) shows in the routine
+  // but adds nothing: no difficulty, and it doesn't count toward the 6 skills.
+  for (const it of items) if (!it.status && it.skillId && !it.letter) Object.assign(it, { status: 'noncounting', reason: 'noValue' });
   const cand = items.filter((it) => !it.status);
   const counting = new Set([...cand].sort((a, b) => b.value - a.value || a.idx - b.idx).slice(0, INFINITY_MAX_SKILLS).map((it) => it.idx));
   for (const it of cand) {

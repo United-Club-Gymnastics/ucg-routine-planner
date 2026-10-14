@@ -142,7 +142,7 @@ function twoCircles(items, key) {
 
 // Beam/floor turn on one foot of at least `deg`.
 const turnOneFoot = (ev, it, deg) => group(it) === (ev === 'bb' ? 3 : 2) && !T(it).turn_two_feet && (T(it).turn_deg || 0) >= deg;
-const SPLIT = { bb: { silver: 90, gold: 120, plat: 120, diamond: 150, sapphire: 180 }, fx: { silver: 90, gold: 120, plat: 150, diamond: 150, sapphire: 180 } };
+const SPLIT = { bb: { silver: 90, gold: 120, plat: 120, diamond: 155, sapphire: 180 }, fx: { silver: 90, gold: 120, plat: 150, diamond: 150, sapphire: 180 } };
 const splitText = (deg) => `a split of at least ${deg}°`;
 // Beam dance series elements: Group 1 dance mounts, Group 2, Group 3 turns on one foot.
 const beamDance = (it) => (group(it) === 1 && (T(it).dance || it.skill?.markers?.includes('D'))) || group(it) === 2 || (group(it) === 3 && !T(it).turn_two_feet);

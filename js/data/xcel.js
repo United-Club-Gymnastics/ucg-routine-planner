@@ -39,7 +39,7 @@ export const XCEL_SR = {
   },
   diamond: {
     ub: ['Skill finishing in clear support at least 45° from vertical (not mount or dismount)', 'B or higher 360° circling skill (not mount or dismount)', 'Another B or higher skill: a turn, a 2nd circling skill, or a release', 'Salto or hecht dismount from the high bar (at least A), or any B dismount from the high bar'],
-    bb: ['At least a 1/1 turn on one foot', 'Dance series of two elements, and a leap or jump with at least a 150° split', 'Acro series with one skill through vertical, and an acro flight element', 'Salto or aerial dismount'],
+    bb: ['At least a 1/1 turn on one foot', 'Dance series of two elements, and a leap or jump with at least a 155° split', 'Acro series with one skill through vertical, and an acro flight element', 'Salto or aerial dismount'],
     fx: ['Two acro flight passes with two connected flight elements each, or one such pass and an isolated C salto', 'Two different saltos, one at least B', 'Dance passage: two different Group 1 elements, one a leap with at least a 150° split', 'B or higher turn on one foot'],
   },
   sapphire: {

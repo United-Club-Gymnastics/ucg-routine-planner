@@ -1069,6 +1069,18 @@
     "source": "USAG Xcel 2022-2028"
   },
   {
+    "number": "1.101",
+    "variant": 3,
+    "description": "Long hang kip",
+    "value": "A",
+    "eponym": "",
+    "element_group": "1",
+    "group_name": "Mounts",
+    "apparatus": "UB",
+    "source": "USAG Xcel 2022-2028",
+    "ucg_note": "Kip on the HB from a long hang within the routine; the kip mount is 1.106"
+  },
+  {
     "number": "1.201",
     "variant": 1,
     "description": "Glide kip, regrasp to HB",
@@ -1642,6 +1654,21 @@
     ]
   },
   {
+    "number": "2.001",
+    "variant": 7,
+    "description": "High cast, 21°+ off vertical (no value)",
+    "value": null,
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "Casts / Counterswings",
+    "apparatus": "UB",
+    "source": "USAG Xcel 2022-2028",
+    "divisions": [
+      "Sapphire"
+    ],
+    "ucg_note": "No value: listed so the routine shows it, but it adds nothing to the D score"
+  },
+  {
     "number": "2.002",
     "variant": 1,
     "description": "Cast with shoot-through",
@@ -1729,6 +1756,18 @@
     "source": "USAG Xcel 2022-2028"
   },
   {
+    "number": "2.301",
+    "variant": 4,
+    "description": "Cast handstand, Higgins ½ turn to L grip",
+    "value": "C",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "Casts / Counterswings",
+    "apparatus": "UB",
+    "source": "USAG Xcel 2022-2028",
+    "ucg_note": "Also to mixed-L grip"
+  },
+  {
     "number": "2.401",
     "variant": 1,
     "description": "Cast handstand with full or 1½ turn",
@@ -1772,6 +1811,17 @@
     "apparatus": "UB",
     "source": "USAG Xcel 2022-2028",
     "revised": true
+  },
+  {
+    "number": "2.102",
+    "variant": 2,
+    "description": "Cast squat/stoop/straddle on, jump to HB",
+    "value": "A",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "Casts / Counterswings",
+    "apparatus": "UB",
+    "source": "USAG Xcel 2022-2028"
   },
   {
     "number": "2.202",
@@ -9976,6 +10026,44 @@
     ]
   },
   {
+    "number": "2.0 Gold",
+    "variant": 2,
+    "description": "Straddle jump, 120°–135° (Gold)",
+    "value": "A",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "Leaps / Jumps / Hops",
+    "apparatus": "BB",
+    "source": "USAG Xcel 2022-2028",
+    "divisions": [
+      "Gold"
+    ],
+    "same_as": [
+      "USAG-BB-2.202-1"
+    ],
+    "forms_rule": "Division stand-in for the regular straddle jump in cross position.",
+    "forms_citation": "UCG WAG rules lead, Oct 2026"
+  },
+  {
+    "number": "2.0 Gold",
+    "variant": 3,
+    "description": "Sissonne, 120°–135° (Gold)",
+    "value": "A",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "Leaps / Jumps / Hops",
+    "apparatus": "BB",
+    "source": "USAG Xcel 2022-2028",
+    "divisions": [
+      "Gold"
+    ],
+    "same_as": [
+      "USAG-BB-2.207-1"
+    ],
+    "forms_rule": "Division stand-in for the regular sissonne.",
+    "forms_citation": "UCG WAG rules lead, Oct 2026"
+  },
+  {
     "number": "2.0 Platinum",
     "variant": 1,
     "description": "Split leap or jump, 120°+ (Platinum)",
@@ -9988,6 +10076,44 @@
     "divisions": [
       "Platinum"
     ]
+  },
+  {
+    "number": "2.0 Platinum",
+    "variant": 2,
+    "description": "Straddle jump, 120°–135° (Platinum)",
+    "value": "A",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "Leaps / Jumps / Hops",
+    "apparatus": "BB",
+    "source": "USAG Xcel 2022-2028",
+    "divisions": [
+      "Platinum"
+    ],
+    "same_as": [
+      "USAG-BB-2.202-1"
+    ],
+    "forms_rule": "Division stand-in for the regular straddle jump in cross position.",
+    "forms_citation": "UCG WAG rules lead, Oct 2026"
+  },
+  {
+    "number": "2.0 Platinum",
+    "variant": 3,
+    "description": "Sissonne, 120°–135° (Platinum)",
+    "value": "A",
+    "eponym": "",
+    "element_group": "2",
+    "group_name": "Leaps / Jumps / Hops",
+    "apparatus": "BB",
+    "source": "USAG Xcel 2022-2028",
+    "divisions": [
+      "Platinum"
+    ],
+    "same_as": [
+      "USAG-BB-2.207-1"
+    ],
+    "forms_rule": "Division stand-in for the regular sissonne.",
+    "forms_citation": "UCG WAG rules lead, Oct 2026"
   },
   {
     "number": "2.401",

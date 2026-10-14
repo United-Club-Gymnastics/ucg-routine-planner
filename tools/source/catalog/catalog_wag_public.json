@@ -39244,7 +39244,10 @@
        "varies": [
         "turn_deg"
        ]
-      }
+      },
+      "aka": [
+       "Toe up"
+      ]
      }
     ]
    }
@@ -39306,7 +39309,10 @@
        "varies": [
         "turn_deg"
        ]
-      }
+      },
+      "aka": [
+       "Toe up"
+      ]
      }
     ]
    }
@@ -49261,7 +49267,8 @@
    "short_name": "Front swing, straddle/pike flight to LB handstand",
    "aka": [
     "Straddle back to handstand",
-    "Straddleback to handstand"
+    "Straddleback to handstand",
+    "Straddle back from handstand to handstand"
    ],
    "eponym": "",
    "codes": {
@@ -49276,7 +49283,8 @@
       "eponym": "",
       "aka": [
        "Straddle back to handstand",
-       "Straddleback to handstand"
+       "Straddleback to handstand",
+       "Straddle back from handstand to handstand"
       ],
       "tags": {
        "bar": "HB",
@@ -49298,7 +49306,8 @@
       "eponym": "",
       "aka": [
        "Straddle back to handstand",
-       "Straddleback to handstand"
+       "Straddleback to handstand",
+       "Straddle back from handstand to handstand"
       ],
       "tags": {
        "bar": "HB",
@@ -51565,7 +51574,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Toe-on back to clear support",
-   "aka": [],
+   "aka": [
+    "Toe circle to clear support"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -51576,7 +51587,10 @@
       "variant": 1,
       "value": "A=0.1",
       "element_group": "5",
-      "eponym": ""
+      "eponym": "",
+      "aka": [
+       "Toe circle to clear support"
+      ]
      }
     ],
     "USAG-XCEL-2022": [
@@ -51593,7 +51607,10 @@
        "cast_sr": true,
        "circle360": true,
        "support_angle": "any"
-      }
+      },
+      "aka": [
+       "Toe circle to clear support"
+      ]
      }
     ],
     "USAG-DP-2026": [
@@ -51610,7 +51627,10 @@
        "cast_sr": true,
        "circle360": true,
        "support_angle": "any"
-      }
+      },
+      "aka": [
+       "Toe circle to clear support"
+      ]
      }
     ]
    }
@@ -51672,7 +51692,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Toe-on back to handstand",
-   "aka": [],
+   "aka": [
+    "Toe circle to handstand"
+   ],
    "eponym": "",
    "codes": {
     "USAG-XCEL-2022": [
@@ -51689,7 +51711,10 @@
        "cast_sr": true,
        "circle360": true,
        "support_angle": "hs"
-      }
+      },
+      "aka": [
+       "Toe circle to handstand"
+      ]
      }
     ],
     "USAG-DP-2026": [
@@ -51706,7 +51731,10 @@
        "cast_sr": true,
        "circle360": true,
        "support_angle": "hs"
-      }
+      },
+      "aka": [
+       "Toe circle to handstand"
+      ]
      }
     ],
     "WG-WAG-2025": [
@@ -54432,11 +54460,7 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Jump to HB hang, kip",
-   "aka": [
-    "Long hang kip",
-    "High bar kip",
-    "HB kip"
-   ],
+   "aka": [],
    "eponym": "",
    "codes": {
     "USAG-DP-2026": [
@@ -54448,11 +54472,6 @@
       "value": "A",
       "element_group": "1",
       "eponym": "",
-      "aka": [
-       "Long hang kip",
-       "High bar kip",
-       "HB kip"
-      ],
       "tags": {
        "bar": "HB",
        "kip": true
@@ -54471,11 +54490,6 @@
       "form": "a",
       "relation": "covers_more",
       "note": "Also with reverse grip.",
-      "aka": [
-       "Long hang kip",
-       "High bar kip",
-       "HB kip"
-      ],
       "tags": {
        "bar": "HB",
        "kip": true
@@ -54929,7 +54943,10 @@
        "bar": "either",
        "cast_sr": true,
        "support_angle": "hs"
-      }
+      },
+      "aka": [
+       "Cast handstand"
+      ]
      }
     ],
     "WG-WAG-2025": [
@@ -55019,7 +55036,10 @@
        "bar": "either",
        "cast_sr": true,
        "support_angle": "hs"
-      }
+      },
+      "aka": [
+       "Cast handstand"
+      ]
      }
     ],
     "WG-WAG-2025": [
@@ -55207,6 +55227,27 @@
     ],
     "USAG-XCEL-2022": [
      {
+      "rid": "USAG-UB-2.301-4",
+      "short_name": "Cast handstand, Higgins ½ turn to L grip",
+      "number": "2.301",
+      "variant": 4,
+      "value": "C",
+      "element_group": "2",
+      "eponym": "",
+      "aka": [
+       "Higgins",
+       "Cast handstand Higgins",
+       "Cast handstand ½ turn to L grip",
+       "Cast handstand ½ turn to mixed-L grip"
+      ],
+      "tags": {
+       "bar": "either",
+       "cast_sr": true,
+       "support_angle": "hs",
+       "turn_deg": 180
+      }
+     },
+     {
       "rid": "USAG-UB-2.301-2",
       "short_name": "Cast handstand with ½ turn",
       "number": "2.301",
@@ -55301,6 +55342,26 @@
         "bar_change"
        ]
       }
+     },
+     {
+      "rid": "USAG-UB-2.102-2",
+      "short_name": "Cast squat/stoop/straddle on, jump to HB",
+      "number": "2.102",
+      "variant": 2,
+      "value": "A",
+      "element_group": "2",
+      "eponym": "",
+      "relation": "covers_more",
+      "aka": [
+       "Squat on, jump to HB",
+       "Cast squat on, jump to HB",
+       "Stoop on, jump to HB",
+       "Straddle on, jump to HB"
+      ],
+      "tags": {
+       "bar": "LB",
+       "bar_change": true
+      }
      }
     ]
    }
@@ -55363,6 +55424,26 @@
         "bar_change"
        ]
       }
+     },
+     {
+      "rid": "USAG-UB-2.102-2",
+      "short_name": "Cast squat/stoop/straddle on, jump to HB",
+      "number": "2.102",
+      "variant": 2,
+      "value": "A",
+      "element_group": "2",
+      "eponym": "",
+      "relation": "covers_more",
+      "aka": [
+       "Squat on, jump to HB",
+       "Cast squat on, jump to HB",
+       "Stoop on, jump to HB",
+       "Straddle on, jump to HB"
+      ],
+      "tags": {
+       "bar": "LB",
+       "bar_change": true
+      }
      }
     ]
    }
@@ -55424,6 +55505,26 @@
        "varies": [
         "bar_change"
        ]
+      }
+     },
+     {
+      "rid": "USAG-UB-2.102-2",
+      "short_name": "Cast squat/stoop/straddle on, jump to HB",
+      "number": "2.102",
+      "variant": 2,
+      "value": "A",
+      "element_group": "2",
+      "eponym": "",
+      "relation": "covers_more",
+      "aka": [
+       "Squat on, jump to HB",
+       "Cast squat on, jump to HB",
+       "Stoop on, jump to HB",
+       "Straddle on, jump to HB"
+      ],
+      "tags": {
+       "bar": "LB",
+       "bar_change": true
       }
      }
     ]
@@ -66678,6 +66779,187 @@
       "element_group": null,
       "eponym": "",
       "page": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "WAG-UB-0507",
+   "discipline": "WAG",
+   "apparatus": "UB",
+   "short_name": "Long hang kip on HB",
+   "aka": [
+    "High bar kip",
+    "HB kip"
+   ],
+   "eponym": "",
+   "codes": {
+    "USAG-XCEL-2022": [
+     {
+      "rid": "USAG-UB-1.101-3",
+      "short_name": "Long hang kip",
+      "number": "1.101",
+      "variant": 3,
+      "value": "A",
+      "element_group": "1",
+      "eponym": "",
+      "aka": [
+       "High bar kip",
+       "HB kip"
+      ],
+      "tags": {
+       "bar": "HB",
+       "kip": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "WAG-UB-0508",
+   "discipline": "WAG",
+   "apparatus": "UB",
+   "short_name": "High cast, 21°+ off vertical (no value)",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "USAG-XCEL-2022": [
+     {
+      "rid": "USAG-UB-2.001-7",
+      "short_name": "High cast, 21°+ off vertical (no value)",
+      "number": "2.001",
+      "variant": 7,
+      "value": null,
+      "element_group": "2",
+      "eponym": "",
+      "divisions": [
+       "Sapphire"
+      ],
+      "tags": {
+       "bar": "either",
+       "cast_sr": true,
+       "support_angle": "45"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "WAG-BB-0542",
+   "discipline": "WAG",
+   "apparatus": "BB",
+   "short_name": "Straddle jump, 120°–135° (Gold)",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "USAG-XCEL-2022": [
+     {
+      "rid": "USAG-BB-2.0 Gold-2",
+      "short_name": "Straddle jump, 120°–135° (Gold)",
+      "number": "2.0 Gold",
+      "variant": 2,
+      "value": "A",
+      "element_group": "2",
+      "eponym": "",
+      "divisions": [
+       "Gold"
+      ],
+      "tags": {
+       "dance": true,
+       "dance_type": "jump",
+       "split": true,
+       "split_deg": 120
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "WAG-BB-0543",
+   "discipline": "WAG",
+   "apparatus": "BB",
+   "short_name": "Sissonne, 120°–135° (Gold)",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "USAG-XCEL-2022": [
+     {
+      "rid": "USAG-BB-2.0 Gold-3",
+      "short_name": "Sissonne, 120°–135° (Gold)",
+      "number": "2.0 Gold",
+      "variant": 3,
+      "value": "A",
+      "element_group": "2",
+      "eponym": "",
+      "divisions": [
+       "Gold"
+      ],
+      "tags": {
+       "dance": true,
+       "dance_type": "jump",
+       "split": true,
+       "split_deg": 120
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "WAG-BB-0544",
+   "discipline": "WAG",
+   "apparatus": "BB",
+   "short_name": "Straddle jump, 120°–135° (Platinum)",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "USAG-XCEL-2022": [
+     {
+      "rid": "USAG-BB-2.0 Platinum-2",
+      "short_name": "Straddle jump, 120°–135° (Platinum)",
+      "number": "2.0 Platinum",
+      "variant": 2,
+      "value": "A",
+      "element_group": "2",
+      "eponym": "",
+      "divisions": [
+       "Platinum"
+      ],
+      "tags": {
+       "dance": true,
+       "dance_type": "jump",
+       "split": true,
+       "split_deg": 120
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "WAG-BB-0545",
+   "discipline": "WAG",
+   "apparatus": "BB",
+   "short_name": "Sissonne, 120°–135° (Platinum)",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "USAG-XCEL-2022": [
+     {
+      "rid": "USAG-BB-2.0 Platinum-3",
+      "short_name": "Sissonne, 120°–135° (Platinum)",
+      "number": "2.0 Platinum",
+      "variant": 3,
+      "value": "A",
+      "element_group": "2",
+      "eponym": "",
+      "divisions": [
+       "Platinum"
+      ],
+      "tags": {
+       "dance": true,
+       "dance_type": "jump",
+       "split": true,
+       "split_deg": 120
+      }
      }
     ]
    }

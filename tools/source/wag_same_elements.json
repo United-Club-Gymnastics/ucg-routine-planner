@@ -5,7 +5,7 @@
    {
     "number": "1.101",
     "same": [],
-    "reason": "turn degree differs (none vs 1/2); v2 also usable within the exercise"
+    "reason": "turn degree differs (none vs 1/2); v2 also usable within the exercise; v3 is a kip from long hang on the HB, not a glide kip on the LB"
    },
    {
     "number": "1.204",
@@ -51,15 +51,21 @@
       "USAG-UB-2.001-3",
       "USAG-UB-2.001-4",
       "USAG-UB-2.001-5",
-      "USAG-UB-2.001-6"
+      "USAG-UB-2.001-6",
+      "USAG-UB-2.001-7"
      ]
     ],
     "reason": "all are one cast; the listed angles are division requirements, not different elements"
    },
    {
     "number": "2.301",
-    "same": [],
-    "reason": "turn degree differs: hop with no turn vs 1/2 turn vs 1/1 one-arm (Healy)"
+    "same": [
+     [
+      "USAG-UB-2.301-2",
+      "USAG-UB-2.301-4"
+     ]
+    ],
+    "reason": "turn degree differs: hop with no turn vs 1/2 turn vs 1/1 one-arm (Healy); v4 (Higgins 1/2 to L grip) differs from v2 by grip only, as in 2.401"
    },
    {
     "number": "2.401",
@@ -470,6 +476,16 @@
     "number": "8.508",
     "same": [],
     "reason": "different direction (forward vs backward salto) and twist"
+   },
+   {
+    "number": "2.102",
+    "same": [
+     [
+      "USAG-UB-2.102-1",
+      "USAG-UB-2.102-2"
+     ]
+    ],
+    "reason": "the jump to HB is how the squat-on continues, not a different element"
    }
   ],
   "unsure": [
