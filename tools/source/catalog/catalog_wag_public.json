@@ -1,7 +1,7 @@
 {
  "discipline": "WAG",
- "version": "c54dffa00c38",
- "built": "2026-10-13",
+ "version": "4c6890300dcb",
+ "built": "2026-10-14",
  "elements": [
   {
    "id": "WAG-BB-0001",
@@ -32452,6 +32452,7 @@
       "value": "ME",
       "element_group": "III",
       "eponym": "",
+      "relation": "stand_in",
       "note": "",
       "video": "https://www.youtube.com/watch?v=09tK3j1V9Xc",
       "page": 5
@@ -54545,11 +54546,6 @@
       "form": "a",
       "relation": "covers_more",
       "note": "Also with reverse grip.",
-      "aka": [
-       "Long hang kip",
-       "High bar kip",
-       "HB kip"
-      ],
       "tags": {
        "bar": "HB",
        "kip": true
