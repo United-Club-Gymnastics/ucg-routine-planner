@@ -57,6 +57,34 @@ test('local mode: copy one event from another level into a level already started
   expect(errors).toEqual([]);
 });
 
+test('local mode: drag a level tab to reorder; the leftmost opens first', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('./?local');
+  await page.locator('.empty-editor').getByRole('button', { name: 'Add athlete' }).click();
+  await page.locator('#f-name').fill('Order Test');
+  await page.getByRole('button', { name: 'Xcel Gold' }).click();
+  await page.locator('#toggle-add').click();
+  await page.getByRole('button', { name: 'Xcel Platinum' }).click();
+  const tabs = page.locator('.entry-tab');
+  await expect(tabs).toHaveText([/Gold/, /Platinum/]);
+  const from = await tabs.nth(1).boundingBox();
+  const to = await tabs.nth(0).boundingBox();
+  await page.mouse.move(from.x + from.width / 2, from.y + from.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(to.x + 10, to.y + to.height / 2, { steps: 8 });
+  await page.mouse.up();
+  await expect(tabs).toHaveText([/Platinum/, /Gold/]);
+  // Saved: after a reload Platinum is first and opens by default.
+  await page.waitForTimeout(1500);
+  await page.reload();
+  await expect(page.locator('.entry-tab')).toHaveText([/Platinum/, /Gold/]);
+  await expect(page.locator('.entry-tab.active')).toHaveText(/Platinum/);
+  // A plain click still opens a level.
+  await page.locator('.entry-tab').nth(1).click();
+  await expect(page.locator('.entry-tab.active')).toHaveText(/Gold/);
+  expect(errors).toEqual([]);
+});
+
 // Without the offline copy (a private window, say): the page's PDF code is gone from the server.
 test.describe('stale page', () => {
   test.use({ serviceWorkers: 'block' });

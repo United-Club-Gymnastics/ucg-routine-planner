@@ -654,6 +654,11 @@ input::placeholder { color: var(--fg-muted); }
   padding: 0 14px 0 4px;
 }
 .entry-tab .disc-badge { height: 26px; }
+.entry-tab { -webkit-touch-callout: none; user-select: none; -webkit-user-select: none; }
+.entry.dragging { z-index: 3; pointer-events: none; }
+.entry.dragging .entry-tab { cursor: grabbing; box-shadow: 0 6px 18px rgba(16, 34, 51, 0.25); }
+.entry.dragging .entry-remove { opacity: 0 !important; }
+.entries.reordering, .entries.reordering * { cursor: grabbing; }
 .entry-tab.active { background: var(--ucg-navy); border-color: var(--ucg-navy); color: var(--ucg-white); }
 .entry-tab.active .disc-badge { background: transparent; color: var(--ucg-blue-green); padding: 0 2px 0 10px; }
 /* Remove a level: a round x at the tab's top right, shown on hover or keyboard focus (and on
