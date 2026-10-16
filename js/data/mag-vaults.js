@@ -5,7 +5,7 @@ export const VAULTS = [
   {"id": "UCG-VT-tuck-vault", "name": "Tuck vault", "eponym": "", "eg": "", "value": 0.2, "adv": 0.2, "flipping": false, "src": "UCG"},
   {"id": "UCG-VT-straddle-vault", "name": "Straddle vault", "eponym": "", "eg": "", "value": 0.2, "adv": 0.2, "flipping": false, "src": "UCG"},
   {"id": "UCG-VT-forward-handspring-piked-yamashita", "name": "Forward handspring piked", "eponym": "Yamashita", "eg": "", "value": 1.6, "adv": 1.6, "flipping": false, "src": "UCG"},
-  {"id": "UCG-VT-hecht-backflip", "name": "Hecht backflip", "eponym": "", "eg": "", "value": 2.2, "adv": 2.2, "flipping": true, "src": "UCG"},
+  {"id": "UCG-VT-hecht-backflip", "name": "Hecht with salto backwards tucked", "eponym": "", "eg": "", "value": 2.2, "adv": 2.2, "flipping": true, "src": "UCG"},
   {"id": "101", "name": "Hdspr. fwd. and salto fwd. t. w. ½ t. (or Cuervo t.)", "eponym": "", "eg": "I", "value": 2.4, "adv": 2.4, "flipping": true, "src": "WG"},
   {"id": "102", "name": "Hdspr. fwd. and salto fwd. t. w. 1/1 t. (Cuervo t. w. ½ t.).", "eponym": "", "eg": "I", "value": 2.8, "adv": 2.8, "flipping": true, "src": "WG"},
   {"id": "103", "name": "Hdspr. fwd. and salto fwd. t. w. 3/2 t. (Cuervo t. w. 1/1 t.).", "eponym": "Kroll", "eg": "I", "value": 3.2, "adv": 3.2, "flipping": true, "src": "WG"},

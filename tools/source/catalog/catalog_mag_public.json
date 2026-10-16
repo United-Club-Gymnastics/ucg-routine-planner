@@ -1,7 +1,7 @@
 {
  "discipline": "MAG",
- "version": "3d4e9c2963e2",
- "built": "2026-10-08",
+ "version": "e403916a0bb1",
+ "built": "2026-10-16",
  "elements": [
   {
    "id": "MAG-FX-0001",
@@ -2043,7 +2043,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/Xv9ThKB_xrc"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -2079,7 +2080,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/rj2vkQwJ1Qg"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -2116,7 +2118,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/gywnsM8OjP4"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -2152,7 +2155,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/EuQeVGMV9iw"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -2188,7 +2192,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://www.youtube.com/watch?v=3yreaxJmdrU"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -2224,7 +2229,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://www.youtube.com/watch?v=09tK3j1V9Xc"
      }
     ]
    }
@@ -2246,7 +2252,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/D0z2uzShnR8"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -2282,7 +2289,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://www.youtube.com/watch?v=YkE8pE1hrU4"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -2318,7 +2326,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/Q0uDh45pg-I"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -2354,7 +2363,8 @@
       "value": "A",
       "element_group": "II",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://www.youtube.com/watch?v=2l2lfdzBWmU"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -2390,7 +2400,8 @@
       "value": "A",
       "element_group": "IV",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/SEsw2Cq1oqg"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -2426,7 +2437,8 @@
       "value": "C",
       "element_group": "I",
       "eponym": "Batta",
-      "note": "may not be directly connected to an EG II or EG III skill"
+      "note": "may not be directly connected to an EG II or EG III skill",
+      "video": "https://youtu.be/9kMUq1jneI0"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -2438,7 +2450,7 @@
       "value": "B",
       "element_group": "I",
       "eponym": "Batta",
-      "note": "",
+      "note": "may not be directly connected to an EG II or EG III skill",
       "video": "https://youtu.be/9kMUq1jneI0",
       "page": 2
      }
@@ -2462,7 +2474,8 @@
       "value": "C",
       "element_group": "I",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/kOThSY_4OA0"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -2570,7 +2583,7 @@
       "value": "ME",
       "element_group": "I",
       "eponym": "",
-      "note": "",
+      "note": "may not be directly connected to an EG II or EG III skill",
       "video": "https://youtu.be/bFb2XAVJpoo?si=oMGqM7UlS35QdItX&t=4",
       "page": 2
      }
@@ -5576,7 +5589,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/wiyugStkhR0"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -5612,7 +5626,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/odP-MhfAv2s"
      }
     ]
    }
@@ -5634,7 +5649,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/-c7AUS4FIlM"
      }
     ]
    }
@@ -5656,7 +5672,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/1wVVjO9ErSY"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -5692,7 +5709,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/7J4z74SQxz4"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -5728,7 +5746,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/gUsvp1IrE9g"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -5764,7 +5783,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/VA4G5XrO26k"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -5802,7 +5822,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/uJeWD0kvheg"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -5838,7 +5859,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/9PPPgYTiCDA"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -5874,7 +5896,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/r__k-nzegqY"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -5910,7 +5933,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/WFq3CMAnqTM"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -5946,7 +5970,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/LjhKXRR0-vU"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -5982,7 +6007,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/2U9u5YBK43c"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -6019,7 +6045,8 @@
       "value": "A",
       "element_group": "III",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "http://www.youtube.com/watch?v=JNIX3-OSbYE"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -6055,7 +6082,8 @@
       "value": "A",
       "element_group": "III",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://www.youtube.com/watch?v=bBhi5WdTU78"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -6091,7 +6119,8 @@
       "value": "B",
       "element_group": "III",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/sV3OXvUdHTU"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -6127,7 +6156,8 @@
       "value": "B",
       "element_group": "IV",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/hTnKbL8tokU"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -6163,7 +6193,8 @@
       "value": "B",
       "element_group": "IV",
       "eponym": "Penn 1/Sharpe",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/mblqTLpxUko"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -6199,7 +6230,8 @@
       "value": "C",
       "element_group": "III",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/8mDMAFQ_Coc"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -6235,7 +6267,8 @@
       "value": "C",
       "element_group": "IV",
       "eponym": "Penn 2",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/e_F-UJVxnus"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -6271,7 +6304,8 @@
       "value": "E",
       "element_group": "III",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://www.youtube.com/shorts/rTySLTVPKkk"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -6284,7 +6318,7 @@
       "element_group": "III",
       "eponym": "",
       "note": "",
-      "video": null,
+      "video": "https://www.youtube.com/shorts/rTySLTVPKkk",
       "page": 10
      }
     ]
@@ -6307,7 +6341,8 @@
       "value": "E",
       "element_group": "IV",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/QlOehAdWk-8"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -6343,7 +6378,8 @@
       "value": "G",
       "element_group": "II",
       "eponym": "Meister",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/ZVyw2E__z10"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -10639,7 +10675,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": "shoulders may be on or off bars, either is acceptable"
+      "note": "shoulders may be on or off bars, either is acceptable",
+      "video": "https://youtu.be/H7StCabE0PA"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -10651,7 +10688,7 @@
       "value": "ME",
       "element_group": "II",
       "eponym": "",
-      "note": "",
+      "note": "shoulders may be on or off bars, either is acceptable",
       "video": "https://youtu.be/H7StCabE0PA",
       "page": 7
      }
@@ -10675,7 +10712,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/S21gZUvhgWA"
      }
     ]
    }
@@ -10697,7 +10735,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/DICPxNgsczU"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -10737,7 +10776,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/2plQmZcYeLs"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -10773,7 +10813,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/XGW4mTUaWz4"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -10809,7 +10850,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/SxhYwzcVslM"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -10845,7 +10887,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/HbkI4Kec1VA"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -10881,7 +10924,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/fXQPBcL8OJM"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -10917,7 +10961,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/bBXD66QnKjA"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -10954,7 +10999,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/O0wJnDsolVQ"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -10991,7 +11037,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/1WwjeNA-bBw"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11028,7 +11075,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/wicOsM2lz2s"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11065,7 +11113,8 @@
       "value": "A",
       "element_group": "I",
       "eponym": "",
-      "note": "(same box as straddle cut to bent arm support)"
+      "note": "(same box as straddle cut to bent arm support)",
+      "video": "https://youtu.be/aVMt3-JHyOY"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11077,7 +11126,7 @@
       "value": "A",
       "element_group": "I",
       "eponym": "",
-      "note": "",
+      "note": "(same box as straddle cut to bent arm support)",
       "video": "https://youtu.be/aVMt3-JHyOY",
       "page": 8
      }
@@ -11101,7 +11150,8 @@
       "value": "A",
       "element_group": "I",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/tnBgYnwMfns"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11137,7 +11187,8 @@
       "value": "A",
       "element_group": "I",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/VAlYrQjQ_oA"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11173,7 +11224,8 @@
       "value": "A",
       "element_group": "I",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://drive.google.com/file/d/1sJk2JsnjGZu9Uoa48kTZunJRWtG1aFzw/view?usp=drive_link"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11186,7 +11238,7 @@
       "element_group": "I",
       "eponym": "",
       "note": "",
-      "video": null,
+      "video": "https://drive.google.com/file/d/1sJk2JsnjGZu9Uoa48kTZunJRWtG1aFzw/view?usp=drive_link",
       "page": 8
      }
     ]
@@ -11209,7 +11261,8 @@
       "value": "A",
       "element_group": "II",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/qdyyouunLvc?si=Bb-iXoPzon6aPDxV"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11245,7 +11298,8 @@
       "value": "A",
       "element_group": "II",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/_r5nP9reZjI"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11281,7 +11335,8 @@
       "value": "A",
       "element_group": "II",
       "eponym": "",
-      "note": "(same box as L-sit)"
+      "note": "(same box as L-sit)",
+      "video": "https://youtu.be/FjWFPVxZR0w"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11293,7 +11348,7 @@
       "value": "A",
       "element_group": "II",
       "eponym": "",
-      "note": "",
+      "note": "(same box as L-sit)",
       "video": "https://youtu.be/FjWFPVxZR0w",
       "page": 8
      }
@@ -11317,7 +11372,8 @@
       "value": "A",
       "element_group": "III",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/36k6YQ_JxW4"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11353,7 +11409,8 @@
       "value": "A",
       "element_group": "IV",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/gHmKbV5uLeY"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11389,7 +11446,8 @@
       "value": "B",
       "element_group": "I",
       "eponym": "Sharpe 2",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/udxKiOoRF88"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11425,7 +11483,8 @@
       "value": "B",
       "element_group": "II",
       "eponym": "Sharpe 1",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/19VDAgX0-WI"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11461,7 +11520,8 @@
       "value": "B",
       "element_group": "II",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/GBj7EDdp4Fo"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11497,7 +11557,8 @@
       "value": "B",
       "element_group": "II",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/Q6h3bx_Devk"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11533,7 +11594,8 @@
       "value": "B",
       "element_group": "III",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/rAXN7aZ2geI"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11569,7 +11631,8 @@
       "value": "B",
       "element_group": "III",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/lOS0Xbi_T9g"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11609,7 +11672,8 @@
       "value": "B",
       "element_group": "III",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://www.youtube.com/shorts/mg-oeHrfZwc"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -11622,7 +11686,7 @@
       "element_group": "III",
       "eponym": "",
       "note": "",
-      "video": null,
+      "video": "https://www.youtube.com/shorts/mg-oeHrfZwc",
       "page": 8
      }
     ]
@@ -11645,7 +11709,8 @@
       "value": "C",
       "element_group": "II",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/NEqFfZMh_ds"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -14224,7 +14289,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/xukPL6n3Ah8"
      }
     ]
    }
@@ -14246,7 +14312,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/stgf4yv5EpY"
      }
     ]
    }
@@ -14268,7 +14335,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/b4YJCs5dFtQ"
      }
     ]
    }
@@ -14290,7 +14358,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": "Any travel of this type is acceptable, it does not have to be the exact leg/hand movement sequence shown"
+      "note": "Any travel of this type is acceptable, it does not have to be the exact leg/hand movement sequence shown",
+      "video": "https://youtu.be/w_U-PJuF-Yw"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -14302,7 +14371,7 @@
       "value": "ME",
       "element_group": "III",
       "eponym": "",
-      "note": "",
+      "note": "Any travel of this type is acceptable, it does not have to be the exact leg/hand movement sequence shown",
       "video": "https://youtu.be/w_U-PJuF-Yw",
       "page": 3
      }
@@ -14326,7 +14395,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": "May also be performed on the leather or one hand leather one hand pommel"
+      "note": "May also be performed on the leather or one hand leather one hand pommel",
+      "video": "https://youtu.be/7_YFy4wdFZg"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -14339,7 +14409,7 @@
       "element_group": "IV",
       "eponym": "",
       "relation": "covers_more",
-      "note": "",
+      "note": "May also be performed on the leather or one hand leather one hand pommel",
       "video": "https://youtu.be/7_YFy4wdFZg",
       "page": 3
      }
@@ -14363,7 +14433,8 @@
       "value": "A",
       "element_group": "II",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://www.youtube.com/watch?v=XxYxjVmmOpo"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -14399,7 +14470,8 @@
       "value": "B",
       "element_group": "IV",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/KcLqbgWGUVM"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -14424,7 +14496,7 @@
    "apparatus": "PH",
    "short_name": "Any combination of two flops on one pommel",
    "aka": [],
-   "eponym": "Circle in side support/Circle in cross support/DSB/DSA",
+   "eponym": "",
    "codes": {
     "UCG-MAG-ADD": [
      {
@@ -14435,7 +14507,8 @@
       "value": "C",
       "element_group": "II",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/F2V7piBRNTU"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -14446,7 +14519,7 @@
       "variant": 1,
       "value": "C",
       "element_group": "II",
-      "eponym": "Circle in side support/Circle in cross support/DSB/DSA",
+      "eponym": "",
       "note": "",
       "video": "https://youtu.be/F2V7piBRNTU",
       "page": 3
@@ -14471,19 +14544,19 @@
       "value": "C",
       "element_group": "II",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/AHCogluGxT0"
      }
     ],
     "UCG-MASTERS-MAG": [
      {
       "rid": "UCGM-mag-PH-russian-flop-combo-circle-in-side-support-circle-in-cross-su",
-      "short_name": "Russian + Flop combo",
+      "short_name": "Russian + Flop combo (Russian 180° or 270°)",
       "number": "20",
       "variant": 1,
       "value": "C",
       "element_group": "II",
-      "eponym": "Circle in side support/Circle in cross support/DSB/DSA/Russian 180° or 270°",
-      "relation": "covers_more",
+      "eponym": "",
       "note": "",
       "video": "https://youtu.be/AHCogluGxT0",
       "page": 3
@@ -14508,7 +14581,8 @@
       "value": "C",
       "element_group": "II",
       "eponym": "Rendon",
-      "note": ""
+      "note": "",
+      "video": "https://www.youtube.com/watch?v=QvRRfrEmRh8&ab_channel=NAIGC"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -14544,7 +14618,8 @@
       "value": "C",
       "element_group": "II",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://drive.google.com/file/d/12dmCWeHDOa03F-Uq1IBUjUOjCrl5iRJH/view?usp=sharing"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -14557,7 +14632,7 @@
       "element_group": "II",
       "eponym": "",
       "note": "",
-      "video": null,
+      "video": "https://drive.google.com/file/d/12dmCWeHDOa03F-Uq1IBUjUOjCrl5iRJH/view?usp=sharing",
       "page": 3
      }
     ]
@@ -14580,7 +14655,8 @@
       "value": "C",
       "element_group": "III",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/MYAa0iI32cc"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -14616,7 +14692,8 @@
       "value": "C",
       "element_group": "IV",
       "eponym": "Pearce",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/Y_EQ8_DMd3E?feature=shared"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -14652,7 +14729,8 @@
       "value": "D",
       "element_group": "I",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/_IIAlPX1Pfg"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -14688,7 +14766,8 @@
       "value": "D",
       "element_group": "II",
       "eponym": "Kalli",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/uJBkh44HB7w"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -14724,7 +14803,8 @@
       "value": "D",
       "element_group": "IV",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtube.com/shorts/G898kZULfvU?si=_Z7-FDuBatZBtuPq"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -14737,7 +14817,7 @@
       "element_group": "IV",
       "eponym": "",
       "note": "",
-      "video": null,
+      "video": "https://youtube.com/shorts/G898kZULfvU?si=_Z7-FDuBatZBtuPq",
       "page": 4
      }
     ]
@@ -14760,7 +14840,8 @@
       "value": "E",
       "element_group": "III",
       "eponym": "Ganser",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/LHUlpd2uJfQ"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -14796,7 +14877,7 @@
       "value": "ME",
       "element_group": "IV",
       "eponym": "",
-      "note": "",
+      "note": "May also be performed on the leather or one hand leather one hand pommel",
       "video": "https://youtu.be/7_YFy4wdFZg",
       "page": 3
      }
@@ -14852,41 +14933,17 @@
    }
   },
   {
-   "id": "MAG-PH-0127",
-   "discipline": "MAG",
-   "apparatus": "PH",
-   "short_name": "Russian + Flop combo",
-   "aka": [],
-   "eponym": "Circle in side support/Circle in cross support/DSB/DSA/Russian 180° or 270°",
-   "codes": {
-    "UCG-MASTERS-MAG": [
-     {
-      "rid": "UCGM-mag-PH-russian-flop-combo-circle-in-side-support-circle-in-cross-su",
-      "short_name": "Russian + Flop combo",
-      "number": "20",
-      "variant": 1,
-      "value": "C",
-      "element_group": "II",
-      "eponym": "Circle in side support/Circle in cross support/DSB/DSA/Russian 180° or 270°",
-      "note": "",
-      "video": "https://youtu.be/AHCogluGxT0",
-      "page": 3
-     }
-    ]
-   }
-  },
-  {
    "id": "MAG-PH-0128",
    "discipline": "MAG",
    "apparatus": "PH",
-   "short_name": "Second circle in direct succession",
+   "short_name": "Second circle in direct succession x2",
    "aka": [],
    "eponym": "",
    "codes": {
     "UCG-MASTERS-MAG": [
      {
       "rid": "UCGM-mag-PH-second-circle-in-direct-succession",
-      "short_name": "Second circle in direct succession",
+      "short_name": "Second circle in direct succession x2",
       "number": "7",
       "variant": 1,
       "value": "ME",
@@ -15023,14 +15080,14 @@
    "id": "MAG-PH-0134",
    "discipline": "MAG",
    "apparatus": "PH",
-   "short_name": "Second scissor forwards in direct succession",
+   "short_name": "Second scissor forwards in direct succession x2",
    "aka": [],
    "eponym": "",
    "codes": {
     "UCG-MASTERS-MAG": [
      {
       "rid": "UCGM-mag-PH-second-scissor-forwards-in-direct-succession",
-      "short_name": "Second scissor forwards in direct succession",
+      "short_name": "Second scissor forwards in direct succession x2",
       "number": "4",
       "variant": 1,
       "value": "ME",
@@ -15047,14 +15104,14 @@
    "id": "MAG-PH-0135",
    "discipline": "MAG",
    "apparatus": "PH",
-   "short_name": "Second scissor backwards in direct succession",
+   "short_name": "Second scissor backwards in direct succession x2",
    "aka": [],
    "eponym": "",
    "codes": {
     "UCG-MASTERS-MAG": [
      {
       "rid": "UCGM-mag-PH-second-scissor-backwards-in-direct-succession",
-      "short_name": "Second scissor backwards in direct succession",
+      "short_name": "Second scissor backwards in direct succession x2",
       "number": "5",
       "variant": 1,
       "value": "ME",
@@ -18110,20 +18167,26 @@
    "id": "MAG-SR-0140",
    "discipline": "MAG",
    "apparatus": "SR",
-   "short_name": "Basket pull up to L",
-   "aka": [],
+   "short_name": "From piked inverted hang, pull with bent arms to bent arm hanging L-hold (2 s.)",
+   "aka": [
+    "Basket pull up to L"
+   ],
    "eponym": "",
    "codes": {
     "UCG-MAG-ADD": [
      {
       "rid": "UCG-SR-basket-pull-up-to-l",
-      "short_name": "Basket pull up to L",
+      "short_name": "From piked inverted hang, pull with bent arms to bent arm hanging L-hold (2 s.)",
       "number": "1",
       "variant": 1,
       "value": "Sub-A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/GsLiL1dcZlo",
+      "aka": [
+       "Basket pull up to L"
+      ]
      }
     ]
    }
@@ -18167,7 +18230,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/zyrYv8-gidg"
      }
     ]
    }
@@ -18189,7 +18253,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/MKKwhCmrQZc"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -18225,7 +18290,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/pVyihHf8EYk"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -18261,7 +18327,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/MX9oPbDEzoo"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -18297,7 +18364,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": "Hips must be level, arms straight and off straps, and knees must be behind straps"
+      "note": "Hips must be level, arms straight and off straps, and knees must be behind straps",
+      "video": "https://youtu.be/_AYytnXOgyY"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -18309,7 +18377,7 @@
       "value": "ME",
       "element_group": "II",
       "eponym": "",
-      "note": "",
+      "note": "Hips must be level, arms straight and off straps",
       "video": "https://youtu.be/_AYytnXOgyY",
       "page": 5
      }
@@ -18333,7 +18401,8 @@
       "value": "A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/4irYgjFUwk4"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -18370,7 +18439,8 @@
       "value": "A",
       "element_group": "I",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/64FL9Kt1D9Y"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -18406,7 +18476,8 @@
       "value": "A",
       "element_group": "I",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/Y8257Yt80nc"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -18442,7 +18513,8 @@
       "value": "A",
       "element_group": "III",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/mQIc9sOlKz8"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -18478,7 +18550,8 @@
       "value": "A",
       "element_group": "III",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/atMRilkaQuk"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -18514,7 +18587,8 @@
       "value": "A",
       "element_group": "IV",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://www.youtube.com/watch?v=rnsd8UeGwc0"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -18537,33 +18611,34 @@
    "id": "MAG-SR-0153",
    "discipline": "MAG",
    "apparatus": "SR",
-   "short_name": "5/4 tucked salto bwd. to inverted hang and immediate dislocate (requires continuous movement)",
+   "short_name": "5/4 tucked salto bwd. to inverted hang and immediate dislocate",
    "aka": [],
    "eponym": "Baker",
    "codes": {
     "UCG-MAG-ADD": [
      {
       "rid": "UCG-SR-5-4-tucked-salto-bwd-to-inverted-hang-and-immediate-dislocat",
-      "short_name": "5/4 tucked salto bwd. to inverted hang and immediate dislocate (requires continuous movement)",
+      "short_name": "5/4 tucked salto bwd. to inverted hang and immediate dislocate",
       "number": "14",
       "variant": 1,
       "value": "B",
       "element_group": "I",
       "eponym": "Baker",
-      "note": ""
+      "note": "must show continuous movement throughout the skill",
+      "video": "https://youtu.be/1e12ptDYnNs"
      }
     ],
     "UCG-MASTERS-MAG": [
      {
       "rid": "UCGM-mag-SR-5-4-tucked-salto-bwd-to-inverted-hang-and-immediate-dislocat",
-      "short_name": "5/4 tucked salto bwd. to inverted hang and immediate dislocate (requires continuous movement)",
+      "short_name": "5/4 tucked salto bwd. to inverted hang and immediate dislocate",
       "number": "15",
       "variant": 1,
       "value": "B",
       "element_group": "I",
       "eponym": "Baker",
-      "note": "",
-      "video": "https://youtube.com/shorts/DS3miQ1mwbQ?si=FBzNBOxEFekPy3a2",
+      "note": "must show continuous movement throughout the skill",
+      "video": "https://youtu.be/1e12ptDYnNs",
       "page": 5
      }
     ]
@@ -18586,7 +18661,8 @@
       "value": "B",
       "element_group": "II",
       "eponym": "Sharpe 1",
-      "note": ""
+      "note": "",
+      "video": "https://www.youtube.com/watch?v=wd2h6zQtfUQ"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -18622,7 +18698,8 @@
       "value": "B",
       "element_group": "II",
       "eponym": "Li",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/6LFXVp7uq3I"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -18658,7 +18735,8 @@
       "value": "B",
       "element_group": "IV",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/ijSlz6JXUSE"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -18694,7 +18772,8 @@
       "value": "C",
       "element_group": "II",
       "eponym": "Sharpe 2",
-      "note": ""
+      "note": "",
+      "video": "https://youtube.com/watch?v=6DrvXvy2qik"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -18730,7 +18809,8 @@
       "value": "C",
       "element_group": "IV",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/uchiNkIkvOU"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -18766,7 +18846,8 @@
       "value": "D",
       "element_group": "II",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://drive.google.com/file/d/1ZRwzbjSspSfoZRKHOfvXO8rVRATfRrJm/view?usp=drive_link"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -18779,7 +18860,7 @@
       "element_group": "II",
       "eponym": "",
       "note": "",
-      "video": null,
+      "video": "https://drive.google.com/file/d/1ZRwzbjSspSfoZRKHOfvXO8rVRATfRrJm/view?usp=drive_link",
       "page": 5
      }
     ]
@@ -18802,7 +18883,8 @@
       "value": "F",
       "element_group": "II",
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://drive.google.com/file/d/12wE9T862XIVZwsk1yvjq6hhnTEXxQys5/view?usp=drive_link"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -18815,7 +18897,7 @@
       "element_group": "II",
       "eponym": "",
       "note": "",
-      "video": null,
+      "video": "https://drive.google.com/file/d/12wE9T862XIVZwsk1yvjq6hhnTEXxQys5/view?usp=drive_link",
       "page": 5
      }
     ]
@@ -20718,7 +20800,8 @@
       "value": "0.2",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/LasGj1S2qrY?si=GOuIt68ZNMzXR0wE"
      }
     ]
    }
@@ -20740,7 +20823,8 @@
       "value": "0.2",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/q7qIF-jvOK4?si=9nKmE0bajdEoTQI0"
      }
     ]
    }
@@ -20762,7 +20846,8 @@
       "value": "1.6",
       "element_group": null,
       "eponym": "Yamashita",
-      "note": ""
+      "note": "",
+      "video": "https://www.youtube.com/watch?v=3kZXoGx0YWw"
      }
     ]
    }
@@ -20771,20 +20856,26 @@
    "id": "MAG-VT-0086",
    "discipline": "MAG",
    "apparatus": "VT",
-   "short_name": "Hecht backflip",
-   "aka": [],
+   "short_name": "Hecht with salto backwards tucked",
+   "aka": [
+    "Hecht backflip"
+   ],
    "eponym": "",
    "codes": {
     "UCG-MAG-ADD": [
      {
       "rid": "UCG-VT-hecht-backflip",
-      "short_name": "Hecht backflip",
+      "short_name": "Hecht with salto backwards tucked",
       "number": "4",
       "variant": 1,
       "value": "2.2",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/WLwhG7ErB8U",
+      "aka": [
+       "Hecht backflip"
+      ]
      }
     ]
    }

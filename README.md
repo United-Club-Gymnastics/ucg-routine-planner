@@ -50,6 +50,8 @@ Athletes are saved in Firestore at `users/{user id}/athletes/{athlete}`. Each at
 
 Routines store the planner's skill ids, which the catalog's aliases resolve (with `merged`), so catalog rebuilds don't break saved routines. To update: copy the new public files into `tools/source/catalog/` and run `python tools/build_data.py`.
 
+**MAG catalog e403916a0bb1 (2026-10-16):** the Code of Points repo's corrections: video links on UCG MAG records, Masters MAG notes that were missing, two PH drawing labels no longer read as eponyms, fuller Masters names ("... x2"), the two renamed UCG boxes (SR basket pull up to L, VT hecht backflip) under their new names with the same IDs, and the Masters "Russian + Flop combo" merged into the UCG addition (`MAG-PH-0127` forwards to `MAG-PH-0115`, under `merged` in `aliases_mag.json`). No planner IDs changed.
+
 **Planner-side additions (2026-10-13), now in the Dropbox catalog (4c6890300dcb):** stand-ins so these copy to WAG Masters instead of "not credited": `WAG-FX-0112` (Xcel split leap or split jump) gets WG FX 1.101 split leap and `WAG-BB-0283` (full turn in arabesque) gets WG BB 3.302 full turn in back attitude, both with `"relation": "stand_in"` (re-valued as approximate); `WAG-FX-0165` (handstand forward roll) gets the UCG Masters ME "Handstand (any entry, no hold) forward roll out", also a stand-in. The Dropbox catalog builds them from `skill_catalog/matching/ucg_rulings.json` (`stand_ins`).
 
 **Planner-side additions (2026-10-14, WAG rules lead's bars and beam feedback), now in Dropbox (catalog 4c6890300dcb).** The new records are in `UCG WAG Skills/ucg_rulings.json`; the catalog's same / covers / stand-in rulings and element names in `skill_catalog/matching/ucg_rulings.json`; tags in `skill_catalog/tags/tags_manual.json`; other names in `skill_catalog/aka.json` (2.301-4's Higgins names under `records_only`). Later changes to these go there, not to the copies here:
@@ -61,7 +63,7 @@ Routines store the planner's skill ids, which the catalog's aliases resolve (wit
 
 | Data | Source | Rebuild |
 | --- | --- | --- |
-| `data/mag-skills.js`, `data/mag-vaults.js` | UCG MAG CoP master + FIG MAG CoP 2025-2028 extractor | `python tools/build_skills.py` (needs the Code of Points repo and Inkscape) |
+| `data/mag-skills.js`, `data/mag-vaults.js` | UCG MAG CoP additions (`catalog/ucg_skills.json` in the Code of Points repo, code `UCG-MAG-ADD`, whose skill IDs are frozen there) + FIG MAG CoP 2025-2028 extractor | `python tools/build_skills.py` (needs the Code of Points repo) |
 | `data/wag-skills.js` | WG WAG CoP 2025-2028 (`tools/source/wag_wg_skills.json`, from the extractor in Dropbox `Reference/gym_skill_extract/WG WAG CoP Extraction`) + USAG Xcel 2022-2028, USAG Development Program 2026-2030 E elements and the UCG WAG CoP additions (`tools/source/ucg_wag_skills_simplified.json`, from `Reference/gym_skill_extract/UCG WAG Skills`). **Only the simplified file goes in this repo:** the full one has USAG's text, and this repo is public | `python tools/build_data.py` |
 | `data/wag-same.js` | `tools/source/wag_same_elements.json`: which listed versions of a USAG number count as the same element, and the floor hand-support flight elements (reviewed against the Xcel and Development Program codes; reasons in our own words) | `python tools/build_data.py` |
 | `data/sapphire-vaults.js` | USAG Level 9/10 vaults not in the Xcel Sapphire chart (same simplified file) | `python tools/build_data.py` |

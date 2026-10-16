@@ -1,7 +1,7 @@
 {
  "discipline": "MAG",
- "version": "3d4e9c2963e2",
- "built": "2026-10-08",
+ "version": "e403916a0bb1",
+ "built": "2026-10-16",
  "aliases": {
   "WG-FX-I-1": [
    "MAG-FX-0001"
@@ -2048,8 +2048,7 @@
    "MAG-PH-0115"
   ],
   "UCGM-mag-PH-russian-flop-combo-circle-in-side-support-circle-in-cross-su": [
-   "MAG-PH-0115",
-   "MAG-PH-0127"
+   "MAG-PH-0115"
   ],
   "UCG-PH-reverse-stockli-with-270-turn-from-one-pommel-rendon": [
    "MAG-PH-0116"
@@ -2966,6 +2965,7 @@
   ]
  },
  "merged": {
+  "MAG-PH-0127": "MAG-PH-0115",
   "MAG-PB-0220": "MAG-PB-0191"
  }
 }
