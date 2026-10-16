@@ -3,9 +3,9 @@
 
   WG skills:  skills_verified.json from the FIG MAG CoP 2025-2028 extractor
               (Dropbox: Gymnastics/Reference/gym_skill_extract)
-  UCG skills: every skill box in the UCG MAG Code of Points master
-              (repo: C:/dev/ucg-code-of-points/MAG/UCG MAG CoP.svg),
-              read with that repo's tools (needs Inkscape, as they do)
+  UCG skills: the UCG-MAG-ADD code in the UCG Code of Points catalog
+              (repo: C:/dev/ucg-code-of-points/catalog/ucg_skills.json),
+              whose skill IDs are frozen there
 
 Run after the UCG CoP gets new skills (or a new WG CoP is extracted):
     python tools/build_skills.py
@@ -17,7 +17,6 @@ import argparse
 import json
 import os
 import re
-import sys
 
 DROPBOX = os.path.expanduser(r"~/Steinsharpe Dropbox/Nate Sharpe/Documents/Gymnastics")
 WG_DEFAULT = os.path.join(DROPBOX, "Reference", "gym_skill_extract", "WG MAG CoP Extraction", "skills_verified.json")
@@ -36,8 +35,6 @@ NON_FLIPPING = set(range(201, 207)) | set(range(301, 304)) | set(range(501, 504)
 
 APPS = ["FX", "PH", "SR", "PB", "HB"]
 ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4}
-# Drawing labels inside some UCG boxes, not part of the skill name.
-DROP = re.compile(r"^\((DSA|DSB|Circle in (cross|side) support)\)$|^(A|B|C|D|Ga)$")
 
 
 def wg_skills(path):
@@ -59,51 +56,22 @@ def wg_skills(path):
 
 
 def ucg_skills(cop_dir):
-    sys.path.insert(0, os.path.join(cop_dir, "tools"))
-    from cop_skills import CoP, APPARATUS_PAGES, SVG
-    from paths import MAG_SVG
-
-    cop = CoP(MAG_SVG)
+    # IDs are frozen in the CoP repo's catalog (catalog/ids.json), so renaming a box never changes one.
+    cat = json.load(open(os.path.join(cop_dir, "catalog", "ucg_skills.json"), encoding="utf-8"))
     out = []
-    for app in APPS + ["VT"]:
-        res, _ = cop.skills(app)
-        for r in res:
-            lines = []
-            for el in cop.cells[r["at"]]["content"]:
-                for t in el.iter(SVG + "text"):
-                    style = (t.get("style") or "") + "".join(x.get("style") or "" for x in t.iter())
-                    if "Greed" in style:  # value / EG lettering
-                        continue
-                    for line in [x for x in t if x.tag == SVG + "tspan"] or [t]:
-                        s = " ".join("".join(line.itertext()).split())
-                        if s:
-                            lines.append(s)
-            name, note, eponyms, in_note = [], [], [], False
-            for s in lines:
-                if DROP.match(s):
-                    continue
-                if s.startswith("Note:") or s.startswith("(same box"):
-                    in_note = True
-                m = re.fullmatch(r"\(([A-Z][A-Za-z.' -]+(?: \d)?)\)", s)  # (Batta), (Sharpe 2)
-                if m and not s.startswith("(same box"):
-                    eponyms.append(m.group(1))
-                    in_note = False
-                elif in_note:
-                    note.append(s)
-                else:
-                    name.append(s)
-            value = r["value"]
-            out.append({
-                # Ids are saved with routines, so they come from the name, not the box position.
-                "id": f"UCG-{app}-" + re.sub(r"[^a-z0-9]+", "-", " ".join(name + eponyms).lower()).strip("-")[:60],
-                "app": app.lower(),
-                "name": " ".join(name),
-                "eponym": " / ".join(eponyms),
-                "value": "Sub-A" if value.upper().startswith("SUB") else value.upper(),
-                "eg": ROMAN.get(r["eg"]),
-                "src": "UCG",
-                "note": NOTE_EDITS.get(n := " ".join(note).replace("Note: ", ""), n),
-            })
+    for r in cat["codes"]["UCG-MAG-ADD"]:
+        if r["apparatus"] not in APPS + ["VT"]:
+            continue
+        out.append({
+            "id": r["id"],
+            "app": r["apparatus"].lower(),
+            "name": r["name"],
+            "eponym": r["eponym"],
+            "value": r["value"],
+            "eg": ROMAN.get(r["element_group"]),
+            "src": "UCG",
+            "note": NOTE_EDITS.get(r["note"], r["note"]),
+        })
     return out
 
 
