@@ -649,7 +649,7 @@ function entriesRow(a, cur) {
     <div class="entries" role="tablist" aria-label="Levels this athlete competes">
       ${a.entries
         .map(
-          (e) => `<span class="entry" role="presentation"><button type="button" role="tab" class="entry-tab${cur && e.id === cur.id ? ' active' : ''}" data-entry="${esc(e.id)}" aria-selected="${cur && e.id === cur.id}">
+          (e) => `<span class="entry" role="presentation"><button type="button" role="tab" class="entry-tab${cur && e.id === cur.id ? ' active' : ''}" data-entry="${esc(e.id)}" aria-selected="${cur && e.id === cur.id}"${a.entries.length > 1 ? ' title="Drag to reorder. The first level opens first." aria-keyshortcuts="Alt+ArrowLeft Alt+ArrowRight"' : ''}>
             <span class="disc-badge disc-${e.disc}">${esc(DISCIPLINES[e.disc].name)}</span><span>${esc(levelInfo(e.disc, e.level)?.name || e.level)}</span>
           </button><button type="button" class="entry-remove" data-remove-entry="${esc(e.id)}" aria-label="Remove ${esc(entryName(e))}" title="Remove this level">${ICON_X_SMALL}</button></span>`
         )
@@ -1150,11 +1150,28 @@ function bindEditor(a, e) {
     scheduleSave();
     renderAll();
   }));
-  $$('[data-entry]').forEach((b) => (b.onclick = () => {
-    state.entryId = b.dataset.entry;
-    state.showAdd = false;
-    renderAll();
-  }));
+  $$('[data-entry]').forEach((b) => {
+    b.onclick = () => {
+      if (tabDragJustEnded) return;
+      state.entryId = b.dataset.entry;
+      state.showAdd = false;
+      renderAll();
+    };
+    b.onpointerdown = (ev) => onTabPointerDown(a, b, ev);
+    b.onkeydown = (ev) => {
+      // Alt + left/right arrow moves the level along the row, as dragging does.
+      if (!ev.altKey || (ev.key !== 'ArrowLeft' && ev.key !== 'ArrowRight')) return;
+      ev.preventDefault();
+      const from = a.entries.findIndex((x) => x.id === b.dataset.entry);
+      const to = from + (ev.key === 'ArrowLeft' ? -1 : 1);
+      if (from < 0 || to < 0 || to >= a.entries.length) return;
+      const [moved] = a.entries.splice(from, 1);
+      a.entries.splice(to, 0, moved);
+      scheduleSave();
+      renderAll();
+      $(`[data-entry="${CSS.escape(moved.id)}"]`)?.focus();
+    };
+  });
   $$('[data-add]').forEach((b) => {
     const prefetch = () => loadDiscipline(b.dataset.add.split(':')[0]).catch(() => {});
     b.addEventListener('pointerenter', prefetch, { once: true });
@@ -1597,6 +1614,102 @@ function startDrag(handle, ev) {
     dragged.classList.remove('dragging');
     if (ev.type === 'pointerup' && to !== from) moveSkill(evId, pass, from, to, 'handle');
   };
+  addEventListener('pointermove', move);
+  addEventListener('pointerup', end);
+  addEventListener('pointercancel', end);
+}
+
+// Level tabs reorder by dragging; the leftmost opens first. A mouse drag starts once the
+// pointer moves a few pixels (a plain click still opens the level); on a touch screen a
+// long press picks the tab up, so a swipe still scrolls the page. The tabs wrap, so the
+// dragged tab takes the place of whichever tab it's over, before or after it by which
+// half it's on.
+let tabDragJustEnded = false;
+function onTabPointerDown(a, tab, ev) {
+  if (ev.button > 0 || a.entries.length < 2) return;
+  const x0 = ev.clientX;
+  const y0 = ev.clientY;
+  const touch = ev.pointerType !== 'mouse';
+  const cancel = () => {
+    clearTimeout(timer);
+    removeEventListener('pointermove', moved);
+    removeEventListener('pointerup', cancel);
+    removeEventListener('pointercancel', cancel);
+  };
+  const begin = (m) => {
+    cancel();
+    startTabDrag(a, tab, ev, m);
+  };
+  const moved = (m) => {
+    if (Math.hypot(m.clientX - x0, m.clientY - y0) <= (touch ? 8 : 5)) return;
+    if (touch) cancel();
+    else begin(m);
+  };
+  const timer = touch
+    ? setTimeout(() => {
+        navigator.vibrate?.(10);
+        begin(ev);
+      }, 400)
+    : 0;
+  addEventListener('pointermove', moved);
+  addEventListener('pointerup', cancel);
+  addEventListener('pointercancel', cancel);
+}
+
+function startTabDrag(a, tab, down, first) {
+  const item = tab.closest('.entry');
+  const row = item.parentElement;
+  const before = $$('[data-entry]', row).map((b) => b.dataset.entry);
+  const noScroll = (t) => t.preventDefault();
+  const noMenu = (t) => t.preventDefault();
+  addEventListener('touchmove', noScroll, { passive: false });
+  addEventListener('contextmenu', noMenu);
+  const r0 = item.getBoundingClientRect();
+  const grabX = down.clientX - r0.left;
+  const grabY = down.clientY - r0.top;
+  item.classList.add('dragging');
+  row.classList.add('reordering');
+  const place = (m) => {
+    item.style.transform = '';
+    const r = item.getBoundingClientRect();
+    item.style.transform = `translate(${m.clientX - grabX - r.left}px, ${m.clientY - grabY - r.top}px)`;
+  };
+  const move = (m) => {
+    const over = $$('.entry', row).find((o) => {
+      if (o === item) return false;
+      const b = o.getBoundingClientRect();
+      return m.clientX >= b.left && m.clientX <= b.right && m.clientY >= b.top - 6 && m.clientY <= b.bottom + 6;
+    });
+    if (over) {
+      const b = over.getBoundingClientRect();
+      const after = m.clientX > b.left + b.width / 2;
+      const target = after ? over.nextSibling : over;
+      if (target !== item && target !== item.nextSibling) row.insertBefore(item, target);
+    }
+    place(m);
+  };
+  const end = (ev) => {
+    removeEventListener('pointermove', move);
+    removeEventListener('pointerup', end);
+    removeEventListener('pointercancel', end);
+    removeEventListener('touchmove', noScroll);
+    setTimeout(() => removeEventListener('contextmenu', noMenu), 0);
+    tabDragJustEnded = true;
+    setTimeout(() => (tabDragJustEnded = false), 350);
+    item.classList.remove('dragging');
+    row.classList.remove('reordering');
+    item.style.transform = '';
+    const after = $$('[data-entry]', row).map((b) => b.dataset.entry);
+    if (ev.type !== 'pointerup' || after.join() === before.join()) {
+      if (after.join() !== before.join()) renderAll();
+      return;
+    }
+    const byId = new Map(a.entries.map((x) => [x.id, x]));
+    a.entries = after.map((id) => byId.get(id)).filter(Boolean);
+    scheduleSave();
+    renderAll();
+  };
+  move(first);
   addEventListener('pointermove', move);
   addEventListener('pointerup', end);
   addEventListener('pointercancel', end);
