@@ -20,6 +20,8 @@ import json
 import os
 import re
 
+from wg_names import wg_name
+
 EXTRACT = os.environ.get("GYM_SKILL_EXTRACT_DIR", r"C:\dev\gym-skill-extract")
 WG_DEFAULT = os.path.join(EXTRACT, "WG MAG CoP Extraction", "skills_verified.json")
 COP_DEFAULT = os.environ.get("UCG_COP_DIR", r"C:\dev\ucg-code-of-points")
@@ -48,7 +50,7 @@ def wg_skills(path):
         out.append({
             "id": f"WG-{s['apparatus']}-{s['element_group']}-{s['number']}",  # FIG numbers restart in each EG
             "app": s["apparatus"].lower(),
-            "name": " ".join(s["description"].split()),
+            "name": wg_name("mag", s),  # own-words name, not the Code's description
             "eponym": s["eponym"] or "",
             "value": s["value"].split("=")[0],
             "eg": ROMAN.get(s["element_group"]),
@@ -89,7 +91,7 @@ def wg_vaults(path):
         n, v = s["number"], float(s["value"])
         out.append({
             "id": str(n),
-            "name": " ".join(s["description"].split()),
+            "name": wg_name("mag", s),
             "eponym": s["eponym"] or "",
             "eg": s["element_group"],
             "value": v,

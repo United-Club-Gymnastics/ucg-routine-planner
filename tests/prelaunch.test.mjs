@@ -34,7 +34,7 @@ test('WAG Masters: an element group outside I-IV earns no group bonus', () => {
 });
 
 test('WAG Masters search: "back handspring" finds the WG flic-flac', () => {
-  assert.ok(searchSkills('wag', 'fx', 'back handspring').some((s) => s.src === 'WG' && /flic/i.test(s.name)));
+  assert.ok(searchSkills('wag', 'fx', 'back handspring').some((s) => s.id === 'WGW-FX-3.107-1'));
 });
 
 test('Xcel Gold vault: alternative springboard shows the chart value and -0.5, not Start value twice', () => {
