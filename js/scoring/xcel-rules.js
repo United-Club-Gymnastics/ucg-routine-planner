@@ -192,10 +192,11 @@ export function infinityApparatusBonus(ev, items) {
   return null;
 }
 // WG Code skills have no tags; their element group says what they are. Beam: 5 and 6 are
-// acro flight. Floor: 5 is saltos backward, 4 saltos forward / sideward (with aerials).
+// acro flight. Floor: 5 is saltos backward, 4 saltos forward / sideward (with aerials; the
+// build marks the saltos: WG skills carry our own names, not the Code's text).
 const fromWG = (it) => it.skill?.src === 'WG';
 const wgFlight = (it) => (fromWG(it) ? [5, 6].includes(group(it)) : flight('bb', it));
-const wgSalto = (it) => (fromWG(it) ? group(it) === 5 || (group(it) === 4 && /salto/i.test(it.skill.name)) : salto(it));
+const wgSalto = (it) => (fromWG(it) ? group(it) === 5 || (group(it) === 4 && !!it.skill.salto) : salto(it));
 
 /**
  * Which special requirements the routine meets. Uses credited skills only (restricted

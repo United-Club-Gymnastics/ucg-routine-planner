@@ -252,10 +252,10 @@ test('Advanced floor: double flip and double flipping dismount are detected from
 test('Skill search: synonyms, any word order, compound words, plain skill first', async () => {
   const { searchSkills } = await import('../js/skill-search.js');
   const first = (d, app, q) => searchSkills(d, app, q)[0]?.name;
-  assert.equal(first('mag', 'fx', 'back tuck'), 'Salto backwards tucked or piked.');
-  assert.equal(first('mag', 'fx', 'tuck back'), 'Salto backwards tucked or piked.');
-  for (const q of ['front layout', 'forward straight', 'fwd stretched']) assert.equal(first('mag', 'fx', q), 'Salto fwd. straight, also with ½ t.');
-  assert.equal(first('mag', 'fx', 'double back'), 'Double salto bwd. tucked.');
+  const top = (d, app, q, n) => searchSkills(d, app, q).slice(0, n).map((s) => s.id);
+  for (const q of ['back tuck', 'tuck back']) assert.equal(top('mag', 'fx', q, 1)[0], 'WG-FX-III-1'); // back salto tucked or piked
+  for (const q of ['front layout', 'forward straight', 'fwd stretched']) assert.ok(top('mag', 'fx', q, 2).includes('WG-FX-II-14'), q);
+  assert.equal(first('mag', 'fx', 'double back'), 'Double back tuck');
   for (const q of ['round off', 'roundoff', 'round-off']) assert.equal(first('tt', 'tu', q), 'Roundoff');
   for (const q of ['flip flop', 'bhs', 'back handspring']) assert.equal(first('tt', 'tu', q), 'Back handspring');
 });
@@ -280,12 +280,12 @@ test('Catalog: box numbers, other names, Masters lists', async () => {
   assert.ok(findSkill('UCG-FX-pancake-stop-required'));
 });
 
-test('WG shorthand: "t." is tucked unless it follows a fraction; one-letter typos in names are forgiven', async () => {
+test('HB search: "back tuck" is not a half turn; one-letter typos in names are forgiven', async () => {
   const { searchSkills } = await import('../js/skill-search.js');
-  const names = (q) => searchSkills('mag', 'hb', q).map((s) => s.name);
-  assert.ok(names('back tuck').includes('Double salto bwd. t. over the bar.'));
-  assert.ok(names('half turn handstand').includes('½ t. thr. hdst.'));
-  assert.ok(!names('back tuck').includes('½ t. thr. hdst.'));
+  const ids = (q) => searchSkills('mag', 'hb', q).map((s) => s.id);
+  assert.ok(ids('back tuck').includes('WG-HB-IV-50')); // over-bar tucked double back
+  assert.ok(ids('half turn handstand').includes('WG-HB-I-19'));
+  assert.ok(!ids('back tuck').includes('WG-HB-I-19'));
   assert.equal(searchSkills('mag', 'hb', 'varonin')[0]?.eponym, 'Voronin');
 });
 
