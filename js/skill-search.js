@@ -125,8 +125,12 @@ const LOADERS = {
       ([a, b, ix]) => add('wag', [...a.SKILLS, ...b.SKILLS], ix.INDEX)
     ),
   mag: () =>
-    Promise.all([import('./data/mag-skills.js'), import('./data/masters-skills-mag.js'), import('./data/skill-index-mag.js'), examples()]).then(
-      ([a, b, ix]) => add('mag', [...a.SKILLS, ...b.SKILLS], ix.INDEX)
+    Promise.all([import('./data/mag-skills.js'), import('./data/masters-skills-mag.js'), import('./data/skill-index-mag.js'), import('./data/mag-redirects.js'), examples()]).then(
+      ([a, b, ix, r]) => {
+        add('mag', [...a.SKILLS, ...b.SKILLS], ix.INDEX);
+        // Skills the Code retired into another: routines saved with the old id open on the replacement.
+        for (const [old, to] of Object.entries(r.REDIRECTS)) if (!SKILL_INDEX.has(old) && SKILL_INDEX.has(to)) SKILL_INDEX.set(old, SKILL_INDEX.get(to));
+      }
     ),
   tt: () => Promise.all([import('./data/tt-skills.js'), examples()]).then(([t]) => add('tt', t.SKILLS)),
 };

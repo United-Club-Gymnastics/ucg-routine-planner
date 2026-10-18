@@ -1,7 +1,7 @@
 {
  "discipline": "MAG",
- "version": "e403916a0bb1",
- "built": "2026-10-16",
+ "version": "1ddacb9a8d8b",
+ "built": "2026-10-17",
  "elements": [
   {
    "id": "MAG-FX-0001",
@@ -11174,14 +11174,14 @@
    "id": "MAG-PB-0192",
    "discipline": "MAG",
    "apparatus": "PB",
-   "short_name": "Bwd. roll from upper arm to support",
+   "short_name": "Bwd. roll piked or stretched from upper arm to support",
    "aka": [],
    "eponym": "",
    "codes": {
     "UCG-MAG-ADD": [
      {
       "rid": "UCG-PB-bwd-roll-from-upper-arm-to-support",
-      "short_name": "Bwd. roll from upper arm to support",
+      "short_name": "Bwd. roll piked or stretched from upper arm to support",
       "number": "15",
       "variant": 1,
       "value": "A",
@@ -11194,7 +11194,7 @@
     "UCG-MASTERS-MAG": [
      {
       "rid": "UCGM-mag-PB-bwd-roll-from-upper-arm-to-support",
-      "short_name": "Bwd. roll from upper arm to support",
+      "short_name": "Bwd. roll piked or stretched from upper arm to support",
       "number": "2",
       "variant": 1,
       "value": "A",
@@ -11202,43 +11202,6 @@
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/VAlYrQjQ_oA",
-      "page": 8
-     }
-    ]
-   }
-  },
-  {
-   "id": "MAG-PB-0193",
-   "discipline": "MAG",
-   "apparatus": "PB",
-   "short_name": "Backward roll to L with straight body",
-   "aka": [],
-   "eponym": "",
-   "codes": {
-    "UCG-MAG-ADD": [
-     {
-      "rid": "UCG-PB-backward-roll-to-l-with-straight-body",
-      "short_name": "Backward roll to L with straight body",
-      "number": "16",
-      "variant": 1,
-      "value": "A",
-      "element_group": "I",
-      "eponym": "",
-      "note": "",
-      "video": "https://drive.google.com/file/d/1sJk2JsnjGZu9Uoa48kTZunJRWtG1aFzw/view?usp=drive_link"
-     }
-    ],
-    "UCG-MASTERS-MAG": [
-     {
-      "rid": "UCGM-mag-PB-backward-roll-to-l-with-straight-body",
-      "short_name": "Backward roll to L with straight body",
-      "number": "4",
-      "variant": 1,
-      "value": "A",
-      "element_group": "I",
-      "eponym": "",
-      "note": "",
-      "video": "https://drive.google.com/file/d/1sJk2JsnjGZu9Uoa48kTZunJRWtG1aFzw/view?usp=drive_link",
       "page": 8
      }
     ]
@@ -11256,7 +11219,7 @@
      {
       "rid": "UCG-PB-any-number-of-circles-or-flairs-from-support-swing-fwd-or-bw",
       "short_name": "Any number of circles or flairs from support swing fwd or bwd.",
-      "number": "17",
+      "number": "16",
       "variant": 1,
       "value": "A",
       "element_group": "II",
@@ -11293,7 +11256,7 @@
      {
       "rid": "UCG-PB-piked-vault-with-hop-1-2-to-support-bent-arm",
       "short_name": "Piked vault with hop 1/2 to support bent arm",
-      "number": "18",
+      "number": "17",
       "variant": 1,
       "value": "A",
       "element_group": "II",
@@ -11306,7 +11269,7 @@
      {
       "rid": "UCGM-mag-PB-piked-vault-with-hop-1-2-to-support-bent-arm",
       "short_name": "Piked vault with hop 1/2 to support bent arm",
-      "number": "6",
+      "number": "5",
       "variant": 1,
       "value": "A",
       "element_group": "II",
@@ -11330,7 +11293,7 @@
      {
       "rid": "UCG-PB-straddle-l-2-s",
       "short_name": "Straddle L (2 s.)",
-      "number": "19",
+      "number": "18",
       "variant": 1,
       "value": "A",
       "element_group": "II",
@@ -11343,7 +11306,7 @@
      {
       "rid": "UCGM-mag-PB-straddle-l-2-s",
       "short_name": "Straddle L (2 s.)",
-      "number": "5",
+      "number": "4",
       "variant": 1,
       "value": "A",
       "element_group": "II",
@@ -11367,7 +11330,7 @@
      {
       "rid": "UCG-PB-drop-kip",
       "short_name": "Drop kip",
-      "number": "20",
+      "number": "19",
       "variant": 1,
       "value": "A",
       "element_group": "III",
@@ -11380,7 +11343,7 @@
      {
       "rid": "UCGM-mag-PB-drop-kip",
       "short_name": "Drop kip",
-      "number": "7",
+      "number": "6",
       "variant": 1,
       "value": "A",
       "element_group": "III",
@@ -11404,7 +11367,7 @@
      {
       "rid": "UCG-PB-stutz-dismount-with-full-turn",
       "short_name": "Stutz dismount with full turn",
-      "number": "21",
+      "number": "20",
       "variant": 1,
       "value": "A",
       "element_group": "IV",
@@ -11417,7 +11380,7 @@
      {
       "rid": "UCGM-mag-PB-stutz-dismount-with-full-turn",
       "short_name": "Stutz dismount with full turn",
-      "number": "8",
+      "number": "7",
       "variant": 1,
       "value": "A",
       "element_group": "IV",
@@ -11441,7 +11404,7 @@
      {
       "rid": "UCG-PB-reverse-cast-from-upper-arm-sharpe-2",
       "short_name": "Reverse cast from upper arm",
-      "number": "22",
+      "number": "21",
       "variant": 1,
       "value": "B",
       "element_group": "I",
@@ -11454,7 +11417,7 @@
      {
       "rid": "UCGM-mag-PB-reverse-cast-from-upper-arm",
       "short_name": "Reverse cast from upper arm",
-      "number": "9",
+      "number": "8",
       "variant": 1,
       "value": "B",
       "element_group": "I",
@@ -11478,7 +11441,7 @@
      {
       "rid": "UCG-PB-piked-vault-with-hop-1-2-to-support-straight-arm-sharpe-1",
       "short_name": "Piked vault with hop 1/2 to support straight arm",
-      "number": "23",
+      "number": "22",
       "variant": 1,
       "value": "B",
       "element_group": "II",
@@ -11491,7 +11454,7 @@
      {
       "rid": "UCGM-mag-PB-piked-vault-with-hop-1-2-to-support-straight-arm",
       "short_name": "Piked vault with hop 1/2 to support straight arm",
-      "number": "10",
+      "number": "9",
       "variant": 1,
       "value": "B",
       "element_group": "II",
@@ -11515,7 +11478,7 @@
      {
       "rid": "UCG-PB-stutz-to-support",
       "short_name": "Stutz to support",
-      "number": "24",
+      "number": "23",
       "variant": 1,
       "value": "B",
       "element_group": "II",
@@ -11528,7 +11491,7 @@
      {
       "rid": "UCGM-mag-PB-stutz-to-support",
       "short_name": "Stutz to support",
-      "number": "11",
+      "number": "10",
       "variant": 1,
       "value": "B",
       "element_group": "II",
@@ -11552,7 +11515,7 @@
      {
       "rid": "UCG-PB-v-sit-2-s",
       "short_name": "V-sit (2 s.)",
-      "number": "25",
+      "number": "24",
       "variant": 1,
       "value": "B",
       "element_group": "II",
@@ -11565,7 +11528,7 @@
      {
       "rid": "UCGM-mag-PB-v-sit-2-s",
       "short_name": "V-sit (2 s.)",
-      "number": "12",
+      "number": "11",
       "variant": 1,
       "value": "B",
       "element_group": "II",
@@ -11589,7 +11552,7 @@
      {
       "rid": "UCG-PB-giant-swing-to-support",
       "short_name": "Giant swing to support",
-      "number": "26",
+      "number": "25",
       "variant": 1,
       "value": "B",
       "element_group": "III",
@@ -11602,7 +11565,7 @@
      {
       "rid": "UCGM-mag-PB-giant-swing-to-support",
       "short_name": "Giant swing to support",
-      "number": "13",
+      "number": "12",
       "variant": 1,
       "value": "B",
       "element_group": "III",
@@ -11626,7 +11589,7 @@
      {
       "rid": "UCG-PB-forward-giant-to-support",
       "short_name": "Forward giant to support",
-      "number": "27",
+      "number": "26",
       "variant": 1,
       "value": "B",
       "element_group": "III",
@@ -11639,7 +11602,7 @@
      {
       "rid": "UCGM-mag-PB-forward-giant-to-support",
       "short_name": "Forward giant to support",
-      "number": "14",
+      "number": "13",
       "variant": 1,
       "value": "B",
       "element_group": "III",
@@ -11667,7 +11630,7 @@
      {
       "rid": "UCG-PB-peach-1-2-to-hang",
       "short_name": "Peach 1/2 to hang",
-      "number": "28",
+      "number": "27",
       "variant": 1,
       "value": "B",
       "element_group": "III",
@@ -11680,7 +11643,7 @@
      {
       "rid": "UCGM-mag-PB-peach-1-2-to-hang",
       "short_name": "Peach 1/2 to hang",
-      "number": "15",
+      "number": "14",
       "variant": 1,
       "value": "B",
       "element_group": "III",
@@ -11704,7 +11667,7 @@
      {
       "rid": "UCG-PB-manna-2-s",
       "short_name": "Manna (2 s.)",
-      "number": "29",
+      "number": "28",
       "variant": 1,
       "value": "C",
       "element_group": "II",
@@ -11717,7 +11680,7 @@
      {
       "rid": "UCGM-mag-PB-manna-2-s",
       "short_name": "Manna (2 s.)",
-      "number": "16",
+      "number": "15",
       "variant": 1,
       "value": "C",
       "element_group": "II",
@@ -18833,34 +18796,34 @@
    "id": "MAG-SR-0159",
    "discipline": "MAG",
    "apparatus": "SR",
-   "short_name": "V-sit muscle up to V-sit",
+   "short_name": "Pull up with bent arms while keeping legs vertical to V-Sit (2 s.)",
    "aka": [],
    "eponym": "",
    "codes": {
     "UCG-MAG-ADD": [
      {
       "rid": "UCG-SR-v-sit-muscle-up-to-v-sit",
-      "short_name": "V-sit muscle up to V-sit",
+      "short_name": "Pull up with bent arms while keeping legs vertical to V-Sit (2 s.)",
       "number": "20",
       "variant": 1,
       "value": "D",
       "element_group": "II",
       "eponym": "",
       "note": "",
-      "video": "https://drive.google.com/file/d/1ZRwzbjSspSfoZRKHOfvXO8rVRATfRrJm/view?usp=drive_link"
+      "video": "https://youtu.be/DJH35_fY02k"
      }
     ],
     "UCG-MASTERS-MAG": [
      {
       "rid": "UCGM-mag-SR-v-sit-muscle-up-to-v-sit",
-      "short_name": "V-sit muscle up to V-sit",
+      "short_name": "Pull up with bent arms while keeping legs vertical to V-Sit (2 s.)",
       "number": "21",
       "variant": 1,
       "value": "D",
       "element_group": "II",
       "eponym": "",
       "note": "",
-      "video": "https://drive.google.com/file/d/1ZRwzbjSspSfoZRKHOfvXO8rVRATfRrJm/view?usp=drive_link",
+      "video": "https://youtu.be/DJH35_fY02k",
       "page": 5
      }
     ]
@@ -18870,34 +18833,34 @@
    "id": "MAG-SR-0160",
    "discipline": "MAG",
    "apparatus": "SR",
-   "short_name": "From inverted cross, roll backwards through maltese to inverted swallow",
+   "short_name": "From inverted cross, slow lower and roll bwd. through maltese to inverted swallow (2 s.)",
    "aka": [],
    "eponym": "",
    "codes": {
     "UCG-MAG-ADD": [
      {
       "rid": "UCG-SR-from-inverted-cross-roll-backwards-through-maltese-to-invert",
-      "short_name": "From inverted cross, roll backwards through maltese to inverted swallow",
+      "short_name": "From inverted cross, slow lower and roll bwd. through maltese to inverted swallow (2 s.)",
       "number": "21",
       "variant": 1,
       "value": "F",
       "element_group": "II",
       "eponym": "",
       "note": "",
-      "video": "https://drive.google.com/file/d/12wE9T862XIVZwsk1yvjq6hhnTEXxQys5/view?usp=drive_link"
+      "video": "https://youtu.be/qDvcnE8a3BU"
      }
     ],
     "UCG-MASTERS-MAG": [
      {
       "rid": "UCGM-mag-SR-from-inverted-cross-roll-backwards-through-maltese-to-invert",
-      "short_name": "From inverted cross, roll backwards through maltese to inverted swallow",
+      "short_name": "From inverted cross, slow lower and roll bwd. through maltese to inverted swallow (2 s.)",
       "number": "22",
       "variant": 1,
       "value": "F",
       "element_group": "II",
       "eponym": "",
       "note": "",
-      "video": "https://drive.google.com/file/d/12wE9T862XIVZwsk1yvjq6hhnTEXxQys5/view?usp=drive_link",
+      "video": "https://youtu.be/qDvcnE8a3BU",
       "page": 5
      }
     ]
