@@ -1,9 +1,10 @@
-"""Own-words names for World Gymnastics skills and vaults (tools/source/wg_names.json).
+"""Names for World Gymnastics skills and vaults (tools/source/wg_names.json).
 
-The planner never shows the WG Code's descriptions: every WG record is named with the short
-name written for it in gym-skill-extract (simplified_names.json in the WG WAG / WG MAG
-extractions, copied here), except the short standard names listed in keep_code, which keep
-the Code's own name. Used by build_data.py (WAG) and build_skills.py (MAG).
+Each WG record is named, skill by skill as Nate reviewed them (2026-10-18), with either
+  * the own-words short name from gym-skill-extract (simplified_names.json in the WG WAG /
+    WG MAG extractions, copied here as "wag" / "mag"), or a name he typed over it ("renamed");
+  * or the Code's own text, for the skills listed in keep_code.
+Vaults use the own-words names. Used by build_data.py (WAG) and build_skills.py (MAG).
 """
 import json
 import os
@@ -28,7 +29,7 @@ def wg_name(disc, s):
     key = name_key(s)
     if key in _DATA["keep_code"][disc]:
         return " ".join(s["description"].split()).rstrip(".")
-    name = _DATA[disc].get(key)
+    name = _DATA["renamed"][disc].get(key) or _DATA[disc].get(key)
     assert name, f"no own-words name for WG {disc.upper()} {key} in tools/source/wg_names.json"
     return name
 

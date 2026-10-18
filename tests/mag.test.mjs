@@ -253,9 +253,7 @@ test('Skill search: synonyms, any word order, compound words, plain skill first'
   const { searchSkills } = await import('../js/skill-search.js');
   const first = (d, app, q) => searchSkills(d, app, q)[0]?.name;
   const top = (d, app, q, n) => searchSkills(d, app, q).slice(0, n).map((s) => s.id);
-  // WG skills carry our own short names, not the Code's text.
-  assert.equal(first('mag', 'fx', 'back tuck'), 'Back tuck or pike');
-  assert.equal(first('mag', 'fx', 'tuck back'), 'Back tuck or pike');
+  for (const q of ['back tuck', 'tuck back']) assert.equal(top('mag', 'fx', q, 1)[0], 'WG-FX-III-1'); // back salto tucked or piked
   for (const q of ['front layout', 'forward straight', 'fwd stretched']) assert.ok(top('mag', 'fx', q, 2).includes('WG-FX-II-14'), q);
   assert.equal(first('mag', 'fx', 'double back'), 'Double back tuck');
   for (const q of ['round off', 'roundoff', 'round-off']) assert.equal(first('tt', 'tu', q), 'Roundoff');
