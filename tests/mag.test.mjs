@@ -1,7 +1,7 @@
 // Run with: npm test
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { loadDiscipline } from '../js/skill-search.js';
+import { loadDiscipline, findSkill } from '../js/skill-search.js';
 
 // Skill lists load per discipline (as the app does before showing an athlete).
 await Promise.all(['wag', 'mag', 'tt'].map(loadDiscipline));
@@ -287,4 +287,9 @@ test('WG shorthand: "t." is tucked unless it follows a fraction; one-letter typo
   assert.ok(names('half turn handstand').includes('½ t. thr. hdst.'));
   assert.ok(!names('back tuck').includes('½ t. thr. hdst.'));
   assert.equal(searchSkills('mag', 'hb', 'varonin')[0]?.eponym, 'Voronin');
+});
+
+test('retired UCG skill ids open on the skill they were merged into (PB 16 -> PB 15)', () => {
+  assert.equal(findSkill('UCG-PB-backward-roll-to-l-with-straight-body')?.id, 'UCG-PB-bwd-roll-from-upper-arm-to-support');
+  assert.equal(findSkill('UCGM-mag-PB-backward-roll-to-l-with-straight-body')?.id, 'UCGM-mag-PB-bwd-roll-from-upper-arm-to-support');
 });

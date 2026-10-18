@@ -1,7 +1,7 @@
 {
  "discipline": "MAG",
- "version": "3d4e9c2963e2",
- "built": "2026-10-08",
+ "version": "1ddacb9a8d8b",
+ "built": "2026-10-17",
  "aliases": {
   "WG-FX-I-1": [
    "MAG-FX-0001"
@@ -1575,12 +1575,6 @@
   "UCGM-mag-PB-bwd-roll-from-upper-arm-to-support": [
    "MAG-PB-0192"
   ],
-  "UCG-PB-backward-roll-to-l-with-straight-body": [
-   "MAG-PB-0193"
-  ],
-  "UCGM-mag-PB-backward-roll-to-l-with-straight-body": [
-   "MAG-PB-0193"
-  ],
   "UCG-PB-any-number-of-circles-or-flairs-from-support-swing-fwd-or-bw": [
    "MAG-PB-0194"
   ],
@@ -2048,8 +2042,7 @@
    "MAG-PH-0115"
   ],
   "UCGM-mag-PH-russian-flop-combo-circle-in-side-support-circle-in-cross-su": [
-   "MAG-PH-0115",
-   "MAG-PH-0127"
+   "MAG-PH-0115"
   ],
   "UCG-PH-reverse-stockli-with-270-turn-from-one-pommel-rendon": [
    "MAG-PH-0116"
@@ -2963,9 +2956,17 @@
   ],
   "UCGM-mag-straight-hecht-over-table": [
    "MAG-VT-0092"
+  ],
+  "UCG-PB-backward-roll-to-l-with-straight-body": [
+   "MAG-PB-0192"
+  ],
+  "UCGM-mag-PB-backward-roll-to-l-with-straight-body": [
+   "MAG-PB-0192"
   ]
  },
  "merged": {
+  "MAG-PB-0193": "MAG-PB-0192",
+  "MAG-PH-0127": "MAG-PH-0115",
   "MAG-PB-0220": "MAG-PB-0191"
  }
 }
