@@ -1,18 +1,21 @@
-"""Builds the WAG skill list, the T&T skill list and the example routines
-(js/data/wag-skills.js, tt-skills.js, examples.js) from the JSON files in
-tools/source/:
+"""Builds the WAG skill list, the Masters lists and vaults, the T&T skill list, the example
+routines and the catalog data (js/data/) from tools/source/.
 
-  wag_wg_skills.json   the WG (FIG) WAG Code of Points 2025-2028, from the
-                       extractor in C:/dev/gym-skill-extract/WG WAG CoP Extraction
-  wg_names.json        own-words names for the WG skills and vaults (tools/wg_names.py):
-                       the planner shows these, never the Code's descriptions
-  Masters Vault Values.xlsx  UCG Masters vault values (Men / Women sheets)
-  ucg_wag_skills_simplified.json  every skill UCG's Xcel levels and UCG Infinity credit:
-                       USAG Xcel 2022-2028, USAG Development Program 2026-2030 E elements,
-                       and the UCG WAG CoP additions. From the extractor in
-                       C:/dev/gym-skill-extract/UCG WAG Skills. Only the simplified file
-                       (USAG descriptions replaced by our own short names) belongs here:
-                       the full one has the Code's text, and this repo is public.
+From the vendored skill bundle (tools/source/bundle/, synced from gym-skill-extract with
+`npm run sync-skills`; see tools/sync_bundle.py):
+  skills/wg-wag.json   the WG (FIG) WAG Code of Points 2025-2028. `description` is the name the
+                       planner shows (Nate's approved own-words name, or the Code's wording where
+                       he kept it); `tags.salto` marks the saltos (UCG Infinity)
+  skills/ucg_wag_skills_simplified.json  every skill UCG's Xcel levels and UCG Infinity credit:
+                       USAG Xcel 2022-2028, USAG Development Program 2026-2030 E elements, and
+                       the UCG WAG CoP additions, with our own short names for the USAG skills
+  skills/ucg-wag.json, ucg-masters-wag.json  their `redirects` (retired id -> replacement)
+  skills/ucg-masters-vaults.json  the UCG Masters vault tables and the vault age bonus
+  rules/USAG-XCEL-2022/digest/same-element.json  which listed versions of a USAG number are the
+                       same element, and the floor hand-support flight elements
+  catalog/             the cross-code skill catalog and levels.json
+Planner-owned (not skill data, or no bundle source yet):
+  note_edits.json      our short versions of the skill notes
   tt_skills.json       the UCG T&T DD charts (trampoline, double mini, tumbling),
                        including the UCG addendum's values
   examples.json        example routines: T&T (New / Intermediate / High Flyers),
@@ -25,11 +28,9 @@ import json
 import os
 import re
 
-from skillfile import records
-from wg_names import wg_name
-
 HERE = os.path.dirname(__file__)
 SRC = os.path.join(HERE, "source")
+BUNDLE = os.path.join(SRC, "bundle")
 OUT = os.path.join(HERE, "..", "js", "data")
 POS = {"o": "tuck", "<": "pike", "/": "straight", "": ""}
 
@@ -72,33 +73,41 @@ def wg_value(v):
     return v.split("=")[0] if "=" in v else v
 
 
+def bundle(path):
+    return json.load(open(os.path.join(BUNDLE, path), encoding="utf-8"))
+
+
+def records(name):
+    return bundle(f"skills/{name}")["records"]
+
+
 def wag():
     rows = []
-    for s in records(os.path.join(SRC, "wag_wg_skills.json")):
+    for s in records("wg-wag.json"):
         if s["apparatus"] == "VT":
             continue
         rows.append({
             "id": f"WGW-{s['apparatus']}-{s['number']}-{s.get('variant', 1)}",
             "app": s["apparatus"].lower(),
-            "name": wg_name("wag", s),  # own-words name, not the Code's description
+            "name": s["description"],  # the bundle's public name, not necessarily the Code's text
             "eponym": s.get("eponym") or "",
             "value": wg_value(s["value"]),
             "group": int(s["element_group"]),  # WG element group 1-6
             "src": "WG",
             "note": "",
         })
-        if re.search(r"(?i)salto", s["description"]):  # the name is ours; the Code's text says what the skill is
+        if (s.get("tags") or {}).get("salto"):  # UCG Infinity's salto counts
             rows[-1]["salto"] = True
     # USAG Xcel A-D, USAG Development Program E, and the UCG WAG CoP additions: the skills
     # UCG's Xcel levels and UCG Infinity (the Open Scoring Level) credit, with USAG values.
-    # From tools/source/ucg_wag_skills_simplified.json (built by the "UCG WAG Skills" extractor);
+    # From the bundle's ucg_wag_skills_simplified.json (built by the "UCG WAG Skills" extractor);
     # USAG descriptions there are our own short names, not the Code's text.
     division_ids = {"Bronze": "bronze", "Silver": "silver", "Gold": "gold", "Platinum": "plat", "Diamond": "diamond", "Sapphire": "sapphire"}
     # Records the Code treats as several different elements carry `forms` (one row each,
     # id + form letter, e.g. USAG-BB-7.104-1b); the bare record id stays as an alias of
     # form "a" so routines saved before the split still find their skill.
     links = {"aliases": {}, "same_as": [], "flight": {}}
-    for s in records(os.path.join(SRC, "ucg_wag_skills_simplified.json")):
+    for s in records("ucg_wag_skills_simplified.json"):
         if s["apparatus"] == "VT":
             continue
         app = s["apparatus"]
@@ -146,19 +155,33 @@ def wag():
     assert len(ids) == len(set(ids)), "duplicate WAG skill ids"
     for text in NOTE_EDITS.keys() - notes_edited:
         print(f"note_edits.json: no WAG skill note reads {text!r} any more (edit it or remove the entry)")
-    write("wag-skills.js", "// Generated by tools/build_data.py: WG WAG CoP 2025-2028 skills (wag_wg_skills.json), USAG Xcel 2022-2028 and Development Program 2026-2030 E skills,\n// and UCG WAG CoP additions (ucg_wag_skills_simplified.json; USAG names are our own short names, not the Code's text).\n// group: WG element group (WG skills) or USAG element group (USAG / UCG skills). divisions: Xcel division-limited skills.\n", "SKILLS", rows)
+    write("wag-skills.js", "// Generated by tools/build_data.py from the skill bundle: WG WAG CoP 2025-2028 skills (wg-wag.json), USAG Xcel 2022-2028 and Development Program 2026-2030 E skills,\n// and UCG WAG CoP additions (ucg_wag_skills_simplified.json; USAG names are our own short names, not the Code's text).\n// group: WG element group (WG skills) or USAG element group (USAG / UCG skills). divisions: Xcel division-limited skills.\n", "SKILLS", rows)
     return set(ids), links
+
+SAME_ELEMENT_DIGEST = "rules/USAG-XCEL-2022/digest/same-element.json"
+
+
+def wag_redirects():
+    """Retired UCG / UCG Masters WAG skill ids -> their replacements (the WAG loader in
+    js/skill-search.js maps them, as the MAG one does), from the bundle's ucg-wag.json and
+    ucg-masters-wag.json."""
+    redirects = {**bundle("skills/ucg-wag.json").get("redirects", {}), **bundle("skills/ucg-masters-wag.json").get("redirects", {})}
+    with open(os.path.join(OUT, "wag-redirects.js"), "w", encoding="utf-8", newline="\n") as f:
+        f.write("// Generated by tools/build_data.py from the redirects of the bundle's ucg-wag.json and ucg-masters-wag.json:\n")
+        f.write("// retired UCG / UCG Masters WAG skill id -> the skill it was merged into (routines saved with the old id open on it).\n")
+        f.write(f"export const REDIRECTS = {json.dumps(redirects, ensure_ascii=False, indent=2)};\n")
+    print(f"wrote js/data/wag-redirects.js: {len(redirects)} redirects")
+
 
 def wag_same(built):
     """Which listed versions of a USAG skill number count as the same element (Xcel CoP,
     each event's Chapter 2 "Elements considered the same / different" plus box notes),
-    and which floor elements are acro flight elements with hand support. From
-    tools/source/wag_same_elements.json (reviewed per number; reasons in our own words)."""
+    and which floor elements are acro flight elements with hand support. From the bundle's
+    rules/USAG-XCEL-2022/digest/same-element.json (reviewed per number; reasons in our own words)."""
     skill_ids, links = built
     aliases = links["aliases"]
     known = lambda i: aliases.get(i, i)  # a record that gained forms means its form "a"
-    path = os.path.join(SRC, "wag_same_elements.json")
-    data = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
+    data = bundle(SAME_ELEMENT_DIGEST)
     parent = {}
 
     def find(i):
@@ -196,7 +219,7 @@ def wag_same(built):
     flight += [f for f, v in links["flight"].items() if v and f not in flight]
     flight += [bare for bare, form_a in aliases.items() if form_a in flight]  # routines saved with the bare id
     with open(os.path.join(OUT, "wag-same.js"), "w", encoding="utf-8", newline="\n") as f:
-        f.write("// Generated by tools/build_data.py from tools/source/wag_same_elements.json.\n")
+        f.write(f"// Generated by tools/build_data.py from the skill bundle's {SAME_ELEMENT_DIGEST}.\n")
         f.write("// SAME_ELEMENT: listed versions of one USAG number that count as the same element (version id -> shared key).\n")
         f.write("// HAND_SUPPORT_FLIGHT: floor acro flight elements with hand support (credited every time, in different passes).\n")
         f.write("export const SAME_ELEMENT = " + json.dumps(same, indent=0, ensure_ascii=False).replace("\n", " ") + ";\n")
@@ -207,7 +230,7 @@ def sapphire_vaults():
     """USAG Level 9/10 vaults that aren't in the Xcel Sapphire table: UCG Xcel Sapphire
     allows them at 10.0 (UCG Women's Rules II.B.2). One row per vault number."""
     rows, by_num = [], {}
-    for s in records(os.path.join(SRC, "ucg_wag_skills_simplified.json")):
+    for s in records("ucg_wag_skills_simplified.json"):
         if s["apparatus"] != "VT" or not s["source"].startswith("USAG Development"):
             continue
         name = " ".join(s["description"].split()) + (f" ({s['eponym']})" if s.get("eponym") else "")
@@ -217,20 +240,21 @@ def sapphire_vaults():
         by_num[s["number"]] = row = {"id": f"L910-{s['number']}", "code": s["number"], "name": name,
                                      "group": int(s["element_group"]), "sv": float(s["start_values"]["Sapphire"])}
         rows.append(row)
-    write("sapphire-vaults.js", "// Generated by tools/build_data.py from tools/source/ucg_wag_skills_simplified.json: USAG Level 9/10 vaults not in the\n// Xcel Sapphire table, allowed in UCG Xcel Sapphire at 10.0 (UCG Women's Rules II.B.2).\n", "VAULTS", rows)
+    write("sapphire-vaults.js", "// Generated by tools/build_data.py from the skill bundle's ucg_wag_skills_simplified.json: USAG Level 9/10 vaults not in the\n// Xcel Sapphire table, allowed in UCG Xcel Sapphire at 10.0 (UCG Women's Rules II.B.2).\n", "VAULTS", rows)
 
 def wag_vaults():
     rows = []
-    for s in records(os.path.join(SRC, "wag_wg_skills.json")):
+    for s in records("wg-wag.json"):
         if s["apparatus"] != "VT":
             continue
-        rows.append({"id": s["number"], "name": wg_name("wag", s), "eponym": s.get("eponym") or "", "eg": s["element_group"], "value": float(s["value"]), "src": "WG"})
-    write("wag-vaults.js", "// Generated by tools/build_data.py from tools/source/wag_wg_skills.json: WG WAG vault table 2025-2028.\n", "VAULTS", rows)
+        rows.append({"id": s["number"], "name": s["description"], "eponym": s.get("eponym") or "", "eg": s["element_group"], "value": float(s["value"]), "src": "WG"})
+    write("wag-vaults.js", "// Generated by tools/build_data.py from the skill bundle's wg-wag.json: WG WAG vault table 2025-2028.\n", "VAULTS", rows)
     return {r["id"]: r for r in rows}
 
 
-# Masters vault table rows -> the WG vault(s) they correspond to. Rows not listed
-# here (squat on, roll over, hechts, ...) aren't in the WG code: UCG Masters vaults.
+# Masters vault table rows without an id (WG vaults, which the planner values from the WG
+# table) -> the WG vault(s) they correspond to. Only a check: the build stops if a row's
+# printed WG value differs from the WG table's.
 MASTERS_MAP = {
     "Men": {
         "Front handspring": ["201"], "Front handspring with ½ twist": ["202"], "Front handspring with 1/1 twist": ["203"], "Front handspring with 3/2 twist": ["204"],
@@ -259,59 +283,40 @@ MASTERS_MAP = {
 # The table's UCG Masters vaults -> their planner ids. Ids are permanent (saved in routines),
 # so they're pinned here, not derived from the names, which follow the CoP's printed wording.
 # Retired: UCGM-wag-straight-hecht-over-table (dropped from the CoP table 2026-10-06).
-MASTERS_IDS = {
-    "Men": {
-        "Squat onto table – straight jump down": "UCGM-mag-squat-onto-table-straight-jump-down",
-        "Roll onto and over the table": "UCGM-mag-roll-onto-and-over-the-table",
-        "Straddle hecht over table": "UCGM-mag-straddle-hecht-over-table",
-        "Tuck hecht over table": "UCGM-mag-tuck-hecht-over-table",
-        "Pike hecht over table": "UCGM-mag-pike-hecht-over-table",
-        "Straight hecht over table": "UCGM-mag-straight-hecht-over-table",
-    },
-    "Women": {
-        "Squat onto table – straight jump down": "UCGM-wag-squat-onto-table-straight-jump-down",
-        "Roll onto and over the table": "UCGM-wag-roll-onto-and-over-the-table",
-        "Straddle hecht over table": "UCGM-wag-straddle-hecht-over-table",
-        "Tuck hecht over table": "UCGM-wag-tuck-hecht-over-table",
-        "Forward head spring": "UCGM-wag-forward-headspring",
-        "Pike hecht over table": "UCGM-wag-pike-hecht-over-table",
-        "Front handspring sw. with ¼ twist": "UCGM-wag-front-handspring-sw-with-1-4-twist",
-        "Front handspring sw. with ¾ twist": "UCGM-wag-front-handspring-sw-with-3-4-twist",
-        "Front handspring sw. with 5/4 twist": "UCGM-wag-front-handspring-sw-with-5-4-twist",
-    },
-}
+DECADES = ["30", "40", "50", "60", "70"]  # js/scoring/masters.js's age columns
 
 
 def masters_vaults(wag_by_id):
-    """Write the Masters vaults that aren't in the WG code, and check the rest of
-    the Masters table against the WG vault values."""
-    import openpyxl
+    """Write the Masters vaults that aren't in the WG code (the rows with a planner id) and the
+    vault age bonus per decade, from the bundle's ucg-masters-vaults.json (owned by
+    ucg-code-of-points), and check the table's WG rows against the WG vault values."""
+    table = bundle("skills/ucg-masters-vaults.json")
+    if table["decades"] != DECADES:
+        raise SystemExit(f"ucg-masters-vaults.json decades {table['decades']}: js/scoring/masters.js has {DECADES}")
     text = open(os.path.join(OUT, "mag-vaults.js"), encoding="utf-8").read()
     mag_by_id = {v["id"]: v for v in json.loads(text[text.index("["): text.rindex("]") + 1])}
-    wb = openpyxl.load_workbook(os.path.join(SRC, "Masters Vault Values.xlsx"), data_only=True)
-    rows, problems = [], []
+    rows, problems, bonus = [], [], {}
     for sheet, disc, by_id in (("Men", "mag", mag_by_id), ("Women", "wag", wag_by_id)):
-        for r in list(wb[sheet].iter_rows(values_only=True))[4:]:
-            name, value = (r[1] or "").strip(), r[2]
-            if not name or value is None:
+        retired = set(table[disc].get("retired") or [])
+        bonus[disc] = [float(b) for b in table[disc]["age_bonus"]]
+        for r in (r for g in table[disc]["groups"] for r in g):
+            name, value = r["description"], float(r["wg_value"])
+            if r.get("id"):
+                if r["id"] not in retired:
+                    rows.append({"id": r["id"], "disc": disc, "name": name, "value": value, "src": "UCG",
+                                 "flipping": bool(re.search(r"(?i)salto|tsuk|yurch", name))})
                 continue
             ids = MASTERS_MAP[sheet].get(name)
-            if ids:
-                for i in ids:
-                    wg = by_id.get(i)
-                    if not wg or abs(wg["value"] - float(value)) > 1e-9:
-                        problems.append(f"{sheet}: {name} = {value}, WG {i} = {wg and wg['value']}")
-                continue
-            if name not in MASTERS_IDS[sheet]:
-                problems.append(f"{sheet}: {name!r} is neither a WG vault (MASTERS_MAP) nor a UCG Masters vault (MASTERS_IDS)")
-                continue
-            rows.append({"id": MASTERS_IDS[sheet][name], "disc": disc, "name": name, "value": float(value), "src": "UCG",
-                         "flipping": bool(re.search(r"(?i)salto|tsuk|yurch", name))})
-    missing = {i for ids in MASTERS_IDS.values() for i in ids.values()} - {r["id"] for r in rows}
-    problems += [f"no table row for {i}" for i in sorted(missing)]
+            if not ids:
+                problems.append(f"{sheet}: {name!r} has no id and isn't a WG vault in MASTERS_MAP")
+            for i in ids or []:
+                wg = by_id.get(i)
+                if not wg or abs(wg["value"] - value) > 1e-9:
+                    problems.append(f"{sheet}: {name} = {value}, WG {i} = {wg and wg['value']}")
     if problems:
         raise SystemExit("MASTERS VAULT CHECK:\n  " + "\n  ".join(problems))
-    write("masters-vaults.js", "// Generated by tools/build_data.py from tools/source/Masters Vault Values.xlsx: Masters vaults that aren't in the WG code.\n// The table's other vaults were checked against the WG vault tables, which the planner uses for them.\n", "VAULTS", rows)
+    write("masters-vaults.js", "// Generated by tools/build_data.py from the skill bundle's ucg-masters-vaults.json: Masters vaults that aren't in the WG code.\n// The table's other vaults were checked against the WG vault tables, which the planner uses for them.\n// AGE_BONUS: the vault age bonus per decade (30s, 40s, 50s, 60s, 70+), added to the vault's value.\n"
+          f"export const AGE_BONUS = {json.dumps(bonus)};\n", "VAULTS", rows)
 
 
 def norm(name):
@@ -422,10 +427,10 @@ def examples():
     write("examples.js", "// Generated by tools/build_data.py from tools/source/examples.json (UCG example routine sheets).\n", "EXAMPLES", rows)
 
 
-# ---- Cross-code skill catalog (tools/source/catalog/, from C:/dev/gym-skill-extract/skill_catalog) ----
+# ---- Cross-code skill catalog (the skill bundle's catalog/, built in gym-skill-extract skill_catalog/) ----
 # Only the *_public catalogs are copied here: the full ones carry the codes' text.
 
-CAT = os.path.join(SRC, "catalog")
+CAT = os.path.join(BUNDLE, "catalog")
 ROMAN_NUM = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5}
 # The Masters MAG code prints "GE" (gymnastics element) for what the Masters Rules Policy calls a
 # Miscellaneous Gymnastics Skill: the planner's "Misc" value, set by age decade.
@@ -527,13 +532,13 @@ def catalog():
 
         # Loaded with the discipline's skill lists (skill-search.js loadDiscipline).
         with open(os.path.join(OUT, f"skill-index-{disc}.js"), "w", encoding="utf-8", newline="\n") as f:
-            f.write("// Generated by tools/build_data.py from tools/source/catalog/: per planner skill id, its box label in its own code\n")
+            f.write("// Generated by tools/build_data.py from the skill bundle's catalog/: per planner skill id, its box label in its own code\n")
             f.write("// (l: 'WG I.75', 'Xcel 7.104', 'UCG FX 12', 'Masters PB 12'), the Masters page (p), other names coaches use (a),\n")
             f.write("// and what the skill is (t: tags) and the Code's printed marks (m: e.g. 'D' counts as dance).\n")
             f.write("export const INDEX = " + json.dumps(index, ensure_ascii=False, separators=(",", ":")) + ";\n")
         print(f"wrote js/data/skill-index-{disc}.js: {len(index)}")
         groups = "eg: element group 1-4" if disc == "mag" else "mgroup: Masters condensed group 1-4"
-        write(f"masters-skills-{disc}.js", f"// Generated by tools/build_data.py from tools/source/catalog/: the UCG Masters {disc.upper()} skill list (not vaults).\n// {groups}. value: Masters letter (ME, A, ...; GE is written as Misc).\n", "SKILLS", masters_rows)
+        write(f"masters-skills-{disc}.js", f"// Generated by tools/build_data.py from the skill bundle's catalog/: the UCG Masters {disc.upper()} skill list (not vaults).\n// {groups}. value: Masters letter (ME, A, ...; GE is written as Misc).\n", "SKILLS", masters_rows)
         # Lazily loaded re-valuing data: elements' code entries (skills only), aliases, merges.
         slim = {}
         for e in cat["elements"]:
@@ -558,7 +563,7 @@ def catalog():
                      "elements": slim, "aliases": {k: v for k, v in ali["aliases"].items() if all(i in slim for i in v)},
                      "merged": ali.get("merged") or {}, "pidOf": pid_of, "vaults": vaults, "vaultOf": vault_of}
         with open(os.path.join(OUT, f"catalog-{disc}.js"), "w", encoding="utf-8", newline="\n") as f:
-            f.write(f"// Generated by tools/build_data.py from tools/source/catalog/ (cross-code skill catalog {cat['version']}, levels {levels['version']}).\n")
+            f.write(f"// Generated by tools/build_data.py from the skill bundle's catalog/ (cross-code skill catalog {cat['version']}, levels {levels['version']}).\n")
             f.write("// Loaded only when a routine is copied to another level: re-values each skill in the target level's code.\n")
             f.write("export const CATALOG = " + json.dumps(out[disc], ensure_ascii=False, separators=(",", ":")) + ";\n")
         print(f"wrote js/data/catalog-{disc}.js: {len(slim)} elements")
@@ -573,6 +578,7 @@ def catalog():
 
 if __name__ == "__main__":
     wag_same(wag())
+    wag_redirects()
     sapphire_vaults()
     masters_vaults(wag_vaults())
     tt()

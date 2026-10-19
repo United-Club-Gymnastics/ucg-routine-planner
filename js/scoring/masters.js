@@ -1,5 +1,6 @@
 // UCG Masters (MAG and WAG), from the UCG Masters Rules Policy v2.01 and the
 // Masters start value worksheets. Values depend on the gymnast's age decade.
+import { AGE_BONUS } from '../data/masters-vaults.js';
 
 export const DECADES = ['30', '40', '50', '60', '70'];
 export const DECADE_LABELS = { 30: '30–39', 40: '40–49', 50: '50–59', 60: '60–69', 70: '70+' };
@@ -17,7 +18,8 @@ const VALUES = {
   C: [0.6, 0.7, 0.8, 0.9, 1.0],
   D: [0.8, 0.9, 1.0, 1.1, 1.2], // D and higher
 };
-export const VAULT_AGE_BONUS = { mag: [0.8, 1.6, 2.4, 2.8, 3.2], wag: [1.8, 2.6, 3.4, 4.2, 5.0] };
+// Vault age bonus per decade: from the Masters vault tables (ucg-code-of-points, via the skill bundle).
+export const VAULT_AGE_BONUS = AGE_BONUS;
 
 export const decadeOf = (d) => (COLUMN[d] != null ? String(d) : DEFAULT_DECADE);
 const col = (d) => COLUMN[decadeOf(d)];

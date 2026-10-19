@@ -235,3 +235,13 @@ test('UCG Infinity beam and floor: the apparatus bonus is met by connected liste
   assert.equal(scoreInfinity('fx', [{ name: 'Back tuck', letter: 'A' }], { eventBonus: true }).bonus, 0.3);
   assert.deepEqual(scoreInfinity('ub', bars).detected, {});
 });
+
+test('Infinity letter values and condensed groups agree with the bundle levels.json', async () => {
+  const { INFINITY_VALUES, INFINITY_GROUPS } = await import('../js/scoring/wag.js');
+  const { CATALOG } = await import('../js/data/catalog-wag.js');
+  const inf = CATALOG.levelRules.infinity;
+  assert.deepEqual(INFINITY_VALUES, inf.values);
+  for (const [app, groups] of Object.entries(inf.eg.condensed)) {
+    assert.deepEqual(INFINITY_GROUPS[app.toLowerCase()].condensed, Object.fromEntries(Object.entries(groups).map(([g, l]) => [g, l.map(Number)])));
+  }
+});
