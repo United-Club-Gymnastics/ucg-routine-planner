@@ -5,7 +5,7 @@ import { loadDiscipline } from '../js/skill-search.js';
 
 // Skill lists load per discipline (as the app does before showing an athlete).
 await Promise.all(['wag', 'mag', 'tt'].map(loadDiscipline));
-import { scoreInfinity, scoreInfinityVault, scoreXcel, scoreXcelVault, scoreWagMasters, scoreWagMastersVault } from '../js/scoring/wag.js';
+import { scoreInfinity, scoreInfinityVault, scoreXcel, scoreXcelVault, scoreWagMasters, scoreWagMastersVault, WAG_MASTERS_VAULTS } from '../js/scoring/wag.js';
 import { scoreTramp, scorePasses, quarterSomersaults } from '../js/scoring/tt.js';
 import { newEntry, scoreEntry, copyRoutines } from '../js/model.js';
 
@@ -77,6 +77,13 @@ test('WAG Masters: decade values, EG +0.5 from any skill, 6 count', () => {
   assert.equal(scoreWagMastersVault('UCGM-wag-pike-hecht-over-table', { decade: '30' }).sv, 12.9); // 10 + 1.1 + 1.8
   assert.equal(scoreWagMastersVault('other', { decade: '70' }).sv, 15.0);
   assert.equal(scoreWagMastersVault('UCGM-wag-forward-headspring', { decade: '50' }).sv, 14.2); // 10 + 0.8 + 3.4
+});
+
+test('WAG Masters vaults: the CoP table\'s names, no Straight hecht (retired 2026-10-06)', () => {
+  const ids = WAG_MASTERS_VAULTS.map((v) => v.id);
+  assert.ok(!ids.includes('UCGM-wag-straight-hecht-over-table'));
+  assert.equal(WAG_MASTERS_VAULTS.find((v) => v.id === 'UCGM-wag-forward-headspring').name, 'Forward head spring');
+  assert.equal(WAG_MASTERS_VAULTS.find((v) => v.id === 'UCGM-wag-front-handspring-sw-with-1-4-twist').name, 'Front handspring sw. with ¼ twist');
 });
 
 // ---- T&T ----

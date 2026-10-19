@@ -233,26 +233,51 @@ def wag_vaults():
 # here (squat on, roll over, hechts, ...) aren't in the WG code: UCG Masters vaults.
 MASTERS_MAP = {
     "Men": {
-        "Front handspring": ["201"], "Front handspring with 1/2 twist": ["202"], "Front handspring with 1/1 twist": ["203"], "Front handspring with 3/2 twist": ["204"],
+        "Front handspring": ["201"], "Front handspring with ½ twist": ["202"], "Front handspring with 1/1 twist": ["203"], "Front handspring with 3/2 twist": ["204"],
         "Front handspring and salto fwd. tucked": ["207"], "Front handspring and salto fwd. tucked with ½ twist": ["101"],
         "Front handspring and salto fwd. piked": ["213"], "Front handspring and salto fwd. piked with ½ twist": ["107"],
-        "Front handspring and salto fwd. stretched": ["219"], "Front handspring and salto fwd. stretched wit ½ twist": ["113"],
-        "Front handspring sw with 1/4 twist": ["301"], "Front handspring sw with 3/4 twist": ["302"], "Front handspring sw with 5/4 twist": ["303"],
+        "Front handspring and salto fwd. stretched": ["219"], "Front handspring and salto fwd. stretched with ½ twist": ["113"],
+        "Front handspring sw. with ¼ twist": ["301"], "Front handspring sw. with ¾ twist": ["302"], "Front handspring sw. with 5/4 twist": ["303"],
         "Tsukahara or Yurchenko tucked": ["307", "507"], "Tsukahara or Yurchenko piked": ["308", "509"],
-        "Tsukahara or Yurchenko tucked with 1/2 twist": ["309", "508"], "Tsukahara or Yurchenko tucked with 1/1 twist": ["119", "401"],
-        "Tsukahara or Yurchenko stretched": ["313", "510"], "Tsukahara or Yurchenko stretched with 1/2 twist": ["314", "511"],
+        "Tsukahara or Yurchenko tucked with ½ twist": ["309", "508"], "Tsukahara or Yurchenko tucked with 1/1 twist": ["119", "401"],
+        "Tsukahara or Yurchenko stretched": ["313", "510"], "Tsukahara or Yurchenko stretched with ½ twist": ["314", "511"],
         "Tsukahara or Yurchenko stretched with 1/1 twist": ["125", "405"],
     },
     "Women": {
-        "Front handspring": ["1.00"], "Front handspring with 1/2 twist": ["1.01"], "Front handspring with 1/1 twist": ["1.02"], "Front handspring with 3/2 twist": ["1.03"],
+        "Front handspring": ["1.00"], "Front handspring with ½ twist": ["1.01"], "Front handspring with 1/1 twist": ["1.02"], "Front handspring with 3/2 twist": ["1.03"],
         "Front handspring with ½ twist 1st phase": ["1.20"], "Front handspring with ½ twist 1st phase and ½ twist 2nd": ["1.21"],
-        "Yamashita": ["1.10"], "Yamashita 1/2 twist": ["1.11"], "Yamashita 1/1 twist": ["1.12"],
+        "Yamashita": ["1.10"], "Yamashita ½ twist": ["1.11"], "Yamashita 1/1 twist": ["1.12"],
         "Front handspring and salto fwd. tucked": ["2.10"], "Front handspring and salto fwd. tucked with ½ twist": ["2.11"],
         "Front handspring and salto fwd. piked": ["2.20"], "Front handspring and salto fwd. piked with ½ twist": ["2.21"],
-        "Yurchenko tucked": ["4.10"], "Yurchenko piked": ["4.20"], "Yurchenko tucked with 1/2 twist": ["4.11"], "Yurchenko tucked with 1/1 twist": ["4.12"],
-        "Yurchenko stretched": ["4.30"], "Yurchenko stretched with 1/2 twist": ["4.31"], "Yurchenko stretched with 1/1 twist": ["4.32"],
-        "Tsukahara tucked": ["3.10"], "Tsukahara piked": ["3.20"], "Tsukahara tucked with 1/2 twist": ["3.11"], "Tsukahara tucked with 1/1 twist": ["3.12"],
-        "Tsukahara stretched": ["3.30"], "Tsukahara stretched with 1/2 twist": ["3.31"], "Tsukahara stretched with 1/1 twist": ["3.32"],
+        "Yurchenko tucked": ["4.10"], "Yurchenko piked": ["4.20"], "Yurchenko tucked with ½ twist": ["4.11"], "Yurchenko tucked with 1/1 twist": ["4.12"],
+        "Yurchenko stretched": ["4.30"], "Yurchenko stretched with ½ twist": ["4.31"], "Yurchenko stretched with 1/1 twist": ["4.32"],
+        "Tsukahara tucked": ["3.10"], "Tsukahara piked": ["3.20"], "Tsukahara tucked with ½ twist": ["3.11"], "Tsukahara tucked with 1/1 twist": ["3.12"],
+        "Tsukahara stretched": ["3.30"], "Tsukahara stretched with ½ twist": ["3.31"], "Tsukahara stretched with 1/1 twist": ["3.32"],
+    },
+}
+
+# The table's UCG Masters vaults -> their planner ids. Ids are permanent (saved in routines),
+# so they're pinned here, not derived from the names, which follow the CoP's printed wording.
+# Retired: UCGM-wag-straight-hecht-over-table (dropped from the CoP table 2026-10-06).
+MASTERS_IDS = {
+    "Men": {
+        "Squat onto table – straight jump down": "UCGM-mag-squat-onto-table-straight-jump-down",
+        "Roll onto and over the table": "UCGM-mag-roll-onto-and-over-the-table",
+        "Straddle hecht over table": "UCGM-mag-straddle-hecht-over-table",
+        "Tuck hecht over table": "UCGM-mag-tuck-hecht-over-table",
+        "Pike hecht over table": "UCGM-mag-pike-hecht-over-table",
+        "Straight hecht over table": "UCGM-mag-straight-hecht-over-table",
+    },
+    "Women": {
+        "Squat onto table – straight jump down": "UCGM-wag-squat-onto-table-straight-jump-down",
+        "Roll onto and over the table": "UCGM-wag-roll-onto-and-over-the-table",
+        "Straddle hecht over table": "UCGM-wag-straddle-hecht-over-table",
+        "Tuck hecht over table": "UCGM-wag-tuck-hecht-over-table",
+        "Forward head spring": "UCGM-wag-forward-headspring",
+        "Pike hecht over table": "UCGM-wag-pike-hecht-over-table",
+        "Front handspring sw. with ¼ twist": "UCGM-wag-front-handspring-sw-with-1-4-twist",
+        "Front handspring sw. with ¾ twist": "UCGM-wag-front-handspring-sw-with-3-4-twist",
+        "Front handspring sw. with 5/4 twist": "UCGM-wag-front-handspring-sw-with-5-4-twist",
     },
 }
 
@@ -277,10 +302,15 @@ def masters_vaults(wag_by_id):
                     if not wg or abs(wg["value"] - float(value)) > 1e-9:
                         problems.append(f"{sheet}: {name} = {value}, WG {i} = {wg and wg['value']}")
                 continue
-            rows.append({"id": f"UCGM-{disc}-{slug(name)}", "disc": disc, "name": name, "value": float(value), "src": "UCG",
+            if name not in MASTERS_IDS[sheet]:
+                problems.append(f"{sheet}: {name!r} is neither a WG vault (MASTERS_MAP) nor a UCG Masters vault (MASTERS_IDS)")
+                continue
+            rows.append({"id": MASTERS_IDS[sheet][name], "disc": disc, "name": name, "value": float(value), "src": "UCG",
                          "flipping": bool(re.search(r"(?i)salto|tsuk|yurch", name))})
-    for p in problems:
-        print("  MASTERS VAULT CHECK:", p)
+    missing = {i for ids in MASTERS_IDS.values() for i in ids.values()} - {r["id"] for r in rows}
+    problems += [f"no table row for {i}" for i in sorted(missing)]
+    if problems:
+        raise SystemExit("MASTERS VAULT CHECK:\n  " + "\n  ".join(problems))
     write("masters-vaults.js", "// Generated by tools/build_data.py from tools/source/Masters Vault Values.xlsx: Masters vaults that aren't in the WG code.\n// The table's other vaults were checked against the WG vault tables, which the planner uses for them.\n", "VAULTS", rows)
 
 
