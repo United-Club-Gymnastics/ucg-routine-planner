@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nssharpe/gym-skill-extract/schema/aliases.schema.json",
+  "title": "Planner-id aliases (skill_catalog/aliases_{mag,wag}.json)",
+  "description": "Version 0.1.0 (2026-10-18). Resolves every routine-planner id to its catalog element(s). Aliases never change once published; a merged element forwards to its replacement through `merged`.",
+  "type": "object",
+  "required": ["discipline", "version", "built", "aliases", "merged"],
+  "additionalProperties": false,
+  "properties": {
+    "discipline": { "enum": ["MAG", "WAG"] },
+    "version": { "$ref": "catalog.schema.json#/$defs/version" },
+    "built": { "type": "string", "format": "date" },
+    "aliases": {
+      "description": "Planner id -> element ids (several when one printed record covers several elements).",
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": { "$ref": "catalog.schema.json#/$defs/elementId" }
+      }
+    },
+    "merged": {
+      "description": "Retired element id -> the element that replaced it.",
+      "type": "object",
+      "propertyNames": { "$ref": "catalog.schema.json#/$defs/elementId" },
+      "additionalProperties": { "$ref": "catalog.schema.json#/$defs/elementId" }
+    }
+  }
+}

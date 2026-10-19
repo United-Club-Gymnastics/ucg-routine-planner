@@ -1,0 +1,323 @@
+{
+ "schema_version": "0.2.0",
+ "code": "UCG-MASTERS-VAULTS",
+ "about": "Masters vault tables (both Masters codes' vault pages), drawn by tools/vault_tables.py. Final value = WG value + the age bonus of the gymnast's decade. Rows are grouped as the table draws them. `id`: the planner's permanent ID for a Masters vault that is not a WG vault (rows without one are WG vaults: the planner values them from the WG table). Owned here since 2026-10-19 (it was also in the planner's Masters Vault Values.xlsx).",
+ "decades": [
+  "30",
+  "40",
+  "50",
+  "60",
+  "70"
+ ],
+ "mag": {
+  "code": "UCG-MASTERS-MAG",
+  "age_bonus": [
+   "0.8",
+   "1.6",
+   "2.4",
+   "2.8",
+   "3.2"
+  ],
+  "groups": [
+   [
+    {
+     "id": "UCGM-mag-squat-onto-table-straight-jump-down",
+     "description": "Squat onto table – straight jump down",
+     "wg_value": "0.0"
+    },
+    {
+     "id": "UCGM-mag-roll-onto-and-over-the-table",
+     "description": "Roll onto and over the table",
+     "wg_value": "0.0"
+    },
+    {
+     "id": "UCGM-mag-straddle-hecht-over-table",
+     "description": "Straddle hecht over table",
+     "wg_value": "0.5"
+    },
+    {
+     "id": "UCGM-mag-tuck-hecht-over-table",
+     "description": "Tuck hecht over table",
+     "wg_value": "0.5"
+    },
+    {
+     "id": "UCGM-mag-pike-hecht-over-table",
+     "description": "Pike hecht over table",
+     "wg_value": "1.1"
+    },
+    {
+     "id": "UCGM-mag-straight-hecht-over-table",
+     "description": "Straight hecht over table",
+     "wg_value": "1.6"
+    }
+   ],
+   [
+    {
+     "description": "Front handspring",
+     "wg_value": "1.2"
+    },
+    {
+     "description": "Front handspring with ½ twist",
+     "wg_value": "1.4"
+    },
+    {
+     "description": "Front handspring with 1/1 twist",
+     "wg_value": "1.6"
+    },
+    {
+     "description": "Front handspring with 3/2 twist",
+     "wg_value": "1.8"
+    },
+    {
+     "description": "Front handspring and salto fwd. tucked",
+     "wg_value": "2.0"
+    },
+    {
+     "description": "Front handspring and salto fwd. tucked with ½ twist",
+     "wg_value": "2.4"
+    },
+    {
+     "description": "Front handspring and salto fwd. piked",
+     "wg_value": "2.4"
+    },
+    {
+     "description": "Front handspring and salto fwd. piked with ½ twist",
+     "wg_value": "2.8"
+    },
+    {
+     "description": "Front handspring and salto fwd. stretched",
+     "wg_value": "3.2"
+    },
+    {
+     "description": "Front handspring and salto fwd. stretched with ½ twist",
+     "wg_value": "3.6"
+    }
+   ],
+   [
+    {
+     "description": "Front handspring sw. with ¼ twist",
+     "wg_value": "1.2"
+    },
+    {
+     "description": "Front handspring sw. with ¾ twist",
+     "wg_value": "1.4"
+    },
+    {
+     "description": "Front handspring sw. with 5/4 twist",
+     "wg_value": "1.6"
+    },
+    {
+     "description": "Tsukahara or Yurchenko tucked",
+     "wg_value": "1.8"
+    },
+    {
+     "description": "Tsukahara or Yurchenko piked",
+     "wg_value": "2.0"
+    },
+    {
+     "description": "Tsukahara or Yurchenko tucked with ½ twist",
+     "wg_value": "2.0"
+    },
+    {
+     "description": "Tsukahara or Yurchenko tucked with 1/1 twist",
+     "wg_value": "2.4"
+    },
+    {
+     "description": "Tsukahara or Yurchenko stretched",
+     "wg_value": "2.8"
+    },
+    {
+     "description": "Tsukahara or Yurchenko stretched with ½ twist",
+     "wg_value": "3.2"
+    },
+    {
+     "description": "Tsukahara or Yurchenko stretched with 1/1 twist",
+     "wg_value": "3.6"
+    }
+   ]
+  ],
+  "retired": []
+ },
+ "wag": {
+  "code": "UCG-MASTERS-WAG",
+  "age_bonus": [
+   "1.8",
+   "2.6",
+   "3.4",
+   "4.2",
+   "5.0"
+  ],
+  "groups": [
+   [
+    {
+     "id": "UCGM-wag-squat-onto-table-straight-jump-down",
+     "description": "Squat onto table – straight jump down",
+     "wg_value": "0.0"
+    },
+    {
+     "id": "UCGM-wag-roll-onto-and-over-the-table",
+     "description": "Roll onto and over the table",
+     "wg_value": "0.0"
+    },
+    {
+     "id": "UCGM-wag-straddle-hecht-over-table",
+     "description": "Straddle hecht over table",
+     "wg_value": "0.6"
+    },
+    {
+     "id": "UCGM-wag-tuck-hecht-over-table",
+     "description": "Tuck hecht over table",
+     "wg_value": "0.6"
+    },
+    {
+     "id": "UCGM-wag-forward-headspring",
+     "description": "Forward head spring",
+     "wg_value": "0.8"
+    },
+    {
+     "id": "UCGM-wag-pike-hecht-over-table",
+     "description": "Pike hecht over table",
+     "wg_value": "1.1"
+    }
+   ],
+   [
+    {
+     "description": "Front handspring",
+     "wg_value": "1.6"
+    },
+    {
+     "description": "Front handspring with ½ twist",
+     "wg_value": "2.0"
+    },
+    {
+     "description": "Front handspring with 1/1 twist",
+     "wg_value": "2.6"
+    },
+    {
+     "description": "Front handspring with 3/2 twist",
+     "wg_value": "3.2"
+    },
+    {
+     "description": "Front handspring with ½ twist 1st phase",
+     "wg_value": "1.6"
+    },
+    {
+     "description": "Front handspring with ½ twist 1st phase and ½ twist 2nd",
+     "wg_value": "2.4"
+    }
+   ],
+   [
+    {
+     "description": "Yamashita",
+     "wg_value": "2.0"
+    },
+    {
+     "description": "Yamashita ½ twist",
+     "wg_value": "2.4"
+    },
+    {
+     "description": "Yamashita 1/1 twist",
+     "wg_value": "2.8"
+    }
+   ],
+   [
+    {
+     "description": "Front handspring and salto fwd. tucked",
+     "wg_value": "3.6"
+    },
+    {
+     "description": "Front handspring and salto fwd. tucked with ½ twist",
+     "wg_value": "3.8"
+    },
+    {
+     "description": "Front handspring and salto fwd. piked",
+     "wg_value": "3.8"
+    },
+    {
+     "description": "Front handspring and salto fwd. piked with ½ twist",
+     "wg_value": "4.0"
+    }
+   ],
+   [
+    {
+     "id": "UCGM-wag-front-handspring-sw-with-1-4-twist",
+     "description": "Front handspring sw. with ¼ twist",
+     "wg_value": "1.6"
+    },
+    {
+     "id": "UCGM-wag-front-handspring-sw-with-3-4-twist",
+     "description": "Front handspring sw. with ¾ twist",
+     "wg_value": "2.0"
+    },
+    {
+     "id": "UCGM-wag-front-handspring-sw-with-5-4-twist",
+     "description": "Front handspring sw. with 5/4 twist",
+     "wg_value": "2.6"
+    }
+   ],
+   [
+    {
+     "description": "Yurchenko tucked",
+     "wg_value": "3.0"
+    },
+    {
+     "description": "Yurchenko piked",
+     "wg_value": "3.2"
+    },
+    {
+     "description": "Yurchenko tucked with ½ twist",
+     "wg_value": "3.2"
+    },
+    {
+     "description": "Yurchenko tucked with 1/1 twist",
+     "wg_value": "3.6"
+    },
+    {
+     "description": "Yurchenko stretched",
+     "wg_value": "3.6"
+    },
+    {
+     "description": "Yurchenko stretched with ½ twist",
+     "wg_value": "3.8"
+    },
+    {
+     "description": "Yurchenko stretched with 1/1 twist",
+     "wg_value": "4.2"
+    }
+   ],
+   [
+    {
+     "description": "Tsukahara tucked",
+     "wg_value": "3.2"
+    },
+    {
+     "description": "Tsukahara piked",
+     "wg_value": "3.4"
+    },
+    {
+     "description": "Tsukahara tucked with ½ twist",
+     "wg_value": "3.4"
+    },
+    {
+     "description": "Tsukahara tucked with 1/1 twist",
+     "wg_value": "3.8"
+    },
+    {
+     "description": "Tsukahara stretched",
+     "wg_value": "3.8"
+    },
+    {
+     "description": "Tsukahara stretched with ½ twist",
+     "wg_value": "4.0"
+    },
+    {
+     "description": "Tsukahara stretched with 1/1 twist",
+     "wg_value": "4.4"
+    }
+   ]
+  ],
+  "retired": [
+   "UCGM-wag-straight-hecht-over-table"
+  ]
+ }
+}

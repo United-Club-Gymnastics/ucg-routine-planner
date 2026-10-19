@@ -1,0 +1,54 @@
+{
+  "code": "WG-WAG-2025",
+  "about": "D-score structure and composition requirements of WG WAG 2025-2028. Own words; digest of composition.md. 'cite' is the printed page and section.",
+  "values": {"A": 0.1, "B": 0.2, "C": 0.3, "D": 0.4, "E": 0.5, "F": 0.6, "G": 0.7, "H": 0.8, "I": 0.9, "J": 1.0, "cite": "p. 22 §7.2"},
+  "counting_values": {"count": 8, "includes_dismount": true, "apparatus": ["UB", "BB", "FX"], "cite": "p. 22 §7.2 a"},
+  "short_exercise_penalty": {
+    "senior": [{"min": 7, "penalty": 0}, {"min": 5, "penalty": 4.0}, {"min": 3, "penalty": 6.0}, {"min": 1, "penalty": 8.0}, {"min": 0, "penalty": 10.0}],
+    "junior": [{"min": 6, "penalty": 0}, {"min": 5, "penalty": 4.0}, {"min": 3, "penalty": 6.0}, {"min": 1, "penalty": 8.0}, {"min": 0, "penalty": 10.0}],
+    "from": "final score",
+    "cite": "p. 21 §6.3; p. 182"
+  },
+  "no_dismount_penalty": {"amount": 0.5, "from": "final score", "apparatus": ["UB", "BB", "FX"], "cite": "p. 43 §11.2; p. 49 §12.2; p. 55 §13.2"},
+  "cr": {
+    "max": 2.0,
+    "each": 0.5,
+    "general": ["table_elements_only", "one_element_may_meet_several_cr", "a_repeat_does_not_meet_another_cr"],
+    "cite": "p. 24 §7.3",
+    "UB": [
+      {"n": 1, "label": "flight element from high bar to low bar (a mount can meet it)", "cite": "p. 44 §11.3; p. 46 §11.7"},
+      {"n": 2, "label": "flight element on the same bar", "cite": "p. 44 §11.3"},
+      {"n": 3, "label": "different grips (not cast, mount or dismount)", "cite": "p. 44 §11.3"},
+      {"n": 4, "label": "non-flight element with at least 360° turn (not a mount)", "cite": "p. 44 §11.3"}
+    ],
+    "BB": [
+      {"n": 1, "label": "connection of 2+ different dance elements, at least one a 180° split (cross or side) or straddle leap or jump", "on_beam": true, "cite": "p. 49 §12.3"},
+      {"n": 2, "label": "turn (group 3) or roll/flair", "also_qualifying_numbers": ["1.303", "1.403", "1.304", "1.207", "1.308", "1.514", "4.203", "4.204", "4.304", "4.105", "4.305", "4.206", "4.306", "4.307", "5.405", "5.505"], "turn_on_beam": true, "cite": "p. 49 §12.3"},
+      {"n": 3, "label": "acro series of 2+ flight elements (hand support allowed), one a salto; may be the same element", "on_beam": true, "cite": "p. 49 §12.3"},
+      {"n": 4, "label": "acro elements forward/sideward and backward", "on_beam": true, "cite": "p. 49 §12.3"}
+    ],
+    "BB_rules": {"handstands_and_holds_never_meet_cr": true, "rolls_only_cr": 2,
+                 "hold_with_flight_may_end_series": true, "hold_cite": "p. 52 §12.7",
+                 "b_flight_repeatable_for_cv_sb_not_cr": ["flic-flac legs together", "flic-flac step-out", "gainer flic-flac", "round-off", "front handspring"],
+                 "repeat_cite": "p. 50 §12.4", "cite": "p. 49 §12.3"},
+    "FX": [
+      {"n": 1, "label": "dance passage: two different leaps or hops, direct or via running steps / small leaps / hops / chassé / chainé, one with 180° split or straddle; no jumps or turns; a first leap/hop lands on one leg", "cite": "p. 55 §13.3"},
+      {"n": 2, "label": "salto with at least 360° twist", "in_acro_line": true, "cite": "p. 55 §13.3"},
+      {"n": 3, "label": "double salto", "in_acro_line": true, "cite": "p. 55 §13.3"},
+      {"n": 4, "label": "salto backward and salto forward (no aerials), same or different lines", "in_acro_line": true, "cite": "p. 55 §13.3"}
+    ]
+  },
+  "content_minimum": {"BB": {"dance": 3, "acro": 3, "optional": 2}, "FX": {"dance": 3, "acro": 3, "optional": 2}, "cite": "p. 49 §12.2; p. 55 §13.2"},
+  "BB_dance_marker": {"marker": "D", "meaning": "mount counted as a dance element", "cite": "p. 108"},
+  "FX_acro_lines": {"max": 4, "line": "2+ directly connected flight elements, one a salto", "dismount": "last counting acro line", "single_line_no_dismount": true, "cite": "p. 55 §13.2"},
+  "vault": {
+    "groups": {"1": "no salto (handspring, Yamashita, round-off)", "2": "handspring forward ± 1/1 on, salto", "3": "Tsukahara", "4": "Yurchenko ± 3/4 on", "5": "round-off 1/2 on, salto"},
+    "groups_cite": "p. 40 §10.3",
+    "final_two_vaults_different_groups": true,
+    "same_group_second_vault_minus": 2.0,
+    "direction_bonus": 0.2,
+    "cuervo_counts_as": "forward",
+    "cite": "pp. 40-41 §10.4"
+  },
+  "junior": {"max_value_per_element": 0.5, "dismount_bonus": false, "vault_same_group_allowed": true, "vault_direction_bonus": false, "cite": "pp. 182-183"}
+}

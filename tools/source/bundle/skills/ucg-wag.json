@@ -1,0 +1,323 @@
+{
+ "schema_version": "0.2.0",
+ "code": "UCG-WAG-ADD",
+ "discipline": "WAG",
+ "edition": "2026-10-18",
+ "built": "2026-10-19",
+ "source": {
+  "kind": "authored",
+  "document": "WAG/UCG WAG CoP.svg",
+  "repo": "nssharpe/ucg-code-of-points",
+  "commit": "0798dc84c6ebb3b6d9175620eeabeebdf07ec770"
+ },
+ "records": [
+  {
+   "id": "UCGW-UB-1",
+   "apparatus": "UB",
+   "number": "1",
+   "description": "¾ salto fwd piked to basket swing on LB",
+   "value": "B",
+   "element_group": "1",
+   "eponym": "Watson",
+   "video": "https://youtu.be/HlLKn4nE4a0",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-UB-2",
+   "apparatus": "UB",
+   "number": "2",
+   "description": "Jump with ³⁄₂ (540°) turn, kip to support on LB",
+   "value": "C",
+   "element_group": "1",
+   "eponym": "Victor",
+   "video": "https://youtu.be/Hb5U8i-uu9o",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-UB-3",
+   "apparatus": "UB",
+   "number": "3",
+   "description": "Straddle vault mount with hand repulsion with ½ (180°) turn to clear support or hang on LB",
+   "value": "B",
+   "element_group": "1",
+   "eponym": "Denk-Lobnig 2",
+   "video": "https://youtu.be/SDTquwOJHto",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-UB-4",
+   "apparatus": "UB",
+   "number": "4",
+   "description": "Front support - free squat forward over bar with ½ turn to hang",
+   "value": "B",
+   "element_group": "2",
+   "eponym": "Denk-Lobnig",
+   "video": "https://youtu.be/FzbVlpjbFRY",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-UB-5",
+   "apparatus": "UB",
+   "number": "5",
+   "description": "Front support - stoop forward over bar with ½ turn to clear support or hang",
+   "value": "B",
+   "element_group": "2",
+   "eponym": "Sharpe 1",
+   "video": "https://youtu.be/NB0jZCOs-YQ",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-UB-6",
+   "apparatus": "UB",
+   "number": "6",
+   "description": "Cast from LB with ½ turn to hang on HB",
+   "value": "B",
+   "element_group": "2",
+   "eponym": "Georgia",
+   "video": "https://youtu.be/Zn8LdaeRAcs",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-UB-7",
+   "apparatus": "UB",
+   "number": "7",
+   "description": "Toe on to salto fwd tucked with ½ turn (180°) to hang on LB",
+   "value": "E",
+   "element_group": "3",
+   "eponym": "Kotnik",
+   "video": "https://youtu.be/pzLlIV1Z0wU",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-UB-8",
+   "apparatus": "UB",
+   "number": "8",
+   "description": "Stalder hecht from LB to HB with ½ turn (180°)",
+   "value": "C",
+   "element_group": "6",
+   "eponym": "Penn",
+   "video": "https://youtu.be/SFOdhDrD7gY",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-UB-9",
+   "apparatus": "UB",
+   "number": "9",
+   "description": "Sole circle (pike or straddle) on HB to flight to clear support or hang on LB",
+   "value": "B",
+   "element_group": "7",
+   "eponym": "Sharpe 2",
+   "video": "https://youtu.be/ce_D2cwMnxw",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-BB-1",
+   "apparatus": "BB",
+   "number": "1",
+   "description": "Jump to glide kip mount",
+   "value": "A",
+   "element_group": "1",
+   "eponym": "Denk-Lobnig",
+   "video": "https://youtu.be/CknbeUJA3Fs",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-BB-2",
+   "apparatus": "BB",
+   "number": "2",
+   "description": "Jump backward with ½ turn to tuck/pike/straddle chest stand (2 s.)",
+   "value": "B",
+   "element_group": "1",
+   "eponym": "Svetanoff",
+   "video": "https://youtu.be/k5cBdDNuIj0",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-BB-3",
+   "apparatus": "BB",
+   "number": "3",
+   "description": "Two scissors mount",
+   "value": "B",
+   "element_group": "1",
+   "eponym": "",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-BB-4",
+   "apparatus": "BB",
+   "number": "4",
+   "description": "Three scissors mount",
+   "value": "C",
+   "element_group": "1",
+   "eponym": "Michaels",
+   "video": "https://youtu.be/_t3Iu3ApG9Q",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-BB-5",
+   "apparatus": "BB",
+   "number": "5",
+   "description": "Mount with 2 circles and a 360° russian in any order",
+   "value": "D",
+   "element_group": "1",
+   "eponym": "Wronkiewicz",
+   "video": "https://youtu.be/mFidt9zg1Dg",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-BB-6",
+   "apparatus": "BB",
+   "number": "6",
+   "description": "Full turn (360°) on knee",
+   "value": "A",
+   "element_group": "3",
+   "eponym": "Kanet",
+   "video": "https://youtu.be/mU6XMw1xPJg",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-BB-7",
+   "apparatus": "BB",
+   "number": "7",
+   "description": "Crocodile hold (2 sec.)",
+   "value": "A",
+   "element_group": "5",
+   "eponym": "Rogers",
+   "video": "https://youtu.be/eBfgmEZaDfo",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-BB-8",
+   "apparatus": "BB",
+   "number": "8",
+   "description": "Handstand drop to shoulderstand (no hold)",
+   "value": "A",
+   "element_group": "5",
+   "eponym": "",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-BB-9",
+   "apparatus": "BB",
+   "number": "9",
+   "description": "Handstand drop to shoulderstand (2 sec.)",
+   "value": "B",
+   "element_group": "5",
+   "eponym": "McCarthy",
+   "video": "https://youtu.be/CsBzYwPEiGg",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-BB-10",
+   "apparatus": "BB",
+   "number": "10",
+   "description": "Pistol squat in relevé or Y-Scale",
+   "value": "B",
+   "element_group": "5",
+   "eponym": "Lim/Niolet",
+   "video": "https://youtu.be/dskfyVz9KY4",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-BB-11",
+   "apparatus": "BB",
+   "number": "11",
+   "description": "Front Lever (2 sec.)",
+   "value": "B",
+   "element_group": "5",
+   "eponym": "Georgia",
+   "video": "https://youtu.be/ONEM9wgC7x8",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-BB-12",
+   "apparatus": "BB",
+   "number": "12",
+   "description": "Salto backward tucked with step-out to stand",
+   "value": "C",
+   "element_group": "8",
+   "eponym": "Sharpe",
+   "video": "https://youtu.be/yqHLC7pqWK0",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-BB-13",
+   "apparatus": "BB",
+   "number": "13",
+   "description": "Full twisting butterfly",
+   "value": "B",
+   "element_group": "9",
+   "eponym": "Churko",
+   "video": "https://youtu.be/dnFmMoPJ9x8",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-FX-1",
+   "apparatus": "FX",
+   "number": "1",
+   "description": "Stag or double-stag jump with ½ (180°) turn (ineligible for naming)",
+   "value": "A",
+   "element_group": "1",
+   "eponym": "",
+   "video": "https://youtu.be/sQUInfDfj5E",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-FX-2",
+   "apparatus": "FX",
+   "number": "2",
+   "description": "1½ (540°) wolf turn to L-turn",
+   "value": "C",
+   "element_group": "2",
+   "eponym": "Lim 1",
+   "video": "https://youtu.be/QVyP_7dtSz8",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-FX-3",
+   "apparatus": "FX",
+   "number": "3",
+   "description": "2/1 (720°) wolf turn to L-turn",
+   "value": "D",
+   "element_group": "2",
+   "eponym": "Lim 2",
+   "video": "https://youtu.be/xUYQwOgtMB4",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-FX-4",
+   "apparatus": "FX",
+   "number": "4",
+   "description": "3/1 (1080°) turn with leg in back attitude",
+   "value": "E",
+   "element_group": "2",
+   "eponym": "Penn 2",
+   "video": "https://youtu.be/w9NXoaHnBbE",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-FX-5",
+   "apparatus": "FX",
+   "number": "5",
+   "description": "3/1 (1080°) L-turn",
+   "value": "E",
+   "element_group": "2",
+   "eponym": "Penn 1",
+   "video": "https://youtu.be/3s8T3QGJBqw",
+   "drawing": true
+  },
+  {
+   "id": "UCGW-FX-6",
+   "apparatus": "FX",
+   "number": "6",
+   "description": "Round off with takeoff from both feet together",
+   "value": "B",
+   "element_group": "5",
+   "eponym": "Rogers",
+   "video": "https://youtu.be/T6sJM7Mds_4",
+   "drawing": true
+  }
+ ],
+ "redirects": {},
+ "retired": []
+}

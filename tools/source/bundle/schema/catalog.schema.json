@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nssharpe/gym-skill-extract/schema/catalog.schema.json",
+  "title": "Cross-code catalog (skill_catalog/catalog_{mag,wag}[_public].json)",
+  "description": "Version 0.1.0 (2026-10-18). One element per cross-code skill, with every code's records for it. Built by skill_catalog/build_catalog.py. The _public files are the same minus description (Code text); the planner bundle ships only those. `version` is sha1[:12] of the public catalog + aliases, so it changes only when their content does.",
+  "type": "object",
+  "required": ["discipline", "version", "built", "elements"],
+  "additionalProperties": false,
+  "properties": {
+    "discipline": { "enum": ["MAG", "WAG"] },
+    "version": { "$ref": "#/$defs/version" },
+    "built": { "description": "Date the version last changed.", "type": "string", "format": "date" },
+    "elements": { "type": "array", "items": { "$ref": "#/$defs/element" } }
+  },
+  "$defs": {
+    "version": {
+      "description": "Catalog content hash: sha1[:12] of the sorted public catalog + aliases JSON.",
+      "type": "string",
+      "pattern": "^[0-9a-f]{12}$"
+    },
+    "elementId": {
+      "description": "Permanent cross-code element id (skill_catalog/elements.json never renumbers).",
+      "type": "string",
+      "pattern": "^(MAG-(FX|PH|SR|VT|PB|HB)|WAG-(VT|UB|BB|FX))-[0-9]{4}$"
+    },
+    "element": {
+      "type": "object",
+      "required": ["id", "discipline", "apparatus", "short_name", "aka", "eponym", "codes"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/elementId" },
+        "discipline": { "enum": ["MAG", "WAG"] },
+        "apparatus": { "enum": ["FX", "PH", "SR", "VT", "PB", "HB", "UB", "BB"] },
+        "short_name": { "type": "string" },
+        "aka": { "description": "Other names (aka.json).", "type": "array", "items": { "type": "string" } },
+        "eponym": { "type": "string" },
+        "codes": {
+          "description": "Code key (as in skill files' `code`) -> that code's records for this element.",
+          "type": "object",
+          "propertyNames": { "pattern": "^[A-Z]+(-[A-Z0-9]+)+$" },
+          "additionalProperties": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/codeRecord" } }
+        }
+      }
+    },
+    "codeRecord": {
+      "type": "object",
+      "required": ["rid", "short_name", "number", "variant", "value", "eponym"],
+      "additionalProperties": false,
+      "properties": {
+        "rid": { "description": "Record id (planner id), unique across the catalog.", "type": "string", "minLength": 1 },
+        "short_name": { "type": "string" },
+        "number": { "type": "string" },
+        "variant": { "type": "integer", "minimum": 1 },
+        "form": { "description": "Separately credited form of one printed record (UCG rulings).", "type": "string", "pattern": "^[a-z]$" },
+        "value": { "$ref": "skill.schema.json#/$defs/value" },
+        "adjusted_value": { "$ref": "skill.schema.json#/$defs/value" },
+        "dv_adjust": { "description": "Value steps between this record and the element (covers_more links).", "type": "integer" },
+        "element_group": { "type": ["string", "null"] },
+        "description": { "description": "Code text; absent in the _public files.", "type": "string" },
+        "eponym": { "type": "string" },
+        "relation": {
+          "description": "Absent = the same skill. covers_more: the record is broader than the element. stand_in: approximate, no planner-id alias.",
+          "enum": ["covers_more", "stand_in"]
+        },
+        "markers": { "type": "array", "items": { "type": "string" } },
+        "divisions": { "type": "array", "items": { "enum": ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Sapphire"] } },
+        "start_values": { "type": "object", "additionalProperties": { "type": "string", "pattern": "^[0-9]+\\.[0-9]$" } },
+        "tags": { "$ref": "skill.schema.json#/$defs/tags" },
+        "aka": { "type": "array", "items": { "type": "string" } },
+        "note": { "type": "string" },
+        "video": { "type": ["string", "null"], "format": "uri" },
+        "page": { "type": "integer", "minimum": 1 },
+        "hand_support_flight": { "type": "boolean" }
+      }
+    }
+  }
+}

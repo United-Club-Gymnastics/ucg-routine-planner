@@ -1,0 +1,6039 @@
+{
+ "schema_version": "0.3.0",
+ "code": "WG-MAG-2025",
+ "discipline": "MAG",
+ "edition": "2025-2028",
+ "built": "2026-10-18",
+ "public_names": true,
+ "source": {
+  "kind": "extracted",
+  "document": "World Gymnastics MAG Code of Points 2025-2028",
+  "repo": "nssharpe/gym-skill-extract"
+ },
+ "records": [
+  {
+   "number": "1",
+   "description": "Lower from handstand to L-sit",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "2",
+   "description": "V-sit",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "3",
+   "description": "Horizontal-leg V-sit hold",
+   "value": "C=0.3",
+   "eponym": "Manna",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "7",
+   "description": "Straddle press to handstand",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "8",
+   "description": "Pike or bent-arm press to handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "9",
+   "description": "V-sit then press to handstand",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "10",
+   "description": "Manna (2 s.) and press to hdst. (2 s.). Also final phase with straddle",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "13",
+   "description": "Rock up to handstand from prone",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "14",
+   "description": "Press to handstand from split or support",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "16",
+   "description": "From Manna (2 s.), turn over (dislocation) to handstand (2 s.)",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "19",
+   "description": "Handstand hold",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "20",
+   "description": "Japanese handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "21",
+   "description": "Japanese handstand pressed from split",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "25",
+   "description": "Straddle planche",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "27",
+   "description": "Full planche or swallow hold",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "31",
+   "description": "Handstand pirouette, ½ or full",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "32",
+   "description": "Straddle planche press to handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "34",
+   "description": "Planche or swallow press to handstand",
+   "value": "D=0.4",
+   "eponym": "Alvariño",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "37",
+   "description": "Backward roll-over from L-sit to stand",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "44",
+   "description": "Endo to handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "45",
+   "description": "Piked endo to handstand",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "49",
+   "description": "Forward walkover",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "55",
+   "description": "Cross or side split (stop required)",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "61",
+   "description": "Standing scale",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "62",
+   "description": "Hands-free 180° standing scale",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "67",
+   "description": "Jump bwd. to front support",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "68",
+   "description": "Pike or full-turn back jump to push-up",
+   "value": "B=0.2",
+   "eponym": "Endo",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "73",
+   "description": "Butterfly",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "74",
+   "description": "Butterfly full twist",
+   "value": "B=0.2",
+   "eponym": "Tong Fei",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "75",
+   "description": "Butterfly with 2/1 twist",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "79",
+   "description": "1 circle or flair",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "80",
+   "description": "Circles or flair to handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "81",
+   "description": "Flair to handstand, then flair again",
+   "value": "C=0.3",
+   "eponym": "Gogoladze",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "82",
+   "description": "Flair hops with backward full turn through handstand",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "86",
+   "description": "Lower from handstand into flair",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "91",
+   "description": "Flair with ½ spindle",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "92",
+   "description": "Flair with 1/1 spindle (in 2 circles)",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "93",
+   "description": "Flair 270°+ spindle to handstand",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "98",
+   "description": "Flair with ½ spindle to handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "100",
+   "description": "Flair 270°+ spindle through handstand to flair",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "103",
+   "description": "Russian wendeswing with 360° or 540°",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "104",
+   "description": "Russian wendeswing with 720° or 900°",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "105",
+   "description": "Russian wendeswing with 1080° or more",
+   "value": "C=0.3",
+   "eponym": "Fedorchenko",
+   "element_group": "I",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "109",
+   "description": "Back extension roll, ½ turn",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "110",
+   "description": "Back extension roll, hop full turn",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX"
+  },
+  {
+   "number": "1",
+   "description": "Forward handspring or flyspring",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "4",
+   "description": "Handspring front tuck",
+   "value": "D=0.4",
+   "eponym": "Morandi",
+   "element_group": "II",
+   "apparatus": "FX"
+  },
+  {
+   "number": "7",
+   "description": "Dive roll",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "FX"
+  },
+  {
+   "number": "13",
+   "description": "Front tuck or pike, optional ½ twist",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "FX"
+  },
+  {
+   "number": "14",
+   "description": "Front layout, optional ½ twist",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "FX"
+  },
+  {
+   "number": "16",
+   "description": "Double front tuck, optional ½ twist",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "FX"
+  },
+  {
+   "number": "17",
+   "description": "Double front pike, optional ½ twist",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "FX"
+  },
+  {
+   "number": "36",
+   "description": "Double front tuck with full twist",
+   "value": "F=0.6",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "FX"
+  },
+  {
+   "number": "38",
+   "description": "Salto fwd. t. or p. to front support",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "42",
+   "description": "Double front tuck with 1½ twists",
+   "value": "F=0.6",
+   "eponym": "Zapata",
+   "element_group": "II",
+   "apparatus": "FX"
+  },
+  {
+   "number": "46",
+   "description": "Jump ½ turn to double back tuck",
+   "value": "D=0.4",
+   "eponym": "Deferr",
+   "element_group": "II",
+   "apparatus": "FX"
+  },
+  {
+   "number": "48",
+   "description": "Double front pike or layout, 1½ twists",
+   "value": "G=0.7",
+   "eponym": "Zapata 2",
+   "element_group": "II",
+   "apparatus": "FX"
+  },
+  {
+   "number": "1",
+   "description": "Salto backwards tucked or piked",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "2",
+   "description": "Back layout or whip back",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "3",
+   "description": "Double back tuck",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "4",
+   "description": "Full-in double back or Arabian double front",
+   "value": "D=0.4",
+   "eponym": "Tsukahara",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "5",
+   "description": "Double back tuck, 1½ or double twist",
+   "value": "E=0.5",
+   "eponym": "Korosteljev",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "6",
+   "description": "Double back tuck with triple twist",
+   "value": "G=0.7",
+   "eponym": "Ri Jong Song",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "7",
+   "description": "Half-twisting back tuck or pike, Arabian",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "8",
+   "description": "Back layout ½ twist",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "11",
+   "description": "Arabian double front pike",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "12",
+   "description": "Double back tuck with 2½ twists",
+   "value": "F=0.6",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "13",
+   "description": "Back handspring",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "16",
+   "description": "Double back pike",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "18",
+   "description": "Triple back tuck",
+   "value": "I=0.9",
+   "eponym": "Liukin",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "24",
+   "description": "Triple back pike",
+   "value": "J=1.0",
+   "eponym": "Nagornyy",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "29",
+   "description": "Full-twisting straddled double back",
+   "value": "E=0.5",
+   "eponym": "Lou Yun",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "30",
+   "description": "Double layout with 2½ twists",
+   "value": "H=0.8",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "31",
+   "description": "Back jump ½ turn into forward roll",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "35",
+   "description": "Double back, full-twisting layout then pike",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "36",
+   "description": "Double back, double-twisting layout then pike",
+   "value": "F=0.6",
+   "eponym": "Kolyvanov",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "41",
+   "description": "Double layout or Arabian double front layout",
+   "value": "E=0.5",
+   "eponym": "Tamayo",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "42",
+   "description": "Double salto bwd. str. with 3/2 t. or Arabian Jump bwd. to dbl. salto fwd. str. with 1/1 t",
+   "value": "G=0.7",
+   "eponym": "Hypolito",
+   "element_group": "III",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "48",
+   "description": "Double salto bwd. straight with 1/1 t. or Arabian jump bwd. to dbl. salto fwd. str. with ½ t",
+   "value": "F=0.6",
+   "eponym": "Penev",
+   "element_group": "III",
+   "apparatus": "FX",
+   "code_text": true
+  },
+  {
+   "number": "54",
+   "description": "Double-twisting double layout",
+   "value": "G=0.7",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "60",
+   "description": "Double back tuck with 3½ twists",
+   "value": "H=0.8",
+   "eponym": "Minami",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "66",
+   "description": "Triple-twisting double layout",
+   "value": "I=0.9",
+   "eponym": "Shirai 3",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "72",
+   "description": "Double layout with 3½ twists",
+   "value": "J=1.0",
+   "eponym": "Jarman",
+   "element_group": "III",
+   "apparatus": "FX"
+  },
+  {
+   "number": "2",
+   "description": "Tucked front full or 1½ twist",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "FX"
+  },
+  {
+   "number": "3",
+   "description": "Front layout full or 1½ twist",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "FX"
+  },
+  {
+   "number": "4",
+   "description": "Front layout double twist",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "FX"
+  },
+  {
+   "number": "5",
+   "description": "Front layout 2½ twists",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "FX"
+  },
+  {
+   "number": "6",
+   "description": "Front layout triple twist",
+   "value": "F=0.6",
+   "eponym": "Shirai 2",
+   "element_group": "IV",
+   "apparatus": "FX"
+  },
+  {
+   "number": "8",
+   "description": "Back layout full twist",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "FX"
+  },
+  {
+   "number": "9",
+   "description": "Back layout 1½ or double twist",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "FX"
+  },
+  {
+   "number": "10",
+   "description": "Back layout 2½ twists",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "FX"
+  },
+  {
+   "number": "11",
+   "description": "Back layout 3½ twists",
+   "value": "E=0.5",
+   "eponym": "González",
+   "element_group": "IV",
+   "apparatus": "FX"
+  },
+  {
+   "number": "12",
+   "description": "Front layout 3½ twists",
+   "value": "G=0.7",
+   "eponym": "Goshima",
+   "element_group": "IV",
+   "apparatus": "FX"
+  },
+  {
+   "number": "14",
+   "description": "Back tuck 1½ twists",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "FX"
+  },
+  {
+   "number": "22",
+   "description": "Back layout triple twist",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "FX"
+  },
+  {
+   "number": "24",
+   "description": "Back layout quadruple twist",
+   "value": "F=0.6",
+   "eponym": "Shirai/Nguyen",
+   "element_group": "IV",
+   "apparatus": "FX"
+  },
+  {
+   "number": "1",
+   "description": "Scissor forward",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "2",
+   "description": "Scissor forward with travel sideways (also with 1/2 t.)",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "3",
+   "description": "Front scissor hopping end to end",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PH"
+  },
+  {
+   "number": "7",
+   "description": "Front scissor with ½ turn",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PH"
+  },
+  {
+   "number": "8",
+   "description": "Double scissor fwd. (¼ t. fwd. a. ¼ t. bwd.)",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "9",
+   "description": "Double scissor fwd. (¼ t. fwd. a. ¼ t. bwd.) with travel sideways",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "10",
+   "description": "Double front scissor, end to end",
+   "value": "D=0.4",
+   "eponym": "Mikulak",
+   "element_group": "I",
+   "apparatus": "PH"
+  },
+  {
+   "number": "15",
+   "description": "Traveling double front scissor via handstand",
+   "value": "C=0.3",
+   "eponym": "Stepanyan",
+   "element_group": "I",
+   "apparatus": "PH"
+  },
+  {
+   "number": "20",
+   "description": "Back leg cut via handstand to straddle support",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PH"
+  },
+  {
+   "number": "22",
+   "description": "Forward scissor through handstand with ¼ turn",
+   "value": "D=0.4",
+   "eponym": "Li Ning/Bryan",
+   "element_group": "I",
+   "apparatus": "PH"
+  },
+  {
+   "number": "25",
+   "description": "Scissor backward",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "26",
+   "description": "Scissor bwd. with travel sideways (also with ½ t.)",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "27",
+   "description": "Backward scissor hopping end to end",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PH"
+  },
+  {
+   "number": "31",
+   "description": "Scissor backward with ½ turn",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "32",
+   "description": "Double scissor bwd. (¼ t. fwd. a. ¼ t. bwd.)",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "39",
+   "description": "Swing bwd. w. ¼ t. through handstand on 1 pommel (also with ¼ t. after), lower to support with straddle legs (with legs changing)",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "1",
+   "description": "Any circle or flair in side support",
+   "value": "A=0.1",
+   "eponym": "Thomas",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "2",
+   "description": "Side circle outside or between pommels",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "7",
+   "description": "Front cross support circles on end",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "8",
+   "description": "Circles in cross support on 1 pommel (from or to ¼ t. fwd.)",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "13",
+   "description": "Rear cross support circles on end",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "14",
+   "description": "Cross support circles between pommels",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "25",
+   "description": "Any ¼ spindle",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "26",
+   "description": "Any ½ spindle",
+   "value": "B=0.2",
+   "eponym": "Keikha 2",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "28",
+   "description": "Straddle full spindle, pommel between hands",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "29",
+   "description": "Full spindle with support across and back",
+   "value": "E=0.5",
+   "eponym": "Eichorn",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "30",
+   "description": "Full spindle, both pommels between hands",
+   "value": "F=0.6",
+   "eponym": "Keikha 1/Keikha 5",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "34",
+   "description": "Full spindle on the end",
+   "value": "D=0.4",
+   "eponym": "Magyar",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "35",
+   "description": "Full spindle on the pommels",
+   "value": "E=0.5",
+   "eponym": "Berki",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "36",
+   "description": "Cross-support full spindle, hands between pommels",
+   "value": "F=0.6",
+   "eponym": "Mousichidis",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "38",
+   "description": "Direct Stöckli A on pommels",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "40",
+   "description": "Direct Stöckli A (DSA) outside pommels",
+   "value": "D=0.4",
+   "eponym": "Keikha 3/Keikha 6",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "44",
+   "description": "Direct Stöckli B (DSB)",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "51",
+   "description": "Flair or circle through handstand (with or without ½ t.) and lower to flair or circle",
+   "value": "C=0.3",
+   "eponym": "Tippelt",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "52",
+   "description": "Flair with backward hop through handstand",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "54",
+   "description": "Reverse Stöckli, DSA or pommel circle straddle through handstand, 3/3 travel (fwd.- bwd.), 360° turn to flairs",
+   "value": "F=0.6",
+   "eponym": "Busnari",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "55",
+   "description": "Double rear (kehr)",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "56",
+   "description": "Kehr with 270° t. on 1 p. (Sohn technique) from cross to side support",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "57",
+   "description": "Kehr with 270° t. on 1 pommel (Sohn technique) from side to cross support",
+   "value": "C=0.3",
+   "eponym": "Bertoncelj",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "58",
+   "description": "Kehr with 1/1 turn on 1 pommel",
+   "value": "D=0.4",
+   "eponym": "Sohn",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "62",
+   "description": "Direct Tramlot",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "68",
+   "description": "Reverse Stöckli 180° (or 270° from one pommel) turn in one circle",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "69",
+   "description": "Reverse Stöckli with 270° t. (Bezugo technique) from 2 pommels to cross support on 1 pommel",
+   "value": "C=0.3",
+   "eponym": "Davtyan",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "71",
+   "description": "Reverse Stöckli full turn on one pommel",
+   "value": "E=0.5",
+   "eponym": "Bezugo",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "73",
+   "description": "Schwabenflank",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "74",
+   "description": "Czechkehre on pommels",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "76",
+   "description": "Czechkehre outside pommels",
+   "value": "D=0.4",
+   "eponym": "Pinheiro",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "79",
+   "description": "Forward wendeswing ½ turn onto the end",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "85",
+   "description": "Russian wendeswing with 180° or 270°",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "91",
+   "description": "Russian wendeswing with 360° or 540°",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "92",
+   "description": "Russian wendeswing with 720° or 900°",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "93",
+   "description": "Russian wendeswing with 1080° or more",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "97",
+   "description": "Russian on the leather, 180° or 270°",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "103",
+   "description": "Russian on the leather, 360° or 540°",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "104",
+   "description": "Russian on the leather, 720° or 900°",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "105",
+   "description": "Russian on the leather, 1080° or more",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "110",
+   "description": "Russian on one pommel, 180° or 270°",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "111",
+   "description": "Russian on one pommel, 360° or 540°",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "112",
+   "description": "Russian on one pommel, 720° or 900°",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "113",
+   "description": "Russian on one pommel, 1080° or more",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PH"
+  },
+  {
+   "number": "1",
+   "description": "Circles with any travel in side support (1/3) (also with ¼ t.)",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "2",
+   "description": "Full-length side travel in circles",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "3",
+   "description": "Full side travel, hands between pommels",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "4",
+   "description": "Full side travel over both pommels",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "8",
+   "description": "One-third side hop travel",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "9",
+   "description": "Circles with any hop travel 2x in side support (3/3)",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "11",
+   "description": "End-to-end hop over both pommels",
+   "value": "E=0.5",
+   "eponym": "Yamawaki",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "14",
+   "description": "¼ spindle travel onto both pommels",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "15",
+   "description": "Side travel with ½ spindle",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "17",
+   "description": "End-to-end travel with two ½ spindles",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "22",
+   "description": "Forward 3/3 travel with ½ spindle",
+   "value": "D=0.4",
+   "eponym": "Nin Reyes/Titov",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "23",
+   "description": "½ spindle travel over both pommels",
+   "value": "E=0.5",
+   "eponym": "Nin Reyes 2/Keikha 4",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "29",
+   "description": "Full-length flair travel with full spindle",
+   "value": "E=0.5",
+   "eponym": "Urzica 2/Burkhart",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "32",
+   "description": "Travel fwd. in cross support (1/2 or 2/3)",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "33",
+   "description": "Travel fwd. in cross support with support on leather, pommel, pommel, leather (3/3) (1-2-4-5)",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "34",
+   "description": "Forward cross travel to the far end",
+   "value": "D=0.4",
+   "eponym": "Magyar",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "35",
+   "description": "Forward cross travel over both pommels",
+   "value": "E=0.5",
+   "eponym": "Driggs",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "37",
+   "description": "Backward cross travel, one-third",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "38",
+   "description": "Travel bwd. in cross support (1/2 or 2/3)",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "39",
+   "description": "Travel bwd. in cross sup with support on leather, pommel, pommel, leather (3/3) (5-4-2-1)",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "40",
+   "description": "Backward cross travel to the far end",
+   "value": "D=0.4",
+   "eponym": "Sivado",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "41",
+   "description": "Backward cross travel over both pommels",
+   "value": "E=0.5",
+   "eponym": "Kurbanov/Reid",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "46",
+   "description": "Reverse Stöckli between two forward kehres",
+   "value": "D=0.4",
+   "eponym": "Moguilny",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "52",
+   "description": "Three kehres: back, front, back",
+   "value": "D=0.4",
+   "eponym": "Belenki",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "57",
+   "description": "Forward Russian travel, pommel to far end",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "58",
+   "description": "Forward Russian travel end to end, skipping pommels",
+   "value": "D=0.4",
+   "eponym": "Tong Fei",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "59",
+   "description": "Russian 360°+ travel over both pommels",
+   "value": "E=0.5",
+   "eponym": "Vammen",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "64",
+   "description": "Russian travel 3/3 with 630°+",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "65",
+   "description": "Russian travel 720°+ with hands between pommels",
+   "value": "E=0.5",
+   "eponym": "Wu Guonian",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "70",
+   "description": "Russian 360° with full travel",
+   "value": "D=0.4",
+   "eponym": "Roth",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "75",
+   "description": "Reverse Stöckli from end to far pommel",
+   "value": "C=0.3",
+   "eponym": "Romero",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "76",
+   "description": "Reverse Stöckli travel end to end",
+   "value": "D=0.4",
+   "eponym": "Abu Alsoud",
+   "element_group": "III",
+   "apparatus": "PH"
+  },
+  {
+   "number": "1",
+   "description": "On the end Wende from circle (also Russian 180° or 270° to Wende)",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "2",
+   "description": "Chaguinian to wende",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "4",
+   "description": "Circle to handstand travel, 450°+ turn dismount",
+   "value": "D=0.4",
+   "eponym": "Kolyvanov",
+   "element_group": "IV",
+   "apparatus": "PH"
+  },
+  {
+   "number": "5",
+   "description": "DSA to handstand, 450°+ turn dismount",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PH"
+  },
+  {
+   "number": "7",
+   "description": "End Russian 360° or 540° dismount",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PH"
+  },
+  {
+   "number": "8",
+   "description": "End Russian 720° or 900° dismount",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PH"
+  },
+  {
+   "number": "9",
+   "description": "End Russian 1080°+ dismount",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PH"
+  },
+  {
+   "number": "10",
+   "description": "From pommels, circle with 1/4 turn to Russian wendeswing 270° on one pommel to handstand",
+   "value": "D=0.4",
+   "eponym": "Dolidze",
+   "element_group": "IV",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "13",
+   "description": "Forward wendeswing ½ turn then wende dismount",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PH"
+  },
+  {
+   "number": "15",
+   "description": "DSA, reverse Stöckli or circle on one pommel through handstand",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "16",
+   "description": "DSA backward hop to far-end handstand dismount",
+   "value": "D=0.4",
+   "eponym": "Jessen/Loos",
+   "element_group": "IV",
+   "apparatus": "PH"
+  },
+  {
+   "number": "20",
+   "description": "Circle or flair through handstand (also with ¾ t. with or without travel)",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "21",
+   "description": "Backward hop to handstand dismount",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PH"
+  },
+  {
+   "number": "22",
+   "description": "180° Russian from one end of the horse to the other end through handstand to dismount. Bertoncelj through handstand to dismount",
+   "value": "D=0.4",
+   "eponym": "Targhetta",
+   "element_group": "IV",
+   "apparatus": "PH",
+   "code_text": true
+  },
+  {
+   "number": "1",
+   "description": "Front uprise to support",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "7",
+   "description": "Forward roll down from support to swing",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "8",
+   "description": "Front uprise, counter salto forward to swing",
+   "value": "B=0.2",
+   "eponym": "Chechi",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "19",
+   "description": "From hang, felge upward to support",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "20",
+   "description": "Swing forward through handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "21",
+   "description": "Tucked double back to hang",
+   "value": "C=0.3",
+   "eponym": "Guczoghy",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "22",
+   "description": "Piked or layout double back to hang",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "25",
+   "description": "Back dislocate, piked or straight",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "31",
+   "description": "Back uprise to support",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "32",
+   "description": "Straight back uprise through handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "37",
+   "description": "Inlocate, piked or straight",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "38",
+   "description": "Swing to piked front salto to support",
+   "value": "B=0.2",
+   "eponym": "Honma",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "39",
+   "description": "Honma straight",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "43",
+   "description": "Slow inlocate from hang",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "44",
+   "description": "Double front tuck to hang",
+   "value": "B=0.2",
+   "eponym": "Yamawaki",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "45",
+   "description": "Double front pike or layout to hang",
+   "value": "C=0.3",
+   "eponym": "Jonasson",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "49",
+   "description": "Kip to support",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "55",
+   "description": "Back kip with bent arms to support",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "56",
+   "description": "Back kip to support",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "61",
+   "description": "Swing forward and back in hang",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "63",
+   "description": "Back swing, piked salto to support",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "67",
+   "description": "Bent-arm back felge to support, piked or straight",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "74",
+   "description": "Bent-arm back kip or straight roll to handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "75",
+   "description": "Forward swing or back giant to handstand",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "81",
+   "description": "Back uprise or front giant to handstand",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "86",
+   "description": "Back swing from support to handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR"
+  },
+  {
+   "number": "87",
+   "description": "Honma and swing bwd. to handstand (2 s.)",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "88",
+   "description": "Honma str. and swing bwd. to handstand (2 s.)",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "1",
+   "description": "L-sit or straddle L-sit",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "2",
+   "description": "V-sit",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "4",
+   "description": "Inverted cross",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "7",
+   "description": "Back lever",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "9",
+   "description": "Planche",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "10",
+   "description": "Maltese",
+   "value": "D=0.4",
+   "eponym": "Hirondelle",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "11",
+   "description": "Inverted maltese (Victorian)",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "13",
+   "description": "Front lever",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "15",
+   "description": "Iron cross or V-cross",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "19",
+   "description": "Support scale straddled (2 s.)",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "22",
+   "description": "V Cross, press to V-sit (2 sec.)",
+   "value": "D=0.4",
+   "eponym": "Tsukahara 3",
+   "element_group": "II",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "23",
+   "description": "Straight-arm vertical pull-up to V-cross",
+   "value": "E=0.5",
+   "eponym": "Colak",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "25",
+   "description": "Bent-arm piked or straddle press to handstand",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "26",
+   "description": "Handstand press: bent-arm straight or straight-arm piked",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "27",
+   "description": "Straight-arm straight-body press to handstand",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "28",
+   "description": "Straight-arm press from maltese to handstand",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "31",
+   "description": "Slow piked forward roll, bent arms, to support",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "32",
+   "description": "Slow straight forward roll, bent arms, to support",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "38",
+   "description": "Slow straight backward roll to L-sit",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "39",
+   "description": "Slow straight front roll into cross or L-cross",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "50",
+   "description": "Bent-arm vertical pull-up to back lever",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "51",
+   "description": "Straight-arm vertical pull-up to back lever",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "52",
+   "description": "Slow back roll to cross, L- or V-cross",
+   "value": "D=0.4",
+   "eponym": "Azarian/Tay",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "56",
+   "description": "Cross or L-cross to back lever",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "57",
+   "description": "Vertical pull-up into L-sit",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "58",
+   "description": "From or through hanging scale rearways pull to cross, L-cross, or V cross (2 s.)",
+   "value": "D=0.4",
+   "eponym": "Nakayama/NG Kiu Chung",
+   "element_group": "II",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "60",
+   "description": "Through hanging scale rearways pull with str. body through cross to inv. swallow (2 s.)",
+   "value": "F=0.6",
+   "eponym": "Zahran",
+   "element_group": "II",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "62",
+   "description": "Lower from handstand to back lever",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "63",
+   "description": "Slow lower to hang, straight-arm pull to cross",
+   "value": "C=0.3",
+   "eponym": "Li Xiaoshuang",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "64",
+   "description": "Vertical pull-up to iron cross or L-cross",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "65",
+   "description": "From planche, lower horiz. and slowly to hanging scale rw. and press to swallow (2 s.) or from swallow same to planche or planche to planche",
+   "value": "E=0.5",
+   "eponym": "Van Gelder",
+   "element_group": "II",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "66",
+   "description": "Hang pull-up through cross to inverted maltese",
+   "value": "G=0.7",
+   "eponym": "Tulloch 2",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "68",
+   "description": "Handstand lowered via inverted cross to hang",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "70",
+   "description": "Maltese press to planche",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "71",
+   "description": "Maltese to back lever to maltese",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "72",
+   "description": "Back lever press to maltese or planche",
+   "value": "F=0.6",
+   "eponym": "Zanetti",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "75",
+   "description": "Press out of cross or L-cross into L-sit",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "77",
+   "description": "Piked press from L-cross to inverted cross",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "78",
+   "description": "Straight-body press from cross to inverted cross",
+   "value": "F=0.6",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "84",
+   "description": "Maltese press to inverted cross",
+   "value": "F=0.6",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "88",
+   "description": "Cross press directly to planche",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "89",
+   "description": "Cross press to maltese",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "90",
+   "description": "Back hang press to inverted cross, straight body",
+   "value": "G=0.7",
+   "eponym": "Carmona",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "94",
+   "description": "Inverted cross, back felge to iron cross",
+   "value": "D=0.4",
+   "eponym": "Vorobiov/Zou",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "95",
+   "description": "Inverted cross, back felge to maltese or planche",
+   "value": "E=0.5",
+   "eponym": "Jotchev/Zou 2",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "101",
+   "description": "Slow back roll, straight arms, to planche",
+   "value": "E=0.5",
+   "eponym": "Yan Mijayoung",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "107",
+   "description": "Slow straight back roll to maltese",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "108",
+   "description": "Slow back roll through maltese to inverted cross",
+   "value": "F=0.6",
+   "eponym": "Simonov",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "118",
+   "description": "Slow forward roll via cross to planche",
+   "value": "D=0.4",
+   "eponym": "Ng Kiu Chung 2",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "119",
+   "description": "Slow forward roll via cross into inverted cross",
+   "value": "E=0.5",
+   "eponym": "Wynn",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "120",
+   "description": "Azarian to inverted Swallow (2 s.)",
+   "value": "F=0.6",
+   "eponym": "Tulloch",
+   "element_group": "II",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "124",
+   "description": "Slow front roll to cross, inverted-hang start allowed",
+   "value": "D=0.4",
+   "eponym": "Davtyan",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "125",
+   "description": "Slow forward roll via cross to maltese",
+   "value": "E=0.5",
+   "eponym": "Pham 2",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "130",
+   "description": "Pull-up to support, straight-arm press to handstand",
+   "value": "D=0.4",
+   "eponym": "Cingolani",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "132",
+   "description": "Vertical pull-up from hang to maltese",
+   "value": "F=0.6",
+   "eponym": "Balandin 1",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "137",
+   "description": "From hang vertical pull up thr. swallow to sup. scale (2 s.)",
+   "value": "E=0.5",
+   "eponym": "Balandin 3",
+   "element_group": "II",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "138",
+   "description": "Pull-up from hang to inverted cross",
+   "value": "G=0.7",
+   "eponym": "Balandin 2",
+   "element_group": "II",
+   "apparatus": "SR"
+  },
+  {
+   "number": "2",
+   "description": "Front uprise to L-sit",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "3",
+   "description": "Front uprise to V-sit",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "4",
+   "description": "Front uprise to V-cross",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "8",
+   "description": "Kip to L-sit",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "9",
+   "description": "Kip to V-sit",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "14",
+   "description": "Honma to L-sit (2 s.)",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "15",
+   "description": "Homna to V-sit (2 s.)",
+   "value": "C=0.3",
+   "eponym": "Gracia",
+   "element_group": "III",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "16",
+   "description": "Honma to cross / L-cross (2 s.)",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "17",
+   "description": "Honma to V cross (2 s.)",
+   "value": "E=0.5",
+   "eponym": "Tanaka",
+   "element_group": "III",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "22",
+   "description": "Back swing to piked front salto, cross/L-cross",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "27",
+   "description": "Front uprise to iron cross or L-cross",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "33",
+   "description": "Back uprise to iron cross or L-cross",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "39",
+   "description": "Kip to iron cross or L-cross",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "40",
+   "description": "Kip to V-cross",
+   "value": "D=0.4",
+   "eponym": "Molinari",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "42",
+   "description": "Kip to inverted maltese",
+   "value": "F=0.6",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "45",
+   "description": "Back kip to iron cross or L-cross",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "46",
+   "description": "Back kip to planche",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "47",
+   "description": "Back kip to maltese",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "50",
+   "description": "Felge to straddle support, legs above rings",
+   "value": "B=0.2",
+   "eponym": "Deltchev",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "53",
+   "description": "Back kip into inverted cross",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "56",
+   "description": "Felge to straddle planche",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "57",
+   "description": "Felge to iron cross or L-cross",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "58",
+   "description": "Felge upward to support scale (2 s.)",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "59",
+   "description": "Felge upward to Swallow (2 s.)",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "60",
+   "description": "Front uprise to inverted maltese",
+   "value": "F=0.6",
+   "eponym": "Rodrigues",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "65",
+   "description": "Felge to inverted cross",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "68",
+   "description": "Back uprise to straddle planche",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "70",
+   "description": "Back uprise to planche",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "71",
+   "description": "Back uprise to swallow",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "77",
+   "description": "Back uprise to inverted cross",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "82",
+   "description": "Straight-arm back felge to support scale",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "SR"
+  },
+  {
+   "number": "1",
+   "description": "Salto fwd. piked or straight, also with ½ t",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "2",
+   "description": "Front pike/layout dismount with full twist",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "3",
+   "description": "Front pike/layout dismount with 1½ twists",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "4",
+   "description": "Front pike/layout dismount with double twist",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "9",
+   "description": "Double front tuck, optional ½ twist",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "10",
+   "description": "Double front tuck with full or 1½ twists",
+   "value": "D=0.4",
+   "eponym": "Fischer",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "16",
+   "description": "Double front pike, optional ½ twist",
+   "value": "D=0.4",
+   "eponym": "Balabanov",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "17",
+   "description": "Double front pike with full or 1½ twists",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "25",
+   "description": "Salto bwd. piked or straight also with ½",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "26",
+   "description": "Back layout full twist",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "27",
+   "description": "Back layout with 1½ or double twist",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "29",
+   "description": "Back layout triple twist",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "32",
+   "description": "Double back tuck or pike",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "33",
+   "description": "Double back layout",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "36",
+   "description": "Triple back tuck",
+   "value": "G=0.7",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "42",
+   "description": "Triple back pike",
+   "value": "I=0.9",
+   "eponym": "Whittenburg",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "45",
+   "description": "Double salto bwd. t. with ½ or 1/1 t. Double salto bwd. t. with 3/2 t",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR",
+   "code_text": true
+  },
+  {
+   "number": "47",
+   "description": "Double back tuck with double twist",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "48",
+   "description": "Double back tuck with 2½ twists",
+   "value": "F=0.6",
+   "eponym": "Tuuha",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "51",
+   "description": "Double back, full-twisting layout then tuck",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "52",
+   "description": "Double layout with ½ or full twist",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "54",
+   "description": "Double layout with 1½ or double twist",
+   "value": "F=0.6",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "60",
+   "description": "Double back tuck with triple twist",
+   "value": "G=0.7",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "SR"
+  },
+  {
+   "number": "101",
+   "description": "Handspring front tuck ½ twist",
+   "value": "2.4",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "102",
+   "description": "Handspring front tuck full twist",
+   "value": "2.8",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "103",
+   "description": "Handspring front tuck 1½ twists",
+   "value": "3.2",
+   "eponym": "Kroll",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "104",
+   "description": "Handspring front tuck double twist",
+   "value": "3.6",
+   "eponym": "Canbas",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "107",
+   "description": "Handspring front pike ½ twist",
+   "value": "2.8",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "108",
+   "description": "Handspring front pike full twist",
+   "value": "3.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "109",
+   "description": "Handspring front pike 1½ twists",
+   "value": "3.6",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "113",
+   "description": "Handspring front layout ½ twist",
+   "value": "3.6",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "114",
+   "description": "Handspring front layout full twist",
+   "value": "4.0",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "115",
+   "description": "Handspring front layout 1½ twists",
+   "value": "4.4",
+   "eponym": "Lou-Yun",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "116",
+   "description": "Handspring front layout double twist",
+   "value": "4.8",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "117",
+   "description": "Handspring front layout 2½ twists",
+   "value": "5.2",
+   "eponym": "Yeo 2",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "118",
+   "description": "Handspring front layout triple twist",
+   "value": "5.6",
+   "eponym": "Yang Hak Seon",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "119",
+   "description": "Kasamatsu tuck or Tsukahara tuck full twist",
+   "value": "2.4",
+   "eponym": "Kasamatsu",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "120",
+   "description": "Tsukahara tuck 1½ twists or Kasamatsu ½",
+   "value": "2.8",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "121",
+   "description": "Tsukahara tuck double twist",
+   "value": "3.2",
+   "eponym": "Barbieri",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "122",
+   "description": "Tsukahara tuck 2½ twists",
+   "value": "3.6",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "125",
+   "description": "Tsukahara layout full or Kasamatsu layout",
+   "value": "3.6",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "126",
+   "description": "Kasamatsu layout ½ or Tsukahara layout 1½",
+   "value": "4.0",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "127",
+   "description": "Kasamatsu layout full or Tsukahara layout double",
+   "value": "4.4",
+   "eponym": "Akopian",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "131",
+   "description": "Kasamatsu layout 1½ twists",
+   "value": "4.8",
+   "eponym": "Driggs",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "132",
+   "description": "Kasamatsu layout double twist",
+   "value": "5.2",
+   "eponym": "López",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "133",
+   "description": "Kasamatsu layout 2½ or Tsukahara layout 3½",
+   "value": "5.6",
+   "eponym": "Yonekura",
+   "element_group": "I",
+   "apparatus": "VT"
+  },
+  {
+   "number": "201",
+   "description": "Front handspring",
+   "value": "1.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "VT"
+  },
+  {
+   "number": "202",
+   "description": "Front handspring ½ twist",
+   "value": "1.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "VT"
+  },
+  {
+   "number": "203",
+   "description": "Front handspring full twist",
+   "value": "1.6",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "VT"
+  },
+  {
+   "number": "204",
+   "description": "Front handspring 1½ twists",
+   "value": "1.8",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "VT"
+  },
+  {
+   "number": "205",
+   "description": "Front handspring double twist",
+   "value": "2.0",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "VT"
+  },
+  {
+   "number": "206",
+   "description": "Front handspring 2½ twists",
+   "value": "2.2",
+   "eponym": "Tsygankov",
+   "element_group": "II",
+   "apparatus": "VT"
+  },
+  {
+   "number": "207",
+   "description": "Handspring front tuck",
+   "value": "2.0",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "VT"
+  },
+  {
+   "number": "213",
+   "description": "Handspring front pike",
+   "value": "2.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "VT"
+  },
+  {
+   "number": "219",
+   "description": "Handspring front layout",
+   "value": "3.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "VT"
+  },
+  {
+   "number": "225",
+   "description": "Handspring double front tuck",
+   "value": "4.8",
+   "eponym": "Roche",
+   "element_group": "II",
+   "apparatus": "VT"
+  },
+  {
+   "number": "226",
+   "description": "Handspring double front tuck ½ twist",
+   "value": "5.2",
+   "eponym": "Dragulescu",
+   "element_group": "II",
+   "apparatus": "VT"
+  },
+  {
+   "number": "228",
+   "description": "Handspring front tuck ½ into back tuck",
+   "value": "5.2",
+   "eponym": "Zimmerman",
+   "element_group": "II",
+   "apparatus": "VT"
+  },
+  {
+   "number": "231",
+   "description": "Handspring double front pike",
+   "value": "5.2",
+   "eponym": "Blanik",
+   "element_group": "II",
+   "apparatus": "VT"
+  },
+  {
+   "number": "232",
+   "description": "Handspring double front pike ½ twist",
+   "value": "5.6",
+   "eponym": "RI Se Gwang 2",
+   "element_group": "II",
+   "apparatus": "VT"
+  },
+  {
+   "number": "301",
+   "description": "Sideways handspring with ¼ turn",
+   "value": "1.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "VT"
+  },
+  {
+   "number": "302",
+   "description": "Sideways handspring with ¾ turn",
+   "value": "1.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "VT"
+  },
+  {
+   "number": "303",
+   "description": "Sideways handspring with 1¼ turns",
+   "value": "1.6",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "VT"
+  },
+  {
+   "number": "307",
+   "description": "Tsukahara tuck",
+   "value": "1.8",
+   "eponym": "Tsukahara",
+   "element_group": "III",
+   "apparatus": "VT"
+  },
+  {
+   "number": "308",
+   "description": "Tsukahara pike",
+   "value": "2.0",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "VT"
+  },
+  {
+   "number": "309",
+   "description": "Tsukahara tuck ½ twist",
+   "value": "2.0",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "VT"
+  },
+  {
+   "number": "313",
+   "description": "Tsukahara layout",
+   "value": "2.8",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "VT"
+  },
+  {
+   "number": "314",
+   "description": "Tsukahara layout ½ twist",
+   "value": "3.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "VT"
+  },
+  {
+   "number": "319",
+   "description": "Double Tsukahara tuck",
+   "value": "4.8",
+   "eponym": "Yeo",
+   "element_group": "III",
+   "apparatus": "VT"
+  },
+  {
+   "number": "320",
+   "description": "Double Tsukahara pike",
+   "value": "5.2",
+   "eponym": "Lu Yu Fu",
+   "element_group": "III",
+   "apparatus": "VT"
+  },
+  {
+   "number": "321",
+   "description": "Full-twisting double Tsukahara",
+   "value": "5.6",
+   "eponym": "Ri Se Gwang",
+   "element_group": "III",
+   "apparatus": "VT"
+  },
+  {
+   "number": "401",
+   "description": "Yurchenko tuck full twist",
+   "value": "2.4",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "VT"
+  },
+  {
+   "number": "402",
+   "description": "Yurchenko tuck 1½ twists",
+   "value": "2.8",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "VT"
+  },
+  {
+   "number": "403",
+   "description": "Yurchenko tuck double twist",
+   "value": "3.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "VT"
+  },
+  {
+   "number": "404",
+   "description": "Yurchenko tuck 2½ twists",
+   "value": "3.6",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "VT"
+  },
+  {
+   "number": "405",
+   "description": "Yurchenko layout full twist",
+   "value": "3.6",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "VT"
+  },
+  {
+   "number": "406",
+   "description": "Yurchenko layout 1½ twists",
+   "value": "4.0",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "VT"
+  },
+  {
+   "number": "407",
+   "description": "Yurchenko layout double twist",
+   "value": "4.4",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "VT"
+  },
+  {
+   "number": "408",
+   "description": "Yurchenko layout 2½ twists",
+   "value": "4.8",
+   "eponym": "Shewfelt",
+   "element_group": "IV",
+   "apparatus": "VT"
+  },
+  {
+   "number": "409",
+   "description": "Yurchenko layout triple twist",
+   "value": "5.2",
+   "eponym": "Shirai - KIM Hee Hoon",
+   "element_group": "IV",
+   "apparatus": "VT"
+  },
+  {
+   "number": "410",
+   "description": "Yurchenko layout 3½ twists",
+   "value": "5.6",
+   "eponym": "Shirai 2",
+   "element_group": "IV",
+   "apparatus": "VT"
+  },
+  {
+   "number": "413",
+   "description": "Round-off ½-on, handspring front tuck ½ twist",
+   "value": "2.6",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "VT"
+  },
+  {
+   "number": "414",
+   "description": "Round-off ½-on, handspring front pike ½ twist",
+   "value": "3.0",
+   "eponym": "Nemov",
+   "element_group": "IV",
+   "apparatus": "VT"
+  },
+  {
+   "number": "415",
+   "description": "Round-off ½-on, handspring front layout ½ twist",
+   "value": "3.8",
+   "eponym": "Hutcheon",
+   "element_group": "IV",
+   "apparatus": "VT"
+  },
+  {
+   "number": "416",
+   "description": "Round-off ½-on, handspring front layout full twist",
+   "value": "4.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "VT"
+  },
+  {
+   "number": "417",
+   "description": "Round-off ½-on, handspring front layout 1½ twists",
+   "value": "4.6",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "VT"
+  },
+  {
+   "number": "419",
+   "description": "Round-off ½-on, handspring front layout double twist",
+   "value": "5.0",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "VT"
+  },
+  {
+   "number": "420",
+   "description": "Round-off ½-on, handspring front layout 2½ twists",
+   "value": "5.4",
+   "eponym": "Li Xiao Peng",
+   "element_group": "IV",
+   "apparatus": "VT"
+  },
+  {
+   "number": "501",
+   "description": "Round-off back handspring",
+   "value": "1.2",
+   "eponym": "",
+   "element_group": "V",
+   "apparatus": "VT"
+  },
+  {
+   "number": "502",
+   "description": "Round-off back handspring ½ twist",
+   "value": "1.4",
+   "eponym": "",
+   "element_group": "V",
+   "apparatus": "VT"
+  },
+  {
+   "number": "503",
+   "description": "Round-off back handspring full twist",
+   "value": "1.6",
+   "eponym": "",
+   "element_group": "V",
+   "apparatus": "VT"
+  },
+  {
+   "number": "507",
+   "description": "Yurchenko tuck",
+   "value": "1.8",
+   "eponym": "Yurchenko",
+   "element_group": "V",
+   "apparatus": "VT"
+  },
+  {
+   "number": "508",
+   "description": "Yurchenko tuck ½ twist",
+   "value": "2.0",
+   "eponym": "",
+   "element_group": "V",
+   "apparatus": "VT"
+  },
+  {
+   "number": "509",
+   "description": "Yurchenko pike",
+   "value": "2.0",
+   "eponym": "",
+   "element_group": "V",
+   "apparatus": "VT"
+  },
+  {
+   "number": "510",
+   "description": "Yurchenko layout",
+   "value": "2.8",
+   "eponym": "",
+   "element_group": "V",
+   "apparatus": "VT"
+  },
+  {
+   "number": "511",
+   "description": "Yurchenko layout ½ twist",
+   "value": "3.2",
+   "eponym": "",
+   "element_group": "V",
+   "apparatus": "VT"
+  },
+  {
+   "number": "513",
+   "description": "Round-off ½-on, front handspring",
+   "value": "1.4",
+   "eponym": "",
+   "element_group": "V",
+   "apparatus": "VT"
+  },
+  {
+   "number": "514",
+   "description": "Round-off ½-on, front handspring ½ twist",
+   "value": "1.6",
+   "eponym": "",
+   "element_group": "V",
+   "apparatus": "VT"
+  },
+  {
+   "number": "515",
+   "description": "Round-off ½-on, front handspring full twist",
+   "value": "1.8",
+   "eponym": "",
+   "element_group": "V",
+   "apparatus": "VT"
+  },
+  {
+   "number": "516",
+   "description": "Round-off ½-on, handspring front tuck",
+   "value": "2.2",
+   "eponym": "",
+   "element_group": "V",
+   "apparatus": "VT"
+  },
+  {
+   "number": "517",
+   "description": "Round-off ½-on, handspring front pike",
+   "value": "2.6",
+   "eponym": "",
+   "element_group": "V",
+   "apparatus": "VT"
+  },
+  {
+   "number": "518",
+   "description": "Round-off ½-on, handspring front layout",
+   "value": "3.4",
+   "eponym": "",
+   "element_group": "V",
+   "apparatus": "VT"
+  },
+  {
+   "number": "519",
+   "description": "Yurchenko double back tuck",
+   "value": "4.8",
+   "eponym": "Melissanidis",
+   "element_group": "V",
+   "apparatus": "VT"
+  },
+  {
+   "number": "520",
+   "description": "Yurchenko double back pike",
+   "value": "5.2",
+   "eponym": "Yang Wei",
+   "element_group": "V",
+   "apparatus": "VT"
+  },
+  {
+   "number": "521",
+   "description": "Round-off ½-on front handspring, double front tuck",
+   "value": "5.0",
+   "eponym": "",
+   "element_group": "V",
+   "apparatus": "VT"
+  },
+  {
+   "number": "1",
+   "description": "Front uprise to support",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "2",
+   "description": "Front uprise, back straddle cut to handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "3",
+   "description": "Front uprise, back straddle cut to hang",
+   "value": "C=0.3",
+   "eponym": "Muntean",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "5",
+   "description": "Front uprise ½ turn to handstand",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "6",
+   "description": "Fwd. uprise with Stützkehr 3/4 t. or 1/4 t. to handstand followed by a kip on one rail",
+   "value": "F=0.6",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "7",
+   "description": "Front uprise ¼ turn to one-rail hang",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "8",
+   "description": "Roll bwd. with ½ t. from upper arm hang or Fwd. uprise to Kato hop to support",
+   "value": "B=0.2",
+   "eponym": "Watanabe",
+   "element_group": "I",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "11",
+   "description": "Fwd. uprise to Makuts to upper arm",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "12",
+   "description": "Fwd. uprise to Makuts to support",
+   "value": "G=0.7",
+   "eponym": "Tsolakidis 1",
+   "element_group": "I",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "14",
+   "description": "Straight-arm back roll to handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "15",
+   "description": "Upper-arm back toss, ¼ turn to single rail",
+   "value": "C=0.3",
+   "eponym": "Kovtun",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "17",
+   "description": "Front uprise full turn to handstand",
+   "value": "E=0.5",
+   "eponym": "Richards",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "18",
+   "description": "Front uprise 1½ turns to handstand",
+   "value": "F=0.6",
+   "eponym": "Tsolakidis 2",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "20",
+   "description": "Back salto straddle cut to upper arms",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "21",
+   "description": "Back roll straddle cut to support",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "24",
+   "description": "Back roll into back tuck to upper arms",
+   "value": "F=0.6",
+   "eponym": "Dimitrenko",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "30",
+   "description": "Back roll into back pike to upper arms",
+   "value": "G=0.7",
+   "eponym": "Li Xiaopeng",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "34",
+   "description": "Back roll ½ turn tucked to upper arms",
+   "value": "D=0.4",
+   "eponym": "Harada",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "35",
+   "description": "Back roll ½ turn tucked to hang",
+   "value": "E=0.5",
+   "eponym": "Dalton",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "38",
+   "description": "Back uprise to handstand, optional ½ turn",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "40",
+   "description": "Back uprise ½ turn hop to handstand",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "41",
+   "description": "Back uprise ¾ turn hop to one-rail handstand",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "44",
+   "description": "Back uprise ½ turn straddle cut, upper arms",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "45",
+   "description": "Back uprise ½ turn straddle cut to support",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "50",
+   "description": "Back uprise ½ turn to support",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "51",
+   "description": "Back uprise, 1¼ front tuck to upper arms",
+   "value": "C=0.3",
+   "eponym": "Yamawaki",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "52",
+   "description": "Back uprise, front pike or layout to support",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "54",
+   "description": "Back uprise, double front tuck to upper arms",
+   "value": "F=0.6",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "59",
+   "description": "Back uprise, 1¼ front straddle to upper arms",
+   "value": "E=0.5",
+   "eponym": "Pakhniuk 1",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "60",
+   "description": "Back uprise, 1¼ front straddle to hang",
+   "value": "F=0.6",
+   "eponym": "Pakhniuk 2",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "61",
+   "description": "Back uprise, straddle cut or flank, bent-arm support",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "62",
+   "description": "Back uprise, straddle cut or flank, straight-arm support",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "PB"
+  },
+  {
+   "number": "1",
+   "description": "Any swing to handstand",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "2",
+   "description": "Bent-arm front swing, ½-turn hop to support",
+   "value": "B=0.2",
+   "eponym": "Kato",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "3",
+   "description": "Stützkehr fwd. to handstand (to 1 or 2 bars)",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "4",
+   "description": "Stützkehr fwd. to handstand on 1 rail (also with additional ¼ or ¾ turn to handstand)",
+   "value": "D=0.4",
+   "eponym": "Bilozerchev - Peters/Dimic",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "7",
+   "description": "L-sit hold",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "8",
+   "description": "Held press to handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "9",
+   "description": "¾ Diamidov and ½ turn to upper arms",
+   "value": "C=0.3",
+   "eponym": "Salazar",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "10",
+   "description": "¾ Diamidov and rear vault to side hang on 1 bar",
+   "value": "D=0.4",
+   "eponym": "De Freitas",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "13",
+   "description": "Back straddle cut to support",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "14",
+   "description": "Back straddle cut to handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "15",
+   "description": "Back straddle cut straight to hang",
+   "value": "C=0.3",
+   "eponym": "Babos",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "19",
+   "description": "Front straddle cut, finish in support or L-sit",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "27",
+   "description": "One-arm full pirouette to handstand",
+   "value": "C=0.3",
+   "eponym": "Diamidov",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "28",
+   "description": "Diamidov with ¼ or ½ t. to handstand",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "32",
+   "description": "Front swing full turn to upper arms",
+   "value": "B=0.2",
+   "eponym": "Carminucci",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "34",
+   "description": "Swing forward with 5/4 t. on one arm through handstand. and Healy to upper arm",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "35",
+   "description": "¾ Diamidov & ¾ Healy on the other hand to support",
+   "value": "E=0.5",
+   "eponym": "Makuts",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "36",
+   "description": "Swing forward with 5/4 t. on one arm through handstand. and Healy to support",
+   "value": "F=0.6",
+   "eponym": "Zonderland",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "38",
+   "description": "Front swing handstand with hop to support",
+   "value": "B=0.2",
+   "eponym": "Carballo",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "39",
+   "description": "Back salto to handstand",
+   "value": "C=0.3",
+   "eponym": "Rumbutis",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "40",
+   "description": "Back salto straddle cut to support",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "45",
+   "description": "Back salto ½ turn to upper arms",
+   "value": "C=0.3",
+   "eponym": "Toumilovich",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "46",
+   "description": "Salto bwd. to handstand 1 rail (connected to Healy type element)",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "47",
+   "description": "Double salto tuck to upper arm hang",
+   "value": "E=0.5",
+   "eponym": "Morisue",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "48",
+   "description": "Double salto pike to up. arm hang",
+   "value": "F=0.6",
+   "eponym": "Huang Liping",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "52",
+   "description": "1½ back salto ½ turn to upper arms",
+   "value": "D=0.4",
+   "eponym": "Suarez",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "54",
+   "description": "Double salto backwards with half turn to upper arm",
+   "value": "G=0.7",
+   "eponym": "Kuavita",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "56",
+   "description": "Handstand ¼ turn, ¼-turn drop to support",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "57",
+   "description": "Handstand ¾ turn, ¼-turn drop to support",
+   "value": "C=0.3",
+   "eponym": "Brändström",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "62",
+   "description": "Stützkehr bwd. to support",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "63",
+   "description": "Stützkehr bwd. through handstand. to support",
+   "value": "C=0.3",
+   "eponym": "Novikov",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "69",
+   "description": "Stützkehr bwd. with straddle cut bwd. to support",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "73",
+   "description": "Healy to upper arm hang (also from handstand.on 1 rail)",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "74",
+   "description": "Following a swing element (min. B) to handstand on 1 rail, Healy to upper arm hang",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "75",
+   "description": "Healy to support (also from handstand on 1 rail)",
+   "value": "C=0.3",
+   "eponym": "Healy",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "76",
+   "description": "Following a swing element (min. B) to handstand on 1 rail, Healy (360° or more) to support",
+   "value": "D=0.4",
+   "eponym": "Bejenaru",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "81",
+   "description": "Back swing ½ turn hop to handstand",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "82",
+   "description": "Back swing ¾ turn hop to handstand",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "83",
+   "description": "Back swing full turn hop to handstand",
+   "value": "E=0.5",
+   "eponym": "Gatson 1/Patron",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "84",
+   "description": "Gatson 1 with ¼ t to handstand on 1 rail and ¼ t. handstand on 2 rails",
+   "value": "F=0.6",
+   "eponym": "Gatson 2",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "86",
+   "description": "One-rail handstand ½ or ¾ pirouette",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "91",
+   "description": "Handstand ½ pirouette",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "92",
+   "description": "Two-rail handstand full pirouette",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "99",
+   "description": "Front salto or inlocate from handstand to support",
+   "value": "C=0.3",
+   "eponym": "Carballo 2",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "101",
+   "description": "1¼ front straddle to hang",
+   "value": "E=0.5",
+   "eponym": "Lee Chul Hon/Sasaki",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "104",
+   "description": "5/4 Salto fwd. tuck or pike to upper arm hang",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "105",
+   "description": "Front salto to support",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "106",
+   "description": "1¼ front straddle to upper arms",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "107",
+   "description": "1¼ front straddle to bent-arm support",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "111",
+   "description": "Front pike salto to hang",
+   "value": "C=0.3",
+   "eponym": "Juarez 2",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "113",
+   "description": "Double front tuck to upper arms",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "114",
+   "description": "Double front pike to upper arms",
+   "value": "F=0.6",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "117",
+   "description": "1¼ front layout to upper arms",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "119",
+   "description": "Front salto full twist to upper arms",
+   "value": "E=0.5",
+   "eponym": "Urzica",
+   "element_group": "II",
+   "apparatus": "PB"
+  },
+  {
+   "number": "3",
+   "description": "Back straddle cut, horizontal layout regrasp, upper arms",
+   "value": "C=0.3",
+   "eponym": "Alsadi",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "4",
+   "description": "Moy piked with straddle bwd. to handstand",
+   "value": "D=0.4",
+   "eponym": "Tippelt",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "5",
+   "description": "Back straddle cut with horizontal layout regrasp",
+   "value": "E=0.5",
+   "eponym": "Bhavsar",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "8",
+   "description": "Moy piked with straddled. cut bwd. and ½ t. to upper arm hang (also legs together)",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "9",
+   "description": "Moy piked with 1/1 t. to upper arm hang",
+   "value": "C=0.3",
+   "eponym": "Nolet",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "10",
+   "description": "Moy and salto fwd. tuck, pike. or straddled. to upper arm hang",
+   "value": "D=0.4",
+   "eponym": "Giraldo",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "14",
+   "description": "Moy to support bent legs (also without grip release)",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "15",
+   "description": "Underswing to support, straight legs",
+   "value": "C=0.3",
+   "eponym": "Moy",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "21",
+   "description": "Giant swing bwd. to handstand or with inlocation fwd. (also with ¼ or ½ turn and to one rail)",
+   "value": "C=0.3",
+   "eponym": "Kenmotsu/Wells",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "22",
+   "description": "Giant swing bwd. to handstand on one rail (connected to Healy type element)",
+   "value": "D=0.4",
+   "eponym": "Piasecky",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "29",
+   "description": "Giant swing bwd. with Diamidov to handstand, also to one rail",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "30",
+   "description": "Giant swing Diamidov with ¼ or ½ t. to handstand",
+   "value": "F=0.6",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "38",
+   "description": "Swing down, back layout to hang",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "39",
+   "description": "Back giant ½ turn to upper arms",
+   "value": "C=0.3",
+   "eponym": "Gushiken",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "40",
+   "description": "Back giant ½ turn to support",
+   "value": "D=0.4",
+   "eponym": "Marinitch",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "42",
+   "description": "Giant swing. bwd. with Diamidov to handstand to one rail (connected to Healy type element)",
+   "value": "F=0.6",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "46",
+   "description": "Back giant, Makuts to upper arm hang",
+   "value": "D=0.4",
+   "eponym": "Dauser",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "48",
+   "description": "Back giant with Makuts",
+   "value": "F=0.6",
+   "eponym": "Baumann",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "50",
+   "description": "Back giant, straddle cut to upper arms",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "52",
+   "description": "Back giant, straddle cut to support",
+   "value": "D=0.4",
+   "eponym": "Korolev",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "53",
+   "description": "Back giant ½ turn, straddle cut, upper arms",
+   "value": "E=0.5",
+   "eponym": "Sosa",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "59",
+   "description": "Double tuck from back giant to upper arms",
+   "value": "E=0.5",
+   "eponym": "Belle",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "60",
+   "description": "Belle pike",
+   "value": "F=0.6",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "66",
+   "description": "Belle with 1/1 turn",
+   "value": "H=0.8",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "69",
+   "description": "Back giant ½-turn salto to hang at end",
+   "value": "C=0.3",
+   "eponym": "Chartrand",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "70",
+   "description": "Back giant ½-turn salto to upper arms",
+   "value": "D=0.4",
+   "eponym": "Matsunaga",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "71",
+   "description": "Back giant ½-turn salto to hang",
+   "value": "E=0.5",
+   "eponym": "Solis",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "72",
+   "description": "Back giant ½-turn, 1½ front salto, upper arms",
+   "value": "G=0.7",
+   "eponym": "Tanaka",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "73",
+   "description": "Glide kip",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "74",
+   "description": "Glide kip, ½ turn to support",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "75",
+   "description": "Backward glide kip to handstand",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "77",
+   "description": "Back giant ½-turn salto to support",
+   "value": "E=0.5",
+   "eponym": "Torres",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "78",
+   "description": "Back giant ½-turn, 1½ front pike, upper arms",
+   "value": "H=0.8",
+   "eponym": "Esparza",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "80",
+   "description": "Glide kip, straddle cut to handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "81",
+   "description": "Glide kip, straddle cut back to hang",
+   "value": "C=0.3",
+   "eponym": "Okubo",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "83",
+   "description": "Back giant ½-turn straddled salto to upper arms",
+   "value": "E=0.5",
+   "eponym": "Fokin",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "86",
+   "description": "One-rail glide kip, straddle L to handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "87",
+   "description": "Glide kip via piked L to handstand",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "88",
+   "description": "Glide kip, piked L, handstand hop ¾ turn",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "92",
+   "description": "Glide kip, V-sit, ½-turn hop to other rail",
+   "value": "B=0.2",
+   "eponym": "Li Donghua",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "97",
+   "description": "Cast to upper arm hang",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "98",
+   "description": "Cast to support",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "99",
+   "description": "Peach ½ turn to upper arms",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "100",
+   "description": "Peach ½ turn into rear support",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "104",
+   "description": "Cast ½ turn to upper arms",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "105",
+   "description": "Cast ½ turn to support",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "106",
+   "description": "Felge to handstand. Also to one rail or ¼ t",
+   "value": "D=0.4",
+   "eponym": "Cucherat - Celen",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "107",
+   "description": "Peach ½ or ¾ turn to handstand",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "108",
+   "description": "Peach full turn to handstand",
+   "value": "F=0.6",
+   "eponym": "Teng Hai Bin",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "111",
+   "description": "Cast, straddle cut back to handstand",
+   "value": "C=0.3",
+   "eponym": "Arican",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "114",
+   "description": "Felge with 5/4 t. to handstand",
+   "value": "G=0.7",
+   "eponym": "Zhou Shixiong",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "115",
+   "description": "Felge with travel to hang",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "116",
+   "description": "Felge to support",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "117",
+   "description": "Peach into quick straddle cut, support",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "119",
+   "description": "Felge to one rail handstand (connected to Healy type element)",
+   "value": "E=0.5",
+   "eponym": "Chiarlo",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "120",
+   "description": "Felge through handstand to Makuts",
+   "value": "G=0.7",
+   "eponym": "Yamamuro",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "122",
+   "description": "Felge roll backward with tuck salto ½ to upper arm hang",
+   "value": "B=0.2",
+   "eponym": "Gagnon",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "123",
+   "description": "Peach roll, layout salto ½ turn, upper arms",
+   "value": "C=0.3",
+   "eponym": "Gagnon 2",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "125",
+   "description": "Peach into back tuck salto, upper arms",
+   "value": "E=0.5",
+   "eponym": "Tejada",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "126",
+   "description": "Felge with salto bwd. p. to up. arm hang",
+   "value": "F=0.6",
+   "eponym": "Juarez 1",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "127",
+   "description": "Felge forward to support",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB",
+   "code_text": true
+  },
+  {
+   "number": "128",
+   "description": "Forward peach ½ turn to support",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "130",
+   "description": "Shoot to handstand, ¼ turn",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "131",
+   "description": "Shoot to handstand, ½ or ¾ turn",
+   "value": "E=0.5",
+   "eponym": "Nguyen",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "137",
+   "description": "Shoot to handstand, drop to support ¼ turn",
+   "value": "E=0.5",
+   "eponym": "Malone",
+   "element_group": "III",
+   "apparatus": "PB"
+  },
+  {
+   "number": "1",
+   "description": "Front pike or layout, optional ½ twist",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "5",
+   "description": "Double front tuck",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "6",
+   "description": "Double front pike",
+   "value": "F=0.6",
+   "eponym": "Belyavskiy",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "8",
+   "description": "Front pike or layout, full twist",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "9",
+   "description": "Front pike or layout, 1½ twist",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "10",
+   "description": "Front pike or layout, double or 2½ twist",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "11",
+   "description": "Tucked double front ½ or ½-in double back",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "12",
+   "description": "Double front tuck full twist",
+   "value": "G=0.7",
+   "eponym": "Larduet",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "15",
+   "description": "Double front tuck off the end",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "18",
+   "description": "Double front pike ½ twist",
+   "value": "F=0.6",
+   "eponym": "Dalaloyan",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "19",
+   "description": "Back pike or layout, optional ½ twist",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "21",
+   "description": "Back pike or layout, full or 1½ twist",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "22",
+   "description": "Back layout double twist",
+   "value": "D=0.4",
+   "eponym": "Kan",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "28",
+   "description": "High wende into back salto tuck or pike",
+   "value": "D=0.4",
+   "eponym": "Roethlisberger",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "32",
+   "description": "Double back tuck off the end",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "33",
+   "description": "Double back tuck",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "34",
+   "description": "Double back pike",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "36",
+   "description": "Double back tuck full twist",
+   "value": "G=0.7",
+   "eponym": "Hiroyuki Kato",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "40",
+   "description": "Double back tuck ½ twist or Arabian double",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "43",
+   "description": "Layout back salto from end hang",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "45",
+   "description": "Double back tuck from end hang",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "46",
+   "description": "Double back pike from end hang",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "47",
+   "description": "Double back layout from end hang",
+   "value": "E=0.5",
+   "eponym": "Alvarez",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "48",
+   "description": "Triple back tuck from end hang",
+   "value": "G=0.7",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "53",
+   "description": "End-hang double back tuck, ½ or full twist",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "54",
+   "description": "End-hang double back tuck, double twist",
+   "value": "F=0.6",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "PB"
+  },
+  {
+   "number": "1",
+   "description": "Back uprise to handstand",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "2",
+   "description": "Back uprise full turn to handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "7",
+   "description": "Back uprise to handstand with ½ turn",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "8",
+   "description": "Back swing pirouette to hang",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "9",
+   "description": "Back swing pirouette to support",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "13",
+   "description": "Front giant",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "14",
+   "description": "1/1 turn thr. hdst. in mixt grip",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "15",
+   "description": "Full pirouette through handstand, double eagle grip",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "19",
+   "description": "½ turn through handstand",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "20",
+   "description": "Flying front giant, also with ½ turn",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "21",
+   "description": "Flying front giant full turn",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "26",
+   "description": "Front giant with one hand undergrip",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "27",
+   "description": "One-arm front giant with two full pirouettes",
+   "value": "C=0.3",
+   "eponym": "Zou Li Min",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "31",
+   "description": "Back giant",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "32",
+   "description": "One-arm back giant",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "37",
+   "description": "Backward ½ turn through handstand",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "43",
+   "description": "Back giant, hop to undergrip",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "44",
+   "description": "Flying back giant",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "45",
+   "description": "Flying back giant full turn",
+   "value": "C=0.3",
+   "eponym": "Quast",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "50",
+   "description": "Back giant, ½-turn hop to eagle grip",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "51",
+   "description": "Back giant 1½-turn hop, undergrip or mixed-eagle",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "52",
+   "description": "Back giant 1½-turn hop to double eagle",
+   "value": "D=0.4",
+   "eponym": "Rybalko",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "56",
+   "description": "Backward ½ turn through handstand to eagle grip",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "62",
+   "description": "Front long swing, hop to eagle grip",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "68",
+   "description": "El-grip giant swing",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "69",
+   "description": "Russian giant",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "70",
+   "description": "Czech giant",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "74",
+   "description": "Steinemann uprise ½ turn to support",
+   "value": "B=0.2",
+   "eponym": "Ono",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "75",
+   "description": "Eagle giant, full pirouette, mixed grip",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "76",
+   "description": "Czech giant ½ turn to front giant",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "HB"
+  },
+  {
+   "number": "2",
+   "description": "Back uprise, straddle over bar to hang",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "3",
+   "description": "Back uprise straddle hecht with ½ turn",
+   "value": "C=0.3",
+   "eponym": "Markelov/Principi",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "6",
+   "description": "Back uprise straight hecht, 1½ turns",
+   "value": "G=0.7",
+   "eponym": "Walstrom",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "9",
+   "description": "Markelov str. with legs together.also with ½ t",
+   "value": "C=0.3",
+   "eponym": "Yamawaki/Muñoz - Pozzo",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "15",
+   "description": "Swing fwd. and vault bwd. strad. to hang, also with ½ t",
+   "value": "C=0.3",
+   "eponym": "Tkatchev/Lynch",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "16",
+   "description": "Tkatchev straight, also with ½ t. to mix el-grip into back uprise to hdst",
+   "value": "D=0.4",
+   "eponym": "Moznik",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "18",
+   "description": "Tkatchev straight with 1/1 t",
+   "value": "G=0.7",
+   "eponym": "Liukin",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "21",
+   "description": "Swing fwd. and vault bwd. piked to hang, also with ½ t",
+   "value": "C=0.3",
+   "eponym": "Samiloglu",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "23",
+   "description": "Tkatchev straddled ½ t. to double el-grip",
+   "value": "E=0.5",
+   "eponym": "Kulesza",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "26",
+   "description": "Back uprise, pike-over with ½ turn to hang",
+   "value": "B=0.2",
+   "eponym": "Voronin",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "28",
+   "description": "Stalder or free hip circle bwd. to Tkatchev straddle, also with ½ t",
+   "value": "D=0.4",
+   "eponym": "Piatti",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "29",
+   "description": "Piatti straight. also with ½ t. to mix el-grip into back uprise to hdst",
+   "value": "E=0.5",
+   "eponym": "Kierzkowski",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "32",
+   "description": "Back uprise, rear vault ¼ turn to hang",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "34",
+   "description": "Piatti piked. also with ½ t",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "36",
+   "description": "Piatti straight with 1/1 turn",
+   "value": "H=0.8",
+   "eponym": "Suarez",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "39",
+   "description": "Front salto release, tucked or straddled",
+   "value": "C=0.3",
+   "eponym": "Jäger",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "40",
+   "description": "Swing bwd. and salto fwd. p. to hg. also from el-grip",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "41",
+   "description": "Front salto release, layout",
+   "value": "E=0.5",
+   "eponym": "Balabanov",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "42",
+   "description": "Layout front salto release with full turn",
+   "value": "G=0.7",
+   "eponym": "Winkler - Pogorelev",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "48",
+   "description": "Layout front salto release with double turn",
+   "value": "H=0.8",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "51",
+   "description": "Czech giant into straddled reverse hecht",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "52",
+   "description": "Straddled counter front salto release",
+   "value": "D=0.4",
+   "eponym": "Xiao Ruizhi",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "57",
+   "description": "½ turn into straddled front salto release",
+   "value": "C=0.3",
+   "eponym": "Deltchev",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "58",
+   "description": "Piked back salto release with ½ twist",
+   "value": "D=0.4",
+   "eponym": "Gienger/Sapronenko",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "60",
+   "description": "Back salto release with 1½ twists",
+   "value": "G=0.7",
+   "eponym": "Deff",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "65",
+   "description": "Tucked front salto over the bar",
+   "value": "E=0.5",
+   "eponym": "Gaylord",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "66",
+   "description": "Gaylord with ½ t",
+   "value": "G=0.7",
+   "eponym": "Pegan",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "72",
+   "description": "Gaylord with 1/1 t",
+   "value": "H=0.8",
+   "eponym": "Koudinov",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "78",
+   "description": "Gaylord piked",
+   "value": "F=0.6",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "82",
+   "description": "Tucked back salto with ½ turn over bar",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "83",
+   "description": "Piked back salto with ½ turn over bar",
+   "value": "E=0.5",
+   "eponym": "Gaylord 2",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "84",
+   "description": "Pegan piked",
+   "value": "H=0.8",
+   "eponym": "Maras",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "88",
+   "description": "Tucked double back release over bar",
+   "value": "D=0.4",
+   "eponym": "Kovacs",
+   "element_group": "II",
+   "apparatus": "HB"
+  },
+  {
+   "number": "89",
+   "description": "Kovacs with 1/1 t",
+   "value": "E=0.5",
+   "eponym": "Kolman",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "90",
+   "description": "Kovacs with 2/1 t",
+   "value": "H=0.8",
+   "eponym": "Bretschneider",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "95",
+   "description": "Kovacs piked or straight",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "96",
+   "description": "Kovacs straight or piked with 1/1 turn. piked",
+   "value": "G=0.7",
+   "eponym": "Cassina/Pineda",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "102",
+   "description": "Kovacs straight with 2/1 turn",
+   "value": "I=0.9",
+   "eponym": "Miyachi",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "108",
+   "description": "Kovacs with 3/2 t. to mix grip",
+   "value": "G=0.7",
+   "eponym": "Shaham",
+   "element_group": "II",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "1",
+   "description": "Kip to handstand",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB"
+  },
+  {
+   "number": "8",
+   "description": "Forward free hip circle, handstand to handstand",
+   "value": "B=0.2",
+   "eponym": "Weiler",
+   "element_group": "III",
+   "apparatus": "HB"
+  },
+  {
+   "number": "13",
+   "description": "Clear hip circle to handstand",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB"
+  },
+  {
+   "number": "25",
+   "description": "Clear hip circle with hop to handstand",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB"
+  },
+  {
+   "number": "32",
+   "description": "Straddled forward free circle to handstand",
+   "value": "B=0.2",
+   "eponym": "Endo",
+   "element_group": "III",
+   "apparatus": "HB"
+  },
+  {
+   "number": "33",
+   "description": "Forward free circle legs together to handstand",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB"
+  },
+  {
+   "number": "38",
+   "description": "Straddled backward free circle to handstand",
+   "value": "B=0.2",
+   "eponym": "Stalder",
+   "element_group": "III",
+   "apparatus": "HB"
+  },
+  {
+   "number": "40",
+   "description": "Stalder with hop 3/2 turn through hdst. in mix el-grip",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "41",
+   "description": "Stalder with hop 3/2 turn through hdst. in el-grip",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "45",
+   "description": "Stalder legs together thr. hdst",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "56",
+   "description": "Stalder with hop through hdst",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "57",
+   "description": "Stalder legs together with hop through hdst",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "63",
+   "description": "Forward stoop circle to handstand",
+   "value": "C=0.3",
+   "eponym": "Adler",
+   "element_group": "III",
+   "apparatus": "HB"
+  },
+  {
+   "number": "64",
+   "description": "Adler with ½ t. through hdst. in ovgr",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "65",
+   "description": "Adler and 1/1 t. through hdst. in ungr",
+   "value": "E=0.5",
+   "eponym": "Fuentes",
+   "element_group": "III",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "70",
+   "description": "Adler hop to hdst. in ungr. or ovgr. or mixed grip",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "76",
+   "description": "Adler and 1/1 t. thr. hdst. in mixed grip, also with hop",
+   "value": "D=0.4",
+   "eponym": "Baldauf",
+   "element_group": "III",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "79",
+   "description": "Back toss to dorsal hang",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "80",
+   "description": "Forward uprise from rear hang to support",
+   "value": "B=0.2",
+   "eponym": "Steineman",
+   "element_group": "III",
+   "apparatus": "HB"
+  },
+  {
+   "number": "81",
+   "description": "Stoop-in free toss to rear hang",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB"
+  },
+  {
+   "number": "87",
+   "description": "Steineman uprise w. stoop or to hdst",
+   "value": "C=0.3",
+   "eponym": "Köste",
+   "element_group": "III",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "92",
+   "description": "Steineman uprise w. flank bwd. to sup. or hang",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "99",
+   "description": "Endo in el-grip thr. hdst",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "100",
+   "description": "Endo legs together in el-grip thr. hdst",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "103",
+   "description": "Forward stoop circle to straddle cut",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB"
+  },
+  {
+   "number": "104",
+   "description": "Forward stoop circle, straddle cut to handstand",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB"
+  },
+  {
+   "number": "105",
+   "description": "Forward stoop circle, straddle cut ½ turn",
+   "value": "C=0.3",
+   "eponym": "Carballo",
+   "element_group": "III",
+   "apparatus": "HB"
+  },
+  {
+   "number": "106",
+   "description": "Carballo with ½ turn to mixed el-grip",
+   "value": "D=0.4",
+   "eponym": "Quintero",
+   "element_group": "III",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "107",
+   "description": "Quintero to el-grip",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "III",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "1",
+   "description": "Salto fwd. piked or straight, also with ½ t",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "2",
+   "description": "Layout front dismount, full or 1½ twists",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "3",
+   "description": "Layout front dismount, double or 2½ twists",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "6",
+   "description": "Triple front dismount, tucked or ½ twist",
+   "value": "G=0.7",
+   "eponym": "Rumbutis",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "9",
+   "description": "Double salto fwd. t. or p.or with ½ turn",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "10",
+   "description": "Double front dismount, full or 1½ twists",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "11",
+   "description": "Double front dismount, double or 2½ twists",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "16",
+   "description": "Double salto fwd. str. or with ½ t. or over the bar",
+   "value": "D=0.4",
+   "eponym": "Roethlisberger 2",
+   "element_group": "IV",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "17",
+   "description": "Layout double front, full or 1½ twists",
+   "value": "E=0.5",
+   "eponym": "Alvarez",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "21",
+   "description": "Double salto fwd. t. or p. or with ½ turn over the bar",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "22",
+   "description": "Double front over bar, full or 1½ twists",
+   "value": "D=0.4",
+   "eponym": "Roethlisberger 1",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "25",
+   "description": "Salto bwd. piked or str. also with ½ or 1/1 t",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "26",
+   "description": "Layout back dismount, 1½ or double twist",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "27",
+   "description": "Layout back dismount, 2½ or triple twist",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "32",
+   "description": "Double salto bwd. tuck or pike",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "33",
+   "description": "Tucked double back dismount, full twist",
+   "value": "C=0.3",
+   "eponym": "Tsukahara",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "34",
+   "description": "Tucked double back dismount, double twist",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "39",
+   "description": "Layout double back dismount",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "40",
+   "description": "Full-twisting double layout dismount",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "41",
+   "description": "Double-twisting double layout dismount",
+   "value": "E=0.5",
+   "eponym": "Watanabe",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "42",
+   "description": "Triple-twisting double layout dismount",
+   "value": "F=0.6",
+   "eponym": "Fedorchenko",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "48",
+   "description": "Tucked triple back dismount",
+   "value": "F=0.6",
+   "eponym": "Andrianov/Hoffmann",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "50",
+   "description": "Over-bar tucked double back dismount",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "51",
+   "description": "Doble salto bwd. t. with 1/1 t. over the bar",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "52",
+   "description": "Over-bar tucked double back dismount, double twist",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "54",
+   "description": "Triple salto bwd. p",
+   "value": "G=0.7",
+   "eponym": "Fardan",
+   "element_group": "IV",
+   "apparatus": "HB",
+   "code_text": true
+  },
+  {
+   "number": "57",
+   "description": "Over-bar layout double back dismount",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "58",
+   "description": "Over-bar layout double back dismount, full twist",
+   "value": "D=0.4",
+   "eponym": "Hayden",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "59",
+   "description": "Over-bar layout double back, 1½ or double twist",
+   "value": "E=0.5",
+   "eponym": "Faulk/Valverde",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "60",
+   "description": "Tucked triple back dismount, full twist",
+   "value": "G=0.7",
+   "eponym": "Belle",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "61",
+   "description": "Hecht dismount, straddled or with ½ turn",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "62",
+   "description": "Hecht dismount with full or 1½ turns",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB"
+  },
+  {
+   "number": "64",
+   "description": "Hecht dismount with double turn",
+   "value": "D=0.4",
+   "eponym": "",
+   "element_group": "IV",
+   "apparatus": "HB"
+  }
+ ]
+}
