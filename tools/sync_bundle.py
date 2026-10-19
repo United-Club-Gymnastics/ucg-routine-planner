@@ -130,8 +130,28 @@ def skill_files(root):
     return out
 
 
-def summary(old, new):
+def other_data(root):
+    """Masters vault rows (by id, or description for WG rows) and age bonus, and catalog merges."""
+    out = {}
+    if not os.path.isdir(root):
+        return out
+    v = load(os.path.join(root, "skills", "ucg-masters-vaults.json"))
+    for disc in ("mag", "wag"):
+        out[f"Masters {disc.upper()} vault age bonus"] = v[disc]["age_bonus"]
+        for r in (r for g in v[disc]["groups"] for r in g):
+            out[f"Masters {disc.upper()} vault {r.get('id') or r['description']}"] = [r["description"], r["wg_value"]]
+    for disc in ("mag", "wag"):
+        for old, to in (load(os.path.join(root, "catalog", f"aliases_{disc}.json")).get("merged") or {}).items():
+            out[f"catalog {disc} merged {old}"] = to
+    return out
+
+
+def summary(old, new, old_other=None, new_other=None):
     lines = []
+    a, b = old_other or {}, new_other or {}
+    for k in sorted(a.keys() | b.keys()):
+        if a.get(k) != b.get(k):
+            lines.append(f"{k}: {a.get(k, '(none)')} -> {b.get(k, '(removed)')}")
     for code in sorted(old.keys() | new.keys()):
         a, b = old.get(code, {"records": {}, "redirects": {}}), new.get(code, {"records": {}, "redirects": {}})
         ra, rb = a["records"], b["records"]
@@ -150,7 +170,7 @@ def summary(old, new):
         lines += [f"  renamed  {k}: {x!r} -> {y!r}" for k, x, y in renamed]
         lines += [f"  revalued {k}: {x} -> {y}" for k, x, y in revalued]
         lines += [f"  redirect {k} -> {v}" for k, v in redirects.items()]
-    return lines or ["no record changes in the skill files"]
+    return lines or ["no record changes in the skill files, Masters vaults or catalog merges"]
 
 
 def main():
@@ -171,7 +191,7 @@ def main():
     problems, manifest = verify(src)
     if problems:
         sys.exit("BUNDLE CHECK FAILED (nothing copied):\n  " + "\n  ".join(problems))
-    old = skill_files(DEST)
+    old, old_other = skill_files(DEST), other_data(DEST)
     old_catalogs = load(LOCK)["catalogs"] if os.path.exists(LOCK) else None
     if os.path.isdir(DEST):
         shutil.rmtree(DEST)
@@ -188,7 +208,7 @@ def main():
     if not a.no_build:
         for script in ("build_skills.py", "build_data.py"):
             subprocess.run([sys.executable, os.path.join(HERE, script)], check=True)
-    print("\n".join(["changes in the skill files:"] + summary(old, skill_files(DEST)) if old else ["first sync: no earlier bundle to compare"]))
+    print("\n".join(["changes:"] + summary(old, skill_files(DEST), old_other, other_data(DEST)) if old else ["first sync: no earlier bundle to compare"]))
 
 
 if __name__ == "__main__":

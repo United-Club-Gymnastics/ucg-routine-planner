@@ -46,7 +46,9 @@ Collected 2026-10-18 from the session that landed PR #12.
 - **Rules data still hard-coded** (no digest JSON yet): `ADV_VAULT`, `NON_FLIPPING` (build_skills.py),
   `SWING_HS` (mag.js), `TAG_FIXES`, `EXCLUDE`, `MASTERS_MAP` (a check only) (build_data.py), the Masters
   letter values and Infinity tables in `js/scoring/`, and `js/data/xcel.js`, `wag-infinity-vaults.js`.
-  Infinity's values and condensed groups are tested against `levels.json`.
+  Infinity's values and condensed groups are tested against `levels.json`. WAG Masters counts a skill
+  once by name (`js/scoring/wag.js`): a candidate for the bundle's WG-WAG-2025 same-element digest,
+  which nothing reads yet (nor the WG-WAG composition and CV digests: no planner level scores them).
 
 **Open**
 - Masters MAG picked up raw "(same box as ...)" notes on 2 PB skills. They may deserve `note_edits.json`
