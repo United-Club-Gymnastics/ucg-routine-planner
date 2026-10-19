@@ -119,17 +119,27 @@ function add(disc, list, index = {}) {
 export let EXAMPLES = [];
 const examples = () => import('./data/examples.js').then((m) => (EXAMPLES = m.EXAMPLES));
 
+/**
+ * Skills a UCG Code retired into another (retired id -> replacement): routines saved with the old
+ * id open on the replacement. Only when the old id is gone and the replacement exists.
+ */
+export function applyRedirects(redirects, index = SKILL_INDEX) {
+  for (const [old, to] of Object.entries(redirects)) if (!index.has(old) && index.has(to)) index.set(old, index.get(to));
+}
+
 const LOADERS = {
   wag: () =>
-    Promise.all([import('./data/wag-skills.js'), import('./data/masters-skills-wag.js'), import('./data/skill-index-wag.js'), examples()]).then(
-      ([a, b, ix]) => add('wag', [...a.SKILLS, ...b.SKILLS], ix.INDEX)
+    Promise.all([import('./data/wag-skills.js'), import('./data/masters-skills-wag.js'), import('./data/skill-index-wag.js'), import('./data/wag-redirects.js'), examples()]).then(
+      ([a, b, ix, r]) => {
+        add('wag', [...a.SKILLS, ...b.SKILLS], ix.INDEX);
+        applyRedirects(r.REDIRECTS);
+      }
     ),
   mag: () =>
     Promise.all([import('./data/mag-skills.js'), import('./data/masters-skills-mag.js'), import('./data/skill-index-mag.js'), import('./data/mag-redirects.js'), examples()]).then(
       ([a, b, ix, r]) => {
         add('mag', [...a.SKILLS, ...b.SKILLS], ix.INDEX);
-        // Skills the Code retired into another: routines saved with the old id open on the replacement.
-        for (const [old, to] of Object.entries(r.REDIRECTS)) if (!SKILL_INDEX.has(old) && SKILL_INDEX.has(to)) SKILL_INDEX.set(old, SKILL_INDEX.get(to));
+        applyRedirects(r.REDIRECTS);
       }
     ),
   tt: () => Promise.all([import('./data/tt-skills.js'), examples()]).then(([t]) => add('tt', t.SKILLS)),
