@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nssharpe/gym-skill-extract/schema/elements.schema.json",
+  "title": "Element id registry (skill_catalog/elements.json)",
+  "description": "Version 0.1.0 (2026-10-18). Permanent element ids and the record ids each one was built from. Never renumbers: `next` only grows, and a merged or split element keeps its entry.",
+  "type": "object",
+  "required": ["next", "elements"],
+  "additionalProperties": false,
+  "properties": {
+    "next": {
+      "description": "Next free number per discipline-apparatus prefix.",
+      "type": "object",
+      "propertyNames": { "pattern": "^(MAG-(FX|PH|SR|VT|PB|HB)|WAG-(VT|UB|BB|FX))$" },
+      "additionalProperties": { "type": "integer", "minimum": 1 }
+    },
+    "elements": {
+      "type": "object",
+      "propertyNames": { "$ref": "catalog.schema.json#/$defs/elementId" },
+      "additionalProperties": {
+        "type": "object",
+        "required": ["members"],
+        "additionalProperties": false,
+        "properties": {
+          "members": { "description": "Record ids (rids) in the element.", "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "merged_into": { "$ref": "catalog.schema.json#/$defs/elementId" },
+          "split_from": { "$ref": "catalog.schema.json#/$defs/elementId" }
+        }
+      }
+    }
+  }
+}

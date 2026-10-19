@@ -1,0 +1,256 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nssharpe/gym-skill-extract/schema/skill.schema.json",
+  "title": "Skill file (one code edition)",
+  "description": "Version 0.3.0 (2026-10-19): adds public_names and the record flag code_text (the bundle's WG files), and group_name is public in own-words files (x-public \"own_words\"). Version 0.2.0 (2026-10-19): adds distinct_from. Version 0.1.0 (2026-10-18), inferred from the Oct 2026 extractor outputs and ucg-code-of-points/catalog/ucg_skills.json. One file holds one code edition: the extractor outputs (WG MAG/WAG, Xcel, USAG Development, NAIGC) and the four authored UCG files (MAG, WAG, Masters MAG, Masters WAG). Field annotations: x-public says whether the field may go into the public planner bundle (true; false = Code text, private; \"ucg\" = public only for UCG codes, whose text UCG owns; \"own_words\" = public only in an own_words file). x-derived marks fields a build fills in, never edited by hand. See docs/ARCHITECTURE.md.",
+  "type": "object",
+  "required": ["schema_version", "code", "discipline", "source", "records"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "description": "Semver of this schema the file was written against. Readers reject a different major.",
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "code": {
+      "description": "Code edition key: the key the catalog uses in element.codes, or for a combined list (UCG-WAG-COMBINED) its own key.",
+      "type": "string",
+      "examples": ["WG-MAG-2025", "WG-WAG-2025", "USAG-XCEL-2022", "USAG-DP-2026", "NAIGC-MAG", "UCG-WAG-COMBINED", "UCG-MAG-ADD", "UCG-WAG-ADD", "UCG-MASTERS-MAG", "UCG-MASTERS-WAG"],
+      "pattern": "^[A-Z]+(-[A-Z0-9]+)+$"
+    },
+    "discipline": { "enum": ["MAG", "WAG"] },
+    "edition": {
+      "description": "Human label of the edition, e.g. \"2025-2028\" or, for UCG, the last-updated date.",
+      "type": "string"
+    },
+    "built": {
+      "description": "Date the content last changed. Writers keep the old date when a rerun gives the same content, so reruns stay byte-identical.",
+      "type": "string", "format": "date", "x-derived": true
+    },
+    "own_words": {
+      "description": "true when every description is an own-words short name, not Code text (the *_simplified files), so description is public even for an external code. Absent = false.",
+      "type": "boolean"
+    },
+    "public_names": {
+      "description": "true when every description may be published although not all are own words: own-words names, plus the Code's own text where UCG chose it, each such record marked code_text (bundle/skills/wg-*.json, from Nate's name review 2026-10-18). Absent = false.",
+      "type": "boolean"
+    },
+    "source": {
+      "type": "object",
+      "required": ["kind"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "description": "extracted: from a PDF by an extractor. transcribed: from vision transcription (USAG Development). authored: hand-maintained (UCG). combined: built from other skill files (UCG WAG Skills).",
+          "enum": ["extracted", "transcribed", "authored", "combined"]
+        },
+        "document": { "description": "Source document name (never the PDF itself).", "type": "string" },
+        "repo": { "type": "string", "examples": ["nssharpe/gym-skill-extract", "nssharpe/ucg-code-of-points"] },
+        "commit": { "description": "Commit of the content (not of HEAD at build time).", "type": "string", "pattern": "^[0-9a-f]{7,40}$", "x-derived": true }
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/record" }
+    },
+    "redirects": {
+      "description": "Retired record id -> the id that replaces it (a merge). UCG only; record ids never change otherwise.",
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/recordId" }
+    },
+    "retired": {
+      "description": "Record ids that were removed. Never reused.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/recordId" },
+      "uniqueItems": true
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "source": { "properties": { "kind": { "const": "authored" } } } } },
+      "then": { "properties": { "records": { "items": { "required": ["id"] } } } }
+    },
+    {
+      "if": { "properties": { "discipline": { "const": "MAG" } } },
+      "then": { "properties": { "records": { "items": { "properties": { "apparatus": { "enum": ["FX", "PH", "SR", "VT", "PB", "HB"] } } } } } }
+    },
+    {
+      "if": { "properties": { "discipline": { "const": "WAG" } } },
+      "then": { "properties": { "records": { "items": { "properties": { "apparatus": { "enum": ["VT", "UB", "BB", "FX"] } } } } } }
+    }
+  ],
+  "$defs": {
+    "recordId": {
+      "description": "Permanent record id, owned by the repo that authors the code (UCG: ucg-code-of-points/catalog/ids.json). Not the catalog element id (MAG-FX-0001), which gym-skill-extract owns.",
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9.\\-]*$"
+    },
+    "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "value": {
+      "description": "Difficulty as the code prints it: WG/NAIGC \"A=0.1\"; USAG/UCG bare letter; UCG also Sub-A, ME, GE, Misc; vaults a number string (\"2.2\"). null = no value printed (USAG vaults, NAIGC blanks).",
+      "oneOf": [
+        { "type": "string", "pattern": "^(Sub-A|ME|GE|Misc|[A-J](=[0-9]\\.[0-9])?|[0-9]+\\.[0-9]+)$" },
+        { "type": "null" }
+      ]
+    },
+    "record": {
+      "type": "object",
+      "required": ["apparatus", "number", "description", "value", "eponym", "element_group"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/recordId",
+          "description": "Required for authored (UCG) records. Extractor records get their planner id (rid) from skill_catalog/sources.py instead.",
+          "x-public": true
+        },
+        "apparatus": { "enum": ["FX", "PH", "SR", "VT", "PB", "HB", "UB", "BB"], "x-public": true },
+        "number": {
+          "description": "Element number as printed, always a string (\"1\", \"1.101\", \"Bronze 1\"). WG MAG numbers restart in each element group.",
+          "type": "string",
+          "minLength": 1,
+          "x-public": true
+        },
+        "variant": {
+          "description": "Paragraph within a numbered cell (USAG/WG WAG). Absent means 1.",
+          "type": "integer",
+          "minimum": 1,
+          "x-public": true
+        },
+        "description": {
+          "description": "Full skill text. Code text for external codes (private); UCG's own words for UCG codes. UCG's old field name was `name`.",
+          "type": "string",
+          "minLength": 1,
+          "x-public": "ucg"
+        },
+        "short_name": {
+          "description": "Own-words short name (today in simplified_names.json).",
+          "type": "string",
+          "x-public": true
+        },
+        "value": { "$ref": "#/$defs/value", "x-public": true },
+        "eponym": {
+          "description": "\"\" when none. Several names joined with \"/\".",
+          "type": "string",
+          "x-public": true
+        },
+        "element_group": {
+          "description": "As printed: roman (WG MAG, UCG MAG), digits (WG WAG, USAG, UCG WAG), or a level/division label (\"Bronze\", \"Level 6/7\"). null where the code has none (Sub-A, vaults).",
+          "type": ["string", "null"],
+          "x-public": true
+        },
+        "group_name": { "description": "Element group heading. Code text in the extractor outputs; the generic headings (\"Mounts\", \"Turns\") in own-words files.", "type": "string", "x-public": "own_words" },
+        "note": {
+          "description": "Skill note printed in the box. Code text for external codes.",
+          "type": "string",
+          "x-public": "ucg"
+        },
+        "video": { "type": "string", "format": "uri", "x-public": true },
+        "markers": {
+          "description": "Printed marks: WG WAG * and D; USAG D, NA, Not Acro, FA, BKA, SA.",
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true,
+          "x-public": true
+        },
+        "divisions": {
+          "description": "Xcel divisions the record is listed for.",
+          "type": "array",
+          "items": { "enum": ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Sapphire"] },
+          "x-public": true
+        },
+        "start_values": {
+          "description": "Vault start value by division or level.",
+          "type": "object",
+          "additionalProperties": { "type": "string", "pattern": "^[0-9]+\\.[0-9]$" },
+          "x-public": true
+        },
+        "start_values_incomplete": { "type": "array", "items": { "type": "string" }, "x-public": true },
+        "revised": { "description": "Value or text revised in this edition (USAG).", "type": "boolean", "x-public": true },
+        "tags": { "$ref": "#/$defs/tags" },
+        "source": {
+          "description": "Combined lists only (UCG WAG Skills): which code a record came from.",
+          "type": "string",
+          "x-public": true
+        },
+        "same_as": { "type": "array", "items": { "type": "string" }, "x-public": true },
+        "forms": {
+          "description": "Separately credited forms of one printed record (UCG rulings).",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["form", "name"],
+            "additionalProperties": false,
+            "properties": {
+              "form": { "type": "string", "pattern": "^[a-z]$" },
+              "name": { "type": "string" },
+              "eponym": { "type": "string" },
+              "hand_support_flight": { "type": "boolean" },
+              "same_as": { "type": "array", "items": { "type": "string" } },
+              "note": { "type": "string" }
+            }
+          },
+          "x-public": true
+        },
+        "forms_rule": { "type": "string", "x-public": true },
+        "forms_citation": { "type": "string", "x-public": true },
+        "ucg_note": { "description": "Why a UCG ruling changed or added this record.", "type": "string", "x-public": true },
+        "code_text": {
+          "description": "true when description is the Code's own text (whitespace collapsed, trailing period dropped), published by UCG's choice; only in a public_names file. Absent = own words.",
+          "type": "boolean",
+          "x-public": true
+        },
+        "distinct_from": {
+          "description": "UCG: records in another UCG code that look like this one but were decided to be different skills (never paired, e.g. by Masters sync).",
+          "type": "array",
+          "items": { "$ref": "#/$defs/recordId" },
+          "uniqueItems": true,
+          "x-public": true
+        },
+
+        "box": {
+          "description": "UCG: the SVG <a> id of the box that draws this record (geometry and drawing stay in the SVG).",
+          "type": ["string", "null"],
+          "x-public": false
+        },
+        "drawing": {
+          "description": "UCG: the box has a drawing. Derived from the SVG.",
+          "type": ["boolean", "null"],
+          "x-derived": true,
+          "x-public": true
+        },
+        "page": { "description": "UCG Masters: page in the built PDF.", "type": "integer", "minimum": 1, "x-derived": true, "x-public": true },
+        "main_id": {
+          "description": "UCG Masters: id of the main-code record this Masters box copies (replaces Masters/sync.json keys).",
+          "$ref": "#/$defs/recordId",
+          "x-public": true
+        },
+        "added": { "$ref": "#/$defs/date", "x-public": true },
+        "adopted": { "description": "UCG: date an older box was taken into the authored file.", "$ref": "#/$defs/date", "x-public": true },
+        "removed": { "description": "UCG: date removed (record kept so the id stays retired).", "$ref": "#/$defs/date", "x-public": true }
+      }
+    },
+    "tags": {
+      "description": "Skill facts for the planner's SR and restriction detection (skill_catalog/tags/TAG_SPEC.md). Xcel/Development UB, BB, FX.",
+      "type": "object",
+      "additionalProperties": false,
+      "x-public": true,
+      "properties": {
+        "dance": { "type": "boolean" }, "split": { "type": "boolean" }, "acro": { "type": "boolean" },
+        "inverted": { "type": "boolean" }, "flight": { "type": "boolean" }, "aerial": { "type": "boolean" },
+        "salto": { "type": "boolean" }, "twist": { "type": "boolean" }, "kip": { "type": "boolean" },
+        "bar_change": { "type": "boolean" }, "release": { "type": "boolean" }, "hecht": { "type": "boolean" },
+        "cast_sr": { "type": "boolean" }, "circle360": { "type": "boolean" }, "giant": { "type": "boolean" },
+        "hop_grip": { "type": "boolean" }, "one_arm": { "type": "boolean" },
+        "circle_needs_cast": { "type": "boolean" }, "turn_two_feet": { "type": "boolean" },
+        "jump_turn_deg": { "type": "integer" }, "split_deg": { "type": "integer" },
+        "twist_deg": { "type": "integer" }, "turn_deg": { "type": "integer" },
+        "dance_type": { "enum": ["jump", "leap", "turn", "hop", "other"] },
+        "turn_position": { "type": "string" },
+        "bar": { "enum": ["HB", "LB", "either"] },
+        "support_angle": { "enum": ["hs", "any", "45", "h", "below_h", "above_h"] },
+        "direction": { "enum": ["fwd", "bwd"] },
+        "varies": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

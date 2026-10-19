@@ -78,7 +78,7 @@ export const SKILLS = [
   {"id": "UCG-PB-v-sit-2-s", "app": "pb", "name": "V-sit (2 s.)", "eponym": "", "value": "B", "eg": 2, "src": "UCG", "note": ""},
   {"id": "UCG-PB-giant-swing-to-support", "app": "pb", "name": "Giant swing to support", "eponym": "", "value": "B", "eg": 3, "src": "UCG", "note": ""},
   {"id": "UCG-PB-forward-giant-to-support", "app": "pb", "name": "Forward giant to support", "eponym": "", "value": "B", "eg": 3, "src": "UCG", "note": ""},
-  {"id": "UCG-PB-peach-1-2-to-hang", "app": "pb", "name": "Peach 1/2 to hang", "eponym": "", "value": "B", "eg": 3, "src": "UCG", "note": ""},
+  {"id": "UCG-PB-peach-1-2-to-hang", "app": "pb", "name": "Felge (peach) ½ to hang", "eponym": "", "value": "B", "eg": 3, "src": "UCG", "note": ""},
   {"id": "UCG-PB-manna-2-s", "app": "pb", "name": "Manna (2 s.)", "eponym": "", "value": "C", "eg": 2, "src": "UCG", "note": ""},
   {"id": "UCG-HB-pull-over", "app": "hb", "name": "Pull Over", "eponym": "", "value": "A", "eg": null, "src": "UCG", "note": ""},
   {"id": "UCG-HB-cast-to-horizontal", "app": "hb", "name": "Cast to Horizontal", "eponym": "", "value": "A", "eg": null, "src": "UCG", "note": ""},

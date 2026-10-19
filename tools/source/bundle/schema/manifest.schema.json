@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nssharpe/gym-skill-extract/schema/manifest.schema.json",
+  "title": "Planner bundle manifest (bundle/manifest.json)",
+  "description": "Version 0.2.0 (2026-10-19): a file may declare vaults.schema.json. Version 0.1.0 (2026-10-18). Written by gym-skill-extract next to the public bundle it ships to the routine planner (docs/ARCHITECTURE.md section 4; the bundle landed in refactor step 3: build_bundle.py). The planner's sync checks every file's sha256 against it and rejects a schema_version whose major differs from its own.",
+  "type": "object",
+  "required": ["schema_version", "built", "catalogs", "sources", "files"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "$ref": "skill.schema.json#/properties/schema_version" },
+    "built": { "type": "string", "format": "date" },
+    "catalogs": {
+      "description": "Discipline -> catalog version (the same hash as in catalog_*.json and aliases_*.json).",
+      "type": "object",
+      "required": ["MAG", "WAG"],
+      "additionalProperties": false,
+      "properties": {
+        "MAG": { "$ref": "catalog.schema.json#/$defs/version" },
+        "WAG": { "$ref": "catalog.schema.json#/$defs/version" }
+      }
+    },
+    "sources": {
+      "description": "Repo -> commit of the content that went into the bundle.",
+      "type": "object",
+      "required": ["nssharpe/gym-skill-extract", "nssharpe/ucg-code-of-points"],
+      "propertyNames": { "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$" },
+      "additionalProperties": { "type": "string", "pattern": "^[0-9a-f]{7,40}$" }
+    },
+    "files": {
+      "description": "Every bundle file (path relative to bundle/, '/' separators) -> sha256 of its bytes and the schema it validates against.",
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": { "pattern": "^[A-Za-z0-9_.-]+(/[A-Za-z0-9_.-]+)*$", "not": { "const": "manifest.json" } },
+      "additionalProperties": {
+        "type": "object",
+        "required": ["sha256"],
+        "additionalProperties": false,
+        "properties": {
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "schema": {
+            "description": "Schema file name in schema/, if the file has one.",
+            "enum": ["skill.schema.json", "catalog.schema.json", "aliases.schema.json", "levels.schema.json", "vaults.schema.json"]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nssharpe/gym-skill-extract/schema/vaults.schema.json",
+  "title": "UCG Masters vault tables",
+  "description": "Version 0.2.0. The Masters vault pages of both Masters codes: each vault's WG value and the age bonus per decade; final value = WG value + the bonus of the gymnast's age decade. Rows are grouped as the CoP table draws them. Owned by ucg-code-of-points (skills/ucg-masters-vaults.json). A row with an id is a Masters vault the WG code doesn't have (its permanent planner id); a row without one is a WG vault, valued from the WG table.",
+  "type": "object",
+  "required": ["schema_version", "code", "decades", "mag", "wag"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "code": { "const": "UCG-MASTERS-VAULTS" },
+    "about": { "type": "string" },
+    "decades": {
+      "description": "Age decades, in table order (\"30\" = 30-39).",
+      "type": "array", "items": { "type": "string", "pattern": "^[0-9]{2}$" }, "minItems": 1, "uniqueItems": true,
+      "x-public": true
+    },
+    "mag": { "$ref": "#/$defs/table" },
+    "wag": { "$ref": "#/$defs/table" }
+  },
+  "$defs": {
+    "tenths": { "type": "string", "pattern": "^[0-9]+\\.[0-9]$" },
+    "recordId": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9.\\-]*$" },
+    "table": {
+      "type": "object",
+      "required": ["code", "age_bonus", "groups", "retired"],
+      "additionalProperties": false,
+      "properties": {
+        "code": { "description": "The Masters code the table prints in.", "enum": ["UCG-MASTERS-MAG", "UCG-MASTERS-WAG"], "x-public": true },
+        "age_bonus": {
+          "description": "Bonus per decade, same order as decades.",
+          "type": "array", "items": { "$ref": "#/$defs/tenths" }, "minItems": 1, "x-public": true
+        },
+        "groups": {
+          "description": "Rows in table order; a group is a block between the table's heavy rules.",
+          "type": "array",
+          "items": { "type": "array", "items": { "$ref": "#/$defs/row" }, "minItems": 1 },
+          "x-public": true
+        },
+        "retired": {
+          "description": "Vault ids that were removed. Never reused.",
+          "type": "array", "items": { "$ref": "#/$defs/recordId" }, "uniqueItems": true, "x-public": true
+        }
+      }
+    },
+    "row": {
+      "type": "object",
+      "required": ["description", "wg_value"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/recordId", "x-public": true },
+        "description": { "description": "As the table prints it (UCG's own words).", "type": "string", "minLength": 1, "x-public": true },
+        "wg_value": { "$ref": "#/$defs/tenths", "x-public": true }
+      }
+    }
+  }
+}

@@ -28,6 +28,8 @@ jobs:
           cache: npm
       - name: Install build tools
         run: npm ci
+      - name: Check the vendored skill bundle against its lock (a hand edit fails here)
+        run: npm run check-bundle
       - name: Test scoring
         run: npm test
       - name: Build the site (bundled, hashed file names) into _site/

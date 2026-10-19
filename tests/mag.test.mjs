@@ -309,3 +309,15 @@ test('retired UCG skill ids open on the skill they were merged into (PB 16 -> PB
   assert.equal(findSkill('UCG-PB-backward-roll-to-l-with-straight-body')?.id, 'UCG-PB-bwd-roll-from-upper-arm-to-support');
   assert.equal(findSkill('UCGM-mag-PB-backward-roll-to-l-with-straight-body')?.id, 'UCGM-mag-PB-bwd-roll-from-upper-arm-to-support');
 });
+
+test('redirect hook (MAG and WAG loaders): only a missing id is mapped, and only to a skill that exists', async () => {
+  const { applyRedirects } = await import('../js/skill-search.js');
+  const beam = { id: 'UCGW-BB-6' }, kept = { id: 'UCGW-BB-2' };
+  const index = new Map([['UCGW-BB-6', beam], ['UCGW-BB-2', kept]]);
+  applyRedirects({ 'UCGW-BB-5': 'UCGW-BB-6', 'UCGW-BB-2': 'UCGW-BB-6', 'UCGW-BB-9': 'UCGW-BB-404' }, index);
+  assert.equal(index.get('UCGW-BB-5'), beam); // retired id -> replacement
+  assert.equal(index.get('UCGW-BB-2'), kept); // an id still in the list is never redirected
+  assert.ok(!index.has('UCGW-BB-9')); // no replacement, no redirect
+  const { REDIRECTS } = await import('../js/data/wag-redirects.js');
+  assert.equal(typeof REDIRECTS, 'object'); // generated from the bundle (empty while no WAG id is retired)
+});

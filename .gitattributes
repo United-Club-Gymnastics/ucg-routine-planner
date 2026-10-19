@@ -1,0 +1,4 @@
+# The vendored skill bundle is checked byte for byte against its manifest (tools/sync_bundle.py,
+# tools/check_bundle.mjs): never convert its line endings.
+tools/source/bundle/** -text
+tools/source/bundle.lock.json -text

@@ -1,0 +1,53 @@
+{
+  "code": "WG-WAG-2025",
+  "about": "When WG WAG 2025-2028 counts two performances as the same element. Own words; digest of same-element.md. 'cite' is the printed page and section of the Code.",
+  "dv_once_per_exercise": {"rule": "an element earns DV once, first performance counts", "cite": "p. 22 §7.2.1 b"},
+  "different_numbers_are_different": {"cite": "p. 23 §7.2.1 e"},
+  "arabian_counts_as": {"direction": "forward", "cite": "p. 22 §7.2.1 c"},
+  "same_number_same_element": {
+    "UB": {
+      "ignore": ["hop_grip_change", "giant_legs_together_or_straddled", "giant_hips_bent_or_stretched",
+                 "pike_sole_circle_legs_together_or_straddled", "flight_legs_together_or_straddled"],
+      "cite": "p. 23 §7.2.1 f"
+    },
+    "dance": {
+      "ignore": ["takeoff_one_or_two_feet_same_leg_shape", "landing_one_or_two_feet", "FX_landing_prone", "extra_quarter_turn"],
+      "BB_side_vs_cross": {"same_element": true, "side_dv_bonus": 1, "mixed_side_cross_counts_as": "cross", "cite": "p. 23 §7.2.1 f"},
+      "dance_in_one_box_once": {"rule": "different dance elements in the same box earn DV once between them", "cite": "p. 22 §7.2.1 d"},
+      "cite": "p. 23 §7.2.1 f; p. 29 §8.2.2"
+    },
+    "acro": {"ignore": ["landing_one_or_two_feet"], "cite": "p. 23 §7.2.1 f"}
+  },
+  "same_number_different_element": {
+    "acro": {
+      "differ": ["salto_body_position", "turn_amount", "one_or_two_arm_support", "takeoff_one_or_two_feet"],
+      "cite": "p. 23 §7.2.1 g"
+    }
+  },
+  "asterisk_box_once": {"rule": "records with marker '*' in the same box earn credit once between them", "apparatus": ["BB", "FX"], "marker": "*", "cite": "Table of Elements note boxes pp. 121-131, 150-160"},
+  "tuck_stand_turn_once": {"apparatus": ["BB", "FX"], "cite": "p. 22 §7.2.1 d"},
+  "max_turn_recognised": {
+    "about": "more turn than this counts as this amount (in turns, 1 = 360°)",
+    "passe_pirouette": 4,
+    "other_pirouette": 3,
+    "split_or_straddle_leap_jump": 1.5,
+    "complex_leap_jump": 1,
+    "cite": "p. 22 §7.2.1 d"
+  },
+  "turn_credit_step_degrees": {
+    "turn_on_one_leg": {"BB": 180, "FX": 360, "cite": "p. 28 §8.2.1"},
+    "leap_jump_hop_split_straddle_ring": {"BB": 180, "FX": 180, "cite": "p. 28 §8.2.2"},
+    "leap_jump_hop_other": {"FX": 360, "cite": "p. 28 §8.2.2"},
+    "dance_underturn_tolerance_degrees": 30,
+    "dance_underturn_cite": "p. 29 §8.2.2"
+  },
+  "UB_root_skill": {"max_per_root": 3, "root": "same entry and rotation direction", "exempt": ["kip", "giant", "cast_to_handstand"],
+                     "counts": ["mount", "dismount"], "not_counted": ["element_without_dv"], "applies_to": ["DV", "CR", "CV"], "cite": "pp. 43-44 §11.2"},
+  "UB_one_per_family": {"tkatchev": "one per Table line", "jaeger": "one in total", "cite": "p. 44 §11.2"},
+  "mount_listed_used_in_exercise": {"dv_once": true, "apparatus": ["UB", "BB"], "cite": "p. 46 §11.7; p. 51 §12.7"},
+  "devalued_then_correct": {
+    "credited_as_other_table_element": "later correct performance also earns DV",
+    "credited_one_dv_lower": "later correct performance is a repeat (no DV)",
+    "cite": "pp. 23-24 §7.2.2"
+  }
+}

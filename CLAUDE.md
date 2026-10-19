@@ -22,36 +22,36 @@ Stop early only if something fails: tests, the build, a merge conflict or the de
 
 Collected 2026-10-18 from the session that landed PR #12.
 
-**Where the skill data comes from**
-- **Two producers** write `js/data/`:
+**Where the skill data comes from** (updated 2026-10-19, refactor step 4)
+- **The skill bundle.** All skill data except T&T comes from gym-skill-extract's `bundle/`, vendored
+  byte for byte in `tools/source/bundle/` and pinned by `tools/source/bundle.lock.json`. Update it only
+  with `npm run sync-skills` (README, "Skill bundle"); never edit it by hand. CI (`npm run check-bundle`,
+  also `tests/bundle.test.mjs`) fails on a hand edit or on `js/data` not rebuilt from it. `.gitattributes`
+  keeps its bytes (`-text`): without that, a Windows checkout would get CRLFs and fail its own hashes.
+- **Two producers** write `js/data/`, both reading only this checkout:
   - `tools/build_skills.py` writes `mag-skills.js`, `mag-vaults.js` and `mag-redirects.js`.
-  - `tools/build_data.py` writes everything else. `masters-skills-mag.js` comes from the catalog, not
-    from the CoP repo.
+  - `tools/build_data.py` writes everything else. `masters-skills-*.js` come from the catalog.
   - Neither runs in CI. CI builds from the committed `js/data` files.
-- **`build_skills.py` reads both sibling repos live from disk:**
-  - `UCG_COP_DIR` (default `C:/dev/ucg-code-of-points`): `catalog/ucg_skills.json`, code `UCG-MAG-ADD`,
-    VT included. IDs come from the catalog and are frozen in that repo's `catalog/ids.json`. Don't
-    recompute slugs.
-  - `GYM_SKILL_EXTRACT_DIR` (default `C:/dev/gym-skill-extract`): `WG MAG CoP Extraction/skills_verified.json`.
-  - The CoP commits must be on disk, not just on GitHub.
+- **Names:** a WG record's `description` in the bundle is the name the planner shows (Nate's approved
+  own-words names; `code_text: true` where he kept the Code's wording). Name changes go to
+  gym-skill-extract (`skill_catalog/wg_name_choices.json`), not here. UCG records' name is `description`.
 - **MAG mapping:** element_group I-IV becomes eg 1-4. Notes go through `tools/source/note_edits.json["mag"]`,
   keyed by the raw note text without the "Note: " prefix.
-- **Redirects:** the CoP catalog's `redirects` (UCG-MAG-ADD and UCG-MASTERS-MAG) become
-  `js/data/mag-redirects.js`. The `mag` loader in `js/skill-search.js` maps a retired ID to its
-  replacement, but only when the old ID is absent and the target exists. The first case is PB 16 ->
-  PB 15 (tested in `tests/mag.test.mjs`). **The WAG loader has no redirect hook yet**, so add one before
-  any WAG code retires an ID.
-- **Catalog element order:** `tools/source/catalog/catalog_wag_public.json` has the same content as
-  upstream in a different element order. That's expected, because `version` hashes the content. Its
-  bytes differ, though, so don't compare files by byte.
-- **Masters vault values:** Nate decided (2026-10-18) that these move to ucg-code-of-points. Today they
-  are here (`Masters Vault Values.xlsx` -> `masters-vaults.js`), and gym-skill-extract's `sources.py`
-  reads `masters-vaults.js`.
+- **Redirects:** each UCG skill file's `redirects` (MAG: ucg-mag + ucg-masters-mag; WAG: ucg-wag +
+  ucg-masters-wag) become `js/data/{mag,wag}-redirects.js`. Both loaders in `js/skill-search.js` call
+  `applyRedirects`, which maps a retired ID to its replacement only when the old ID is absent and the
+  target exists. The first case is MAG PB 16 -> PB 15 (tested in `tests/mag.test.mjs`).
+- **Masters vaults** come from the bundle's `ucg-masters-vaults.json` (owned by ucg-code-of-points),
+  including the age bonus (`AGE_BONUS` in `masters-vaults.js`, used by `js/scoring/masters.js`).
+- **Rules data still hard-coded** (no digest JSON yet): `ADV_VAULT`, `NON_FLIPPING` (build_skills.py),
+  `SWING_HS` (mag.js), `TAG_FIXES`, `EXCLUDE`, `MASTERS_MAP` (a check only) (build_data.py), the Masters
+  letter values and Infinity tables in `js/scoring/`, and `js/data/xcel.js`, `wag-infinity-vaults.js`.
+  Infinity's values and condensed groups are tested against `levels.json`. WAG Masters counts a skill
+  once by name (`js/scoring/wag.js`): a candidate for the bundle's WG-WAG-2025 same-element digest,
+  which nothing reads yet (nor the WG-WAG composition and CV digests: no planner level scores them).
 
 **Open**
 - Masters MAG picked up raw "(same box as ...)" notes on 2 PB skills. They may deserve `note_edits.json`
   entries.
-- WG MAG and WAG records show the Code's description as their name. Nate decided (2026-10-18) to switch
-  to own-words names, but only the ones he approves from a side-by-side list, and to stay close to the
-  Code's wording.
+- `pages.yml` runs only on pushes to main, so a bad bundle or failing test shows at deploy, not on the PR.
 - Files are written with LF, and git's CRLF warnings on Windows are harmless.

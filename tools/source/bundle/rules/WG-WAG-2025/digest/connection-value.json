@@ -1,0 +1,78 @@
+{
+  "code": "WG-WAG-2025",
+  "about": "CV formulas of WG WAG 2025-2028. Own words; digest of connection-value.md. Each formula lists element values in order; '+' after a letter means 'or higher'. ordered=true means 'this order only'.",
+  "dismount_bonus": {"amount": 0.2, "min_value": "D", "no_fall": true, "FX_needs_more_than_two_acro_lines": true, "cite": "p. 26 §7.4.3; p. 55 §13.4 b"},
+  "UB": {
+    "kind": "direct",
+    "formulas": [
+      {"cv": 0.1, "values": ["D+", "D+"]},
+      {"cv": 0.2, "values": ["D", "C+"], "ordered": true, "require": ["first is flight on the same bar or low to high bar", "second on the high bar"]},
+      {"cv": 0.2, "values": ["E", "E"], "require": ["at least one flight"]},
+      {"cv": 0.2, "values": ["F", "D"], "require": ["both flight"]}
+    ],
+    "c_or_d_needs_flight_or_half_turn": true,
+    "mount_elements_are_not_flight": true,
+    "empty_or_intermediate_swing_cancels": true,
+    "cite": "pp. 44-45 §11.4"
+  },
+  "BB": {
+    "kind": "direct",
+    "acro": {
+      "require": ["2 flight elements", "mount allowed", "dismount excluded", "rebounding"],
+      "formulas": [
+        {"cv": 0.1, "values": ["C", "C"]},
+        {"cv": 0.1, "values": ["B", "D"], "ordered": true, "require": ["travelling backward"]},
+        {"cv": 0.1, "values": ["B", "E"]},
+        {"cv": 0.2, "values": ["C/D", "D+"]},
+        {"cv": 0.2, "values": ["B", "D"], "require": ["both forward"]},
+        {"cv": 0.2, "values": ["B", "F"]}
+      ],
+      "cite": "p. 49 §12.4"
+    },
+    "dance_mixed": {
+      "require": ["acro parts are flight elements", "dismount excluded"],
+      "formulas": [
+        {"cv": 0.1, "values": ["C", "C+"], "kind": "dance"},
+        {"cv": 0.1, "values": ["A", "C"], "kind": "turns"},
+        {"cv": 0.1, "values": ["B", "D"], "kind": "mixed"},
+        {"cv": 0.2, "values": ["D", "D+"]}
+      ],
+      "turns_step_onto_other_leg": true,
+      "cite": "p. 50 §12.4"
+    },
+    "series_bonus": {"amount": 0.1, "min_elements": 3, "min_values": ["B", "B", "C"], "any_order": true, "mount_dismount_min": "C",
+                     "non_flight_acro_min": "B", "holds_excluded": true, "same_acro_may_repeat": true, "in_addition_to_cv": true, "cite": "p. 50 §12.4"},
+    "no_cv_with_grasp": true,
+    "cite": "pp. 49-50 §12.4"
+  },
+  "FX": {
+    "acro_without_hand_support_only": true,
+    "indirect_acro": [
+      {"cv": 0.1, "values": ["B", "D"]},
+      {"cv": 0.1, "values": ["A", "A", "D"]},
+      {"cv": 0.2, "values": ["C", "D/E"]},
+      {"cv": 0.2, "values": ["A", "A", "E"]}
+    ],
+    "direct_acro": [
+      {"cv": 0.1, "values": ["A", "D"]},
+      {"cv": 0.1, "values": ["C", "C"]},
+      {"cv": 0.2, "values": ["A", "E"]},
+      {"cv": 0.2, "values": ["B/C", "D"]}
+    ],
+    "mixed": [
+      {"cv": 0.1, "values": ["D", "B"], "ordered": true, "require": ["salto then dance"]},
+      {"cv": 0.1, "values": ["E", "A"], "ordered": true, "require": ["salto then dance"]}
+    ],
+    "turns_on_one_leg": [{"cv": 0.1, "values": ["D", "B"], "require": ["step onto other leg, no demi-plié"]}],
+    "cite": "pp. 55-56 §13.4"
+  },
+  "general": {
+    "not_necessarily_counting": true,
+    "devalued_elements_ok": true,
+    "fall_cancels": true,
+    "middle_element_shared_in_chain": true,
+    "element_once_across_connections": true,
+    "repeat_within_one_connection": {"UB": "any element", "BB": "acro only", "FX": "acro only", "dance": "never"},
+    "cite": "pp. 25-26 §7.4"
+  }
+}
