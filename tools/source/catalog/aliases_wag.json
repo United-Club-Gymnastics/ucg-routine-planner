@@ -1,7 +1,7 @@
 {
  "discipline": "WAG",
- "version": "4c6890300dcb",
- "built": "2026-10-14",
+ "version": "65d08096cdae",
+ "built": "2026-10-18",
  "aliases": {
   "WGW-BB-1.101-1": [
    "WAG-BB-0001"
@@ -2062,6 +2062,9 @@
   "UCGW-BB-4": [
    "WAG-BB-0503"
   ],
+  "UCGM-wag-BB-three-scissors-mount-michaels": [
+   "WAG-BB-0503"
+  ],
   "UCGW-BB-1": [
    "WAG-BB-0504"
   ],
@@ -2071,10 +2074,19 @@
   "UCGW-BB-2": [
    "WAG-BB-0505"
   ],
+  "UCGM-wag-BB-jump-backward-with-1-2-turn-to-tuck-pike-straddle-chest-stan": [
+   "WAG-BB-0505"
+  ],
   "UCGW-BB-3": [
    "WAG-BB-0506"
   ],
+  "UCGM-wag-BB-two-scissors-mount": [
+   "WAG-BB-0506"
+  ],
   "UCGW-BB-5": [
+   "WAG-BB-0507"
+  ],
+  "UCGM-wag-BB-mount-with-2-circles-and-a-360-russian-in-any-order-wronkiew": [
    "WAG-BB-0507"
   ],
   "UCGW-BB-6": [
@@ -2087,6 +2099,9 @@
    "WAG-BB-0509"
   ],
   "UCGW-BB-8": [
+   "WAG-BB-0510"
+  ],
+  "UCGM-wag-BB-handstand-drop-to-shoulderstand-no-hold": [
    "WAG-BB-0510"
   ],
   "UCGW-BB-9": [
@@ -2102,6 +2117,9 @@
    "WAG-BB-0512"
   ],
   "UCGW-BB-11": [
+   "WAG-BB-0513"
+  ],
+  "UCGM-wag-BB-front-lever-2-sec-georgia": [
    "WAG-BB-0513"
   ],
   "UCGW-BB-12": [
@@ -2196,6 +2214,18 @@
   ],
   "USAG-BB-2.0 Silver-1b": [
    "WAG-BB-0541"
+  ],
+  "USAG-BB-2.0 Gold-2": [
+   "WAG-BB-0542"
+  ],
+  "USAG-BB-2.0 Gold-3": [
+   "WAG-BB-0543"
+  ],
+  "USAG-BB-2.0 Platinum-2": [
+   "WAG-BB-0544"
+  ],
+  "USAG-BB-2.0 Platinum-3": [
+   "WAG-BB-0545"
   ],
   "WGW-FX-1.101-1": [
    "WAG-FX-0001"
@@ -3239,6 +3269,9 @@
    "WAG-FX-0248"
   ],
   "UCGW-FX-6": [
+   "WAG-FX-0249"
+  ],
+  "UCGM-wag-FX-round-off-with-takeoff-from-both-feet-together-rogers": [
    "WAG-FX-0249"
   ],
   "UCGM-wag-FX-wolf-jump-with-3-2-turn": [
@@ -4912,7 +4945,15 @@
    "WAG-UB-0381",
    "WAG-UB-0382"
   ],
+  "USAG-UB-2.301-4": [
+   "WAG-UB-0382"
+  ],
   "USAG-UB-2.102-1": [
+   "WAG-UB-0383",
+   "WAG-UB-0384",
+   "WAG-UB-0385"
+  ],
+  "USAG-UB-2.102-2": [
    "WAG-UB-0383",
    "WAG-UB-0384",
    "WAG-UB-0385"
@@ -5203,6 +5244,9 @@
   "UCGW-UB-3": [
    "WAG-UB-0476"
   ],
+  "UCGM-wag-UB-straddle-vault-mount-with-hand-repulsion-with-1-2-180-turn-t": [
+   "WAG-UB-0476"
+  ],
   "UCGW-UB-4": [
    "WAG-UB-0477"
   ],
@@ -5289,6 +5333,12 @@
   ],
   "WGW-UB-6.208-1": [
    "WAG-UB-0502"
+  ],
+  "USAG-UB-1.101-3": [
+   "WAG-UB-0507"
+  ],
+  "USAG-UB-2.001-7": [
+   "WAG-UB-0508"
   ],
   "WGW-VT-1.01-1": [
    "WAG-VT-0001"
@@ -5983,32 +6033,6 @@
   ],
   "UCGM-wag-forward-headspring": [
    "WAG-VT-0153"
-  ],
-  "USAG-UB-2.301-4": [
-   "WAG-UB-0382"
-  ],
-  "USAG-UB-1.101-3": [
-   "WAG-UB-0507"
-  ],
-  "USAG-UB-2.001-7": [
-   "WAG-UB-0508"
-  ],
-  "USAG-UB-2.102-2": [
-   "WAG-UB-0383",
-   "WAG-UB-0384",
-   "WAG-UB-0385"
-  ],
-  "USAG-BB-2.0 Gold-2": [
-   "WAG-BB-0542"
-  ],
-  "USAG-BB-2.0 Gold-3": [
-   "WAG-BB-0543"
-  ],
-  "USAG-BB-2.0 Platinum-2": [
-   "WAG-BB-0544"
-  ],
-  "USAG-BB-2.0 Platinum-3": [
-   "WAG-BB-0545"
   ]
  },
  "merged": {

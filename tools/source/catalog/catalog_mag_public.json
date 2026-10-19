@@ -1,7 +1,7 @@
 {
  "discipline": "MAG",
- "version": "1ddacb9a8d8b",
- "built": "2026-10-17",
+ "version": "7aca10f8a5d5",
+ "built": "2026-10-18",
  "elements": [
   {
    "id": "MAG-FX-0001",
@@ -18171,7 +18171,8 @@
       "value": "Sub-A",
       "element_group": null,
       "eponym": "",
-      "note": ""
+      "note": "",
+      "video": "https://youtu.be/9hxHYU0-PRw"
      }
     ]
    }
