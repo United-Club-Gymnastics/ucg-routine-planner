@@ -20,6 +20,7 @@ import json
 import os
 import re
 
+from skillfile import records
 from wg_names import wg_name
 
 EXTRACT = os.environ.get("GYM_SKILL_EXTRACT_DIR", r"C:\dev\gym-skill-extract")
@@ -32,11 +33,12 @@ REDIRECT_OUT = os.path.join(os.path.dirname(__file__), "..", "js", "data", "mag-
 # Our edits to the Code's skill notes, as the skill picker shows them (see build_data.py).
 NOTE_EDITS = json.load(open(os.path.join(os.path.dirname(__file__), "source", "note_edits.json"), encoding="utf-8"))["mag"]
 
-# Advanced (GymACT) values that differ from the WG value, by WG vault number.
-ADV_VAULT = {107: 3.6, 108: 4.4, 109: 4.8, 113: 4.0, 114: 4.4, 115: 4.8, 116: 5.2, 117: 5.6, 118: 6.0,
-             213: 2.8, 219: 3.8, 225: 5.2, 226: 5.6, 228: 5.6, 231: 5.6, 232: 6.0}
+# Advanced (GymACT) values that differ from the WG value, by WG vault number. Numbers are strings,
+# as in the schema v0.1 skill files (older files had ints; wg_vaults normalises with str()).
+ADV_VAULT = {"107": 3.6, "108": 4.4, "109": 4.8, "113": 4.0, "114": 4.4, "115": 4.8, "116": 5.2, "117": 5.6, "118": 6.0,
+             "213": 2.8, "219": 3.8, "225": 5.2, "226": 5.6, "228": 5.6, "231": 5.6, "232": 6.0}
 # Vaults with no salto (the only ones allowed at Developmental).
-NON_FLIPPING = set(range(201, 207)) | set(range(301, 304)) | set(range(501, 504)) | set(range(513, 516))
+NON_FLIPPING = {str(n) for n in [*range(201, 207), *range(301, 304), *range(501, 504), *range(513, 516)]}
 
 APPS = ["FX", "PH", "SR", "PB", "HB"]
 ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4}
@@ -44,7 +46,7 @@ ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4}
 
 def wg_skills(path):
     out = []
-    for s in json.load(open(path, encoding="utf-8")):
+    for s in records(path):
         if s["apparatus"] not in APPS:
             continue
         out.append({
@@ -85,12 +87,12 @@ def ucg_skills(cat):
 
 def wg_vaults(path):
     out = []
-    for s in json.load(open(path, encoding="utf-8")):
+    for s in records(path):
         if s["apparatus"] != "VT":
             continue
-        n, v = s["number"], float(s["value"])
+        n, v = str(s["number"]), float(s["value"])
         out.append({
-            "id": str(n),
+            "id": n,
             "name": wg_name("mag", s),
             "eponym": s["eponym"] or "",
             "eg": s["element_group"],
@@ -99,6 +101,12 @@ def wg_vaults(path):
             "flipping": n not in NON_FLIPPING,
             "src": "WG",
         })
+    # A key that matches no vault means the number type or table changed: without this the
+    # vaults would silently all become flipping, with adv = value.
+    ids = {v["id"] for v in out}
+    missing = (ADV_VAULT.keys() | NON_FLIPPING) - ids
+    if missing:
+        raise SystemExit(f"ADV_VAULT / NON_FLIPPING numbers not among the WG vaults in {path}: {sorted(missing)}")
     return out
 
 
