@@ -6,6 +6,7 @@ import { loadDiscipline, findSkill } from '../js/skill-search.js';
 // Skill lists load per discipline (as the app does before showing an athlete).
 await Promise.all(['wag', 'mag', 'tt'].map(loadDiscipline));
 import { scoreRoutine, scoreVault, scoreAthlete } from '../js/scoring/mag.js';
+import { VAULTS } from '../js/data/mag-vaults.js';
 
 const s = (name, letter, eg) => ({ name, letter, eg });
 
@@ -178,6 +179,21 @@ test('vault: WG 2025-2028 values; Advanced uses GymACT values; Developmental ban
   assert.ok(scoreVault('dev', '107').banned);
   assert.equal(scoreVault('dev', 'UCG-VT-tuck-vault').startValue, 10.2);
   assert.ok(scoreVault('dev', 'UCG-VT-hecht-backflip').banned);
+});
+
+// tools/build_skills.py looks WG vaults up by number in ADV_VAULT / NON_FLIPPING. If the
+// extractor's number type changes again (int -> string in schema v0.1), every WG vault would
+// silently become flipping with adv = value; this pins the full tables.
+test('WG vaults: exactly the no-salto vaults are non-flipping, and the GymACT values apply', () => {
+  const wg = VAULTS.filter((v) => v.src === 'WG');
+  const nonFlipping = ['201', '202', '203', '204', '205', '206', '301', '302', '303', '501', '502', '503', '513', '514', '515'];
+  assert.deepEqual(wg.filter((v) => !v.flipping).map((v) => v.id).sort(), nonFlipping);
+  const adv = { 107: 3.6, 108: 4.4, 109: 4.8, 113: 4.0, 114: 4.4, 115: 4.8, 116: 5.2, 117: 5.6, 118: 6.0,
+    213: 2.8, 219: 3.8, 225: 5.2, 226: 5.6, 228: 5.6, 231: 5.6, 232: 6.0 };
+  assert.deepEqual(Object.fromEntries(wg.filter((v) => v.adv !== v.value).map((v) => [v.id, v.adv])),
+    adv);
+  assert.equal(scoreVault('dev', '201').banned, false); // front handspring is allowed at Developmental
+  assert.equal(scoreVault('dev', '201').startValue, 11.2);
 });
 
 test('all-around adds vault and the five events', () => {

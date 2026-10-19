@@ -25,6 +25,7 @@ import json
 import os
 import re
 
+from skillfile import records
 from wg_names import wg_name
 
 HERE = os.path.dirname(__file__)
@@ -73,7 +74,7 @@ def wg_value(v):
 
 def wag():
     rows = []
-    for s in json.load(open(os.path.join(SRC, "wag_wg_skills.json"), encoding="utf-8")):
+    for s in records(os.path.join(SRC, "wag_wg_skills.json")):
         if s["apparatus"] == "VT":
             continue
         rows.append({
@@ -97,7 +98,7 @@ def wag():
     # id + form letter, e.g. USAG-BB-7.104-1b); the bare record id stays as an alias of
     # form "a" so routines saved before the split still find their skill.
     links = {"aliases": {}, "same_as": [], "flight": {}}
-    for s in json.load(open(os.path.join(SRC, "ucg_wag_skills_simplified.json"), encoding="utf-8")):
+    for s in records(os.path.join(SRC, "ucg_wag_skills_simplified.json")):
         if s["apparatus"] == "VT":
             continue
         app = s["apparatus"]
@@ -206,7 +207,7 @@ def sapphire_vaults():
     """USAG Level 9/10 vaults that aren't in the Xcel Sapphire table: UCG Xcel Sapphire
     allows them at 10.0 (UCG Women's Rules II.B.2). One row per vault number."""
     rows, by_num = [], {}
-    for s in json.load(open(os.path.join(SRC, "ucg_wag_skills_simplified.json"), encoding="utf-8")):
+    for s in records(os.path.join(SRC, "ucg_wag_skills_simplified.json")):
         if s["apparatus"] != "VT" or not s["source"].startswith("USAG Development"):
             continue
         name = " ".join(s["description"].split()) + (f" ({s['eponym']})" if s.get("eponym") else "")
@@ -220,7 +221,7 @@ def sapphire_vaults():
 
 def wag_vaults():
     rows = []
-    for s in json.load(open(os.path.join(SRC, "wag_wg_skills.json"), encoding="utf-8")):
+    for s in records(os.path.join(SRC, "wag_wg_skills.json")):
         if s["apparatus"] != "VT":
             continue
         rows.append({"id": s["number"], "name": wg_name("wag", s), "eponym": s.get("eponym") or "", "eg": s["element_group"], "value": float(s["value"]), "src": "WG"})
