@@ -4,6 +4,20 @@ Read `README.md` first: it is the manual ("Skill catalog" and "Data and how to r
 This file only adds what a new session needs and the README doesn't say. The cross-repo plan (skill data
 ownership, pinned bundle, rules library) is `docs/ARCHITECTURE.md` in nssharpe/gym-skill-extract.
 
+## Shipping
+
+Nate decided this on 2026-10-18, and it applies to all three repos (gym-skill-extract, ucg-code-of-points, ucg-routine-planner).
+
+Work stops once, so Nate can review the work summary. After he approves it, finish everything in one go with no further pauses or questions:
+
+1. commit;
+2. push;
+3. open the PR and merge it;
+4. deploy (the planner deploys when main is pushed), and confirm the deploy run passed;
+5. sync: fast-forward `main` in the local checkout under `C:/dev/`, and remove your worktree.
+
+Stop early only if something fails: tests, the build, a merge conflict or the deploy. Then report what failed. If the change affects another repo (for example a catalog or ID change), say so in the summary, so the coordinator can start that repo's session. Anything destructive or outside this flow, such as deleting data or rewriting history, still needs its own OK.
+
 ## Handoff notes
 
 Collected 2026-10-18 from the session that landed PR #12.
