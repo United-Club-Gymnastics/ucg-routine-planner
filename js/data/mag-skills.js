@@ -97,7 +97,7 @@ export const SKILLS = [
   {"id": "UCG-HB-jam-to-release-with-half-turn-to-swing-fwd-in-long-hang", "app": "hb", "name": "Jam to release with half turn to swing fwd in long hang", "eponym": "", "value": "A", "eg": 3, "src": "UCG", "note": ""},
   {"id": "UCG-HB-jam-adler-to-el-grip-45-90", "app": "hb", "name": "Jam (Adler) to El grip 45°-90°", "eponym": "", "value": "B", "eg": 3, "src": "UCG", "note": ""},
   {"id": "UCG-HB-underswing-to-counter-salto-fwd-tucked", "app": "hb", "name": "Underswing to counter salto fwd tucked", "eponym": "", "value": "B", "eg": 4, "src": "UCG", "note": ""},
-  {"id": "UCG-HB-toe-on-to-counter-salto-fwd-tucked-also-with-twist-penn-1-sh", "app": "hb", "name": "Toe on to counter salto fwd tucked, also with ½ twist", "eponym": "Penn 1 / Sharpe", "value": "B", "eg": 4, "src": "UCG", "note": ""},
+  {"id": "UCG-HB-toe-on-to-counter-salto-fwd-tucked-also-with-twist-penn-1-sh", "app": "hb", "name": "Toe on to counter salto fwd tucked, also with ½ twist", "eponym": "Penn 1/Sharpe", "value": "B", "eg": 4, "src": "UCG", "note": ""},
   {"id": "UCG-HB-jam-adler-to-el-grip-0-45", "app": "hb", "name": "Jam (Adler) to El grip 0-45°", "eponym": "", "value": "C", "eg": 3, "src": "UCG", "note": ""},
   {"id": "UCG-HB-toe-on-to-counter-salto-fwd-tucked-with-1-1-twist-penn-2", "app": "hb", "name": "Toe on to counter salto fwd tucked with 1/1 twist", "eponym": "Penn 2", "value": "C", "eg": 4, "src": "UCG", "note": ""},
   {"id": "UCG-HB-stoop-in-and-free-back-toss-to-dorsal-hang-and-1-1-turn-to-c", "app": "hb", "name": "Stoop in and free back toss to dorsal hang and 1/1 turn to catch at or below horizontal", "eponym": "", "value": "E", "eg": 3, "src": "UCG", "note": ""},

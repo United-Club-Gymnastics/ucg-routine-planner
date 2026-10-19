@@ -1,7 +1,7 @@
 {
  "discipline": "WAG",
- "version": "4c6890300dcb",
- "built": "2026-10-14",
+ "version": "65d08096cdae",
+ "built": "2026-10-18",
  "elements": [
   {
    "id": "WAG-BB-0001",
@@ -23735,6 +23735,20 @@
       "eponym": "Michaels",
       "video": "https://youtu.be/_t3Iu3ApG9Q"
      }
+    ],
+    "UCG-MASTERS-WAG": [
+     {
+      "rid": "UCGM-wag-BB-three-scissors-mount-michaels",
+      "short_name": "Three scissors mount",
+      "number": "29",
+      "variant": 1,
+      "value": "C",
+      "element_group": "IV",
+      "eponym": "Michaels",
+      "note": "",
+      "video": "https://youtu.be/_t3Iu3ApG9Q",
+      "page": 5
+     }
     ]
    }
   },
@@ -23793,6 +23807,20 @@
       "eponym": "Svetanoff",
       "video": "https://youtu.be/k5cBdDNuIj0"
      }
+    ],
+    "UCG-MASTERS-WAG": [
+     {
+      "rid": "UCGM-wag-BB-jump-backward-with-1-2-turn-to-tuck-pike-straddle-chest-stan",
+      "short_name": "Jump backward with ½ turn to tuck/pike/straddle chest stand (2 s.)",
+      "number": "26",
+      "variant": 1,
+      "value": "B",
+      "element_group": "IV",
+      "eponym": "Svetanoff",
+      "note": "",
+      "video": "https://youtu.be/k5cBdDNuIj0",
+      "page": 5
+     }
     ]
    }
   },
@@ -23815,6 +23843,20 @@
       "eponym": "",
       "video": null
      }
+    ],
+    "UCG-MASTERS-WAG": [
+     {
+      "rid": "UCGM-wag-BB-two-scissors-mount",
+      "short_name": "Two scissors mount",
+      "number": "27",
+      "variant": 1,
+      "value": "B",
+      "element_group": "IV",
+      "eponym": "",
+      "note": "",
+      "video": null,
+      "page": 5
+     }
     ]
    }
   },
@@ -23836,6 +23878,20 @@
       "element_group": "1",
       "eponym": "Wronkiewicz",
       "video": "https://youtu.be/mFidt9zg1Dg"
+     }
+    ],
+    "UCG-MASTERS-WAG": [
+     {
+      "rid": "UCGM-wag-BB-mount-with-2-circles-and-a-360-russian-in-any-order-wronkiew",
+      "short_name": "Mount with 2 circles and a 360° russian in any order",
+      "number": "30",
+      "variant": 1,
+      "value": "D",
+      "element_group": "IV",
+      "eponym": "Wronkiewicz",
+      "note": "",
+      "video": "https://youtu.be/mFidt9zg1Dg",
+      "page": 5
      }
     ]
    }
@@ -23917,6 +23973,20 @@
       "eponym": "",
       "video": null
      }
+    ],
+    "UCG-MASTERS-WAG": [
+     {
+      "rid": "UCGM-wag-BB-handstand-drop-to-shoulderstand-no-hold",
+      "short_name": "Handstand drop to shoulderstand (no hold)",
+      "number": "22",
+      "variant": 1,
+      "value": "A",
+      "element_group": "III",
+      "eponym": "",
+      "note": "",
+      "video": null,
+      "page": 4
+     }
     ]
    }
   },
@@ -23944,7 +24014,7 @@
      {
       "rid": "UCGM-wag-BB-handstand-drop-to-shoulderstand-2-sec-mccarthy",
       "short_name": "Handstand drop to shoulderstand (2 sec.)",
-      "number": "22",
+      "number": "23",
       "variant": 1,
       "value": "B",
       "element_group": "III",
@@ -23962,7 +24032,7 @@
    "apparatus": "BB",
    "short_name": "Pistol squat in relevé or Y-Scale",
    "aka": [],
-   "eponym": "Niolet/Lim",
+   "eponym": "Lim/Niolet",
    "codes": {
     "UCG-WAG-ADD": [
      {
@@ -23972,7 +24042,7 @@
       "variant": 1,
       "value": "B",
       "element_group": "5",
-      "eponym": "Niolet/Lim",
+      "eponym": "Lim/Niolet",
       "video": "https://youtu.be/dskfyVz9KY4"
      }
     ],
@@ -23984,7 +24054,7 @@
       "variant": 1,
       "value": "A",
       "element_group": "III",
-      "eponym": "Niolet",
+      "eponym": "Lim/Niolet",
       "note": "",
       "video": "https://youtu.be/dskfyVz9KY4",
       "page": 4
@@ -24010,6 +24080,20 @@
       "element_group": "5",
       "eponym": "Georgia",
       "video": "https://youtu.be/ONEM9wgC7x8"
+     }
+    ],
+    "UCG-MASTERS-WAG": [
+     {
+      "rid": "UCGM-wag-BB-front-lever-2-sec-georgia",
+      "short_name": "Front Lever (2 sec.)",
+      "number": "24",
+      "variant": 1,
+      "value": "B",
+      "element_group": "III",
+      "eponym": "Georgia",
+      "note": "",
+      "video": "https://youtu.be/ONEM9wgC7x8",
+      "page": 4
      }
     ]
    }
@@ -24038,14 +24122,14 @@
      {
       "rid": "UCGM-wag-BB-salto-backward-tucked-with-step-out-to-stand-sharpe",
       "short_name": "Salto backward tucked with step-out to stand",
-      "number": "24",
+      "number": "28",
       "variant": 1,
       "value": "C",
       "element_group": "III",
       "eponym": "Sharpe",
       "note": "",
       "video": "https://youtu.be/yqHLC7pqWK0",
-      "page": 4
+      "page": 5
      }
     ],
     "WG-WAG-2025": [
@@ -24086,14 +24170,14 @@
      {
       "rid": "UCGM-wag-BB-full-twisting-butterfly-churko",
       "short_name": "Full twisting butterfly",
-      "number": "23",
+      "number": "25",
       "variant": 1,
       "value": "B",
       "element_group": "IV",
       "eponym": "Churko",
       "note": "",
       "video": "https://youtu.be/dnFmMoPJ9x8",
-      "page": 4
+      "page": 5
      }
     ]
    }
@@ -24839,6 +24923,126 @@
        "dance_type": "leap",
        "split": true,
        "split_deg": 90
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "WAG-BB-0542",
+   "discipline": "WAG",
+   "apparatus": "BB",
+   "short_name": "Straddle jump, 120°–135° (Gold)",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "USAG-XCEL-2022": [
+     {
+      "rid": "USAG-BB-2.0 Gold-2",
+      "short_name": "Straddle jump, 120°–135° (Gold)",
+      "number": "2.0 Gold",
+      "variant": 2,
+      "value": "A",
+      "element_group": "2",
+      "eponym": "",
+      "divisions": [
+       "Gold"
+      ],
+      "tags": {
+       "dance": true,
+       "dance_type": "jump",
+       "split": true,
+       "split_deg": 120
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "WAG-BB-0543",
+   "discipline": "WAG",
+   "apparatus": "BB",
+   "short_name": "Sissonne, 120°–135° (Gold)",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "USAG-XCEL-2022": [
+     {
+      "rid": "USAG-BB-2.0 Gold-3",
+      "short_name": "Sissonne, 120°–135° (Gold)",
+      "number": "2.0 Gold",
+      "variant": 3,
+      "value": "A",
+      "element_group": "2",
+      "eponym": "",
+      "divisions": [
+       "Gold"
+      ],
+      "tags": {
+       "dance": true,
+       "dance_type": "jump",
+       "split": true,
+       "split_deg": 120
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "WAG-BB-0544",
+   "discipline": "WAG",
+   "apparatus": "BB",
+   "short_name": "Straddle jump, 120°–135° (Platinum)",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "USAG-XCEL-2022": [
+     {
+      "rid": "USAG-BB-2.0 Platinum-2",
+      "short_name": "Straddle jump, 120°–135° (Platinum)",
+      "number": "2.0 Platinum",
+      "variant": 2,
+      "value": "A",
+      "element_group": "2",
+      "eponym": "",
+      "divisions": [
+       "Platinum"
+      ],
+      "tags": {
+       "dance": true,
+       "dance_type": "jump",
+       "split": true,
+       "split_deg": 120
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "WAG-BB-0545",
+   "discipline": "WAG",
+   "apparatus": "BB",
+   "short_name": "Sissonne, 120°–135° (Platinum)",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "USAG-XCEL-2022": [
+     {
+      "rid": "USAG-BB-2.0 Platinum-3",
+      "short_name": "Sissonne, 120°–135° (Platinum)",
+      "number": "2.0 Platinum",
+      "variant": 3,
+      "value": "A",
+      "element_group": "2",
+      "eponym": "",
+      "divisions": [
+       "Platinum"
+      ],
+      "tags": {
+       "dance": true,
+       "dance_type": "jump",
+       "split": true,
+       "split_deg": 120
       }
      }
     ]
@@ -32266,7 +32470,7 @@
       "relation": "covers_more",
       "note": "",
       "video": "https://www.youtube.com/watch?v=09tK3j1V9Xc",
-      "page": 5
+      "page": 6
      }
     ],
     "WG-WAG-2025": [
@@ -32339,7 +32543,7 @@
       "relation": "covers_more",
       "note": "",
       "video": "https://www.youtube.com/watch?v=09tK3j1V9Xc",
-      "page": 5
+      "page": 6
      }
     ],
     "WG-WAG-2025": [
@@ -32455,7 +32659,7 @@
       "relation": "stand_in",
       "note": "",
       "video": "https://www.youtube.com/watch?v=09tK3j1V9Xc",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -36631,7 +36835,7 @@
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/sQUInfDfj5E",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -36660,14 +36864,14 @@
      {
       "rid": "UCGM-wag-FX-11-2-540-wolf-turn-to-l-turn-lim-1",
       "short_name": "1½ (540°) wolf turn to L-turn",
-      "number": "16",
+      "number": "17",
       "variant": 1,
       "value": "C",
       "element_group": "II",
       "eponym": "Lim 1",
       "note": "",
       "video": "https://youtu.be/QVyP_7dtSz8",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -36696,14 +36900,14 @@
      {
       "rid": "UCGM-wag-FX-2-1-720-wolf-turn-to-l-turn-lim-2",
       "short_name": "2/1 (720°) wolf turn to L-turn",
-      "number": "18",
+      "number": "19",
       "variant": 1,
       "value": "D",
       "element_group": "II",
       "eponym": "Lim 2",
       "note": "",
       "video": "https://youtu.be/xUYQwOgtMB4",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -36732,14 +36936,14 @@
      {
       "rid": "UCGM-wag-FX-3-1-1080-turn-with-leg-in-back-attitude",
       "short_name": "3/1 (1080°) turn with leg in back attitude",
-      "number": "19",
+      "number": "20",
       "variant": 1,
       "value": "E",
       "element_group": "II",
-      "eponym": "",
+      "eponym": "Penn 2",
       "note": "",
       "video": "https://youtu.be/w9NXoaHnBbE",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -36768,14 +36972,14 @@
      {
       "rid": "UCGM-wag-FX-3-1-1080-l-turn",
       "short_name": "3/1 (1080°) L-turn",
-      "number": "20",
+      "number": "21",
       "variant": 1,
       "value": "E",
       "element_group": "II",
-      "eponym": "",
+      "eponym": "Penn 1",
       "note": "",
       "video": "https://youtu.be/3s8T3QGJBqw",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -36799,6 +37003,20 @@
       "eponym": "Rogers",
       "video": "https://youtu.be/T6sJM7Mds_4"
      }
+    ],
+    "UCG-MASTERS-WAG": [
+     {
+      "rid": "UCGM-wag-FX-round-off-with-takeoff-from-both-feet-together-rogers",
+      "short_name": "Round off with takeoff from both feet together",
+      "number": "16",
+      "variant": 1,
+      "value": "B",
+      "element_group": "III",
+      "eponym": "Rogers",
+      "note": "",
+      "video": "https://youtu.be/T6sJM7Mds_4",
+      "page": 6
+     }
     ]
    }
   },
@@ -36814,14 +37032,14 @@
      {
       "rid": "UCGM-wag-FX-wolf-jump-with-3-2-turn",
       "short_name": "Wolf jump with ³⁄₂ turn",
-      "number": "17",
+      "number": "18",
       "variant": 1,
       "value": "D",
       "element_group": "I",
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/0xrKLL20pDE",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -36845,7 +37063,7 @@
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/mapMjAyhKSE",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -36869,7 +37087,7 @@
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/bD2c8NzrAzU",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -36893,7 +37111,7 @@
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/N_2NvVdgWeA?si=kZpnS-BrPtiiDoin&t=5",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -36917,7 +37135,7 @@
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/X3_S3Or1Lkc?si=Iq13GEY0_LWfEF35&t=6",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -36941,7 +37159,7 @@
       "eponym": "",
       "note": "",
       "video": "https://www.youtube.com/watch?v=YkE8pE1hrU4&ab_channel=NAIGC",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -36965,7 +37183,7 @@
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/2xyEKxy1q5s?si=tpkbTpKjP6Mc-zdy&t=4",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -36989,7 +37207,7 @@
       "eponym": "",
       "note": "",
       "video": "https://www.youtube.com/watch?v=wtN8XBcBdWw&ab_channel=MichelleWaguespack",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -37013,7 +37231,7 @@
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/gywnsM8OjP4",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -37037,7 +37255,7 @@
       "eponym": "",
       "note": "",
       "video": "https://www.youtube.com/watch?v=09tK3j1V9Xc",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -37061,7 +37279,7 @@
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/EuQeVGMV9iw",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -37085,7 +37303,7 @@
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/QvJveqtCe-0?si=JTIfnT7oq79sx9p5&t=2",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -37109,7 +37327,7 @@
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/93QhqXPvaw8?si=0aqTG2Uzsgk8fJ58&t=5",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -37133,7 +37351,7 @@
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/szdd9X9X0nU?si=bek7QdbZVsxyzlL1&t=6",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -37157,7 +37375,7 @@
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/zMa2G4yec0E?si=V8-4ZVpLfl15OpF_&t=29",
-      "page": 5
+      "page": 6
      }
     ]
    }
@@ -39237,6 +39455,9 @@
       "element_group": "7",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Toe up"
+      ],
       "tags": {
        "bar": "LB",
        "bar_change": true,
@@ -39245,10 +39466,7 @@
        "varies": [
         "turn_deg"
        ]
-      },
-      "aka": [
-       "Toe up"
-      ]
+      }
      }
     ]
    }
@@ -39302,6 +39520,9 @@
       "element_group": "7",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Toe up"
+      ],
       "tags": {
        "bar": "LB",
        "bar_change": true,
@@ -39310,10 +39531,7 @@
        "varies": [
         "turn_deg"
        ]
-      },
-      "aka": [
-       "Toe up"
-      ]
+      }
      }
     ]
    }
@@ -51603,15 +51821,15 @@
       "value": "B",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "Toe circle to clear support"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
        "circle360": true,
        "support_angle": "any"
-      },
-      "aka": [
-       "Toe circle to clear support"
-      ]
+      }
      }
     ],
     "USAG-DP-2026": [
@@ -51623,15 +51841,15 @@
       "value": "B",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "Toe circle to clear support"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
        "circle360": true,
        "support_angle": "any"
-      },
-      "aka": [
-       "Toe circle to clear support"
-      ]
+      }
      }
     ]
    }
@@ -51707,15 +51925,15 @@
       "value": "C",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "Toe circle to handstand"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
        "circle360": true,
        "support_angle": "hs"
-      },
-      "aka": [
-       "Toe circle to handstand"
-      ]
+      }
      }
     ],
     "USAG-DP-2026": [
@@ -51727,15 +51945,15 @@
       "value": "C",
       "element_group": "7",
       "eponym": "",
+      "aka": [
+       "Toe circle to handstand"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
        "circle360": true,
        "support_angle": "hs"
-      },
-      "aka": [
-       "Toe circle to handstand"
-      ]
+      }
      }
     ],
     "WG-WAG-2025": [
@@ -54935,14 +55153,14 @@
       "element_group": "2",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Cast handstand"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
        "support_angle": "hs"
-      },
-      "aka": [
-       "Cast handstand"
-      ]
+      }
      }
     ],
     "WG-WAG-2025": [
@@ -55028,14 +55246,14 @@
       "element_group": "2",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Cast handstand"
+      ],
       "tags": {
        "bar": "either",
        "cast_sr": true,
        "support_angle": "hs"
-      },
-      "aka": [
-       "Cast handstand"
-      ]
+      }
      }
     ],
     "WG-WAG-2025": [
@@ -60123,9 +60341,9 @@
       "variant": 1,
       "value": "B",
       "element_group": "I",
-      "eponym": "",
+      "eponym": "Watson",
       "note": "",
-      "video": "https://youtu.be/6lYz5B49094?si=ilJx9iE7ZntXm5Bh&t=15",
+      "video": "https://youtu.be/HlLKn4nE4a0",
       "page": 3
      }
     ],
@@ -60167,13 +60385,13 @@
      {
       "rid": "UCGM-wag-UB-jump-with-3-2-540-turn-kip-to-support-on-lb-victor",
       "short_name": "Jump with ³⁄₂ (540°) turn, kip to support on LB",
-      "number": "19",
+      "number": "20",
       "variant": 1,
       "value": "C",
       "element_group": "I",
       "eponym": "Victor",
       "note": "",
-      "video": "https://youtu.be/6lYz5B49094?si=ilJx9iE7ZntXm5Bh&t=15",
+      "video": "https://youtu.be/Hb5U8i-uu9o",
       "page": 3
      }
     ]
@@ -60197,6 +60415,20 @@
       "element_group": "1",
       "eponym": "Denk-Lobnig 2",
       "video": "https://youtu.be/SDTquwOJHto"
+     }
+    ],
+    "UCG-MASTERS-WAG": [
+     {
+      "rid": "UCGM-wag-UB-straddle-vault-mount-with-hand-repulsion-with-1-2-180-turn-t",
+      "short_name": "Straddle vault mount with hand repulsion with ½ (180°) turn to clear support or hang on LB",
+      "number": "16",
+      "variant": 1,
+      "value": "B",
+      "element_group": "I",
+      "eponym": "Denk-Lobnig 2",
+      "note": "",
+      "video": "https://youtu.be/SDTquwOJHto",
+      "page": 3
      }
     ]
    }
@@ -60231,7 +60463,7 @@
       "element_group": "II",
       "eponym": "Denk-Lobnig",
       "note": "",
-      "video": "https://youtu.be/6lYz5B49094?si=ilJx9iE7ZntXm5Bh&t=15",
+      "video": "https://youtu.be/FzbVlpjbFRY",
       "page": 3
      }
     ]
@@ -60261,13 +60493,13 @@
      {
       "rid": "UCGM-wag-UB-front-support-stoop-forward-over-bar-with-1-2-turn-to-clear-",
       "short_name": "Front support - stoop forward over bar with ½ turn to clear support or hang",
-      "number": "16",
+      "number": "17",
       "variant": 1,
       "value": "B",
       "element_group": "II",
-      "eponym": "",
+      "eponym": "Sharpe 1",
       "note": "",
-      "video": "https://youtu.be/6lYz5B49094?si=ilJx9iE7ZntXm5Bh&t=15",
+      "video": "https://youtu.be/NB0jZCOs-YQ",
       "page": 3
      }
     ]
@@ -60297,13 +60529,13 @@
      {
       "rid": "UCGM-wag-UB-cast-from-lb-with-1-2-turn-to-hang-on-hb",
       "short_name": "Cast from LB with ½ turn to hang on HB",
-      "number": "17",
+      "number": "18",
       "variant": 1,
       "value": "B",
       "element_group": "II",
-      "eponym": "",
+      "eponym": "Georgia",
       "note": "",
-      "video": "https://youtu.be/6lYz5B49094?si=ilJx9iE7ZntXm5Bh&t=15",
+      "video": "https://youtu.be/Zn8LdaeRAcs",
       "page": 3
      }
     ]
@@ -60333,14 +60565,14 @@
      {
       "rid": "UCGM-wag-UB-toe-on-to-salto-fwd-tucked-with-1-2-turn-180-to-hang-on-lb",
       "short_name": "Toe on to salto fwd tucked with ½ turn (180°) to hang on LB",
-      "number": "25",
+      "number": "26",
       "variant": 1,
       "value": "E",
       "element_group": "II",
-      "eponym": "",
+      "eponym": "Kotnik",
       "note": "",
       "video": "https://youtu.be/pzLlIV1Z0wU",
-      "page": 6
+      "page": 7
      }
     ]
    }
@@ -60369,14 +60601,14 @@
      {
       "rid": "UCGM-wag-UB-stalder-hecht-from-lb-to-hb-with-1-2-turn-180",
       "short_name": "Stalder hecht from LB to HB with ½ turn (180°)",
-      "number": "20",
+      "number": "21",
       "variant": 1,
       "value": "C",
       "element_group": "II",
-      "eponym": "",
+      "eponym": "Penn",
       "note": "",
-      "video": "https://youtu.be/6lYz5B49094?si=ilJx9iE7ZntXm5Bh&t=15",
-      "page": 3
+      "video": "https://youtu.be/SFOdhDrD7gY",
+      "page": 7
      }
     ]
    }
@@ -60405,13 +60637,13 @@
      {
       "rid": "UCGM-wag-UB-sole-circle-pike-or-straddle-on-hb-to-flight-to-clear-suppor",
       "short_name": "Sole circle (pike or straddle) on HB to flight to clear support or hang on LB",
-      "number": "18",
+      "number": "19",
       "variant": 1,
       "value": "B",
       "element_group": "II",
-      "eponym": "",
+      "eponym": "Sharpe 2",
       "note": "",
-      "video": "https://youtu.be/6lYz5B49094?si=ilJx9iE7ZntXm5Bh&t=15",
+      "video": "https://youtu.be/ce_D2cwMnxw",
       "page": 3
      }
     ]
@@ -60435,7 +60667,7 @@
       "element_group": "II",
       "eponym": "",
       "note": "",
-      "video": "https://youtu.be/6lYz5B49094?si=ilJx9iE7ZntXm5Bh&t=15",
+      "video": "https://youtu.be/AdsKgZgydAc",
       "page": 3
      }
     ]
@@ -60459,7 +60691,7 @@
       "element_group": "II",
       "eponym": "",
       "note": "",
-      "video": "https://youtu.be/6lYz5B49094?si=ilJx9iE7ZntXm5Bh&t=15",
+      "video": "https://youtu.be/tRMgavIu6f0",
       "page": 3
      }
     ]
@@ -60483,7 +60715,7 @@
       "element_group": "II",
       "eponym": "",
       "note": "",
-      "video": "https://youtu.be/6lYz5B49094?si=ilJx9iE7ZntXm5Bh&t=15",
+      "video": "https://youtu.be/2QroDG75rys",
       "page": 3
      }
     ]
@@ -60507,7 +60739,7 @@
       "element_group": "III",
       "eponym": "",
       "note": "",
-      "video": "https://youtu.be/6lYz5B49094?si=ilJx9iE7ZntXm5Bh&t=15",
+      "video": "https://youtu.be/vgQMJODL0AQ?si=UcjkxNfGABqbTN8E&t=12",
       "page": 3
      }
     ]
@@ -60687,7 +60919,7 @@
       "element_group": "IV",
       "eponym": "",
       "note": "",
-      "video": "https://youtu.be/6lYz5B49094?si=ilJx9iE7ZntXm5Bh&t=15",
+      "video": "https://youtu.be/KbqcOiIxCqk?si=NHUXHe0FJN3RlU3W&t=8",
       "page": 3
      }
     ]
@@ -60711,7 +60943,7 @@
       "element_group": "III",
       "eponym": "",
       "note": "",
-      "video": "https://youtu.be/6lYz5B49094?si=ilJx9iE7ZntXm5Bh&t=15",
+      "video": "https://youtu.be/j7uXQ2J9QAk",
       "page": 3
      }
     ]
@@ -60753,14 +60985,14 @@
      {
       "rid": "UCGM-wag-UB-on-lb-3-4-bwd-giant-with-release-and-1-2-turn-in-tuck-to-cat",
       "short_name": "On LB, ¾ bwd giant with release and ½ turn in tuck to catch on HB (Laumann)",
-      "number": "21",
+      "number": "22",
       "variant": 1,
       "value": "C",
       "element_group": "III",
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/b6oNkdtWvow",
-      "page": 6
+      "page": 7
      }
     ]
    }
@@ -60779,14 +61011,14 @@
      {
       "rid": "UCGM-wag-UB-clear-hip-circle-forward-to-1-2-turn-and-straddle-backwards-",
       "short_name": "Clear hip circle forward to ½ turn and straddle backwards over the bar – catch in hang",
-      "number": "22",
+      "number": "23",
       "variant": 1,
       "value": "D",
       "element_group": "II",
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/izzD8-CnHm8",
-      "page": 6
+      "page": 7
      }
     ]
    }
@@ -60803,14 +61035,14 @@
      {
       "rid": "UCGM-wag-UB-back-uprise-release-with-1-2-turn-in-straddle-bwd-over-hb-fr",
       "short_name": "Back uprise, release with ½ turn in straddle bwd over HB (Franzella)",
-      "number": "23",
+      "number": "24",
       "variant": 1,
       "value": "D",
       "element_group": "III",
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/2CGNBvdHAlA",
-      "page": 6
+      "page": 7
      }
     ],
     "WG-WAG-2025": [
@@ -60839,14 +61071,14 @@
      {
       "rid": "UCGM-wag-UB-on-lb-3-4-bwd-giant-with-release-and-1-1-turn-in-tuck-to-cat",
       "short_name": "On LB, ¾ bwd giant with release and ¹⁄₁ turn in tuck to catch on HB",
-      "number": "24",
+      "number": "25",
       "variant": 1,
       "value": "D",
       "element_group": "III",
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/qgTHQtEttuU",
-      "page": 6
+      "page": 7
      }
     ]
    }
@@ -61184,6 +61416,67 @@
         "bar_change",
         "circle360"
        ]
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "WAG-UB-0507",
+   "discipline": "WAG",
+   "apparatus": "UB",
+   "short_name": "Long hang kip on HB",
+   "aka": [
+    "High bar kip",
+    "HB kip"
+   ],
+   "eponym": "",
+   "codes": {
+    "USAG-XCEL-2022": [
+     {
+      "rid": "USAG-UB-1.101-3",
+      "short_name": "Long hang kip",
+      "number": "1.101",
+      "variant": 3,
+      "value": "A",
+      "element_group": "1",
+      "eponym": "",
+      "aka": [
+       "High bar kip",
+       "HB kip"
+      ],
+      "tags": {
+       "bar": "HB",
+       "kip": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "WAG-UB-0508",
+   "discipline": "WAG",
+   "apparatus": "UB",
+   "short_name": "High cast, 21°+ off vertical (no value)",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "USAG-XCEL-2022": [
+     {
+      "rid": "USAG-UB-2.001-7",
+      "short_name": "High cast, 21°+ off vertical (no value)",
+      "number": "2.001",
+      "variant": 7,
+      "value": null,
+      "element_group": "2",
+      "eponym": "",
+      "divisions": [
+       "Sapphire"
+      ],
+      "tags": {
+       "bar": "either",
+       "cast_sr": true,
+       "support_angle": "45"
       }
      }
     ]
@@ -66775,187 +67068,6 @@
       "element_group": null,
       "eponym": "",
       "page": 2
-     }
-    ]
-   }
-  },
-  {
-   "id": "WAG-UB-0507",
-   "discipline": "WAG",
-   "apparatus": "UB",
-   "short_name": "Long hang kip on HB",
-   "aka": [
-    "High bar kip",
-    "HB kip"
-   ],
-   "eponym": "",
-   "codes": {
-    "USAG-XCEL-2022": [
-     {
-      "rid": "USAG-UB-1.101-3",
-      "short_name": "Long hang kip",
-      "number": "1.101",
-      "variant": 3,
-      "value": "A",
-      "element_group": "1",
-      "eponym": "",
-      "aka": [
-       "High bar kip",
-       "HB kip"
-      ],
-      "tags": {
-       "bar": "HB",
-       "kip": true
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "WAG-UB-0508",
-   "discipline": "WAG",
-   "apparatus": "UB",
-   "short_name": "High cast, 21°+ off vertical (no value)",
-   "aka": [],
-   "eponym": "",
-   "codes": {
-    "USAG-XCEL-2022": [
-     {
-      "rid": "USAG-UB-2.001-7",
-      "short_name": "High cast, 21°+ off vertical (no value)",
-      "number": "2.001",
-      "variant": 7,
-      "value": null,
-      "element_group": "2",
-      "eponym": "",
-      "divisions": [
-       "Sapphire"
-      ],
-      "tags": {
-       "bar": "either",
-       "cast_sr": true,
-       "support_angle": "45"
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "WAG-BB-0542",
-   "discipline": "WAG",
-   "apparatus": "BB",
-   "short_name": "Straddle jump, 120°–135° (Gold)",
-   "aka": [],
-   "eponym": "",
-   "codes": {
-    "USAG-XCEL-2022": [
-     {
-      "rid": "USAG-BB-2.0 Gold-2",
-      "short_name": "Straddle jump, 120°–135° (Gold)",
-      "number": "2.0 Gold",
-      "variant": 2,
-      "value": "A",
-      "element_group": "2",
-      "eponym": "",
-      "divisions": [
-       "Gold"
-      ],
-      "tags": {
-       "dance": true,
-       "dance_type": "jump",
-       "split": true,
-       "split_deg": 120
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "WAG-BB-0543",
-   "discipline": "WAG",
-   "apparatus": "BB",
-   "short_name": "Sissonne, 120°–135° (Gold)",
-   "aka": [],
-   "eponym": "",
-   "codes": {
-    "USAG-XCEL-2022": [
-     {
-      "rid": "USAG-BB-2.0 Gold-3",
-      "short_name": "Sissonne, 120°–135° (Gold)",
-      "number": "2.0 Gold",
-      "variant": 3,
-      "value": "A",
-      "element_group": "2",
-      "eponym": "",
-      "divisions": [
-       "Gold"
-      ],
-      "tags": {
-       "dance": true,
-       "dance_type": "jump",
-       "split": true,
-       "split_deg": 120
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "WAG-BB-0544",
-   "discipline": "WAG",
-   "apparatus": "BB",
-   "short_name": "Straddle jump, 120°–135° (Platinum)",
-   "aka": [],
-   "eponym": "",
-   "codes": {
-    "USAG-XCEL-2022": [
-     {
-      "rid": "USAG-BB-2.0 Platinum-2",
-      "short_name": "Straddle jump, 120°–135° (Platinum)",
-      "number": "2.0 Platinum",
-      "variant": 2,
-      "value": "A",
-      "element_group": "2",
-      "eponym": "",
-      "divisions": [
-       "Platinum"
-      ],
-      "tags": {
-       "dance": true,
-       "dance_type": "jump",
-       "split": true,
-       "split_deg": 120
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "WAG-BB-0545",
-   "discipline": "WAG",
-   "apparatus": "BB",
-   "short_name": "Sissonne, 120°–135° (Platinum)",
-   "aka": [],
-   "eponym": "",
-   "codes": {
-    "USAG-XCEL-2022": [
-     {
-      "rid": "USAG-BB-2.0 Platinum-3",
-      "short_name": "Sissonne, 120°–135° (Platinum)",
-      "number": "2.0 Platinum",
-      "variant": 3,
-      "value": "A",
-      "element_group": "2",
-      "eponym": "",
-      "divisions": [
-       "Platinum"
-      ],
-      "tags": {
-       "dance": true,
-       "dance_type": "jump",
-       "split": true,
-       "split_deg": 120
-      }
      }
     ]
    }
