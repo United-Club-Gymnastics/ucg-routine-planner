@@ -1,5 +1,5 @@
 {
- "_doc": "UCG competition levels: which code values a skill and which element group it counts in. To re-value a catalog element at a level, take the first code in `value_codes` that has a record for the element (codes are listed in priority order); a skill with none of them is not creditable at that level. `eg` says how to turn that code's element group into the level's group. Sources: UCG Women's Rules v6.0 (2026-27), UCG WAG Open Scoring Level (Infinity) Rules v1.2, UCG MAG Rules Policy 2026-2028, UCG Masters Rules Policy, and the routine planner's scoring code (js/scoring/wag.js), which implements them. `planner_id` is the routine planner's level ID.",
+ "_doc": "UCG competition levels: which code values a skill and which element group it counts in. To re-value a catalog element at a level, take the first code in `value_codes` that has a record for the element (codes are listed in priority order); a skill with none of them is not creditable at that level. `eg` says how to turn that code's element group into the level's group. Sources: UCG Women's Rules v6.0 (2026-27), UCG Infinity (Open Scoring Level) Rules v1.2, UCG MAG Rules Policy and Rules Breakdown 2026-2028, UCG Masters Rules Policy (UCG Google Docs/Sheets, the sources of record: links in rules/README.md; digests in rules/UCG-*), and the routine planner's scoring code (js/scoring/wag.js), which implements them. `planner_id` is the routine planner's level ID.",
  "version": "2026-10-06",
  "_version_doc": "Date of the last change to this file; bump it whenever a level, code priority or EG map changes.",
  "WAG": {
@@ -191,7 +191,7 @@
    "eg": {
     "from": "code"
    },
-   "note": "WG + UCG MAG rules; vaults without saltos only."
+   "note": "WG + UCG MAG rules; no flipping or round-off-entry vaults."
   },
   "intermediate": {
    "name": "UCG Intermediate",
@@ -214,7 +214,7 @@
    "eg": {
     "from": "code"
    },
-   "note": "GymACT rules; GymACT raises some handspring vault values above WG (planner ADV_VAULT)."
+   "note": "GymACT rules; some front-handspring vaults are worth more than in WG, at Advanced only (rules/UCG-MAG/digest/vault.json; planner ADV_VAULT)."
   },
   "masters": {
    "name": "MAG Masters",

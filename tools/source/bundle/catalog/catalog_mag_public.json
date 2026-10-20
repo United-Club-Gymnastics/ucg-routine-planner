@@ -1,7 +1,7 @@
 {
  "discipline": "MAG",
- "version": "416d8893cfa6",
- "built": "2026-10-19",
+ "version": "e5b08a175e5b",
+ "built": "2026-10-20",
  "elements": [
   {
    "id": "MAG-FX-0001",
@@ -6291,34 +6291,34 @@
    "id": "MAG-HB-0152",
    "discipline": "MAG",
    "apparatus": "HB",
-   "short_name": "Stoop in and free back toss to dorsal hang and 1/1 turn to catch at or below horizontal",
+   "short_name": "Stoop in and free back toss with full turn to below horizontal",
    "aka": [],
    "eponym": "",
    "codes": {
     "UCG-MAG-ADD": [
      {
       "rid": "UCG-HB-stoop-in-and-free-back-toss-to-dorsal-hang-and-1-1-turn-to-c",
-      "short_name": "Stoop in and free back toss to dorsal hang and 1/1 turn to catch at or below horizontal",
+      "short_name": "Stoop in and free back toss with full turn to below horizontal",
       "number": "22",
       "variant": 1,
       "value": "E",
       "element_group": "III",
       "eponym": "",
       "note": "",
-      "video": "https://www.youtube.com/shorts/rTySLTVPKkk"
+      "video": "https://youtu.be/TCIQNmFH0uo"
      }
     ],
     "UCG-MASTERS-MAG": [
      {
       "rid": "UCGM-mag-HB-stoop-in-and-free-back-toss-to-dorsal-hang-and-1-1-turn-to-c",
-      "short_name": "Stoop in and free back toss to dorsal hang and 1/1 turn to catch at or below horizontal",
+      "short_name": "Stoop in and free back toss with full turn to below horizontal",
       "number": "8",
       "variant": 1,
       "value": "E",
       "element_group": "III",
       "eponym": "",
       "note": "",
-      "video": "https://www.youtube.com/shorts/rTySLTVPKkk",
+      "video": "https://youtu.be/TCIQNmFH0uo",
       "page": 10
      }
     ]
@@ -14641,34 +14641,34 @@
    "id": "MAG-PH-0119",
    "discipline": "MAG",
    "apparatus": "PH",
-   "short_name": "name tbd",
+   "short_name": "From circles or flairs with one pommel between hands, ½ spindle through handstand and dismount",
    "aka": [],
    "eponym": "Pearce",
    "codes": {
     "UCG-MAG-ADD": [
      {
-      "rid": "UCG-PH-name-tbd-pearce",
-      "short_name": "name tbd",
+      "rid": "UCG-PH-half-spindle-over-one-pommel-handstand-dismount",
+      "short_name": "From circles or flairs with one pommel between hands, ½ spindle through handstand and dismount",
       "number": "18",
       "variant": 1,
       "value": "C",
       "element_group": "IV",
       "eponym": "Pearce",
       "note": "",
-      "video": "https://youtu.be/Y_EQ8_DMd3E?feature=shared"
+      "video": "https://youtu.be/2fOvri6l_F4"
      }
     ],
     "UCG-MASTERS-MAG": [
      {
-      "rid": "UCGM-mag-PH-name-tbd-pearce",
-      "short_name": "name tbd",
+      "rid": "UCGM-mag-PH-half-spindle-over-one-pommel-handstand-dismount",
+      "short_name": "From circles or flairs with one pommel between hands, ½ spindle through handstand and dismount",
       "number": "24",
       "variant": 1,
       "value": "C",
       "element_group": "IV",
       "eponym": "Pearce",
       "note": "",
-      "video": "https://youtu.be/Y_EQ8_DMd3E?feature=shared",
+      "video": "https://youtu.be/2fOvri6l_F4",
       "page": 3
      }
     ]
@@ -14752,34 +14752,34 @@
    "id": "MAG-PH-0122",
    "discipline": "MAG",
    "apparatus": "PH",
-   "short_name": "Spindle to handstand dismount from over the handles",
+   "short_name": "From circles or flairs with both pommels between hands, ½ spindle through handstand and dismount",
    "aka": [],
    "eponym": "",
    "codes": {
     "UCG-MAG-ADD": [
      {
-      "rid": "UCG-PH-spindle-to-handstand-dismount-from-over-the-handles",
-      "short_name": "Spindle to handstand dismount from over the handles",
+      "rid": "UCG-PH-half-spindle-to-handstand-dismount-from-over-the-handles",
+      "short_name": "From circles or flairs with both pommels between hands, ½ spindle through handstand and dismount",
       "number": "21",
       "variant": 1,
       "value": "D",
       "element_group": "IV",
       "eponym": "",
       "note": "",
-      "video": "https://youtube.com/shorts/G898kZULfvU?si=_Z7-FDuBatZBtuPq"
+      "video": "https://youtu.be/toUG9QqVWlI"
      }
     ],
     "UCG-MASTERS-MAG": [
      {
-      "rid": "UCGM-mag-PH-spindle-to-handstand-dismount-from-over-the-handles",
-      "short_name": "Spindle to handstand dismount from over the handles",
+      "rid": "UCGM-mag-PH-half-spindle-to-handstand-dismount-from-over-the-handles",
+      "short_name": "From circles or flairs with both pommels between hands, ½ spindle through handstand and dismount",
       "number": "3",
       "variant": 1,
       "value": "D",
       "element_group": "IV",
       "eponym": "",
       "note": "",
-      "video": "https://youtube.com/shorts/G898kZULfvU?si=_Z7-FDuBatZBtuPq",
+      "video": "https://youtu.be/toUG9QqVWlI",
       "page": 4
      }
     ]

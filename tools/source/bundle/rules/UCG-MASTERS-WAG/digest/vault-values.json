@@ -1,0 +1,196 @@
+{
+ "code": "UCG-MASTERS-WAG",
+ "about": "Masters vault values. Final value = base + age bonus for the gymnast's decade. 'base' is the WG value for WG vaults, or the Masters CoP box value for the Masters-only vaults. The example table is a sample, not every vault; any other WG vault uses its WG value, and a vault in neither the WG Code nor the Masters boxes has base 0.0. Own words; numbers as printed.",
+ "boxes": {
+  "rows": [
+   {
+    "vault": "Tuck onto table, straight jump off",
+    "base": 0.0
+   },
+   {
+    "vault": "Forward roll over table",
+    "base": 0.0
+   },
+   {
+    "vault": "Straddle hecht",
+    "base": 0.6
+   },
+   {
+    "vault": "Tuck hecht",
+    "base": 0.6
+   },
+   {
+    "vault": "Forward head spring",
+    "base": 0.8
+   },
+   {
+    "vault": "Pike hecht",
+    "base": 1.1
+   }
+  ],
+  "cite": "Masters WAG CoP p. 2, vault boxes 1-6",
+  "note": "Masters-only vaults (not in the WG Code). The example table agrees with them since both were rebuilt on 2026-10-06 (CoP ab38642, planner d1da8b8)."
+ },
+ "age_bonus": {
+  "30s": 1.8,
+  "40s": 2.6,
+  "50s": 3.4,
+  "60s": 4.2,
+  "70s": 5.0,
+  "cite": "Masters WAG CoP p. 2 (age bonus table); Masters Rules Policy §III.C.2 table"
+ },
+ "other_vault_base": {
+  "value": 0.0,
+  "cite": "Masters WAG CoP p. 2 footer; Masters Rules Policy §III.C.3.b"
+ },
+ "example_table": {
+  "rows": [
+   {
+    "vault": "Squat onto table – straight jump down",
+    "base": 0.0
+   },
+   {
+    "vault": "Roll onto and over the table",
+    "base": 0.0
+   },
+   {
+    "vault": "Straddle hecht over table",
+    "base": 0.6
+   },
+   {
+    "vault": "Tuck hecht over table",
+    "base": 0.6
+   },
+   {
+    "vault": "Forward head spring",
+    "base": 0.8
+   },
+   {
+    "vault": "Pike hecht over table",
+    "base": 1.1
+   },
+   {
+    "vault": "Front handspring",
+    "base": 1.6
+   },
+   {
+    "vault": "Front handspring with ½ twist",
+    "base": 2.0
+   },
+   {
+    "vault": "Front handspring with 1/1 twist",
+    "base": 2.6
+   },
+   {
+    "vault": "Front handspring with 3/2 twist",
+    "base": 3.2
+   },
+   {
+    "vault": "Front handspring with ½ twist 1st phase",
+    "base": 1.6
+   },
+   {
+    "vault": "Front handspring with ½ twist 1st phase and ½ twist 2nd",
+    "base": 2.4
+   },
+   {
+    "vault": "Yamashita",
+    "base": 2.0
+   },
+   {
+    "vault": "Yamashita ½ twist",
+    "base": 2.4
+   },
+   {
+    "vault": "Yamashita 1/1 twist",
+    "base": 2.8
+   },
+   {
+    "vault": "Front handspring and salto fwd. tucked",
+    "base": 3.6
+   },
+   {
+    "vault": "Front handspring and salto fwd. tucked with ½ twist",
+    "base": 3.8
+   },
+   {
+    "vault": "Front handspring and salto fwd. piked",
+    "base": 3.8
+   },
+   {
+    "vault": "Front handspring and salto fwd. piked with ½ twist",
+    "base": 4.0
+   },
+   {
+    "vault": "Front handspring sw. with ¼ twist",
+    "base": 1.6
+   },
+   {
+    "vault": "Front handspring sw. with ¾ twist",
+    "base": 2.0
+   },
+   {
+    "vault": "Front handspring sw. with 5/4 twist",
+    "base": 2.6
+   },
+   {
+    "vault": "Yurchenko tucked",
+    "base": 3.0
+   },
+   {
+    "vault": "Yurchenko piked",
+    "base": 3.2
+   },
+   {
+    "vault": "Yurchenko tucked with ½ twist",
+    "base": 3.2
+   },
+   {
+    "vault": "Yurchenko tucked with 1/1 twist",
+    "base": 3.6
+   },
+   {
+    "vault": "Yurchenko stretched",
+    "base": 3.6
+   },
+   {
+    "vault": "Yurchenko stretched with ½ twist",
+    "base": 3.8
+   },
+   {
+    "vault": "Yurchenko stretched with 1/1 twist",
+    "base": 4.2
+   },
+   {
+    "vault": "Tsukahara tucked",
+    "base": 3.2
+   },
+   {
+    "vault": "Tsukahara piked",
+    "base": 3.4
+   },
+   {
+    "vault": "Tsukahara tucked with ½ twist",
+    "base": 3.4
+   },
+   {
+    "vault": "Tsukahara tucked with 1/1 twist",
+    "base": 3.8
+   },
+   {
+    "vault": "Tsukahara stretched",
+    "base": 3.8
+   },
+   {
+    "vault": "Tsukahara stretched with ½ twist",
+    "base": 4.0
+   },
+   {
+    "vault": "Tsukahara stretched with 1/1 twist",
+    "base": 4.4
+   }
+  ],
+  "cite": "Masters WAG CoP p. 2",
+  "checked": "every printed decade value = base + age bonus (checked 2026-10-19)"
+ }
+}

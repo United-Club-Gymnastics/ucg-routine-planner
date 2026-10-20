@@ -1,0 +1,165 @@
+{
+ "code": "UCG-MAG",
+ "about": "UCG MAG vault values. Own words; numbers as printed. 'wg_vault' is our match of the CoP's row label (front handspring entry, salto forward) to the WG MAG 2025 vault number; the CoP prints no numbers.",
+ "ucg_vaults": {
+  "rows": [
+   {
+    "box": 1,
+    "vault": "Tuck vault",
+    "value": 0.2,
+    "flipping": false
+   },
+   {
+    "box": 2,
+    "vault": "Straddle vault",
+    "value": 0.2,
+    "flipping": false
+   },
+   {
+    "box": 3,
+    "vault": "Forward handspring piked (Yamashita)",
+    "value": 1.6,
+    "flipping": false
+   },
+   {
+    "box": 4,
+    "vault": "Hecht with salto backwards tucked",
+    "value": 2.2,
+    "flipping": true,
+    "note": "red: new this season"
+   }
+  ],
+  "cite": "CoP p. 6 boxes 1-4; flipping per planner build_skills.py name rule"
+ },
+ "upgraded_fhs_vaults": {
+  "heading": "Upgraded front-handspring flipping vaults: Advanced only",
+  "rows": [
+   {
+    "vault": "Piked",
+    "wg_vault": "213",
+    "wg_printed": 2.4,
+    "adv": 2.8,
+    "wg": 2.4
+   },
+   {
+    "vault": "Piked ½",
+    "wg_vault": "107",
+    "wg_printed": 2.8,
+    "adv": 3.6,
+    "wg": 2.8
+   },
+   {
+    "vault": "Piked 1/1",
+    "wg_vault": "108",
+    "wg_printed": 3.2,
+    "adv": 4.4,
+    "wg": 3.2
+   },
+   {
+    "vault": "Stretched",
+    "wg_vault": "219",
+    "wg_printed": 3.4,
+    "adv": 3.8,
+    "wg": 3.2
+   },
+   {
+    "vault": "Piked 3/2",
+    "wg_vault": "109",
+    "wg_printed": 3.6,
+    "adv": 4.8,
+    "wg": 3.6
+   },
+   {
+    "vault": "Stretched ½",
+    "wg_vault": "113",
+    "wg_printed": 3.6,
+    "adv": 4.0,
+    "wg": 3.6
+   },
+   {
+    "vault": "Stretched 1/1",
+    "wg_vault": "114",
+    "wg_printed": 4.0,
+    "adv": 4.4,
+    "wg": 4.0
+   },
+   {
+    "vault": "Stretched 3/2",
+    "wg_vault": "115",
+    "wg_printed": 4.4,
+    "adv": 4.8,
+    "wg": 4.4
+   },
+   {
+    "vault": "Stretched 2/1",
+    "wg_vault": "116",
+    "wg_printed": 4.8,
+    "adv": 5.2,
+    "wg": 4.8
+   },
+   {
+    "vault": "Double front tucked",
+    "wg_vault": "225",
+    "wg_printed": 4.8,
+    "adv": 5.2,
+    "wg": 4.8
+   },
+   {
+    "vault": "Stretched 5/2",
+    "wg_vault": "117",
+    "wg_printed": 5.2,
+    "adv": 5.6,
+    "wg": 5.2
+   },
+   {
+    "vault": "Double front tucked ½",
+    "wg_vault": "226",
+    "wg_printed": 5.2,
+    "adv": 5.6,
+    "wg": 5.2
+   },
+   {
+    "vault": "Double front piked",
+    "wg_vault": "231",
+    "wg_printed": 5.2,
+    "adv": 5.6,
+    "wg": 5.2
+   },
+   {
+    "vault": "Double front piked ½",
+    "wg_vault": "232",
+    "wg_printed": 5.6,
+    "adv": 6.0,
+    "wg": 5.6
+   },
+   {
+    "vault": "Stretched 3/1",
+    "wg_vault": "118",
+    "wg_printed": 5.6,
+    "adv": 6.0,
+    "wg": 5.6
+   }
+  ],
+  "cite": "Breakdown workbook 'Vault Difficulty Table' tab; CoP p. 6 table",
+  "levels": "adv only, never another level (Nate 2026-10-20); every other level uses the WG value",
+  "check": "WG MAG 2025 values match 'wg_printed' except Stretched (219): printed 3.4 in both the CoP table and the Vault tab, WG 3.2 (CoP correction requested 2026-10-20). The planner's ADV_VAULT agrees with every Advanced value and also lists 228 (5.2 -> 5.6), which neither table lists."
+ },
+ "dev_allowed": {
+  "rule": "Developmental bans flipping and round-off-entry vaults (score 0). The Policy names only flipping; the Breakdown is right (Nate 2026-10-20).",
+  "allowed_wg": [
+   "201-206",
+   "301-303"
+  ],
+  "allowed_ucg": [
+   "Tuck vault",
+   "Straddle vault",
+   "Forward handspring piked (Yamashita)"
+  ],
+  "round_off_entry_wg": "400s and 500s",
+  "cite": "Breakdown Vault row; Policy §II.F"
+ },
+ "unlisted": {
+  "rule": "not in WG or UCG CoP: no credit, judge gives 2-3",
+  "cite": "Policy §IV.D.1.b"
+ }
+}

@@ -1,7 +1,7 @@
 {
  "discipline": "MAG",
- "version": "416d8893cfa6",
- "built": "2026-10-19",
+ "version": "e5b08a175e5b",
+ "built": "2026-10-20",
  "aliases": {
   "WG-FX-I-1": [
    "MAG-FX-0001"
@@ -2062,10 +2062,10 @@
   "UCGM-mag-PH-from-support-on-end-russian-wendeswing-fwd-to-cross-support-": [
    "MAG-PH-0118"
   ],
-  "UCG-PH-name-tbd-pearce": [
+  "UCG-PH-half-spindle-over-one-pommel-handstand-dismount": [
    "MAG-PH-0119"
   ],
-  "UCGM-mag-PH-name-tbd-pearce": [
+  "UCGM-mag-PH-half-spindle-over-one-pommel-handstand-dismount": [
    "MAG-PH-0119"
   ],
   "UCG-PH-double-scissor-fwd-with-travel-swd-and-turn": [
@@ -2080,10 +2080,10 @@
   "UCGM-mag-PH-reverse-st-ckli-with-360-t-on-the-leather-between-the-pommel": [
    "MAG-PH-0121"
   ],
-  "UCG-PH-spindle-to-handstand-dismount-from-over-the-handles": [
+  "UCG-PH-half-spindle-to-handstand-dismount-from-over-the-handles": [
    "MAG-PH-0122"
   ],
-  "UCGM-mag-PH-spindle-to-handstand-dismount-from-over-the-handles": [
+  "UCGM-mag-PH-half-spindle-to-handstand-dismount-from-over-the-handles": [
    "MAG-PH-0122"
   ],
   "UCG-PH-kehre-bwd-kehre-fwd-kehre-bwd-kehre-fwd-ganser": [

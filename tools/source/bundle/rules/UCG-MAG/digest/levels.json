@@ -1,0 +1,258 @@
+{
+ "code": "UCG-MAG",
+ "about": "UCG MAG level rules (2026-2028) as data: digest of levels.md. Own words. 'cite' is the Rules Breakdown (Google Sheet), the Rules Policy section (Google Doc) - the sources of record, see README - or a worksheet. Planner level ids: dev, int, adv (skill_catalog/levels.json). Anything absent here is as in WG MAG 2025-2028; Advanced also follows the GymACT rules, which are not in this library.",
+ "base": {
+  "dev": "WG-MAG-2025",
+  "int": "WG-MAG-2025",
+  "adv": "GymACT (based on WG-MAG-2025)",
+  "cite": "Policy §I.A-B"
+ },
+ "letter_values": {
+  "Sub-A": 0.0,
+  "A": 0.1,
+  "B": 0.2,
+  "C": 0.3,
+  "D": 0.4,
+  "E": 0.5,
+  "F": 0.6,
+  "G": 0.7,
+  "H": 0.8,
+  "I": 0.9,
+  "J": 1.0,
+  "cite": "SV worksheets; Nate 2026-10-20 (Sub-A)",
+  "note": "Sub-A is worth 0.0 but counts toward the 6 skills (Nate 2026-10-20)."
+ },
+ "skills_counted": {
+  "dev": 6,
+  "int": 8,
+  "adv": 8,
+  "min": 6,
+  "cite": "Breakdown"
+ },
+ "short_routine_per_skill": {
+  "dev": 0.5,
+  "int": 1.0,
+  "adv": 1.0,
+  "cite": "Breakdown; SV worksheets"
+ },
+ "sv_cap": {
+  "dev": 12.3,
+  "int": 13.1,
+  "adv": null,
+  "includes_all_bonuses": true,
+  "cite": "Breakdown; SV worksheets"
+ },
+ "eg_bonus": {
+  "dev": {
+   "each_eg": 0.5,
+   "min_value": "A",
+   "max_total": 1.5,
+   "rule": "0.5 per EG with an A+ skill; only 3 EGs count",
+   "cite": "Breakdown; sv-worksheet-developmental step B"
+  },
+  "int": {
+   "eg1": {
+    "A": 0.5
+   },
+   "eg2_3_and_dismount": {
+    "A": 0.3,
+    "B": 0.5
+   },
+   "cite": "Breakdown; sv-worksheet-intermediate step B"
+  },
+  "adv": {
+   "eg1": {
+    "A": 0.5
+   },
+   "eg2_3": {
+    "A": 0.3,
+    "B": 0.3,
+    "C": 0.4,
+    "D": 0.5
+   },
+   "dismount": "the dismount's value, max 0.5",
+   "fx_eg4": {
+    "A": 0.3,
+    "B": 0.3,
+    "C": 0.4,
+    "D": 0.5
+   },
+   "cite": "Breakdown; sv-worksheet-advanced step B (fx_eg4)"
+  }
+ },
+ "non_recognition": {
+  "rule": "more than 1 large error on a skill",
+  "levels": [
+   "dev",
+   "int",
+   "adv"
+  ],
+  "cite": "Breakdown"
+ },
+ "stick_bonus": {
+  "dismount": {
+   "dev": 0.1,
+   "int": 0.1,
+   "adv": {
+    "B": 0.1,
+    "C": 0.2
+   },
+   "not_on": [
+    "PH"
+   ],
+   "cite": "Breakdown; Policy §III.C"
+  },
+  "vault": {
+   "dev": {
+    "any": 0.1
+   },
+   "int": {
+    "non_flipping": 0.1,
+    "flipping": 0.2
+   },
+   "adv": {
+    "non_flipping": 0.0,
+    "flipping": 0.2
+   },
+   "cite": "Breakdown"
+  },
+  "definition": "feet don't move on landing; added to the D score",
+  "cite": "Policy §III.C"
+ },
+ "unusual_routine_score": {
+  "min": 2.0,
+  "max": 3.0,
+  "cite": "Policy §II.E"
+ },
+ "FX": {
+  "double_salto_required": {
+   "dev": false,
+   "int": false,
+   "adv": {
+    "missing_neutral": 0.3
+   },
+   "cite": "Breakdown"
+  },
+  "double_salto_dismount_bonus": {
+   "dev": 0.1,
+   "int": 0.1,
+   "adv": 0.1,
+   "cite": "Breakdown (Advanced cell); Nate 2026-10-20: every level"
+  },
+  "combined_twist_box_skills_separate": {
+   "dev": true,
+   "int": true,
+   "adv": false,
+   "cite": "Breakdown"
+  },
+  "balance_corner_requirement": {
+   "dev": false,
+   "int": false,
+   "adv": "WG",
+   "cite": "Breakdown"
+  },
+  "time_seconds": 70,
+  "landing_mat_cm": 10,
+  "mat_rebound_deduction": 0.5,
+  "ucg_A_skills_not_strength_or_circling": true,
+  "cite_general": "Policy §IV.A; CoP p. 3 page note"
+ },
+ "PH": {
+  "handstand_dismount_credit_despite_large_error": true,
+  "cop_skill_after_eg2_3_required": {
+   "dev": false,
+   "int": false,
+   "adv": true
+  },
+  "mushroom_bonus": {
+   "dev": {
+    "circle": 0.1,
+    "other": 0.2,
+    "top": 5,
+    "max": 1.0,
+    "no_execution_deductions": true,
+    "sv_cap_applies": true
+   }
+  },
+  "cite": "Breakdown"
+ },
+ "SR": {
+  "strength_bonus": {
+   "min_value": "C",
+   "bonus": 0.3,
+   "once": true,
+   "levels": [
+    "dev",
+    "int",
+    "adv"
+   ]
+  },
+  "swing_to_handstand_required": {
+   "dev": false,
+   "int": false,
+   "adv": {
+    "missing_neutral": 0.3
+   }
+  },
+  "bent_arm_transition_deduction": {
+   "dev": false,
+   "int": "WG",
+   "adv": "WG"
+  },
+  "cite": "Breakdown"
+ },
+ "VT": {
+  "difficulty": "UCG CoP; upgraded front-handspring vaults at adv only (vault.json)",
+  "flipping_or_round_off_entry": {
+   "dev": "banned, score 0",
+   "int": "allowed",
+   "adv": "allowed",
+   "cite": "Breakdown; Policy §II.F (names only flipping; being updated, Nate 2026-10-20)"
+  },
+  "non_feet_first_landing_neutral": {
+   "amount": 2.0,
+   "credited": true,
+   "levels": [
+    "dev",
+    "int",
+    "adv"
+   ],
+   "cite": "Breakdown"
+  },
+  "unlisted_vault": {
+   "credit": false,
+   "judge_score": [
+    2.0,
+    3.0
+   ],
+   "cite": "Policy §IV.D.1.b"
+  },
+  "cite": "Breakdown"
+ },
+ "PB": {
+  "change_of_direction_from_swing_handstand_deduction": false,
+  "empty_swings": {
+   "dev": "any number",
+   "int": "one empty half swing into a peach, giant, cast or Moy",
+   "adv": "WG"
+  },
+  "cite": "Breakdown"
+ },
+ "HB": {
+  "connection_bonus": {
+   "CC_flight_to_flight": 0.1,
+   "CC_in_bar_to_flight_or_back_no_intermediate_swing": 0.1,
+   "levels": [
+    "dev",
+    "int",
+    "adv"
+   ]
+  },
+  "swings_at_start": {
+   "dev": "unlimited throughout",
+   "int": "unlimited until the first skill",
+   "adv": "WG (3)"
+  },
+  "cite": "Breakdown"
+ }
+}
