@@ -1752,7 +1752,7 @@ function scoreTip(e, ev, label) {
         dev: '+0.5 for each element group with a counting skill, up to 3 groups (+1.5).',
         int: 'EG I: +0.5. EG II-IV: +0.5 with a B or higher, +0.3 with an A.',
         adv: 'EG I: +0.5. Other groups: +0.5 for D or higher, +0.4 for C, +0.3 for A or B. The dismount group is worth the dismount\'s value (max 0.5).',
-        masters: "+0.5 for each group I-III with a skill at your decade's level. The dismount group is worth the dismount's value.",
+        masters: "+0.5 for each group I-III with a skill at your decade's level. The dismount group is worth the dismount's value, up to 0.5 (not on floor).",
       }[lvl],
       'Other bonus': 'Connection and event bonuses, from the options below.',
       [`Short of ${mag.MIN_SKILLS}`]: `-${fmt(mag.LEVELS[lvl].shortDeduction)} for each skill fewer than ${mag.MIN_SKILLS}.`,

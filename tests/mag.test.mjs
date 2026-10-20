@@ -196,6 +196,11 @@ test('WG vaults: exactly the no-salto vaults are non-flipping, and the GymACT va
   assert.equal(scoreVault('dev', '201').startValue, 11.2);
 });
 
+test('Masters MAG: the dismount group is worth the dismount value, max 0.5 (not on floor)', () => {
+  const r = scoreRoutine('hb', 'masters', [s('a', 'A', 1), s('b', 'A', 2), s('c', 'A', 3), s('d', 'A', 1), s('e', 'A', 2), s('dis', 'D', 4)], {}, { decade: 70 });
+  assert.equal(r.egBonus[4], 0.5); // D in the 70s is 1.2, capped
+});
+
 test('Masters rings: no limit on EG II/III elements in a row (policy waives WG 12.2.2.3)', () => {
   const st = [s('a', 'A', 2), s('b', 'A', 3), s('c', 'A', 2), s('d', 'A', 3), s('e', 'A', 2), s('f', 'A', 4)];
   assert.ok(scoreRoutine('sr', 'masters', st, {}, { decade: 30 }).items.every((it) => it.reason !== 'sr'));

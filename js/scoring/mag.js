@@ -190,8 +190,9 @@ export const skillKey = (name) =>
 
 // Element group bonus for one group, from the highest-value counting skill in it.
 function groupBonus(level, event, eg, value) {
-  // Masters: +0.5 per group; the dismount group is worth the dismount's value.
-  if (level === 'masters') return eg === 4 && event !== 'fx' ? value : 0.5;
+  // Masters: +0.5 per group; the dismount group is worth the dismount's value, max 0.5
+  // (Nate 2026-10-20). Floor has no dismount group, only four EGs.
+  if (level === 'masters') return eg === 4 && event !== 'fx' ? Math.min(value, 0.5) : 0.5;
   if (level === 'dev') return 0.5;
   if (eg === 1) return 0.5;
   if (level === 'int') return value >= 0.2 ? 0.5 : 0.3;

@@ -34,7 +34,7 @@ test('Sapphire bonus: floor indirect acro connection (front pike + round-off + l
   ]);
   assert.equal(r.bonus, 0.1);
 });
-test('Sapphire bonus: one "D" per event, 0.40 maximum; Xcel and UCG skills, not Development ones', () => {
+test('Sapphire bonus: one "D" per event, 0.40 maximum; Xcel and UCG skills; a Development E only as the one "D"', () => {
   const d = (n) => sk(n, 'D', 7, { acro: true });
   assert.equal(scoreXcel('sapphire', 'bb', [d('D1'), d('D2')]).bonus, 0.1);
   const cs = ['c1', 'c2', 'c3', 'c4', 'c5'].map((n) => sk(n, 'C', 2, {}));
@@ -42,7 +42,9 @@ test('Sapphire bonus: one "D" per event, 0.40 maximum; Xcel and UCG skills, not 
   assert.equal(r.bonus, 0.4);
   const dp = sk('Development E', 'E', 7, { acro: true }, { skill: { prog: 'dp' } });
   const dpC = sk('Development C', 'C', 7, { acro: true }, { skill: { prog: 'dp' } });
-  assert.equal(scoreXcel('sapphire', 'bb', [dp, dpC]).bonus, 0);
+  assert.equal(scoreXcel('sapphire', 'bb', [dpC]).bonus, 0);
+  assert.equal(scoreXcel('sapphire', 'bb', [dp, dpC]).bonus, 0.1); // Nate 2026-10-20: an E counts as the one "D"
+  assert.equal(scoreXcel('sapphire', 'bb', [dp, sk('Xcel D', 'D', 7, { acro: true })]).bonus, 0.1);
   const ucg = sk('UCG addition', 'C', 7, { acro: true }, { skill: { src: 'UCG' } }); // UCG ruling: eligible
   assert.equal(scoreXcel('sapphire', 'bb', [ucg]).bonus, 0.1);
 });
