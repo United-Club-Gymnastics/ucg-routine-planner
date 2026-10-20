@@ -1,0 +1,42 @@
+{
+ "code": "UCG-MASTERS",
+ "about": "UCG Masters scoring for MAG and WAG: digest of scoring.md. Own words. 'cite' is the section of the UCG Masters Rules Policy v2.01 (source of record: the UCG Google Doc, see README). Planner: js/scoring/masters.js, mag.js, wag.js. The WAG condensed-group map is data in skill_catalog/levels.json (WAG.masters.eg.map) and is not repeated here.",
+ "decades": ["30s", "40s", "50s", "60s", "70s"],
+ "decade_rule": {"min_age": 30, "age": "current year minus birth year", "cite": "§II.A"},
+ "difficulty_by_decade": {
+  "Misc": [null, null, 0.1, 0.2, 0.3],
+  "ME": [0.0, 0.1, 0.2, 0.3, 0.4],
+  "A": [0.2, 0.3, 0.4, 0.5, 0.6],
+  "B": [0.4, 0.5, 0.6, 0.7, 0.8],
+  "C": [0.6, 0.7, 0.8, 0.9, 1.0],
+  "D+": [0.8, 0.9, 1.0, 1.1, 1.2],
+  "aliases": {"GE": "Misc"},
+  "cite": "§III.B.2 (MAG), §III.C.2 (WAG) tables: same values; GE = Misc per decisions.md"
+ },
+ "min_level_for_length_and_eg": {"30s": "ME", "40s": "ME", "50s": "Misc", "60s": "Misc", "70s": "Misc", "cite": "§III.B.2, §III.C.2 tables"},
+ "counting_elements": {"count": 6, "cite": "§III.B.2, §III.C.2 tables"},
+ "short_routine_per_element": {"amount": 1.0, "cite": "§III.B.2.a; §III.C.2.a"},
+ "vault": {
+  "attempts": 2, "best_counts": true,
+  "age_bonus": {"MAG": [0.8, 1.6, 2.4, 2.8, 3.2], "WAG": [1.8, 2.6, 3.4, 4.2, 5.0]},
+  "unlisted_base": 0.0,
+  "values": "../UCG-MASTERS-MAG/digest/vault-values.json, ../UCG-MASTERS-WAG/digest/vault-values.json",
+  "cite": "§III.B.2, §III.B.3.e, §III.C.2, §III.C.3.b"
+ },
+ "MAG": {
+  "eg_bonus": "as WG MAG, but the qualifying skill needs only the decade's minimum level (ME or Misc) instead of D; dismount EG = the dismount's decade value",
+  "misc_eg": "50+ get EG bonus for Misc skills; the judge assigns the EG",
+  "extra_swings": {"reverse_to_lower_position_on_SR_PB_HB": "no deduction", "30s_40s_other": 0.3, "50s_plus": "no deduction"},
+  "FX": {"double_salto_required": false, "wg_repetition_limits": false, "time_limit": false, "round_off_dismount_ok": true, "combined_twist_box_skills_separate": true, "mat_deductions": 0.5},
+  "PH": {"wg_listed_element_after_eg2_3_rule": false},
+  "SR": {"swing_to_handstand_required": false, "wg_strength_sequence_limits": false, "bent_arm_transition_deduction": false, "lift_to_support_from_age": 60},
+  "HB": {"free_changes_of_direction": 5, "misc_with_flight_eg": "II"},
+  "cite": "§III.B"
+ },
+ "WAG": {
+  "condensed_eg_bonus": {"each": 0.5, "groups": 4, "skill_need_not_count": true, "min_level": "decade minimum", "cite": "§III.C.2.b"},
+  "UB": {"idle_swing_deduction": "none for one", "jump_LB_to_HB_deduction": false, "angle_deductions": "per the angle chart (policy diagram and Masters WAG CoP agree since 2026-10-20)", "cite": "§III.C.3.c; angle chart in ../UCG-MASTERS-WAG/digest/bars-angles.md"},
+  "FX": {"time_max_seconds": 90, "explicit_music": "score 0.0", "cite": "§III.C.3.e"},
+  "wg_junior_rules": false
+ }
+}

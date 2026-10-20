@@ -1,0 +1,29 @@
+{
+  "code": "USAG-DEV-2026",
+  "about": "Bonus limits for USAG Development 2026-2030 (Levels 9-10 only). Own words; digest of bonus.md. The CV principle tables are summarised in bonus.md, not encoded here. 'cite' is the printed page label and section.",
+  "eligible_levels": ["L9", "L10"],
+  "total": {"L10": 0.5, "L9": 0.3, "cite": "GENERAL 26 §VII.C.2"},
+  "cv_max": {"L10": 0.4, "L9": 0.3, "cite": "BARS 39 §I.J; BEAM 30 §I.K; FLOOR 30 §I.K"},
+  "dv": {
+    "L10": {"D": 0.1, "E": 0.2, "max": 0.4, "once_per_element": true, "cite": "BARS 48 §III.D; BEAM 37 §III.D; FLOOR 38 §III.D"},
+    "L9": {"amount": 0.1, "max": 0.1, "which": {"UB": "first D/E, allowable or restricted", "BB": "first acro D/E with VP (no DV for dance)", "FX": "first acro D/E with VP (no DV for dance)"}, "de_counts_as_C_for_cv": true, "cite": "GENERAL 26 §VII.C.2.b; BARS 47 §III.C; BEAM 37 §III.C; FLOOR 37 §III.C"},
+    "needs": ["no fall", "no spot"]
+  },
+  "l10_mix": {"min_cv": 0.1, "min_dv": 0.1, "cite": "GENERAL 26 §VII.C.2.a"},
+  "additional_bonus_l10": {
+    "amount": 0.1, "in_start_value": false, "needs_sv": 10.0, "needs_total_bonus_at_least": 0.6,
+    "element": {"UB": "single-bar D release or any E release (not dismount)", "BB": "one E acro element", "FX": "one E acro element except 6.501"},
+    "cite": "GENERAL 26 §VII.C.2.a.2; BARS 48-49 §IV; BEAM 38 §IV; FLOOR 38 §IV"
+  },
+  "vault_bonus_l10": {"amount": 0.1, "for": "any 10.0 SV vault without fall or spot", "excluded": ["2.302", "2.311", "3.407", "4.306", "4.309", "4.403", "4.407", "5.301", "5.408", "5.409"], "cite": "VAULT 6 §III.F.4"},
+  "cv_rules": {
+    "vp_credit_required": true,
+    "no_fall_or_spot": true,
+    "exact_same_connection_once": true,
+    "reversed_order_is_new": true,
+    "middle_element_reusable": true,
+    "connection": {"UB": "direct, no extra swing", "BB": "direct; dance and acro flight elements only", "FX": "acro (saltos/aerials) direct or indirect; dance and mixed direct"},
+    "fall_on_last_of_3_or_4_keeps_earlier_cv": {"BB": true, "FX": true},
+    "cite": "BARS 39 §I; BEAM 30 §I; FLOOR 30 §I; BEAM 38 §V.A; FLOOR 38 §V.A"
+  }
+}

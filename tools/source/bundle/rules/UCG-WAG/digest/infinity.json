@@ -1,0 +1,64 @@
+{
+ "code": "UCG-WAG-INFINITY",
+ "about": "UCG Infinity (Open Scoring Level) scoring rules: digest of levels.md. Own words. 'cite' is the section of the UCG Infinity Rules v1.2 (source of record: the UCG Google Doc, see README). The same values and groups are in skill_catalog/levels.json (WAG.infinity) and the planner's js/scoring/wag.js.",
+ "skills_from": [
+  "USAG-DP-2026",
+  "USAG-XCEL-2022 (Sapphire)",
+  "UCG-WAG-ADD"
+ ],
+ "difficulty_restrictions": false,
+ "values": {
+  "A": 0.1,
+  "B": 0.3,
+  "C": 0.5,
+  "D": 0.7,
+  "E": 0.9,
+  "cite": "IR §III.B.3"
+ },
+ "counting": {
+  "count": 8,
+  "each_element_once": true,
+  "cite": "IR §III.B.2"
+ },
+ "condensed_eg_bonus": {
+  "each": 0.3,
+  "min_value": "B",
+  "skill_need_not_count": true,
+  "cite": "IR §III.B.4; Appendix",
+  "groups_in": "skill_catalog/levels.json WAG.infinity.eg.condensed (USAG element group numbers; checked against the Infinity Rules Appendix table 2026-10-20)"
+ },
+ "event_bonus": {
+  "each": 0.3,
+  "once_per_routine": true,
+  "UB": "at least 2 bar changes",
+  "BB": "acro series of 2 connected flight elements",
+  "FX": "acro pass with at least 2 connected saltos (direct or indirect)",
+  "connection_bonuses": "none",
+  "cite": "IR §III.B.5 (restored in v1.2, 2026-09-07)"
+ },
+ "execution": {
+  "from": "Xcel Sapphire",
+  "fall": 1.0,
+  "cite": "IR §IV"
+ },
+ "short_routine": {
+  "min_skills": 6,
+  "per_missing_skill": 1.0,
+  "type": "neutral",
+  "cite": "IR §V.B"
+ },
+ "other_neutral": {
+  "from": "Xcel Sapphire",
+  "cite": "IR §V.A"
+ },
+ "vault": {
+  "d_from": "infinity-vaults.json",
+  "start_value": "D + 10.0",
+  "cite": "IR §III.A; Appendix"
+ },
+ "floor_music": {
+  "lyrics_allowed": true,
+  "explicit_or_unethical_lyrics": "score 0.0",
+  "cite": "IR §VI.B"
+ }
+}

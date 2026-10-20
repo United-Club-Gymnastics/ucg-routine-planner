@@ -1,0 +1,58 @@
+{
+  "code": "UCG-TT",
+  "edition": "3.41",
+  "about": "Routine requirements per UCG T&T level (nf = New Flyers, if = Intermediate Flyers, hf = High Flyers), from the accepted text of the UCG T&T Code of Points v3.41. Own words; digest of levels.md. DD limits are inclusive ('max' = this value or lower, 'min' = this value or higher). cite = the Code's section numbers, which restart under each event (TR, SY, DMT, TU). 'pending' notes open v3.5 suggestions, which are not in force. The planner's js/scoring/tt.js holds the same limits today; it switches to this file through the bundle (ARCHITECTURE step 4).",
+  "requirement_penalty": {"amount": 2.0, "kind": "CJP", "applies_to": "a routine that doesn't meet its level's requirements", "cite": "TR §II; DMT §II; TU §II"},
+  "tramp": {
+    "events": ["individual", "synchro"],
+    "skills_per_routine": 10,
+    "touches": 2,
+    "cite": "TR §I; SY §I.A-D, §II.B",
+    "pending": "v3.5: HF two routines (best counts) and 3 touches",
+    "nf": {
+      "max_skill_dd": 0.4,
+      "listed_saltos": {"max": 2, "names": ["Porpoise", "Front Tuck", "Front Pike", "Front Straight", "Back Pullover to Back", "Back Tuck", "Back Pike", "Back Straight", "Barani Tuck", "Barani Pike", "Barani Straight"], "note": "up to 2 skills from this list may go over max_skill_dd"},
+      "repeats": "a 0.0 skill may be repeated once; a skill above 0.0 may not be repeated",
+      "cite": "TR §II.A",
+      "pending": "v3.5: position jumps also repeatable once; repeats earn no DD"
+    },
+    "if": {"max_skill_dd": 0.8, "min_full_saltos": 3, "max_routine_dd": 5.0, "cite": "TR §II.B"},
+    "hf": {"min_routine_dd": 4.5, "max_skill_dd": null, "cite": "TR §II.C"},
+    "repeat_penalty": {"amount": 2.0, "per": "occurrence", "dd": "the repeat earns none", "applies_to": "every repeat except the NF 0.0 repeats", "cite": "TR §II.D"}
+  },
+  "dmt": {
+    "passes": 2,
+    "skills_per_pass": 2,
+    "pass_kinds": ["mounter", "spotter"],
+    "nf": {"max_skill_dd": 0.5, "one_skill_up_to": 0.7, "max_saltos_per_pass": 1, "cite": "DMT §II.A"},
+    "if": {"max_skill_dd": 1.2, "min_skills_at_0_5": {"count": 2, "of": 4, "dd": 0.5}, "max_pass_dd": 1.6, "cite": "DMT §II.B"},
+    "hf": {"min_pass_dd": 1.4, "max_skill_dd": null, "cite": "DMT §II.C", "pending": "v3.5: min_pass_dd 1.6"},
+    "roundoff_or_fhs_entry": "allowed with a safety video approved in advance and a note on the card",
+    "repeat_rule": "a skill repeated in the same position (mounter, spotter or dismount) earns no DD; it is not an interruption",
+    "cite": "DMT §I-II"
+  },
+  "tumbling": {
+    "passes": 2,
+    "nf": {"pass_skills": [[4, 7], [4, 7]], "max_skill_dd": 0.2, "max_pass_dd": [1.3, 1.3], "cite": "TU §II.A"},
+    "if": {
+      "pass_skills": [[5, 8], [8, 8]],
+      "min_skill_dd": 0.2, "min_skill_dd_exception": "a rebound (0.1), in either or both passes",
+      "max_skill_dd": 1.0,
+      "max_pass_dd": [2.6, 2.9],
+      "pass2_saltos": "any number of handsprings and whips, but only 1 other salto, and it must be the dismount",
+      "cite": "TU §II.B"
+    },
+    "hf": {"pass_skills": [[8, 8], [8, 8]], "min_pass_dd": [2.0, 2.0], "max_skill_dd": null, "cite": "TU §II.C"},
+    "off_mat_salto_finish": {"levels": ["if", "hf"], "amount": 0.4, "kind": "CJP", "except": "passes with a reversal", "cite": "TU §II.D"},
+    "short_pass_start_value": "an interrupted pass with at least the level's minimum skills (nf 4, if pass 1 5) still starts from 10.0 execution, with the 2.0 CJP penalty",
+    "repeats": {
+      "handsprings_whips": "any number, each earns DD",
+      "fulls_per_pass": 3,
+      "other_skills": "once more, with a different entry (twice in one pass or once in each pass, not both); more is an interruption",
+      "repeated_pass": "must start the skill from a different entry",
+      "straight_jump_rebound_without_turn_per_pass": 1,
+      "cite": "TU §III.A"
+    },
+    "cite": "TU §I-III"
+  }
+}

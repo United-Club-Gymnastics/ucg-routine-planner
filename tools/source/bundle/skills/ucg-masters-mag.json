@@ -3,12 +3,12 @@
  "code": "UCG-MASTERS-MAG",
  "discipline": "MAG",
  "edition": "2026-10-06",
- "built": "2026-10-19",
+ "built": "2026-10-20",
  "source": {
   "kind": "authored",
   "document": "Masters/UCG Masters MAG CoP.svg",
   "repo": "nssharpe/ucg-code-of-points",
-  "commit": "0798dc84c6ebb3b6d9175620eeabeebdf07ec770"
+  "commit": "e3d2e40872ae2ffd0c70c58aba4de83ce4ad3b18"
  },
  "records": [
   {
@@ -522,17 +522,17 @@
    "added": "2026-10-06"
   },
   {
-   "id": "UCGM-mag-PH-name-tbd-pearce",
+   "id": "UCGM-mag-PH-half-spindle-over-one-pommel-handstand-dismount",
    "apparatus": "PH",
    "number": "24",
    "page": 3,
-   "description": "name tbd",
+   "description": "From circles or flairs with one pommel between hands, ½ spindle through handstand and dismount",
    "value": "C",
    "element_group": "IV",
    "eponym": "Pearce",
-   "video": "https://youtu.be/Y_EQ8_DMd3E?feature=shared",
+   "video": "https://youtu.be/2fOvri6l_F4",
    "drawing": false,
-   "main_id": "UCG-PH-name-tbd-pearce",
+   "main_id": "UCG-PH-half-spindle-over-one-pommel-handstand-dismount",
    "added": "2026-10-06"
   },
   {
@@ -563,17 +563,17 @@
    "added": "2026-10-06"
   },
   {
-   "id": "UCGM-mag-PH-spindle-to-handstand-dismount-from-over-the-handles",
+   "id": "UCGM-mag-PH-half-spindle-to-handstand-dismount-from-over-the-handles",
    "apparatus": "PH",
    "number": "3",
    "page": 4,
-   "description": "Spindle to handstand dismount from over the handles",
+   "description": "From circles or flairs with both pommels between hands, ½ spindle through handstand and dismount",
    "value": "D",
    "element_group": "IV",
    "eponym": "",
-   "video": "https://youtube.com/shorts/G898kZULfvU?si=_Z7-FDuBatZBtuPq",
+   "video": "https://youtu.be/toUG9QqVWlI",
    "drawing": false,
-   "main_id": "UCG-PH-spindle-to-handstand-dismount-from-over-the-handles",
+   "main_id": "UCG-PH-half-spindle-to-handstand-dismount-from-over-the-handles",
    "added": "2026-10-06"
   },
   {
@@ -1726,11 +1726,11 @@
    "apparatus": "HB",
    "number": "8",
    "page": 10,
-   "description": "Stoop in and free back toss to dorsal hang and 1/1 turn to catch at or below horizontal",
+   "description": "Stoop in and free back toss with full turn to below horizontal",
    "value": "E",
    "element_group": "III",
    "eponym": "",
-   "video": "https://www.youtube.com/shorts/rTySLTVPKkk",
+   "video": "https://youtu.be/TCIQNmFH0uo",
    "drawing": false,
    "main_id": "UCG-HB-stoop-in-and-free-back-toss-to-dorsal-hang-and-1-1-turn-to-c",
    "added": "2026-10-06"

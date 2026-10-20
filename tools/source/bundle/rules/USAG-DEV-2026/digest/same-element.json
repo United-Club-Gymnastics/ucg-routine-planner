@@ -1,0 +1,45 @@
+{
+  "code": "USAG-DEV-2026",
+  "about": "When USAG Development 2026-2030 counts two performances as the same element. Own words; digest of same-element.md. 'cite' is the printed page label and section.",
+  "repeat_rule": {
+    "max_vp_credits": 2,
+    "second_needs_different_connection": true,
+    "reversed_pair_is_different_connection": true,
+    "third_or_identical_repeat": "no VP, SR, CV or CC; execution deductions still apply",
+    "third_credited_if_earlier_got_no_vp": ["incomplete earlier", "second was the identical-connection repeat"],
+    "cite": "GENERAL 17-18 §I.C"
+  },
+  "de_twice_different_connection": {
+    "L10": {"vp": 2, "cv": "each time", "dv": "once", "cite": "GENERAL 19 §I.C.c"},
+    "L9": {
+      "UB": {"allowable": "C VP, SR, CV, CC again", "restricted": "nothing the second time, 0.50", "cite": "BARS 7 §VII.A.2.b"},
+      "FX": {"dance": "C VP and CV twice, no CC the second time", "acro": "nothing the second time, 0.50", "cite": "FLOOR 6 §VI.A.3.b"}
+    }
+  },
+  "different_numbers_are_different": {"cite": "BARS 7 §VII.B.1; BEAM 8 §V.B.1; FLOOR 7 §VI.B.1"},
+  "same_number_different_element": {
+    "UB": ["salto body position", "turn amount 1/2, 1/1, 1 1/2", "turn direction (Nate 2026-10-19)", "one vs two arms", "mount repeated in routine", "release with salto or Tkatchev (incl. 7.511 Tweddle/Ray): legs together (piked) vs straddled", "cast to handstand vs short cast before it (different connection)"],
+    "BB": ["salto body position", "turn amount (extra 1/4 doesn't count unless listed)", "one vs two arms", "mount repeated in routine", "one-foot vs two-foot take-off", "acro take-off or landing on one vs two legs", "swing-through aerial cartwheel/walkover vs the plain one"],
+    "FX": ["salto body position (majority of salto)", "turn amount (extra 1/4 doesn't count unless listed)", "one-foot vs two-foot take-off", "acro with one or two hands, with or without flight, or free"],
+    "cite": "BARS 7-8 §VII.B; BEAM 8 §V.B; FLOOR 7 §VI.B"
+  },
+  "same_number_same_element": {
+    "UB": ["finishing grip", "legs together vs straddled (except releases with salto or Tkatchev)"],
+    "BB": ["leg-position variants (e.g. 2.108 arch or leg beat)", "stag vs split under one number", "other swing-through variants of 7.402/7.403"],
+    "FX": ["stag vs split under one number", "front tuck two feet vs step-out"],
+    "cite": "BARS 8 §VII.C; BEAM 9 §V.C; FLOOR 8 §VI.C; BALANCE BEAM ELEMENTS 10 and 29-31 notes"
+  },
+  "connections": {
+    "UB_swing_to_handstand_breaks_connection": {"cite": "BARS 8 §VII.D"},
+    "BB_ff_added_before_does_not_change_connection": {"cite": "BEAM 9 §V.C.1"},
+    "FX_pass_different_if": ["salto/aerial/B hand-support flight added or dropped", "dance VP added or dropped right after the last acro element", "different element directly before or after the salto"],
+    "FX_pass_same_if": ["only extra FF/FHS before the salto"],
+    "FX_ro_ff_fhs_always_credited_in_salto_pass": true,
+    "cite": "FLOOR 6-9 §VI.A.4, §VI.B.2.e-f, §VI.C.3-4"
+  },
+  "box_notes": {
+    "BB": {"different": ["2.402 pair", "2.304 pair", "2.109 all", "7.103 all", "7.203 all", "7.503 all", "8.402 all"], "same": ["2.404 pair", "2.108 first two"]},
+    "FX": {"different": ["1.109 all four", "5.101 all", "5.104 all", "5.105 all", "5.106 all", "5.201 all"], "same": ["1.202 leap variants"], "not_a_salto": ["5.103 one-foot take-off tucked", "7.101 one-foot take-off"]},
+    "cite": "toe-notes.md"
+  }
+}

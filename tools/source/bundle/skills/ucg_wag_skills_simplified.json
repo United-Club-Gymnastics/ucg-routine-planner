@@ -10728,14 +10728,11 @@
     {
      "form": "b",
      "name": "Piked counter reverse hecht over HB",
-     "eponym": "",
-     "same_as": [
-      "USAG-UB-7.511-1"
-     ]
+     "eponym": ""
     }
    ],
-   "forms_rule": "The ½ turn makes a different element; piked is the same element as straddled.",
-   "forms_citation": "Xcel UNEVEN BARS - 11, Chapter 2 C.2 (same); DP UNEVEN BAR ELEMENTS - 35"
+   "forms_rule": "The ½ turn makes a different element, and so does the piked position: in Tkatchev and salto releases legs together and straddled are different elements (Nate, 2026-10-19).",
+   "forms_citation": "DP BARS 8, VII.B.2.f and VII.C.2; DP UNEVEN BAR ELEMENTS - 35; rules/USAG-DEV-2026/decisions.md"
   },
   {
    "number": "7.512",

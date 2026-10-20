@@ -1,0 +1,86 @@
+{
+  "code": "USAG-DEV-2026",
+  "about": "Value parts, special requirements, difficulty restrictions, start value and composition credit by level, USAG Development 2026-2030. Own words; digest of composition.md. 'cite' is the Code's printed page label and section.",
+  "values": {"A": 0.1, "B": 0.3, "C": 0.5, "cite": "GENERAL 17 §I.A"},
+  "value_from_number": {"rule": "x.1yy A, x.2yy B, x.3yy C, x.4yy D, x.5yy E; vault has no letter value", "cite": "USAG Development CoP Extraction/README.md"},
+  "vp_required": {
+    "L10": {"A": 3, "B": 3, "C": 2}, "L9": {"A": 3, "B": 4, "C": 1}, "L8": {"A": 4, "B": 4, "C": 0},
+    "L7": {"A": 4, "B": 3, "C": 0}, "L6": {"A": 4, "B": 2, "C": 0},
+    "higher_replaces_lower": true, "missing_vp_costs_its_value": true,
+    "cite": "GENERAL 17 §I.B; GENERAL 19 §I.G; GENERAL 25 §VII.C.1"
+  },
+  "start_before_bonus": {"L10": 9.2, "L9": 9.5, "L8": 9.8, "L7": 10.0, "L6": 10.0, "cite": "GENERAL 25 §VII.C"},
+  "sr": {"count": 4, "each": 0.5, "vault": false, "one_element_may_fill_several": true, "needs_vp_credit": true, "cite": "GENERAL 20 §III"},
+  "restricted_element": {
+    "first_one_allowed": {"levels": ["L8", "L9"], "earns": ["VP at lower value", "SR", "CV", "CC"], "may_retry_same_if_no_vp": true},
+    "levels_6_7": "any restricted element performed or attempted costs 0.50, no VP or SR; a failed restricted element may not be repeated",
+    "each_extra": 0.5,
+    "cite": "GENERAL 25 §VII.C.1.c"
+  },
+  "score_breakdown": {
+    "VP": {"L10": 2.2, "L9": 2.0, "L8": 1.6, "L7": 1.3, "L6": 1.0},
+    "SR": {"L10": 2.0, "L9": 2.0, "L8": 2.0, "L7": 2.0, "L6": 2.0},
+    "bonus": {"L10": 0.5, "L9": 0.3, "L8": 0, "L7": 0, "L6": 0},
+    "CC": {"L10": 0.3, "L9": 0.2, "L8": 0.2, "L7": 0, "L6": 0},
+    "execution_sec_artistry": {"L10": 5.0, "L9": 5.5, "L8": 6.2, "L7": 6.7, "L6": 7.0},
+    "cite": "GENERAL 25 §VI.A"
+  },
+  "allowable": {
+    "UB": {
+      "L10": "no restriction",
+      "L9": {"allowed": ["A", "B", "C", "B or C root elements with 1/2 turn to reverse/L/mixed-L grip in handstand or with 1/1 to handstand (D/E, counted as C)"], "restricted_allowed": "one more D/E from any group, first in order, counted as C", "cite": "BARS 23 §II.B.5"},
+      "L8": {"allowed": ["A", "B"], "allowed_C_as_B": ["2.301", "3.304", "3.305", "6.304", "6.304 with 1/2 turn to regular grip", "7.309", "7.309 with 1/2 turn to regular grip"], "allowed_B_with_restricted_form": {"2.205": "2.305 if it goes to handstand", "4.204": "4.304 if preceded by a handstand on the high bar"}, "restricted_allowed": "one restricted C, first in order, counted as B", "always_restricted": ["D", "E"], "cite": "BARS 25-26 §II.C.5"},
+      "L7": {"allowed": ["A", "B"], "allowed_C_as_B": ["2.301", "3.304", "3.305", "6.304", "6.304 with 1/2 turn to regular grip", "7.309", "7.309 with 1/2 turn to regular grip"], "always_restricted": ["other C", "D", "E"], "cite": "BARS 27 §II.D.5"},
+      "L6": {"allowed": ["A", "B"], "allowed_C_as_B_one_of": ["3.304", "6.304", "7.309"], "always_restricted": ["other C", "D", "E", "flight between the bars (any value)"], "cite": "BARS 29 §II.E.5"}
+    },
+    "BB": {
+      "L10": "no restriction",
+      "L9": {"dance_DE": "all, counted as C", "acro_DE": "one (mount/dismount included), counted as C", "cite": "BEAM 22 §II.D"},
+      "L8": {"dance_C": "all, counted as B", "acro_C": "one (mount/dismount included), counted as B", "DE": "restricted", "cite": "BEAM 22 §II.D"},
+      "L7": {"dance_C": "all, counted as B", "acro_C": "restricted", "DE": "restricted", "cite": "BEAM 22 §II.D"},
+      "L6": {"dance_C": "one, counted as B", "acro_C": "restricted", "DE": "restricted", "cite": "BEAM 22 §II.D"}
+    },
+    "FX": {
+      "L10": "no restriction",
+      "L9": {"dance_DE": "all, counted as C", "acro_DE": "one, counted as C", "cite": "FLOOR 24 §II.D"},
+      "L8": {"dance_C": "all, counted as B", "acro_C": "one, counted as B", "DE": "restricted", "cite": "FLOOR 24 §II.D"},
+      "L7": {"dance_C": "all, counted as B", "acro_C": "restricted", "DE": "restricted", "cite": "FLOOR 24 §II.D"},
+      "L6": {"dance_C": "one, counted as B", "acro_C": "restricted", "DE": "restricted", "cite": "FLOOR 24 §II.D"}
+    }
+  },
+  "sr_by_level": {
+    "UB": {
+      "L10": [{"n": 1, "label": "flight element min C, not dismount"}, {"n": 2, "label": "second, different flight element min B, not dismount"}, {"n": 3, "label": "long-axis turn element min C, not mount/dismount"}, {"n": 4, "label": "salto dismount min C"}],
+      "L9": [{"n": 1, "label": "two bar changes"}, {"n": 2, "label": "flight element min B, not dismount"}, {"n": 3, "label": "second, different flight min C, or long-axis turn 180+ min B (not mount/dismount); different element from SR 2"}, {"n": 4, "label": "salto dismount min B"}],
+      "L8": [{"n": 1, "label": "cast to handstand (0-20 deg)"}, {"n": 2, "label": "B with flight (not dismount) or B with long-axis turn 180+ (not mount/dismount)"}, {"n": 3, "label": "B 360 clear circle from Groups 3/6/7, not dismount"}, {"n": 4, "label": "salto dismount min A"}],
+      "L7": [{"n": 1, "label": "cast to handstand, credited from 45 deg"}, {"n": 2, "label": "360 clear circle min B"}, {"n": 3, "label": "360 clear circle from Groups 3/6/7"}, {"n": 4, "label": "salto dismount min A"}],
+      "L6": [{"n": 1, "label": "cast min 45 deg above horizontal (credited above horizontal)"}, {"n": 2, "label": "one bar change"}, {"n": 3, "label": "360 clear circle from Groups 3/6/7"}, {"n": 4, "label": "salto dismount min A"}],
+      "cite": "BARS 22-28 §II.A-E"
+    },
+    "BB": {
+      "L10": [{"n": 1, "label": "acro series: two directly connected flight elements, one min C; or Group 7 A non-flight element directly connected to an E acro flight"}, {"n": 2, "label": "leap or jump with 180 cross or side split"}, {"n": 3, "label": "360 turn on one foot (Group 3)"}, {"n": 4, "label": "aerial/salto dismount min C, or B dismount directly connected to a C+ acro element in a series or a C+ acro flight or dance element"}],
+      "L9": [{"n": 1, "label": "acro series: two directly connected flight elements"}, {"n": 2, "same_as": "L10"}, {"n": 3, "same_as": "L10"}, {"n": 4, "label": "aerial/salto dismount min B"}],
+      "L8": [{"n": 1, "label": "acro series of two elements, one with flight"}, {"n": 2, "same_as": "L10"}, {"n": 3, "same_as": "L10"}, {"n": 4, "label": "aerial/salto dismount min A"}],
+      "L7": [{"n": 1, "label": "acro series of two A/B elements (one through handstand) and one acro flight element"}, {"n": 2, "same_as": "L10"}, {"n": 3, "same_as": "L10"}, {"n": 4, "label": "aerial/salto dismount min A"}],
+      "L6": [{"n": 1, "label": "non-flight acro series (two elements, one through handstand) or one acro flight element"}, {"n": 2, "same_as": "L10"}, {"n": 3, "same_as": "L10"}, {"n": 4, "label": "aerial/salto dismount min A"}],
+      "split_min_degrees_for_sr": 135, "split_deduction_135_179": "up to 0.20",
+      "cite": "BEAM 16-21 §II.A-C"
+    },
+    "FX": {
+      "L10": [{"n": 1, "label": "acro pass with two saltos, direct or indirect"}, {"n": 2, "label": "three different saltos (not aerials)"}, {"n": 3, "label": "dance passage: two different Group 1 elements, one a leap with 180 split"}, {"n": 4, "label": "last acro pass contains a salto min C"}],
+      "L9": [{"n": 1, "same_as": "L10"}, {"n": 2, "same_as": "L10"}, {"n": 3, "same_as": "L10"}, {"n": 4, "label": "last acro pass salto min B"}],
+      "L8": [{"n": 1, "same_as": "L10"}, {"n": 2, "same_as": "L10"}, {"n": 3, "same_as": "L10"}, {"n": 4, "label": "last acro pass salto min A"}],
+      "L7": [{"n": [1, 2], "label": "two acro passes: one with two directly connected flight elements incl. a back salto; one with a front salto; one salto stretched, no twist, two-foot landing (0.50 per missing part, max 1.00)"}, {"n": 3, "same_as": "L10"}, {"n": 4, "label": "360 turn on one foot"}],
+      "L6": [{"n": 1, "label": "acro pass with two directly connected flight elements, one a salto"}, {"n": 2, "label": "second pass with a different salto (two connected flight elements) or an isolated B salto"}, {"n": 3, "same_as": "L10"}, {"n": 4, "label": "360 turn on one foot"}],
+      "cite": "FLOOR 14-23 §II.A-C"
+    }
+  },
+  "cc": {
+    "UB": {"L10": {"max": 0.3, "difficulty": "+0.20 two different D/E releases or +0.10 one", "dismount": "+0.10 D/E dismount or D/E connected to C dismount"}, "L9": {"max": 0.2, "difficulty": "+0.10 two different C+ VPs", "dismount": "+0.10 C+ dismount or C+ connected to B dismount"}, "L8": {"max": 0.2, "difficulty": "+0.10 direct B+B (not cast handstand 2.201)", "dismount": "+0.10 B+ dismount or B+ connected to A dismount"}, "cite": "BARS 50 §VI"},
+    "BB": {"L10": {"max": 0.3, "difficulty": "+0.20 two different D/E acro flight (not dismount) or +0.10 one", "dismount": "+0.10 D/E salto/aerial dismount, or B+ acro flight or C dance connected to C dismount"}, "L9": {"max": 0.2, "difficulty": "+0.10 two different C+ acro flight (not dismount)", "dismount": "+0.10 C+ dismount, or B+ acro flight or C dance connected to B dismount"}, "L8": {"max": 0.2, "difficulty": "+0.10 direct acro flight series B+B", "dismount": "+0.10 B+ dismount or B+ acro connected to A dismount"}, "cite": "BEAM 39 §VI"},
+    "FX": {"L10": {"max": 0.3, "difficulty": "+0.20 two different D+ saltos and one C, or one E and one D+; +0.10 two different D, or one E and one C", "dance": "+0.10 three different C dance, or one D and one C+"}, "L9": {"max": 0.2, "difficulty": "+0.10 two different C+ saltos and one B", "dance": "+0.10 two different C+ dance"}, "L8": {"max": 0.2, "difficulty": "+0.10 two different B+ saltos and one A", "dance": "+0.10 two different B+ dance"}, "cite": "FLOOR 39 §VI"},
+    "levels_6_7": "not eligible",
+    "cite": "GENERAL 26 §VII.C.3"
+  },
+  "bb_mount_markers": {"D": "dance VP", "NA": "not an acro VP", "unmarked": "acro VP, counts for CC", "FA_SA_BKA": "forward / sideward / backward acro, for the different-directions composition check", "cite": "BALANCE BEAM ELEMENTS 1 box"}
+}

@@ -1,0 +1,704 @@
+{
+ "code": "UCG-WAG-INFINITY",
+ "about": "UCG WAG Open Scoring Level (Infinity) vault chart: D score per vault; start value = D + 10.0 (E from 10.0, neutral deductions off the sum). Names and numbers as printed in the rules document's full chart (UCG's own text). 'usag' is the USAG vault number the chart prints; a few look wrong (see decisions.md, open questions).",
+ "source": "UCG Infinity Rules v1.2 (Google Doc, source of record; see README), Appendix 'Full UCG WAG Infinity Vault Chart' (text/infinity-rules.md)",
+ "matches_planner": "same 116 vaults, numbers and values as ucg-routine-planner js/data/wag-infinity-vaults.js (checked 2026-10-20)",
+ "vaults": [
+  {
+   "usag": "1.101",
+   "name": "Front Handspring",
+   "entry": "Front Entry w/o Salto",
+   "d": 2.4
+  },
+  {
+   "usag": "1.109",
+   "name": "FHS onto board - Ft. Hspr. Off",
+   "entry": "Front Entry w/o Salto",
+   "d": 2.4
+  },
+  {
+   "usag": "1.102",
+   "name": "Ft. Hspr. 1/2 Off",
+   "entry": "Front Entry w/o Salto",
+   "d": 3.0
+  },
+  {
+   "usag": "1.110",
+   "name": "FHS onto board - Ft. Hspr. 1/2 Off",
+   "entry": "Front Entry w/o Salto",
+   "d": 3.0
+  },
+  {
+   "usag": "1.201",
+   "name": "Ft. Hspr. 1/1 Off",
+   "entry": "Front Entry w/o Salto",
+   "d": 3.9
+  },
+  {
+   "usag": "1.209",
+   "name": "FHS onto board - Ft. Hspr. 1/1 Off",
+   "entry": "Front Entry w/o Salto",
+   "d": 3.9
+  },
+  {
+   "usag": "1.202",
+   "name": "Ft. Hspr. 3/2 Off",
+   "entry": "Front Entry w/o Salto",
+   "d": 4.8
+  },
+  {
+   "usag": "1.301",
+   "name": "Ft. Hspr. 2/1 Off",
+   "entry": "Front Entry w/o Salto",
+   "d": 5.4
+  },
+  {
+   "usag": "1.402",
+   "name": "Ft. Hspr. 5/2 Off",
+   "entry": "Front Entry w/o Salto",
+   "d": 6.0
+  },
+  {
+   "usag": "1.111",
+   "name": "FHS onto board - 1/2 On - Repulsion Off",
+   "entry": "Front Entry w/o Salto",
+   "d": 2.4
+  },
+  {
+   "usag": "1.103",
+   "name": "Yamashita",
+   "entry": "Front Entry w/o Salto",
+   "d": 3.0
+  },
+  {
+   "usag": "1.104",
+   "name": "Yamashita - 1/2 Off",
+   "entry": "Front Entry w/o Salto",
+   "d": 3.6
+  },
+  {
+   "usag": "1.203",
+   "name": "Yamashita - 1/1 Off",
+   "entry": "Front Entry w/o Salto",
+   "d": 4.2
+  },
+  {
+   "usag": "1.504",
+   "name": "Yamashita - 5/2 Off",
+   "entry": "Front Entry w/o Salto",
+   "d": 6.0
+  },
+  {
+   "usag": "1.108",
+   "name": "1/4 On - 1/4 Off (land facing table)",
+   "entry": "1/2 On Entry w/o Salto",
+   "d": 2.4
+  },
+  {
+   "usag": "1.106",
+   "name": "1/2 On - Repulsion Off",
+   "entry": "1/2 On Entry w/o Salto",
+   "d": 2.4
+  },
+  {
+   "usag": "1.105",
+   "name": "1/2 On - 1/2 Off",
+   "entry": "1/2 On Entry w/o Salto",
+   "d": 3.6
+  },
+  {
+   "usag": "1.211",
+   "name": "FHS onto board - 1/2 On - 1/2 Off",
+   "entry": "1/2 On Entry w/o Salto",
+   "d": 3.6
+  },
+  {
+   "usag": "1.206",
+   "name": "1/2 On - 1/1 Off",
+   "entry": "1/2 On Entry w/o Salto",
+   "d": 3.9
+  },
+  {
+   "usag": "1.311",
+   "name": "FHS onto board - 1/2 On - 1/1 Off",
+   "entry": "1/2 On Entry w/o Salto",
+   "d": 3.9
+  },
+  {
+   "usag": "1.205",
+   "name": "1/2 On - 3/2 Off",
+   "entry": "1/2 On Entry w/o Salto",
+   "d": 4.8
+  },
+  {
+   "usag": "1.306",
+   "name": "1/2 On - 2/1 Off",
+   "entry": "1/2 On Entry w/o Salto",
+   "d": 5.4
+  },
+  {
+   "usag": "1.206",
+   "name": "1/1 On - Fr. Hspr. Off",
+   "entry": "1/2 On Entry w/o Salto",
+   "d": 4.8
+  },
+  {
+   "usag": "1.208",
+   "name": "1/1 On - 1/2 Off",
+   "entry": "1/1 On Entry w/o Salto",
+   "d": 5.1
+  },
+  {
+   "usag": "1.307",
+   "name": "1/1 On - 1/1 Off",
+   "entry": "1/1 On Entry w/o Salto",
+   "d": 5.4
+  },
+  {
+   "usag": "1.308",
+   "name": "1/1 On - 3/2 Off",
+   "entry": "1/1 On Entry w/o Salto",
+   "d": 6.0
+  },
+  {
+   "usag": "4.101",
+   "name": "RO-FF - Repulsion Off (Yurchenko Timer)",
+   "entry": "Roundoff entry w/o Salto",
+   "d": 3.0
+  },
+  {
+   "usag": "4.402",
+   "name": "RO-FF; 1/2 Off",
+   "entry": "Roundoff entry w/o Salto",
+   "d": 3.6
+  },
+  {
+   "usag": "4.201",
+   "name": "RO-FF; 1/1 Off",
+   "entry": "Roundoff entry w/o Salto",
+   "d": 4.2
+  },
+  {
+   "usag": "4.202",
+   "name": "RO-FF; 3/2 Off",
+   "entry": "Roundoff entry w/o Salto",
+   "d": 4.8
+  },
+  {
+   "usag": "4.301",
+   "name": "RO-FF; 2/1 Off",
+   "entry": "Roundoff entry w/o Salto",
+   "d": 5.4
+  },
+  {
+   "usag": "5.101",
+   "name": "RO-FF 1/2 On - Handspring Off",
+   "entry": "Roundoff 1/2 On entry w/o Salto",
+   "d": 3.3
+  },
+  {
+   "usag": "5.102",
+   "name": "RO-FF 1/2 On - Hspr.1/2 Off",
+   "entry": "Roundoff 1/2 On entry w/o Salto",
+   "d": 3.9
+  },
+  {
+   "usag": "5.201",
+   "name": "RO-FF 1/2 On - Hspr.1/1 Off",
+   "entry": "Roundoff 1/2 On entry w/o Salto",
+   "d": 4.5
+  },
+  {
+   "usag": "5.202",
+   "name": "RO-FF 1/2 On - Hspr.3/2 Off",
+   "entry": "Roundoff 1/2 On entry w/o Salto",
+   "d": 5.1
+  },
+  {
+   "usag": "5.101",
+   "name": "RO-FF 1/1 On - Handspring Off",
+   "entry": "Roundoff 1/2 On entry w/o Salto",
+   "d": 3.6
+  },
+  {
+   "usag": "5.107",
+   "name": "RO-FF 1/1 On - Hspr.1/2 Off",
+   "entry": "Roundoff 1/2 On entry w/o Salto",
+   "d": 4.2
+  },
+  {
+   "usag": "5.207",
+   "name": "RO-FF 1/1 On - Hspr.1/1 Off",
+   "entry": "Roundoff 1/2 On entry w/o Salto",
+   "d": 4.8
+  },
+  {
+   "usag": "5.312",
+   "name": "RO-FF 1/2 On - Hspr.2/1 Off",
+   "entry": "Roundoff 1/2 On entry w/o Salto",
+   "d": 5.7
+  },
+  {
+   "usag": "2.301",
+   "name": "Ft. Hspr. - Front Tuck",
+   "entry": "FHS w/ Saltos",
+   "d": 5.4
+  },
+  {
+   "usag": "2.310",
+   "name": "FHS onto board - Ft. Hspr. - Front Tuck",
+   "entry": "FHS w/ Saltos",
+   "d": 5.4
+  },
+  {
+   "usag": "2.302",
+   "name": "Ft. Hspr. - Front Tuck 1/2",
+   "entry": "FHS w/ Saltos",
+   "d": 5.7
+  },
+  {
+   "usag": "2.410",
+   "name": "FHS onto board - Ft. Hspr. - Front Tuck 1/2",
+   "entry": "FHS w/ Saltos",
+   "d": 5.7
+  },
+  {
+   "usag": "2.303",
+   "name": "Ft. Hspr. - 1/2 to Back Tuck",
+   "entry": "FHS w/ Saltos",
+   "d": 5.7
+  },
+  {
+   "usag": "2.402",
+   "name": "Ft. Hspr. - Front Tuck 1/1",
+   "entry": "FHS w/ Saltos",
+   "d": 6.3
+  },
+  {
+   "usag": "2.403",
+   "name": "Ft. Hspr. - 1/2 to Back Tuck 1/2",
+   "entry": "FHS w/ Saltos",
+   "d": 6.3
+  },
+  {
+   "usag": "2.502",
+   "name": "Ft. Hspr. - Front Tuck 3/2",
+   "entry": "FHS w/ Saltos",
+   "d": 6.9
+  },
+  {
+   "usag": "2.304",
+   "name": "Ft. Hspr. - Front Pike",
+   "entry": "FHS w/ Saltos",
+   "d": 5.7
+  },
+  {
+   "usag": "2.311",
+   "name": "FHS onto board - Ft. Hspr. - Front Pike",
+   "entry": "FHS w/ Saltos",
+   "d": 5.7
+  },
+  {
+   "usag": "2.404",
+   "name": "Ft. Hspr. - Front Pike 1/2",
+   "entry": "FHS w/ Saltos",
+   "d": 6.0
+  },
+  {
+   "usag": "2.411",
+   "name": "FHS onto board - Ft. Hspr. - Front Pike 1/2",
+   "entry": "FHS w/ Saltos",
+   "d": 6.0
+  },
+  {
+   "usag": "2.405",
+   "name": "Ft. Hspr. - 1/2 to Back Pike",
+   "entry": "FHS w/ Saltos",
+   "d": 6.0
+  },
+  {
+   "usag": "2.408",
+   "name": "Ft. Hspr. - Front Pike 1/1",
+   "entry": "FHS w/ Saltos",
+   "d": 6.6
+  },
+  {
+   "usag": "2.406",
+   "name": "Ft. Hspr. - Front Layout",
+   "entry": "FHS w/ Saltos",
+   "d": 6.6
+  },
+  {
+   "usag": "2.407",
+   "name": "Ft. Hspr. - Front Layout 1/2",
+   "entry": "FHS w/ Saltos",
+   "d": 6.9
+  },
+  {
+   "usag": "2.407",
+   "name": "Ft. Hspr. - 1/2 to Back Layout",
+   "entry": "FHS w/ Saltos",
+   "d": 6.9
+  },
+  {
+   "usag": "2.507",
+   "name": "Ft. Hspr. - Front Layout 1/1",
+   "entry": "FHS w/ Saltos",
+   "d": 7.5
+  },
+  {
+   "usag": "2.508",
+   "name": "Ft. Hspr. - Front Layout 3/2",
+   "entry": "FHS w/ Saltos",
+   "d": 8.1
+  },
+  {
+   "usag": "2.607",
+   "name": "Ft. Hspr. - Front Layout 2/1",
+   "entry": "FHS w/ Saltos",
+   "d": 8.7
+  },
+  {
+   "usag": "2.501",
+   "name": "FHS - Double Front Tuck",
+   "entry": "FHS w/ Saltos",
+   "d": 9.0
+  },
+  {
+   "usag": "2.409",
+   "name": "FHS 1/1 On - Front Tuck",
+   "entry": "FHS w/ Saltos",
+   "d": 7.2
+  },
+  {
+   "usag": "2.509",
+   "name": "Ft. Hspr. 1/1 - Front Pike",
+   "entry": "FHS w/ Saltos",
+   "d": 7.8
+  },
+  {
+   "usag": "2.609",
+   "name": "Ft. Hspr. 1/1 - Front Layout",
+   "entry": "FHS w/ Saltos",
+   "d": 8.4
+  },
+  {
+   "usag": "3.201",
+   "name": "Tsuk Tuck",
+   "entry": "Tsukaharas",
+   "d": 4.8
+  },
+  {
+   "usag": "3.306",
+   "name": "Tsuk Tuck 1/2",
+   "entry": "Tsukaharas",
+   "d": 5.1
+  },
+  {
+   "usag": "3.302",
+   "name": "Tsuk Tuck 1/1",
+   "entry": "Tsukaharas",
+   "d": 5.7
+  },
+  {
+   "usag": "3.405",
+   "name": "Ft. Hspr. - 1/2 On to Back Tuck 1/1",
+   "entry": "Tsukaharas",
+   "d": 5.7
+  },
+  {
+   "usag": "3.308",
+   "name": "1/2 On - 1/2 off Front Tuck 1/2",
+   "entry": "Tsukaharas",
+   "d": 5.7
+  },
+  {
+   "usag": "3.402",
+   "name": "Tsuk Tuck 3/2",
+   "entry": "Tsukaharas",
+   "d": 6.3
+  },
+  {
+   "usag": "3.509",
+   "name": "1/2 On - 1/2 off Front Tuck 1/1",
+   "entry": "Tsukaharas",
+   "d": 6.3
+  },
+  {
+   "usag": "3.508",
+   "name": "1/4 On - 1/4 off Front Tuck 3/2",
+   "entry": "Tsukaharas",
+   "d": 6.9
+  },
+  {
+   "usag": "3.303",
+   "name": "Tsuk Pike",
+   "entry": "Tsukaharas",
+   "d": 5.1
+  },
+  {
+   "usag": "3.305",
+   "name": "FHS onto board - 1/2 On - Back Pike",
+   "entry": "Tsukaharas",
+   "d": 4.8
+  },
+  {
+   "usag": "3.307",
+   "name": "Tsuk Pike 1/2",
+   "entry": "Tsukaharas",
+   "d": 5.4
+  },
+  {
+   "usag": "3.403",
+   "name": "Tsuk Pike 1/1",
+   "entry": "Tsukaharas",
+   "d": 5.4
+  },
+  {
+   "usag": "3.304",
+   "name": "Tsuk Layout",
+   "entry": "Tsukaharas",
+   "d": 5.7
+  },
+  {
+   "usag": "3.407",
+   "name": "Tsuk Layout 1/2",
+   "entry": "Tsukaharas",
+   "d": 6.0
+  },
+  {
+   "usag": "3.404",
+   "name": "Tsuk Layout 1/1",
+   "entry": "Tsukaharas",
+   "d": 6.6
+  },
+  {
+   "usag": "3.507",
+   "name": "1/2 On - 1/2 off Front Layout 1/2",
+   "entry": "Tsukaharas",
+   "d": 6.6
+  },
+  {
+   "usag": "3.504",
+   "name": "Tsuk Layout 3/2",
+   "entry": "Tsukaharas",
+   "d": 7.2
+  },
+  {
+   "usag": "3.505",
+   "name": "Tsuk Layout 2/1",
+   "entry": "Tsukaharas",
+   "d": 7.8
+  },
+  {
+   "usag": "3.605",
+   "name": "Tsuk Layout 5/2",
+   "entry": "Tsukaharas",
+   "d": 8.4
+  },
+  {
+   "usag": "4.203",
+   "name": "RO-FF Back Tuck (Yurchenko Tuck)",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 4.5
+  },
+  {
+   "usag": "4.307",
+   "name": "RO-FF; Back Tuck 1/2",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 4.8
+  },
+  {
+   "usag": "4.307",
+   "name": "RO-FF - 1/2 Off Front Tuck",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 4.8
+  },
+  {
+   "usag": "4.303",
+   "name": "RO-FF; Tuck 1/1",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 5.4
+  },
+  {
+   "usag": "4.407",
+   "name": "RO-FF - 1/2 Off Front Tuck 1/2",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 5.4
+  },
+  {
+   "usag": "4.403",
+   "name": "RO-FF; Tuck 3/2",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 6.0
+  },
+  {
+   "usag": "4.503",
+   "name": "RO-FF; Tuck 2/1",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 6.6
+  },
+  {
+   "usag": "4.304",
+   "name": "RO-FF Back Pike (Yurchenko Pike)",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 4.8
+  },
+  {
+   "usag": "4.308",
+   "name": "RO-FF; Pike 1/2",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 5.1
+  },
+  {
+   "usag": "4.308",
+   "name": "RO-FF - 1/2 Off Front Pike",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 5.1
+  },
+  {
+   "usag": "4.508",
+   "name": "RO-FF - 1/2 Off Front Pike 1/2",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 5.7
+  },
+  {
+   "usag": "4.305",
+   "name": "RO-FF Back Layout (Yurchenko Layout)",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 5.4
+  },
+  {
+   "usag": "4.309",
+   "name": "RO-FF; Layout 1/2",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 5.7
+  },
+  {
+   "usag": "4.309",
+   "name": "RO-FF - 1/2 Off Front Layout",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 5.7
+  },
+  {
+   "usag": "4.306",
+   "name": "RO-FF; Layout 1/1",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 6.3
+  },
+  {
+   "usag": "4.406",
+   "name": "RO-FF; Layout 3/2",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 6.9
+  },
+  {
+   "usag": "4.506",
+   "name": "RO-FF; Layout 2/1",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 7.5
+  },
+  {
+   "usag": "4.606",
+   "name": "RO-FF; Layout 5/2",
+   "entry": "Roundoff Entry w/ Salto",
+   "d": 8.1
+  },
+  {
+   "usag": "5.301",
+   "name": "RO-FF 1/2 On - Front Tuck",
+   "entry": "Roundoff 1/2 On entry w/ Salto",
+   "d": 5.7
+  },
+  {
+   "usag": "5.401",
+   "name": "RO-FF 1/2 On - Front Tuck 1/2",
+   "entry": "Roundoff 1/2 On entry w/ Salto",
+   "d": 6.0
+  },
+  {
+   "usag": "5.402",
+   "name": "RO-FF 1/2 On - 1/2 off Back Tuck",
+   "entry": "Roundoff 1/2 On entry w/ Salto",
+   "d": 6.0
+  },
+  {
+   "usag": "5.501",
+   "name": "RO-FF 1/2 On - Front Tuck 3/2",
+   "entry": "Roundoff 1/2 On entry w/ Salto",
+   "d": 7.2
+  },
+  {
+   "usag": "5.403",
+   "name": "RO-FF 1/2 On - Front Pike",
+   "entry": "Roundoff 1/2 On entry w/ Salto",
+   "d": 6.0
+  },
+  {
+   "usag": "5.404",
+   "name": "RO-FF 1/2 On - Front Pike 1/2",
+   "entry": "Roundoff 1/2 On entry w/ Salto",
+   "d": 6.3
+  },
+  {
+   "usag": "5.405",
+   "name": "RO-FF 1/2 On - 1/2 off Back Pike",
+   "entry": "Roundoff 1/2 On entry w/ Salto",
+   "d": 6.3
+  },
+  {
+   "usag": "5.406",
+   "name": "RO-FF 1/2 On - Front Layout",
+   "entry": "Roundoff 1/2 On entry w/ Salto",
+   "d": 6.9
+  },
+  {
+   "usag": "5.505",
+   "name": "RO-FF 1/2 On - 1/2 off Back Layout",
+   "entry": "Roundoff 1/2 On entry w/ Salto",
+   "d": 7.2
+  },
+  {
+   "usag": "5.505",
+   "name": "RO-FF 1/2 On - Front Layout 1/2",
+   "entry": "Roundoff 1/2 On entry w/ Salto",
+   "d": 7.2
+  },
+  {
+   "usag": "5.408",
+   "name": "RO-FF 1/1 On - Back Tuck",
+   "entry": "Roundoff 1/1 On entry w/ Salto",
+   "d": 6.0
+  },
+  {
+   "usag": "5.410",
+   "name": "RO-FF 1/1 On - 1/2 off Front Tuck",
+   "entry": "Roundoff 1/1 On entry w/ Salto",
+   "d": 6.3
+  },
+  {
+   "usag": "5.510",
+   "name": "RO-FF 1/1 On - Back Tuck 1/1",
+   "entry": "Roundoff 1/1 On entry w/ Salto",
+   "d": 6.9
+  },
+  {
+   "usag": "5.409",
+   "name": "RO-FF 1/1 On - Back Pike",
+   "entry": "Roundoff 1/1 On entry w/ Salto",
+   "d": 6.3
+  },
+  {
+   "usag": "5.509",
+   "name": "RO-FF 1/1 On - Back Layout",
+   "entry": "Roundoff 1/1 On entry w/ Salto",
+   "d": 7.2
+  },
+  {
+   "usag": "5.511",
+   "name": "RO-FF 1/1 On - Back Layout 1/1",
+   "entry": "Roundoff 1/1 On entry w/ Salto",
+   "d": 8.1
+  }
+ ]
+}
