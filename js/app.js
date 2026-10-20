@@ -238,6 +238,8 @@ function renderUserArea() {
       <div class="menu" id="account-menu" role="menu" hidden>
         <p class="menu-who">${who}${u.email && !u.guest && !u.local && u.displayName ? `<span>${esc(u.email)}</span>` : ''}</p>
         <button type="button" role="menuitem" data-action="feedback">Send feedback</button>
+        ${u.guest ? '' : '<button type="button" role="menuitem" data-action="export">Export my data</button><button type="button" role="menuitem" data-action="delete-data">Delete all my data</button>'}
+        <a role="menuitem" href="privacy.html" target="_blank" rel="noopener">Privacy</a>
         ${u.guest ? '<button type="button" role="menuitem" data-signin>Sign in with Google</button>' : ''}
         ${!u.guest && !u.local ? '<button type="button" role="menuitem" data-action="signout">Sign out</button>' : ''}
       </div>
@@ -267,7 +269,11 @@ document.addEventListener('click', (ev) => {
   if (!ev.target.closest('.menu') || item) closeMenus();
   const action = item?.dataset.action;
   if (action === 'feedback') import('./feedback.js').then((m) => m.openFeedback(feedbackContext), reportError);
-  else if (action === 'signout') store.signOut();
+  else if (action === 'signout') {
+    flushSaves();
+    store.signOut(() => confirm("Some changes haven't reached the server yet (no connection?). Signing out now loses them. Sign out anyway?")).catch(reportError);
+  } else if (action === 'export') exportMyData();
+  else if (action === 'delete-data') deleteMyData();
 });
 // iOS sends no click for a tap on something that isn't clickable, so outside taps use pointerdown.
 document.addEventListener('pointerdown', (ev) => {
@@ -2536,6 +2542,46 @@ async function onUser(user) {
   if (!user.local) stopWatching = store.watchAthletes(applyRemote);
 }
 
+// ---- Your data: export and delete -----------------------------------------------------
+
+async function exportMyData() {
+  flushSaves();
+  try {
+    const data = await store.exportData();
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `ucg-routine-planner-data-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 10000);
+  } catch (err) {
+    console.error(err);
+    alert(`Could not export your data${navigator.onLine ? '' : ' (no connection)'}: ${err?.message || err}`);
+  }
+}
+
+async function deleteMyData() {
+  const local = state.user?.local;
+  const n = state.athletes.length;
+  const what = local ? 'every athlete saved in this browser' : 'every athlete and routine saved to your account, and your sign-in to the planner';
+  if (!confirm(`Delete ${what}? This can't be undone. To keep a copy, choose "Export my data" first.`)) return;
+  if (!confirm(`Are you sure? ${n === 1 ? 'Your 1 athlete' : `All ${n} athletes`} will be deleted for good.`)) return;
+  // Nothing may save again while it's being deleted.
+  for (const t of saveTimers.values()) clearTimeout(t);
+  saveTimers.clear();
+  stopWatching();
+  app.innerHTML = '<p class="loading">Deleting your data…</p>';
+  try {
+    await store.deleteAllData();
+  } catch (err) {
+    console.error(err);
+    alert(`Not everything was deleted: ${err?.message || err}. Check your connection and try again.`);
+    location.reload();
+  }
+}
+
 // ---- Feedback -----------------------------------------------------------------------
 // "Send feedback" in the account menu: js/feedback.js sends it with who and where it came from.
 function feedbackContext() {
@@ -2547,7 +2593,8 @@ function feedbackContext() {
   return {
     name: !u ? 'Not signed in' : u.guest ? 'Guest (not signed in)' : u.local ? 'Local mode' : u.displayName || '(no name)',
     email: signedIn ? u.email || '(no email)' : '(not signed in)',
-    athlete: a ? a.name || 'Unnamed athlete' : !u ? '(sign-in screen)' : '(no athlete open)',
+    // Never the athlete's name (often a minor's): only whether one is open.
+    athlete: a ? '(athlete open)' : !u ? '(sign-in screen)' : '(no athlete open)',
     level: e ? levelInfo(e.disc, e.level)?.name || e.level : a ? '(no level yet)' : '(none)',
     apparatus: e ? eventInfo(e.disc, currentEvent(e))?.label || '' : '(none)',
   };
@@ -2575,6 +2622,11 @@ addEventListener('unhandledrejection', (ev) => reportError(ev.reason));
 function watchForUpdates() {
   const sw = navigator.serviceWorker;
   if (!sw) return;
+  // Only the built site has sw.js (its <head> says which build it is); `npm start` runs without one.
+  if (document.querySelector('meta[name="planner-version"]')) {
+    if (document.readyState === 'complete') sw.register('sw.js');
+    else addEventListener('load', () => sw.register('sw.js'));
+  }
   const hadController = !!sw.controller; // the very first install doesn't need a reload
   let reloading = false;
   // Safe to switch versions without asking: nothing is waiting to save, and no guest

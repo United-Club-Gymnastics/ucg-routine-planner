@@ -6,22 +6,27 @@
 export { initializeApp } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js';
 export {
   GoogleAuthProvider,
+  deleteUser,
   getAuth,
   onAuthStateChanged,
+  reauthenticateWithPopup,
   signInWithPopup,
   signOut,
 } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js';
 export {
+  clearIndexedDbPersistence,
   collection,
   deleteDoc,
   doc,
   getDocs,
   getDocsFromCache,
+  getDocsFromServer,
   initializeFirestore,
   memoryLocalCache,
   onSnapshot,
   persistentLocalCache,
   persistentMultipleTabManager,
   setDoc,
+  terminate,
   waitForPendingWrites,
 } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js';

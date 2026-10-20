@@ -152,6 +152,7 @@ h2 { font-size: var(--fs-h2); line-height: var(--leading-tight); letter-spacing:
   display: block; width: 100%; padding: 10px 12px; border: 0; border-radius: var(--radius-btn);
   background: transparent; color: inherit; font: inherit; font-size: 0.95rem; text-align: left; cursor: pointer;
 }
+.menu a[role='menuitem'] { box-sizing: border-box; text-decoration: none; }
 .menu [role='menuitem']:focus-visible { background: var(--ucg-light-blue); outline: 2px solid var(--ucg-navy); outline-offset: -2px; }
 @media (hover: hover) { .menu [role='menuitem']:hover { background: var(--ucg-light-blue); } }
 .menu-who { margin: 0 0 4px; padding: 8px 12px 10px; border-bottom: 1px solid var(--border-subtle); font-size: var(--fs-xs); color: var(--fg-secondary); }
@@ -181,6 +182,15 @@ h2 { font-size: var(--fs-h2); line-height: var(--leading-tight); letter-spacing:
 
 main { padding: 0 0 clamp(48px, 6vw, 80px); }
 .site-footer { border-top: 1px solid var(--border-default); padding: 16px var(--gutter) 24px; }
+.site-footer a { color: var(--ucg-navy); font-weight: 600; }
+/* privacy.html */
+.banner-draft { font-size: var(--fs-body); text-align: center; }
+.privacy { max-width: 76ch; margin: 24px auto 40px; padding: 8px 24px 24px; background: var(--bg-surface); color: var(--fg-primary); border: 1px solid var(--border-default); }
+.privacy h1 { margin-bottom: 4px; }
+.privacy h2 { margin: 24px 0 6px; font-size: 1.15rem; }
+.privacy a { color: var(--ucg-navy); }
+.privacy mark { background: var(--ucg-golden-yellow); color: var(--ucg-navy); padding: 0 2px; }
+@media (max-width: 800px) { .privacy { margin: 16px 12px 32px; padding: 4px 16px 20px; } }
 .site-footer p { max-width: var(--container-max); margin: 0 auto; font-size: var(--fs-xs); color: var(--fg-secondary); }
 .loading, main > .error { padding: 48px var(--gutter); max-width: var(--container-max); margin: 0 auto; }
 .loading { color: var(--fg-muted); }
@@ -227,6 +237,7 @@ main { padding: 0 0 clamp(48px, 6vw, 80px); }
 .signin .btn-guest { background: transparent; color: var(--ucg-light-blue); border-color: var(--ucg-blue-green); }
 @media (hover: hover) { .signin .btn-guest:hover { background: rgba(219, 235, 238, 0.12); color: var(--ucg-white); } }
 .signin .signin-note { color: rgba(219, 235, 238, 0.85); font-size: var(--fs-sm); margin-top: 20px; max-width: 460px; }
+.signin .signin-note a { color: var(--ucg-light-blue); text-decoration: underline; }
 .signin .error { color: var(--ucg-red-orange); margin-top: 16px; }
 
 .editor { display: grid; gap: 20px; }

@@ -1,9 +1,46 @@
 rules_version = '2';
+// Deployed by hand: firebase deploy --only firestore:rules (README "Firestore rules").
+// Tested against the emulator: npm run test:rules (tests/rules.test.mjs).
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Each signed-in user can only read and write their own athletes.
-    match /users/{userId}/{document=**} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
+    function isOwner(userId) {
+      return request.auth != null && request.auth.uid == userId;
     }
+    // An optional field: absent, or a string of at most `max` characters.
+    function optString(d, k, max) {
+      return !(k in d) || (d[k] is string && d[k].size() <= max);
+    }
+    function optNumber(d, k) {
+      return !(k in d) || d[k] is number;
+    }
+
+    // An athlete as the planner saves it (js/athlete-doc.js athleteDoc, js/store.js saveAthlete).
+    // Entries (one per level) are checked only as a list of bounded length: a newer version of
+    // the planner may add levels this rule doesn't know, and older apps write them back.
+    function validAthlete(d) {
+      return d.keys().hasOnly(['name', 'club', 'entries', 'createdAt', 'updatedAt', 'importedFrom', 'schemaVersion'])
+        && optString(d, 'name', 200)
+        && optString(d, 'club', 200)
+        && optString(d, 'importedFrom', 200)
+        && optNumber(d, 'createdAt')
+        && optNumber(d, 'updatedAt')
+        && (!('schemaVersion' in d) || d.schemaVersion is int)
+        && (!('entries' in d) || (d.entries is list && d.entries.size() <= 40));
+    }
+
+    match /users/{userId}/athletes/{athleteId} {
+      allow read, delete: if isOwner(userId);
+      allow create, update: if isOwner(userId) && athleteId.size() <= 100 && validAthlete(request.resource.data);
+    }
+
+    // The MAG-only planner (ucg-mag-planner, same Firebase project) still saves here.
+    match /users/{userId}/magAthletes/{athleteId} {
+      allow read, delete: if isOwner(userId);
+      allow create, update: if isOwner(userId) && athleteId.size() <= 100
+        && optString(request.resource.data, 'name', 200)
+        && optString(request.resource.data, 'club', 200)
+        && request.resource.data.keys().size() <= 30;
+    }
+    // Anything else is denied.
   }
 }

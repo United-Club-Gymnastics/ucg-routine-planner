@@ -9,9 +9,11 @@
     "preview": "node tools/preview.mjs",
     "smoke": "playwright test",
     "sync-skills": "python tools/sync_bundle.py",
-    "check-bundle": "node tools/check_bundle.mjs"
+    "check-bundle": "node tools/check_bundle.mjs",
+    "test:rules": "firebase emulators:exec --only firestore --project demo-ucg-routine-planner \"node --test tests/rules.test.mjs\""
   },
   "devDependencies": {
+    "@firebase/rules-unit-testing": "5.0.2",
     "@fontsource/saira-condensed": "5.3.0",
     "@playwright/test": "1.63.0",
     "esbuild": "0.28.2",
