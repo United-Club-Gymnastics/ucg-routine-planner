@@ -196,6 +196,12 @@ test('WG vaults: exactly the no-salto vaults are non-flipping, and the GymACT va
   assert.equal(scoreVault('dev', '201').startValue, 11.2);
 });
 
+test('Masters rings: no limit on EG II/III elements in a row (policy waives WG 12.2.2.3)', () => {
+  const st = [s('a', 'A', 2), s('b', 'A', 3), s('c', 'A', 2), s('d', 'A', 3), s('e', 'A', 2), s('f', 'A', 4)];
+  assert.ok(scoreRoutine('sr', 'masters', st, {}, { decade: 30 }).items.every((it) => it.reason !== 'sr'));
+  assert.ok(scoreRoutine('sr', 'int', st).items.some((it) => it.reason === 'sr'));
+});
+
 // Nate 2026-10-20: the Rules Breakdown bans round-off-entry vaults at Developmental too.
 test('Developmental bans round-off-entry vaults, flipping or not', () => {
   for (const id of ['501', '503', '513', '515', '401']) assert.ok(scoreVault('dev', id).banned, id);

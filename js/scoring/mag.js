@@ -244,7 +244,8 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
     } else if (key) firstSeen.set(key, it.idx);
   }
 
-  if (event === 'sr') {
+  // WG MAG 12.2.2.3. The UCG Masters Rules Policy (III.B.3.d.2) waives it at Masters.
+  if (event === 'sr' && !L.masters) {
     let statics = 0;
     for (const it of items) {
       if (it.status) continue;
