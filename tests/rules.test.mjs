@@ -92,3 +92,12 @@ test('what the planner actually writes passes: every saved-shape fixture and an 
   const imported = convertOldAthlete({ id: 'old-1', name: 'Julia', club: 'UCG', vault: 'Yamashita - 1/2 Off', routines: {} }, () => `id-${i++}`);
   await rut.assertSucceeds(fs.setDoc(ref('alice', 'alice', 'athletes', 'imp'), written(imported)));
 });
+
+test('listing athletes (how the planner loads them): own list allowed, another user\'s denied', { skip }, async () => {
+  const list = (uid, owner, col = 'athletes') => fs.getDocs(fs.collection(db(uid), 'users', owner, col));
+  await rut.assertSucceeds(list('alice', 'alice'));
+  await rut.assertSucceeds(list('alice', 'alice', 'magAthletes'));
+  await rut.assertFails(list('mallory', 'alice'));
+  await rut.assertFails(list(null, 'alice'));
+  await rut.assertFails(fs.getDocs(fs.collection(db('alice'), 'users')));
+});

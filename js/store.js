@@ -169,8 +169,9 @@ export async function exportData() {
 
 /**
  * Delete every athlete (this planner's and the MAG planner's), then the sign-in itself. Needs a
- * connection. Google may ask the person to sign in again first (a recent sign-in is required
- * to delete an account). Reloads when done.
+ * connection. Reloads when done. If Google wants a recent sign-in to delete the account, the
+ * athletes are deleted and this throws { code: 'needs-reauth' }: call finishDeleteAccount from
+ * a click (the sign-in popup needs one).
  */
 export async function deleteAllData() {
   if (!isConfigured) {
@@ -183,14 +184,21 @@ export async function deleteAllData() {
     const snap = await fb.getDocsFromServer(col);
     await Promise.all(snap.docs.map((d) => fb.deleteDoc(d.ref)));
   }
-  const user = auth.currentUser;
   try {
-    await fb.deleteUser(user);
+    await fb.deleteUser(auth.currentUser);
   } catch (e) {
-    if (e?.code !== 'auth/requires-recent-login') throw e;
-    await fb.reauthenticateWithPopup(user, new fb.GoogleAuthProvider());
-    await fb.deleteUser(user);
+    if (e?.code === 'auth/requires-recent-login') throw Object.assign(new Error('Sign in again to finish'), { code: 'needs-reauth' });
+    throw e;
   }
+  await forgetDevice();
+  location.reload();
+}
+
+/** After deleteAllData asked for it: sign in again (popup; call from a click), delete the account. */
+export async function finishDeleteAccount() {
+  const user = auth.currentUser;
+  await fb.reauthenticateWithPopup(user, new fb.GoogleAuthProvider());
+  await fb.deleteUser(user);
   await forgetDevice();
   location.reload();
 }

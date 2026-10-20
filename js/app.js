@@ -2576,6 +2576,18 @@ async function deleteMyData() {
   try {
     await store.deleteAllData();
   } catch (err) {
+    if (err?.code === 'needs-reauth') {
+      // The athletes are gone; Google wants a fresh sign-in before deleting the account.
+      app.innerHTML = '<p class="loading">Your athletes are deleted. To delete your sign-in too, Google needs you to sign in once more.</p>';
+      showToast('reauth-toast', 'Sign in again to finish deleting your account.', 'Sign in', () =>
+        store.finishDeleteAccount().catch((e) => {
+          console.error(e);
+          alert(`Your sign-in was not deleted: ${e?.message || e}. Your athletes are deleted. Choose "Delete all my data" again to retry.`);
+          location.reload();
+        })
+      );
+      return;
+    }
     console.error(err);
     alert(`Not everything was deleted: ${err?.message || err}. Check your connection and try again.`);
     location.reload();
