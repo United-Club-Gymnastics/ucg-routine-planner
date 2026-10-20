@@ -15,6 +15,9 @@ listing every file's sha256. This script:
   4. runs build_skills.py and build_data.py, which read only the vendored bundle,
   5. prints what changed in the skill files: added, removed, renamed and revalued records, and
      new redirects.
+Before copying it refuses a bundle in which an ID this site ever shipped (tools/source/published-ids.json,
+append-only) is neither an alias, a redirect nor retired by ucg-code-of-points: such an ID would stop
+resolving in saved routines. After copying it adds the bundle's IDs to that file.
 CI re-checks the vendored files against the lock (tools/check_bundle.mjs), so hand edits fail.
 Needs: pip install jsonschema rfc3987
 """
@@ -109,7 +112,60 @@ def check_lock(root):
     for k in ("schema_version", "catalogs", "sources"):
         if manifest[k] != lock[k]:
             problems.append(f"bundle.lock.json {k} differs from the manifest")
+    return problems + published_problems(root)
+
+
+# ---- published IDs never stop resolving ----
+
+PUBLISHED = os.path.join(SRC, "published-ids.json")
+
+
+def resolvable(root):
+    """Per discipline: the IDs a bundle resolves (alias keys), the retired ones (CoP skill files and Masters
+    vaults; a retired ID is a deliberate decision and may show as "Custom") and the redirected ones."""
+    out = {}
+    manifest = load(os.path.join(root, "manifest.json"))
+    retired, redirected = {"mag": set(), "wag": set()}, {"mag": set(), "wag": set()}
+    for p, f in manifest["files"].items():
+        if f.get("schema") == "skill.schema.json":
+            d = load(os.path.join(root, p))
+            disc = (d.get("discipline") or "").lower()
+            if disc in retired:
+                retired[disc] |= set(d.get("retired") or [])
+                redirected[disc] |= set(d.get("redirects") or {})
+    vaults = load(os.path.join(root, "skills", "ucg-masters-vaults.json"))
+    for disc in ("mag", "wag"):
+        retired[disc] |= set(vaults.get(disc, {}).get("retired") or [])
+        aliases = load(os.path.join(root, "catalog", f"aliases_{disc}.json"))["aliases"]
+        out[disc] = (set(aliases), retired[disc], redirected[disc])
+    return out
+
+
+def published_problems(root):
+    """Published IDs that the bundle at `root` neither resolves, redirects nor retires (empty = fine)."""
+    if not os.path.exists(PUBLISHED):
+        return []
+    published = load(PUBLISHED)
+    problems = []
+    for disc, (keys, retired, redirected) in resolvable(root).items():
+        for i in published.get(disc, []):
+            if i not in keys and i not in retired and i not in redirected:
+                problems.append(f"published {disc.upper()} ID {i} is neither an alias, a redirect nor retired: it would stop "
+                                f"resolving in saved routines (retire or redirect it in ucg-code-of-points first)")
     return problems
+
+
+def record_published(root):
+    """Append the bundle's IDs to published-ids.json (never removes one)."""
+    published = load(PUBLISHED) if os.path.exists(PUBLISHED) else {"mag": [], "wag": []}
+    added = 0
+    for disc, (keys, _, _) in resolvable(root).items():
+        before = set(published.get(disc, []))
+        published[disc] = sorted(before | keys)
+        added += len(keys - before)
+    with open(PUBLISHED, "w", encoding="utf-8", newline="\n") as f:
+        f.write(json.dumps(published, indent=1, ensure_ascii=False) + "\n")
+    return added
 
 
 # ---- what changed, for the summary ----
@@ -189,6 +245,7 @@ def main():
         sys.exit(f"{src} has uncommitted changes: commit them in gym-skill-extract first\n{dirty}")
     head = subprocess.run(["git", "-C", EXTRACT, "rev-parse", "HEAD"], capture_output=True, text=True, check=True).stdout.strip()
     problems, manifest = verify(src)
+    problems += published_problems(src)
     if problems:
         sys.exit("BUNDLE CHECK FAILED (nothing copied):\n  " + "\n  ".join(problems))
     old, old_other = skill_files(DEST), other_data(DEST)
@@ -204,6 +261,7 @@ def main():
     with open(LOCK, "w", encoding="utf-8", newline="\n") as f:
         f.write(json.dumps(lock_for(DEST, manifest, {"repo": "nssharpe/gym-skill-extract", "commit": head}), indent=1, ensure_ascii=False) + "\n")
     print(f"vendored {len(manifest['files']) + 1} files from {src} (gym-skill-extract {head[:7]}); wrote {os.path.relpath(LOCK)}")
+    print(f"published IDs: {record_published(DEST)} new in {os.path.relpath(PUBLISHED)}")
     print(f"catalogs: {old_catalogs or '(first sync)'} -> {manifest['catalogs']}", flush=True)
     if not a.no_build:
         for script in ("build_skills.py", "build_data.py"):
