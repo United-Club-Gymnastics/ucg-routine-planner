@@ -41,7 +41,33 @@ export async function bundleProblems() {
     const { CATALOG } = await import(new URL(`../js/data/catalog-${d}.js`, import.meta.url));
     if (CATALOG.version !== version) problems.push(`js/data/catalog-${d}.js is catalog ${CATALOG.version}, the bundle has ${version}: run python tools/build_data.py`);
   }
+  // Every ID this site ever shipped (tools/source/published-ids.json, append-only) still resolves,
+  // is redirected, or was retired by ucg-code-of-points: saved routines hold these IDs.
+  const published = json(join(ROOT, 'tools', 'source', 'published-ids.json'));
+  const { retired, redirected } = retiredIds(manifest);
+  for (const d of ['mag', 'wag']) {
+    const keys = new Set(Object.keys(json(join(BUNDLE, 'catalog', `aliases_${d}.json`)).aliases));
+    for (const id of published[d] || []) {
+      if (!keys.has(id) && !retired[d].has(id) && !redirected[d].has(id)) problems.push(`published ${d.toUpperCase()} ID ${id} is neither an alias, a redirect nor retired`);
+    }
+  }
   return problems;
+}
+
+/** The IDs the bundle's UCG skill files and Masters vault tables retire or redirect, per discipline. */
+export function retiredIds(manifest = json(join(BUNDLE, 'manifest.json'))) {
+  const retired = { mag: new Set(), wag: new Set() }, redirected = { mag: new Set(), wag: new Set() };
+  for (const [p, f] of Object.entries(manifest.files)) {
+    if (f.schema !== 'skill.schema.json') continue;
+    const d = json(join(BUNDLE, p));
+    const disc = (d.discipline || '').toLowerCase();
+    if (!retired[disc]) continue;
+    for (const id of d.retired || []) retired[disc].add(id);
+    for (const id of Object.keys(d.redirects || {})) redirected[disc].add(id);
+  }
+  const vaults = json(join(BUNDLE, 'skills', 'ucg-masters-vaults.json'));
+  for (const disc of ['mag', 'wag']) for (const id of vaults[disc]?.retired || []) retired[disc].add(id);
+  return { retired, redirected };
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
