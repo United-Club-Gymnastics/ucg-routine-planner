@@ -369,9 +369,9 @@ const FLOOR_ACRO_GROUPS = new Set([3, 4, 5, 6, 7, 8]);
  * - connection: +0.10 for each "B"+"B" (or higher) direct connection (each exact
  *   connection once); on floor also "B"+ acro skills in the same pass with lower-valued
  *   acro between them (an indirect acro connection).
- * Only credited skills listed in the Xcel Code or in UCG's own WAG additions earn bonus (the
- * Development / Level 9-10 skills UCG allows at Sapphire don't); skills typed in by hand
- * count on the value given.
+ * Only credited skills listed in the Xcel Code or in UCG's own WAG additions earn bonus, except
+ * that a Development Program E (allowed at UCG Sapphire) can earn the one-"D" difficulty bonus,
+ * since an E counts as a D for it (Nate 2026-10-20); skills typed in by hand count on the value given.
  * Sets it.bonus on the row that earns it and returns { total, parts }.
  */
 export function sapphireBonus(ev, items, key) {
@@ -380,8 +380,9 @@ export function sapphireBonus(ev, items, key) {
   const seenC = new Set();
   let dUsed = false;
   for (const it of items) {
-    if (!eligible(it)) continue;
-    if (it.letter === 'C' && !seenC.has(key(it))) {
+    const dpE = credited(it) && it.skill?.prog && atLeast(it, 'D');
+    if (!eligible(it) && !dpE) continue;
+    if (it.letter === 'C' && eligible(it) && !seenC.has(key(it))) {
       seenC.add(key(it));
       parts.push({ kind: 'difficulty', at: it.idx, rows: [it.idx], text: `"C" ${it.name}` });
     } else if (atLeast(it, 'D') && !dUsed) {
