@@ -60,6 +60,8 @@ const result = await build({
   metafile: true,
   legalComments: 'linked',
   plugins: [cdnToNpm],
+  // The skill bundle's commit, stamped on entries whose values come from the skill lists (model.js).
+  define: { 'globalThis.UCG_SKILLS_VERSION': JSON.stringify(JSON.parse(readFileSync(join(ROOT, 'tools', 'source', 'bundle.lock.json'), 'utf8')).copied_from.commit.slice(0, 12)) },
   logLevel: 'warning',
 });
 

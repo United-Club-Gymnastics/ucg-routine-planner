@@ -121,10 +121,22 @@ const examples = () => import('./data/examples.js').then((m) => (EXAMPLES = m.EX
 
 /**
  * Skills a UCG Code retired into another (retired id -> replacement): routines saved with the old
- * id open on the replacement. Only when the old id is gone and the replacement exists.
+ * id open on the replacement. Only when the old id is gone and the replacement exists. A chain
+ * (A -> B, B retired later -> C) is followed to its end whatever the order of the keys; a loop
+ * redirects nothing.
  */
 export function applyRedirects(redirects, index = SKILL_INDEX) {
-  for (const [old, to] of Object.entries(redirects)) if (!index.has(old) && index.has(to)) index.set(old, index.get(to));
+  const listed = new Set(index.keys()); // real skills only, not ids this adds
+  for (const old of Object.keys(redirects)) {
+    if (listed.has(old)) continue;
+    const seen = new Set([old]);
+    let to = redirects[old];
+    while (!listed.has(to) && Object.hasOwn(redirects, to) && !seen.has(to)) {
+      seen.add(to);
+      to = redirects[to];
+    }
+    if (listed.has(to) && !seen.has(to)) index.set(old, index.get(to));
+  }
 }
 
 const LOADERS = {

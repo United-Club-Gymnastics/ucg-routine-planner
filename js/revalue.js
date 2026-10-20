@@ -13,14 +13,15 @@
 // Vaults (revalueVault): the same element in the target level's own vault list, else that
 // level's rule for other vaults (Masters: "any other vault", 0.0 + age bonus; Sapphire: other
 // Level 9/10 vaults at 10.0; otherwise no vault).
-import { eventSpec, levelInfo } from './model.js';
+import { SKILLS_VERSION, eventSpec, levelInfo, listedValues } from './model.js';
 import { findSkill, magSkillAllowed, wagSkillAllowed } from './skill-search.js';
-import { INFINITY_VAULT_LIST, WAG_MASTERS_VAULTS, WAG_WG_VAULTS, WG_TO_MASTERS, xcelVaults } from './scoring/wag.js';
+import { INFINITY_VAULT_LIST, findInfinityVault, WAG_MASTERS_VAULTS, WAG_WG_VAULTS, WG_TO_MASTERS, xcelVaults } from './scoring/wag.js';
 import { MAG_MASTERS_VAULTS, offeredAt } from './scoring/mag.js';
 import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
 
 const ROMAN = { I: '1', II: '2', III: '3', IV: '4', V: '5' };
-const FLAGS = ['approx', 'noCredit', 'check', 'matchedFrom'];
+// base: the list's own values when re-valuing gave the row different ones (model.js valueChange).
+const FLAGS = ['approx', 'noCredit', 'check', 'matchedFrom', 'base'];
 
 /** Remove re-valuing flags from a skill row (when it's picked again or edited by hand). */
 export const clearRevalueFlags = (row) => FLAGS.forEach((f) => delete row[f]);
@@ -112,6 +113,8 @@ export function revalueEntry(entry, fromLevel, catalog, fromVault = '', events =
       row.letter = letters.includes(value) ? value : '';
       row.eg = eg;
       row.fromList = true;
+      const base = listedValues(entry, evId, listed);
+      if (Object.keys(base).some((k) => String(base[k] ?? '') !== String(row[k] ?? ''))) row.base = base;
       if (approx) {
         row.approx = true;
         summary.approximate++;
@@ -119,12 +122,13 @@ export function revalueEntry(entry, fromLevel, catalog, fromVault = '', events =
     }
   }
   summary.vault = !events || events.includes('vt') ? revalueVault(entry, fromLevel, fromVault, catalog) : '';
+  entry.catalog = SKILLS_VERSION;
   entry.revalued = { catalog: catalog.version, levels: catalog.levels, from: fromLevel, ...(events?.length === 1 ? { event: events[0] } : {}), summary };
   return summary;
 }
 
-// The catalog records for a planner vault id at a level (Infinity vaults go by name, with
-// the USAG number in its table; Xcel by USAG number; Masters WAG by WG number; MAG by WG
+// The catalog records for a planner vault id at a level (Infinity vaults by their table's
+// USAG number; Xcel by USAG number; Masters WAG by WG number; MAG by WG
 // number or UCG id). Generic choices ("other", "l9l10") have none.
 function vaultRids(disc, level, id, catalog) {
   if (!id || id === 'other' || id === 'l9l10') return [];
@@ -134,7 +138,7 @@ function vaultRids(disc, level, id, catalog) {
   if (id.startsWith('UCGM-')) return [id];
   if (id.startsWith('L910-')) return usag(id.slice(5));
   if (fam === 'infinity') {
-    const v = INFINITY_VAULT_LIST.find((x) => x.name === id);
+    const v = findInfinityVault(id);
     return v?.usag ? usag(v.usag) : [];
   }
   if (fam === 'wagMasters') return [`WGW-VT-${id}-1`];
@@ -146,7 +150,7 @@ function vaultOptions(disc, level) {
   const fam = levelInfo(disc, level).family;
   if (disc === 'mag') return [...MAG_VAULTS.filter((v) => offeredAt(level, v)).map((v) => v.id), ...(level === 'masters' ? MAG_MASTERS_VAULTS.map((v) => v.id) : [])];
   if (fam === 'xcel') return xcelVaults(level).map((v) => v.id).filter((id) => id !== 'l9l10');
-  if (fam === 'infinity') return INFINITY_VAULT_LIST.map((v) => v.name);
+  if (fam === 'infinity') return INFINITY_VAULT_LIST.map((v) => v.id);
   return [...WAG_WG_VAULTS.map((v) => v.id), ...WAG_MASTERS_VAULTS.map((v) => v.id)];
 }
 

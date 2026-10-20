@@ -30,7 +30,7 @@ test('an old Infinity athlete becomes an athlete with a UCG Infinity level, same
   assert.equal(a.entries.length, 1);
   const e = a.entries[0];
   assert.equal(e.level, 'inf');
-  assert.equal(e.vault, 'Yamashita - 1/2 Off');
+  assert.equal(e.vault, 'INF-012'); // Yamashita - 1/2 Off: the old planner names it, the planner stores its id
   assert.deepEqual(e.routines.ub.slice(0, 2), [s('Peach salto', 'B', '6'), s('Cast Pike Vault 1/2 (Sharpe)', 'C', '2')]);
   assert.equal(e.options.ub.eventBonus, true);
   // The old "EG bonus skills" come after the routine.

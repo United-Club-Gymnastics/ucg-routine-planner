@@ -1,0 +1,12 @@
+{
+  "_about": "A discipline and levels this version doesn't know (renamed or newer), a T&T level renamed, a Masters MAG level holding a UCG MAG CoP vault (allowed until 2026-10-20), and a level with no routines/passes/options.",
+  "name": "Fixture Two", "club": "", "createdAt": 1760000000000,
+  "entries": [
+    { "id": "a1", "disc": "acro", "level": "l5", "routines": { "bal": [{ "name": "Thigh stand" }] } },
+    { "id": "t1", "disc": "tt", "level": "elite", "passes": { "tu": [{ "skills": [{ "name": "Round-off", "dd": 0.1 }] }] } },
+    { "id": "w1", "disc": "wag", "level": "bronze", "vault": "1.101" },
+    { "id": "m1", "disc": "mag", "level": "masters", "decade": "40", "vault": "UCG-VT-tuck-vault", "routines": {}, "passes": {}, "options": {} },
+    { "id": "t2", "disc": "tt", "level": "hf" },
+    null
+  ]
+}
