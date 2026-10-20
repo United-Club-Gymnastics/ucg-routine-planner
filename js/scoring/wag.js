@@ -110,8 +110,11 @@ export function scoreInfinity(event, skills = [], { eventBonus = false } = {}) {
   };
 }
 
+// By its id (INF-001 ...). Routines saved before the ids (2026-10) hold the vault's name: a
+// current or former ("was") name finds it too.
 export function findInfinityVault(id) {
-  return INFINITY_VAULTS.find((v) => v.name === id) ?? null;
+  if (!id) return null;
+  return INFINITY_VAULTS.find((v) => v.id === id) ?? INFINITY_VAULTS.find((v) => v.name === id || v.was?.includes(id)) ?? null;
 }
 export const INFINITY_VAULT_LIST = INFINITY_VAULTS;
 

@@ -125,3 +125,69 @@ test('offline: after one visit the planner opens and exports with no network', a
   await context.setOffline(false);
   expect(errors).toEqual([]);
 });
+
+// The built page carries a Content-Security-Policy (tools/build_site.mjs): nothing the planner
+// itself loads may be refused, including Google sign-in's script and frames.
+const refused = (errors) => errors.filter((e) => /Content.Security.Policy|Refused to/i.test(e));
+
+test('security: the policy is in place and blocks nothing the planner uses, sign-in included', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('./');
+  const csp = await page.locator('meta[http-equiv="Content-Security-Policy"]').getAttribute('content');
+  expect(csp).toContain("object-src 'none'");
+  expect(await page.locator('meta[name="referrer"]').getAttribute('content')).toBe('strict-origin-when-cross-origin');
+  await expect(page.locator('#signin-btn')).toBeVisible();
+  // Opening Google sign-in loads its helper script and frame in this page; close the popup.
+  const popup = page.waitForEvent('popup', { timeout: 15000 }).catch(() => null);
+  await page.locator('#signin-btn').click();
+  (await popup)?.close();
+  await page.waitForTimeout(2000);
+  expect(refused(errors)).toEqual([]);
+});
+
+test('privacy: the notice is linked from the footer and sign-in screen', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('./');
+  await expect(page.locator('.signin-note a[href="privacy.html"]')).toBeVisible();
+  // With the service worker in control too (it serves the planner for its own address only).
+  await page.evaluate(() => navigator.serviceWorker.ready);
+  await page.reload();
+  await expect.poll(() => page.evaluate(() => !!navigator.serviceWorker.controller)).toBe(true);
+  await page.locator('.site-footer a[href="privacy.html"]').click();
+  await expect(page.locator('h1')).toHaveText('Privacy');
+  await expect(page.locator('main a[href$="NAIGCPrivacyPolicy.pdf"]')).toBeVisible();
+  expect(refused(errors)).toEqual([]);
+});
+
+test('local mode: export my data; feedback sends no athlete name and no query', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('./?local');
+  await page.locator('.empty-editor').getByRole('button', { name: 'Add athlete' }).click();
+  await page.locator('#f-name').fill('Private Name');
+  await page.getByRole('button', { name: 'Xcel Gold' }).click();
+  await page.waitForTimeout(1000); // saved
+  await page.locator('.account-btn').click();
+  const download = page.waitForEvent('download');
+  await page.getByRole('menuitem', { name: 'Export my data' }).click();
+  const file = await download;
+  expect(file.suggestedFilename()).toMatch(/^ucg-routine-planner-data-.*\.json$/);
+  const data = JSON.parse(await (await import('node:fs/promises')).readFile(await file.path(), 'utf8'));
+  expect(data.athletes.map((a) => a.name)).toEqual(['Private Name']);
+  // Feedback: caught before it leaves.
+  let sent = '';
+  await page.route(/docs\.google\.com\/forms/, (route) => {
+    sent = route.request().postData() || '';
+    route.fulfill({ status: 200, body: '' });
+  });
+  await page.locator('.account-btn').click();
+  await page.getByRole('menuitem', { name: 'Send feedback' }).click();
+  await expect(page.locator('.feedback-note')).not.toContainText('Private Name');
+  await page.locator('#feedback-dialog textarea').fill('Smoke test');
+  await page.locator('#feedback-dialog [type=submit]').click();
+  await expect(page.locator('#feedback-dialog')).toContainText('Thanks');
+  const body = new URLSearchParams(sent);
+  expect(sent).not.toContain('Private');
+  expect([...body.values()].some((v) => v.includes('?local'))).toBe(false);
+  expect([...body.values()].some((v) => /\/ucg-routine-planner\/$/.test(v))).toBe(true);
+  expect(errors).toEqual([]);
+});

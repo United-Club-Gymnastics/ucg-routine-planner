@@ -1,4 +1,5 @@
 import * as store from './store.js';
+import { hiddenEntries, migrateAthlete, savedByNewer } from './athlete-doc.js';
 import { clearRevalueFlags } from './revalue.js';
 import {
   DISCIPLINES,
@@ -18,8 +19,12 @@ import {
   hasContent,
   levelInfo,
   maxRows,
+  listedValues,
   newEntry,
   normalizeEntry,
+  SKILLS_VERSION,
+  updateChangedValues,
+  valueChange,
   scoreEntry,
   scoreEvent,
 } from './model.js';
@@ -28,7 +33,7 @@ import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
 import * as mag from './scoring/mag.js';
 import { MAG_MASTERS_VAULTS, OTHER_VAULT, devBanned, offeredAt } from './scoring/mag.js';
 import { mastersValue, vaultAgeBonus } from './scoring/masters.js';
-import { INFINITY_VAULT_LIST, WAG_MASTERS_VAULTS, WAG_OTHER_VAULT, WAG_WG_VAULTS, WG_TO_MASTERS, xcelVaults } from './scoring/wag.js';
+import { INFINITY_VAULT_LIST, findInfinityVault, WAG_MASTERS_VAULTS, WAG_OTHER_VAULT, WAG_WG_VAULTS, WG_TO_MASTERS, xcelVaults } from './scoring/wag.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -76,15 +81,6 @@ const currentEvent = (e = entry()) => {
 const sortedAthletes = () =>
   [...state.athletes].sort((a, b) => (a.name || '~').localeCompare(b.name || '~', undefined, { sensitivity: 'base' }));
 
-function normalizeAthlete(a) {
-  let changed = false;
-  if (!Array.isArray(a.entries) || a.entries.some((e) => !e || !DISCIPLINES[e.disc])) {
-    a.entries = (Array.isArray(a.entries) ? a.entries : []).filter((e) => e && DISCIPLINES[e.disc]);
-    changed = true;
-  }
-  for (const e of a.entries) if (normalizeEntry(e)) changed = true;
-  return changed;
-}
 
 // ---- Saving ---------------------------------------------------------------
 
@@ -103,6 +99,11 @@ function scheduleSave() {
   }
   const a = athlete();
   if (!a) return;
+  if (savedByNewer(a)) {
+    // Saving would write this version's idea of the athlete over a newer one.
+    setStatus('Not saved: a newer version of the planner saved this athlete. Reload to update.', 'error');
+    return;
+  }
   setStatus('Saving…');
   clearTimeout(saveTimers.get(a.id));
   saveTimers.set(a.id, setTimeout(() => saveNow(a), 600));
@@ -168,7 +169,7 @@ function applyRemote(changes) {
       continue;
     }
     if (i >= 0 && state.athletes[i].updatedAt === data.updatedAt) continue; // already have this version
-    normalizeAthlete(data);
+    migrateAthlete(data);
     if (i < 0) {
       state.athletes.push(data);
       picker = true;
@@ -237,6 +238,8 @@ function renderUserArea() {
       <div class="menu" id="account-menu" role="menu" hidden>
         <p class="menu-who">${who}${u.email && !u.guest && !u.local && u.displayName ? `<span>${esc(u.email)}</span>` : ''}</p>
         <button type="button" role="menuitem" data-action="feedback">Send feedback</button>
+        ${u.guest ? '' : '<button type="button" role="menuitem" data-action="export">Export my data</button><button type="button" role="menuitem" data-action="delete-data">Delete all my data</button>'}
+        <a role="menuitem" href="privacy.html" target="_blank" rel="noopener">Privacy</a>
         ${u.guest ? '<button type="button" role="menuitem" data-signin>Sign in with Google</button>' : ''}
         ${!u.guest && !u.local ? '<button type="button" role="menuitem" data-action="signout">Sign out</button>' : ''}
       </div>
@@ -266,7 +269,11 @@ document.addEventListener('click', (ev) => {
   if (!ev.target.closest('.menu') || item) closeMenus();
   const action = item?.dataset.action;
   if (action === 'feedback') import('./feedback.js').then((m) => m.openFeedback(feedbackContext), reportError);
-  else if (action === 'signout') store.signOut();
+  else if (action === 'signout') {
+    flushSaves();
+    store.signOut(() => confirm("Some changes haven't reached the server yet (no connection?). Signing out now loses them. Sign out anyway?")).catch(reportError);
+  } else if (action === 'export') exportMyData();
+  else if (action === 'delete-data') deleteMyData();
 });
 // iOS sends no click for a tap on something that isn't clickable, so outside taps use pointerdown.
 document.addEventListener('pointerdown', (ev) => {
@@ -636,12 +643,18 @@ function renderAll() {
       </div>
     </section>
     <div class="wrap editor" id="editor">
-      ${entriesRow(a, e)}
+      ${entriesRow(a, e)}${hiddenNote(a)}
       ${state.showAdd || !e ? addLevelPanel(a) : ''}
       ${e ? entryBody(a, e) : ''}
     </div>`;
   bindEditor(a, e);
   if (e) updateComputed();
+}
+
+// Levels saved by a newer version of the planner (or a level since renamed): kept, not shown.
+function hiddenNote(a) {
+  const n = hiddenEntries(a).length;
+  return n ? `<p class="note-flag" role="note">${n === 1 ? 'One level' : `${n} levels`} saved for this athlete can't be shown by this version of the planner. ${n === 1 ? "It's" : "They're"} kept as saved. Reload the page to get the latest version.</p>` : '';
 }
 
 function entriesRow(a, cur) {
@@ -833,6 +846,7 @@ function eventCard(a, e, ev, visible) {
         </div>
       </header>
       ${ev.kind === 'vault' ? vaultBody(e, ev, spec) : ev.kind === 'passes' ? passesBody(e, ev) : routineBody(e, ev, spec)}
+      ${ev.kind === 'vault' ? '' : `<div class="value-changed" data-changed="${ev.id}" role="status" hidden></div>`}
       ${spec.sr ? srList(e, ev, spec) : ''}
       ${spec.options.map((o) => optionControl(e, ev.id, o)).join('')}
       ${spec.legend.length ? cgSection(e, ev, spec) : ''}
@@ -1073,7 +1087,7 @@ function vaultChoices(e) {
       });
     }
   } else if (fam === 'infinity') {
-    for (const v of INFINITY_VAULT_LIST) out.push({ id: v.name, name: v.name, meta: fmt(v.dv), head: v.entry });
+    for (const v of INFINITY_VAULT_LIST) out.push({ id: v.id, name: v.name, meta: fmt(v.dv), head: v.entry });
   } else if (fam === 'xcel') {
     const list = xcelVaults(e.level);
     const l910 = list.some((v) => v.l910);
@@ -1087,6 +1101,14 @@ function vaultChoices(e) {
   return out;
 }
 const vaultName = (e) => vaultChoices(e).find((v) => v.id === String(e.vault))?.name || '';
+// A saved vault this level no longer offers (renamed, or no longer allowed, e.g. a UCG MAG CoP
+// vault at Masters): it stays saved, scores nothing, and says so instead of an empty box.
+function goneVaultFlag(e) {
+  const id = String(e.vault);
+  const v = [...MAG_VAULTS, ...MAG_MASTERS_VAULTS, ...INFINITY_VAULT_LIST, ...WAG_MASTERS_VAULTS, ...WAG_WG_VAULTS].find((x) => x.id === id);
+  const name = v?.name || findInfinityVault(id)?.name || id;
+  return `The saved vault (${name}) isn't in this level's vault list any more, so it scores nothing. Pick the vault performed.`;
+}
 // Names coaches type for vaults the lists write in shorthand ("RO-FF; 1/1 Off" is a Yurchenko full).
 const VAULT_WORDS = [
   [/\bRO-?FF\b|round-?off,? flic-?flac/i, 'yurchenko roundoff flicflac'],
@@ -1111,7 +1133,7 @@ function vaultBody(e, ev) {
     approx: "Copied from another level: the closest match in this level's vault list. Check it's the vault performed.",
     other: "Copied from another level: this vault isn't in the WG or UCG Masters lists, so it counts as any other vault (0.0 plus the age bonus).",
     none: "Copied from another level: that vault isn't allowed at this level, so pick one.",
-  }[e.vaultFlag];
+  }[e.vaultFlag] || (e.vault && !vaultName(e) ? goneVaultFlag(e) : '');
   return `
     ${flag ? `<p class="vault-flag" role="note">${esc(flag)}</p>` : ''}
     <div class="vault-body">
@@ -1218,6 +1240,13 @@ function bindEditor(a, e) {
   $('#import-done')?.addEventListener('click', () => {
     delete e.imported;
     for (const row of Object.values(e.routines || {}).flat()) delete row.matchedFrom;
+    scheduleSave();
+    renderAll();
+  });
+  // "Update values": the rows marked "Value changed" take the Code's current values.
+  $('#editor')?.addEventListener('click', (ev) => {
+    const b = ev.target.closest('[data-update-values]');
+    if (!b || !updateChangedValues(e, b.dataset.updateValues)) return;
     scheduleSave();
     renderAll();
   });
@@ -2110,21 +2139,13 @@ function pickSkill(i) {
   const evId = input.dataset.ev;
   const pass = input.dataset.pass;
   const row = rowsOf(e, evId, pass)[Number(input.dataset.idx)];
-  const fam = levelInfo(e.disc, e.level).family;
   row.name = s.label;
   row.skillId = s.id;
   row.fromList = true; // its values came from the list, so they don't filter it next time
   clearRevalueFlags(row);
-  if (e.disc === 'tt') Object.assign(row, { notation: s.notation || '', dd: s.dd });
-  else {
-    const letters = eventSpec(e, evId).letters;
-    if (letters.includes(s.value)) row.letter = s.value;
-    else if (!s.value) row.letter = ''; // a listed skill with no value (Sapphire / Infinity no-value cast)
-    if (fam === 'mag') row.eg = s.eg ? String(s.eg) : '';
-    if (fam === 'infinity' || fam === 'xcel') row.eg = s.group ? String(s.group) : '';
-    // WAG Masters: UCG Masters skills carry their own condensed group; WG groups are mapped.
-    if (fam === 'wagMasters') row.eg = s.mgroup ? String(s.mgroup) : s.group && WG_TO_MASTERS[evId]?.[s.group] ? String(WG_TO_MASTERS[evId][s.group]) : '';
-  }
+  if (e.disc === 'tt') row.notation = s.notation || '';
+  Object.assign(row, listedValues(e, evId, s));
+  e.catalog = SKILLS_VERSION;
   closePicker();
   renderRows(evId, pass, { row: Number(input.dataset.idx), part: isPhone() ? null : 'name' });
   scheduleSave();
@@ -2177,7 +2198,7 @@ function flagFor(it, spec) {
   return [`Not in top ${spec.maxCounting}`, `Not in your top ${spec.maxCounting}, so it doesn't count toward difficulty`];
 }
 
-function updateRows(container, items, spec, list) {
+function updateRows(container, items, spec, list, changeOf = () => null) {
   for (const it of items) {
     const rowEl = $(`[data-row="${it.idx}"]`, container);
     if (!rowEl) continue;
@@ -2193,8 +2214,11 @@ function updateRows(container, items, spec, list) {
     const b = $('[data-calc="bonus"]', rowEl);
     if (b) b.textContent = it.bonus ? `+${fmt(it.bonus)}` : '';
     const row = list[it.idx];
+    const changed = changeOf(row);
     const [text, title] = row?.noCredit
       ? ['Not credited here', "None of the codes this level uses has this skill, so it earns nothing. Pick a replacement or remove it."]
+      : changed
+        ? ['Value changed', `The Code now gives this skill ${changeText(changed.now, changed.keys)}; this routine has ${changeText(changed.was, changed.keys)}. Tap “Update values” under the routine to use the Code's values.`]
       : flagFor(it, spec)[0]
         ? flagFor(it, spec)
         : row?.approx
@@ -2231,6 +2255,10 @@ function updateRows(container, items, spec, list) {
     $('[data-calc="sum-meta"]', rowEl).textContent = row?.name || row?.letter || row?.notation ? meta.filter(Boolean).join(' · ') : '';
   }
 }
+// "value C, group 2" for the "Value changed" flag.
+const changeText = (v, keys) =>
+  keys.map((k) => (k === 'letter' ? `value ${v.letter || 'none'}` : k === 'eg' ? `group ${v.eg || 'none'}` : `DD ${fmt(v.dd)}`)).join(', ');
+
 // "II. Forward acrobatic elements" -> "II Forward acro"; "7. Walkovers/Cartwheels etc." -> "G7 Walkovers/Cartwheels etc."
 const shortGroupRow = (label) => {
   const [, k, name] = label.match(/^(\w+)\. (.*)$/) || [, '', label];
@@ -2250,6 +2278,17 @@ function updateComputed() {
     if (!card) continue;
     const r = score.events[ev.id];
     const spec = eventSpec(e, ev.id);
+    const changeOf = (row) => valueChange(e, ev.id, row);
+    const box = $(`[data-changed="${ev.id}"]`, card);
+    if (box) {
+      const rows = [...(e.routines?.[ev.id] || []), ...(e.passes?.[ev.id] || []).flatMap((p) => p.skills || [])];
+      const n = rows.filter(changeOf).length;
+      box.hidden = !n;
+      box.innerHTML = n
+        ? `<span>${n === 1 ? 'One skill has' : `${n} skills have`} a different value in the Code now than when ${n === 1 ? 'it was' : 'they were'} saved (marked “Value changed”).</span>
+          <button type="button" class="btn btn-ghost btn-sm" data-update-values="${ev.id}">Update values</button>`
+        : '';
+    }
     $(`[data-sv="${ev.id}"]`).textContent = r.sv == null ? '—' : e.disc === 'tt' ? `DD ${fmt(r.sv)}` : fmt(r.sv);
 
     if (ev.kind === 'vault') {
@@ -2262,13 +2301,13 @@ function updateComputed() {
         : '';
     } else if (ev.kind === 'passes') {
       r.passes.forEach((items, p) => {
-        updateRows($(`[data-routine="${ev.id}"][data-pass="${p}"]`, card), items, spec, e.passes[ev.id][p].skills);
+        updateRows($(`[data-routine="${ev.id}"][data-pass="${p}"]`, card), items, spec, e.passes[ev.id][p].skills, changeOf);
         $(`[data-pass-dd="${p}"]`, card).textContent = `DD ${fmt(r.sums[p])}`;
         const addBtn = $(`[data-add-skill="${ev.id}"][data-pass="${p}"]`, card);
         if (addBtn) addBtn.hidden = e.passes[ev.id][p].skills.length >= maxRows(e, ev.id, p, MAX_ROWS);
       });
     } else {
-      updateRows($(`[data-routine="${ev.id}"]`, card), r.items, spec, e.routines[ev.id]);
+      updateRows($(`[data-routine="${ev.id}"]`, card), r.items, spec, e.routines[ev.id], changeOf);
       const counting = r.items.filter((it) => it.status === 'counting').length;
       const listed = r.items.filter((it) => it.status !== 'blank').length;
       const count = $('[data-calc="count"]', card);
@@ -2480,8 +2519,9 @@ async function onUser(user) {
   }
   app.innerHTML = `<p class="loading">Loading athletes…</p>`;
   try {
-    state.athletes = await store.listAthletes();
-    for (const a of state.athletes) if (normalizeAthlete(a)) store.saveAthlete(a).catch(console.error);
+    // Brought up to date in memory only: saved on the next edit (a save here could write
+    // this device's older copy over a newer one from another device).
+    state.athletes = (await store.listAthletes()).map(migrateAthlete);
     for (const a of carry) {
       state.athletes = state.athletes.filter((x) => x.id !== a.id);
       state.athletes.push(a);
@@ -2502,6 +2542,58 @@ async function onUser(user) {
   if (!user.local) stopWatching = store.watchAthletes(applyRemote);
 }
 
+// ---- Your data: export and delete -----------------------------------------------------
+
+async function exportMyData() {
+  flushSaves();
+  try {
+    const data = await store.exportData();
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `ucg-routine-planner-data-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 10000);
+  } catch (err) {
+    console.error(err);
+    alert(`Could not export your data${navigator.onLine ? '' : ' (no connection)'}: ${err?.message || err}`);
+  }
+}
+
+async function deleteMyData() {
+  const local = state.user?.local;
+  const n = state.athletes.length;
+  const what = local ? 'every athlete saved in this browser' : 'every athlete and routine saved to your account, and your sign-in to the planner';
+  if (!confirm(`Delete ${what}? This can't be undone. To keep a copy, choose "Export my data" first.`)) return;
+  if (!confirm(`Are you sure? ${n === 1 ? 'Your 1 athlete' : `All ${n} athletes`} will be deleted for good.`)) return;
+  // Nothing may save again while it's being deleted.
+  for (const t of saveTimers.values()) clearTimeout(t);
+  saveTimers.clear();
+  stopWatching();
+  app.innerHTML = '<p class="loading">Deleting your data…</p>';
+  try {
+    await store.deleteAllData();
+  } catch (err) {
+    if (err?.code === 'needs-reauth') {
+      // The athletes are gone; Google wants a fresh sign-in before deleting the account.
+      app.innerHTML = '<p class="loading">Your athletes are deleted. To delete your sign-in too, Google needs you to sign in once more.</p>';
+      showToast('reauth-toast', 'Sign in again to finish deleting your account.', 'Sign in', () =>
+        store.finishDeleteAccount().catch((e) => {
+          console.error(e);
+          alert(`Your sign-in was not deleted: ${e?.message || e}. Your athletes are deleted. Choose "Delete all my data" again to retry.`);
+          location.reload();
+        })
+      );
+      return;
+    }
+    console.error(err);
+    alert(`Not everything was deleted: ${err?.message || err}. Check your connection and try again.`);
+    location.reload();
+  }
+}
+
 // ---- Feedback -----------------------------------------------------------------------
 // "Send feedback" in the account menu: js/feedback.js sends it with who and where it came from.
 function feedbackContext() {
@@ -2513,7 +2605,8 @@ function feedbackContext() {
   return {
     name: !u ? 'Not signed in' : u.guest ? 'Guest (not signed in)' : u.local ? 'Local mode' : u.displayName || '(no name)',
     email: signedIn ? u.email || '(no email)' : '(not signed in)',
-    athlete: a ? a.name || 'Unnamed athlete' : !u ? '(sign-in screen)' : '(no athlete open)',
+    // Never the athlete's name: only whether one is open.
+    athlete: a ? '(athlete open)' : !u ? '(sign-in screen)' : '(no athlete open)',
     level: e ? levelInfo(e.disc, e.level)?.name || e.level : a ? '(no level yet)' : '(none)',
     apparatus: e ? eventInfo(e.disc, currentEvent(e))?.label || '' : '(none)',
   };
@@ -2541,6 +2634,11 @@ addEventListener('unhandledrejection', (ev) => reportError(ev.reason));
 function watchForUpdates() {
   const sw = navigator.serviceWorker;
   if (!sw) return;
+  // Only the built site has sw.js (its <head> says which build it is); `npm start` runs without one.
+  if (document.querySelector('meta[name="planner-version"]')) {
+    if (document.readyState === 'complete') sw.register('sw.js');
+    else addEventListener('load', () => sw.register('sw.js'));
+  }
   const hadController = !!sw.controller; // the very first install doesn't need a reload
   let reloading = false;
   // Safe to switch versions without asking: nothing is waiting to save, and no guest

@@ -20,7 +20,7 @@ Stop early only if something fails: tests, the build, a merge conflict or the de
 
 ## Handoff notes
 
-Collected 2026-10-18 from the session that landed PR #12.
+Collected 2026-10-18 from the session that landed PR #12; updated 2026-10-20 by the review follow-up PRs.
 
 **Rules sources** (Nate, 2026-10-20): UCG's rules live in Google Docs/Sheets, the source of record. The
 links are in README "Scoring rules"; cite those, not PDF or Word copies. Rulings are recorded in
@@ -29,13 +29,17 @@ gym-skill-extract `rules/UCG-*/decisions.md`.
 **Where the skill data comes from** (updated 2026-10-19, refactor step 4)
 - **The skill bundle.** All skill data except T&T comes from gym-skill-extract's `bundle/`, vendored
   byte for byte in `tools/source/bundle/` and pinned by `tools/source/bundle.lock.json`. Update it only
-  with `npm run sync-skills` (README, "Skill bundle"); never edit it by hand. CI (`npm run check-bundle`,
-  also `tests/bundle.test.mjs`) fails on a hand edit or on `js/data` not rebuilt from it. `.gitattributes`
-  keeps its bytes (`-text`): without that, a Windows checkout would get CRLFs and fail its own hashes.
+  with `npm run sync-skills` (README, "Skill bundle"); never edit it by hand. `npm run check-bundle` (also
+  `tests/bundle.test.mjs`) fails on a hand edit under `tools/source/bundle/`, on a lock mismatch, on
+  `js/data/catalog-*.js` from another catalog version, and on a published ID the bundle drops
+  (`tools/source/published-ids.json`, append-only; the other `js/data` files are covered by CI's rebuild, below).
+  `.gitattributes` keeps its bytes (`-text`): without that, a Windows checkout would get CRLFs and fail its own
+  hashes.
 - **Two producers** write `js/data/`, both reading only this checkout:
   - `tools/build_skills.py` writes `mag-skills.js`, `mag-vaults.js` and `mag-redirects.js`.
   - `tools/build_data.py` writes everything else. `masters-skills-*.js` come from the catalog.
-  - Neither runs in CI. CI builds from the committed `js/data` files.
+  - CI (`pages.yml`, every PR and push to main) reruns both and fails on any diff in `js/data`, then builds the site
+    from the committed files.
 - **Names:** a WG record's `description` in the bundle is the name the planner shows (Nate's approved
   own-words names; `code_text: true` where he kept the Code's wording). Name changes go to
   gym-skill-extract (`skill_catalog/wg_name_choices.json`), not here. UCG records' name is `description`.
@@ -54,8 +58,16 @@ gym-skill-extract `rules/UCG-*/decisions.md`.
   once by name (`js/scoring/wag.js`): a candidate for the bundle's WG-WAG-2025 same-element digest,
   which nothing reads yet (nor the WG-WAG composition and CV digests: no planner level scores them).
 
+**IDs** (2026-10-20): `tools/source/published-ids.json` lists every skill and vault ID this site ever shipped.
+`sync-skills` refuses a bundle in which one is neither an alias, a redirect nor retired by ucg-code-of-points;
+`check-bundle` and `tests/published-ids.test.mjs` check the vendored bundle the same way. A retired ID with no
+redirect is the CoP's deliberate decision (`cop.py remove --no-redirect`): saved rows holding it show as "Custom".
+A bundle update is the last PR of a linked chain (CoP -> gym-skill-extract -> planner); merge in that order.
+
 **Open**
 - Masters MAG picked up raw "(same box as ...)" notes on 2 PB skills. They may deserve `note_edits.json`
   entries.
-- `pages.yml` runs only on pushes to main, so a bad bundle or failing test shows at deploy, not on the PR.
 - Files are written with LF, and git's CRLF warnings on Windows are harmless.
+- Rules data still hard-coded (above) should come from the bundle's digests, with a test that each table equals
+  its digest (review 2026-10-20, M2/M4; `ADV_VAULT` 228 already disagrees with `rules/UCG-MAG/digest/vault.json`).
+- Who owns the Firebase project, DNS and the other accounts: gym-skill-extract `docs/OPERATIONS.md`.

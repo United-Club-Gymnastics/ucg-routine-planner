@@ -3,12 +3,12 @@
  "code": "UCG-MAG-ADD",
  "discipline": "MAG",
  "edition": "2026-09-30",
- "built": "2026-10-19",
+ "built": "2026-10-20",
  "source": {
   "kind": "authored",
   "document": "MAG/UCG MAG CoP.svg",
   "repo": "nssharpe/ucg-code-of-points",
-  "commit": "e3d2e40872ae2ffd0c70c58aba4de83ce4ad3b18"
+  "commit": "bbdb4496fd78c4bee4fac849313d7cba2ef6a11f"
  },
  "records": [
   {
@@ -1215,6 +1215,8 @@
   "UCG-PB-backward-roll-to-l-with-straight-body": "UCG-PB-bwd-roll-from-upper-arm-to-support"
  },
  "retired": [
-  "UCG-PB-backward-roll-to-l-with-straight-body"
+  "UCG-PB-backward-roll-to-l-with-straight-body",
+  "UCG-PH-name-tbd-pearce",
+  "UCG-PH-spindle-to-handstand-dismount-from-over-the-handles"
  ]
 }

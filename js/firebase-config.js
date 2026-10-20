@@ -10,3 +10,8 @@ export const firebaseConfig = {
   messagingSenderId: '3643978278',
   appId: '1:3643978278:web:1daa7e997de0a115daece7',
 };
+
+// Firebase App Check (reCAPTCHA Enterprise): off until it is set up in the Firebase console.
+// To turn it on: register the web app under App Check with a reCAPTCHA Enterprise key, put the
+// key here, set enabled: true, deploy, and only then enforce App Check for Firestore in the console.
+export const appCheck = { enabled: false, siteKey: '' };

@@ -1,0 +1,9 @@
+{
+  "_about": "Saved before schemaVersion (2026-10): a UCG Infinity level with its vault saved by name, and one by a name the table doesn't have.",
+  "name": "Fixture One", "club": "UCG", "createdAt": 1760000000000, "updatedAt": 1760000000000,
+  "entries": [
+    { "id": "e1", "disc": "wag", "level": "inf", "vault": "Yamashita - 1/2 Off",
+      "routines": { "ub": [{ "name": "Peach salto", "letter": "B", "eg": "6" }] }, "passes": {}, "options": {} },
+    { "id": "e2", "disc": "wag", "level": "inf", "vault": "A vault since renamed", "routines": {}, "passes": {}, "options": {} }
+  ]
+}

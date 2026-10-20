@@ -8,7 +8,7 @@
   "kind": "authored",
   "document": "Masters/UCG Masters MAG CoP.svg",
   "repo": "nssharpe/ucg-code-of-points",
-  "commit": "e3d2e40872ae2ffd0c70c58aba4de83ce4ad3b18"
+  "commit": "bbdb4496fd78c4bee4fac849313d7cba2ef6a11f"
  },
  "records": [
   {
@@ -1783,6 +1783,8 @@
   "UCGM-mag-PB-backward-roll-to-l-with-straight-body": "UCGM-mag-PB-bwd-roll-from-upper-arm-to-support"
  },
  "retired": [
-  "UCGM-mag-PB-backward-roll-to-l-with-straight-body"
+  "UCGM-mag-PB-backward-roll-to-l-with-straight-body",
+  "UCGM-mag-PH-name-tbd-pearce",
+  "UCGM-mag-PH-spindle-to-handstand-dismount-from-over-the-handles"
  ]
 }

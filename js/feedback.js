@@ -83,7 +83,7 @@ export function openFeedback(context) {
       </fieldset>
       <label class="field"><span>Tell us more</span>
         <textarea name="message" rows="5" required placeholder="What happened, or what would help? For a wrong value or skill, say which skill and what you expected."></textarea></label>
-      <p class="muted feedback-note">Sent with it: ${esc(ctx.name || 'not signed in')}${real(ctx.email) ? ` (${esc(ctx.email)})` : ''}${where ? `, ${esc(where)}` : ''}, this page's address, and your browser and device.</p>
+      <p class="muted feedback-note">Sent with it: ${esc(ctx.name || 'not signed in')}${real(ctx.email) ? ` (${esc(ctx.email)})` : ''}${where ? `, ${esc(where)}` : ''}, the planner's address, and your browser and device. Not your athletes' names.</p>
       <p class="error" role="alert" hidden></p>
       <div class="modal-actions"><button type="button" class="btn btn-ghost" data-close>Cancel</button><button type="submit" class="btn btn-primary">Send</button></div>
     </form>`;
@@ -105,7 +105,8 @@ export function openFeedback(context) {
     const now = context(); // in case the page changed while typing
     try {
       await send({
-        type: form.type.value, message, ...now, page: location.href,
+        // The address without its query or #part (they can carry ids or tokens).
+        type: form.type.value, message, ...now, page: location.origin + location.pathname,
         version: document.querySelector('meta[name="planner-version"]')?.content || 'development', ...describeClient(),
       });
       dlg.querySelector('.modal-body').innerHTML = `

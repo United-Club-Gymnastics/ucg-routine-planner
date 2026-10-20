@@ -160,8 +160,9 @@ export function scorePasses(event, level, passes = [[], []], starts = []) {
   }
 
   if (event === 'tu') {
-    const sizes = PASS_SIZES.tu[level];
+    const sizes = PASS_SIZES.tu[level] || [];
     n.forEach((c, i) => {
+      if (!sizes[i]) return;
       const [lo, hi] = sizes[i];
       if (c && (c < lo || c > hi)) warnings.push(`${label(i)}: ${lo === hi ? `${lo}` : `${lo}–${hi}`} skills at this level (${c} listed).`);
     });
