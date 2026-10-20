@@ -26,7 +26,7 @@ import {
 import { EXAMPLES, closestSkill, disciplineLoaded, findSkill, loadDiscipline, magSkillAllowed, matchesQuery, searchSkills, wagSkillAllowed } from './skill-search.js';
 import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
 import * as mag from './scoring/mag.js';
-import { MAG_MASTERS_VAULTS, OTHER_VAULT } from './scoring/mag.js';
+import { MAG_MASTERS_VAULTS, OTHER_VAULT, devBanned, offeredAt } from './scoring/mag.js';
 import { mastersValue, vaultAgeBonus } from './scoring/masters.js';
 import { INFINITY_VAULT_LIST, WAG_MASTERS_VAULTS, WAG_OTHER_VAULT, WAG_WG_VAULTS, WG_TO_MASTERS, xcelVaults } from './scoring/wag.js';
 
@@ -1065,7 +1065,8 @@ function vaultChoices(e) {
       for (const v of MAG_MASTERS_VAULTS) out.push({ id: v.id, name: v.name, meta: fmt(v.value), head: 'UCG Masters vaults' });
     }
     for (const v of MAG_VAULTS) {
-      const banned = e.level === 'dev' && v.flipping;
+      if (!offeredAt(e.level, v)) continue;
+      const banned = e.level === 'dev' && devBanned(v);
       out.push({
         id: v.id, name: `${v.src === 'WG' ? `${v.id} · ` : ''}${v.name}${v.eponym ? ` (${v.eponym})` : ''}`,
         meta: banned ? 'not allowed' : fmt(e.level === 'adv' ? v.adv : v.value), head: v.eg ? `WG element group ${v.eg}` : 'UCG Code of Points',
@@ -1118,7 +1119,7 @@ function vaultBody(e, ev) {
       <dl class="vault-info" id="vault-info"></dl>
     </div>
     ${fam === 'xcel' && e.level === 'gold' ? optionControl(e, 'vt', { id: 'altBoard', kind: 'check', label: 'Alternative springboard (mini-trampoline)', help: '9.5 start value if used' }) : ''}
-    ${levelInfo(e.disc, e.level).masters ? `<p class="routine-help">Your decade's age bonus is added to the vault's value. A vault that isn't in the WG or UCG Code of Points is worth 0.0 plus the age bonus.</p>` : ''}`;
+    ${levelInfo(e.disc, e.level).masters ? `<p class="routine-help">Your decade's age bonus is added to the vault's value. A vault that isn't in the WG Code or the Masters Code of Points is worth 0.0 plus the age bonus.</p>` : ''}`;
 }
 
 // ---- Binding ---------------------------------------------------------------

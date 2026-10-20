@@ -1,5 +1,5 @@
-// UCG Masters (MAG and WAG), from the UCG Masters Rules Policy v2.01 and the
-// Masters start value worksheets. Values depend on the gymnast's age decade.
+// UCG Masters (MAG and WAG), from the UCG Masters Rules Policy (Google Doc, the source of
+// record: README "Scoring rules") and the Masters start value worksheets. Values depend on the gymnast's age decade.
 import { AGE_BONUS } from '../data/masters-vaults.js';
 
 export const DECADES = ['30', '40', '50', '60', '70'];

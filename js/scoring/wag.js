@@ -268,7 +268,7 @@ export function scoreWagMasters(event, skills = [], { decade } = {}) {
 // table, and any other vault (0.0).
 export const WAG_MASTERS_VAULTS = MASTERS_VAULTS.filter((v) => v.disc === 'wag');
 export const WAG_WG_VAULTS = WG_VAULTS;
-export const WAG_OTHER_VAULT = { id: 'other', name: 'Other vault (not in the WG or UCG CoP)', value: 0, src: 'Custom' };
+export const WAG_OTHER_VAULT = { id: 'other', name: 'Other vault (not in the WG Code or the Masters CoP)', value: 0, src: 'Custom' };
 export const findWagMastersVault = (id) =>
   id === 'other' ? WAG_OTHER_VAULT : WAG_MASTERS_VAULTS.find((v) => v.id === id) || WG_VAULTS.find((v) => v.id === id) || null;
 
