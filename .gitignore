@@ -8,3 +8,4 @@ playwright-report/
 # Licensed brand typefaces: added by tools/build_site.mjs when present, never committed.
 assets/fonts/GreedCondensed-*
 assets/fonts/SuisseIntl-*
+*-debug.log

@@ -4,7 +4,7 @@
 // Each build is one version: on install it stores every file of that build (the page,
 // code, fonts, worksheets) so the planner opens instantly and works offline. Pages are
 // always served by the version that's running, so code from two builds never mixes:
-//   - the page itself (navigations) and every file: from this version's cache first,
+//   - the page itself (navigations; privacy.html as itself) and every file: from this version's cache first,
 //     the network only for anything not cached;
 //   - other sites (Google sign-in, the database) are never touched.
 // A new deploy installs alongside and waits; the page shows "Update available" and
@@ -49,7 +49,9 @@ self.addEventListener('fetch', (event) => {
       const cache = await caches.open(CACHE);
       if (req.mode === 'navigate') {
         // The app is one page: serve this version's copy (query strings like ?local don't matter).
-        return (await cache.match('index.html')) || fetch(req);
+        // The site's other pages (privacy.html) are served as themselves.
+        const page = url.pathname.slice(scope.pathname.length);
+        return (page && page !== 'index.html' && (await cache.match(page))) || (await cache.match('index.html')) || fetch(req);
       }
       // This version's files first, then any recent version's (an older open page), then the network.
       const hit = (await cache.match(req)) || (await caches.match(req));

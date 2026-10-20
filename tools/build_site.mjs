@@ -16,7 +16,7 @@ import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statS
 import { execSync } from 'node:child_process';
 import { createRequire } from 'node:module';
 import { dirname, join, relative } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, '_site');
@@ -26,7 +26,7 @@ const hash = (buf) => createHash('sha256').update(buf).digest('hex').slice(0, 10
 
 // CDN URL -> npm module, same versions as package.json.
 const CDN = [
-  [/^https:\/\/www\.gstatic\.com\/firebasejs\/12\.19\.0\/firebase-(app|auth|firestore)\.js$/, (m) => `firebase/${m[1]}`],
+  [/^https:\/\/www\.gstatic\.com\/firebasejs\/12\.19\.0\/firebase-(app|auth|firestore|app-check)\.js$/, (m) => `firebase/${m[1]}`],
   [/^https:\/\/cdn\.jsdelivr\.net\/npm\/pdf-lib@1\.17\.1\/dist\/pdf-lib\.esm\.min\.js$/, () => 'pdf-lib'],
 ];
 const cdnToNpm = {
@@ -93,7 +93,42 @@ const entry = Object.keys(outputs).find((f) => outputs[f].entryPoint === 'js/app
 const rel = (f) => posix(relative(OUT, join(ROOT, f)));
 const preload = outputs[entry].imports.filter((i) => i.kind === 'import-statement').map((i) => rel(i.path));
 
+// Content-Security-Policy (a meta tag: GitHub Pages can't set headers). The planner runs no
+// third-party script except Google sign-in's (apis.google.com) and, with App Check on, reCAPTCHA.
+// No inline script: the service worker is registered from the bundle (app.js).
+const { appCheck, firebaseConfig } = await import(pathToFileURL(join(ROOT, 'js', 'firebase-config.js')).href);
+const recaptcha = appCheck.enabled ? ['https://www.google.com/recaptcha/', 'https://www.gstatic.com/recaptcha/'] : [];
+const CSP = [
+  "default-src 'self'",
+  `script-src 'self' https://apis.google.com ${recaptcha.join(' ')}`,
+  "style-src 'self'",
+  "img-src 'self' data: blob: https://*.googleusercontent.com",
+  "font-src 'self'",
+  `connect-src 'self' https://*.googleapis.com https://docs.google.com${appCheck.enabled ? ' https://content-firebaseappcheck.googleapis.com' : ''}`,
+  // Google sign-in for this planner and for the UCG Infinity import (its own Firebase project).
+  `frame-src https://${firebaseConfig.authDomain} https://ucg-infinity-sv-generator.firebaseapp.com ${appCheck.enabled ? 'https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/' : ''}`,
+  "worker-src 'self'",
+  "manifest-src 'self'",
+  "object-src 'none'",
+  "base-uri 'none'",
+].map((d) => d.trim()).join('; ');
+const securityMeta = [
+  `<meta http-equiv="Content-Security-Policy" content="${CSP}" />`,
+  '<meta name="referrer" content="strict-origin-when-cross-origin" />',
+];
+
+const withSecurity = (page) => page.replace('<meta charset="utf-8" />', ['<meta charset="utf-8" />', ...securityMeta].join(`
+    `));
+
+// The privacy page: same stylesheet and policy as the planner.
+let privacy = readFileSync(join(ROOT, 'privacy.html'), 'utf8').replace('href="css/styles.css?v=__BUILD__"', `href="${cssName}"`);
+privacy = withSecurity(privacy);
+if (privacy.includes('__BUILD__')) throw new Error('privacy.html still has development-only parts');
+writeFileSync(join(OUT, 'privacy.html'), privacy);
+
 let html = readFileSync(join(ROOT, 'index.html'), 'utf8');
+// The policy comes first in <head>, before anything it applies to.
+html = withSecurity(html);
 html = html.replace(/\s*<!-- Cache busting:[\s\S]*?<\/script>/, ''); // the development importmap
 html = html.replace('href="css/styles.css?v=__BUILD__"', `href="${cssName}"`);
 html = html.replace(
@@ -111,11 +146,11 @@ const head = [
   // Sign-in and the database talk to these as soon as Firebase starts.
   '<link rel="preconnect" href="https://firestore.googleapis.com" crossorigin />',
   '<link rel="preconnect" href="https://identitytoolkit.googleapis.com" crossorigin />',
-  // Offline use and instant reopening (sw.js, built below); the page shows when an update is ready.
-  `<script>if ('serviceWorker' in navigator) addEventListener('load', () => navigator.serviceWorker.register('sw.js'));</script>`,
 ];
 html = html.replace('</head>', `    ${head.join('\n    ')}\n  </head>`);
 if (html.includes('__BUILD__') || html.includes('importmap')) throw new Error('index.html still has development-only parts');
+const inline = html.match(/<script(?![^>]*\bsrc=)[^>]*>/);
+if (inline) throw new Error(`index.html has an inline script, which the Content-Security-Policy blocks: ${inline[0]}`);
 writeFileSync(join(OUT, 'index.html'), html);
 
 // Report: what loads at startup vs on demand.

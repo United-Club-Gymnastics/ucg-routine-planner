@@ -3,7 +3,7 @@
 // Firestore keeps a copy on the device: athletes load from it straight away, edits
 // save to it even with no signal and sync when the connection is back, and changes
 // made on another device arrive live (watchAthletes).
-import { firebaseConfig } from './firebase-config.js';
+import { appCheck, firebaseConfig } from './firebase-config.js';
 import { athleteDoc } from './athlete-doc.js';
 
 // Add ?local to the address to try the app without signing in (saves in this browser only).
@@ -20,6 +20,10 @@ export async function init(onUserChange) {
   }
   fb = await import('./firebase.js');
   const app = fb.initializeApp(firebaseConfig);
+  if (appCheck.enabled && appCheck.siteKey) {
+    const ac = await import('./firebase-app-check.js');
+    ac.initializeAppCheck(app, { provider: new ac.ReCaptchaEnterpriseProvider(appCheck.siteKey), isTokenAutoRefreshEnabled: true });
+  }
   auth = fb.getAuth(app);
   try {
     // Offline copy shared by every open tab of the planner.
@@ -37,8 +41,29 @@ export async function signIn() {
   await fb.signInWithPopup(auth, provider);
 }
 
-export async function signOut() {
-  if (auth) await fb.signOut(auth);
+// Signing out also removes the device's copy of the athletes (a shared club computer keeps
+// nothing readable), then reloads: the database can't be used again once it is shut down.
+// Edits not yet on the server would be lost with it: `okToLose()` asks first.
+export async function signOut(okToLose = () => true) {
+  if (!auth) return;
+  const synced = await Promise.race([fb.waitForPendingWrites(db).then(() => true, () => false), new Promise((r) => setTimeout(() => r(false), 4000))]);
+  if (!synced && !okToLose()) return;
+  await fb.signOut(auth);
+  await forgetDevice();
+  location.reload();
+}
+
+async function forgetDevice() {
+  try {
+    await fb.terminate(db);
+    await fb.clearIndexedDbPersistence(db);
+  } catch (e) {
+    // Another open tab of the planner still holds it: that tab clears it when it signs out.
+    console.warn('Could not clear the offline copy:', e);
+  }
+  try {
+    localStorage.removeItem('rp-athlete'); // the last athlete opened
+  } catch {}
 }
 
 // ---- Athletes -------------------------------------------------------------
@@ -124,4 +149,56 @@ export async function deleteAthlete(id) {
   }
   if (guest()) return;
   await fb.deleteDoc(fb.doc(athletesCol(), id));
+}
+
+// ---- Your data: export and delete -------------------------------------------------
+
+// The MAG-only planner (ucg-mag-planner) keeps its athletes in the same account, here.
+const magCol = () => fb.collection(db, 'users', auth.currentUser.uid, 'magAthletes');
+
+/** Everything saved for the signed-in user (or in local mode, this browser), for a download. */
+export async function exportData() {
+  const about = { exported: new Date().toISOString(), app: 'UCG Routine Planner', site: location.origin };
+  if (!isConfigured) return { ...about, account: 'local mode (this browser only)', athletes: readLocal() };
+  if (guest()) return { ...about, athletes: [] };
+  // From the server, so nothing saved from another device is missed.
+  const [athletes, mag] = await Promise.all([fb.getDocsFromServer(athletesCol()), fb.getDocsFromServer(magCol())]);
+  const u = auth.currentUser;
+  return { ...about, account: { uid: u.uid, email: u.email, name: u.displayName }, athletes: fromDocs(athletes), magPlannerAthletes: fromDocs(mag) };
+}
+
+/**
+ * Delete every athlete (this planner's and the MAG planner's), then the sign-in itself. Needs a
+ * connection. Reloads when done. If Google wants a recent sign-in to delete the account, the
+ * athletes are deleted and this throws { code: 'needs-reauth' }: call finishDeleteAccount from
+ * a click (the sign-in popup needs one).
+ */
+export async function deleteAllData() {
+  if (!isConfigured) {
+    localStorage.removeItem(LOCAL_KEY);
+    location.reload();
+    return;
+  }
+  if (guest()) return;
+  for (const col of [athletesCol(), magCol()]) {
+    const snap = await fb.getDocsFromServer(col);
+    await Promise.all(snap.docs.map((d) => fb.deleteDoc(d.ref)));
+  }
+  try {
+    await fb.deleteUser(auth.currentUser);
+  } catch (e) {
+    if (e?.code === 'auth/requires-recent-login') throw Object.assign(new Error('Sign in again to finish'), { code: 'needs-reauth' });
+    throw e;
+  }
+  await forgetDevice();
+  location.reload();
+}
+
+/** After deleteAllData asked for it: sign in again (popup; call from a click), delete the account. */
+export async function finishDeleteAccount() {
+  const user = auth.currentUser;
+  await fb.reauthenticateWithPopup(user, new fb.GoogleAuthProvider());
+  await fb.deleteUser(user);
+  await forgetDevice();
+  location.reload();
 }
