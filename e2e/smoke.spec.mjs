@@ -145,7 +145,7 @@ test('security: the policy is in place and blocks nothing the planner uses, sign
   expect(refused(errors)).toEqual([]);
 });
 
-test('privacy: the draft notice is linked from the footer and sign-in screen', async ({ page }) => {
+test('privacy: the notice is linked from the footer and sign-in screen', async ({ page }) => {
   const errors = watchErrors(page);
   await page.goto('./');
   await expect(page.locator('.signin-note a[href="privacy.html"]')).toBeVisible();
@@ -155,7 +155,7 @@ test('privacy: the draft notice is linked from the footer and sign-in screen', a
   await expect.poll(() => page.evaluate(() => !!navigator.serviceWorker.controller)).toBe(true);
   await page.locator('.site-footer a[href="privacy.html"]').click();
   await expect(page.locator('h1')).toHaveText('Privacy');
-  await expect(page.locator('.banner-draft')).toContainText('DRAFT');
+  await expect(page.locator('main a[href$="NAIGCPrivacyPolicy.pdf"]')).toBeVisible();
   expect(refused(errors)).toEqual([]);
 });
 

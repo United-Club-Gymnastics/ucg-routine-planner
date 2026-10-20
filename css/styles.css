@@ -184,12 +184,9 @@ main { padding: 0 0 clamp(48px, 6vw, 80px); }
 .site-footer { border-top: 1px solid var(--border-default); padding: 16px var(--gutter) 24px; }
 .site-footer a { color: var(--ucg-navy); font-weight: 600; }
 /* privacy.html */
-.banner-draft { font-size: var(--fs-body); text-align: center; }
 .privacy { max-width: 76ch; margin: 24px auto 40px; padding: 8px 24px 24px; background: var(--bg-surface); color: var(--fg-primary); border: 1px solid var(--border-default); }
 .privacy h1 { margin-bottom: 4px; }
-.privacy h2 { margin: 24px 0 6px; font-size: 1.15rem; }
 .privacy a { color: var(--ucg-navy); }
-.privacy mark { background: var(--ucg-golden-yellow); color: var(--ucg-navy); padding: 0 2px; }
 @media (max-width: 800px) { .privacy { margin: 16px 12px 32px; padding: 4px 16px 20px; } }
 .site-footer p { max-width: var(--container-max); margin: 0 auto; font-size: var(--fs-xs); color: var(--fg-secondary); }
 .loading, main > .error { padding: 48px var(--gutter); max-width: var(--container-max); margin: 0 auto; }

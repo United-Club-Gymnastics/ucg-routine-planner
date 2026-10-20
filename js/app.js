@@ -2605,7 +2605,7 @@ function feedbackContext() {
   return {
     name: !u ? 'Not signed in' : u.guest ? 'Guest (not signed in)' : u.local ? 'Local mode' : u.displayName || '(no name)',
     email: signedIn ? u.email || '(no email)' : '(not signed in)',
-    // Never the athlete's name (often a minor's): only whether one is open.
+    // Never the athlete's name: only whether one is open.
     athlete: a ? '(athlete open)' : !u ? '(sign-in screen)' : '(no athlete open)',
     level: e ? levelInfo(e.disc, e.level)?.name || e.level : a ? '(no level yet)' : '(none)',
     apparatus: e ? eventInfo(e.disc, currentEvent(e))?.label || '' : '(none)',
