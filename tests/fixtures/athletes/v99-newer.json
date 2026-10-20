@@ -1,0 +1,5 @@
+{
+  "_about": "Saved by a newer version of the planner than this one.",
+  "name": "Fixture Five", "schemaVersion": 99,
+  "entries": [{ "id": "n1", "disc": "mag", "level": "int", "vault": "101" }, { "id": "n2", "disc": "mag", "level": "pro" }]
+}

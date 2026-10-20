@@ -4,6 +4,7 @@
 // save to it even with no signal and sync when the connection is back, and changes
 // made on another device arrive live (watchAthletes).
 import { firebaseConfig } from './firebase-config.js';
+import { athleteDoc } from './athlete-doc.js';
 
 // Add ?local to the address to try the app without signing in (saves in this browser only).
 // A copy published for testing says so in its page instead: <meta name="planner-mode" content="local">.
@@ -100,7 +101,8 @@ export function watchAthletes(onChange) {
 }
 
 export async function saveAthlete(athlete) {
-  const data = { ...athlete, updatedAt: Date.now() };
+  // Every level, the ones this version doesn't show too (athlete-doc.js): saving never drops one.
+  const data = { ...athleteDoc(athlete), updatedAt: Date.now() };
   if (!isConfigured) {
     const list = readLocal().filter((a) => a.id !== data.id);
     writeLocal([...list, data]);

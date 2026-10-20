@@ -229,6 +229,66 @@ export function newEntry(id, disc, level) {
   return e;
 }
 
+// The skill lists' version (the skill bundle's commit; the production build sets it, see
+// tools/build_site.mjs). Stamped on an entry (entry.catalog) when values are taken from the lists.
+export const SKILLS_VERSION = globalThis.UCG_SKILLS_VERSION || 'dev';
+
+/**
+ * The values a listed skill gives a row at this entry's level: { letter, eg } (only the ones
+ * the list decides), or { dd } for T&T. Picking a skill uses these; so does valueChange.
+ */
+export function listedValues(e, evId, s) {
+  if (e.disc === 'tt') return { dd: s.dd };
+  const fam = levelInfo(e.disc, e.level)?.family;
+  const out = {};
+  const letters = eventSpec(e, evId).letters;
+  if (letters.includes(s.value)) out.letter = s.value;
+  else if (!s.value) out.letter = ''; // a listed skill with no value (Sapphire / Infinity no-value cast)
+  if (fam === 'mag') out.eg = s.eg ? String(s.eg) : '';
+  if (fam === 'infinity' || fam === 'xcel') out.eg = s.group ? String(s.group) : '';
+  // WAG Masters: UCG Masters skills carry their own condensed group; WG groups are mapped.
+  if (fam === 'wagMasters') out.eg = s.mgroup ? String(s.mgroup) : s.group && wag.WG_TO_MASTERS[evId]?.[s.group] ? String(wag.WG_TO_MASTERS[evId][s.group]) : '';
+  return out;
+}
+
+/**
+ * A skill picked from the list whose value or group in the Code is no longer what the
+ * routine saved: { now, was, keys } (keys: 'letter' | 'eg' | 'dd'), or null. Saved routines
+ * keep their values, so a change upstream shows here instead of changing a start value
+ * quietly. A row re-valued from another level can hold a value the list doesn't give (a WG
+ * adjusted value): row.base then holds the list's values at the time, and is compared instead.
+ */
+export function valueChange(e, evId, row) {
+  if (!row?.skillId || !row.fromList || row.noCredit) return null;
+  // Copied from another level before rows kept the list's values (row.base): can't tell.
+  if (e.revalued && !e.catalog && !row.base) return null;
+  const s = findSkill(row.skillId);
+  if (!s) return null; // not loaded yet, or no longer listed
+  const now = listedValues(e, evId, s);
+  const was = row.base || row;
+  const same = (a, b) => String(a ?? '') === String(b ?? '');
+  const keys = Object.keys(now).filter((k) => !same(now[k], was[k]));
+  return keys.length ? { now, was: Object.fromEntries(keys.map((k) => [k, was[k] ?? ''])), keys } : null;
+}
+
+/** Take the Code's current values for the rows valueChange flags (one event, or all). Returns how many changed. */
+export function updateChangedValues(e, evId = null) {
+  let n = 0;
+  for (const ev of DISCIPLINES[e.disc].events) {
+    if (evId && ev.id !== evId) continue;
+    const rows = [...(e.routines?.[ev.id] || []), ...(e.passes?.[ev.id] || []).flatMap((p) => p.skills || [])];
+    for (const row of rows) {
+      const c = valueChange(e, ev.id, row);
+      if (!c) continue;
+      Object.assign(row, c.now);
+      delete row.base;
+      n++;
+    }
+  }
+  if (n) e.catalog = SKILLS_VERSION;
+  return n;
+}
+
 export const blankSkill = () => ({ name: '', letter: '', eg: '' });
 export const blankTT = () => ({ name: '', notation: '', dd: '' });
 
@@ -256,8 +316,8 @@ export function normalizeEntry(e) {
   for (const ev of DISCIPLINES[e.disc].events) {
     if (ev.kind === 'vault') continue;
     if (ev.kind === 'passes') {
-      const sizes = tt.PASS_SIZES[ev.id][e.level];
-      const want = (i) => (Array.isArray(sizes[i]) ? sizes[i][1] : sizes[i]);
+      const sizes = tt.PASS_SIZES[ev.id]?.[e.level] || []; // an unknown level: no rows to add
+      const want = (i) => (Array.isArray(sizes[i]) ? sizes[i][1] : sizes[i] || 0);
       // Stored as [{ skills }, { skills }]: Firestore can't hold nested arrays.
       const p = e.passes[ev.id] || [];
       for (const i of [0, 1]) {

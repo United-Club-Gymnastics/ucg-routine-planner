@@ -81,7 +81,7 @@ const vaultTo = (disc, fromLevel, toLevel, vault, catalog) => {
 test("Vaults follow the same vault into the target level's own list", () => {
   assert.deepEqual(vaultTo('wag', 'gold', 'masters', '1.101', WAG), ['1.00', 'exact']); // handspring -> WG 1.00
   assert.deepEqual(vaultTo('wag', 'masters', 'gold', '1.00', WAG), ['1.101', 'exact']);
-  assert.equal(vaultTo('wag', 'gold', 'inf', '1.101', WAG)[0], 'Front Handspring'); // Infinity table, by name
+  assert.equal(vaultTo('wag', 'gold', 'inf', '1.101', WAG)[0], 'INF-001'); // Infinity table: Front Handspring, by its id
   // Not in the target's list: Masters counts it as any other vault; Xcel gets no vault.
   assert.deepEqual(vaultTo('wag', 'gold', 'masters', '1.108', WAG), ['other', 'other']); // ¼ on ¼ off: not a WG vault
   assert.deepEqual(vaultTo('wag', 'masters', 'gold', 'UCGM-wag-pike-hecht-over-table', WAG), ['', 'none']);

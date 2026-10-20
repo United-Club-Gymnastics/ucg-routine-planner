@@ -5,7 +5,7 @@
 // they come in as athletes with a UCG Infinity level. Nothing is changed in the old
 // planner. Loaded only when someone opens the import.
 import { normalizeEntry, newEntry } from './model.js';
-import { INFINITY_VAULT_LIST } from './scoring/wag.js';
+import { findInfinityVault } from './scoring/wag.js';
 
 // The old planner's Firebase web config (public, as in its repository).
 const OLD_CONFIG = {
@@ -43,8 +43,8 @@ export function convertOldAthlete(old, newId, match = () => null) {
     });
     if (old.eventBonus?.[from]) e.options[ev] = { ...e.options[ev], eventBonus: true };
   }
-  // Vaults are named the same in both (the same reference table).
-  e.vault = INFINITY_VAULT_LIST.some((v) => v.name === old.vault) ? old.vault : '';
+  // Vaults are named the same in both (the same reference table); the planner stores the vault's id.
+  e.vault = findInfinityVault(old.vault)?.id || '';
   // For the one-time "check the matched skills" notice on the level (app.js importNotice).
   const rows = Object.values(e.routines).flat().filter((r) => r.name);
   e.imported = { from: 'infinity-sv', matched: rows.filter((r) => r.matchedFrom).length, typed: rows.filter((r) => !r.matchedFrom).length };
