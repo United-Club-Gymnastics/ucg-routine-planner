@@ -1,6 +1,6 @@
-// UCG MAG start value rules (2026-2028), from the UCG MAG Rules breakdown and
-// rules policy, the MAG start value worksheets, and the MAG Routine
-// Composition Planner spreadsheet.
+// UCG MAG start value rules (2026-2028), from the UCG MAG Rules Breakdown and
+// Rules Policy (Google Sheet / Doc, the sources of record: README "Scoring rules"),
+// the MAG start value worksheets, and the MAG Routine Composition Planner spreadsheet.
 import { VAULTS } from '../data/mag-vaults.js';
 import { VAULTS as MASTERS_VAULTS } from '../data/masters-vaults.js';
 import { MASTERS_LETTERS, mastersValue, meetsRequirement, vaultAgeBonus } from './masters.js';
@@ -128,11 +128,10 @@ export function eventOptions(event, level) {
   if (event === 'fx' && level !== 'masters') {
     o.push({ id: 'conn1', kind: 'count', connect: true, value: 0.1, max: 5, label: 'D or higher + B/C connection', help: '+0.1 each. Mark connected skills with Connect skills (under the routine) to count them.' });
     o.push({ id: 'conn2', kind: 'count', connect: true, value: 0.2, max: 5, label: 'D or higher + D or higher connection', help: '+0.2 each. Mark connected skills with Connect skills (under the routine) to count them.' });
-    // Double flipping dismount: Intermediate and Advanced (both worksheets list it).
-    if (level === 'int' || level === 'adv') {
-      o.push({ id: 'dblDismount', kind: 'check', value: 0.1, detect: true, label: 'Double flipping dismount',
-        help: '+0.1. Ticked automatically when the last skill listed is a double or triple salto.' });
-    }
+    // Double flipping dismount: every level (Nate 2026-10-20: Developmental too, though in practice
+    // nobody there dismounts with a double salto).
+    o.push({ id: 'dblDismount', kind: 'check', value: 0.1, detect: true, label: 'Double flipping dismount',
+      help: '+0.1. Ticked automatically when the last skill listed is a double or triple salto.' });
     if (level === 'adv') {
       o.push({ id: 'dblFlip', kind: 'check', value: 0.3, deduction: true, detect: true, label: 'Routine includes a double flip',
         help: 'Required: -0.3 neutral deduction if missing. Ticked automatically for a double salto from the skill list.' });
@@ -358,23 +357,32 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
 
 export const MAG_MASTERS_VAULTS = MASTERS_VAULTS.filter((v) => v.disc === 'mag');
 
-export function findVault(id) {
-  return VAULTS.find((v) => v.id === String(id)) ?? MAG_MASTERS_VAULTS.find((v) => v.id === id) ?? null;
+// Developmental bans flipping and round-off-entry vaults (UCG MAG Rules Breakdown, Vault row).
+export const devBanned = (v) => !!(v.flipping || v.roundoff);
+
+// Masters offers the WG vaults and the Masters CoP vaults, never the UCG MAG CoP's own vaults
+// (Nate 2026-10-20).
+const UCG_MAG_VAULTS = new Set(VAULTS.filter((v) => v.src === 'UCG').map((v) => v.id));
+export const offeredAt = (level, v) => level !== 'masters' || !UCG_MAG_VAULTS.has(v.id);
+
+export function findVault(id, level) {
+  const v = VAULTS.find((x) => x.id === String(id)) ?? MAG_MASTERS_VAULTS.find((x) => x.id === id) ?? null;
+  return v && (level === undefined || offeredAt(level, v)) ? v : null;
 }
 
-// Masters: a vault not in the WG or UCG CoP is worth 0.0 plus the age bonus.
-export const OTHER_VAULT = { id: 'other', name: 'Other vault (not in the WG or UCG CoP)', eponym: '', eg: '', value: 0, adv: 0, flipping: false, src: 'Custom' };
+// Masters: a vault in neither the WG Code nor the Masters CoP is worth 0.0 plus the age bonus.
+export const OTHER_VAULT = { id: 'other', name: 'Other vault (not in the WG Code or the Masters CoP)', eponym: '', eg: '', value: 0, adv: 0, flipping: false, src: 'Custom' };
 
 export function scoreVault(level, id, { decade } = {}) {
   const L = LEVELS[level] || LEVELS.int;
-  const v = id === 'other' && L.masters ? OTHER_VAULT : findVault(id);
+  const v = id === 'other' && L.masters ? OTHER_VAULT : findVault(id, level);
   if (!v) return null;
   if (L.masters) {
     const ageBonus = vaultAgeBonus('mag', decade);
     return { ...v, dv: v.value, ageBonus, banned: false, capped: false, raw: round1(EXECUTION + v.value + ageBonus), startValue: round1(EXECUTION + v.value + ageBonus) };
   }
   const dv = level === 'adv' ? v.adv : v.value;
-  if (level === 'dev' && v.flipping) {
+  if (level === 'dev' && devBanned(v)) {
     return { ...v, dv, banned: true, capped: false, startValue: 0 };
   }
   const raw = round1(EXECUTION + dv);

@@ -196,6 +196,21 @@ test('WG vaults: exactly the no-salto vaults are non-flipping, and the GymACT va
   assert.equal(scoreVault('dev', '201').startValue, 11.2);
 });
 
+// Nate 2026-10-20: the Rules Breakdown bans round-off-entry vaults at Developmental too.
+test('Developmental bans round-off-entry vaults, flipping or not', () => {
+  for (const id of ['501', '503', '513', '515', '401']) assert.ok(scoreVault('dev', id).banned, id);
+  for (const id of ['201', '206', '301', '303']) assert.equal(scoreVault('dev', id).banned, false, id);
+  assert.equal(scoreVault('int', '501').banned, false);
+});
+
+// Nate 2026-10-20: Masters offers WG vaults and the Masters CoP vaults, never the UCG MAG CoP's own.
+test('Masters MAG: no UCG MAG CoP vaults; WG and Masters vaults stay', () => {
+  assert.equal(scoreVault('masters', 'UCG-VT-tuck-vault', { decade: 30 }), null);
+  assert.equal(scoreVault('masters', '201', { decade: 30 }).startValue, 12.0);
+  assert.ok(scoreVault('masters', 'UCGM-mag-pike-hecht-over-table', { decade: 30 }));
+  assert.equal(scoreVault('int', 'UCG-VT-tuck-vault').startValue, 10.2);
+});
+
 test('all-around adds vault and the five events', () => {
   const aa = scoreAthlete({
     level: 'adv',

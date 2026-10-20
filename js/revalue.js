@@ -16,7 +16,7 @@
 import { eventSpec, levelInfo } from './model.js';
 import { findSkill, magSkillAllowed, wagSkillAllowed } from './skill-search.js';
 import { INFINITY_VAULT_LIST, WAG_MASTERS_VAULTS, WAG_WG_VAULTS, WG_TO_MASTERS, xcelVaults } from './scoring/wag.js';
-import { MAG_MASTERS_VAULTS } from './scoring/mag.js';
+import { MAG_MASTERS_VAULTS, offeredAt } from './scoring/mag.js';
 import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
 
 const ROMAN = { I: '1', II: '2', III: '3', IV: '4', V: '5' };
@@ -144,7 +144,7 @@ function vaultRids(disc, level, id, catalog) {
 // The vault choices a level offers, by planner id.
 function vaultOptions(disc, level) {
   const fam = levelInfo(disc, level).family;
-  if (disc === 'mag') return [...MAG_VAULTS.map((v) => v.id), ...(level === 'masters' ? MAG_MASTERS_VAULTS.map((v) => v.id) : [])];
+  if (disc === 'mag') return [...MAG_VAULTS.filter((v) => offeredAt(level, v)).map((v) => v.id), ...(level === 'masters' ? MAG_MASTERS_VAULTS.map((v) => v.id) : [])];
   if (fam === 'xcel') return xcelVaults(level).map((v) => v.id).filter((id) => id !== 'l9l10');
   if (fam === 'infinity') return INFINITY_VAULT_LIST.map((v) => v.name);
   return [...WAG_WG_VAULTS.map((v) => v.id), ...WAG_MASTERS_VAULTS.map((v) => v.id)];

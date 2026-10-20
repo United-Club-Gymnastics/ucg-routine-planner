@@ -106,10 +106,12 @@ test('Sapphire: an E earns the one-D bonus; no Restricted line', () => {
   assert.ok(scoreXcel('gold', 'fx', [{ name: 'A', letter: 'A', eg: '' }]).totals.some(([l]) => l === 'Restricted'));
 });
 
-test('MAG Intermediate floor offers the double flipping dismount bonus, not the double flip requirement', () => {
-  const ids = eventOptions('fx', 'int').map((o) => o.id);
-  assert.ok(ids.includes('dblDismount'));
-  assert.ok(!ids.includes('dblFlip'));
+test('MAG Developmental and Intermediate floor offer the double flipping dismount bonus, not the double flip requirement', () => {
+  for (const level of ['dev', 'int']) {
+    const ids = eventOptions('fx', level).map((o) => o.id);
+    assert.ok(ids.includes('dblDismount'), level);
+    assert.ok(!ids.includes('dblFlip'), level);
+  }
 });
 
 test('Intermediate Flyers tumbling pass 2: one salto, as the dismount', () => {

@@ -22,6 +22,10 @@ Stop early only if something fails: tests, the build, a merge conflict or the de
 
 Collected 2026-10-18 from the session that landed PR #12.
 
+**Rules sources** (Nate, 2026-10-20): UCG's rules live in Google Docs/Sheets, the source of record. The
+links are in README "Scoring rules"; cite those, not PDF or Word copies. Rulings are recorded in
+gym-skill-extract `rules/UCG-*/decisions.md`.
+
 **Where the skill data comes from** (updated 2026-10-19, refactor step 4)
 - **The skill bundle.** All skill data except T&T comes from gym-skill-extract's `bundle/`, vendored
   byte for byte in `tools/source/bundle/` and pinned by `tools/source/bundle.lock.json`. Update it only
