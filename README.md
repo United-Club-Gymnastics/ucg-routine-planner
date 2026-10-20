@@ -115,6 +115,12 @@ MAG Dev/Int/Adv, MAG Masters and the T&T cards are the printouts people already 
 
 ## Develop locally
 
+From a clone: **Node 22** (`npm ci`), and for the data tools **Python 3.13** with `pip install jsonschema rfc3987`
+(`npm run sync-skills` validates the bundle against its schemas; `tools/build_skills.py` and `tools/build_data.py`
+need only the standard library). `npm run sync-skills` also needs the gym-skill-extract checkout
+(`GYM_SKILL_EXTRACT_DIR`, default `C:/dev/gym-skill-extract`); everything else builds from this repo alone.
+The browser smoke test needs `npx playwright install chromium` once.
+
 ```bash
 npm start      # serves the source on http://localhost:8080 (no build needed)
 npm test       # scoring tests (Node 20+)
@@ -128,7 +134,7 @@ Julia Sharpe's *UCG Infinity SV Sheets* (jzsharpe.github.io/ucg-infinity-sv, Fir
 
 ## Build and deploy
 
-Pushing to `main` runs `.github/workflows/pages.yml`: `npm ci`, the scoring tests, `npm run build`, a browser smoke test of the build, then publishes `_site/` to GitHub Pages. To do the same locally:
+Every pull request and push to `main` runs the `check` job of `.github/workflows/pages.yml`: `npm ci --ignore-scripts` (+ `npm rebuild esbuild`), `npm run check-bundle`, `js/data` rebuilt by both Python builders and compared, the scoring tests, `npm run build`, a browser smoke test of the build. On `main` the `deploy` job then publishes that `_site/` to GitHub Pages. To do the same locally:
 
 ```bash
 npm ci                                  # once: esbuild, Firebase, pdf-lib, Playwright
