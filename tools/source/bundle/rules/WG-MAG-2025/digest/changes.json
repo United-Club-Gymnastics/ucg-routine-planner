@@ -1,0 +1,943 @@
+{
+ "code": "WG-MAG-2025",
+ "about": "Every change the WG MAG Technical Committee newsletters make to the 2025-2028 Code, one entry per change, in our own words. cite = newsletter and its page (text in ../newsletters/text/). elements = planner IDs (WG-{APP}-{EG}-{n}, vault numbers); catalog_ids is filled from skill_catalog/aliases_mag.json by `python rules/changes.py rules/WG-MAG-2025`. numbers_as_printed keeps numbers the newsletter prints that are not elements of this Code edition. planner: yes = the routine planner must implement or check it; judging = it changes how judges evaluate, nothing a routine list shows; no = nothing for the planner. Table-of-Elements changes are applied to the skill data by 'WG MAG CoP Extraction/amendments.json'. Procedure: docs/NEWSLETTERS.md.",
+ "newsletters": {
+  "MAG-NL-1": {
+   "title": "MAG Newsletter No. 1",
+   "date": "2025-09-16",
+   "printed": "August 2025",
+   "effective": "immediately, except the unique corner transitions and dismount-first counting from 2026-01-01 (MAG-NL-2 p. 3)",
+   "text": "../newsletters/text/mag-nl-1.md"
+  },
+  "MAG-NL-2": {
+   "title": "MAG Newsletter No. 2",
+   "date": "2025-09-19",
+   "printed": "19 September 2025",
+   "effective": "immediately",
+   "text": "../newsletters/text/mag-nl-2.md"
+  },
+  "MAG-NL-3": {
+   "title": "MAG Newsletter No. 3",
+   "date": "2025-12-01",
+   "printed": "1 December 2025",
+   "effective": "2026-01-01",
+   "text": "../newsletters/text/mag-nl-3.md"
+  },
+  "MAG-NL-4": {
+   "title": "MAG Newsletter No. 4",
+   "date": "2026-07-23",
+   "printed": "July 2026",
+   "effective": "2026-09-01 (new elements immediately)",
+   "text": "../newsletters/text/mag-nl-4.md"
+  }
+ },
+ "changes": [
+  {
+   "id": "MAG-NL-1-01",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "rule_change",
+   "apparatus": "FX",
+   "elements": [
+    "WG-FX-I-61",
+    "WG-FX-I-62",
+    "WG-FX-I-67",
+    "WG-FX-I-68",
+    "WG-FX-I-74",
+    "WG-FX-I-75",
+    "WG-FX-I-115",
+    "WG-FX-I-116",
+    "WG-FX-I-117",
+    "WG-FX-I-43",
+    "WG-FX-II-8"
+   ],
+   "catalog_ids": {
+    "WG-FX-I-61": [
+     "MAG-FX-0024"
+    ],
+    "WG-FX-I-62": [
+     "MAG-FX-0025"
+    ],
+    "WG-FX-I-67": [
+     "MAG-FX-0026"
+    ],
+    "WG-FX-I-68": [
+     "MAG-FX-0027"
+    ],
+    "WG-FX-I-74": [
+     "MAG-FX-0029"
+    ],
+    "WG-FX-I-75": [
+     "MAG-FX-0030"
+    ],
+    "WG-FX-I-115": [
+     "MAG-FX-0119"
+    ],
+    "WG-FX-I-116": [
+     "MAG-FX-0120"
+    ],
+    "WG-FX-I-117": [
+     "MAG-FX-0121"
+    ],
+    "WG-FX-I-43": [
+     "MAG-FX-0118"
+    ],
+    "WG-FX-II-8": [
+     "MAG-FX-0122"
+    ]
+   },
+   "numbers_as_printed": [
+    "I.73"
+   ],
+   "summary": "Balance requirement widened: the gymnast now chooses between a balance on one leg and one jump/leap from a list of ten (all worth at least A). It may sit outside the 8 counting elements. Missing it: 0.30 neutral deduction (D-jury). Five listed jumps were not in this Code's Table and are added as elements: the newsletter's I.43 and II.8 keep their numbers; I.15, I.16 and I.17 clash with the grid (wrong column, or a Manna element) and become I.115, I.116 and I.117 (Nate, 2026-10-20). The printed I.73 (stag leap with full turn) is not the Code's I.73 (butterfly) and was dropped from the list by MAG-NL-3.",
+   "cite": "MAG-NL-1 pp. 2, 9; Code p. 27 §10.2.2.6 m",
+   "planner": "yes",
+   "superseded_in_part_by": [
+    "MAG-NL-2-05",
+    "MAG-NL-3-07",
+    "MAG-NL-4-05"
+   ],
+   "printed_as": {
+    "WG-FX-I-115": "I.15",
+    "WG-FX-I-116": "I.16",
+    "WG-FX-I-117": "I.17",
+    "WG-FX-I-43": "I.43",
+    "WG-FX-II-8": "II.8"
+   }
+  },
+  {
+   "id": "MAG-NL-1-02",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "clarification",
+   "apparatus": "FX",
+   "elements": [
+    "WG-FX-I-68"
+   ],
+   "catalog_ids": {
+    "WG-FX-I-68": [
+     "MAG-FX-0027"
+    ]
+   },
+   "summary": "Endo jump: the hands must land and the gymnast lower to front support under control, or it isn't credited and the E-jury deducts the landing.",
+   "cite": "MAG-NL-1 p. 3",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-1-03",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "rule_change",
+   "apparatus": "FX",
+   "summary": "The first thing in the exercise must be a tumbling pass; opening with any non-acro element costs 0.30 neutral (D-jury).",
+   "cite": "MAG-NL-1 p. 3; MAG-NL-2 p. 3",
+   "planner": "yes"
+  },
+  {
+   "id": "MAG-NL-1-04",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "rule_change",
+   "apparatus": "FX",
+   "summary": "Corner transitions: plain steps (even with a ½ turn) lose a little for artistry; dance leaps, jumps and turns lacking height or stretch lose 0.10 (E-jury).",
+   "cite": "MAG-NL-1 p. 3; MAG-NL-2 p. 3",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-1-05",
+   "newsletter": "MAG-NL-1",
+   "effective": "2026-01-01",
+   "type": "rule_change",
+   "apparatus": "FX",
+   "summary": "Every corner transition must be different from the others: 0.30 neutral deduction (D-jury), once per exercise.",
+   "cite": "MAG-NL-1 p. 3; MAG-NL-2 p. 3; MAG-NL-3 p. 2 (amount read from the page image)",
+   "planner": "judging",
+   "superseded_in_part_by": [
+    "MAG-NL-4-03"
+   ]
+  },
+  {
+   "id": "MAG-NL-1-06",
+   "newsletter": "MAG-NL-1",
+   "effective": "2026-01-01",
+   "type": "rule_change",
+   "apparatus": "FX",
+   "summary": "Floor counting: the D-jury counts the dismount (the final salto) first, then the 7 highest other elements, as on the other apparatus. [Code: the 8 highest.]",
+   "cite": "MAG-NL-1 p. 3; MAG-NL-2 p. 3; Code p. 14 §6.1",
+   "planner": "yes"
+  },
+  {
+   "id": "MAG-NL-1-07",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "clarification",
+   "apparatus": "FX",
+   "elements": [
+    "WG-FX-I-93",
+    "WG-FX-I-100"
+   ],
+   "catalog_ids": {
+    "WG-FX-I-93": [
+     "MAG-FX-0038"
+    ],
+    "WG-FX-I-100": [
+     "MAG-FX-0040"
+    ]
+   },
+   "summary": "Flair spindle to handstand: the spindle must be done within 2 circles; for these two the third front support isn't needed, since the gymnast is rising to handstand.",
+   "cite": "MAG-NL-1 p. 3",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-1-08",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "clarification",
+   "apparatus": "FX",
+   "elements": [
+    "WG-FX-I-2",
+    "WG-FX-I-3"
+   ],
+   "catalog_ids": {
+    "WG-FX-I-2": [
+     "MAG-FX-0002"
+    ],
+    "WG-FX-I-3": [
+     "MAG-FX-0003"
+    ]
+   },
+   "summary": "Manna means horizontal legs; legs up to 30° low cost 0.10/0.30. Higher legs, up to vertical, are credited as the V-sit and not deducted; a V-sit up to 15° off vertical costs 0.10, 15°-30° 0.30, beyond 30° no credit.",
+   "cite": "MAG-NL-1 p. 4",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-1-09",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "clarification",
+   "apparatus": "PH",
+   "summary": "Scissors: leaning on a leg before the scissor is finished means no credit and 0.50 for interruption. Slightly bent arms or brushing the horse still allow credit, at 0.10 each.",
+   "cite": "MAG-NL-1 p. 4",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-1-10",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "clarification",
+   "apparatus": "PH",
+   "elements": [
+    "WG-PH-II-57"
+   ],
+   "catalog_ids": {
+    "WG-PH-II-57": [
+     "MAG-PH-0039"
+    ]
+   },
+   "summary": "Bertoncelj may finish crosswise or sideways on one pommel; finishing sideways lets it begin a flop or a combined element. The newsletter's table values such sequences: Bertoncelj (or Davtyan) and circle, or Bertoncelj and DSB, counted as parts 1-2, then a third part E and a fourth F; or followed by a Russian of 180°-270° (B) E, 360°-540° (C) F, 720°-900° (D) G, 1080° (E) H.",
+   "cite": "MAG-NL-1 p. 5 (table read from the page image)",
+   "planner": "no"
+  },
+  {
+   "id": "MAG-NL-1-11",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "clarification",
+   "apparatus": "SR",
+   "elements": [
+    "WG-SR-I-75",
+    "WG-SR-I-81",
+    "WG-SR-I-86",
+    "WG-SR-I-87",
+    "WG-SR-I-88"
+   ],
+   "catalog_ids": {
+    "WG-SR-I-75": [
+     "MAG-SR-0024"
+    ],
+    "WG-SR-I-81": [
+     "MAG-SR-0025"
+    ],
+    "WG-SR-I-86": [
+     "MAG-SR-0026"
+    ],
+    "WG-SR-I-87": [
+     "MAG-SR-0027"
+    ],
+    "WG-SR-I-88": [
+     "MAG-SR-0028"
+    ]
+   },
+   "summary": "Exactly five elements meet the rings swing-to-handstand requirement (the list the planner's SWING_HS already uses).",
+   "cite": "MAG-NL-1 p. 5; Code p. 60 §12.2.2.2",
+   "planner": "yes"
+  },
+  {
+   "id": "MAG-NL-1-12",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "clarification",
+   "apparatus": "PB",
+   "elements": [
+    "WG-PB-II-82",
+    "WG-PB-II-83",
+    "WG-PB-II-84",
+    "WG-PB-I-41"
+   ],
+   "catalog_ids": {
+    "WG-PB-II-82": [
+     "MAG-PB-0070"
+    ],
+    "WG-PB-II-83": [
+     "MAG-PB-0071"
+    ],
+    "WG-PB-II-84": [
+     "MAG-PB-0072"
+    ],
+    "WG-PB-I-41": [
+     "MAG-PB-0022"
+    ]
+   },
+   "summary": "Gatson-style hops to handstand (¾, full or 1½ turn) need flight: at least ¾ of the turn in the air before the first hand regrasps, or no credit.",
+   "cite": "MAG-NL-1 p. 5",
+   "planner": "judging",
+   "superseded_in_part_by": [
+    "MAG-NL-2-01"
+   ]
+  },
+  {
+   "id": "MAG-NL-1-13",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "clarification",
+   "apparatus": "HB",
+   "summary": "Start: a cast of up to three swings is free. Each forward or backward movement is a swing, and a jump into swing or a coach's push also counts as one.",
+   "cite": "MAG-NL-1 p. 6; Code p. 114 §15.2.1.1",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-1-14",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "clarification",
+   "apparatus": "HB",
+   "summary": "An extra grip change counts as an additional hand support: 0.10 each (e.g. Zou Li Min or Adler full to mixed grip, then an immediate change; the second of two changes after an overgrip Endo, kip or back uprise). One change from mixed grip to undergrip is free.",
+   "cite": "MAG-NL-1 p. 6; Code §9.4",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-1-15",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "clarification",
+   "apparatus": "HB",
+   "summary": "Mount: back uprise to support (arm-body angle under 45°) then a free hip or similar is a reversal of direction, 0.30. No support shown: no deduction.",
+   "cite": "MAG-NL-1 p. 6; Code §15.2.1.2 d",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-1-16",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "clarification",
+   "apparatus": "HB",
+   "elements": [
+    "WG-HB-II-82",
+    "WG-HB-II-83"
+   ],
+   "catalog_ids": {
+    "WG-HB-II-82": [
+     "MAG-HB-0060"
+    ],
+    "WG-HB-II-83": [
+     "MAG-HB-0061"
+    ]
+   },
+   "summary": "The ½-turn back saltos over the bar (tucked, and Gaylord 2) are Kovacs-style flights for the special repetition rule (at most two flights of each style).",
+   "cite": "MAG-NL-1 p. 6; Code p. 116 §15.2.2.5 c",
+   "planner": "yes"
+  },
+  {
+   "id": "MAG-NL-1-17",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "clarification",
+   "apparatus": "HB",
+   "summary": "A fifth flight can be among the counting elements only when two of the flights are done in direct connection (C+C or better).",
+   "cite": "MAG-NL-1 p. 6; Code p. 116 §15.2.2.6",
+   "planner": "yes"
+  },
+  {
+   "id": "MAG-NL-1-18",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "new_element",
+   "apparatus": "PH",
+   "elements": [
+    "WG-PH-II-60"
+   ],
+   "catalog_ids": {
+    "WG-PH-II-60": [
+     "MAG-PH-0140"
+    ]
+   },
+   "summary": "New: Bertoncelj into Busnari, G, EG II (Moore).",
+   "cite": "MAG-NL-1 p. 7",
+   "planner": "no"
+  },
+  {
+   "id": "MAG-NL-1-19",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "new_element",
+   "apparatus": "VT",
+   "elements": [
+    "522"
+   ],
+   "catalog_ids": {
+    "522": [
+     "MAG-VT-0093"
+    ]
+   },
+   "summary": "New vault 522 (group V), 5.6: Yurchenko with tucked back salto and full twist, by the Code's convention for vaults 519-520 a Yurchenko double back tuck with full twist (Olfati).",
+   "cite": "MAG-NL-1 p. 7",
+   "planner": "no"
+  },
+  {
+   "id": "MAG-NL-1-20",
+   "newsletter": "MAG-NL-1",
+   "effective": "2025-09-16",
+   "type": "new_element",
+   "apparatus": "PB",
+   "elements": [
+    "WG-PB-II-95"
+   ],
+   "catalog_ids": {
+    "WG-PB-II-95": [
+     "MAG-PB-0224"
+    ]
+   },
+   "summary": "New: straddled front 1¼ salto, ½ turn, landing in upper arms, E, EG II (Hall).",
+   "cite": "MAG-NL-1 p. 8",
+   "planner": "no"
+  },
+  {
+   "id": "MAG-NL-2-01",
+   "newsletter": "MAG-NL-2",
+   "effective": "2025-09-19",
+   "type": "renumber",
+   "apparatus": "PB",
+   "elements": [
+    "WG-PB-II-81",
+    "WG-PB-II-82",
+    "WG-PB-II-83",
+    "WG-PB-II-84",
+    "WG-PB-II-87",
+    "WG-PB-II-88",
+    "WG-PB-II-89"
+   ],
+   "catalog_ids": {
+    "WG-PB-II-81": [
+     "MAG-PB-0069"
+    ],
+    "WG-PB-II-82": [
+     "MAG-PB-0070"
+    ],
+    "WG-PB-II-83": [
+     "MAG-PB-0071"
+    ],
+    "WG-PB-II-84": [
+     "MAG-PB-0072"
+    ],
+    "WG-PB-II-87": [
+     "MAG-PB-0221"
+    ],
+    "WG-PB-II-88": [
+     "MAG-PB-0222"
+    ],
+    "WG-PB-II-89": [
+     "MAG-PB-0223"
+    ]
+   },
+   "summary": "Gatson-style elements: the hop must turn at least ¾ before the first hand regrasps, and a clear hop is required (no hop: no credit). Less than ¾ in the hop (Patron-style: hop ¼, then ¾ on one arm) is credited one letter lower, in new boxes II.87 (¾ total, C), II.88 (full, D, now Patron) and II.89 (1¼, E). II.82 now ends on one rail; II.83 keeps only the hop full turn (Gatson 1, E): the reverse full turn named Patron moves to II.88 (D).",
+   "cite": "MAG-NL-2 p. 1",
+   "planner": "yes",
+   "ids_note": "WG-PB-II-83 keeps its element (MAG-PB-0071) as Gatson 1; Patron is a new element MAG-PB-0222 (split_from MAG-PB-0071). A saved routine holding WG-PB-II-83 for a Patron now values it E; re-pick II.88."
+  },
+  {
+   "id": "MAG-NL-2-02",
+   "newsletter": "MAG-NL-2",
+   "effective": "2025-09-19",
+   "type": "clarification",
+   "apparatus": "HB",
+   "elements": [
+    "WG-HB-I-69",
+    "WG-HB-I-68"
+   ],
+   "catalog_ids": {
+    "WG-HB-I-69": [
+     "MAG-HB-0026"
+    ],
+    "WG-HB-I-68": [
+     "MAG-HB-0025"
+    ]
+   },
+   "summary": "Russian giant vs el-grip giant: with the shoulders over the hands, the shoulder-to-hip line must be within 60° of horizontal (inlocated); above 60° it is credited as an el-grip giant.",
+   "cite": "MAG-NL-2 p. 2",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-2-03",
+   "newsletter": "MAG-NL-2",
+   "effective": "2025-09-19",
+   "type": "clarification",
+   "apparatus": "HB",
+   "elements": [
+    "WG-HB-II-42"
+   ],
+   "catalog_ids": {
+    "WG-HB-II-42": [
+     "MAG-HB-0049"
+    ]
+   },
+   "summary": "Winkler/Pogorelov must be straight; bent more than 45° in the release: 0.50 and no credit. Deduction table: body bent 0-30° 0.10, 30-45° 0.30; plane deviation 0.10/0.30; bent legs 0.10-0.50; bent ankles 0.10; low amplitude 0.10/0.30.",
+   "cite": "MAG-NL-2 p. 3",
+   "planner": "judging",
+   "superseded_in_part_by": [
+    "MAG-NL-3-15"
+   ]
+  },
+  {
+   "id": "MAG-NL-2-04",
+   "newsletter": "MAG-NL-2",
+   "effective": "2025-09-19",
+   "type": "clarification",
+   "apparatus": "FX",
+   "summary": "Sets when NL1's floor items apply: immediately, except the unique corner transitions and dismount-first counting (2026-01-01).",
+   "cite": "MAG-NL-2 p. 3",
+   "planner": "no"
+  },
+  {
+   "id": "MAG-NL-2-05",
+   "newsletter": "MAG-NL-2",
+   "effective": "2025-09-19",
+   "type": "clarification",
+   "apparatus": "FX",
+   "numbers_as_printed": [
+    "I.73"
+   ],
+   "summary": "Stag leap with full turn: the whole turn must be in the air to meet the jump/leap requirement and be worth A; ½ in the air plus ½ on one leg is only a transition.",
+   "cite": "MAG-NL-2 p. 4",
+   "planner": "no",
+   "superseded_in_part_by": [
+    "MAG-NL-3-07"
+   ]
+  },
+  {
+   "id": "MAG-NL-3-01",
+   "newsletter": "MAG-NL-3",
+   "effective": "2026-01-01",
+   "type": "rule_change",
+   "apparatus": [
+    "PH",
+    "SR",
+    "PB",
+    "HB"
+   ],
+   "summary": "Dismount element group capped: it is worth the dismount's value up to 0.50 (A 0.10 … E 0.50, F and up 0.50). The Code had it equal to the dismount value without a cap.",
+   "cite": "MAG-NL-3 p. 1; Code p. 15 §7.2.8",
+   "planner": "yes"
+  },
+  {
+   "id": "MAG-NL-3-02",
+   "newsletter": "MAG-NL-3",
+   "effective": "2026-01-01",
+   "type": "prohibited",
+   "apparatus": "all",
+   "summary": "Juniors: every triple salto is prohibited (red dot), dismounts and floor saltos alike. No UCG MAG level uses WG junior rules (Nate, 2026-10-20).",
+   "cite": "MAG-NL-3 p. 1",
+   "planner": "no"
+  },
+  {
+   "id": "MAG-NL-3-03",
+   "newsletter": "MAG-NL-3",
+   "effective": "2026-01-01",
+   "type": "clarification",
+   "apparatus": "all",
+   "summary": "Stick bonus: raising the heels or toes to keep balance means no bonus.",
+   "cite": "MAG-NL-3 p. 2; Code p. 15 §7.2.9",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-3-04",
+   "newsletter": "MAG-NL-3",
+   "effective": "2026-01-01",
+   "type": "clarification",
+   "apparatus": "all",
+   "summary": "Landing with a fall: the fall plus any steps and the low-landing fault total at most 1.00; preparation, feet-apart and other faults are added on top.",
+   "cite": "MAG-NL-3 p. 2",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-3-05",
+   "newsletter": "MAG-NL-3",
+   "effective": "2026-01-01",
+   "type": "clarification",
+   "apparatus": "all",
+   "summary": "Double salto forward piked: full value needs straight knees (up to 45° bend) until the back is horizontal in the second salto.",
+   "cite": "MAG-NL-3 p. 2",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-3-06",
+   "newsletter": "MAG-NL-3",
+   "effective": "2026-01-01",
+   "type": "rule_change",
+   "apparatus": "FX",
+   "summary": "Unique corner transitions confirmed: all must differ, or 0.30 neutral deduction once (D-jury). Turns, rolls, straight or bent-leg jumps, kneeling and the like make a transition different.",
+   "cite": "MAG-NL-3 p. 2 (amount read from the page image)",
+   "planner": "judging",
+   "superseded_in_part_by": [
+    "MAG-NL-4-03"
+   ]
+  },
+  {
+   "id": "MAG-NL-3-07",
+   "newsletter": "MAG-NL-3",
+   "effective": "2026-01-01",
+   "type": "rule_change",
+   "apparatus": "FX",
+   "numbers_as_printed": [
+    "I.73"
+   ],
+   "summary": "No stag leap (with full or ½ turn) meets the jump/leap requirement any more.",
+   "cite": "MAG-NL-3 p. 3",
+   "planner": "yes"
+  },
+  {
+   "id": "MAG-NL-3-08",
+   "newsletter": "MAG-NL-3",
+   "effective": "2026-01-01",
+   "type": "clarification",
+   "apparatus": "PH",
+   "summary": "Handstand dismounts: once handstand is reached, a big fault in the extra turn or travel means only the to-handstand part is valued.",
+   "cite": "MAG-NL-3 p. 3",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-3-09",
+   "newsletter": "MAG-NL-3",
+   "effective": "2026-01-01",
+   "type": "value_change",
+   "apparatus": "PH",
+   "summary": "Complex elements (more than one circle: flops, combined elements, spindles, Pinheiro, …) can't combine with a handstand for a higher value; they count as two elements (e.g. a circle and Stöckli to handstand = B + C).",
+   "cite": "MAG-NL-3 p. 3",
+   "planner": "yes"
+  },
+  {
+   "id": "MAG-NL-3-10",
+   "newsletter": "MAG-NL-3",
+   "effective": "2026-01-01",
+   "type": "clarification",
+   "apparatus": "SR",
+   "summary": "Open-hand holds: wrists resting over the rings count as a false grip, 0.10.",
+   "cite": "MAG-NL-3 p. 3",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-3-11",
+   "newsletter": "MAG-NL-3",
+   "effective": "2026-01-01",
+   "type": "rule_change",
+   "apparatus": "PB",
+   "summary": "Compositional errors, 0.30 each: jumping from the floor to L-sit, and an upper-arm kip to support.",
+   "cite": "MAG-NL-3 p. 4 (amount read from the page image)",
+   "planner": "yes"
+  },
+  {
+   "id": "MAG-NL-3-12",
+   "newsletter": "MAG-NL-3",
+   "effective": "2026-01-01",
+   "type": "clarification",
+   "apparatus": "PB",
+   "summary": "Felge (peach) to support must finish at or above horizontal: up to 45° below is a small deduction, lower a medium one.",
+   "cite": "MAG-NL-3 p. 4",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-3-13",
+   "newsletter": "MAG-NL-3",
+   "effective": "2026-01-01",
+   "type": "clarification",
+   "apparatus": "PB",
+   "summary": "Bhavsar and Moy types: hitting the floor means no credit.",
+   "cite": "MAG-NL-3 p. 4",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-3-14",
+   "newsletter": "MAG-NL-3",
+   "effective": "2026-01-01",
+   "type": "clarification",
+   "apparatus": "PB",
+   "elements": [
+    "WG-PB-II-35"
+   ],
+   "catalog_ids": {
+    "WG-PB-II-35": [
+     "MAG-PB-0049"
+    ]
+   },
+   "summary": "Elements connected to a Healy (e.g. Makuts) are one element with a single hand change before the Healy, two elements with two.",
+   "cite": "MAG-NL-3 p. 4",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-3-15",
+   "newsletter": "MAG-NL-3",
+   "effective": "2026-01-01",
+   "type": "value_change",
+   "apparatus": "HB",
+   "elements": [
+    "WG-HB-II-42"
+   ],
+   "catalog_ids": {
+    "WG-HB-II-42": [
+     "MAG-HB-0049"
+    ]
+   },
+   "summary": "Winkler/Pogorelov bent more than 45° before the feet pass the bar: credited as D with 0.30 for non-distinct position (NL2 had no credit and 0.50).",
+   "cite": "MAG-NL-3 p. 4",
+   "planner": "judging",
+   "supersedes": [
+    "MAG-NL-2-03"
+   ]
+  },
+  {
+   "id": "MAG-NL-3-16",
+   "newsletter": "MAG-NL-3",
+   "effective": "2026-01-01",
+   "type": "clarification",
+   "apparatus": "HB",
+   "summary": "A flight is credited when the gymnast regrasps with both hands and swings under control through the vertical before falling, or catches with one arm and carries on without stopping. Letting go with the hands one after the other: 0.10.",
+   "cite": "MAG-NL-3 p. 5 (amount read from the page image); Code p. 116 §15.2.2.11",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-3-17",
+   "newsletter": "MAG-NL-3",
+   "effective": "2026-01-01",
+   "type": "clarification",
+   "apparatus": "HB",
+   "summary": "Quast into a one-arm giant gets no credit, because the Quast has to end with both hands on the bar.",
+   "cite": "MAG-NL-3 p. 5",
+   "planner": "yes"
+  },
+  {
+   "id": "MAG-NL-3-18",
+   "newsletter": "MAG-NL-3",
+   "effective": "2025-12-01",
+   "type": "new_element",
+   "apparatus": "PH",
+   "summary": "New: Bertoncelj followed by a one-pommel Davtyan, F (Manukyan). No number printed; placed at II.72, the F box of the Davtyan/Bezugo row (Nate asked for a box, 2026-10-20).",
+   "cite": "MAG-NL-3 p. 5",
+   "planner": "no",
+   "elements": [
+    "WG-PH-II-72"
+   ],
+   "catalog_ids": {
+    "WG-PH-II-72": [
+     "MAG-PH-0141"
+    ]
+   }
+  },
+  {
+   "id": "MAG-NL-3-19",
+   "newsletter": "MAG-NL-3",
+   "effective": "2025-12-01",
+   "type": "new_element",
+   "apparatus": "PB",
+   "elements": [
+    "WG-PB-II-87"
+   ],
+   "catalog_ids": {
+    "WG-PB-II-87": [
+     "MAG-PB-0221"
+    ]
+   },
+   "summary": "Named: back swing, ¼ hop and turning on, ¾ in all, ending on one rail, turning the reverse way, C (Patron 2). No number printed; placed at II.87, the matching C box of MAG-NL-2-01 (agent call, decisions.md).",
+   "cite": "MAG-NL-3 p. 5",
+   "planner": "no"
+  },
+  {
+   "id": "MAG-NL-4-01",
+   "newsletter": "MAG-NL-4",
+   "effective": "2026-09-01",
+   "type": "rule_change",
+   "apparatus": [
+    "FX",
+    "VT"
+   ],
+   "summary": "Line violation: landing with one foot out and feet apart, then both feet ending out while closing them, is 0.30.",
+   "cite": "MAG-NL-4 p. 2",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-4-02",
+   "newsletter": "MAG-NL-4",
+   "effective": "2026-09-01",
+   "type": "rule_change",
+   "apparatus": [
+    "FX",
+    "VT"
+   ],
+   "summary": "Stick bonus may be awarded together with a line deduction.",
+   "cite": "MAG-NL-4 p. 2",
+   "planner": "yes"
+  },
+  {
+   "id": "MAG-NL-4-03",
+   "newsletter": "MAG-NL-4",
+   "effective": "2026-09-01",
+   "type": "rule_change",
+   "apparatus": "FX",
+   "summary": "For unique corner transitions, all stag leaps count as one transition, all sissonnes as one, and all split jumps (cross or side) as one, with or without turns. Every transition must show artistry; the appendix lists criteria and 0.10 deductions per type (simple steps, scissor kick, cartwheels, split jump, sissonne, handstands, stag leap, spins, kneeling, jumps to support, no transition).",
+   "cite": "MAG-NL-4 pp. 2, 5",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-4-04",
+   "newsletter": "MAG-NL-4",
+   "effective": "2026-09-01",
+   "type": "clarification",
+   "apparatus": "FX",
+   "summary": "Corner transition deductions (appendix): leg or legs below horizontal, split under 180° (split jump) or 90° (sissonne), lack of jump or separation (stag), incomplete turns, unsteadiness, each 0.10; uncontrolled landing in a jump to support 0.10/0.30/0.50 and no credit; a pause over 2 seconds between passes 0.10.",
+   "cite": "MAG-NL-4 p. 5",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-4-05",
+   "newsletter": "MAG-NL-4",
+   "effective": "2026-09-01",
+   "type": "rule_change",
+   "apparatus": "FX",
+   "summary": "Jump/leap requirement: the jumps with 1/1, 3/2 and 2/1 turn to front support must take off from two feet, and jumps to support need a controlled landing on the hands (0.10, 0.30 or 0.50 and no credit).",
+   "cite": "MAG-NL-4 p. 2",
+   "planner": "yes",
+   "elements": [
+    "WG-FX-I-115",
+    "WG-FX-I-116",
+    "WG-FX-I-117"
+   ],
+   "catalog_ids": {
+    "WG-FX-I-115": [
+     "MAG-FX-0119"
+    ],
+    "WG-FX-I-116": [
+     "MAG-FX-0120"
+    ],
+    "WG-FX-I-117": [
+     "MAG-FX-0121"
+    ]
+   }
+  },
+  {
+   "id": "MAG-NL-4-06",
+   "newsletter": "MAG-NL-4",
+   "effective": "2026-09-01",
+   "type": "clarification",
+   "apparatus": "SR",
+   "elements": [
+    "WG-SR-II-52",
+    "WG-SR-II-101",
+    "WG-SR-II-107",
+    "WG-SR-II-108",
+    "WG-SR-II-120"
+   ],
+   "catalog_ids": {
+    "WG-SR-II-52": [
+     "MAG-SR-0051"
+    ],
+    "WG-SR-II-101": [
+     "MAG-SR-0074"
+    ],
+    "WG-SR-II-107": [
+     "MAG-SR-0075"
+    ],
+    "WG-SR-II-108": [
+     "MAG-SR-0076"
+    ],
+    "WG-SR-II-120": [
+     "MAG-SR-0079"
+    ]
+   },
+   "summary": "Slow rolls backward: slow, controlled, straight body and arms. Bending is allowed until inverted vertical; bending more than 45° after that means the roll isn't credited, though the final hold can be.",
+   "cite": "MAG-NL-4 pp. 2-3; Code p. 62 §12.2.3.11",
+   "planner": "judging"
+  },
+  {
+   "id": "MAG-NL-4-07",
+   "newsletter": "MAG-NL-4",
+   "effective": "2026-07-23",
+   "type": "clarification",
+   "apparatus": "all",
+   "summary": "A new element gets the gymnast's name only if it is worth C or more and is done cleanly (no fall, credited) the first time it is tried in the routine.",
+   "cite": "MAG-NL-4 p. 3; Code §5.8",
+   "planner": "no"
+  },
+  {
+   "id": "MAG-NL-4-08",
+   "newsletter": "MAG-NL-4",
+   "effective": "2026-07-23",
+   "type": "description_change",
+   "apparatus": "PB",
+   "elements": [
+    "WG-PB-IV-54"
+   ],
+   "catalog_ids": {
+    "WG-PB-IV-54": [
+     "MAG-PB-0177"
+    ]
+   },
+   "summary": "Named: from end hang, double back with double twist, F (Vera).",
+   "cite": "MAG-NL-4 p. 3",
+   "planner": "no"
+  },
+  {
+   "id": "MAG-NL-4-09",
+   "newsletter": "MAG-NL-4",
+   "effective": "2026-07-23",
+   "type": "new_element",
+   "apparatus": "PB",
+   "elements": [
+    "WG-PB-IV-16"
+   ],
+   "catalog_ids": {
+    "WG-PB-IV-16": [
+     "MAG-PB-0225"
+    ]
+   },
+   "summary": "New: from support on the end, double front pike dismount, D, EG IV (Garza).",
+   "cite": "MAG-NL-4 p. 3",
+   "planner": "no"
+  },
+  {
+   "id": "MAG-NL-4-10",
+   "newsletter": "MAG-NL-4",
+   "effective": "2026-07-23",
+   "type": "new_element",
+   "apparatus": "HB",
+   "elements": [
+    "WG-HB-II-114"
+   ],
+   "catalog_ids": {
+    "WG-HB-II-114": [
+     "MAG-HB-0169"
+    ]
+   },
+   "summary": "New: double front pike release with full turn, I, EG II (Koudinov 2).",
+   "cite": "MAG-NL-4 p. 4",
+   "planner": "no"
+  }
+ ]
+}

@@ -1,6 +1,6 @@
 {
  "_doc": "UCG competition levels: which code values a skill and which element group it counts in. To re-value a catalog element at a level, take the first code in `value_codes` that has a record for the element (codes are listed in priority order); a skill with none of them is not creditable at that level. `eg` says how to turn that code's element group into the level's group. Sources: UCG Women's Rules v6.0 (2026-27), UCG Infinity (Open Scoring Level) Rules v1.2, UCG MAG Rules Policy and Rules Breakdown 2026-2028, UCG Masters Rules Policy (UCG Google Docs/Sheets, the sources of record: links in rules/README.md; digests in rules/UCG-*), and the routine planner's scoring code (js/scoring/wag.js), which implements them. `planner_id` is the routine planner's level ID.",
- "version": "2026-10-06",
+ "version": "2026-10-20",
  "_version_doc": "Date of the last change to this file; bump it whenever a level, code priority or EG map changes.",
  "WAG": {
   "silver": {
@@ -150,34 +150,9 @@
    ],
    "eg": {
     "from": "WG",
-    "map": {
-     "UB": {
-      "1": "I",
-      "2": "II",
-      "4": "II",
-      "5": "II",
-      "3": "III",
-      "6": "IV"
-     },
-     "BB": {
-      "2": "I",
-      "3": "II",
-      "4": "III",
-      "5": "III",
-      "1": "IV",
-      "6": "IV"
-     },
-     "FX": {
-      "1": "I",
-      "2": "II",
-      "3": "III",
-      "4": "IV",
-      "5": "IV"
-     }
-    },
-    "note": "UCG Masters additions carry their own Masters group (I-IV)."
+    "note": "No element groups at Masters WAG since 2026-10-20: the international Composition Requirements CR I-V replace the condensed groups (rules/UCG-MASTERS/digest/scoring.json WAG.composition_requirements). The WG group number is kept as a fact for CR detection; UCG Masters additions carry no group (element_group \"\")."
    },
-   "note": "WG letters (and Masters ME / Misc), valued by the gymnast's age decade (Masters Rules Policy; planner masters.js)."
+   "note": "WG letters (and Masters ME / GE), valued by the gymnast's age decade; Composition Requirements, not element groups (UCG Masters Rules Policy v2.1; planner masters.js, wag.js)."
   }
  },
  "MAG": {
@@ -226,7 +201,7 @@
    "eg": {
     "from": "code"
    },
-   "note": "WG letters (and Masters ME / GE / Misc), valued by age decade."
+   "note": "WG letters (and Masters ME / GE), valued by age decade (GE replaced Misc. on 2026-10-20)."
   }
  }
 }

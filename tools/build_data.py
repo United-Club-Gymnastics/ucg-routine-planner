@@ -521,11 +521,12 @@ def catalog():
                     seen[x["rid"]][1] = x
                 seen.setdefault(x["rid"], [e, x])
         for rid, (e, x) in seen.items():
-            g = ROMAN_NUM.get(x.get("element_group") or "")
             row = {"id": rid, "app": e["apparatus"].lower(), "name": x["short_name"], "eponym": x.get("eponym") or "",
                    "value": MASTERS_VALUE.get(x["value"], x["value"]), "src": "UCGM", "note": x.get("note") or ""}
-            # MAG: element group I-IV as the WG/UCG skills have it; WAG: the Masters condensed group.
-            row["eg" if disc == "mag" else "mgroup"] = g
+            # MAG: element group I-IV as the WG/UCG skills have it. WAG Masters has no element groups
+            # (Composition Requirements instead).
+            if disc == "mag":
+                row["eg"] = ROMAN_NUM.get(x.get("element_group") or "")
             if x.get("aka"):
                 row["aka"] = x["aka"]
             masters_rows.append(row)
@@ -568,12 +569,6 @@ def catalog():
             f.write("export const CATALOG = " + json.dumps(out[disc], ensure_ascii=False, separators=(",", ":")) + ";\n")
         print(f"wrote js/data/catalog-{disc}.js: {len(slim)} elements")
 
-    # The planner's WAG Masters group map must agree with levels.json.
-    lm = levels["WAG"]["masters"]["eg"]["map"]
-    planner = {"UB": {1: 1, 2: 2, 4: 2, 5: 2, 3: 3, 6: 4}, "BB": {2: 1, 3: 2, 4: 3, 5: 3, 1: 4, 6: 4}, "FX": {1: 1, 2: 2, 3: 3, 4: 4, 5: 4}}
-    for app, m in lm.items():
-        for wg, roman in m.items():
-            assert planner[app][int(wg)] == ROMAN_NUM[roman], f"WG_TO_MASTERS disagrees with levels.json: {app} {wg}"
 
 
 if __name__ == "__main__":

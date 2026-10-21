@@ -1,6 +1,6 @@
 {
  "discipline": "MAG",
- "version": "e5b08a175e5b",
+ "version": "63c9caae8d08",
  "built": "2026-10-20",
  "aliases": {
   "WG-FX-I-1": [
@@ -387,6 +387,21 @@
   ],
   "UCGM-mag-FX-any-neck-or-headspring": [
    "MAG-FX-0117"
+  ],
+  "WG-FX-I-43": [
+   "MAG-FX-0118"
+  ],
+  "WG-FX-I-115": [
+   "MAG-FX-0119"
+  ],
+  "WG-FX-I-116": [
+   "MAG-FX-0120"
+  ],
+  "WG-FX-I-117": [
+   "MAG-FX-0121"
+  ],
+  "WG-FX-II-8": [
+   "MAG-FX-0122"
   ],
   "WG-HB-I-1": [
    "MAG-HB-0001"
@@ -952,6 +967,9 @@
   ],
   "UCGM-mag-HB-underswing-piked-straddled-or-free-dismount-also-with-half-t": [
    "MAG-HB-0168"
+  ],
+  "WG-HB-II-114": [
+   "MAG-HB-0169"
   ],
   "WG-PB-I-1": [
    "MAG-PB-0001"
@@ -1680,6 +1698,21 @@
   "UCGM-mag-PB-diver-roll-2": [
    "MAG-PB-0217"
   ],
+  "WG-PB-II-87": [
+   "MAG-PB-0221"
+  ],
+  "WG-PB-II-88": [
+   "MAG-PB-0222"
+  ],
+  "WG-PB-II-89": [
+   "MAG-PB-0223"
+  ],
+  "WG-PB-II-95": [
+   "MAG-PB-0224"
+  ],
+  "WG-PB-IV-16": [
+   "MAG-PB-0225"
+  ],
   "WG-PH-I-1": [
    "MAG-PH-0001"
   ],
@@ -2133,6 +2166,12 @@
   ],
   "UCGM-mag-PH-czechkehre-as-mount": [
    "MAG-PH-0139"
+  ],
+  "WG-PH-II-60": [
+   "MAG-PH-0140"
+  ],
+  "WG-PH-II-72": [
+   "MAG-PH-0141"
   ],
   "WG-SR-I-1": [
    "MAG-SR-0001"
@@ -2956,6 +2995,9 @@
   ],
   "UCGM-mag-straight-hecht-over-table": [
    "MAG-VT-0092"
+  ],
+  "522": [
+   "MAG-VT-0093"
   ],
   "UCG-PB-backward-roll-to-l-with-straight-body": [
    "MAG-PB-0192"

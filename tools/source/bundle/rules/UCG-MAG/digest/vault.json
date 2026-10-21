@@ -138,11 +138,19 @@
     "wg_printed": 5.6,
     "adv": 6.0,
     "wg": 5.6
+   },
+   {
+    "vault": "Handspring fwd, salto fwd tucked with ½ twist and salto bwd tucked",
+    "wg_vault": "228",
+    "wg_printed": null,
+    "wg": 5.2,
+    "adv": 5.6,
+    "note": "not in either table; kept by Nate 2026-10-20"
    }
   ],
   "cite": "Breakdown workbook 'Vault Difficulty Table' tab; CoP p. 6 table",
   "levels": "adv only, never another level (Nate 2026-10-20); every other level uses the WG value",
-  "check": "WG MAG 2025 values match 'wg_printed' except Stretched (219): printed 3.4 in both the CoP table and the Vault tab, WG 3.2 (CoP correction requested 2026-10-20). The planner's ADV_VAULT agrees with every Advanced value and also lists 228 (5.2 -> 5.6), which neither table lists."
+  "check": "Both tables printed 3.4 for 219 until 2026-10-20 (WG 3.2; fixed). 228 is upgraded too though neither table lists it (Nate 2026-10-20)."
  },
  "dev_allowed": {
   "rule": "Developmental bans flipping and round-off-entry vaults (score 0). The Policy names only flipping; the Breakdown is right (Nate 2026-10-20).",

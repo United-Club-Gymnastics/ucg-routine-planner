@@ -3,7 +3,7 @@
  "code": "WG-MAG-2025",
  "discipline": "MAG",
  "edition": "2025-2028",
- "built": "2026-10-18",
+ "built": "2026-10-20",
  "public_names": true,
  "source": {
   "kind": "extracted",
@@ -164,6 +164,15 @@
    "eponym": "",
    "element_group": "I",
    "apparatus": "FX"
+  },
+  {
+   "number": "43",
+   "description": "Forward jump ½ turn to brief handstand",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX",
+   "added": "2025-09-16"
   },
   {
    "number": "44",
@@ -386,6 +395,33 @@
    "apparatus": "FX"
   },
   {
+   "number": "115",
+   "description": "Forward jump full turn to push-up",
+   "value": "A=0.1",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX",
+   "added": "2025-09-16"
+  },
+  {
+   "number": "116",
+   "description": "Backward jump 1½ twists to push-up",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX",
+   "added": "2025-09-16"
+  },
+  {
+   "number": "117",
+   "description": "Forward jump double twist to push-up",
+   "value": "C=0.3",
+   "eponym": "",
+   "element_group": "I",
+   "apparatus": "FX",
+   "added": "2025-09-16"
+  },
+  {
    "number": "1",
    "description": "Forward handspring or flyspring",
    "value": "A=0.1",
@@ -409,6 +445,15 @@
    "eponym": "",
    "element_group": "II",
    "apparatus": "FX"
+  },
+  {
+   "number": "8",
+   "description": "Full-twisting dive roll",
+   "value": "B=0.2",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "FX",
+   "added": "2025-09-16"
   },
   {
    "number": "13",
@@ -1140,6 +1185,15 @@
    "code_text": true
   },
   {
+   "number": "60",
+   "description": "Kehr 270° into full-turn handstand travel to flairs",
+   "value": "G=0.7",
+   "eponym": "Moore",
+   "element_group": "II",
+   "apparatus": "PH",
+   "added": "2025-09-16"
+  },
+  {
    "number": "62",
    "description": "Direct Tramlot",
    "value": "B=0.2",
@@ -1172,6 +1226,15 @@
    "eponym": "Bezugo",
    "element_group": "II",
    "apparatus": "PH"
+  },
+  {
+   "number": "72",
+   "description": "Kehr 270° into one-pommel reverse Stöckli 270°",
+   "value": "F=0.6",
+   "eponym": "Manukyan",
+   "element_group": "II",
+   "apparatus": "PH",
+   "added": "2025-12-01"
   },
   {
    "number": "73",
@@ -3476,6 +3539,15 @@
    "apparatus": "VT"
   },
   {
+   "number": "522",
+   "description": "Yurchenko double back tuck full twist",
+   "value": "5.6",
+   "eponym": "Olfati",
+   "element_group": "V",
+   "apparatus": "VT",
+   "added": "2025-09-16"
+  },
+  {
    "number": "1",
    "description": "Front uprise to support",
    "value": "A=0.1",
@@ -4053,19 +4125,21 @@
   },
   {
    "number": "82",
-   "description": "Back swing ¾ turn hop to handstand",
+   "description": "Back swing ¾ turn hop to one-rail handstand",
    "value": "D=0.4",
    "eponym": "",
    "element_group": "II",
-   "apparatus": "PB"
+   "apparatus": "PB",
+   "revised": true
   },
   {
    "number": "83",
    "description": "Back swing full turn hop to handstand",
    "value": "E=0.5",
-   "eponym": "Gatson 1/Patron",
+   "eponym": "Gatson 1",
    "element_group": "II",
-   "apparatus": "PB"
+   "apparatus": "PB",
+   "revised": true
   },
   {
    "number": "84",
@@ -4085,6 +4159,34 @@
    "apparatus": "PB"
   },
   {
+   "number": "87",
+   "description": "Back swing ¾ turn to one rail, short-hop",
+   "value": "C=0.3",
+   "eponym": "Patron 2",
+   "element_group": "II",
+   "apparatus": "PB",
+   "added": "2025-09-19",
+   "revised": true
+  },
+  {
+   "number": "88",
+   "description": "Back swing full turn, short hop or reverse",
+   "value": "D=0.4",
+   "eponym": "Patron",
+   "element_group": "II",
+   "apparatus": "PB",
+   "added": "2025-09-19"
+  },
+  {
+   "number": "89",
+   "description": "Back swing 1¼ turns to one rail, short-hop",
+   "value": "E=0.5",
+   "eponym": "",
+   "element_group": "II",
+   "apparatus": "PB",
+   "added": "2025-09-19"
+  },
+  {
    "number": "91",
    "description": "Handstand ½ pirouette",
    "value": "A=0.1",
@@ -4099,6 +4201,15 @@
    "eponym": "",
    "element_group": "II",
    "apparatus": "PB"
+  },
+  {
+   "number": "95",
+   "description": "Straddled front 1¼ salto ½ turn, upper arms",
+   "value": "E=0.5",
+   "eponym": "Hall",
+   "element_group": "II",
+   "apparatus": "PB",
+   "added": "2025-09-16"
   },
   {
    "number": "99",
@@ -4804,6 +4915,15 @@
    "apparatus": "PB"
   },
   {
+   "number": "16",
+   "description": "Double front pike off the end from support",
+   "value": "D=0.4",
+   "eponym": "Garza",
+   "element_group": "IV",
+   "apparatus": "PB",
+   "added": "2026-07-23"
+  },
+  {
    "number": "18",
    "description": "Double front pike ½ twist",
    "value": "F=0.6",
@@ -4935,9 +5055,10 @@
    "number": "54",
    "description": "End-hang double back tuck, double twist",
    "value": "F=0.6",
-   "eponym": "",
+   "eponym": "Vera",
    "element_group": "IV",
-   "apparatus": "PB"
+   "apparatus": "PB",
+   "revised": true
   },
   {
    "number": "1",
@@ -5514,6 +5635,15 @@
    "element_group": "II",
    "apparatus": "HB",
    "code_text": true
+  },
+  {
+   "number": "114",
+   "description": "Double front pike release with full twist",
+   "value": "I=0.9",
+   "eponym": "Koudinov 2",
+   "element_group": "II",
+   "apparatus": "HB",
+   "added": "2026-07-23"
   },
   {
    "number": "1",

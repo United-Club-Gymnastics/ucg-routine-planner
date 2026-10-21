@@ -1,8 +1,8 @@
 {
  "code": "UCG-WAG-INFINITY",
- "about": "UCG WAG Open Scoring Level (Infinity) vault chart: D score per vault; start value = D + 10.0 (E from 10.0, neutral deductions off the sum). Names and numbers as printed in the rules document's full chart (UCG's own text). 'usag' is the USAG vault number the chart prints; a few look wrong (see decisions.md, open questions).",
+ "about": "UCG WAG Open Scoring Level (Infinity) vault chart: D score per vault; start value = D + 10.0 (E from 10.0, neutral deductions off the sum). Names and numbers as printed in the rules document's full chart (UCG's own text). 'usag' is the USAG vault number the chart prints; Nate corrected three of them on 2026-10-20.",
  "source": "UCG Infinity Rules v1.2 (Google Doc, source of record; see README), Appendix 'Full UCG WAG Infinity Vault Chart' (text/infinity-rules.md)",
- "matches_planner": "same 116 vaults, numbers and values as ucg-routine-planner js/data/wag-infinity-vaults.js (checked 2026-10-20)",
+ "matches_planner": "same 116 vaults and values as ucg-routine-planner js/data/wag-infinity-vaults.js; the three USAG numbers Nate corrected on 2026-10-20 (1.207, 5.108, 4.102) still differ there until the planner is updated",
  "vaults": [
   {
    "usag": "1.101",
@@ -137,7 +137,7 @@
    "d": 5.4
   },
   {
-   "usag": "1.206",
+   "usag": "1.207",
    "name": "1/1 On - Fr. Hspr. Off",
    "entry": "1/2 On Entry w/o Salto",
    "d": 4.8
@@ -167,7 +167,7 @@
    "d": 3.0
   },
   {
-   "usag": "4.402",
+   "usag": "4.102",
    "name": "RO-FF; 1/2 Off",
    "entry": "Roundoff entry w/o Salto",
    "d": 3.6
@@ -215,7 +215,7 @@
    "d": 5.1
   },
   {
-   "usag": "5.101",
+   "usag": "5.108",
    "name": "RO-FF 1/1 On - Handspring Off",
    "entry": "Roundoff 1/2 On entry w/o Salto",
    "d": 3.6

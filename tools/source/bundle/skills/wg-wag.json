@@ -3,7 +3,7 @@
  "code": "WG-WAG-2025",
  "discipline": "WAG",
  "edition": "2025-2028",
- "built": "2026-10-18",
+ "built": "2026-10-20",
  "public_names": true,
  "source": {
   "kind": "extracted",
@@ -1487,6 +1487,19 @@
    }
   },
   {
+   "number": "2.706",
+   "variant": 1,
+   "description": "HB clear hip circle, layout counter release",
+   "value": "G=0.7",
+   "eponym": "Zhang",
+   "element_group": "2",
+   "apparatus": "UB",
+   "added": "2026-02-23",
+   "tags": {
+    "salto": false
+   }
+  },
+  {
    "number": "3.201",
    "variant": 1,
    "description": "Giant circle bwd in regular grip, or on one arm, also with ½ turn (180°) to hstd",
@@ -1908,6 +1921,32 @@
    "code_text": true,
    "tags": {
     "salto": false
+   }
+  },
+  {
+   "number": "3.608",
+   "variant": 2,
+   "description": "Piked front salto release with full turn",
+   "value": "F=0.6",
+   "eponym": "Minamino",
+   "element_group": "3",
+   "apparatus": "UB",
+   "added": "2026-02-23",
+   "tags": {
+    "salto": true
+   }
+  },
+  {
+   "number": "3.708",
+   "variant": 2,
+   "description": "Layout front salto release with full turn",
+   "value": "G=0.7",
+   "eponym": "Yang",
+   "element_group": "3",
+   "apparatus": "UB",
+   "added": "2026-02-23",
+   "tags": {
+    "salto": true
    }
   },
   {
@@ -3330,6 +3369,19 @@
    "eponym": "Delladio/Parolari",
    "element_group": "6",
    "apparatus": "UB",
+   "tags": {
+    "salto": true
+   }
+  },
+  {
+   "number": "6.408",
+   "variant": 2,
+   "description": "From L grip, ½ turn double back pike",
+   "value": "D=0.4",
+   "eponym": "Okamura",
+   "element_group": "6",
+   "apparatus": "UB",
+   "added": "2026-02-23",
    "tags": {
     "salto": true
    }
@@ -6087,11 +6139,12 @@
   {
    "number": "6.304",
    "variant": 2,
-   "description": "Back layout double twist dismount",
+   "description": "Back double twist dismount, tucked or layout",
    "value": "C=0.3",
-   "eponym": "",
+   "eponym": "Mordenti",
    "element_group": "6",
    "apparatus": "BB",
+   "revised": true,
    "tags": {
     "salto": true
    }
@@ -7166,6 +7219,19 @@
    "markers": [
     "*"
    ],
+   "tags": {
+    "salto": false
+   }
+  },
+  {
+   "number": "1.509",
+   "variant": 1,
+   "description": "Split ring leap full turn",
+   "value": "E=0.5",
+   "eponym": "Prat",
+   "element_group": "1",
+   "apparatus": "FX",
+   "added": "2026-02-23",
    "tags": {
     "salto": false
    }

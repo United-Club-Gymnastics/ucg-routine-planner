@@ -121,7 +121,7 @@ export const SKILLS = [
   {"id": "UCGM-mag-SR-muscle-up", "app": "sr", "name": "Muscle up", "eponym": "", "value": "ME", "src": "UCGM", "note": "", "eg": 2},
   {"id": "UCGM-mag-SR-pike-press-to-shoulderstand-2-s", "app": "sr", "name": "Pike press to shoulderstand (2 s.)", "eponym": "", "value": "ME", "src": "UCGM", "note": "", "eg": 2},
   {"id": "UCGM-mag-SR-felge-tucked-to-support", "app": "sr", "name": "Felge tucked to support", "eponym": "", "value": "ME", "src": "UCGM", "note": "", "eg": 1},
-  {"id": "UCGM-mag-SR-tuck-planche-2-s", "app": "sr", "name": "Tuck planche (2 s.)", "eponym": "", "value": "ME", "src": "UCGM", "note": "Hips must be level, arms straight and off straps", "eg": 2},
+  {"id": "UCGM-mag-SR-tuck-planche-2-s", "app": "sr", "name": "Tuck planche (2 s.)", "eponym": "", "value": "ME", "src": "UCGM", "note": "Hips must be level, arms straight and off straps, and knees must be behind straps", "eg": 2},
   {"id": "UCGM-mag-SR-tuck-salto-front-or-back-also-with-1-2", "app": "sr", "name": "Tuck salto, front or back (also with 1/2)", "eponym": "", "value": "ME", "src": "UCGM", "note": "", "eg": 4},
   {"id": "UCGM-mag-SR-back-uprise-to-shoulderstand-2-s", "app": "sr", "name": "Back uprise to shoulderstand (2 s.)", "eponym": "", "value": "A", "src": "UCGM", "note": "", "eg": 1},
   {"id": "UCGM-mag-SR-felge-to-shoulderstand-2-s", "app": "sr", "name": "Felge to shoulderstand (2 s.)", "eponym": "", "value": "A", "src": "UCGM", "note": "", "eg": 1},
