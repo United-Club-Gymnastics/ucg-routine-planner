@@ -3,12 +3,12 @@
  "code": "UCG-MASTERS-MAG",
  "discipline": "MAG",
  "edition": "2026-10-20",
- "built": "2026-10-20",
+ "built": "2026-10-21",
  "source": {
   "kind": "authored",
   "document": "Masters/UCG Masters MAG CoP.svg",
   "repo": "nssharpe/ucg-code-of-points",
-  "commit": "9aabfa6e869d58a2bf75273cfbdf8f14f5acbfc1"
+  "commit": "551f8b6142b76a04948a9ead7cf42b5e4b64f7f7"
  },
  "records": [
   {
@@ -502,8 +502,8 @@
    "value": "C",
    "element_group": "II",
    "eponym": "",
-   "video": "https://drive.google.com/file/d/12dmCWeHDOa03F-Uq1IBUjUOjCrl5iRJH/view?usp=sharing",
-   "drawing": false,
+   "video": "https://youtu.be/5onjjL29Ats",
+   "drawing": true,
    "main_id": "UCG-PH-reverse-st-ckli-with-360-t-using-side-support",
    "added": "2026-10-06"
   },
@@ -1732,7 +1732,7 @@
    "element_group": "III",
    "eponym": "",
    "video": "https://youtu.be/TCIQNmFH0uo",
-   "drawing": false,
+   "drawing": true,
    "main_id": "UCG-HB-stoop-in-and-free-back-toss-to-dorsal-hang-and-1-1-turn-to-c",
    "added": "2026-10-06"
   },

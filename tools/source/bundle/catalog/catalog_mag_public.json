@@ -1,7 +1,7 @@
 {
  "discipline": "MAG",
- "version": "63c9caae8d08",
- "built": "2026-10-20",
+ "version": "f127ff097447",
+ "built": "2026-10-21",
  "elements": [
   {
    "id": "MAG-FX-0001",
@@ -14812,7 +14812,7 @@
       "element_group": "II",
       "eponym": "",
       "note": "",
-      "video": "https://drive.google.com/file/d/12dmCWeHDOa03F-Uq1IBUjUOjCrl5iRJH/view?usp=sharing"
+      "video": "https://youtu.be/5onjjL29Ats"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -14825,7 +14825,7 @@
       "element_group": "II",
       "eponym": "",
       "note": "",
-      "video": "https://drive.google.com/file/d/12dmCWeHDOa03F-Uq1IBUjUOjCrl5iRJH/view?usp=sharing",
+      "video": "https://youtu.be/5onjjL29Ats",
       "page": 3
      }
     ]
