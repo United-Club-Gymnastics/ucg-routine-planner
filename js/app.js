@@ -2202,6 +2202,8 @@ function flagFor(it, spec) {
     if (it.repeatWhy === 'pass') return ['Same pass', `This pass repeats the one with skill ${n}: flight elements with hand support only earn credit again in a different pass`];
     if (it.repeatWhy === 'dmtFirst' || it.repeatWhy === 'dmtDismount') return ['Repeat', `Repeats pass 1's ${it.repeatWhy === 'dmtFirst' ? 'first skill' : 'dismount'} in the same position: no difficulty`];
     if (it.repeatWhy === 'fulls') return ['4th full', 'Fulls earn difficulty at most 3 times per pass'];
+    if (it.repeatWhy === 'entry') return ['Same entry', `Repeats skill ${n} of pass ${it.repeatPass + 1} after the same skill: a repeat earns difficulty only from a different entry`];
+    if (it.repeatWhy === 'interrupt') return ['Interruption', `A skill other than a handspring, whip or full may be repeated only once (first done as skill ${n} of pass ${it.repeatPass + 1}): another time is an interruption, with no difficulty`];
     if ('dd' in it) return [`Repeat of Skill ${n}`, `Repeat of skill ${n}: a repeated skill gets no difficulty`];
     return [`Repeat of Skill ${n}`, `Repeat of skill ${n}: each element only earns value-part credit once`];
   }

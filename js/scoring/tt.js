@@ -50,6 +50,58 @@ const TU_NOT_SALTO = /round ?-?off|handspring|whip|jump|rebound|roll|cartwheel|w
 export const isTumblingSalto = (s) =>
   !TU_NOT_SALTO.test(s.name || '') && (FLIP_NAME.test(s.name || '') || /\bfull|twist|aerial/i.test(s.name || '') || s.dd >= 0.5);
 
+// Tumbling repeats (TU §III.A). Handsprings (a flyspring is a dive handspring) and whips repeat
+// freely (III.A.1); fulls are capped per pass (III.A.2); a straight jump or rebound without a
+// turn is once per pass (III.A.4). Any other skill may be repeated once in the routine, from a
+// different entry (III.A.3). The entry is the skill before it; a pass's first skill comes from the
+// run or a power hurdle, which the planner knows only when the name says so ("Roundoff (run)").
+const isFull = (s) => /^(back |front )?full( twist)?$/i.test(s.name) || /^\.?42$/.test(s.notation);
+const FREE_REPEAT = /handspring|flyspring|whip/i;
+const isPlainJump = (s) => /^(straight jump|rebound)/i.test(s.name) && !/turn/i.test(s.name);
+const ENTRY_TAG = /\s*\((run|running|power hurdle|hurdle)\)\s*$/i;
+const tumblingKey = (s) => skillKey(s.name.replace(ENTRY_TAG, '')) || skillKey(s.notation);
+const startEntry = (s) => { const m = s.name.match(ENTRY_TAG); return m ? (/hurdle/i.test(m[1]) ? 'hurdle' : 'run') : null; };
+
+function tumblingRepeats(ps) {
+  const warnings = [];
+  const filled = ps.map((p) => p.filter((s) => s.status !== 'blank'));
+  const shown = (s) => s.name || s.notation;
+  // III.A.6: a repeated pass must start from a different entry. The Code gives no consequence, so
+  // this is a warning only, and III.A.3 isn't applied between the two passes.
+  const seq = (p) => p.map(tumblingKey).join('|');
+  const samePass = filled[0].length && seq(filled[0]) === seq(filled[1]);
+  if (samePass) {
+    const [a, b] = [startEntry(filled[0][0]), startEntry(filled[1][0])];
+    if (!a || !b || a === b) warnings.push('Pass 2 repeats pass 1: a repeated pass must start its first skill from a different entry (for example a running roundoff and a power hurdle roundoff). Check this with your judges.');
+  }
+  // III.A.4: the Code gives no consequence either, so a warning only.
+  filled.forEach((p, i) => {
+    if (p.filter(isPlainJump).length > 1) warnings.push(`Pass ${i + 1}: a straight jump or rebound without a turn may be used only once per pass. The Code doesn't say what happens to a second one, so the planner still counts it; check with your judges.`);
+  });
+  // III.A.3 (each repeated pass on its own).
+  const maps = samePass ? [new Map(), new Map()] : [new Map()];
+  filled.forEach((p, i) => p.forEach((s, k) => {
+    if (s.status !== 'counting' || FREE_REPEAT.test(s.name) || isFull(s) || isPlainJump(s)) return;
+    const key = tumblingKey(s);
+    if (!key) return;
+    const uses = maps[samePass ? i : 0];
+    const entry = k ? tumblingKey(p[k - 1]) : startEntry(s);
+    const prev = uses.get(key) || [];
+    uses.set(key, [...prev, { pass: i, s, entry }]);
+    if (!prev.length) return;
+    const first = prev[0];
+    const of = { repeatOf: first.s.idx, repeatPass: first.pass };
+    if (prev.length >= 2) {
+      Object.assign(s, { status: 'repeat', repeatWhy: 'interrupt', ...of });
+      warnings.push(`Pass ${i + 1}: ${shown(s)} is used a ${prev.length + 1 === 3 ? '3rd' : `${prev.length + 1}th`} time. Apart from handsprings, whips and fulls, a skill may be repeated only once (twice in one pass or once in each pass), so this is an interruption: it gets no difficulty.`);
+    } else if (entry && first.entry && entry === first.entry) {
+      Object.assign(s, { status: 'repeat', repeatWhy: 'entry', ...of });
+      warnings.push(`Pass ${i + 1}: ${shown(s)} is repeated from the same entry, so it gets no difficulty. A repeat earns difficulty only from a different entry (for example back handspring–back tuck and whip–back tuck).`);
+    }
+  }));
+  return warnings;
+}
+
 function items(list) {
   return (list || []).map((s, idx) => ({
     idx,
@@ -129,12 +181,14 @@ export function scorePasses(event, level, passes = [[], []], starts = []) {
   }
   // Tumbling: fulls (back or front full, FIG 42 / .42) earn difficulty at most 3 times per pass.
   const extraFulls = [];
+  const repeatWarnings = [];
   if (event === 'tu') {
     ps.forEach((p, i) => {
-      const fulls = p.filter((s) => s.status === 'counting' && (/^(back |front )?full( twist)?$/i.test(s.name) || /^\.?42$/.test(s.notation)));
+      const fulls = p.filter((s) => s.status === 'counting' && isFull(s));
       for (const s of fulls.slice(3)) Object.assign(s, { status: 'repeat', repeatOf: fulls[0].idx, repeatWhy: 'fulls' });
       if (fulls.length > 3) extraFulls.push(i);
     });
+    repeatWarnings.push(...tumblingRepeats(ps));
   }
   const sums = ps.map((p) => round1(p.filter((s) => s.status === 'counting').reduce((t, s) => t + s.dd, 0)));
   const all = ps.flat().filter((s) => s.status === 'counting');
@@ -186,6 +240,7 @@ export function scorePasses(event, level, passes = [[], []], starts = []) {
     }
     if (level === 'hf') sums.forEach((d, i) => { if (n[i] && d < 2.0) warnings.push(`${label(i)}: High Flyers passes need at least 2.0 DD (${d.toFixed(1)}).`); });
     for (const i of extraFulls) warnings.push(`${label(i)}: fulls earn difficulty at most 3 times per pass; the 4th and later get none.`);
+    warnings.push(...repeatWarnings);
   }
 
   const total = round1(sums[0] + sums[1]);
