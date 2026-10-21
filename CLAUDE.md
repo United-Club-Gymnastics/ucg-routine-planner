@@ -81,3 +81,12 @@ A bundle update is the last PR of a linked chain (CoP -> gym-skill-extract -> pl
 - Files are written with LF, and git's CRLF warnings on Windows are harmless.
 - The code-level rules still in `js/scoring/` (above) could move to digests too (review 2026-10-20, M2).
 - Who owns the Firebase project, DNS and the other accounts: gym-skill-extract `docs/OPERATIONS.md`.
+- **T&T tumbling repeats (review M10), tabled 2026-10-21.** `js/scoring/tt.js` still checks only the fulls rule
+  (TU §III.A.2). The rest of §III.A (another skill once more from a different entry, a 3rd use is an interruption,
+  rebound once per pass, a repeated pass needs a different entry) is written and tested on the unmerged branch
+  `claude/tt-tumbling-repeats-147249`. Not shipped, because 5 New Flyers tumbling example sheets (Routines 1, 5-8)
+  break the literal reading. Nate asked Amanda, who said the T&T team will likely change the PT rules and the
+  example routines at their 2026-10-22 meeting. Pick this up once the new Code text lands: re-fetch the Code, then
+  rebase or redo the branch. Seven questions were sent to Amanda: interruption consequence and 2.0 CJP (incl. HF),
+  same-entry repeats, a roundoff opening both passes, flyspring as a handspring, the §III.A.4 and §III.A.6
+  consequences, and §III.A.3 inside a repeated pass.
