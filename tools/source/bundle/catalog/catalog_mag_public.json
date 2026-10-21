@@ -1,6 +1,6 @@
 {
  "discipline": "MAG",
- "version": "e5b08a175e5b",
+ "version": "63c9caae8d08",
  "built": "2026-10-20",
  "elements": [
   {
@@ -2682,6 +2682,111 @@
       "note": "",
       "video": "https://youtu.be/Dl0LoD9pwVc",
       "page": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-FX-0118",
+   "discipline": "MAG",
+   "apparatus": "FX",
+   "short_name": "Forward jump ½ turn to brief handstand",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-FX-I-43",
+      "short_name": "Forward jump ½ turn to brief handstand",
+      "number": "43",
+      "variant": 1,
+      "value": "A=0.1",
+      "element_group": "I",
+      "eponym": ""
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-FX-0119",
+   "discipline": "MAG",
+   "apparatus": "FX",
+   "short_name": "Forward jump full turn to push-up",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-FX-I-115",
+      "short_name": "Forward jump full turn to push-up",
+      "number": "115",
+      "variant": 1,
+      "value": "A=0.1",
+      "element_group": "I",
+      "eponym": ""
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-FX-0120",
+   "discipline": "MAG",
+   "apparatus": "FX",
+   "short_name": "Backward jump 1½ twists to push-up",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-FX-I-116",
+      "short_name": "Backward jump 1½ twists to push-up",
+      "number": "116",
+      "variant": 1,
+      "value": "B=0.2",
+      "element_group": "I",
+      "eponym": ""
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-FX-0121",
+   "discipline": "MAG",
+   "apparatus": "FX",
+   "short_name": "Forward jump double twist to push-up",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-FX-I-117",
+      "short_name": "Forward jump double twist to push-up",
+      "number": "117",
+      "variant": 1,
+      "value": "C=0.3",
+      "element_group": "I",
+      "eponym": ""
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-FX-0122",
+   "discipline": "MAG",
+   "apparatus": "FX",
+   "short_name": "Full-twisting dive roll",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-FX-II-8",
+      "short_name": "Full-twisting dive roll",
+      "number": "8",
+      "variant": 1,
+      "value": "B=0.2",
+      "element_group": "II",
+      "eponym": ""
      }
     ]
    }
@@ -6652,7 +6757,7 @@
       "short_name": "Hopping from forward to backward swing or vice versa with grip change",
       "number": "1",
       "variant": 1,
-      "value": "Misc",
+      "value": "GE",
       "element_group": "II",
       "eponym": "",
       "note": "",
@@ -6730,6 +6835,27 @@
       "note": "",
       "video": "https://youtu.be/UxPVh1NKTXc",
       "page": 9
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-HB-0169",
+   "discipline": "MAG",
+   "apparatus": "HB",
+   "short_name": "Double front pike release with full twist",
+   "aka": [],
+   "eponym": "Koudinov 2",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-HB-II-114",
+      "short_name": "Double front pike release with full twist",
+      "number": "114",
+      "variant": 1,
+      "value": "I=0.9",
+      "element_group": "II",
+      "eponym": "Koudinov 2"
      }
     ]
    }
@@ -8265,14 +8391,14 @@
    "id": "MAG-PB-0070",
    "discipline": "MAG",
    "apparatus": "PB",
-   "short_name": "Back swing ¾ turn hop to handstand",
+   "short_name": "Back swing ¾ turn hop to one-rail handstand",
    "aka": [],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
      {
       "rid": "WG-PB-II-82",
-      "short_name": "Back swing ¾ turn hop to handstand",
+      "short_name": "Back swing ¾ turn hop to one-rail handstand",
       "number": "82",
       "variant": 1,
       "value": "D=0.4",
@@ -8288,7 +8414,7 @@
    "apparatus": "PB",
    "short_name": "Back swing full turn hop to handstand",
    "aka": [],
-   "eponym": "Gatson 1/Patron",
+   "eponym": "Gatson 1",
    "codes": {
     "WG-MAG-2025": [
      {
@@ -8298,7 +8424,7 @@
       "variant": 1,
       "value": "E=0.5",
       "element_group": "II",
-      "eponym": "Gatson 1/Patron"
+      "eponym": "Gatson 1"
      }
     ]
    }
@@ -10643,7 +10769,7 @@
    "apparatus": "PB",
    "short_name": "End-hang double back tuck, double twist",
    "aka": [],
-   "eponym": "",
+   "eponym": "Vera",
    "codes": {
     "WG-MAG-2025": [
      {
@@ -10653,7 +10779,7 @@
       "variant": 1,
       "value": "F=0.6",
       "element_group": "IV",
-      "eponym": ""
+      "eponym": "Vera"
      }
     ]
    }
@@ -11999,6 +12125,111 @@
       "note": "",
       "video": "https://youtu.be/O0wJnDsolVQ",
       "page": 7
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PB-0221",
+   "discipline": "MAG",
+   "apparatus": "PB",
+   "short_name": "Back swing ¾ turn to one rail, short-hop",
+   "aka": [],
+   "eponym": "Patron 2",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PB-II-87",
+      "short_name": "Back swing ¾ turn to one rail, short-hop",
+      "number": "87",
+      "variant": 1,
+      "value": "C=0.3",
+      "element_group": "II",
+      "eponym": "Patron 2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PB-0222",
+   "discipline": "MAG",
+   "apparatus": "PB",
+   "short_name": "Back swing full turn, short hop or reverse",
+   "aka": [],
+   "eponym": "Patron",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PB-II-88",
+      "short_name": "Back swing full turn, short hop or reverse",
+      "number": "88",
+      "variant": 1,
+      "value": "D=0.4",
+      "element_group": "II",
+      "eponym": "Patron"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PB-0223",
+   "discipline": "MAG",
+   "apparatus": "PB",
+   "short_name": "Back swing 1¼ turns to one rail, short-hop",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PB-II-89",
+      "short_name": "Back swing 1¼ turns to one rail, short-hop",
+      "number": "89",
+      "variant": 1,
+      "value": "E=0.5",
+      "element_group": "II",
+      "eponym": ""
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PB-0224",
+   "discipline": "MAG",
+   "apparatus": "PB",
+   "short_name": "Straddled front 1¼ salto ½ turn, upper arms",
+   "aka": [],
+   "eponym": "Hall",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PB-II-95",
+      "short_name": "Straddled front 1¼ salto ½ turn, upper arms",
+      "number": "95",
+      "variant": 1,
+      "value": "E=0.5",
+      "element_group": "II",
+      "eponym": "Hall"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PB-0225",
+   "discipline": "MAG",
+   "apparatus": "PB",
+   "short_name": "Double front pike off the end from support",
+   "aka": [],
+   "eponym": "Garza",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PB-IV-16",
+      "short_name": "Double front pike off the end from support",
+      "number": "16",
+      "variant": 1,
+      "value": "D=0.4",
+      "element_group": "IV",
+      "eponym": "Garza"
      }
     ]
    }
@@ -15183,6 +15414,48 @@
    }
   },
   {
+   "id": "MAG-PH-0140",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "Kehr 270° into full-turn handstand travel to flairs",
+   "aka": [],
+   "eponym": "Moore",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PH-II-60",
+      "short_name": "Kehr 270° into full-turn handstand travel to flairs",
+      "number": "60",
+      "variant": 1,
+      "value": "G=0.7",
+      "element_group": "II",
+      "eponym": "Moore"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0141",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "Kehr 270° into one-pommel reverse Stöckli 270°",
+   "aka": [],
+   "eponym": "Manukyan",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PH-II-72",
+      "short_name": "Kehr 270° into one-pommel reverse Stöckli 270°",
+      "number": "72",
+      "variant": 1,
+      "value": "F=0.6",
+      "element_group": "II",
+      "eponym": "Manukyan"
+     }
+    ]
+   }
+  },
+  {
    "id": "MAG-SR-0001",
    "discipline": "MAG",
    "apparatus": "SR",
@@ -18340,7 +18613,7 @@
       "value": "ME",
       "element_group": "II",
       "eponym": "",
-      "note": "Hips must be level, arms straight and off straps",
+      "note": "Hips must be level, arms straight and off straps, and knees must be behind straps",
       "video": "https://youtu.be/_AYytnXOgyY",
       "page": 5
      }
@@ -18928,7 +19201,7 @@
       "short_name": "Swing forwards or backwards to bent arm hang in L",
       "number": "1",
       "variant": 1,
-      "value": "Misc",
+      "value": "GE",
       "element_group": "III",
       "eponym": "",
       "note": "",
@@ -20971,6 +21244,27 @@
       "element_group": null,
       "eponym": "",
       "page": 6
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-VT-0093",
+   "discipline": "MAG",
+   "apparatus": "VT",
+   "short_name": "Yurchenko double back tuck full twist",
+   "aka": [],
+   "eponym": "Olfati",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-VT-522",
+      "short_name": "Yurchenko double back tuck full twist",
+      "number": "522",
+      "variant": 1,
+      "value": "5.6",
+      "element_group": "V",
+      "eponym": "Olfati"
      }
     ]
    }

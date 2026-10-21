@@ -66,13 +66,7 @@ test('Xcel vaults by level; Gold alternative springboard is 9.5', () => {
 });
 
 // ---- WAG Masters ----
-test('WAG Masters: decade values, EG +0.5 from any skill, 6 count', () => {
-  const r = scoreWagMasters('bb', [s('a', 'A', 1), s('b', 'B', 2), s('c', 'A', 3), s('d', 'ME', 1), s('e', 'A', 4), s('f', 'Misc', 3), s('g', 'B', 3)], { decade: '40' });
-  // 40s: A 0.3, B 0.5, ME 0.1, Misc n/a (0). Top 6: B B A A A ME = 2.0
-  assert.equal(r.difficulty, 2.0);
-  assert.equal(r.egTotal, 2.0);
-  assert.equal(r.shortBy, 0);
-  assert.equal(r.sv, 14.0);
+test('WAG Masters vaults: the vault value plus the age bonus', () => {
   assert.equal(scoreWagMastersVault('1.11', { decade: '60' }).sv, 16.6); // Yamashita 1/2: 10 + 2.4 + 4.2
   assert.equal(scoreWagMastersVault('UCGM-wag-pike-hecht-over-table', { decade: '30' }).sv, 12.9); // 10 + 1.1 + 1.8
   assert.equal(scoreWagMastersVault('other', { decade: '70' }).sv, 15.0);

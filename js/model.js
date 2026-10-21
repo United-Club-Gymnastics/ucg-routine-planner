@@ -5,7 +5,7 @@ import * as wag from './scoring/wag.js';
 import * as tt from './scoring/tt.js';
 import { XCEL_SR, XCEL_VP } from './data/xcel.js';
 import { findSkill, wagSkillAllowed } from './skill-search.js';
-import { DECADES, DECADE_LABELS, DEFAULT_DECADE, MASTERS_LETTERS } from './scoring/masters.js';
+import { DECADES, DECADE_LABELS, DEFAULT_DECADE, MASTERS_LETTERS, countingTotal } from './scoring/masters.js';
 
 export { DECADES, DECADE_LABELS, DEFAULT_DECADE };
 export const round1 = (n) => Math.round(n * 10) / 10;
@@ -91,7 +91,7 @@ export function eventSpec(entry, evId) {
     spec.groups = groupList(mag.APPARATUS[evId].groups);
     spec.legend = Object.entries(mag.APPARATUS[evId].groups).map(([k, v]) => ({ key: Number(k), roman: ROMAN[k], label: v }));
     spec.options = mag.eventOptions(evId, level);
-    spec.maxCounting = mag.LEVELS[level].maxSkills;
+    spec.maxCounting = mag.countingFor(level, entry.decade);
     // Floor and high bar: linked skills earn the connection bonuses.
     spec.links = spec.options.some((o) => o.connect);
   } else if (fam === 'infinity') {
@@ -109,10 +109,24 @@ export function eventSpec(entry, evId) {
     spec.links = auto;
     spec.maxCounting = wag.INFINITY_MAX_SKILLS;
   } else if (fam === 'wagMasters') {
+    // No element groups: Composition Requirements CR I-V (policy v2.1), shown like the Xcel special
+    // requirements (detected from the listed skills; the coach can tick or untick each).
     spec.letters = MASTERS_LETTERS;
-    spec.groups = groupList(wag.MASTERS_GROUPS[evId]);
-    spec.legend = Object.entries(wag.MASTERS_GROUPS[evId]).map(([k, v]) => ({ key: Number(k), roman: ROMAN[k], label: v }));
-    spec.maxCounting = 6;
+    spec.maxCounting = countingTotal(entry.decade);
+    spec.sr = wag.crTexts(evId);
+    spec.srKind = 'cr';
+    // Beam and floor combinations are connected skills.
+    spec.links = evId !== 'ub';
+    if (evId === 'bb') {
+      spec.options = [{
+        id: 'widening', kind: 'choice', label: 'Beam widening', choices: [
+          ['none', 'The host has no widening: beam bonus from 40'],
+          ['offered', 'Widening offered, not used: beam bonus from 40'],
+          ['used', 'On the widening: no beam bonus'],
+        ],
+        help: 'The 20 cm widening some hosts provide (Masters Rules Policy §III.C.3.d). Without one, every gymnast 40+ gets the beam bonus (40s +0.5, 50s +0.8, 60s +1.2, 70+ +1.5) and the 60+ relaxations of Table 2 apply.',
+      }];
+    }
   } else if (fam === 'xcel') {
     spec.letters = wag.XCEL_LETTERS;
     // USAG element groups: no requirement at Xcel, but choosing one narrows the skill search.
@@ -176,9 +190,14 @@ export function scoreEvent(entry, evId) {
     const any = r.rows.length > 0;
     if (r.capped) out.notes.push(`Start value capped at ${fmt(r.cap)} (${fmt(r.raw)} before the cap).`);
     if (r.deductions) out.notes.push(`Expected neutral deduction −${fmt(r.deductions)}: ${fmt(r.afterDeductions)} after deductions.`);
+    if (any && mag.LEVELS[level].masters && r.dismount == null) {
+      out.notes.push(evId === 'fx'
+        ? 'No dismount: the last skill that isn’t from EG I is the dismount. Without one, the routine is one skill short.'
+        : 'No dismount: the last skill should be the dismount (EG IV). Without one, the routine is one skill short.');
+    }
     return {
       ...out, ...r, sv: any ? r.startValue : null, earnedGroups: Object.keys(r.egBonus).map(Number),
-      totals: [['Execution', 10], ['Difficulty', r.difficulty], ['EG bonus', r.egTotal], ['Other bonus', r.bonus], [`Short of ${mag.MIN_SKILLS}`, -r.shortDeduction], ['Start value', any ? r.startValue : null]],
+      totals: [['Execution', 10], ['Difficulty', r.difficulty], ['EG bonus', r.egTotal], ['Other bonus', r.bonus], [`Short of ${r.minSkills}`, -r.shortDeduction], ['Start value', any ? r.startValue : null]],
       deductions: r.deductions,
     };
   }
@@ -194,7 +213,8 @@ export function scoreEvent(entry, evId) {
     return { ...out, ...r, optionValues: { eventBonus: r.bonus }, totals: [...r.totals, ['Start value', r.sv]] };
   }
   if (fam === 'wagMasters') {
-    const r = wag.scoreWagMasters(evId, rows, ctx);
+    const r = wag.scoreWagMasters(evId, rows, { ...ctx, crSet: opts.srSet || [], widening: opts.widening || 'none' });
+    if (r.sv != null && r.dismount == null) out.notes.push(evId === 'fx' ? 'No dismount: the last acro element is the dismount. Without one, the routine is one skill short.' : 'No dismount: the last skill should be the dismount. Without one, the routine is one skill short.');
     return { ...out, ...r, totals: [...r.totals, ['Start value', r.sv]] };
   }
   if (fam === 'xcel') {
@@ -246,8 +266,7 @@ export function listedValues(e, evId, s) {
   else if (!s.value) out.letter = ''; // a listed skill with no value (Sapphire / Infinity no-value cast)
   if (fam === 'mag') out.eg = s.eg ? String(s.eg) : '';
   if (fam === 'infinity' || fam === 'xcel') out.eg = s.group ? String(s.group) : '';
-  // WAG Masters: UCG Masters skills carry their own condensed group; WG groups are mapped.
-  if (fam === 'wagMasters') out.eg = s.mgroup ? String(s.mgroup) : s.group && wag.WG_TO_MASTERS[evId]?.[s.group] ? String(wag.WG_TO_MASTERS[evId][s.group]) : '';
+  // WAG Masters has no element groups (Composition Requirements instead).
   return out;
 }
 
@@ -329,6 +348,12 @@ export function normalizeEntry(e) {
       continue;
     }
     const r = e.routines[ev.id] || [];
+    // Masters: "Misc" was GE's name until 2026-10-20.
+    if (levelInfo(e.disc, e.level)?.masters) {
+      for (const row of r) {
+        for (const x of [row, row?.base]) if (x?.letter === 'Misc') { x.letter = 'GE'; changed = true; }
+      }
+    }
     const blank = ev.kind === 'tramp' ? blankTT : blankSkill;
     while (r.length < minRows(e, ev)) { r.push(blank()); changed = true; }
     e.routines[ev.id] = r;

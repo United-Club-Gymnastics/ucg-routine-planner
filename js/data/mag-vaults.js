@@ -87,5 +87,6 @@ export const VAULTS = [
   {"id": "518", "name": "Round-off ½-on, handspring front layout", "eponym": "", "eg": "V", "value": 3.4, "adv": 3.4, "flipping": true, "roundoff": true, "src": "WG"},
   {"id": "519", "name": "Yurchenko double back tuck", "eponym": "Melissanidis", "eg": "V", "value": 4.8, "adv": 4.8, "flipping": true, "roundoff": true, "src": "WG"},
   {"id": "520", "name": "Yurchenko double back pike", "eponym": "Yang Wei", "eg": "V", "value": 5.2, "adv": 5.2, "flipping": true, "roundoff": true, "src": "WG"},
-  {"id": "521", "name": "Round-off ½-on front handspring, double front tuck", "eponym": "", "eg": "V", "value": 5.0, "adv": 5.0, "flipping": true, "roundoff": true, "src": "WG"}
+  {"id": "521", "name": "Round-off ½-on front handspring, double front tuck", "eponym": "", "eg": "V", "value": 5.0, "adv": 5.0, "flipping": true, "roundoff": true, "src": "WG"},
+  {"id": "522", "name": "Yurchenko double back tuck full twist", "eponym": "Olfati", "eg": "V", "value": 5.6, "adv": 5.6, "flipping": true, "roundoff": true, "src": "WG"}
 ];

@@ -1,14 +1,14 @@
 {
- "schema_version": "0.2.0",
+ "schema_version": "0.3.0",
  "code": "UCG-MASTERS-MAG",
  "discipline": "MAG",
- "edition": "2026-10-06",
+ "edition": "2026-10-20",
  "built": "2026-10-20",
  "source": {
   "kind": "authored",
   "document": "Masters/UCG Masters MAG CoP.svg",
   "repo": "nssharpe/ucg-code-of-points",
-  "commit": "bbdb4496fd78c4bee4fac849313d7cba2ef6a11f"
+  "commit": "9aabfa6e869d58a2bf75273cfbdf8f14f5acbfc1"
  },
  "records": [
   {
@@ -607,7 +607,7 @@
    "number": "1",
    "page": 5,
    "description": "Swing forwards or backwards to bent arm hang in L",
-   "value": "Misc",
+   "value": "GE",
    "element_group": "III",
    "eponym": "",
    "video": "https://youtu.be/-sEJ1EPCffo",
@@ -694,9 +694,10 @@
    "value": "ME",
    "element_group": "II",
    "eponym": "",
-   "note": "Hips must be level, arms straight and off straps",
+   "note": "Hips must be level, arms straight and off straps, and knees must be behind straps",
    "video": "https://youtu.be/_AYytnXOgyY",
-   "drawing": true
+   "drawing": true,
+   "adopted": "2026-10-20"
   },
   {
    "id": "UCGM-mag-SR-tuck-salto-front-or-back-also-with-1-2",
@@ -1341,7 +1342,7 @@
    "number": "1",
    "page": 9,
    "description": "Hopping from forward to backward swing or vice versa with grip change",
-   "value": "Misc",
+   "value": "GE",
    "element_group": "II",
    "eponym": "",
    "video": "https://youtu.be/XH5oc7WCTeE",

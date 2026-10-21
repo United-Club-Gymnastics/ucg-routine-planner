@@ -22,24 +22,24 @@ function copyTo(disc, fromLevel, toLevel, ev, rows, catalog) {
   return { to, rows: to.routines[ev].filter((r) => r.name || r.letter), summary };
 }
 
-test('Xcel -> WAG Masters: WG letter and Masters group, exact / approximate / not credited', () => {
+test('Xcel -> WAG Masters: WG letter (no element groups), exact / approximate / not credited', () => {
   const { to, rows, summary } = copyTo('wag', 'gold', 'masters', 'bb', [
-    pick('USAG-BB-1.101-2', 'Leap mount lowering into scale', 'A'), // WG 1.101 (A, group 1 -> Masters IV)
+    pick('USAG-BB-1.101-2', 'Leap mount lowering into scale', 'A'), // WG 1.101 (A)
     pick('USAG-BB-1.104-1', 'Jump to straddle stand or to split sit', 'A'), // broad Xcel record
     pick('USAG-BB-1.101-1b', 'Jump mount to stand, two-foot take-off', 'A'), // no WG skill
     { name: 'My own skill', letter: 'B', eg: '' }, // typed in by hand
   ], WAG);
   assert.equal(rows[0].skillId, 'WGW-BB-1.101-1');
   assert.equal(rows[0].letter, 'A');
-  assert.equal(rows[0].eg, '4');
+  assert.equal(rows[0].eg, ''); // WAG Masters has no element groups
   assert.ok(!rows[0].approx);
   assert.ok(rows[1].approx);
   assert.ok(rows[2].noCredit && !rows[2].letter && !rows[2].skillId);
   assert.ok(rows[3].check && rows[3].letter === 'B');
   assert.deepEqual(summary, { exact: 1, approximate: 1, notCredited: 1, typed: 1, vault: '' });
   assert.equal(to.revalued.catalog, WAG.version);
-  // The not-credited skill adds nothing: 3 skills count toward routine length, not 4.
-  assert.equal(scoreEntry(to).events.bb.shortBy, 3);
+  // The not-credited skill adds nothing: 3 skills count toward routine length (of 7), not 4.
+  assert.equal(scoreEntry(to).events.bb.shortBy, 4);
 });
 
 test('Side-position beam jump: WG adjusted value, and exact', () => {
@@ -89,10 +89,10 @@ test("Vaults follow the same vault into the target level's own list", () => {
   assert.deepEqual(vaultTo('mag', 'masters', 'adv', 'UCGM-mag-pike-hecht-over-table', MAG), ['', 'none']);
 });
 
-test('Masters MAG "GE" (gymnastics element) is a Miscellaneous skill, valued by age decade', async () => {
+test('Masters MAG "GE" (gymnastics element) skills keep their GE value, valued by age decade', async () => {
   const { searchSkills } = await import('../js/skill-search.js');
   const s = searchSkills('mag', 'hb', 'hopping grip change').find((x) => x.src === 'UCGM');
-  assert.equal(s.value, 'Misc');
+  assert.equal(s.value, 'GE');
 });
 
 test('One event copied from another level: only that event is replaced and re-valued', () => {

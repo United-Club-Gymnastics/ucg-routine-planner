@@ -3,7 +3,8 @@
 import { VAULTS as INFINITY_VAULTS } from '../data/wag-infinity-vaults.js';
 import { XCEL_LIMITS, XCEL_SR, XCEL_SILVER_VAULTS, XCEL_VAULTS, XCEL_VP } from '../data/xcel.js';
 import { VAULTS as SAPPHIRE_L910_VAULTS } from '../data/sapphire-vaults.js';
-import { MASTERS_LETTERS, mastersValue, meetsRequirement, vaultAgeBonus } from './masters.js';
+import { MASTERS_LETTERS, WAG_CR, beamBonus, bestCount, countingTotal, dismountCr, mastersValue, meetsRequirement, vaultAgeBonus } from './masters.js';
+import { TAGS as MASTERS_TAGS } from '../data/masters-wag-tags.js';
 import { VAULTS as WG_VAULTS } from '../data/wag-vaults.js';
 import { VAULTS as MASTERS_VAULTS } from '../data/masters-vaults.js';
 import { SAME_ELEMENT, HAND_SUPPORT_FLIGHT as HAND_SUPPORT_FLIGHT_IDS } from '../data/wag-same.js';
@@ -42,13 +43,6 @@ export const INFINITY_GROUPS = {
     condensed: { I: [1, 2], II: [3, 4, 5], III: [6, 7], IV: [8] },
     eventBonus: 'Acro pass with min. of 2 connected saltos (direct or indirect)',
   },
-};
-
-// WAG Masters: WG groups condensed into I-IV (Masters Rules Policy).
-export const MASTERS_GROUPS = {
-  ub: { 1: 'Mounts', 2: 'Casts, clear hip, stalder and pike circles', 3: 'Giant circles', 4: 'Dismounts' },
-  bb: { 1: 'Leaps, jumps and hops', 2: 'Turns', 3: 'Holds and acro (non-flight and flight)', 4: 'Mounts and dismounts' },
-  fx: { 1: 'Leaps, jumps and hops', 2: 'Turns', 3: 'Hand support elements', 4: 'Saltos forward, sideward and backward' },
 };
 
 const ROMAN = { 1: 'I', 2: 'II', 3: 'III', 4: 'IV' };
@@ -229,41 +223,135 @@ export function scoreXcelVault(level, id, { altBoard = false } = {}) {
 }
 
 // ---- WAG Masters -------------------------------------------------------------
+// UCG Masters Rules Policy v2.1 (§III.C), aligned with the international Masters CoP 2025-2028:
+// Composition Requirements (CR I-V) replaced the condensed element groups.
+
+export const CR_IDS = ['I', 'II', 'III', 'IV', 'V'];
+/** The CR texts for an apparatus (from the rules digest). */
+export const crTexts = (event) => CR_IDS.map((id) => WAG_CR.cr[event.toUpperCase()][id]);
+// Beam widening (N5): 'none' (the host has none: Table 2, everyone 40+ gets the beam bonus), 'offered'
+// (Table 1, the gymnast doesn't use it: bonus), 'used' (Table 1, on the widening: no bonus).
+export const WIDENING = ['none', 'offered', 'used'];
+
+// What a listed skill is (data/masters-wag-tags.js, the planner's own tags). A skill typed in has none.
+const tagsOf = (it) => MASTERS_TAGS[it.skillId] || null;
+const is = (it, tag) => !!tagsOf(it)?.includes(tag);
 
 /**
- * WAG Masters bars / beam / floor: the 6 highest-value skills count; +0.5 per
- * condensed group with a skill at the decade's level (any skill in the routine);
- * -1.0 per counting skill under 6.
+ * The dismount: on bars and beam the last skill, if it is a dismount (or typed in, so unknown); on
+ * floor the last acro element (one typed in counts only as the last skill).
  */
-export function scoreWagMasters(event, skills = [], { decade } = {}) {
+export function wagMastersDismount(event, items) {
+  const live = items.filter((it) => it.status !== 'blank' && it.status !== 'repeat');
+  const last = live.at(-1);
+  if (event === 'fx') return live.findLast((it) => (tagsOf(it) ? is(it, 'acro') : it === last)) || null;
+  return last && (is(last, 'dismount') || !tagsOf(last)) ? last : null;
+}
+
+const met = (by, assumes = null) => ({ by: [].concat(by).map((it) => it.idx), assumes });
+
+/**
+ * Which CRs the routine meets, and by which skills: 5 entries, { by, assumes } or null. Skills of at
+ * least ME (30s, 40s) or GE (50+) fill CR I-IV, counting or not; one skill may fill several CRs.
+ * Combinations are skills marked as connected (`link`); the same acro element twice is fine.
+ */
+export function detectCr(event, items, dismount, { decade, table2 = true } = {}) {
+  const age = Number(decade) || 30;
+  const filled = items.filter((it) => it.status !== 'blank');
+  const el = filled.filter((it) => it.status !== 'repeat' && meetsRequirement(it.letter, decade));
+  const ok = (it) => meetsRequirement(it.letter, decade);
+  const pairs = filled.slice(1).map((b, k) => [filled[k], b]).filter(([a, b]) => a.link && ok(a) && ok(b));
+  const one = (test, assumes) => {
+    const it = el.find(test);
+    return it ? met(it, typeof assumes === 'function' ? assumes(it) : assumes) : null;
+  };
+  const twoDifferent = (test) => {
+    const list = el.filter(test);
+    const b = list.find((x) => elementKey(x) !== elementKey(list[0]));
+    return b ? met([list[0], b]) : null;
+  };
+  const pair = (test, assumes) => {
+    const p = pairs.find(test);
+    return p ? met(p, typeof assumes === 'function' ? assumes(p) : assumes) : null;
+  };
+  const different = ([a, b]) => elementKey(a) !== elementKey(b);
+  const dm = dismount && (tagsOf(dismount) ? met(dismount) : met(dismount, 'it is the dismount'));
+  if (event === 'ub') {
+    return [
+      one((it) => is(it, 'bar_change')),
+      one((it) => is(it, 'kip')),
+      twoDifferent((it) => is(it, 'circle')),
+      one((it) => is(it, 'turn180') || (is(it, 'flight') && !is(it, 'dismount'))) || one((it) => is(it, 'turn180_opt'), 'it is done with the turn'),
+      dm,
+    ];
+  }
+  if (event === 'bb') {
+    const deg = age >= 60 && table2 ? 90 : age >= 50 ? 135 : 180;
+    const splitOk = ([a, b]) => is(a, 'split') || is(b, 'split');
+    const jumpOk = ([a, b]) => age >= 60 && (is(a, 'leap') || is(b, 'leap')); // from 60 jumps without a split
+    const acro = (it) => is(it, 'acro');
+    return [
+      pair((p) => p.every((x) => is(x, 'dance')) && different(p) && (splitOk(p) || jumpOk(p)), (p) => (splitOk(p) ? `the split reaches ${deg}°` : null)),
+      one((it) => is(it, 'turn')),
+      pair(([a, b]) => (acro(a) && (acro(b) || is(b, 'dance'))) || (is(a, 'dance') && acro(b))) || (age >= 60 && table2 ? one((it) => is(it, 'hold')) : null),
+      twoDifferent(acro) || one((it) => is(it, 'hold') || (acro(it) && !is(it, 'flight'))),
+      dm,
+    ];
+  }
+  // Floor
+  const deg = age >= 60 ? 135 : 180;
+  return [
+    pair((p) => p.every((x) => is(x, 'leap')) && different(p) && p.some((x) => is(x, 'split')), `the split leap reaches ${deg}°`),
+    pair(([a, b]) => (is(a, 'acro') && is(b, 'acro') && (is(a, 'flight') || is(b, 'flight'))) || (age >= 60 && (is(a, 'acro') || is(b, 'acro')))),
+    one((it) => is(it, 'fwd')),
+    one((it) => is(it, 'bwd')),
+    dm,
+  ];
+}
+
+/**
+ * WAG Masters bars / beam / floor (policy §III.C.2): the dismount plus the 6 best other skills count
+ * (5 from 60); -1.0 per skill under 7 (6). Composition Requirements: CR I-IV +0.5 each, the dismount
+ * CR V +0.3 or +0.5 by its level; from 60, bars CR I and II give +0.3 even without the element. Beam:
+ * the beam bonus from 40, unless the gymnast uses a widening. The coach can tick or untick any CR
+ * (crSet[i]: true / false overrides what the skills meet).
+ */
+export function scoreWagMasters(event, skills = [], { decade, crSet = [], widening = 'none' } = {}) {
   const items = baseItems(skills, (l) => mastersValue(l, decade) ?? 0);
   markRepeats(items);
-  const cand = items.filter((it) => !it.status);
-  // On a tie, a skill that counts toward routine length (meets the decade's requirement) wins.
+  const dismount = wagMastersDismount(event, items);
+  const cand = items.filter((it) => !it.status && it !== dismount);
   const meets = (it) => (meetsRequirement(it.letter, decade) ? 1 : 0);
-  const counting = new Set([...cand].sort((a, b) => b.value - a.value || meets(b) - meets(a) || a.idx - b.idx).slice(0, MIN_SKILLS).map((it) => it.idx));
-  for (const it of cand) {
-    it.status = counting.has(it.idx) ? 'counting' : 'noncounting';
+  const best = cand.sort((a, b) => b.value - a.value || meets(b) - meets(a) || a.idx - b.idx).slice(0, bestCount(decade));
+  const counting = new Set(dismount ? [...best, dismount] : best);
+  for (const it of items) {
+    if (it.status) continue;
+    it.status = counting.has(it) ? 'counting' : 'noncounting';
     if (it.status === 'noncounting') it.reason = 'top';
   }
   const rows = items.filter((it) => it.status === 'counting');
-  const earned = new Set();
-  for (const list of [rows, items.filter((it) => it.status === 'noncounting')]) {
-    for (const r of list) {
-      if (r.eg >= 1 && r.eg <= 4 && meetsRequirement(r.letter, decade) && !earned.has(r.eg)) {
-        earned.add(r.eg);
-        r.bonus = 0.5;
-        if (r.status === 'noncounting') r.reason = 'egOnly';
-      }
-    }
-  }
+  const table2 = widening !== 'offered' && widening !== 'used';
+  const detectedSr = detectCr(event, items, dismount, { decade, table2 });
+  const sr = CR_IDS.map((_, i) => crSet[i] ?? !!detectedSr[i]);
+  const age = Number(decade) || 30;
+  const last = items.filter((it) => it.status !== 'blank').at(-1);
+  const crValues = CR_IDS.map((id, i) => {
+    if (i === 4) return sr[i] ? dismountCr((dismount || last)?.letter, decade) : 0;
+    if (sr[i]) return WAG_CR.crEach;
+    return event === 'ub' && age >= 60 ? WAG_CR.ubAuto[id] || 0 : 0;
+  });
+  // A skill outside the counting ones that fills a CR still earns it.
+  detectedSr.forEach((d, i) => sr[i] && d?.by.forEach((k) => items[k].status === 'noncounting' && (items[k].reason = 'crOnly')));
+  const crTotal = round1(crValues.reduce((t, v) => t + v, 0));
+  const beam = event === 'bb' && widening !== 'used' ? beamBonus(decade) || 0 : 0;
   const difficulty = round1(rows.reduce((t, r) => t + r.value, 0));
-  const egTotal = round1(earned.size * 0.5);
-  const shortBy = Math.max(0, MIN_SKILLS - rows.filter((r) => meetsRequirement(r.letter, decade)).length);
-  const sv = rows.length ? round1(EXECUTION + difficulty + egTotal - shortBy) : null;
+  const total = countingTotal(decade);
+  const shortBy = Math.max(0, total - rows.filter((r) => meetsRequirement(r.letter, decade)).length);
+  const sv = rows.length ? round1(EXECUTION + difficulty + crTotal + beam - shortBy) : null;
   return {
-    items, rows, difficulty, egTotal, shortBy, sv, earnedGroups: [...earned],
-    totals: [['Execution', 10], ['Difficulty', difficulty], ['EG bonus', egTotal], [`Short of ${MIN_SKILLS}`, -shortBy]],
+    items, rows, difficulty, crTotal, crValues, sr, detectedSr, beamBonus: beam, shortBy, minSkills: total, sv,
+    dismount: dismount ? dismount.idx : null,
+    totals: [['Execution', 10], ['Difficulty', difficulty], ['CR bonus', crTotal], ...(event === 'bb' ? [['Beam bonus', beam]] : []), [`Short of ${total}`, -shortBy]],
   };
 }
 
@@ -282,13 +370,6 @@ export function scoreWagMastersVault(id, { decade } = {}) {
   const ageBonus = vaultAgeBonus('wag', decade);
   return { ...v, dv: v.value, ageBonus, sv: round1(EXECUTION + v.value + ageBonus) };
 }
-
-// WG element group -> WAG Masters condensed group (Masters Rules Policy).
-export const WG_TO_MASTERS = {
-  ub: { 1: 1, 2: 2, 4: 2, 5: 2, 3: 3, 6: 4 },
-  bb: { 2: 1, 3: 2, 4: 3, 5: 3, 1: 4, 6: 4 },
-  fx: { 1: 1, 2: 2, 3: 3, 4: 4, 5: 4 },
-};
 
 export const WAG_MASTERS_LETTERS = MASTERS_LETTERS;
 export { ROMAN };

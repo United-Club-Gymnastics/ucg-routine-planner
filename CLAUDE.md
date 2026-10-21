@@ -51,9 +51,14 @@ gym-skill-extract `rules/UCG-*/decisions.md`.
   target exists. The first case is MAG PB 16 -> PB 15 (tested in `tests/mag.test.mjs`).
 - **Masters vaults** come from the bundle's `ucg-masters-vaults.json` (owned by ucg-code-of-points),
   including the age bonus (`AGE_BONUS` in `masters-vaults.js`, used by `js/scoring/masters.js`).
+- **Rules data from the digests** (2026-10-20): `js/data/masters-rules.js` (UCG-MASTERS scoring.json: letter
+  values, counting, EG bonus, CRs, beam bonus) and `js/data/wg-mag-rules.js` (WG-MAG-2025 composition.json:
+  counting, dismount cap, floor balance-or-jump list, `SWING_HS`), tested equal in `tests/masters-wg.test.mjs`.
+  Planner-owned data in `tools/source`: `hb_flight_styles.json` (Advanced HB flight styles) and
+  `masters_wag_tags.json` (Masters WAG CR tags; the CoP prints no CR marks), both for Nate to check.
 - **Rules data still hard-coded** (no digest JSON yet): `ADV_VAULT`, `NON_FLIPPING` (build_skills.py),
-  `SWING_HS` (mag.js), `TAG_FIXES`, `EXCLUDE`, `MASTERS_MAP` (a check only) (build_data.py), the Masters
-  letter values and Infinity tables in `js/scoring/`, and `js/data/xcel.js`, `wag-infinity-vaults.js`.
+  `TAG_FIXES`, `EXCLUDE`, `MASTERS_MAP` (a check only) (build_data.py), the Infinity tables in `js/scoring/`,
+  and `js/data/xcel.js`, `wag-infinity-vaults.js`.
   Infinity's values and condensed groups are tested against `levels.json`. WAG Masters counts a skill
   once by name (`js/scoring/wag.js`): a candidate for the bundle's WG-WAG-2025 same-element digest,
   which nothing reads yet (nor the WG-WAG composition and CV digests: no planner level scores them).

@@ -32,8 +32,8 @@ import { EXAMPLES, closestSkill, disciplineLoaded, findSkill, loadDiscipline, ma
 import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
 import * as mag from './scoring/mag.js';
 import { MAG_MASTERS_VAULTS, OTHER_VAULT, devBanned, offeredAt } from './scoring/mag.js';
-import { mastersValue, vaultAgeBonus } from './scoring/masters.js';
-import { INFINITY_VAULT_LIST, findInfinityVault, WAG_MASTERS_VAULTS, WAG_OTHER_VAULT, WAG_WG_VAULTS, WG_TO_MASTERS, xcelVaults } from './scoring/wag.js';
+import { countingTotal, dismountCrText, mastersEgText, mastersValue, vaultAgeBonus } from './scoring/masters.js';
+import { INFINITY_VAULT_LIST, findInfinityVault, WAG_MASTERS_VAULTS, WAG_OTHER_VAULT, WAG_WG_VAULTS, xcelVaults } from './scoring/wag.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -948,7 +948,10 @@ function startSelect(e, p) {
 function headCells(spec) {
   if (spec.columns === 'dd') return `<span class="col-num">#</span><span class="col-name">Skill</span><span class="col-letter">Shorthand</span><span class="col-eg">DD</span><span></span>`;
   if (spec.columns === 'xcel') return `<span class="col-num">#</span><span class="col-name">Skill</span><span class="col-letter">Value</span><span class="col-eg">Element group</span><span class="col-value">VP${spec.vp ? infoButton('value parts', vpTip(spec.vp)) : ''}</span><span></span>`;
-  return `<span class="col-num">#</span><span class="col-name">Skill</span><span class="col-letter">Diff.</span><span class="col-eg">Element group</span><span class="col-value">Value</span><span class="col-bonus">EG bonus</span><span></span>`;
+  // WAG Masters: no element groups (Composition Requirements, listed under the routine).
+  const eg = spec.groups ? 'Element group' : '';
+  const bonus = spec.srKind === 'cr' ? '' : 'EG bonus';
+  return `<span class="col-num">#</span><span class="col-name">Skill</span><span class="col-letter">Diff.</span><span class="col-eg">${eg}</span><span class="col-value">Value</span><span class="col-bonus">${bonus}</span><span></span>`;
 }
 
 // "Value parts needed: 1 C, 3 B, 4 A." A higher skill can fill a lower value part.
@@ -1025,12 +1028,21 @@ function setEditing(key) {
 }
 
 // Ticked by updateComputed: met by a listed skill (and what it assumes), or ticked by hand.
+// Xcel special requirements, or WAG Masters Composition Requirements (spec.srKind 'cr').
+const CR_ROMAN = ['I', 'II', 'III', 'IV', 'V'];
 function srList(e, ev, spec) {
+  const cr = spec.srKind === 'cr';
+  const legend = cr
+    ? `Composition requirements <span class="muted">(+0.5 each; the dismount +0.3 or +0.5 by its value)</span>`
+    : `Special requirements <span class="muted">(−0.50 each one missing)</span>`;
+  const intro = cr
+    ? `Ticked when a listed skill meets one: skills of at least ${['50', '60', '70'].includes(e.decade) ? 'GE' : 'ME'} count, whether they're counting or not. Untick any the gymnast won't meet, or tick one met by a skill you typed in.${ev.id === 'ub' && ['60', '70'].includes(e.decade) ? ' From 60, CR I and II give +0.3 even without the element.' : ''}`
+    : "Ticked when a listed skill meets one. Untick any the gymnast won't meet, or tick one met by a skill you typed in.";
   return `
     <fieldset class="sr-list">
-      <legend>Special requirements <span class="muted">(−0.50 each one missing)</span></legend>
-      <p class="sr-intro">Ticked when a listed skill meets one. Untick any the gymnast won't meet, or tick one met by a skill you typed in.</p>
-      ${spec.sr.map((t, i) => `<label class="sr-item" data-sr-row="${ev.id}:${i}"><input type="checkbox" data-sr="${ev.id}" data-sr-idx="${i}" /><span class="sr-text"><span><strong>SR ${i + 1}.</strong> ${esc(t)}</span><span class="sr-how" data-sr-how></span></span></label>`).join('')}
+      <legend>${legend}</legend>
+      <p class="sr-intro">${esc(intro)}</p>
+      ${spec.sr.map((t, i) => `<label class="sr-item" data-sr-row="${ev.id}:${i}"><input type="checkbox" data-sr="${ev.id}" data-sr-idx="${i}" /><span class="sr-text"><span><strong>${cr ? `CR ${CR_ROMAN[i]}` : `SR ${i + 1}`}.</strong> ${esc(cr ? t[0].toUpperCase() + t.slice(1) : t)}</span><span class="sr-how" data-sr-how></span></span>${cr ? '<span class="event-bonus-value calc" data-sr-val></span>' : ''}</label>`).join('')}
     </fieldset>`;
 }
 
@@ -1051,6 +1063,8 @@ function optionControl(e, evId, o) {
     control = ''; // worked out from the linked skills
   } else if (o.kind === 'count') {
     control = `<select ${data} aria-label="${esc(o.label)}">${Array.from({ length: o.max + 1 }, (_, n) => `<option value="${n}"${Number(v || 0) === n ? ' selected' : ''}>${o.id === 'bonus' ? `+${(n / 10).toFixed(1)}` : n}</option>`).join('')}</select>`;
+  } else if (o.kind === 'choice') {
+    control = `<select ${data} data-choice aria-label="${esc(o.label)}">${o.choices.map(([value, label]) => `<option value="${value}"${(v || o.choices[0][0]) === value ? ' selected' : ''}>${esc(label)}</option>`).join('')}</select>`;
   } else if (o.kind === 'mushroom') {
     control = `<select ${data} aria-label="${esc(o.label)}">${Array.from({ length: 11 }, (_, n) => {
       const x = n / 10;
@@ -1292,7 +1306,7 @@ function onInput(ev) {
   const e = entry();
   if (t.dataset.option) {
     const opts = ((e.options ||= {})[t.dataset.option] ||= {});
-    opts[t.dataset.opt] = t.type === 'checkbox' ? t.checked : Number(t.value);
+    opts[t.dataset.opt] = t.type === 'checkbox' ? t.checked : t.dataset.choice != null ? t.value : Number(t.value);
   } else if (t.dataset.sr) {
     // Kept only where it differs from what the skills meet, so it follows routine changes.
     const opts = ((e.options ||= {})[t.dataset.sr] ||= {});
@@ -1772,19 +1786,24 @@ function scoreTip(e, ev, label) {
     'Start value': 'The sum of the parts to the left.',
   };
   if (fam === 'mag') {
-    const max = mag.LEVELS[lvl].maxSkills;
+    const max = mag.countingFor(lvl, e.decade);
+    const min = mag.minSkillsFor(lvl, e.decade);
     Object.assign(tips, {
       Difficulty: L.masters
-        ? `Your 6 highest-value skills, valued for ${decade}gymnasts (an A is worth ${fmt(mastersValue('A', e.decade))}).`
-        : `Your ${max} highest-value skills: A 0.1, B 0.2, C 0.3 and so on. At most 4 count from one element group.`,
+        ? `The dismount and your ${max - 1} best other skills, valued for ${decade}gymnasts (an A is worth ${fmt(mastersValue('A', e.decade))}). No limit per element group, but a lower skill counts instead of a higher one when that fills an element group and helps your score.`
+        : mag.LEVELS[lvl].dismountFirst
+          ? `The dismount and your 7 best other skills: A 0.1, B 0.2, C 0.3 and so on. At most 4 count from one element group.${lvl === 'adv' && ev.id === 'hb' ? ' High bar: a 5th flight counts when two flights are connected (C + C or better), and at most 2 flights of each style count.' : ''}`
+          : `Your ${max} highest-value skills: A 0.1, B 0.2, C 0.3 and so on. At most 4 count from one element group.`,
       'EG bonus': {
         dev: '+0.5 for each element group with a counting skill, up to 3 groups (+1.5).',
         int: 'EG I: +0.5. EG II-IV: +0.5 with a B or higher, +0.3 with an A.',
         adv: 'EG I: +0.5. Other groups: +0.5 for D or higher, +0.4 for C, +0.3 for A or B. The dismount group is worth the dismount\'s value (max 0.5).',
-        masters: "+0.5 for each group I-III with a skill at your decade's level. The dismount group is worth the dismount's value, up to 0.5 (not on floor).",
+        masters: `Each element group with a counting skill: ${mastersEgText(e.decade)}. ${ev.id === 'fx' ? 'Floor has four groups and no dismount group.' : "The dismount group (IV) is worth the dismount's value, up to 0.5."}`,
       }[lvl],
       'Other bonus': 'Connection and event bonuses, from the options below.',
-      [`Short of ${mag.MIN_SKILLS}`]: `-${fmt(mag.LEVELS[lvl].shortDeduction)} for each skill fewer than ${mag.MIN_SKILLS}.`,
+      [`Short of ${min}`]: L.masters
+        ? `-1.0 for each skill fewer than ${min} (including the dismount)${['50', '60', '70'].includes(e.decade) ? '' : '; GE skills don’t count toward the length in the 30s and 40s'}.`
+        : `-${fmt(mag.LEVELS[lvl].shortDeduction)} for each skill fewer than ${min}.`,
       'Start value': mag.LEVELS[lvl].cap ? `The sum of the parts to the left, capped at ${fmt(mag.LEVELS[lvl].cap)} (the cap applies before the short-routine deduction).` : tips['Start value'],
     });
   } else if (fam === 'infinity') {
@@ -1795,10 +1814,12 @@ function scoreTip(e, ev, label) {
       'Short of 6': '-1.0 for each skill fewer than 6.',
     });
   } else if (fam === 'wagMasters') {
+    const min = countingTotal(e.decade);
     Object.assign(tips, {
-      Difficulty: `Your 6 highest-value skills, valued for ${decade}gymnasts (an A is worth ${fmt(mastersValue('A', e.decade))}).`,
-      'EG bonus': "+0.5 for each condensed group (I-IV) with a skill at your decade's level, counting or not (max +2.0).",
-      'Short of 6': '-1.0 for each skill fewer than 6.',
+      Difficulty: `The dismount and your ${min - 1} best other skills, valued for ${decade}gymnasts (an A is worth ${fmt(mastersValue('A', e.decade))}).`,
+      'CR bonus': `Composition requirements (below): +0.5 for each of CR I-IV, and the dismount CR ${dismountCrText(e.decade)}.${ev.id === 'ub' && ['60', '70'].includes(e.decade) ? ' From 60, CR I and II give +0.3 even without the element.' : ''}`,
+      'Beam bonus': `From 40, unless the gymnast uses a widening: 40s +0.5, 50s +0.8, 60s +1.2, 70+ +1.5.`,
+      [`Short of ${min}`]: `-1.0 for each skill fewer than ${min} (including the dismount)${['50', '60', '70'].includes(e.decade) ? '' : '; GE skills don’t count toward the length in the 30s and 40s'}.`,
     });
   } else if (fam === 'xcel') {
     Object.assign(tips, {
@@ -1932,7 +1953,6 @@ function presetFilter(e, input) {
       const eg = String(row.eg);
       if (fam === 'mag') tests.push((s) => String(s.eg) === eg);
       else if (fam === 'infinity' || fam === 'xcel') tests.push((s) => String(s.group) === eg);
-      else if (fam === 'wagMasters') tests.push((s) => String(s.mgroup || WG_TO_MASTERS[evId]?.[s.group]) === eg);
       labels.push(fam === 'infinity' || fam === 'xcel' ? `group ${eg}` : `EG ${ROMAN[eg] || eg}`);
     }
   }
@@ -2025,12 +2045,12 @@ function renderPicker(query) {
   }
   let lastHead;
   picker.items.forEach((s, i) => {
-    const head = e.disc === 'tt' ? null : e.disc === 'mag' ? (s.eg ? `EG ${ROMAN[s.eg]} · ${spec.groups?.[s.eg - 1]?.label.replace(/^[IV]+\. /, '') || ''}` : 'No element group (no EG bonus)') : s.mgroup ? `Masters group ${ROMAN[s.mgroup]}` : s.group ? (s.src === 'WG' ? `WG group ${s.group}` : `Group ${s.group}${s.groupName ? ` · ${s.groupName}` : ''}`) : 'Skills';
+    const head = e.disc === 'tt' ? null : e.disc === 'mag' ? (s.eg ? `EG ${ROMAN[s.eg]} · ${spec.groups?.[s.eg - 1]?.label.replace(/^[IV]+\. /, '') || ''}` : 'No element group (no EG bonus)') : s.group ? (s.src === 'WG' ? `WG group ${s.group}` : `Group ${s.group}${s.groupName ? ` · ${s.groupName}` : ''}`) : 'Skills';
     if (!query && head && head !== lastHead) {
       html.push(`<div class="pop-head" role="presentation">${esc(head)}</div>`);
       lastHead = head;
     }
-    const meta = e.disc === 'tt' ? `${esc(s.notation || '')} · ${fmt(s.dd)}` : `${esc(s.value || 'No value')}${s.eg ? ` · EG ${ROMAN[s.eg]}` : s.mgroup ? ` · ${ROMAN[s.mgroup]}` : s.group ? ` · G${s.group}` : ''}`;
+    const meta = e.disc === 'tt' ? `${esc(s.notation || '')} · ${fmt(s.dd)}` : `${esc(s.value || 'No value')}${s.eg ? ` · EG ${ROMAN[s.eg]}` : s.group ? ` · G${s.group}` : ''}`;
     html.push(`
       <div class="pop-opt${i === picker.active ? ' active' : ''}" role="option" id="pop-opt-${i}" data-skill="${i}" aria-selected="${i === picker.active}"${s.note ? ` title="Note: ${esc(s.note)}"` : ''}>
         <span class="src-badge ${s.src.toLowerCase()}" title="${esc(boxTitle(s))}">${SRC_SHORT[s.src] || s.src}</span>
@@ -2188,9 +2208,12 @@ function flagFor(it, spec) {
   if (it.status === 'restricted') return ['Restricted', `${it.restrictWhy || 'Above this level’s allowed difficulty'}: −0.50, and no value part credit`];
   if (it.flag === 'over') return ['Check level', 'This skill is outside what this level allows'];
   if (it.status !== 'noncounting') return ['', ''];
-  if (it.reason === 'eg') return ['Over 4 in EG', 'Only 4 skills from one element group count, so this one adds no difficulty'];
+  if (it.reason === 'eg') return ['Over 4 in EG', `Only 4 skills from one element group count${spec.id === 'hb' && spec.family === 'mag' ? ' (5 flights when two flights are connected, C + C or better, at Advanced)' : ''}, so this one adds no difficulty`];
+  if (it.reason === 'style') return [`3rd ${it.style}`, `Only 2 flights of each style count (${it.style} style), so this one adds no difficulty`];
+  if (it.reason === 'swap') return ['Swapped out', 'A lower-value skill counts instead of this one, because it fills an element group and that gives you more'];
   if (it.reason === 'sr') return ['Over 3 EG II/III', 'Only 3 EG II or III skills count before a B or higher EG I skill'];
   if (it.reason === 'egOnly') return ['EG credit only', 'Not one of your counting skills, but it earns its element group bonus'];
+  if (it.reason === 'crOnly') return ['CR credit only', 'Not one of your counting skills, but it fills a composition requirement'];
   if (it.reason === 'offLevel') return ['Not at this level', "Not allowed at this level (search hides it), so it earns no credit: no value, element group, requirement or bonus"];
   if (it.reason === 'onlyOne') return ['Only one allowed', 'Only one tap swing or underswing with counterswing is allowed at Platinum, so this one earns no credit'];
   if (it.reason === 'extraVp') return ['Extra', 'Not needed for this level’s value parts'];
@@ -2348,6 +2371,8 @@ function updateComputed() {
         if (!row) return;
         $('input', row).checked = !!r.sr?.[i];
         $('[data-sr-how]', row).textContent = srHow(r, i, e.options?.[ev.id]?.srSet?.[i]);
+        const val = $('[data-sr-val]', row);
+        if (val) val.textContent = r.crValues?.[i] ? `+${fmt(r.crValues[i])}` : '';
       });
     }
     const vrow = $(`[data-option-row="vt:altBoard"]`, card);

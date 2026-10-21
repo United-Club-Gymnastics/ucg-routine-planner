@@ -1,0 +1,231 @@
+{
+ "code": "WG-WAG-2025",
+ "about": "Every change the WG WAG Technical Committee newsletters make to the 2025-2028 Code, one entry per change, in our own words. cite = newsletter and its page (text in ../newsletters/text/). elements = planner IDs (WGW-{APP}-{number}-{variant}); catalog_ids is filled from skill_catalog/aliases_wag.json by `python rules/changes.py rules/WG-WAG-2025`. planner: yes = the routine planner must implement or check it; judging = it changes how judges evaluate, nothing a routine list shows; no = nothing for the planner. Table-of-Elements changes are applied to the skill data by 'WG WAG CoP Extraction/amendments.json'. Procedure: docs/NEWSLETTERS.md.",
+ "newsletters": {
+  "WAG-NL-1": {
+   "title": "WAG Newsletter No. 1",
+   "date": "2026-02-23",
+   "printed": "23 February 2026",
+   "effective": "on publication (no date given); equipment rule from 2026-06-01",
+   "text": "../newsletters/text/wag-nl-1.md"
+  }
+ },
+ "changes": [
+  {
+   "id": "WAG-NL-1-01",
+   "newsletter": "WAG-NL-1",
+   "effective": "2026-02-23",
+   "type": "clarification",
+   "apparatus": "all",
+   "summary": "Starting a vault or exercise without the signal, or while the red light is on, scores 0 (as the Code says).",
+   "cite": "WAG-NL-1 p. 1; Code Section 9",
+   "planner": "no"
+  },
+  {
+   "id": "WAG-NL-1-02",
+   "newsletter": "WAG-NL-1",
+   "effective": "2026-02-23",
+   "type": "clarification",
+   "apparatus": "UB",
+   "summary": "After a fall she can use the springboard again to get back on, with no deduction.",
+   "cite": "WAG-NL-1 p. 1",
+   "planner": "no"
+  },
+  {
+   "id": "WAG-NL-1-03",
+   "newsletter": "WAG-NL-1",
+   "effective": "2026-02-23",
+   "type": "clarification",
+   "apparatus": "UB",
+   "elements": [
+    "WGW-UB-6.406-1",
+    "WGW-UB-6.305-1"
+   ],
+   "catalog_ids": {
+    "WGW-UB-6.406-1": [
+     "WAG-UB-0144",
+     "WAG-UB-0466"
+    ],
+    "WGW-UB-6.305-1": [
+     "WAG-UB-0141",
+     "WAG-UB-0342"
+    ]
+   },
+   "summary": "Double back layout dismount: the stretched position must be held for most of the salto, from horizontal (stomach to the floor) to inverted (legs vertical), to be credited stretched (D); otherwise piked (C).",
+   "cite": "WAG-NL-1 pp. 1-2",
+   "planner": "judging"
+  },
+  {
+   "id": "WAG-NL-1-04",
+   "newsletter": "WAG-NL-1",
+   "effective": "2026-02-23",
+   "type": "clarification",
+   "apparatus": "FX",
+   "summary": "CR1 dance passage must flow and travel: stopping, posing, walking or small two-foot jumps between its two dance elements cost the CR1.",
+   "cite": "WAG-NL-1 p. 2; Code p. 55 §13.3",
+   "planner": "judging"
+  },
+  {
+   "id": "WAG-NL-1-05",
+   "newsletter": "WAG-NL-1",
+   "effective": "2026-02-23",
+   "type": "clarification",
+   "apparatus": "VT",
+   "scope": "WG Youth Competition Programme",
+   "summary": "Youth programme: two vaults both with a salto earn 0.20 bonus each.",
+   "cite": "WAG-NL-1 p. 2",
+   "planner": "no"
+  },
+  {
+   "id": "WAG-NL-1-06",
+   "newsletter": "WAG-NL-1",
+   "effective": "2026-02-23",
+   "type": "clarification",
+   "apparatus": "UB",
+   "scope": "WG Youth Competition Programme",
+   "summary": "Youth programme, ages 12-13: a close-bar circle finishing more than 30° from handstand earns no CR (DV and angle deductions as in the Code), and the CR2 circle (and its bonus) must be of another root skill than the skill used for CR1.",
+   "cite": "WAG-NL-1 p. 2",
+   "planner": "no"
+  },
+  {
+   "id": "WAG-NL-1-07",
+   "newsletter": "WAG-NL-1",
+   "effective": "2026-02-23",
+   "type": "clarification",
+   "apparatus": "BB",
+   "scope": "WG Youth Competition Programme",
+   "summary": "Youth programme: a roll or flair can't meet CR2; for CR3 one acro series may use the same flight element twice and still earn the bonus.",
+   "cite": "WAG-NL-1 p. 2",
+   "planner": "no"
+  },
+  {
+   "id": "WAG-NL-1-08",
+   "newsletter": "WAG-NL-1",
+   "effective": "2026-02-23",
+   "type": "clarification",
+   "apparatus": "all",
+   "scope": "WG Youth Competition Programme",
+   "summary": "Youth programme: only its own bonuses apply (no Code CV), and each CR bonus is awarded once.",
+   "cite": "WAG-NL-1 p. 2",
+   "planner": "no"
+  },
+  {
+   "id": "WAG-NL-1-09",
+   "newsletter": "WAG-NL-1",
+   "effective": "2026-06-01",
+   "type": "rule_change",
+   "apparatus": "all",
+   "summary": "Gymnasts' own training aids (e.g. handstand blocks, practice beams, mats) may be in the competition area during podium training only, never on the podium or during competition; extra landing or spotting mats beyond the organiser's are never allowed.",
+   "cite": "WAG-NL-1 p. 3",
+   "planner": "no"
+  },
+  {
+   "id": "WAG-NL-1-10",
+   "newsletter": "WAG-NL-1",
+   "effective": "2026-02-23",
+   "type": "new_element",
+   "apparatus": "UB",
+   "elements": [
+    "WGW-UB-2.706-1"
+   ],
+   "catalog_ids": {
+    "WGW-UB-2.706-1": [
+     "WAG-UB-0509"
+    ]
+   },
+   "summary": "New box 2.706, G: clear hip circle on the high bar into a layout counter (reverse hecht) release (Zhang).",
+   "cite": "WAG-NL-1 pp. 4-5",
+   "planner": "no"
+  },
+  {
+   "id": "WAG-NL-1-11",
+   "newsletter": "WAG-NL-1",
+   "effective": "2026-02-23",
+   "type": "new_element",
+   "apparatus": "UB",
+   "elements": [
+    "WGW-UB-3.608-2"
+   ],
+   "catalog_ids": {
+    "WGW-UB-3.608-2": [
+     "WAG-UB-0510"
+    ]
+   },
+   "summary": "New in box 3.608, F: piked Jaeger with full turn (Minamino).",
+   "cite": "WAG-NL-1 pp. 4, 6",
+   "planner": "no"
+  },
+  {
+   "id": "WAG-NL-1-12",
+   "newsletter": "WAG-NL-1",
+   "effective": "2026-02-23",
+   "type": "new_element",
+   "apparatus": "UB",
+   "elements": [
+    "WGW-UB-3.708-2"
+   ],
+   "catalog_ids": {
+    "WGW-UB-3.708-2": [
+     "WAG-UB-0511"
+    ]
+   },
+   "summary": "New in box 3.708, G: layout Jaeger with full turn (Yang).",
+   "cite": "WAG-NL-1 pp. 4, 6",
+   "planner": "no"
+  },
+  {
+   "id": "WAG-NL-1-13",
+   "newsletter": "WAG-NL-1",
+   "effective": "2026-02-23",
+   "type": "new_element",
+   "apparatus": "UB",
+   "elements": [
+    "WGW-UB-6.408-2"
+   ],
+   "catalog_ids": {
+    "WGW-UB-6.408-2": [
+     "WAG-UB-0512"
+    ]
+   },
+   "summary": "New in box 6.408, D: from L grip, swing back with ½ turn to double back pike dismount (Okamura).",
+   "cite": "WAG-NL-1 pp. 4, 7",
+   "planner": "no"
+  },
+  {
+   "id": "WAG-NL-1-14",
+   "newsletter": "WAG-NL-1",
+   "effective": "2026-02-23",
+   "type": "description_change",
+   "apparatus": "BB",
+   "elements": [
+    "WGW-BB-6.304-2"
+   ],
+   "catalog_ids": {
+    "WGW-BB-6.304-2": [
+     "WAG-BB-0187"
+    ]
+   },
+   "summary": "Dismount 6.304-2 (back salto with double twist, C) now allows the tucked shape as well as stretched, named Mordenti. Matching re-checked (newsletter round): USAG back double twist (tuck, pike or layout) still covers more than this element.",
+   "cite": "WAG-NL-1 pp. 4, 8",
+   "planner": "no"
+  },
+  {
+   "id": "WAG-NL-1-15",
+   "newsletter": "WAG-NL-1",
+   "effective": "2026-02-23",
+   "type": "new_element",
+   "apparatus": "FX",
+   "elements": [
+    "WGW-FX-1.509-1"
+   ],
+   "catalog_ids": {
+    "WGW-FX-1.509-1": [
+     "WAG-FX-0266"
+    ]
+   },
+   "summary": "New box 1.509, E: split ring leap with full turn (Prat).",
+   "cite": "WAG-NL-1 pp. 4, 9",
+   "planner": "no"
+  }
+ ]
+}

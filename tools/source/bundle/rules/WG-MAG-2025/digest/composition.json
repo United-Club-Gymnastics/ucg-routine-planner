@@ -1,0 +1,78 @@
+{
+  "code": "WG-MAG-2025",
+  "about": "D-score structure, element group values, stick bonus, connection value and requirements of WG MAG 2025-2028, current to MAG Newsletter 4 (July 2026). Own words; digest of composition.md. 'cite' is the printed page and article, or the newsletter and its page. 'since' is the date a newsletter rule takes effect; 'code_rule' keeps what the Code said before.",
+  "values": {"A": 0.1, "B": 0.2, "C": 0.3, "D": 0.4, "E": 0.5, "F": 0.6, "G": 0.7, "H": 0.8, "I": 0.9, "J": 1.0, "cite": "p. 15 §7.1"},
+  "counting": {
+    "PH_SR_PB_HB": {"dismount": 1, "others": 7, "max_per_eg": 4, "cite": "p. 14 §6.1"},
+    "FX": {"dismount": 1, "others": 7, "max_per_eg": 4, "dismount_counted_first": true, "since": "2026-01-01",
+           "code_rule": {"count": 8, "rule": "the 8 highest", "cite": "p. 14 §6.1"}, "cite": "MAG-NL-1 p. 3; MAG-NL-2 p. 3"},
+    "repeat_counts": false, "repeat_cite": "p. 16 §7.5.3"
+  },
+  "short_exercise_penalty": [{"min": 6, "penalty": 0}, {"min": 5, "penalty": 3.0}, {"min": 4, "penalty": 4.0}, {"min": 3, "penalty": 5.0}, {"min": 2, "penalty": 6.0}, {"min": 1, "penalty": 7.0}, {"min": 0, "penalty": 10.0}],
+  "short_exercise_cite": "p. 14 §6.3 (table read from the page image)",
+  "element_groups": {
+    "required": "one element of each EG (FX: 4 EGs; others: I-III plus dismount group IV)",
+    "value_d_or_higher": 0.5, "value_a_to_c": 0.3, "eg1_any_value": 0.5,
+    "inside_counting_only": true,
+    "cite": "p. 15 §7.2.2-7.2.6"
+  },
+  "dismount_group": {
+    "apparatus": ["PH", "SR", "PB", "HB"], "value": "dismount difficulty value", "max": 0.5, "since": "2026-01-01",
+    "code_rule": {"value": "dismount difficulty value", "max": null, "cite": "p. 15 §7.2.8"},
+    "cite": "MAG-NL-3 p. 1"
+  },
+  "stick_bonus": {
+    "amount": 0.1, "min_dismount_value": "C", "vault": "vaults with saltos", "not_on": ["PH"],
+    "not_cancelled_by": ["legs apart", "arm waving", "lack of preparation"],
+    "cancelled_by": ["heels or toes raised to keep balance"],
+    "with_line_deduction": {"apparatus": ["FX", "VT"], "allowed": true, "since": "2026-09-01", "cite": "MAG-NL-4 p. 2"},
+    "cite": "p. 15 §7.2.9; MAG-NL-3 p. 2"
+  },
+  "connection_value": {
+    "FX": {"rules": [{"a": "D+", "b": "B-C", "bonus": 0.1}, {"a": "D+", "b": "D+", "bonus": 0.2}],
+           "both_sides_of_one_element": true, "inside_counting": true,
+           "none_for": ["counter saltos", "two single saltos with twists in a row"], "fall_cancels": true,
+           "cite": "p. 26 §10.2.2.5"},
+    "HB": {"rules": [{"a": "flight C", "b": "flight D+", "bonus": 0.1, "either_order": true},
+                     {"a": "flight D", "b": "flight D", "bonus": 0.1},
+                     {"a": "flight D+", "b": "flight E+", "bonus": 0.2, "either_order": true},
+                     {"a": "EG I or III D+", "b": "flight D", "bonus": 0.1, "either_order": true},
+                     {"a": "EG I or III D+", "b": "flight E+", "bonus": 0.2, "either_order": true}],
+           "inside_counting": true, "cite": "p. 115 §15.2.2.2"}
+  },
+  "requirements": {
+    "FX": [
+      {"id": "multiple_salto", "label": "a double or triple salto counted in the routine (seniors: the dismount)", "cite": "p. 26 §10.2.2.3"},
+      {"id": "balance_or_jump", "label": "a balance on one leg, or a jump/leap from the newsletter list; need not be a counting element", "neutral": 0.3,
+       "elements": ["WG-FX-I-61", "WG-FX-I-62", "WG-FX-I-67", "WG-FX-I-68", "WG-FX-I-74", "WG-FX-I-75", "WG-FX-I-115", "WG-FX-I-116", "WG-FX-I-117", "WG-FX-I-43", "WG-FX-II-8"],
+       "printed_as": {"WG-FX-I-115": "I.15", "WG-FX-I-116": "I.16", "WG-FX-I-117": "I.17"},
+       "ucg_levels": ["adv"], "ucg_cite": "UCG MAG Rules Breakdown, Balance/Corner Requirement row (Advanced only; Nate, 2026-10-20)",
+       "excluded": ["stag leaps with or without turn (MAG-NL-3 p. 3)"],
+       "conditions": ["jumps with turns to front support take off from two feet", "jumps to support land on the hands under control (0.1/0.3/0.5 and NR)"],
+       "code_rule": {"label": "a one-leg balance, I.61 or I.62", "cite": "p. 27 §10.2.2.6 m"},
+       "cite": "MAG-NL-1 pp. 2, 9; MAG-NL-3 p. 3; MAG-NL-4 p. 2"},
+      {"id": "start_with_tumbling", "label": "the first element is a tumbling pass", "neutral": 0.3, "ucg_levels": ["adv"], "cite": "MAG-NL-1 p. 3; UCG: Advanced only (Nate, 2026-10-20)"},
+      {"id": "unique_transitions", "label": "all corner transitions different (stag leaps, sissonnes, split jumps each count as one kind from 2026-09-01)", "neutral": 0.3, "once": true, "since": "2026-01-01", "cite": "MAG-NL-1 p. 3; MAG-NL-3 p. 2; MAG-NL-4 p. 2"},
+      {"id": "corners", "label": "go to and/or from every corner; same diagonal at most twice in a row", "neutral": 0.3, "once": true, "cite": "p. 26 §10.2.1.2 c"}
+    ],
+    "SR": [
+      {"id": "swing_to_handstand", "label": "one swing to handstand (2 s) among the counting elements", "elements": ["WG-SR-I-75", "WG-SR-I-81", "WG-SR-I-86", "WG-SR-I-87", "WG-SR-I-88"], "cite": "p. 60 §12.2.2.2; MAG-NL-1 p. 5"}
+    ]
+  },
+  "special_repetitions": {
+    "FX": [{"max": 1, "what": "strength element (I.1-I.48 except I.19 and I.31)"}, {"max": 1, "what": "circle, flair or Russian"}, {"cite": "p. 27 §10.2.2.7"}],
+    "SR": [{"max": 3, "what": "EG II/III elements in direct succession, unless a recognised B+ EG I swing element (not a kip) comes between", "cite": "p. 61 §12.2.2.3"},
+           {"max": 1, "what": "final strength position per EG", "cite": "p. 61 §12.2.2.4"}],
+    "PB": [{"max": 1, "what": "body/regrasp variant of one salto element per EG"}, {"max": 2, "what": "giants through handstand"}, {"max": 2, "what": "felges through handstand"}, {"max": 2, "what": "front uprises through handstand"}, {"cite": "p. 95 §14.2.2.4"}],
+    "HB": [{"max": 2, "what": "Adler-type stoop circles"}, {"max": 1, "what": "grip variant of one turning element"},
+           {"max": 2, "what": "flights of each style: Tkatchev/Piatti, Kovacs (incl. II.82, II.83), Gienger, Jager, Markelov, front saltos over the bar"},
+           {"what": "a 5th flight counts only when two flights are done back to back (C+C or better)"},
+           {"cite": "p. 116 §15.2.2.5-6; MAG-NL-1 p. 6"}]
+  },
+  "compositional_errors": {
+    "PB": [{"what": "jump from the floor to L-sit", "deduction": 0.3}, {"what": "upper-arm kip to support", "deduction": 0.3}, {"since": "2026-01-01", "cite": "MAG-NL-3 p. 4 (badge read from the page image)"}]
+  },
+  "juniors_prohibited": [{"what": "every triple salto (dismounts and floor)", "since": "2026-01-01", "cite": "MAG-NL-3 p. 1"},
+                         {"what": "PB saltos landing in upper arms or bent-arm support", "cite": "p. 93 §14.2.1.4 e"},
+                         {"what": "SR backward saltos in hang", "cite": "p. 61 §12.2.2.5 f"}]
+}
