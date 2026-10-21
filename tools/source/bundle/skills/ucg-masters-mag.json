@@ -8,7 +8,7 @@
   "kind": "authored",
   "document": "Masters/UCG Masters MAG CoP.svg",
   "repo": "nssharpe/ucg-code-of-points",
-  "commit": "c16ea2bc96027be71149914aff66a83860035ea6"
+  "commit": "5d5bef8ba7cdf4ce1ee3dd2a5aa4e1da20f23c90"
  },
  "records": [
   {
@@ -531,7 +531,7 @@
    "element_group": "IV",
    "eponym": "Pearce",
    "video": "https://youtu.be/2fOvri6l_F4",
-   "drawing": false,
+   "drawing": true,
    "main_id": "UCG-PH-half-spindle-over-one-pommel-handstand-dismount",
    "added": "2026-10-06"
   },
@@ -572,7 +572,7 @@
    "element_group": "IV",
    "eponym": "",
    "video": "https://youtu.be/toUG9QqVWlI",
-   "drawing": false,
+   "drawing": true,
    "main_id": "UCG-PH-half-spindle-to-handstand-dismount-from-over-the-handles",
    "added": "2026-10-06"
   },
