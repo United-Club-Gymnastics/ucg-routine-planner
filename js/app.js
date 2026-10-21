@@ -32,7 +32,7 @@ import { EXAMPLES, closestSkill, disciplineLoaded, findSkill, loadDiscipline, ma
 import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
 import * as mag from './scoring/mag.js';
 import { MAG_MASTERS_VAULTS, OTHER_VAULT, devBanned, offeredAt } from './scoring/mag.js';
-import { mastersValue, vaultAgeBonus } from './scoring/masters.js';
+import { mastersEgText, mastersValue, vaultAgeBonus } from './scoring/masters.js';
 import { INFINITY_VAULT_LIST, findInfinityVault, WAG_MASTERS_VAULTS, WAG_OTHER_VAULT, WAG_WG_VAULTS, WG_TO_MASTERS, xcelVaults } from './scoring/wag.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -1772,19 +1772,24 @@ function scoreTip(e, ev, label) {
     'Start value': 'The sum of the parts to the left.',
   };
   if (fam === 'mag') {
-    const max = mag.LEVELS[lvl].maxSkills;
+    const max = mag.countingFor(lvl, e.decade);
+    const min = mag.minSkillsFor(lvl, e.decade);
     Object.assign(tips, {
       Difficulty: L.masters
-        ? `Your 6 highest-value skills, valued for ${decade}gymnasts (an A is worth ${fmt(mastersValue('A', e.decade))}).`
-        : `Your ${max} highest-value skills: A 0.1, B 0.2, C 0.3 and so on. At most 4 count from one element group.`,
+        ? `The dismount and your ${max - 1} best other skills, valued for ${decade}gymnasts (an A is worth ${fmt(mastersValue('A', e.decade))}). No limit per element group, but a lower skill counts instead of a higher one when that fills an element group and helps your score.`
+        : mag.LEVELS[lvl].dismountFirst
+          ? `The dismount and your 7 best other skills: A 0.1, B 0.2, C 0.3 and so on. At most 4 count from one element group.${lvl === 'adv' && ev.id === 'hb' ? ' High bar: a 5th flight counts when two flights are connected (C + C or better), and at most 2 flights of each style count.' : ''}`
+          : `Your ${max} highest-value skills: A 0.1, B 0.2, C 0.3 and so on. At most 4 count from one element group.`,
       'EG bonus': {
         dev: '+0.5 for each element group with a counting skill, up to 3 groups (+1.5).',
         int: 'EG I: +0.5. EG II-IV: +0.5 with a B or higher, +0.3 with an A.',
         adv: 'EG I: +0.5. Other groups: +0.5 for D or higher, +0.4 for C, +0.3 for A or B. The dismount group is worth the dismount\'s value (max 0.5).',
-        masters: "+0.5 for each group I-III with a skill at your decade's level. The dismount group is worth the dismount's value, up to 0.5 (not on floor).",
+        masters: `Each element group with a counting skill: ${mastersEgText(e.decade)}. ${ev.id === 'fx' ? 'Floor has four groups and no dismount group.' : "The dismount group (IV) is worth the dismount's value, up to 0.5."}`,
       }[lvl],
       'Other bonus': 'Connection and event bonuses, from the options below.',
-      [`Short of ${mag.MIN_SKILLS}`]: `-${fmt(mag.LEVELS[lvl].shortDeduction)} for each skill fewer than ${mag.MIN_SKILLS}.`,
+      [`Short of ${min}`]: L.masters
+        ? `-1.0 for each skill fewer than ${min} (including the dismount)${['50', '60', '70'].includes(e.decade) ? '' : '; GE skills don’t count toward the length in the 30s and 40s'}.`
+        : `-${fmt(mag.LEVELS[lvl].shortDeduction)} for each skill fewer than ${min}.`,
       'Start value': mag.LEVELS[lvl].cap ? `The sum of the parts to the left, capped at ${fmt(mag.LEVELS[lvl].cap)} (the cap applies before the short-routine deduction).` : tips['Start value'],
     });
   } else if (fam === 'infinity') {
@@ -2188,7 +2193,9 @@ function flagFor(it, spec) {
   if (it.status === 'restricted') return ['Restricted', `${it.restrictWhy || 'Above this level’s allowed difficulty'}: −0.50, and no value part credit`];
   if (it.flag === 'over') return ['Check level', 'This skill is outside what this level allows'];
   if (it.status !== 'noncounting') return ['', ''];
-  if (it.reason === 'eg') return ['Over 4 in EG', 'Only 4 skills from one element group count, so this one adds no difficulty'];
+  if (it.reason === 'eg') return ['Over 4 in EG', `Only 4 skills from one element group count${spec.id === 'hb' && spec.family === 'mag' ? ' (5 flights when two flights are connected, C + C or better, at Advanced)' : ''}, so this one adds no difficulty`];
+  if (it.reason === 'style') return [`3rd ${it.style}`, `Only 2 flights of each style count (${it.style} style), so this one adds no difficulty`];
+  if (it.reason === 'swap') return ['Swapped out', 'A lower-value skill counts instead of this one, because it fills an element group and that gives you more'];
   if (it.reason === 'sr') return ['Over 3 EG II/III', 'Only 3 EG II or III skills count before a B or higher EG I skill'];
   if (it.reason === 'egOnly') return ['EG credit only', 'Not one of your counting skills, but it earns its element group bonus'];
   if (it.reason === 'offLevel') return ['Not at this level', "Not allowed at this level (search hides it), so it earns no credit: no value, element group, requirement or bonus"];

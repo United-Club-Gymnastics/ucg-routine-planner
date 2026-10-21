@@ -1,0 +1,15 @@
+{
+  "about": "High bar flight styles for the WG special repetition rule (WG MAG 2025 §15.2.2.5 c, MAG-NL-1 p. 6): at most two flight elements of each style count. Planner-owned (the WG Code names the styles but lists no elements): our reading of the WG EG II rows, for Nate to check. Advanced only (Nate, 2026-10-20). Skills not listed have no style limit. Built into js/data/wg-mag-rules.js by tools/build_data.py.",
+  "styles": {
+    "Tkatchev & Piatti": ["WG-HB-II-15", "WG-HB-II-16", "WG-HB-II-18", "WG-HB-II-21", "WG-HB-II-23", "WG-HB-II-28", "WG-HB-II-29", "WG-HB-II-34", "WG-HB-II-36", "WG-HB-II-51"],
+    "Kovacs": ["WG-HB-II-82", "WG-HB-II-83", "WG-HB-II-88", "WG-HB-II-89", "WG-HB-II-90", "WG-HB-II-95", "WG-HB-II-96", "WG-HB-II-102", "WG-HB-II-108"],
+    "Gienger": ["WG-HB-II-57", "WG-HB-II-58", "WG-HB-II-60"],
+    "Jäger": ["WG-HB-II-39", "WG-HB-II-40", "WG-HB-II-41", "WG-HB-II-42", "WG-HB-II-48", "WG-HB-II-52", "UCG-HB-salto-fwd-stretched-with-3-2-t-also-from-el-grip-meister"],
+    "Markelov": ["WG-HB-II-2", "WG-HB-II-3", "WG-HB-II-6", "WG-HB-II-9"],
+    "Front salto over the bar": ["WG-HB-II-65", "WG-HB-II-66", "WG-HB-II-72", "WG-HB-II-78", "WG-HB-II-84", "WG-HB-II-114"]
+  },
+  "unstyled": {
+    "WG-HB-II-26": "Voronin (back uprise, pike-over ½ turn): a Markelov-like hecht from back uprise, left without a style",
+    "WG-HB-II-32": "back uprise, rear vault ¼ turn: left without a style"
+  }
+}

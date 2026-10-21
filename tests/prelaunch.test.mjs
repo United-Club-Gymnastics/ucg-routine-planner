@@ -22,8 +22,8 @@ test('MAG Masters: no connection bonuses (floor D + B, high bar C + C)', () => {
   assert.ok(scoreRoutine('fx', 'dev', fx).bonus > 0);
 });
 
-test('Masters top 6: on a tie the skill that counts toward length wins (30s: Misc and ME are both 0.0)', () => {
-  const skills = ['A', 'A', 'A', 'A', 'A', 'Misc', 'ME'].map((letter, i) => ({ name: `S${i}`, letter, eg: '' }));
+test('Masters counting: on a tie the skill that counts toward length wins (30s: GE and ME are both 0.0)', () => {
+  const skills = ['A', 'A', 'A', 'A', 'A', 'A', 'GE', 'ME'].map((letter, i) => ({ name: `S${i}`, letter, eg: '' }));
   assert.equal(scoreWagMasters('fx', skills, { decade: '30' }).shortBy, 0);
   assert.equal(scoreRoutine('fx', 'masters', skills, {}, { decade: '30' }).shortBy ?? 0, 0);
 });

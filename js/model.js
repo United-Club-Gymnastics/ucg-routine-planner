@@ -91,7 +91,7 @@ export function eventSpec(entry, evId) {
     spec.groups = groupList(mag.APPARATUS[evId].groups);
     spec.legend = Object.entries(mag.APPARATUS[evId].groups).map(([k, v]) => ({ key: Number(k), roman: ROMAN[k], label: v }));
     spec.options = mag.eventOptions(evId, level);
-    spec.maxCounting = mag.LEVELS[level].maxSkills;
+    spec.maxCounting = mag.countingFor(level, entry.decade);
     // Floor and high bar: linked skills earn the connection bonuses.
     spec.links = spec.options.some((o) => o.connect);
   } else if (fam === 'infinity') {
@@ -176,9 +176,14 @@ export function scoreEvent(entry, evId) {
     const any = r.rows.length > 0;
     if (r.capped) out.notes.push(`Start value capped at ${fmt(r.cap)} (${fmt(r.raw)} before the cap).`);
     if (r.deductions) out.notes.push(`Expected neutral deduction −${fmt(r.deductions)}: ${fmt(r.afterDeductions)} after deductions.`);
+    if (any && mag.LEVELS[level].masters && r.dismount == null) {
+      out.notes.push(evId === 'fx'
+        ? 'No dismount: the last skill that isn’t from EG I is the dismount. Without one, the routine is one skill short.'
+        : 'No dismount: the last skill should be the dismount (EG IV). Without one, the routine is one skill short.');
+    }
     return {
       ...out, ...r, sv: any ? r.startValue : null, earnedGroups: Object.keys(r.egBonus).map(Number),
-      totals: [['Execution', 10], ['Difficulty', r.difficulty], ['EG bonus', r.egTotal], ['Other bonus', r.bonus], [`Short of ${mag.MIN_SKILLS}`, -r.shortDeduction], ['Start value', any ? r.startValue : null]],
+      totals: [['Execution', 10], ['Difficulty', r.difficulty], ['EG bonus', r.egTotal], ['Other bonus', r.bonus], [`Short of ${r.minSkills}`, -r.shortDeduction], ['Start value', any ? r.startValue : null]],
       deductions: r.deductions,
     };
   }
@@ -329,6 +334,12 @@ export function normalizeEntry(e) {
       continue;
     }
     const r = e.routines[ev.id] || [];
+    // Masters: "Misc" was GE's name until 2026-10-20.
+    if (levelInfo(e.disc, e.level)?.masters) {
+      for (const row of r) {
+        for (const x of [row, row?.base]) if (x?.letter === 'Misc') { x.letter = 'GE'; changed = true; }
+      }
+    }
     const blank = ev.kind === 'tramp' ? blankTT : blankSkill;
     while (r.length < minRows(e, ev)) { r.push(blank()); changed = true; }
     e.routines[ev.id] = r;

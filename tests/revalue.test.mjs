@@ -89,10 +89,10 @@ test("Vaults follow the same vault into the target level's own list", () => {
   assert.deepEqual(vaultTo('mag', 'masters', 'adv', 'UCGM-mag-pike-hecht-over-table', MAG), ['', 'none']);
 });
 
-test('Masters MAG "GE" (gymnastics element) is a Miscellaneous skill, valued by age decade', async () => {
+test('Masters MAG "GE" (gymnastics element) skills keep their GE value, valued by age decade', async () => {
   const { searchSkills } = await import('../js/skill-search.js');
   const s = searchSkills('mag', 'hb', 'hopping grip change').find((x) => x.src === 'UCGM');
-  assert.equal(s.value, 'Misc');
+  assert.equal(s.value, 'GE');
 });
 
 test('One event copied from another level: only that event is replaced and re-valued', () => {

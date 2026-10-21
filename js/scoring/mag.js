@@ -3,10 +3,17 @@
 // the MAG start value worksheets, and the MAG Routine Composition Planner spreadsheet.
 import { VAULTS } from '../data/mag-vaults.js';
 import { VAULTS as MASTERS_VAULTS } from '../data/masters-vaults.js';
-import { MASTERS_LETTERS, mastersValue, meetsRequirement, vaultAgeBonus } from './masters.js';
+import { RULES as WG } from '../data/wg-mag-rules.js';
+import { DISMOUNT_EG_MAX, MASTERS_LETTERS, bestCount, countingTotal, magEgBonus, mastersValue, meetsRequirement, vaultAgeBonus } from './masters.js';
 
-// Rings: the five WG skills that meet the swing to handstand requirement (WG clarification).
-export const SWING_HS = ['WG-SR-I-75', 'WG-SR-I-81', 'WG-SR-I-86', 'WG-SR-I-87', 'WG-SR-I-88'];
+// WG MAG rules from the bundle's rules digest (data/wg-mag-rules.js), current to the newsletters.
+// Rings: the five WG skills that meet the swing to handstand requirement (MAG-NL-1).
+export const SWING_HS = WG.srSwingHs;
+// Floor (MAG-NL-1, NL-3, NL-4): a one-leg balance or a jump from the newsletter list.
+export const FX_BALANCE_OR_JUMP = WG.fxBalanceOrJump.elements;
+// High bar: each flight's style for the WG special repetition rule (our own table).
+export const HB_FLIGHT_STYLE = WG.hbFlightStyle;
+export const MAX_PER_STYLE = 2;
 
 // Floor: the double (and triple) saltos in the skill list, including the ones whose
 // names don't say "double" (e.g. Kolyvanov, Tsukahara).
@@ -30,12 +37,15 @@ const DETECT = {
     const last = skills.at(-1);
     return last && isDoubleSalto(last) ? last : undefined;
   },
+  balance: (skills) => skills.find((it) => FX_BALANCE_OR_JUMP.includes(it.skillId)),
+  // The first skill is an acro element (EG II-IV): the routine starts with a tumbling pass.
+  tumbleStart: (skills) => ([2, 3, 4].includes(skills[0]?.eg) ? skills[0] : undefined),
 };
 
 export const EXECUTION = 10;
 export const MIN_SKILLS = 6;
 export const MAX_ROUTINE = 20; // skills a routine list can hold (counting + non-counting)
-export const MAX_PER_EG = 4; // WG: at most 4 counting skills from one element group
+export const MAX_PER_EG = WG.counting.maxPerEg; // WG: at most 4 counting skills from one element group
 
 // Sub-A skills (UCG CoP) are recognised skills worth 0.0, with no EG.
 export const LETTER_VALUES = { 'Sub-A': 0, A: 0.1, B: 0.2, C: 0.3, D: 0.4, E: 0.5, F: 0.6, G: 0.7, H: 0.8, I: 0.9, J: 1.0 };
@@ -49,27 +59,35 @@ export const LEVELS = {
     shortDeduction: 0.5,
     cap: 12.3,
   },
+  // Intermediate and Advanced count as WG: the dismount first, then the 7 best (WG §6.1; floor from
+  // 2026-01-01, MAG-NL-1). Developmental counts its 6 highest (Nate 2026-10-20).
   int: {
     label: 'Intermediate',
     maxSkills: 8,
     shortDeduction: 1.0,
     cap: 13.1,
+    dismountFirst: true,
   },
   adv: {
     label: 'Advanced (GymACT)',
     maxSkills: 8,
     shortDeduction: 1.0,
     cap: null,
+    dismountFirst: true,
   },
-  // Values depend on the age decade (masters.js); no cap.
+  // Values depend on the age decade (masters.js): 6 best + the dismount, 5 + the dismount from 60
+  // (maxSkills is the most, see countingFor); no cap.
   masters: {
     label: 'Masters',
-    maxSkills: 6,
+    maxSkills: 7,
     shortDeduction: 1.0,
     cap: null,
     masters: true,
   },
 };
+/** How many skills count (and the routine needs) at a level: Masters by age decade. */
+export const countingFor = (level, decade) => (LEVELS[level]?.masters ? countingTotal(decade) : (LEVELS[level] || LEVELS.int).maxSkills);
+export const minSkillsFor = (level, decade) => (LEVELS[level]?.masters ? countingTotal(decade) : MIN_SKILLS);
 export const lettersFor = (level) => (level === 'masters' ? MASTERS_LETTERS : LETTERS);
 export const LEVEL_IDS = Object.keys(LEVELS);
 
@@ -136,6 +154,15 @@ export function eventOptions(event, level) {
       o.push({ id: 'dblFlip', kind: 'check', value: 0.3, deduction: true, detect: true, label: 'Routine includes a double flip',
         help: 'Required: -0.3 neutral deduction if missing. Ticked automatically for a double salto from the skill list.' });
     }
+    // WG newsletters (MAG-NL-1, NL-3, NL-4): Advanced only (Nate 2026-10-20).
+    if (WG.fxBalanceOrJump.ucg_levels.includes(level)) {
+      o.push({ id: 'balance', kind: 'check', value: WG.fxBalanceOrJump.neutral, deduction: true, detect: true, label: 'Balance or jump requirement',
+        help: 'Required: -0.3 neutral deduction if missing. A one-leg balance (I.61, I.62) or a jump from the WG list (I.67, I.68, I.74, I.75, I.115-I.117, I.43, II.8); it need not be a counting skill. Ticked automatically for those skills from the list.' });
+    }
+    if (WG.fxStartTumbling.ucg_levels.includes(level)) {
+      o.push({ id: 'tumbleStart', kind: 'check', value: WG.fxStartTumbling.neutral, deduction: true, detect: true, label: 'Starts with a tumbling pass',
+        help: "Required: -0.3 neutral deduction if the routine doesn't start with a tumbling pass. Ticked automatically when the first skill listed is from EG II, III or IV." });
+    }
   }
   if (event === 'ph' && level === 'dev') {
     o.push({ id: 'mushroom', kind: 'mushroom', label: 'Mushroom bonus', help: '+0.1 per circle, +0.2 per other skill; top 5 count, max +1.0' });
@@ -188,18 +215,78 @@ const FRACTIONS = { '½': '1/2', '¼': '1/4', '¾': '3/4' };
 export const skillKey = (name) =>
   String(name || '').toLowerCase().replace(/[½¼¾]/g, (c) => FRACTIONS[c]).replace(/[^a-z0-9]/g, '');
 
-// Element group bonus for one group, from the highest-value counting skill in it.
+// Element group bonus for one group, from the highest-value counting skill in it (not Masters).
 function groupBonus(level, event, eg, value) {
-  // Masters: +0.5 per group; the dismount group is worth the dismount's value, max 0.5
-  // (Nate 2026-10-20). Floor has no dismount group, only four EGs.
-  if (level === 'masters') return eg === 4 && event !== 'fx' ? Math.min(value, 0.5) : 0.5;
   if (level === 'dev') return 0.5;
   if (eg === 1) return 0.5;
   if (level === 'int') return value >= 0.2 ? 0.5 : 0.3;
   // Advanced: the dismount group is worth the dismount's value (max 0.5),
   // except on floor, which has no dismount group.
-  if (eg === 4 && event !== 'fx') return Math.min(value, 0.5);
+  if (eg === 4 && event !== 'fx') return Math.min(value, WG.dismountEgMax);
   return value >= 0.4 ? 0.5 : value >= 0.3 ? 0.4 : 0.3;
+}
+
+/**
+ * The routine's dismount among the skills still in play (no status yet): the last one listed.
+ * Floor: the last skill that isn't EG I (an acro element may end in a straight jump; the acro element
+ * is the dismount). Other apparatus: an EG IV skill, or a last skill with no group (typed in, or a
+ * Sub-A dismount).
+ */
+export function dismountOf(event, items) {
+  const live = items.filter((it) => !it.status);
+  if (event === 'fx') return live.findLast((it) => it.eg !== 1) || null;
+  const last = live.at(-1);
+  if (last && (last.eg === 4 || !last.eg)) return last;
+  return live.findLast((it) => it.eg === 4) || null;
+}
+
+// Masters element groups (UCG Masters Rules Policy §III.B.2): each group's bonus comes from its best
+// counting skill, +0.3 or +0.5 by the skill's level and the decade (masters.js). The dismount group
+// (not on floor) is worth the dismount's value, max 0.5 (Nate, N1).
+function mastersGroups(event, rows, decade) {
+  const out = {};
+  for (const g of [1, 2, 3, 4]) {
+    const dismountGroup = g === 4 && event !== 'fx';
+    const best = rows
+      .filter((r) => r.eg === g && meetsRequirement(r.letter, decade))
+      .map((r) => ({ row: r, bonus: dismountGroup ? Math.min(r.value, DISMOUNT_EG_MAX) : magEgBonus(r.letter, decade) }))
+      .filter((x) => x.bonus > 0)
+      .sort((a, b) => b.bonus - a.bonus || b.row.value - a.row.value || a.row.idx - b.row.idx)[0];
+    if (best) out[g] = best;
+  }
+  return out;
+}
+
+function mastersTotal(event, rows, decade) {
+  const eg = Object.values(mastersGroups(event, rows, decade)).reduce((t, x) => t + x.bonus, 0);
+  const short = Math.max(0, countingTotal(decade) - rows.filter((r) => meetsRequirement(r.letter, decade)).length);
+  return round1(rows.reduce((t, r) => t + r.value, 0) + eg - short);
+}
+
+/**
+ * Masters counting skills: the dismount plus the best 6 others (5 from 60). There is no limit per
+ * element group, but a skill that fills a group must be counting: the judge swaps it in for a
+ * higher-valued skill when that is to the gymnast's benefit (§III.B.2.c). Tries every set of the
+ * groups the best skills leave empty; ties keep the plain best skills.
+ */
+function mastersCounting(event, candidates, dismount, decade) {
+  const n = bestCount(decade);
+  const meets = (it) => (meetsRequirement(it.letter, decade) ? 1 : 0);
+  const sorted = candidates.filter((it) => it !== dismount).sort((a, b) => b.value - a.value || meets(b) - meets(a) || a.idx - b.idx);
+  const groups = event === 'fx' ? [1, 2, 3, 4] : [1, 2, 3];
+  const fills = (it, g) => it.eg === g && magEgBonus(it.letter, decade) > 0;
+  const withDismount = (set) => (dismount ? [...set, dismount] : set);
+  const base = sorted.slice(0, n);
+  const open = groups.filter((g) => !base.some((it) => fills(it, g)) && sorted.some((it) => fills(it, g)));
+  let best = { set: base, total: mastersTotal(event, withDismount(base), decade) };
+  for (let mask = 1; mask < 1 << open.length; mask++) {
+    const forced = open.filter((_, i) => mask & (1 << i)).map((g) => sorted.find((it) => fills(it, g)));
+    if (forced.length > n) continue;
+    const set = [...forced, ...sorted.filter((it) => !forced.includes(it)).slice(0, n - forced.length)];
+    const total = mastersTotal(event, withDismount(set), decade);
+    if (total > best.total) best = { set, total };
+  }
+  return { counting: new Set(withDismount(best.set)), base: new Set(base) };
 }
 
 /**
@@ -261,22 +348,45 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
     }
   }
 
-  const perGroup = {};
-  let counted = 0;
+  // High bar, Advanced (WG §15.2.2.5 c, MAG-NL-1; Nate 2026-10-20): at most two flights of each style
+  // count (the highest-valued; the earlier on a tie).
+  if (event === 'hb' && level === 'adv') {
+    const byStyle = {};
+    for (const it of items) if (!it.status && HB_FLIGHT_STYLE[it.skillId]) (byStyle[HB_FLIGHT_STYLE[it.skillId]] ||= []).push(it);
+    for (const [style, list] of Object.entries(byStyle)) {
+      for (const it of list.sort((a, b) => b.value - a.value || a.idx - b.idx).slice(MAX_PER_STYLE)) Object.assign(it, { status: 'noncounting', reason: 'style', style });
+    }
+  }
+
   const candidates = items.filter((it) => !it.status);
-  // Masters: on a tie, a skill that counts toward routine length wins.
-  const meets = (it) => (L.masters && meetsRequirement(it.letter, decade) ? 1 : 0);
-  for (const it of [...candidates].sort((a, b) => b.value - a.value || meets(b) - meets(a) || a.idx - b.idx)) {
-    if (it.eg && (perGroup[it.eg] || 0) >= MAX_PER_EG) {
-      it.status = 'noncounting';
-      it.reason = 'eg';
-    } else if (counted >= L.maxSkills) {
-      it.status = 'noncounting';
-      it.reason = 'top';
-    } else {
-      it.status = 'counting';
-      counted++;
-      if (it.eg) perGroup[it.eg] = (perGroup[it.eg] || 0) + 1;
+  // WG counts the dismount first, then the best others (Intermediate, Advanced, Masters).
+  const dismount = L.dismountFirst || L.masters ? dismountOf(event, items) : null;
+  if (L.masters) {
+    const { counting, base } = mastersCounting(event, candidates, dismount, decade);
+    for (const it of candidates) {
+      it.status = counting.has(it) ? 'counting' : 'noncounting';
+      if (!counting.has(it)) it.reason = base.has(it) ? 'swap' : 'top';
+    }
+  } else {
+    // High bar, Advanced (WG §15.2.2.6, MAG-NL-1): a 5th flight (EG II) counts when two flights are
+    // directly connected, C + C or better.
+    const fifthFlight = event === 'hb' && level === 'adv' && linkedPairs(items).some((p) => p.every((x) => x.eg === 2 && RANK(x) >= 3));
+    const egMax = (g) => (g === 2 && fifthFlight ? MAX_PER_EG + 1 : MAX_PER_EG);
+    const perGroup = {};
+    let counted = 0;
+    const rest = candidates.filter((it) => it !== dismount).sort((a, b) => b.value - a.value || a.idx - b.idx);
+    for (const it of dismount ? [dismount, ...rest] : rest) {
+      if (it.eg && (perGroup[it.eg] || 0) >= egMax(it.eg)) {
+        it.status = 'noncounting';
+        it.reason = 'eg';
+      } else if (counted >= L.maxSkills) {
+        it.status = 'noncounting';
+        it.reason = 'top';
+      } else {
+        it.status = 'counting';
+        counted++;
+        if (it.eg) perGroup[it.eg] = (perGroup[it.eg] || 0) + 1;
+      }
     }
   }
 
@@ -285,9 +395,15 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
   // Each element group's bonus goes to its highest-value counting skill
   // (the earliest one on a tie).
   const egBonus = {};
-  for (const g of [1, 2, 3, 4]) {
+  if (L.masters) {
+    for (const [g, { row, bonus }] of Object.entries(mastersGroups(event, rows, decade))) {
+      row.bonus = bonus;
+      egBonus[g] = bonus;
+    }
+  }
+  for (const g of L.masters ? [] : [1, 2, 3, 4]) {
     const best = rows
-      .filter((r) => r.eg === g && r.letter && (!L.masters || meetsRequirement(r.letter, decade)))
+      .filter((r) => r.eg === g && r.letter)
       .sort((a, b) => b.value - a.value || a.idx - b.idx)[0];
     if (!best) continue;
     best.bonus = groupBonus(level, event, g, best.value);
@@ -329,9 +445,11 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
   bonus = round1(bonus);
   deductions = round1(deductions);
 
-  // Masters: Misc skills only count toward routine length from the 50s up.
+  // Masters: 7 skills (6 from 60), including the dismount: a routine without one is short by one.
+  // GE skills only count toward routine length from the 50s up.
   const lengthRows = L.masters ? rows.filter((r) => meetsRequirement(r.letter, decade)) : rows;
-  const shortBy = Math.max(0, MIN_SKILLS - lengthRows.length);
+  const minSkills = minSkillsFor(level, decade);
+  const shortBy = Math.max(0, minSkills - lengthRows.length);
   const shortDeduction = round1(shortBy * L.shortDeduction);
   const raw = round1(EXECUTION + difficulty + egTotal + bonus);
   const capped = L.cap != null && raw > L.cap;
@@ -348,6 +466,8 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
     detected,
     shortBy,
     shortDeduction,
+    minSkills,
+    dismount: dismount && dismount.status === 'counting' ? dismount.idx : null,
     raw,
     capped,
     cap: L.cap,

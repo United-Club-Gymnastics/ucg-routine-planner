@@ -34,13 +34,16 @@ const advHbar = [
 ];
 
 test('Advanced floor matches spreadsheet (12.6, 12.3 with the missing double flip)', () => {
-  const r = scoreRoutine('fx', 'adv', advFloor);
+  // The typed-in scale can't be checked against the WG balance list: the coach ticks it.
+  const r = scoreRoutine('fx', 'adv', advFloor, { balance: true });
   assert.equal(r.difficulty, 1.1);
   assert.equal(r.egTotal, 1.5); // I 0.5, II A 0.3, III B 0.3, IV (floor) C 0.4
   assert.equal(r.startValue, 12.6);
   assert.equal(r.deductions, 0.3);
   assert.equal(r.afterDeductions, 12.3);
-  assert.equal(scoreRoutine('fx', 'adv', advFloor, { dblFlip: true }).deductions, 0);
+  assert.equal(scoreRoutine('fx', 'adv', advFloor, { dblFlip: true, balance: true }).deductions, 0);
+  // Not ticked: the balance or jump requirement (MAG-NL-1) is missing too.
+  assert.equal(scoreRoutine('fx', 'adv', advFloor).deductions, 0.6);
 });
 
 test('Advanced pommel: dismount group is worth the dismount value (12.3)', () => {
@@ -235,21 +238,23 @@ test('blank rows are ignored; empty routine scores 0', () => {
   assert.equal(scoreRoutine('fx', 'int', [s('', '', '')]).startValue, 0);
 });
 
-test('Masters: values by age decade, EG I-III +0.5, dismount EG = dismount value', () => {
+test('Masters: values by age decade, EG bonus by level, dismount EG = dismount value', () => {
   const r = scoreRoutine('pb', 'masters', [
-    s('a', 'ME', 1), s('b', 'A', 2), s('c', 'B', 3), s('d', 'A', 2), s('e', 'ME', 1), s('f', 'A', 4),
+    s('a', 'ME', 1), s('b', 'A', 2), s('c', 'B', 3), s('d', 'A', 2), s('e', 'ME', 1), s('g', 'ME', 3), s('f', 'A', 4),
   ], {}, { decade: '50' });
   // 50s: ME 0.2, A 0.4, B 0.6
-  assert.equal(r.difficulty, 2.2);
-  assert.equal(r.egTotal, 1.9); // 0.5 x 3 + dismount A 0.4
-  assert.equal(r.startValue, 14.1);
+  assert.equal(r.difficulty, 2.4);
+  assert.equal(r.egTotal, 1.9); // ME, A and B all earn 0.5 in the 50s (x 3) + dismount A 0.4
+  assert.equal(r.startValue, 14.3);
 });
 
-test('Masters: Misc skills count from the 50s; not in the 30s', () => {
-  const six = [s('a', 'Misc', 1), s('b', 'Misc', 2), s('c', 'Misc', 3), s('d', 'Misc', 1), s('e', 'Misc', 2), s('f', 'Misc', 3)];
-  assert.equal(scoreRoutine('hb', 'masters', six, {}, { decade: '60' }).shortBy, 0);
+test('Masters: GE skills count from the 50s; not in the 30s (an old "Misc" row reads as GE)', () => {
+  const six = [s('a', 'GE', 1), s('b', 'GE', 2), s('c', 'Misc', 3), s('d', 'GE', 1), s('e', 'GE', 2), s('f', 'GE', 4)];
+  assert.equal(scoreRoutine('hb', 'masters', six, {}, { decade: '60' }).shortBy, 0); // 6 from 60
+  assert.equal(scoreRoutine('hb', 'masters', six, {}, { decade: '60' }).difficulty, 0.6); // GE 0.1 each
+  assert.equal(scoreRoutine('hb', 'masters', six, {}, { decade: '50' }).shortBy, 1); // 7 in the 50s
   const r30 = scoreRoutine('hb', 'masters', six, {}, { decade: '30' });
-  assert.equal(r30.shortBy, 6);
+  assert.equal(r30.shortBy, 7);
   assert.equal(r30.egTotal, 0);
 });
 
@@ -276,7 +281,7 @@ test('Advanced floor: double flip and double flipping dismount are detected from
   const kolyvanov = sk('Salto bwd. str. with 2/1 t and salto bwd piked.', 'F', 3, 'WG-FX-III-36');
   const routine = [sk('Front tuck', 'A', 2), sk('Back tuck', 'A', 3), sk('Full twist', 'B', 4), sk('Scale', 'A', 1), sk('Back handspring', 'A', 3), sk('L-sit', 'A', 1)];
   // A double in the middle meets the requirement but isn't the dismount.
-  const mid = scoreRoutine('fx', 'adv', [kolyvanov, ...routine]);
+  const mid = scoreRoutine('fx', 'adv', [kolyvanov, ...routine], { balance: true });
   assert.equal(mid.deductions, 0);
   assert.equal(mid.detected.dblFlip, kolyvanov.name);
   assert.equal(mid.detected.dblDismount, undefined);
@@ -288,7 +293,7 @@ test('Advanced floor: double flip and double flipping dismount are detected from
   assert.equal(scoreRoutine('fx', 'adv', [...routine.slice(0, 5), kolyvanov, sk('L-sit', 'A', 1)]).detected.dblDismount, undefined);
   // Typed in by hand: go by the name.
   assert.equal(scoreRoutine('fx', 'adv', [...routine, sk('Double back', 'C', 3)]).optionValues.dblDismount, 0.1);
-  assert.equal(scoreRoutine('fx', 'adv', [...routine, sk('Back layout', 'A', 3)]).deductions, 0.3);
+  assert.equal(scoreRoutine('fx', 'adv', [...routine, sk('Back layout', 'A', 3)], { balance: true }).deductions, 0.3);
 });
 
 test('Skill search: synonyms, any word order, compound words, plain skill first', async () => {
