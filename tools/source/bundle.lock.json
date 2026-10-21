@@ -1,6 +1,6 @@
 {
  "_doc": "Written by tools/sync_bundle.py. The vendored tools/source/bundle/ must match: CI checks the manifest's sha256 here and every file's sha256 in the manifest (tools/check_bundle.mjs).",
- "manifest_sha256": "0dc9a59b1d8b4cfe05d4e506d9f92aff64e47c29d17c20578d5d265903e8834e",
+ "manifest_sha256": "419c6e20af8d0109d0a98037a4597d10d1f40715218c1ac136d976687005beff",
  "schema_version": "0.3.0",
  "catalogs": {
   "MAG": "f127ff097447",
@@ -8,10 +8,10 @@
  },
  "sources": {
   "nssharpe/gym-skill-extract": "8dc09d3c08b5b8c20fc36f1dc7867b687f4a3982",
-  "nssharpe/ucg-code-of-points": "c16ea2bc96027be71149914aff66a83860035ea6"
+  "nssharpe/ucg-code-of-points": "5d5bef8ba7cdf4ce1ee3dd2a5aa4e1da20f23c90"
  },
  "copied_from": {
   "repo": "nssharpe/gym-skill-extract",
-  "commit": "1f733121ad7918d3cf7fb17b05b1ad74db2a2760"
+  "commit": "0f26cac19cefceaa3dd5ed6735a6be4339ac9d1b"
  }
 }
