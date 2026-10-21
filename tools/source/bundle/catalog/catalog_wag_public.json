@@ -1,7 +1,7 @@
 {
  "discipline": "WAG",
- "version": "f40cd816333b",
- "built": "2026-10-20",
+ "version": "245900fdc799",
+ "built": "2026-10-21",
  "elements": [
   {
    "id": "WAG-BB-0001",
@@ -26052,8 +26052,11 @@
       "eponym": "",
       "tags": {
        "dance": true,
-       "dance_type": "jump",
-       "split": true
+       "dance_type": "leap",
+       "split": true,
+       "varies": [
+        "dance_type"
+       ]
       }
      }
     ],
@@ -26068,8 +26071,11 @@
       "eponym": "",
       "tags": {
        "dance": true,
-       "dance_type": "jump",
-       "split": true
+       "dance_type": "leap",
+       "split": true,
+       "varies": [
+        "dance_type"
+       ]
       }
      }
     ]
@@ -26546,7 +26552,7 @@
       "eponym": "",
       "tags": {
        "dance": true,
-       "dance_type": "jump",
+       "dance_type": "leap",
        "split": true
       }
      }
@@ -26562,7 +26568,7 @@
       "eponym": "",
       "tags": {
        "dance": true,
-       "dance_type": "jump",
+       "dance_type": "leap",
        "split": true
       }
      }

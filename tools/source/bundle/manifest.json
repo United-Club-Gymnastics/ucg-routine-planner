@@ -1,12 +1,12 @@
 {
  "schema_version": "0.3.0",
- "built": "2026-10-20",
+ "built": "2026-10-21",
  "catalogs": {
   "MAG": "63c9caae8d08",
-  "WAG": "f40cd816333b"
+  "WAG": "245900fdc799"
  },
  "sources": {
-  "nssharpe/gym-skill-extract": "256e59745b456142b1e083804b8305a75d958dd6",
+  "nssharpe/gym-skill-extract": "4d8203e6154baf11cad7d0b3b68272b088d50ab5",
   "nssharpe/ucg-code-of-points": "9aabfa6e869d58a2bf75273cfbdf8f14f5acbfc1"
  },
  "files": {
@@ -15,7 +15,7 @@
    "schema": "aliases.schema.json"
   },
   "catalog/aliases_wag.json": {
-   "sha256": "9e55703592fea86aa99fd0d477bde204bfced980fcc630c2ef5eecc791e4c704",
+   "sha256": "799d9c10afc5e935432b5092eaccf85fa7122baeefbb1b0a16e595ec60ee71e3",
    "schema": "aliases.schema.json"
   },
   "catalog/catalog_mag_public.json": {
@@ -23,7 +23,7 @@
    "schema": "catalog.schema.json"
   },
   "catalog/catalog_wag_public.json": {
-   "sha256": "6f43bb5a4003bb0a0688102668bf94b1d9f16c7f26005a8fab72fd46e062acbf",
+   "sha256": "1c7fcd8c7410c52ec130f4db86b4bc729cdd1721d400e9f375e9c9bbeeb4e286",
    "schema": "catalog.schema.json"
   },
   "catalog/levels.json": {
@@ -31,64 +31,89 @@
    "schema": "levels.schema.json"
   },
   "rules/UCG-MAG/digest/levels.json": {
-   "sha256": "620f396b6aec1ed069be19a88e6d1656a6358404dfbccece6463320bff919660"
+   "sha256": "620f396b6aec1ed069be19a88e6d1656a6358404dfbccece6463320bff919660",
+   "schema": "digest.schema.json"
   },
   "rules/UCG-MAG/digest/vault.json": {
-   "sha256": "c375674329d12a8e75ec1590a7a228b723b712f2f1649025f3667572ead09722"
+   "sha256": "219e0bdd46454a27501d2dc341967a01d6bb2c45ab3b3fd6f3a380c52c6de1ab",
+   "schema": "digest.schema.json"
   },
   "rules/UCG-MASTERS-MAG/digest/vault-values.json": {
-   "sha256": "eea5a280ef47e7973024e1d4cfce2ea1605baccec2aa4f7703a41ee38483c903"
+   "sha256": "a46fdcfa4584c18c79899bac35a997b8428ad5b5eb6fb3ed3706179c7c3602a5",
+   "schema": "digest.schema.json"
   },
   "rules/UCG-MASTERS-WAG/digest/vault-values.json": {
-   "sha256": "c154f7fc2ab7f2c33e492a06236f454ef8a48faeb80c7102cf2c2258e3ef60d6"
+   "sha256": "c89fd8cf3eea38af5932166c10c0856a1e831cc9a33385adf6c44f5bc53a5369",
+   "schema": "digest.schema.json"
   },
   "rules/UCG-MASTERS/digest/scoring.json": {
-   "sha256": "bd332590bb09f8c83f00ed799755a3094f35e05656e5ffb13b9a3de7a1d63d8d"
+   "sha256": "bd332590bb09f8c83f00ed799755a3094f35e05656e5ffb13b9a3de7a1d63d8d",
+   "schema": "digest.schema.json"
   },
   "rules/UCG-TT/digest/levels.json": {
-   "sha256": "89b051e0a67f91bfe4eb4aeb29a11803d571760387a2efda5511a9db867db2cb"
+   "sha256": "89b051e0a67f91bfe4eb4aeb29a11803d571760387a2efda5511a9db867db2cb",
+   "schema": "digest.schema.json"
   },
   "rules/UCG-WAG/digest/infinity-vaults.json": {
-   "sha256": "1771f0432bae9f151a3c0eea2d592a29106ee8d24fd642000daaa1b63c881e7a"
+   "sha256": "1b77460a9e79019c664d90198ea6d0332abedc156a93b0e4c62a3a5c591c692b",
+   "schema": "digest.schema.json"
   },
   "rules/UCG-WAG/digest/infinity.json": {
-   "sha256": "3b259003f52c0478c372d9b78bd82b5b99d5508b162029bbe1f12ab06ff0db37"
+   "sha256": "5873232497b085121e13587deccc98c6f813ffa088fd7f5f356898a88558c86e",
+   "schema": "digest.schema.json"
   },
   "rules/USAG-DEV-2026/digest/bonus.json": {
-   "sha256": "3ba931b75e416d45661930668d60aa4f1268d468e67536073dd5de2472b684de"
+   "sha256": "3ba931b75e416d45661930668d60aa4f1268d468e67536073dd5de2472b684de",
+   "schema": "digest.schema.json"
   },
   "rules/USAG-DEV-2026/digest/composition.json": {
-   "sha256": "99b188ea4b6776b7be59467881c03faff56bcb0b61d0351226c338700014648d"
+   "sha256": "99b188ea4b6776b7be59467881c03faff56bcb0b61d0351226c338700014648d",
+   "schema": "digest.schema.json"
   },
   "rules/USAG-DEV-2026/digest/same-element.json": {
-   "sha256": "ef1de6bf0f446a3ee4c059236da55502780bc370f6784cca1ceb6b6a0deb88f1"
+   "sha256": "ef1de6bf0f446a3ee4c059236da55502780bc370f6784cca1ceb6b6a0deb88f1",
+   "schema": "digest.schema.json"
+  },
+  "rules/USAG-XCEL-2022/digest/levels.json": {
+   "sha256": "48c43a7a9e2b91e0989d4cad12dc67536864e201844ce2506f4015d9c9f5698b",
+   "schema": "digest.schema.json"
   },
   "rules/USAG-XCEL-2022/digest/same-element.json": {
-   "sha256": "d15ce44d38690a5354006a655c37423e7839da54a756bb645b645e6585717b6b"
+   "sha256": "cba660cb2d165b4ad74f479fa01dd52f1d9b35ac80469df70a6912b088be9273",
+   "schema": "digest.schema.json"
   },
   "rules/WG-MAG-2025/digest/changes.json": {
-   "sha256": "4bca55b7f6914ad67c00261c22461f3dff917d31f197d5d1aee6c61a1a39b2ba"
+   "sha256": "6cc6b3854a62534d2e3ff3c9bc0a47974b82286cef4ceb23f8ce37d2ca12fcd4",
+   "schema": "digest.schema.json"
   },
   "rules/WG-MAG-2025/digest/composition.json": {
-   "sha256": "ccf97ba88a10022407d31743194fdeab751abc3cf302a9793e7db1bd673f5abf"
+   "sha256": "ccf97ba88a10022407d31743194fdeab751abc3cf302a9793e7db1bd673f5abf",
+   "schema": "digest.schema.json"
   },
   "rules/WG-WAG-2025/digest/changes.json": {
-   "sha256": "2310f84455af9a45af7645ac1f3a4bbcb810936f42bf11ae020771229d2cde8e"
+   "sha256": "2310f84455af9a45af7645ac1f3a4bbcb810936f42bf11ae020771229d2cde8e",
+   "schema": "digest.schema.json"
   },
   "rules/WG-WAG-2025/digest/composition.json": {
-   "sha256": "243814e0058baae42f9a05605e855916dc53e7864c1897c93f3626c6eab5f955"
+   "sha256": "243814e0058baae42f9a05605e855916dc53e7864c1897c93f3626c6eab5f955",
+   "schema": "digest.schema.json"
   },
   "rules/WG-WAG-2025/digest/connection-value.json": {
-   "sha256": "aef4411203b65c9cc4d3d36938e2a7ef6ae6c70f8c906659eee9abf664efc3f1"
+   "sha256": "aef4411203b65c9cc4d3d36938e2a7ef6ae6c70f8c906659eee9abf664efc3f1",
+   "schema": "digest.schema.json"
   },
   "rules/WG-WAG-2025/digest/same-element.json": {
-   "sha256": "558cb0b7492e173fbe469435eb25bdd638d2052925ef4b65b7c644098169c710"
+   "sha256": "558cb0b7492e173fbe469435eb25bdd638d2052925ef4b65b7c644098169c710",
+   "schema": "digest.schema.json"
   },
   "schema/aliases.schema.json": {
    "sha256": "e1749dc95eb120d709bb75a3dfa2df4305667e6854fd739a2ce05a107d5b5268"
   },
   "schema/catalog.schema.json": {
    "sha256": "00fdca2bd0681d39ff81ca7d1aacf0aefb3afc226306657397ea08123cb0fdf0"
+  },
+  "schema/digest.schema.json": {
+   "sha256": "c9697951636d05179163e05633198230133b366bcb0a546ff10d696a0da20dbf"
   },
   "schema/elements.schema.json": {
    "sha256": "e173ef41be66788606aa92d837a9ae4ac3e807e0b5681798a157cf981632b18e"
@@ -97,7 +122,7 @@
    "sha256": "cdaf991a34701cbff2dee30a9bafc9cd78b02d888d32c0222abd3744a08cc01f"
   },
   "schema/manifest.schema.json": {
-   "sha256": "8e2cd6362759f57ebec76cc0396a89e1f847b00e99fd44a41c35f1afa9e5ca61"
+   "sha256": "4f0a7ebb801b92026cd17665eebebbcf1910d95a29b806194422ec716d6977de"
   },
   "schema/skill.schema.json": {
    "sha256": "0e5ff9668849ae3b53f5125de577ed318e76281d41e19cd9f0730dea29345b7e"

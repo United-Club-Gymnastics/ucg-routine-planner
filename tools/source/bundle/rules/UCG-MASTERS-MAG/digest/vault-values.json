@@ -152,5 +152,78 @@
   ],
   "cite": "Masters MAG CoP p. 6",
   "checked": "every printed decade value = base + age bonus (checked 2026-10-19)"
+ },
+ "table_wg_vaults": {
+  "rows": {
+   "Front handspring": [
+    "201"
+   ],
+   "Front handspring with ½ twist": [
+    "202"
+   ],
+   "Front handspring with 1/1 twist": [
+    "203"
+   ],
+   "Front handspring with 3/2 twist": [
+    "204"
+   ],
+   "Front handspring and salto fwd. tucked": [
+    "207"
+   ],
+   "Front handspring and salto fwd. tucked with ½ twist": [
+    "101"
+   ],
+   "Front handspring and salto fwd. piked": [
+    "213"
+   ],
+   "Front handspring and salto fwd. piked with ½ twist": [
+    "107"
+   ],
+   "Front handspring and salto fwd. stretched": [
+    "219"
+   ],
+   "Front handspring and salto fwd. stretched with ½ twist": [
+    "113"
+   ],
+   "Front handspring sw. with ¼ twist": [
+    "301"
+   ],
+   "Front handspring sw. with ¾ twist": [
+    "302"
+   ],
+   "Front handspring sw. with 5/4 twist": [
+    "303"
+   ],
+   "Tsukahara or Yurchenko tucked": [
+    "307",
+    "507"
+   ],
+   "Tsukahara or Yurchenko piked": [
+    "308",
+    "509"
+   ],
+   "Tsukahara or Yurchenko tucked with ½ twist": [
+    "309",
+    "508"
+   ],
+   "Tsukahara or Yurchenko tucked with 1/1 twist": [
+    "119",
+    "401"
+   ],
+   "Tsukahara or Yurchenko stretched": [
+    "313",
+    "510"
+   ],
+   "Tsukahara or Yurchenko stretched with ½ twist": [
+    "314",
+    "511"
+   ],
+   "Tsukahara or Yurchenko stretched with 1/1 twist": [
+    "125",
+    "405"
+   ]
+  },
+  "about": "the Masters vault table's rows that are WG vaults (no Masters id): the table's description -> the WG MAG vault number(s) it means (two where the row names two vaults, e.g. Tsukahara or Yurchenko). The planner values them from the WG table and checks the table's printed value against it.",
+  "cite": "our match of the Masters CoP vault table (ucg-code-of-points ucg-masters-vaults.json) to the WG vault table; was the planner's MASTERS_MAP in build_data.py until 2026-10-21"
  }
 }

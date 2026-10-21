@@ -355,7 +355,8 @@
    },
    "summary": "The ½-turn back saltos over the bar (tucked, and Gaylord 2) are Kovacs-style flights for the special repetition rule (at most two flights of each style).",
    "cite": "MAG-NL-1 p. 6; Code p. 116 §15.2.2.5 c",
-   "planner": "yes"
+   "planner": "yes",
+   "scope": "Advanced only (not Masters: the UCG Masters digest waives WG special repetitions; Nate 2026-10-20)"
   },
   {
    "id": "MAG-NL-1-17",
@@ -365,7 +366,8 @@
    "apparatus": "HB",
    "summary": "A fifth flight can be among the counting elements only when two of the flights are done in direct connection (C+C or better).",
    "cite": "MAG-NL-1 p. 6; Code p. 116 §15.2.2.6",
-   "planner": "yes"
+   "planner": "yes",
+   "scope": "Advanced only (not Masters: the UCG Masters digest waives WG special repetitions; Nate 2026-10-20)"
   },
   {
    "id": "MAG-NL-1-18",
@@ -652,7 +654,7 @@
    "apparatus": "PB",
    "summary": "Compositional errors, 0.30 each: jumping from the floor to L-sit, and an upper-arm kip to support.",
    "cite": "MAG-NL-3 p. 4 (amount read from the page image)",
-   "planner": "yes"
+   "planner": "judging"
   },
   {
    "id": "MAG-NL-3-12",
@@ -793,7 +795,7 @@
    ],
    "summary": "Stick bonus may be awarded together with a line deduction.",
    "cite": "MAG-NL-4 p. 2",
-   "planner": "yes"
+   "planner": "no"
   },
   {
    "id": "MAG-NL-4-03",
