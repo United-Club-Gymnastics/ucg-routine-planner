@@ -80,3 +80,4 @@ export function tierText(t, decade) {
   return `+0.5 for ${hi} or higher${lo ? `, +0.3 for ${lo === 'A' ? 'an A' : `a${lo === 'ME' ? 'n' : ''} ${lo}`}` : ''}`;
 }
 export const mastersEgText = (decade) => tierText(RULES.mag.egBonus, decade);
+export const dismountCrText = (decade) => tierText(RULES.wag.dismountCr, decade);

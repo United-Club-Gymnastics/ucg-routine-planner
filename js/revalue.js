@@ -15,7 +15,7 @@
 // Level 9/10 vaults at 10.0; otherwise no vault).
 import { SKILLS_VERSION, eventSpec, levelInfo, listedValues } from './model.js';
 import { findSkill, magSkillAllowed, wagSkillAllowed } from './skill-search.js';
-import { INFINITY_VAULT_LIST, findInfinityVault, WAG_MASTERS_VAULTS, WAG_WG_VAULTS, WG_TO_MASTERS, xcelVaults } from './scoring/wag.js';
+import { INFINITY_VAULT_LIST, findInfinityVault, WAG_MASTERS_VAULTS, WAG_WG_VAULTS, xcelVaults } from './scoring/wag.js';
 import { MAG_MASTERS_VAULTS, offeredAt } from './scoring/mag.js';
 import { VAULTS as MAG_VAULTS } from './data/mag-vaults.js';
 
@@ -45,8 +45,8 @@ export function revalueEntry(entry, fromLevel, catalog, fromVault = '', events =
       const ids = (row.skillId && catalog.aliases[row.skillId]) || [];
       const els = ids.map(element).filter(Boolean);
       if (!els.length) {
-        // A typed skill's element group is in its own level's numbering: WAG Masters numbers
-        // WG condensed groups I-IV, the other WAG levels number USAG groups. Pick it again.
+        // A typed skill's element group is in its own level's numbering (the other WAG levels number
+        // USAG groups; WAG Masters has none). Pick it again.
         if (entry.disc === 'wag' && (fam === 'wagMasters') !== (fromFam === 'wagMasters')) row.eg = '';
         row.check = true;
         summary.typed++;
@@ -106,7 +106,7 @@ export function revalueEntry(entry, fromLevel, catalog, fromVault = '', events =
       let eg = '';
       if (fam === 'mag') eg = ROMAN[g] || '';
       else if (fam === 'infinity' || fam === 'xcel') eg = /^\d+$/.test(g) ? g : ''; // the USAG group; scoring condenses it
-      else if (fam === 'wagMasters') eg = code === 'WG-WAG-2025' ? String(WG_TO_MASTERS[evId]?.[g] || '') : ROMAN[g] || '';
+      // WAG Masters: no element groups.
 
       row.name = listed.label;
       row.skillId = listed.id;

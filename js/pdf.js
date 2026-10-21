@@ -1,6 +1,6 @@
 // PDF export for every level:
-//   MAG Dev / Int / Adv, MAG Masters: fill in the official start value worksheets
-//   WAG Masters: the Masters WAG worksheet's layout, drawn here in UCG style
+//   MAG Dev / Int / Adv: fill in the official start value worksheets
+//   MAG and WAG Masters: the Masters WAG worksheet's layout, drawn here in UCG style
 //   T&T: fill in the competition cards (NAIGC logo removed, requirements corrected)
 //   UCG Infinity: Julia Sharpe's worksheet (pdf-infinity.js)
 //   Xcel: a UCG Xcel worksheet drawn here (there is no official one)
@@ -9,8 +9,9 @@
 import { PDFDocument, StandardFonts, rgb } from 'https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.esm.min.js';
 import { DISCIPLINES, DECADE_LABELS, eventInfo, eventSpec, levelInfo, scoreEntry } from './model.js';
 import { XCEL_SR, XCEL_VP } from './data/xcel.js';
-import { DECADES, VAULT_AGE_BONUS, mastersValue } from './scoring/masters.js';
-import { WG_TO_MASTERS } from './scoring/wag.js';
+import { DECADES, VAULT_AGE_BONUS } from './scoring/masters.js';
+import { RULES as MASTERS_RULES } from './data/masters-rules.js';
+import { crTexts } from './scoring/wag.js';
 import { findSkill } from './skill-search.js';
 
 const PAGE_H = 792;
@@ -157,63 +158,27 @@ async function magPage(doc, fonts, athlete, entry, evId, r) {
   notes.forEach((n, i) => w.text(n, L.cols[0][0], 740 + i * 13, { size: 9, maxWidth: 480 }));
 }
 
-// ---- Masters (MAG + WAG) -------------------------------------------------------
+// ---- Masters (MAG + WAG): a start value worksheet drawn here ---------------------------
+// The layout of the Masters WAG SV worksheet (2026 Individual World Cup), in the planner's low-ink
+// UCG style, for both disciplines: the UCG Masters Rules Policy v2.1 (7 counting skills, GE, the
+// MAG element group table and the WAG Composition Requirements) replaced the printed MAG sheet.
 
-const MASTERS_LAYOUTS = {
-  mag: { url: 'assets/worksheets/mag-masters.pdf', y1: 76.6, y2: 91.6, rowTop: 177.5, lines: [362.4, 433.6, 504.1, 534.1] },
-};
-const MASTERS_COLS = [[75.5, 289.5], [289.5, 428.5], [428.5, 484.5], [484.5, 570.5]];
+const CR_ROMAN = ['I', 'II', 'III', 'IV', 'V'];
 
 async function mastersPage(doc, fonts, athlete, entry, evId, r) {
-  const L = MASTERS_LAYOUTS[entry.disc];
-  const page = await addTemplatePage(doc, L.url);
-  const w = writer(page, fonts);
-  w.text(athlete.name, 159, L.y1 - 1, { size: 11, font: fonts.bold, maxWidth: 170 });
-  w.text(DECADE_LABELS[entry.decade] || '', 408, L.y1 - 1, { size: 10, font: fonts.bold, maxWidth: 34 });
-  w.text(eventInfo(entry.disc, evId).short, 536, L.y1 - 1, { size: 10, font: fonts.bold, maxWidth: 44 });
-  w.text(athlete.club, 217, L.y2 - 1, { size: 11, font: fonts.bold, maxWidth: 200 });
-  const rowH = 24.83;
-  (r.rows || []).slice(0, 6).forEach((row, i) => {
-    const y = L.rowTop + i * rowH + rowH / 2 + 3.5;
-    const [name, diff, value, eg] = MASTERS_COLS;
-    nameWithBox(w, fonts, row.name, boxOf(entry, evId, row.idx), name[0] + 20, name[1] - 6, y);
-    w.center(row.letter === 'ME' ? 'Masters' : row.letter, (diff[0] + diff[1]) / 2, y);
-    if (row.letter) w.center(fmt(row.value), (value[0] + value[1]) / 2, y);
-    if (row.eg) w.center(ROMAN[row.eg] || String(row.eg), (eg[0] + eg[1]) / 2, y);
-  });
-  if (r.sv != null) {
-    [fmt(r.difficulty), fmt(r.egTotal), fmt(10 - (r.shortBy || r.shortDeduction || 0)), fmt(r.sv)].forEach((v, i) =>
-      w.text(v, 512, L.lines[i] - 3, { size: 11, font: i === 3 ? fonts.bold : fonts.regular })
-    );
-  }
-  const extra = (r.items || []).filter((it) => it.reason === 'egOnly');
-  if (extra.length) w.text(`EG bonus also from skills outside the 6 counting: ${extra.map((x) => x.name).join(', ')}.`, 75, 560, { size: 9, maxWidth: 480 });
-}
-
-// ---- WAG Masters: the UCG Masters WAG start value worksheet, drawn here ------------
-// Same layout as the Masters WAG SV worksheet (2026 Individual World Cup), in the
-// planner's low-ink UCG style: thin rules, no filled blocks.
-
-// WG element groups on each apparatus, by the Masters condensed group they belong to.
-const WG_WAG_GROUPS = {
-  ub: { 1: 'Mounts', 2: 'Casts & Clear Hip Circles', 3: 'Giant Circles', 4: 'Stalder Circles', 5: 'Pike Circles', 6: 'Dismounts' },
-  bb: { 1: 'Mounts', 2: 'Leaps / Jumps / Hops', 3: 'Turns', 4: 'Holds & Acrobatic Non-flight', 5: 'Acrobatic Flight', 6: 'Dismounts' },
-  fx: { 1: 'Leaps / Jumps / Hops', 2: 'Turns', 3: 'Hand Support Elements', 4: 'Saltos Forward & Sideward', 5: 'Saltos Backward' },
-};
-
-async function wagMastersPage(doc, fonts, athlete, entry, evId, r) {
+  const disc = entry.disc;
+  const wag = disc === 'wag';
   const page = doc.addPage([792, 612]);
   const w = writer(page, fonts, NAVY);
-  const H = 612;
   const logo = await loadLogo(doc);
   let x0 = 36;
   if (logo) {
     const h = 30;
     const lw = (logo.width / logo.height) * h;
-    page.drawImage(logo, { x: 36, y: H - 30 - h, width: lw, height: h });
+    page.drawImage(logo, { x: 36, y: 612 - 30 - h, width: lw, height: h });
     x0 = 36 + lw + 14;
   }
-  w.text('WAG Masters Start Value Worksheet', x0, 52, { size: 20, font: fonts.bold });
+  w.text(`${wag ? 'WAG' : 'MAG'} Masters Start Value Worksheet`, x0, 52, { size: 20, font: fonts.bold });
 
   // Gymnast, club, apparatus, age decade
   const field = (label, value, x, width) => {
@@ -223,43 +188,53 @@ async function wagMastersPage(doc, fonts, athlete, entry, evId, r) {
   };
   field('Gymnast name:', athlete.name, 36, 262);
   field('Club:', athlete.club, 312, 186);
-  field('Apparatus:', eventInfo('wag', evId).label, 512, 138);
+  field('Apparatus:', eventInfo(disc, evId).label, 512, 138);
   field('Age decade:', DECADE_LABELS[entry.decade] || '', 664, 92);
 
-  // Skills table (left)
-  const cols = [[36, 58, '#'], [58, 236, 'Name of skill'], [236, 290, 'Difficulty|(A/B/etc.)'], [290, 342, 'Value|(by age)'], [342, 394, 'Condensed|group (I-IV)'], [394, 446, 'EG bonus|(+0.5 per group)']];
+  // Skills table (left). WAG: the CRs each skill fills; MAG: its element group and bonus.
+  const crOf = (it) => CR_ROMAN.filter((_, i) => r.sr?.[i] && r.detectedSr?.[i]?.by.includes(it.idx)).join(', ');
+  const cols = wag
+    ? [[36, 58, '#'], [58, 262, 'Name of skill'], [262, 316, 'Difficulty|(GE/ME/A/...)'], [316, 368, 'Value|(by age)'], [368, 446, 'Fills|(CR)']]
+    : [[36, 58, '#'], [58, 236, 'Name of skill'], [236, 290, 'Difficulty|(GE/ME/A/...)'], [290, 342, 'Value|(by age)'], [342, 394, 'Element|group (I-IV)'], [394, 446, 'EG bonus|(+0.3 / +0.5)']];
   let y = 112;
   for (const [a, b, label] of cols) {
-    const lines = label.split('|');
-    lines.forEach((t, i) => w.center(t, (a + b) / 2, y + 10 + i * 9, { size: i ? 6.5 : 8, font: i ? fonts.regular : fonts.bold, c: i ? MUTED : NAVY }));
+    label.split('|').forEach((t, i) => w.center(t, (a + b) / 2, y + 10 + i * 9, { size: i ? 6.5 : 8, font: i ? fonts.regular : fonts.bold, c: i ? MUTED : NAVY }));
   }
   y += 28;
   w.line(36, y, 446, y, 1, NAVY);
-  const rowH = 20;
+  const rowH = 19;
   const counting = (r.items || []).filter((it) => it.status === 'counting');
-  const egOnly = (r.items || []).filter((it) => it.reason === 'egOnly');
+  const extra = (r.items || []).filter((it) => it.reason === 'crOnly');
+  const nRows = Math.max(7, counting.length);
+  const mid = (i) => (cols[i][0] + cols[i][1]) / 2;
   const row = (it, label, i, { value = true } = {}) => {
     const ty = y + rowH * (i + 1) - 6;
     w.center(label, 47, ty, { size: 9, c: MUTED });
     if (it) {
-      nameWithBox(w, fonts, it.name, boxOf(entry, evId, it.idx), 62, 233, ty, 9.5, INK);
-      w.center(it.letter === 'ME' ? 'Masters' : it.letter, 263, ty, { size: 9.5, c: INK });
-      if (value && it.letter) w.center(fmt(it.value), 316, ty, { size: 9.5, c: INK });
-      if (!value) w.center('-', 316, ty, { size: 9.5, c: MUTED });
-      if (it.eg) w.center(ROMAN[it.eg] || String(it.eg), 368, ty, { size: 9.5, c: INK });
-      if (it.bonus) w.center('+0.5', 420, ty, { size: 9.5, c: INK });
+      const dismount = it.idx === r.dismount;
+      nameWithBox(w, fonts, `${it.name}${dismount ? ' (dismount)' : ''}`, boxOf(entry, evId, it.idx), 62, cols[1][1] - 3, ty, 9.5, INK);
+      w.center(it.letter, mid(2), ty, { size: 9.5, c: INK });
+      w.center(value && it.letter ? fmt(it.value) : '-', mid(3), ty, { size: 9.5, c: value ? INK : MUTED });
+      if (wag) w.center(crOf(it), mid(4), ty, { size: 9.5, c: INK });
+      else {
+        if (it.eg) w.center(ROMAN[it.eg] || String(it.eg), mid(4), ty, { size: 9.5, c: INK });
+        if (it.bonus) w.center(`+${fmt(it.bonus)}`, mid(5), ty, { size: 9.5, c: INK });
+      }
     }
     w.line(36, y + rowH * (i + 1), 446, y + rowH * (i + 1), 0.5);
   };
-  for (let i = 0; i < 6; i++) row(counting[i], String(i + 1), i);
-  for (const [a] of cols.slice(1)) w.line(a, y - 28, a, y + rowH * 6, 0.5);
-  y += rowH * 6 + 13;
-  w.text('Skills used only for the EG bonus (not difficulty)', 36, y, { size: 8, font: fonts.bold, c: MUTED });
-  y += 2;
-  const extraRows = Math.max(2, egOnly.length);
-  for (let i = 0; i < extraRows; i++) row(egOnly[i], '', i, { value: false });
-  for (const [a] of cols.slice(1)) w.line(a, y, a, y + rowH * extraRows, 0.5);
-  y += rowH * extraRows;
+  for (let i = 0; i < nRows; i++) row(counting[i], String(i + 1), i);
+  for (const [a] of cols.slice(1)) w.line(a, y - 28, a, y + rowH * nRows, 0.5);
+  y += rowH * nRows;
+  if (wag) {
+    y += 13;
+    w.text('Skills that only fill a CR (not difficulty)', 36, y, { size: 8, font: fonts.bold, c: MUTED });
+    y += 2;
+    const extraRows = Math.max(2, extra.length);
+    for (let i = 0; i < extraRows; i++) row(extra[i], '', i, { value: false });
+    for (const [a] of cols.slice(1)) w.line(a, y, a, y + rowH * extraRows, 0.5);
+    y += rowH * extraRows;
+  }
 
   // Values by age decade (right)
   const tx = 470;
@@ -272,22 +247,29 @@ async function wagMastersPage(doc, fonts, athlete, entry, evId, r) {
   DECADES.forEach((d, i) => w.center(DECADE_LABELS[d], cx(i), ty + 12, { size: 8.5, font: fonts.bold }));
   ty += 18;
   w.line(tx, ty, 756, ty, 1, NAVY);
+  const level = (list) => (i) => (list[i] ? `>= ${list[i]}` : 'n/a');
+  const V = MASTERS_RULES.values;
   const tableRows = [
-    ['Counting skills', () => '6'],
-    ['EG bonus: skill at least', (i) => (i < 2 ? 'ME' : 'Misc.')],
-    ['Routine length: skill at least', (i) => (i < 2 ? 'ME' : 'Misc.')],
-    ['Vault age bonus', (i) => fmt(VAULT_AGE_BONUS.wag[i])],
-    ['Value: Misc. skill', (i) => (i < 2 ? 'n/a' : fmt(mastersValue('Misc', DECADES[i])))],
-    ['Value: Masters Element (ME)', (i) => fmt(mastersValue('ME', DECADES[i]))],
-    ['Value: A', (i) => fmt(mastersValue('A', DECADES[i]))],
-    ['Value: B', (i) => fmt(mastersValue('B', DECADES[i]))],
-    ['Value: C', (i) => fmt(mastersValue('C', DECADES[i]))],
-    ['Value: D or higher', (i) => fmt(mastersValue('D', DECADES[i]))],
+    ['Counting skills (incl. dismount)', (i) => String(MASTERS_RULES.total[i])],
+    ['Routine length: skill at least', level(MASTERS_RULES.lengthMin)],
+    ...(wag
+      ? [
+          ['CR I-IV (+0.5): skill at least', level(MASTERS_RULES.wag.crMin)],
+          ['Dismount CR +0.3', level(MASTERS_RULES.wag.dismountCr['0.3'])],
+          ['Dismount CR +0.5', level(MASTERS_RULES.wag.dismountCr['0.5'])],
+          ['Beam bonus (no widening)', (i) => (MASTERS_RULES.wag.beamBonus[i] == null ? 'n/a' : fmt(MASTERS_RULES.wag.beamBonus[i]))],
+        ]
+      : [
+          ['EG bonus +0.3', level(MASTERS_RULES.mag.egBonus['0.3'])],
+          ['EG bonus +0.5', level(MASTERS_RULES.mag.egBonus['0.5'])],
+        ]),
+    ['Vault age bonus', (i) => fmt(VAULT_AGE_BONUS[disc][i])],
+    ...Object.keys(V).map((k) => [`Value: ${k === 'GE' ? 'GE (Gymnastics Element)' : k === 'ME' ? 'ME (Masters Element)' : k === 'D+' ? 'D or higher' : k}`, (i) => (V[k][i] == null ? 'n/a' : fmt(V[k][i]))]),
   ];
-  const trH = 17;
+  const trH = 16;
   tableRows.forEach(([label, val], k) => {
     const yy = ty + trH * (k + 1) - 5;
-    w.text(label, tx, yy, { size: 8, maxWidth: labelW - 6 });
+    w.text(label, tx, yy, { size: 7.5, maxWidth: labelW - 6 });
     DECADES.forEach((d, i) => w.center(val(i), cx(i), yy, { size: 8, font: i === me ? fonts.bold : fonts.regular, c: i === me ? INK : NAVY }));
     w.line(tx, ty + trH * (k + 1), 756, ty + trH * (k + 1), 0.5);
   });
@@ -295,65 +277,46 @@ async function wagMastersPage(doc, fonts, athlete, entry, evId, r) {
   if (me >= 0) w.box(tx + labelW + colW * me + 1, 112, colW - 2, 18 + trH * tableRows.length + 2, { border: NAVY, thickness: 1.2 });
 
   // Start value line
-  y = Math.max(y, ty + trH * tableRows.length) + 26;
+  y = Math.max(y, ty + trH * tableRows.length) + 24;
+  const none = r.sv == null;
+  const short = r.shortBy || 0;
   const parts = [
     ['Execution', '10.0'],
-    ['+ Total difficulty', r.sv == null ? '' : fmt(r.difficulty)],
-    ['+ Total EG', r.sv == null ? '' : fmt(r.egTotal)],
-    ['- Skills short of 6', r.sv == null ? '' : fmt(r.shortBy)],
-    ['= Start value', r.sv == null ? '' : fmt(r.sv)],
+    ['+ Total difficulty', none ? '' : fmt(r.difficulty)],
+    wag ? ['+ Composition req.', none ? '' : fmt(r.crTotal)] : ['+ Total EG', none ? '' : fmt(r.egTotal)],
+    ...(wag && evId === 'bb' ? [['+ Beam bonus', none ? '' : fmt(r.beamBonus)]] : []),
+    [`- Skills short of ${r.minSkills || MASTERS_RULES.total[Math.max(me, 0)]}`, none ? '' : fmt(short)],
+    ['= Start value', none ? '' : fmt(r.sv ?? r.startValue)],
   ];
   const bw = 720 / parts.length;
   parts.forEach(([label, val], i) => {
     const x = 36 + i * bw;
     const last = i === parts.length - 1;
-    w.text(label, x + 4, y, { size: 9, font: fonts.bold, c: MUTED });
-    w.box(x + 2, y + 6, bw - 10, 30, { border: last ? NAVY : LINE, thickness: last ? 1.4 : 0.75 });
-    w.center(val, x + 2 + (bw - 10) / 2, y + 27, { size: last ? 16 : 13, font: last ? fonts.bold : fonts.regular, c: INK });
+    w.text(label, x + 4, y, { size: 9, font: fonts.bold, c: MUTED, maxWidth: bw - 8 });
+    w.box(x + 2, y + 6, bw - 10, 28, { border: last ? NAVY : LINE, thickness: last ? 1.4 : 0.75 });
+    w.center(val, x + 2 + (bw - 10) / 2, y + 26, { size: last ? 16 : 13, font: last ? fonts.bold : fonts.regular, c: INK });
   });
-  y += 62;
+  y += 56;
 
-  // Notes (left) and condensed element groups (right)
-  const notes = [
-    ['Difficulty:', 'values depend on the skill and the age decade (table above). Only the 6 most valuable skills count toward difficulty.'],
-    ['Element group bonus:', '+0.5 for each condensed group with a skill (counting or not) at the decade\'s level; one per group, up to +2.0.'],
-    ['Short routine:', '-1.0 for each skill fewer than 6 (a 4-skill routine gets -2.0).'],
-  ];
-  let ny = y;
-  for (const [head, body] of notes) {
-    const hw = w.text(head, 36, ny, { size: 8.5, font: fonts.bold });
-    const words = body.split(' ');
-    let lineText = '';
-    let first = true;
-    for (const word of words) {
-      const next = lineText ? `${lineText} ${word}` : word;
-      const avail = first ? 250 - hw - 4 : 250;
-      if (fonts.regular.widthOfTextAtSize(next, 8.5) > avail) {
-        w.text(lineText, first ? 36 + hw + 4 : 36, ny, { size: 8.5 });
-        ny += 11;
-        lineText = word;
-        first = false;
-      } else lineText = next;
-    }
-    w.text(lineText, first ? 36 + hw + 4 : 36, ny, { size: 8.5 });
-    ny += 18;
+  // WAG: the apparatus's Composition Requirements, met or not. MAG: how the parts add up.
+  if (wag) {
+    w.text('Composition requirements', 36, y, { size: 8.5, font: fonts.bold });
+    crTexts(evId).forEach((t, i) => {
+      const yy = y + 13 + i * 11;
+      w.text(`CR ${CR_ROMAN[i]}`, 36, yy, { size: 8, font: fonts.bold });
+      w.text(t[0].toUpperCase() + t.slice(1), 66, yy, { size: 7.5, maxWidth: 640 });
+      w.text(r.crValues?.[i] ? `+${fmt(r.crValues[i])}` : '-', 720, yy, { size: 8, font: fonts.bold, c: r.crValues?.[i] ? INK : MUTED });
+    });
+  } else {
+    const notes = [
+      'Difficulty: the dismount plus the best 6 other skills (5 from 60), valued by age decade (table above).',
+      'Element groups: each group with a counting skill earns +0.3 or +0.5 (table above); no limit per group, but a group skill must be counting.',
+      'Floor has four element groups; on the other apparatus the dismount group (IV) is worth the dismount value, up to 0.5.',
+      `Short routine: -1.0 for each skill fewer than the decade's count, including a missing dismount.`,
+    ];
+    notes.forEach((n, i) => w.text(n, 36, y + i * 12, { size: 8, maxWidth: 720 }));
   }
-  const gx = 300;
-  const gw = (756 - gx - 24) / 3;
-  w.text('Condensed element groups (and the WG groups in each)', gx, y, { size: 8.5, font: fonts.bold });
-  const apps = [['ub', 'Bars'], ['bb', 'Beam'], ['fx', 'Floor']];
-  apps.forEach(([app, label], i) => w.text(label, gx + 24 + gw * i, y + 14, { size: 8.5, font: fonts.bold, c: app === evId ? INK : NAVY }));
-  let gy = y + 18;
-  w.line(gx, gy, 756, gy, 1, NAVY);
-  for (const g of [1, 2, 3, 4]) {
-    const lists = apps.map(([app]) => Object.entries(WG_WAG_GROUPS[app]).filter(([n]) => WG_TO_MASTERS[app][n] === g).map(([n, name]) => `${n}. ${name}`));
-    const lines = Math.max(...lists.map((l) => l.length));
-    lists.forEach((l, i) => l.forEach((t, k) => w.text(t, gx + 24 + gw * i, gy + 11 + k * 10, { size: 8, maxWidth: gw - 6, font: apps[i][0] === evId ? fonts.bold : fonts.regular })));
-    w.text(ROMAN[g], gx + 4, gy + 11, { size: 8.5, font: fonts.bold });
-    gy += lines * 10 + 5;
-    w.line(gx, gy, 756, gy, 0.5);
-  }
-  w.text('Planned with the UCG Routine Planner. Values from the UCG Masters Rules Policy and the World Gymnastics WAG Code of Points.', 36, 594, { size: 7.5, c: MUTED, maxWidth: 720 });
+  w.text(`Planned with the UCG Routine Planner. Values from the UCG Masters Rules Policy v2.1 and the World Gymnastics ${wag ? 'WAG' : 'MAG'} Code of Points.`, 36, 594, { size: 7.5, c: MUTED, maxWidth: 720 });
 }
 
 // ---- T&T competition cards -----------------------------------------------------
@@ -536,7 +499,6 @@ export async function exportEntryPdf(athlete, entry, events) {
       const ev = eventInfo(entry.disc, evId);
       if (entry.disc === 'tt') await ttPage(doc, fonts, athlete, entry, evId);
       else if (ev.kind === 'vault') continue; // no MAG / Masters vault worksheet
-      else if (levelInfo(entry.disc, entry.level).masters && entry.disc === 'wag') await wagMastersPage(doc, fonts, athlete, entry, evId, score.events[evId]);
       else if (levelInfo(entry.disc, entry.level).masters) await mastersPage(doc, fonts, athlete, entry, evId, score.events[evId]);
       else await magPage(doc, fonts, athlete, entry, evId, score.events[evId]);
     }

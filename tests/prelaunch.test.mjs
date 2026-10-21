@@ -28,11 +28,6 @@ test('Masters counting: on a tie the skill that counts toward length wins (30s: 
   assert.equal(scoreRoutine('fx', 'masters', skills, {}, { decade: '30' }).shortBy ?? 0, 0);
 });
 
-test('WAG Masters: an element group outside I-IV earns no group bonus', () => {
-  const skills = [6, 7, 8].map((eg, i) => ({ name: `S${i}`, letter: 'A', eg }));
-  assert.equal(scoreWagMasters('fx', skills, { decade: '30' }).egTotal, 0);
-});
-
 test('WAG Masters search: "back handspring" finds the WG flic-flac', () => {
   assert.ok(searchSkills('wag', 'fx', 'back handspring').some((s) => s.id === 'WGW-FX-3.107-1'));
 });

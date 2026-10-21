@@ -763,6 +763,7 @@ input::placeholder { color: var(--fg-muted); }
 .sr-text { display: grid; gap: 2px; }
 .sr-how { font-size: var(--fs-xs); color: var(--fg-secondary); }
 .sr-how:empty { display: none; }
+.sr-item [data-sr-val] { margin-left: auto; flex: none; }
 
 /* ---- Start value bar and breakdown sheet (phones) ---- */
 .sv-bar { display: none; }
