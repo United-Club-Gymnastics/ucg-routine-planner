@@ -1,14 +1,14 @@
 {
- "schema_version": "0.2.0",
+ "schema_version": "0.3.0",
  "code": "UCG-MAG-ADD",
  "discipline": "MAG",
  "edition": "2026-09-30",
- "built": "2026-10-20",
+ "built": "2026-10-21",
  "source": {
   "kind": "authored",
   "document": "MAG/UCG MAG CoP.svg",
   "repo": "nssharpe/ucg-code-of-points",
-  "commit": "9aabfa6e869d58a2bf75273cfbdf8f14f5acbfc1"
+  "commit": "551f8b6142b76a04948a9ead7cf42b5e4b64f7f7"
  },
  "records": [
   {
@@ -275,8 +275,8 @@
    "value": "C",
    "element_group": "II",
    "eponym": "",
-   "video": "https://drive.google.com/file/d/12dmCWeHDOa03F-Uq1IBUjUOjCrl5iRJH/view?usp=sharing",
-   "drawing": false,
+   "video": "https://youtu.be/5onjjL29Ats",
+   "drawing": true,
    "added": "2026-10-01"
   },
   {
@@ -1127,7 +1127,7 @@
    "element_group": "III",
    "eponym": "",
    "video": "https://youtu.be/TCIQNmFH0uo",
-   "drawing": false,
+   "drawing": true,
    "added": "2026-10-01"
   },
   {

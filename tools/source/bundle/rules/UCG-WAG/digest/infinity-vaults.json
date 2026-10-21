@@ -1,6 +1,6 @@
 {
  "code": "UCG-WAG",
- "about": "UCG WAG Open Scoring Level (Infinity) vault chart: D score per vault; start value = D + 10.0 (E from 10.0, neutral deductions off the sum). Names and numbers as printed in the rules document's full chart (UCG's own text). 'usag' is the USAG vault number the chart prints; Nate corrected three of them on 2026-10-20. The planner generates js/data/wag-infinity-vaults.js from this file. Five USAG numbers (2.407, 4.307, 4.308, 4.309, 5.505) each name two rows, as the chart prints them: the same vault described two ways, at the same D.",
+ "about": "UCG WAG Open Scoring Level (Infinity) vault chart: D score per vault; start value = D + 10.0 (E from 10.0, neutral deductions off the sum). Names and numbers as printed in the rules document's full chart (UCG's own text). 'usag' is the USAG vault number the chart prints; Nate corrected three of them on 2026-10-20. The planner generates js/data/wag-infinity-vaults.js from this file. Five USAG numbers (2.407, 4.307, 4.308, 4.309, 5.505) each name two rows: two different vaults that share one USAG box and number (Nate 2026-10-21, decisions.md).",
  "source": "UCG Infinity Rules v1.2 (Google Doc, source of record; see README), Appendix 'Full UCG WAG Infinity Vault Chart' (text/infinity-rules.md); checked row by row against Drive version 1052 on 2026-10-21 (all 116 rows equal)",
  "vaults": [
   {
