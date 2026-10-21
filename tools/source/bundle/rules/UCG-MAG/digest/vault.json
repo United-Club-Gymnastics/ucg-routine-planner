@@ -145,12 +145,33 @@
     "wg_printed": null,
     "wg": 5.2,
     "adv": 5.6,
-    "note": "not in either table; kept by Nate 2026-10-20"
+    "note": "not in either table; kept by Nate 2026-10-20, value 5.6 confirmed 2026-10-21"
    }
   ],
   "cite": "Breakdown workbook 'Vault Difficulty Table' tab; CoP p. 6 table",
   "levels": "adv only, never another level (Nate 2026-10-20); every other level uses the WG value",
   "check": "Both tables printed 3.4 for 219 until 2026-10-20 (WG 3.2; fixed). 228 is upgraded too though neither table lists it (Nate 2026-10-20)."
+ },
+ "non_flipping": {
+  "about": "WG MAG vaults with no salto (handspring vaults only). Every other WG vault flips. The planner marks these flipping: false and Developmental allows the ones without a round-off entry.",
+  "wg_vaults": [
+   "201",
+   "202",
+   "203",
+   "204",
+   "205",
+   "206",
+   "301",
+   "302",
+   "303",
+   "501",
+   "502",
+   "503",
+   "513",
+   "514",
+   "515"
+  ],
+  "cite": "WG MAG CoP 2025-2028 vault table (the descriptions name no salto); was the planner's NON_FLIPPING in build_skills.py until 2026-10-21"
  },
  "dev_allowed": {
   "rule": "Developmental bans flipping and round-off-entry vaults (score 0). The Policy names only flipping; the Breakdown is right (Nate 2026-10-20).",

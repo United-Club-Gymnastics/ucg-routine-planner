@@ -56,12 +56,18 @@ gym-skill-extract `rules/UCG-*/decisions.md`.
   counting, dismount cap, floor balance-or-jump list, `SWING_HS`), tested equal in `tests/masters-wg.test.mjs`.
   Planner-owned data in `tools/source`: `hb_flight_styles.json` (Advanced HB flight styles) and
   `masters_wag_tags.json` (Masters WAG CR tags; the CoP prints no CR marks), both for Nate to check.
-- **Rules data still hard-coded** (no digest JSON yet): `ADV_VAULT`, `NON_FLIPPING` (build_skills.py),
-  `TAG_FIXES`, `EXCLUDE`, `MASTERS_MAP` (a check only) (build_data.py), the Infinity tables in `js/scoring/`,
-  and `js/data/xcel.js`, `wag-infinity-vaults.js`.
-  Infinity's values and condensed groups are tested against `levels.json`. WAG Masters counts a skill
-  once by name (`js/scoring/wag.js`): a candidate for the bundle's WG-WAG-2025 same-element digest,
-  which nothing reads yet (nor the WG-WAG composition and CV digests: no planner level scores them).
+- **More rules data from the digests** (2026-10-21, review M2): `ADV_VAULT` and `NON_FLIPPING` (build_skills.py,
+  from UCG-MAG `vault.json`), `MASTERS_MAP` (UCG-MASTERS-MAG/WAG `vault-values.json` `table_wg_vaults`),
+  `js/data/infinity-rules.js` (UCG-WAG `infinity.json` + `levels.json`; `js/scoring/wag.js` re-exports it),
+  `wag-infinity-vaults.js` (UCG-WAG `infinity-vaults.json`; ids in `tools/source/infinity_vault_ids.json`) and
+  `xcel.js` (USAG-XCEL-2022 `levels.json`), all tested equal in `tests/rules-digests.test.mjs`. `TAG_FIXES` is
+  gone: the catalog carries those tags (gym-skill-extract `skill_catalog/tags/tags_overrides.json`). Change any
+  of these in gym-skill-extract and sync, never in `js/data`.
+- Still hand-coded: `EXCLUDE` (build_data.py) is planner curation of the T&T example routines, not rules data,
+  so it stays here. Code-level rules remain in `js/scoring/` (e.g. `KIND_RULES` in `xcel-rules.js`,
+  `XCEL_VALUE` in `wag.js`, mag.js caps). WAG Masters counts a skill once by name (`js/scoring/wag.js`): a
+  candidate for the bundle's WG-WAG-2025 same-element digest, which nothing reads yet (nor the WG-WAG
+  composition and CV digests: no planner level scores them).
 
 **IDs** (2026-10-20): `tools/source/published-ids.json` lists every skill and vault ID this site ever shipped.
 `sync-skills` refuses a bundle in which one is neither an alias, a redirect nor retired by ucg-code-of-points;
@@ -73,6 +79,5 @@ A bundle update is the last PR of a linked chain (CoP -> gym-skill-extract -> pl
 - Masters MAG picked up raw "(same box as ...)" notes on 2 PB skills. They may deserve `note_edits.json`
   entries.
 - Files are written with LF, and git's CRLF warnings on Windows are harmless.
-- Rules data still hard-coded (above) should come from the bundle's digests, with a test that each table equals
-  its digest (review 2026-10-20, M2/M4; `ADV_VAULT` 228 already disagrees with `rules/UCG-MAG/digest/vault.json`).
+- The code-level rules still in `js/scoring/` (above) could move to digests too (review 2026-10-20, M2).
 - Who owns the Firebase project, DNS and the other accounts: gym-skill-extract `docs/OPERATIONS.md`.

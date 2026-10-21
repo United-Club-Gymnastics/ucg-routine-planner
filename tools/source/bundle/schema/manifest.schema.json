@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/nssharpe/gym-skill-extract/schema/manifest.schema.json",
   "title": "Planner bundle manifest (bundle/manifest.json)",
-  "description": "Version 0.2.0 (2026-10-19): a file may declare vaults.schema.json. Version 0.1.0 (2026-10-18). Written by gym-skill-extract next to the public bundle it ships to the routine planner (docs/ARCHITECTURE.md section 4; the bundle landed in refactor step 3: build_bundle.py). The planner's sync checks every file's sha256 against it and rejects a schema_version whose major differs from its own.",
+  "description": "Version 0.3.0 (2026-10-21): rules digests declare digest.schema.json. Version 0.2.0 (2026-10-19): a file may declare vaults.schema.json. Version 0.1.0 (2026-10-18). Written by gym-skill-extract next to the public bundle it ships to the routine planner (docs/ARCHITECTURE.md section 4; the bundle landed in refactor step 3: build_bundle.py). The planner's sync checks every file's sha256 against it and rejects a schema_version whose major differs from its own.",
   "type": "object",
   "required": ["schema_version", "built", "catalogs", "sources", "files"],
   "additionalProperties": false,
@@ -39,7 +39,7 @@
           "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
           "schema": {
             "description": "Schema file name in schema/, if the file has one.",
-            "enum": ["skill.schema.json", "catalog.schema.json", "aliases.schema.json", "levels.schema.json", "vaults.schema.json"]
+            "enum": ["skill.schema.json", "catalog.schema.json", "aliases.schema.json", "levels.schema.json", "vaults.schema.json", "digest.schema.json"]
           }
         }
       }

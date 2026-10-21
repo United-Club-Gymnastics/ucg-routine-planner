@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nssharpe/gym-skill-extract/schema/digest.schema.json",
+  "title": "Rules digest JSON (rules/<CODE>/digest/*.json)",
+  "description": "Version 0.1.0 (2026-10-21). The envelope every rules digest shares, so code can rely on it and nothing else ships by accident (review 2026-10-20, M4). The content is the rules as data, in our own words (rules/README.md): labels, numbers and element numbers, never the Code's sentences. schema/test_digests.py adds what a schema can't say: code equals the folder name, and every block of rules carries a citation.",
+  "type": "object",
+  "required": ["code", "about"],
+  "properties": {
+    "code": {
+      "description": "The rules edition: the name of the folder under rules/ (e.g. UCG-WAG, WG-MAG-2025).",
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$"
+    },
+    "about": { "description": "What the file holds, in a sentence or two.", "type": "string", "minLength": 20 },
+    "source": { "description": "The document the whole file comes from, where one does.", "type": "string" },
+    "cite": { "description": "Where in the source a block's claims are, e.g. 'p. 14 §6.3' or 'IR §III.B.3'.", "type": "string" }
+  }
+}

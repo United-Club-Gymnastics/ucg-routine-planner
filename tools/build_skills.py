@@ -9,9 +9,11 @@ synced from gym-skill-extract with `npm run sync-skills`). Nothing outside this 
               `redirects` of ucg-mag.json and ucg-masters-mag.json (retired skill ID -> replacement)
               go to js/data/mag-redirects.js, so routines saved with a retired ID still open.
 
+  Vault rules: rules/UCG-MAG/digest/vault.json. Its upgraded_fhs_vaults are the Advanced (GymACT)
+              values that differ from the WG value (Advanced only, never another level: Nate
+              2026-10-20; vault 228 at 5.6, Nate 2026-10-21) and non_flipping the WG vaults with no salto.
+
 Run: python tools/build_skills.py   (npm run sync-skills runs it after a sync)
-Advanced (GymACT) vault values: GymACT raises some handspring vaults above their
-WG value; those are in ADV_VAULT (from the MAG Routine Composition Planner sheet).
 """
 import json
 import os
@@ -26,12 +28,12 @@ REDIRECT_OUT = os.path.join(HERE, "..", "js", "data", "mag-redirects.js")
 # Our edits to the Code's skill notes, as the skill picker shows them (see build_data.py).
 NOTE_EDITS = json.load(open(os.path.join(HERE, "source", "note_edits.json"), encoding="utf-8"))["mag"]
 
-# Advanced (GymACT) values that differ from the WG value (Advanced only, never another level: Nate 2026-10-20), by WG vault number (a string, as in the
+VAULT_RULES = json.load(open(os.path.join(HERE, "source", "bundle", "rules", "UCG-MAG", "digest", "vault.json"), encoding="utf-8"))
+# Advanced (GymACT) values that differ from the WG value, by WG vault number (a string, as in the
 # skill files; wg_vaults normalises with str()).
-ADV_VAULT = {"107": 3.6, "108": 4.4, "109": 4.8, "113": 4.0, "114": 4.4, "115": 4.8, "116": 5.2, "117": 5.6, "118": 6.0,
-             "213": 2.8, "219": 3.8, "225": 5.2, "226": 5.6, "228": 5.6, "231": 5.6, "232": 6.0}
+ADV_VAULT = {r["wg_vault"]: r["adv"] for r in VAULT_RULES["upgraded_fhs_vaults"]["rows"]}
 # Vaults with no salto.
-NON_FLIPPING = {str(n) for n in [*range(201, 207), *range(301, 304), *range(501, 504), *range(513, 516)]}
+NON_FLIPPING = set(VAULT_RULES["non_flipping"]["wg_vaults"])
 
 
 # Developmental bans flipping and round-off-entry vaults (UCG MAG Rules Breakdown, Vault row; Nate
@@ -108,7 +110,7 @@ def wg_vaults(wg):
     ids = {v["id"] for v in out}
     missing = (ADV_VAULT.keys() | NON_FLIPPING) - ids
     if missing:
-        raise SystemExit(f"ADV_VAULT / NON_FLIPPING numbers not among the WG vaults in wg-mag.json: {sorted(missing)}")
+        raise SystemExit(f"rules/UCG-MAG/digest/vault.json vault numbers not among the WG vaults in wg-mag.json: {sorted(missing)}")
     return out
 
 

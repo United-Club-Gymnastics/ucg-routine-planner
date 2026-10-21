@@ -192,5 +192,92 @@
   ],
   "cite": "Masters WAG CoP p. 2",
   "checked": "every printed decade value = base + age bonus (checked 2026-10-19)"
+ },
+ "table_wg_vaults": {
+  "rows": {
+   "Front handspring": [
+    "1.00"
+   ],
+   "Front handspring with ½ twist": [
+    "1.01"
+   ],
+   "Front handspring with 1/1 twist": [
+    "1.02"
+   ],
+   "Front handspring with 3/2 twist": [
+    "1.03"
+   ],
+   "Front handspring with ½ twist 1st phase": [
+    "1.20"
+   ],
+   "Front handspring with ½ twist 1st phase and ½ twist 2nd": [
+    "1.21"
+   ],
+   "Yamashita": [
+    "1.10"
+   ],
+   "Yamashita ½ twist": [
+    "1.11"
+   ],
+   "Yamashita 1/1 twist": [
+    "1.12"
+   ],
+   "Front handspring and salto fwd. tucked": [
+    "2.10"
+   ],
+   "Front handspring and salto fwd. tucked with ½ twist": [
+    "2.11"
+   ],
+   "Front handspring and salto fwd. piked": [
+    "2.20"
+   ],
+   "Front handspring and salto fwd. piked with ½ twist": [
+    "2.21"
+   ],
+   "Yurchenko tucked": [
+    "4.10"
+   ],
+   "Yurchenko piked": [
+    "4.20"
+   ],
+   "Yurchenko tucked with ½ twist": [
+    "4.11"
+   ],
+   "Yurchenko tucked with 1/1 twist": [
+    "4.12"
+   ],
+   "Yurchenko stretched": [
+    "4.30"
+   ],
+   "Yurchenko stretched with ½ twist": [
+    "4.31"
+   ],
+   "Yurchenko stretched with 1/1 twist": [
+    "4.32"
+   ],
+   "Tsukahara tucked": [
+    "3.10"
+   ],
+   "Tsukahara piked": [
+    "3.20"
+   ],
+   "Tsukahara tucked with ½ twist": [
+    "3.11"
+   ],
+   "Tsukahara tucked with 1/1 twist": [
+    "3.12"
+   ],
+   "Tsukahara stretched": [
+    "3.30"
+   ],
+   "Tsukahara stretched with ½ twist": [
+    "3.31"
+   ],
+   "Tsukahara stretched with 1/1 twist": [
+    "3.32"
+   ]
+  },
+  "about": "the Masters vault table's rows that are WG vaults (no Masters id): the table's description -> the WG WAG vault number(s) it means (two where the row names two vaults, e.g. Tsukahara or Yurchenko). The planner values them from the WG table and checks the table's printed value against it.",
+  "cite": "our match of the Masters CoP vault table (ucg-code-of-points ucg-masters-vaults.json) to the WG vault table; was the planner's MASTERS_MAP in build_data.py until 2026-10-21"
  }
 }
