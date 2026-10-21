@@ -1,6 +1,7 @@
 // UCG WAG start values: UCG Infinity (open scoring; ported from Julia Sharpe's
 // UCG Infinity SV Sheets), the UCG Xcel levels, and WAG Masters.
 import { VAULTS as INFINITY_VAULTS } from '../data/wag-infinity-vaults.js';
+import { INFINITY_EG_BONUS, INFINITY_EVENT_BONUS, INFINITY_GROUPS, INFINITY_MAX_SKILLS, INFINITY_MIN_SKILLS, INFINITY_VALUES } from '../data/infinity-rules.js';
 import { XCEL_LIMITS, XCEL_SR, XCEL_SILVER_VAULTS, XCEL_VAULTS, XCEL_VP } from '../data/xcel.js';
 import { VAULTS as SAPPHIRE_L910_VAULTS } from '../data/sapphire-vaults.js';
 import { MASTERS_LETTERS, WAG_CR, beamBonus, bestCount, countingTotal, dismountCr, mastersValue, meetsRequirement, vaultAgeBonus } from './masters.js';
@@ -13,7 +14,7 @@ import { detectSR, infinityApparatusBonus, markKindRestrictions, sapphireBonus }
 const HAND_SUPPORT_FLIGHT = new Set(HAND_SUPPORT_FLIGHT_IDS);
 
 export const EXECUTION = 10;
-export const MIN_SKILLS = 6;
+export const MIN_SKILLS = INFINITY_MIN_SKILLS;
 export const round1 = (n) => Math.round(n * 10) / 10;
 // A skill re-valued as "not credited at this level" (revalue.js) counts for nothing, routine length included.
 const isFilled = (s) => !!(s && !s.noCredit && (String(s.name || '').trim() || s.letter));
@@ -26,33 +27,14 @@ export const XCEL_LEVELS = ['silver', 'gold', 'plat', 'diamond', 'sapphire'];
 
 // ---- Element groups ---------------------------------------------------------
 
-// UCG Infinity: USAG DP / Xcel element groups, condensed into I-IV.
-export const INFINITY_GROUPS = {
-  ub: {
-    groups: { 1: 'Mounts', 2: 'Casts/Counterswings', 3: 'Underswings/Clear Hips', 4: 'Giant Swings Backward', 5: 'Giant Swings/Circles Fwd.', 6: 'Stalder Circles', 7: 'Circle Swings/Hechts', 8: 'Dismounts' },
-    condensed: { I: [1, 8], II: [2], III: [3, 6, 7], IV: [4, 5] },
-    eventBonus: 'Minimum of 2 bar changes',
-  },
-  bb: {
-    groups: { 1: 'Mounts', 2: 'Leaps/Jumps/Hops', 3: 'Turns', 4: 'Waves', 5: 'Holds/Stands', 6: 'Rolls', 7: 'Walkovers/Cartwheels etc.', 8: 'Saltos', 9: 'Dismounts' },
-    condensed: { I: [1, 9], II: [2, 3], III: [4, 5, 6], IV: [7, 8] },
-    eventBonus: 'Acro series with 2 connected flight elements on beam',
-  },
-  fx: {
-    groups: { 1: 'Leaps/Jumps/Hops', 2: 'Turns', 3: 'Handstands', 4: 'Rolls', 5: 'Walkovers/Cartwheels etc.', 6: 'Saltos Forward', 7: 'Saltos Sideward/Arabians', 8: 'Saltos Backward' },
-    condensed: { I: [1, 2], II: [3, 4, 5], III: [6, 7], IV: [8] },
-    eventBonus: 'Acro pass with min. of 2 connected saltos (direct or indirect)',
-  },
-};
+// UCG Infinity: USAG DP / Xcel element groups, condensed into I-IV (generated from the rules digests).
+export { INFINITY_GROUPS };
 
 const ROMAN = { 1: 'I', 2: 'II', 3: 'III', 4: 'IV' };
 
 // ---- UCG Infinity ----------------------------------------------------------
 
-export const INFINITY_VALUES = { A: 0.1, B: 0.3, C: 0.5, D: 0.7, E: 0.9 };
-export const INFINITY_MAX_SKILLS = 8;
-export const INFINITY_EG_BONUS = 0.3;
-export const INFINITY_EVENT_BONUS = 0.3;
+export { INFINITY_EG_BONUS, INFINITY_EVENT_BONUS, INFINITY_MAX_SKILLS, INFINITY_VALUES };
 
 const condensedOf = (event, eg) => {
   const c = INFINITY_GROUPS[event].condensed;

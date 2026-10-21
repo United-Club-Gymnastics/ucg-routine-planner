@@ -14,7 +14,14 @@ From the vendored skill bundle (tools/source/bundle/, synced from gym-skill-extr
   rules/USAG-XCEL-2022/digest/same-element.json  which listed versions of a USAG number are the
                        same element, and the floor hand-support flight elements
   catalog/             the cross-code skill catalog and levels.json
+  rules/UCG-WAG/digest/infinity.json, infinity-vaults.json  UCG Infinity's values, counting, bonuses,
+                       element group names and vault chart (js/data/infinity-rules.js, wag-infinity-vaults.js)
+  rules/USAG-XCEL-2022/digest/levels.json  the Xcel value parts, limits, special requirements and
+                       vault charts (js/data/xcel.js)
+  rules/UCG-MASTERS-{MAG,WAG}/digest/vault-values.json  table_wg_vaults: which WG vault each WG row
+                       of the Masters vault table means (a check only)
 Planner-owned (not skill data, or no bundle source yet):
+  infinity_vault_ids.json  the Infinity vault chart's permanent ids, matched by name
   note_edits.json      our short versions of the skill notes
   tt_skills.json       the UCG T&T DD charts (trampoline, double mini, tumbling),
                        including the UCG addendum's values
@@ -253,32 +260,10 @@ def wag_vaults():
 
 
 # Masters vault table rows without an id (WG vaults, which the planner values from the WG
-# table) -> the WG vault(s) they correspond to. Only a check: the build stops if a row's
-# printed WG value differs from the WG table's.
-MASTERS_MAP = {
-    "Men": {
-        "Front handspring": ["201"], "Front handspring with ½ twist": ["202"], "Front handspring with 1/1 twist": ["203"], "Front handspring with 3/2 twist": ["204"],
-        "Front handspring and salto fwd. tucked": ["207"], "Front handspring and salto fwd. tucked with ½ twist": ["101"],
-        "Front handspring and salto fwd. piked": ["213"], "Front handspring and salto fwd. piked with ½ twist": ["107"],
-        "Front handspring and salto fwd. stretched": ["219"], "Front handspring and salto fwd. stretched with ½ twist": ["113"],
-        "Front handspring sw. with ¼ twist": ["301"], "Front handspring sw. with ¾ twist": ["302"], "Front handspring sw. with 5/4 twist": ["303"],
-        "Tsukahara or Yurchenko tucked": ["307", "507"], "Tsukahara or Yurchenko piked": ["308", "509"],
-        "Tsukahara or Yurchenko tucked with ½ twist": ["309", "508"], "Tsukahara or Yurchenko tucked with 1/1 twist": ["119", "401"],
-        "Tsukahara or Yurchenko stretched": ["313", "510"], "Tsukahara or Yurchenko stretched with ½ twist": ["314", "511"],
-        "Tsukahara or Yurchenko stretched with 1/1 twist": ["125", "405"],
-    },
-    "Women": {
-        "Front handspring": ["1.00"], "Front handspring with ½ twist": ["1.01"], "Front handspring with 1/1 twist": ["1.02"], "Front handspring with 3/2 twist": ["1.03"],
-        "Front handspring with ½ twist 1st phase": ["1.20"], "Front handspring with ½ twist 1st phase and ½ twist 2nd": ["1.21"],
-        "Yamashita": ["1.10"], "Yamashita ½ twist": ["1.11"], "Yamashita 1/1 twist": ["1.12"],
-        "Front handspring and salto fwd. tucked": ["2.10"], "Front handspring and salto fwd. tucked with ½ twist": ["2.11"],
-        "Front handspring and salto fwd. piked": ["2.20"], "Front handspring and salto fwd. piked with ½ twist": ["2.21"],
-        "Yurchenko tucked": ["4.10"], "Yurchenko piked": ["4.20"], "Yurchenko tucked with ½ twist": ["4.11"], "Yurchenko tucked with 1/1 twist": ["4.12"],
-        "Yurchenko stretched": ["4.30"], "Yurchenko stretched with ½ twist": ["4.31"], "Yurchenko stretched with 1/1 twist": ["4.32"],
-        "Tsukahara tucked": ["3.10"], "Tsukahara piked": ["3.20"], "Tsukahara tucked with ½ twist": ["3.11"], "Tsukahara tucked with 1/1 twist": ["3.12"],
-        "Tsukahara stretched": ["3.30"], "Tsukahara stretched with ½ twist": ["3.31"], "Tsukahara stretched with 1/1 twist": ["3.32"],
-    },
-}
+# table) -> the WG vault(s) they correspond to, from the Masters vault digests. Only a check: the
+# build stops if a row's printed WG value differs from the WG table's.
+MASTERS_MAP = {sheet: bundle(f"rules/{code}/digest/vault-values.json")["table_wg_vaults"]["rows"]
+               for sheet, code in (("Men", "UCG-MASTERS-MAG"), ("Women", "UCG-MASTERS-WAG"))}
 
 # The table's UCG Masters vaults -> their planner ids. Ids are permanent (saved in routines),
 # so they're pinned here, not derived from the names, which follow the CoP's printed wording.
@@ -308,7 +293,7 @@ def masters_vaults(wag_by_id):
                 continue
             ids = MASTERS_MAP[sheet].get(name)
             if not ids:
-                problems.append(f"{sheet}: {name!r} has no id and isn't a WG vault in MASTERS_MAP")
+                problems.append(f"{sheet}: {name!r} has no id and isn't in the digest's table_wg_vaults")
             for i in ids or []:
                 wg = by_id.get(i)
                 if not wg or abs(wg["value"] - value) > 1e-9:
@@ -389,6 +374,78 @@ def wg_mag_rules():
 MASTERS_WAG_TAGS = {"ub": {"mount", "dismount", "kip", "bar_change", "circle", "turn180", "turn180_opt", "flight"},
                     "bb": {"mount", "dismount", "dance", "leap", "split", "turn", "acro", "flight", "hold"},
                     "fx": {"dance", "leap", "split", "turn", "acro", "flight", "fwd", "bwd"}}
+
+
+EVENTS = ("UB", "BB", "FX")
+
+
+def strip(block):
+    """A digest block without its own-words notes (about, cite)."""
+    return {k: v for k, v in block.items() if k not in ("about", "cite")}
+
+
+def infinity():
+    """UCG Infinity's scoring tables (js/data/infinity-rules.js, used by js/scoring/wag.js) and its vault
+    chart (js/data/wag-infinity-vaults.js), from the bundle's rules/UCG-WAG digests (the UCG Infinity Rules,
+    source of record) and levels.json (the condensed groups). Vault ids: tools/source/infinity_vault_ids.json."""
+    d = bundle("rules/UCG-WAG/digest/infinity.json")
+    level = bundle("catalog/levels.json")["WAG"]["infinity"]
+    if strip(d["values"]) != level["values"]:
+        raise SystemExit(f"infinity.json values {strip(d['values'])} differ from levels.json {level['values']}")
+    names, labels = d["condensed_eg_bonus"]["group_names"], d["event_bonus"]["labels"]
+    groups = {ev.lower(): {"groups": names[ev],
+                           "condensed": {g: [int(n) for n in ns] for g, ns in level["eg"]["condensed"][ev].items()},
+                           "eventBonus": labels[ev]} for ev in EVENTS}
+    consts = {"INFINITY_VALUES": strip(d["values"]), "INFINITY_MAX_SKILLS": d["counting"]["count"],
+              "INFINITY_MIN_SKILLS": d["short_routine"]["min_skills"], "INFINITY_EG_BONUS": d["condensed_eg_bonus"]["each"],
+              "INFINITY_EVENT_BONUS": d["event_bonus"]["each"]}
+    with open(os.path.join(OUT, "infinity-rules.js"), "w", encoding="utf-8", newline="\n") as f:
+        f.write("// Generated by tools/build_data.py from the skill bundle's rules/UCG-WAG/digest/infinity.json (UCG Infinity\n")
+        f.write("// Rules v1.2) and catalog/levels.json (condensed groups): USAG DP / Xcel element groups, condensed into I-IV.\n")
+        f.write("export const INFINITY_GROUPS = " + json.dumps(groups, ensure_ascii=False, indent=2) + ";\n")
+        for k, v in consts.items():
+            f.write(f"export const {k} = {json.dumps(v)};\n")
+    print("wrote js/data/infinity-rules.js")
+
+    chart = bundle("rules/UCG-WAG/digest/infinity-vaults.json")["vaults"]
+    ids = json.load(open(os.path.join(SRC, "infinity_vault_ids.json"), encoding="utf-8"))["vaults"]
+    by_name = {n: v for v in ids for n in [v["name"], *v.get("was", [])]}
+    rows, used = [], set()
+    for r in chart:
+        v = by_name.get(r["name"])
+        if not v:
+            raise SystemExit(f"Infinity vault {r['name']!r} ({r['usag']}) has no id in tools/source/infinity_vault_ids.json")
+        if v["id"] in used:
+            raise SystemExit(f"two Infinity chart rows match {v['id']}")
+        used.add(v["id"])
+        row = {"id": v["id"], "name": r["name"], "entry": r["entry"], "usag": r["usag"], "dv": r["d"]}
+        if v.get("was"):
+            row["was"] = v["was"]
+        rows.append(row)
+    gone = [v["id"] for v in ids if v["id"] not in used]
+    if gone:
+        raise SystemExit(f"Infinity vault ids with no chart row (saved routines hold them): {gone}")
+    write("wag-infinity-vaults.js", "// Generated by tools/build_data.py from the skill bundle's rules/UCG-WAG/digest/infinity-vaults.json, the full\n"
+          "// vault chart of the UCG Infinity Rules (source of record). dv = D score (start value is dv + 10).\n"
+          "// id: the vault's permanent id (saved routines store it), from tools/source/infinity_vault_ids.json.\n",
+          "VAULTS", rows)
+
+
+def xcel():
+    """The Xcel tables of UCG's Xcel levels (js/data/xcel.js), from the bundle's rules/USAG-XCEL-2022/digest/levels.json."""
+    d = bundle("rules/USAG-XCEL-2022/digest/levels.json")
+    tables = {"XCEL_VP": strip(d["value_parts"]), "XCEL_LIMITS": strip(d["limits"]), "XCEL_SR": strip(d["special_requirements"]),
+              "XCEL_VAULTS": d["vaults"]["rows"], "XCEL_SILVER_VAULTS": d["silver_vaults"]["rows"]}
+    with open(os.path.join(OUT, "xcel.js"), "w", encoding="utf-8", newline="\n") as f:
+        f.write("// Generated by tools/build_data.py from the skill bundle's rules/USAG-XCEL-2022/digest/levels.json: UCG's Xcel\n")
+        f.write("// levels (USAG Xcel Code of Points 2022-2028 event charts, with the UCG Women's Rules v6.0 changes).\n")
+        f.write("// XCEL_VP: value parts required, highest first (a higher VP can fill a lower one). XCEL_LIMITS: highest letter\n")
+        f.write("// allowed per event without the 0.50 restricted-skill deduction, and how many of it (maxCount). XCEL_SR: the\n")
+        f.write("// special requirements, paraphrased. XCEL_VAULTS: gold = allowed at Gold; plat/diamond/sapphire = start value\n")
+        f.write("// (a division missing from a row doesn't allow the vault). XCEL_SILVER_VAULTS: over a mat stack.\n")
+        for k, v in tables.items():
+            f.write(f"export const {k} = " + json.dumps(v, ensure_ascii=False, indent=2) + ";\n")
+    print("wrote js/data/xcel.js")
 
 
 def masters_wag_tags():
@@ -558,15 +615,6 @@ def own_record(pid, entries):
     return None
 
 
-# Local corrections to the catalog's skill tags (the catalog is generated elsewhere), from
-# UCG's WAG rules lead: a sissonne is a leap, and 1.207's "or side split" is a side leap, so
-# both can be the floor dance passage's split leap.
-TAG_FIXES = {
-    "USAG-FX-1.110-1": {"dance_type": "leap"},  # Sissonne
-    "USAG-FX-1.207-1": {"dance_type": "leap", "varies": ["dance_type"]},  # Straddle jump (or side split)
-}
-
-
 def catalog():
     levels = json.load(open(os.path.join(CAT, "levels.json"), encoding="utf-8"))
     out = {}
@@ -591,9 +639,10 @@ def catalog():
             if aka:
                 row["a"] = aka
             # What the skill is (acro, flight, salto, 360° circle ...), for the Xcel special
-            # requirements, restrictions and Sapphire bonus (js/scoring/xcel-rules.js).
+            # requirements, restrictions and Sapphire bonus (js/scoring/xcel-rules.js). UCG's tag
+            # rulings are already in the catalog (gym-skill-extract skill_catalog/tags/tags_overrides.json).
             if "tags" in x:  # {} = tagged, nothing applies
-                row["t"] = {**x["tags"], **TAG_FIXES.get(pid, {})}
+                row["t"] = x["tags"]
             if x.get("markers"):
                 row["m"] = x["markers"]
             index[pid] = row
@@ -671,6 +720,8 @@ if __name__ == "__main__":
     masters_vaults(wag_vaults())
     masters_rules()
     wg_mag_rules()
+    infinity()
+    xcel()
     tt()
     examples()
     catalog()
