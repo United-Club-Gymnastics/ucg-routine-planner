@@ -1,12 +1,12 @@
 {
  "schema_version": "0.3.0",
- "built": "2026-10-21",
+ "built": "2026-10-22",
  "catalogs": {
   "MAG": "f127ff097447",
-  "WAG": "eeb46fd8ff98"
+  "WAG": "a220831d2eee"
  },
  "sources": {
-  "nssharpe/gym-skill-extract": "8dc09d3c08b5b8c20fc36f1dc7867b687f4a3982",
+  "nssharpe/gym-skill-extract": "666105cab3912ae6845883e3b83673904680a086",
   "nssharpe/ucg-code-of-points": "5d5bef8ba7cdf4ce1ee3dd2a5aa4e1da20f23c90"
  },
  "files": {
@@ -15,7 +15,7 @@
    "schema": "aliases.schema.json"
   },
   "catalog/aliases_wag.json": {
-   "sha256": "db81c9e14c6cbdca725ec485b7a78e0a9050094509b8282b731a714dd7157e3a",
+   "sha256": "e36f402ae454795827e032300881be94a5be28ca889c2dcf012ba76890fab6f6",
    "schema": "aliases.schema.json"
   },
   "catalog/catalog_mag_public.json": {
@@ -23,7 +23,7 @@
    "schema": "catalog.schema.json"
   },
   "catalog/catalog_wag_public.json": {
-   "sha256": "0e96f1e47744125c4f48866398f2a7672f172cc6f59e35a4c25d12f747bea20b",
+   "sha256": "ba0cf027ddccb05617863c3690c7d4ce8364ed625283f2c17c31cdce878e23b2",
    "schema": "catalog.schema.json"
   },
   "catalog/levels.json": {
