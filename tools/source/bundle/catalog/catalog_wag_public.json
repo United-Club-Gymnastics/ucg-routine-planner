@@ -1,7 +1,7 @@
 {
  "discipline": "WAG",
- "version": "eeb46fd8ff98",
- "built": "2026-10-21",
+ "version": "a220831d2eee",
+ "built": "2026-10-22",
  "elements": [
   {
    "id": "WAG-BB-0001",
@@ -22346,6 +22346,9 @@
       "element_group": "8",
       "eponym": "Hawthorne/Rowe",
       "relation": "covers_more",
+      "aka": [
+       "Front toss"
+      ],
       "tags": {
        "acro": true,
        "flight": true,
@@ -22389,6 +22392,9 @@
       "element_group": "8",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Front toss"
+      ],
       "tags": {
        "acro": true,
        "flight": true,
@@ -22407,6 +22413,9 @@
       "element_group": "8",
       "eponym": "Hawthorne/Rowe",
       "relation": "covers_more",
+      "aka": [
+       "Front toss"
+      ],
       "tags": {
        "acro": true,
        "flight": true,
@@ -22424,7 +22433,10 @@
       "value": "C=0.3",
       "element_group": "5",
       "eponym": "Liukin",
-      "relation": "covers_more"
+      "relation": "covers_more",
+      "aka": [
+       "Front toss"
+      ]
      }
     ]
    }
@@ -22462,6 +22474,9 @@
       "element_group": "8",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Front toss"
+      ],
       "tags": {
        "acro": true,
        "flight": true,
@@ -22480,6 +22495,9 @@
       "element_group": "8",
       "eponym": "Hawthorne/Rowe",
       "relation": "covers_more",
+      "aka": [
+       "Front toss"
+      ],
       "tags": {
        "acro": true,
        "flight": true,
@@ -22497,7 +22515,10 @@
       "value": "C=0.3",
       "element_group": "5",
       "eponym": "Liukin",
-      "relation": "covers_more"
+      "relation": "covers_more",
+      "aka": [
+       "Front toss"
+      ]
      }
     ]
    }
