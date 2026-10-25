@@ -2,19 +2,67 @@
  "schema_version": "0.3.0",
  "code": "UCG-MAG-ADD",
  "discipline": "MAG",
- "edition": "2026-09-30",
- "built": "2026-10-21",
+ "edition": "2026-10-21",
+ "built": "2026-10-24",
  "source": {
   "kind": "authored",
   "document": "MAG/UCG MAG CoP.svg",
   "repo": "nssharpe/ucg-code-of-points",
-  "commit": "5d5bef8ba7cdf4ce1ee3dd2a5aa4e1da20f23c90"
+  "commit": "15383259af3fa5c6ed5de8de7b6063119749cd1b"
  },
  "records": [
   {
-   "id": "UCG-FX-pancake-stop-required",
+   "id": "UCG-FX-press-to-headstand-2-s-piked-or-straddled",
    "apparatus": "FX",
    "number": "1",
+   "description": "Press to headstand (2 s.), piked or straddled",
+   "value": "Sub-A",
+   "element_group": null,
+   "eponym": "",
+   "video": "https://youtu.be/gywnsM8OjP4",
+   "drawing": true,
+   "adopted": "2026-10-21"
+  },
+  {
+   "id": "UCG-FX-cartwheel",
+   "apparatus": "FX",
+   "number": "2",
+   "description": "Cartwheel",
+   "value": "Sub-A",
+   "element_group": null,
+   "eponym": "",
+   "video": "https://youtu.be/EuQeVGMV9iw",
+   "drawing": true,
+   "adopted": "2026-10-21"
+  },
+  {
+   "id": "UCG-FX-pike-up-through-handstand",
+   "apparatus": "FX",
+   "number": "3",
+   "description": "Pike up through handstand",
+   "value": "Sub-A",
+   "element_group": null,
+   "eponym": "",
+   "video": "https://www.youtube.com/watch?v=09tK3j1V9Xc",
+   "drawing": true,
+   "adopted": "2026-10-21"
+  },
+  {
+   "id": "UCG-FX-straight-arm-backward-roll-to-prone",
+   "apparatus": "FX",
+   "number": "4",
+   "description": "Straight arm backward roll to prone",
+   "value": "Sub-A",
+   "element_group": null,
+   "eponym": "",
+   "video": "https://youtu.be/D0z2uzShnR8",
+   "drawing": true,
+   "adopted": "2026-10-21"
+  },
+  {
+   "id": "UCG-FX-pancake-stop-required",
+   "apparatus": "FX",
+   "number": "5",
    "description": "Pancake (stop required)",
    "value": "A",
    "element_group": null,
@@ -25,7 +73,7 @@
   {
    "id": "UCG-FX-l-sit-2-s",
    "apparatus": "FX",
-   "number": "2",
+   "number": "6",
    "description": "L-sit (2 s.)",
    "value": "A",
    "element_group": null,
@@ -34,58 +82,14 @@
    "drawing": true
   },
   {
-   "id": "UCG-FX-press-to-headstand-2-s-piked-or-straddled",
-   "apparatus": "FX",
-   "number": "3",
-   "description": "Press to headstand (2 s.), piked or straddled",
-   "value": "A",
-   "element_group": null,
-   "eponym": "",
-   "video": "https://youtu.be/gywnsM8OjP4",
-   "drawing": true
-  },
-  {
-   "id": "UCG-FX-cartwheel",
-   "apparatus": "FX",
-   "number": "4",
-   "description": "Cartwheel",
-   "value": "A",
-   "element_group": null,
-   "eponym": "",
-   "video": "https://youtu.be/EuQeVGMV9iw",
-   "drawing": true
-  },
-  {
    "id": "UCG-FX-no-handed-back-extension-roll-with-flight-to-prone",
    "apparatus": "FX",
-   "number": "5",
+   "number": "7",
    "description": "No-handed back extension roll with flight to prone",
    "value": "A",
    "element_group": null,
    "eponym": "",
    "video": "https://www.youtube.com/watch?v=3yreaxJmdrU",
-   "drawing": true
-  },
-  {
-   "id": "UCG-FX-pike-up-through-handstand",
-   "apparatus": "FX",
-   "number": "6",
-   "description": "Pike up through handstand",
-   "value": "A",
-   "element_group": null,
-   "eponym": "",
-   "video": "https://www.youtube.com/watch?v=09tK3j1V9Xc",
-   "drawing": true
-  },
-  {
-   "id": "UCG-FX-straight-arm-backward-roll-to-prone",
-   "apparatus": "FX",
-   "number": "7",
-   "description": "Straight arm backward roll to prone",
-   "value": "A",
-   "element_group": null,
-   "eponym": "",
-   "video": "https://youtu.be/D0z2uzShnR8",
    "drawing": true
   },
   {
@@ -160,16 +164,30 @@
    "apparatus": "PH",
    "number": "1",
    "description": "Stride Swing Forwards or Backwards with Travel Sideways",
-   "value": "A",
+   "value": "Sub-A",
    "element_group": null,
    "eponym": "",
    "video": "https://youtu.be/xukPL6n3Ah8",
-   "drawing": true
+   "drawing": true,
+   "adopted": "2026-10-21"
+  },
+  {
+   "id": "UCG-PH-circle-dismount",
+   "apparatus": "PH",
+   "number": "2",
+   "description": "½ Circle Dismount",
+   "value": "Sub-A",
+   "element_group": null,
+   "eponym": "",
+   "note": "May also be performed on the leather or one hand leather one hand pommel",
+   "video": "https://youtu.be/V-yTqw-K9u0",
+   "drawing": true,
+   "adopted": "2026-10-21"
   },
   {
    "id": "UCG-PH-false-scissor",
    "apparatus": "PH",
-   "number": "2",
+   "number": "3",
    "description": "False scissor",
    "value": "A",
    "element_group": null,
@@ -180,7 +198,7 @@
   {
    "id": "UCG-PH-single-leg-stockli",
    "apparatus": "PH",
-   "number": "3",
+   "number": "4",
    "description": "Single leg Stockli",
    "value": "A",
    "element_group": null,
@@ -191,7 +209,7 @@
   {
    "id": "UCG-PH-single-leg-travel",
    "apparatus": "PH",
-   "number": "4",
+   "number": "5",
    "description": "Single leg travel",
    "value": "A",
    "element_group": null,
@@ -201,16 +219,17 @@
    "drawing": true
   },
   {
-   "id": "UCG-PH-circle-dismount",
+   "id": "UCG-PH-circle-with-spindle-dismount",
    "apparatus": "PH",
-   "number": "5",
-   "description": "½ Circle Dismount",
+   "number": "6",
+   "description": "½ Circle with ¼ Spindle Dismount",
    "value": "A",
    "element_group": null,
    "eponym": "",
-   "note": "May also be performed on the leather or one hand leather one hand pommel",
+   "note": "Gymnast must not be touching the apparatus when their feet land",
    "video": "https://youtu.be/7_YFy4wdFZg",
-   "drawing": true
+   "drawing": true,
+   "added": "2026-10-21"
   },
   {
    "id": "UCG-PH-flaired-front-loop-rear-loop-or-in-cross-support-on-pommels-",
@@ -376,16 +395,41 @@
    "apparatus": "SR",
    "number": "3",
    "description": "German hang (2 s.)",
-   "value": "A",
+   "value": "Sub-A",
    "element_group": null,
    "eponym": "",
    "video": "https://youtu.be/zyrYv8-gidg",
-   "drawing": true
+   "drawing": true,
+   "adopted": "2026-10-21"
+  },
+  {
+   "id": "UCG-SR-tuck-press-to-tucked-or-extended-shoulderstand-2-s",
+   "apparatus": "SR",
+   "number": "4",
+   "description": "Tuck press to tucked or extended shoulderstand (2 s.)",
+   "value": "Sub-A",
+   "element_group": null,
+   "eponym": "",
+   "video": "https://youtu.be/q1O-KFIAHN8",
+   "drawing": true,
+   "added": "2026-10-21"
+  },
+  {
+   "id": "UCG-SR-tuck-back-salto-release-after-vertical",
+   "apparatus": "SR",
+   "number": "5",
+   "description": "Tucked salto backwards with release after vertical",
+   "value": "Sub-A",
+   "element_group": null,
+   "eponym": "",
+   "video": "https://youtu.be/vSM10bPuhNc",
+   "drawing": true,
+   "added": "2026-10-21"
   },
   {
    "id": "UCG-SR-muscle-up",
    "apparatus": "SR",
-   "number": "4",
+   "number": "6",
    "description": "Muscle up",
    "value": "A",
    "element_group": null,
@@ -396,7 +440,7 @@
   {
    "id": "UCG-SR-pike-press-to-shoulderstand-2-s",
    "apparatus": "SR",
-   "number": "5",
+   "number": "7",
    "description": "Pike press to shoulderstand (2 s.)",
    "value": "A",
    "element_group": null,
@@ -407,7 +451,7 @@
   {
    "id": "UCG-SR-felge-tucked-to-support",
    "apparatus": "SR",
-   "number": "6",
+   "number": "8",
    "description": "Felge tucked to support",
    "value": "A",
    "element_group": null,
@@ -418,7 +462,7 @@
   {
    "id": "UCG-SR-tuck-planche-2-s",
    "apparatus": "SR",
-   "number": "7",
+   "number": "9",
    "description": "Tuck planche (2 s.)",
    "value": "A",
    "element_group": null,
@@ -430,18 +474,19 @@
   {
    "id": "UCG-SR-tuck-salto-front-or-back",
    "apparatus": "SR",
-   "number": "8",
-   "description": "Tuck salto, front or back",
+   "number": "10",
+   "description": "Tuck salto, front or back, release before vertical",
    "value": "A",
    "element_group": null,
    "eponym": "",
    "video": "https://youtu.be/4irYgjFUwk4",
-   "drawing": true
+   "drawing": true,
+   "adopted": "2026-10-21"
   },
   {
    "id": "UCG-SR-back-uprise-to-shoulderstand-2-s",
    "apparatus": "SR",
-   "number": "9",
+   "number": "11",
    "description": "Back uprise to shoulderstand (2 s.)",
    "value": "A",
    "element_group": "I",
@@ -452,7 +497,7 @@
   {
    "id": "UCG-SR-felge-to-shoulderstand-2-s",
    "apparatus": "SR",
-   "number": "10",
+   "number": "12",
    "description": "Felge to shoulderstand (2 s.)",
    "value": "A",
    "element_group": "I",
@@ -463,7 +508,7 @@
   {
    "id": "UCG-SR-uprise-bwd-to-tuck-planche-2-s",
    "apparatus": "SR",
-   "number": "11",
+   "number": "13",
    "description": "Uprise bwd. to tuck planche (2 s.)",
    "value": "A",
    "element_group": "III",
@@ -474,7 +519,7 @@
   {
    "id": "UCG-SR-swing-bwd-and-inlocate-to-back-lever-2-s",
    "apparatus": "SR",
-   "number": "12",
+   "number": "14",
    "description": "Swing bwd. and inlocate to back lever (2 s.)",
    "value": "A",
    "element_group": "III",
@@ -485,7 +530,7 @@
   {
    "id": "UCG-SR-uprise-bwd-and-salto-bwd-tucked",
    "apparatus": "SR",
-   "number": "13",
+   "number": "15",
    "description": "Uprise bwd. and salto bwd tucked",
    "value": "A",
    "element_group": "IV",
@@ -496,7 +541,7 @@
   {
    "id": "UCG-SR-5-4-tucked-salto-bwd-to-inverted-hang-and-immediate-dislocat",
    "apparatus": "SR",
-   "number": "14",
+   "number": "16",
    "description": "5/4 tucked salto bwd. to inverted hang and immediate dislocate",
    "value": "B",
    "element_group": "I",
@@ -509,7 +554,7 @@
   {
    "id": "UCG-SR-from-still-hang-vertical-pullup-to-support-with-one-arm-stra",
    "apparatus": "SR",
-   "number": "15",
+   "number": "17",
    "description": "From still hang, vertical pullup to support with one arm straight and the other bent",
    "value": "B",
    "element_group": "II",
@@ -520,7 +565,7 @@
   {
    "id": "UCG-SR-from-or-through-hanging-l-vertical-pull-up-with-bent-arms-an",
    "apparatus": "SR",
-   "number": "16",
+   "number": "18",
    "description": "From or through hanging L, vertical pull up with bent arms and legs horizontal to L-sit (2 s.)",
    "value": "B",
    "element_group": "II",
@@ -531,7 +576,7 @@
   {
    "id": "UCG-SR-uprise-bwd-or-swing-down-from-handstand-and-salto-bwd-piked-",
    "apparatus": "SR",
-   "number": "17",
+   "number": "19",
    "description": "Uprise bwd. or swing down from handstand and salto bwd piked or stretched",
    "value": "B",
    "element_group": "IV",
@@ -542,7 +587,7 @@
   {
    "id": "UCG-SR-from-still-hang-vertical-pullup-to-handstand-2-s-with-one-ar",
    "apparatus": "SR",
-   "number": "18",
+   "number": "20",
    "description": "From still hang, vertical pullup to handstand (2 s.) with one arm straight and the other bent",
    "value": "C",
    "element_group": "II",
@@ -553,7 +598,7 @@
   {
    "id": "UCG-SR-kip-and-salto-fwd-tucked-no-support",
    "apparatus": "SR",
-   "number": "19",
+   "number": "21",
    "description": "Kip and salto fwd. tucked (no support)",
    "value": "C",
    "element_group": "IV",
@@ -564,7 +609,7 @@
   {
    "id": "UCG-SR-v-sit-muscle-up-to-v-sit",
    "apparatus": "SR",
-   "number": "20",
+   "number": "22",
    "description": "Pull up with bent arms while keeping legs vertical to V-Sit (2 s.)",
    "value": "D",
    "element_group": "II",
@@ -576,7 +621,7 @@
   {
    "id": "UCG-SR-from-inverted-cross-roll-backwards-through-maltese-to-invert",
    "apparatus": "SR",
-   "number": "21",
+   "number": "23",
    "description": "From inverted cross, slow lower and roll bwd. through maltese to inverted swallow (2 s.)",
    "value": "F",
    "element_group": "II",
@@ -586,9 +631,45 @@
    "added": "2026-10-01"
   },
   {
-   "id": "UCG-PB-press-to-shoulderstand-2-s",
+   "id": "UCG-PB-forward-roll-to-upper-arm-from-shoulderstand-l-or-support-sw",
    "apparatus": "PB",
    "number": "1",
+   "description": "Forward roll to upper arm from shoulderstand, L, or support swing bwd",
+   "value": "Sub-A",
+   "element_group": null,
+   "eponym": "",
+   "video": "https://youtu.be/S21gZUvhgWA",
+   "drawing": true,
+   "adopted": "2026-10-21"
+  },
+  {
+   "id": "UCG-PB-flank-dismount-from-at-least-45-above-horizontal",
+   "apparatus": "PB",
+   "number": "2",
+   "description": "Flank dismount from at least 45° above horizontal",
+   "value": "Sub-A",
+   "element_group": null,
+   "eponym": "",
+   "video": "https://youtu.be/bBXD66QnKjA",
+   "drawing": true,
+   "adopted": "2026-10-21"
+  },
+  {
+   "id": "UCG-PB-stutz-dismount-also-reverse-stutz-dismount",
+   "apparatus": "PB",
+   "number": "3",
+   "description": "Stutz dismount (also reverse Stutz dismount)",
+   "value": "Sub-A",
+   "element_group": null,
+   "eponym": "",
+   "video": "https://youtu.be/1WwjeNA-bBw",
+   "drawing": true,
+   "adopted": "2026-10-21"
+  },
+  {
+   "id": "UCG-PB-press-to-shoulderstand-2-s",
+   "apparatus": "PB",
+   "number": "4",
    "description": "Press to shoulderstand (2 s.)",
    "value": "A",
    "element_group": null,
@@ -598,20 +679,9 @@
    "drawing": true
   },
   {
-   "id": "UCG-PB-forward-roll-to-upper-arm-from-shoulderstand-l-or-support-sw",
-   "apparatus": "PB",
-   "number": "2",
-   "description": "Forward roll to upper arm from shoulderstand, L, or support swing bwd",
-   "value": "A",
-   "element_group": null,
-   "eponym": "",
-   "video": "https://youtu.be/S21gZUvhgWA",
-   "drawing": true
-  },
-  {
    "id": "UCG-PB-back-uprise-to-support-from-upper-arm",
    "apparatus": "PB",
-   "number": "3",
+   "number": "5",
    "description": "Back uprise to support from upper arm",
    "value": "A",
    "element_group": null,
@@ -622,7 +692,7 @@
   {
    "id": "UCG-PB-peach-to-upper-arm",
    "apparatus": "PB",
-   "number": "4",
+   "number": "6",
    "description": "Peach to upper arm",
    "value": "A",
    "element_group": null,
@@ -633,7 +703,7 @@
   {
    "id": "UCG-PB-moy-to-upper-arm",
    "apparatus": "PB",
-   "number": "5",
+   "number": "7",
    "description": "Moy to upper arm",
    "value": "A",
    "element_group": null,
@@ -644,7 +714,7 @@
   {
    "id": "UCG-PB-salto-forward-to-upper-arm",
    "apparatus": "PB",
-   "number": "6",
+   "number": "8",
    "description": "¾ salto forward to upper arm",
    "value": "A",
    "element_group": null,
@@ -655,7 +725,7 @@
   {
    "id": "UCG-PB-kip-from-upper-arm-to-support-or-l",
    "apparatus": "PB",
-   "number": "7",
+   "number": "9",
    "description": "Kip from upper arm to support or L",
    "value": "A",
    "element_group": null,
@@ -666,7 +736,7 @@
   {
    "id": "UCG-PB-underswing-to-long-hang-bwd-uprise-to-support",
    "apparatus": "PB",
-   "number": "8",
+   "number": "10",
    "description": "Underswing to long hang bwd uprise to support",
    "value": "A",
    "element_group": null,
@@ -675,36 +745,14 @@
    "drawing": true
   },
   {
-   "id": "UCG-PB-flank-dismount-from-at-least-45-above-horizontal",
-   "apparatus": "PB",
-   "number": "9",
-   "description": "Flank dismount from at least 45° above horizontal",
-   "value": "A",
-   "element_group": null,
-   "eponym": "",
-   "video": "https://youtu.be/bBXD66QnKjA",
-   "drawing": true
-  },
-  {
    "id": "UCG-PB-wende-dismount-also-w-1-2-turn",
    "apparatus": "PB",
-   "number": "10",
+   "number": "11",
    "description": "Wende dismount (also w/ 1/2 turn)",
    "value": "A",
    "element_group": null,
    "eponym": "",
    "video": "https://youtu.be/O0wJnDsolVQ",
-   "drawing": true
-  },
-  {
-   "id": "UCG-PB-stutz-dismount-also-reverse-stutz-dismount",
-   "apparatus": "PB",
-   "number": "11",
-   "description": "Stutz dismount (also reverse Stutz dismount)",
-   "value": "A",
-   "element_group": null,
-   "eponym": "",
-   "video": "https://youtu.be/1WwjeNA-bBw",
    "drawing": true
   },
   {
@@ -903,38 +951,65 @@
    "apparatus": "HB",
    "number": "1",
    "description": "Pull Over",
-   "value": "A",
+   "value": "Sub-A",
    "element_group": null,
    "eponym": "",
    "video": "https://youtu.be/wiyugStkhR0",
-   "drawing": true
+   "drawing": true,
+   "adopted": "2026-10-21"
   },
   {
    "id": "UCG-HB-cast-to-horizontal",
    "apparatus": "HB",
    "number": "2",
    "description": "Cast to Horizontal",
-   "value": "A",
+   "value": "Sub-A",
    "element_group": null,
    "eponym": "",
    "video": "https://youtu.be/odP-MhfAv2s",
-   "drawing": true
+   "drawing": true,
+   "adopted": "2026-10-21"
   },
   {
    "id": "UCG-HB-swing-to-1-2-turn-also-with-hop-also-to-support",
    "apparatus": "HB",
    "number": "3",
    "description": "Swing to 1/2 turn, also with hop, also to support",
-   "value": "A",
+   "value": "Sub-A",
    "element_group": null,
    "eponym": "",
    "video": "https://youtu.be/-c7AUS4FIlM",
-   "drawing": true
+   "drawing": true,
+   "adopted": "2026-10-21"
+  },
+  {
+   "id": "UCG-HB-backward-hip-circle",
+   "apparatus": "HB",
+   "number": "4",
+   "description": "Backward Hip Circle",
+   "value": "Sub-A",
+   "element_group": null,
+   "eponym": "",
+   "video": "https://youtu.be/VA4G5XrO26k",
+   "drawing": true,
+   "adopted": "2026-10-21"
+  },
+  {
+   "id": "UCG-HB-underswing-dismount",
+   "apparatus": "HB",
+   "number": "5",
+   "description": "Underswing dismount",
+   "value": "Sub-A",
+   "element_group": null,
+   "eponym": "",
+   "video": "https://youtu.be/UMN43IoU5o0",
+   "drawing": true,
+   "added": "2026-10-21"
   },
   {
    "id": "UCG-HB-back-uprise-to-support",
    "apparatus": "HB",
-   "number": "4",
+   "number": "6",
    "description": "Back uprise to support",
    "value": "A",
    "element_group": null,
@@ -945,7 +1020,7 @@
   {
    "id": "UCG-HB-kip-to-support",
    "apparatus": "HB",
-   "number": "5",
+   "number": "7",
    "description": "Kip to support",
    "value": "A",
    "element_group": null,
@@ -956,7 +1031,7 @@
   {
    "id": "UCG-HB-forward-hip-circle",
    "apparatus": "HB",
-   "number": "6",
+   "number": "8",
    "description": "Forward Hip Circle",
    "value": "A",
    "element_group": null,
@@ -965,20 +1040,9 @@
    "drawing": true
   },
   {
-   "id": "UCG-HB-backward-hip-circle",
-   "apparatus": "HB",
-   "number": "7",
-   "description": "Backward Hip Circle",
-   "value": "A",
-   "element_group": null,
-   "eponym": "",
-   "video": "https://youtu.be/VA4G5XrO26k",
-   "drawing": true
-  },
-  {
    "id": "UCG-HB-backward-free-hip-circle-to-horizontal",
    "apparatus": "HB",
-   "number": "8",
+   "number": "9",
    "description": "Backward Free Hip Circle to Horizontal",
    "value": "A",
    "element_group": null,
@@ -989,7 +1053,7 @@
   {
    "id": "UCG-HB-3-4-giant-swing-backward-to-support",
    "apparatus": "HB",
-   "number": "9",
+   "number": "10",
    "description": "3/4 Giant swing backward to support",
    "value": "A",
    "element_group": null,
@@ -1000,7 +1064,7 @@
   {
    "id": "UCG-HB-3-4-forward-giant-hop-out",
    "apparatus": "HB",
-   "number": "10",
+   "number": "11",
    "description": "3/4 Forward Giant hop out",
    "value": "A",
    "element_group": null,
@@ -1011,7 +1075,7 @@
   {
    "id": "UCG-HB-straddle-cut",
    "apparatus": "HB",
-   "number": "11",
+   "number": "12",
    "description": "Straddle Cut",
    "value": "A",
    "element_group": null,
@@ -1022,7 +1086,7 @@
   {
    "id": "UCG-HB-toe-on-toe-off-to-horizontal",
    "apparatus": "HB",
-   "number": "12",
+   "number": "13",
    "description": "Toe-on, toe-off to horizontal",
    "value": "A",
    "element_group": null,
@@ -1033,7 +1097,7 @@
   {
    "id": "UCG-HB-salto-tucked-bwd-or-fwd",
    "apparatus": "HB",
-   "number": "13",
+   "number": "14",
    "description": "Salto tucked, bwd or fwd",
    "value": "A",
    "element_group": null,
@@ -1044,7 +1108,7 @@
   {
    "id": "UCG-HB-jam-adler-to-el-grip-90",
    "apparatus": "HB",
-   "number": "14",
+   "number": "15",
    "description": "Jam (Adler) to El grip >90°",
    "value": "A",
    "element_group": "III",
@@ -1055,7 +1119,7 @@
   {
    "id": "UCG-HB-jam-to-release-with-half-turn-to-swing-fwd-in-long-hang",
    "apparatus": "HB",
-   "number": "15",
+   "number": "16",
    "description": "Jam to release with half turn to swing fwd in long hang",
    "value": "A",
    "element_group": "III",
@@ -1064,9 +1128,21 @@
    "drawing": true
   },
   {
+   "id": "UCG-HB-voronin-from-kip-cast",
+   "apparatus": "HB",
+   "number": "17",
+   "description": "Voronin from kip-cast",
+   "value": "B",
+   "element_group": "II",
+   "eponym": "",
+   "video": "https://youtu.be/wu3ltMbHPN8",
+   "drawing": true,
+   "added": "2026-10-21"
+  },
+  {
    "id": "UCG-HB-jam-adler-to-el-grip-45-90",
    "apparatus": "HB",
-   "number": "16",
+   "number": "18",
    "description": "Jam (Adler) to El grip 45°-90°",
    "value": "B",
    "element_group": "III",
@@ -1077,7 +1153,7 @@
   {
    "id": "UCG-HB-underswing-to-counter-salto-fwd-tucked",
    "apparatus": "HB",
-   "number": "17",
+   "number": "19",
    "description": "Underswing to counter salto fwd tucked",
    "value": "B",
    "element_group": "IV",
@@ -1088,7 +1164,7 @@
   {
    "id": "UCG-HB-toe-on-to-counter-salto-fwd-tucked-also-with-twist-penn-1-sh",
    "apparatus": "HB",
-   "number": "18",
+   "number": "20",
    "description": "Toe on to counter salto fwd tucked, also with ½ twist",
    "value": "B",
    "element_group": "IV",
@@ -1099,7 +1175,7 @@
   {
    "id": "UCG-HB-jam-adler-to-el-grip-0-45",
    "apparatus": "HB",
-   "number": "19",
+   "number": "21",
    "description": "Jam (Adler) to El grip 0-45°",
    "value": "C",
    "element_group": "III",
@@ -1110,7 +1186,7 @@
   {
    "id": "UCG-HB-toe-on-to-counter-salto-fwd-tucked-with-1-1-twist-penn-2",
    "apparatus": "HB",
-   "number": "20",
+   "number": "22",
    "description": "Toe on to counter salto fwd tucked with 1/1 twist",
    "value": "C",
    "element_group": "IV",
@@ -1121,7 +1197,7 @@
   {
    "id": "UCG-HB-stoop-in-and-free-back-toss-to-dorsal-hang-and-1-1-turn-to-c",
    "apparatus": "HB",
-   "number": "22",
+   "number": "23",
    "description": "Stoop in and free back toss with full turn to below horizontal",
    "value": "E",
    "element_group": "III",
@@ -1133,7 +1209,7 @@
   {
    "id": "UCG-HB-double-salto-bwd-tucked-with-3-1-turns",
    "apparatus": "HB",
-   "number": "23",
+   "number": "24",
    "description": "Double salto bwd. tucked with 3/1 turns",
    "value": "E",
    "element_group": "IV",
@@ -1144,7 +1220,7 @@
   {
    "id": "UCG-HB-salto-fwd-stretched-with-3-2-t-also-from-el-grip-meister",
    "apparatus": "HB",
-   "number": "24",
+   "number": "25",
    "description": "Salto fwd stretched with 3/2 t. also from el grip",
    "value": "G",
    "element_group": "II",

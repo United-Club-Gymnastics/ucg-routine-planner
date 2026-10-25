@@ -1,7 +1,7 @@
 {
  "discipline": "MAG",
- "version": "f127ff097447",
- "built": "2026-10-21",
+ "version": "a7e5fe626490",
+ "built": "2026-10-24",
  "aliases": {
   "WG-FX-I-1": [
    "MAG-FX-0001"
@@ -970,6 +970,15 @@
   ],
   "WG-HB-II-114": [
    "MAG-HB-0169"
+  ],
+  "UCG-HB-underswing-dismount": [
+   "MAG-HB-0170"
+  ],
+  "UCG-HB-voronin-from-kip-cast": [
+   "MAG-HB-0171"
+  ],
+  "UCGM-mag-HB-voronin-from-kip-cast": [
+   "MAG-HB-0171"
   ],
   "WG-PB-I-1": [
    "MAG-PB-0001"
@@ -2173,6 +2182,9 @@
   "WG-PH-II-72": [
    "MAG-PH-0141"
   ],
+  "UCG-PH-circle-with-spindle-dismount": [
+   "MAG-PH-0142"
+  ],
   "WG-SR-I-1": [
    "MAG-SR-0001"
   ],
@@ -2719,6 +2731,12 @@
   ],
   "UCGM-mag-SR-slow-lower-through-back-lever-to-german-hang-2-s": [
    "MAG-SR-0165"
+  ],
+  "UCG-SR-tuck-press-to-tucked-or-extended-shoulderstand-2-s": [
+   "MAG-SR-0166"
+  ],
+  "UCG-SR-tuck-back-salto-release-after-vertical": [
+   "MAG-SR-0167"
   ],
   "101": [
    "MAG-VT-0001"

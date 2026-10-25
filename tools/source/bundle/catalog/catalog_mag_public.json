@@ -1,7 +1,7 @@
 {
  "discipline": "MAG",
- "version": "f127ff097447",
- "built": "2026-10-21",
+ "version": "a7e5fe626490",
+ "built": "2026-10-24",
  "elements": [
   {
    "id": "MAG-FX-0001",
@@ -2038,7 +2038,7 @@
      {
       "rid": "UCG-FX-pancake-stop-required",
       "short_name": "Pancake (stop required)",
-      "number": "1",
+      "number": "5",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -2075,7 +2075,7 @@
      {
       "rid": "UCG-FX-l-sit-2-s",
       "short_name": "L-sit (2 s.)",
-      "number": "2",
+      "number": "6",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -2113,9 +2113,9 @@
      {
       "rid": "UCG-FX-press-to-headstand-2-s-piked-or-straddled",
       "short_name": "Press to headstand (2 s.), piked or straddled",
-      "number": "3",
+      "number": "1",
       "variant": 1,
-      "value": "A",
+      "value": "Sub-A",
       "element_group": null,
       "eponym": "",
       "note": "",
@@ -2150,9 +2150,9 @@
      {
       "rid": "UCG-FX-cartwheel",
       "short_name": "Cartwheel",
-      "number": "4",
+      "number": "2",
       "variant": 1,
-      "value": "A",
+      "value": "Sub-A",
       "element_group": null,
       "eponym": "",
       "note": "",
@@ -2187,7 +2187,7 @@
      {
       "rid": "UCG-FX-no-handed-back-extension-roll-with-flight-to-prone",
       "short_name": "No-handed back extension roll with flight to prone",
-      "number": "5",
+      "number": "7",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -2224,9 +2224,9 @@
      {
       "rid": "UCG-FX-pike-up-through-handstand",
       "short_name": "Pike up through handstand",
-      "number": "6",
+      "number": "3",
       "variant": 1,
-      "value": "A",
+      "value": "Sub-A",
       "element_group": null,
       "eponym": "",
       "note": "",
@@ -2247,9 +2247,9 @@
      {
       "rid": "UCG-FX-straight-arm-backward-roll-to-prone",
       "short_name": "Straight arm backward roll to prone",
-      "number": "7",
+      "number": "4",
       "variant": 1,
-      "value": "A",
+      "value": "Sub-A",
       "element_group": null,
       "eponym": "",
       "note": "",
@@ -5691,7 +5691,7 @@
       "short_name": "Pull Over",
       "number": "1",
       "variant": 1,
-      "value": "A",
+      "value": "Sub-A",
       "element_group": null,
       "eponym": "",
       "note": "",
@@ -5728,7 +5728,7 @@
       "short_name": "Cast to Horizontal",
       "number": "2",
       "variant": 1,
-      "value": "A",
+      "value": "Sub-A",
       "element_group": null,
       "eponym": "",
       "note": "",
@@ -5751,7 +5751,7 @@
       "short_name": "Swing to 1/2 turn, also with hop, also to support",
       "number": "3",
       "variant": 1,
-      "value": "A",
+      "value": "Sub-A",
       "element_group": null,
       "eponym": "",
       "note": "",
@@ -5772,7 +5772,7 @@
      {
       "rid": "UCG-HB-back-uprise-to-support",
       "short_name": "Back uprise to support",
-      "number": "4",
+      "number": "6",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -5809,7 +5809,7 @@
      {
       "rid": "UCG-HB-kip-to-support",
       "short_name": "Kip to support",
-      "number": "5",
+      "number": "7",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -5846,7 +5846,7 @@
      {
       "rid": "UCG-HB-forward-hip-circle",
       "short_name": "Forward Hip Circle",
-      "number": "6",
+      "number": "8",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -5883,9 +5883,9 @@
      {
       "rid": "UCG-HB-backward-hip-circle",
       "short_name": "Backward Hip Circle",
-      "number": "7",
+      "number": "4",
       "variant": 1,
-      "value": "A",
+      "value": "Sub-A",
       "element_group": null,
       "eponym": "",
       "note": "",
@@ -5922,7 +5922,7 @@
      {
       "rid": "UCG-HB-backward-free-hip-circle-to-horizontal",
       "short_name": "Backward Free Hip Circle to Horizontal",
-      "number": "8",
+      "number": "9",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -5959,7 +5959,7 @@
      {
       "rid": "UCG-HB-3-4-giant-swing-backward-to-support",
       "short_name": "3/4 Giant swing backward to support",
-      "number": "9",
+      "number": "10",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -5996,7 +5996,7 @@
      {
       "rid": "UCG-HB-3-4-forward-giant-hop-out",
       "short_name": "3/4 Forward Giant hop out",
-      "number": "10",
+      "number": "11",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -6033,7 +6033,7 @@
      {
       "rid": "UCG-HB-straddle-cut",
       "short_name": "Straddle Cut",
-      "number": "11",
+      "number": "12",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -6070,7 +6070,7 @@
      {
       "rid": "UCG-HB-toe-on-toe-off-to-horizontal",
       "short_name": "Toe-on, toe-off to horizontal",
-      "number": "12",
+      "number": "13",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -6107,7 +6107,7 @@
      {
       "rid": "UCG-HB-salto-tucked-bwd-or-fwd",
       "short_name": "Salto tucked, bwd or fwd",
-      "number": "13",
+      "number": "14",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -6145,7 +6145,7 @@
      {
       "rid": "UCG-HB-jam-adler-to-el-grip-90",
       "short_name": "Jam (Adler) to El grip >90°",
-      "number": "14",
+      "number": "15",
       "variant": 1,
       "value": "A",
       "element_group": "III",
@@ -6182,7 +6182,7 @@
      {
       "rid": "UCG-HB-jam-to-release-with-half-turn-to-swing-fwd-in-long-hang",
       "short_name": "Jam to release with half turn to swing fwd in long hang",
-      "number": "15",
+      "number": "16",
       "variant": 1,
       "value": "A",
       "element_group": "III",
@@ -6219,7 +6219,7 @@
      {
       "rid": "UCG-HB-jam-adler-to-el-grip-45-90",
       "short_name": "Jam (Adler) to El grip 45°-90°",
-      "number": "16",
+      "number": "18",
       "variant": 1,
       "value": "B",
       "element_group": "III",
@@ -6232,7 +6232,7 @@
      {
       "rid": "UCGM-mag-HB-jam-adler-to-el-grip-45-90",
       "short_name": "Jam (Adler) to El grip 45°-90°",
-      "number": "3",
+      "number": "4",
       "variant": 1,
       "value": "B",
       "element_group": "III",
@@ -6256,7 +6256,7 @@
      {
       "rid": "UCG-HB-underswing-to-counter-salto-fwd-tucked",
       "short_name": "Underswing to counter salto fwd tucked",
-      "number": "17",
+      "number": "19",
       "variant": 1,
       "value": "B",
       "element_group": "IV",
@@ -6269,7 +6269,7 @@
      {
       "rid": "UCGM-mag-HB-underswing-to-counter-salto-fwd-tucked",
       "short_name": "Underswing to counter salto fwd tucked",
-      "number": "4",
+      "number": "5",
       "variant": 1,
       "value": "B",
       "element_group": "IV",
@@ -6293,7 +6293,7 @@
      {
       "rid": "UCG-HB-toe-on-to-counter-salto-fwd-tucked-also-with-twist-penn-1-sh",
       "short_name": "Toe on to counter salto fwd tucked, also with ½ twist",
-      "number": "18",
+      "number": "20",
       "variant": 1,
       "value": "B",
       "element_group": "IV",
@@ -6306,7 +6306,7 @@
      {
       "rid": "UCGM-mag-HB-toe-on-to-counter-salto-fwd-tucked-also-with-1-2-twist-penn-",
       "short_name": "Toe on to counter salto fwd tucked, also with ½ twist",
-      "number": "5",
+      "number": "6",
       "variant": 1,
       "value": "B",
       "element_group": "IV",
@@ -6330,7 +6330,7 @@
      {
       "rid": "UCG-HB-jam-adler-to-el-grip-0-45",
       "short_name": "Jam (Adler) to El grip 0-45°",
-      "number": "19",
+      "number": "21",
       "variant": 1,
       "value": "C",
       "element_group": "III",
@@ -6343,7 +6343,7 @@
      {
       "rid": "UCGM-mag-HB-jam-adler-to-el-grip-0-45",
       "short_name": "Jam (Adler) to El grip 0-45°",
-      "number": "6",
+      "number": "7",
       "variant": 1,
       "value": "C",
       "element_group": "III",
@@ -6367,7 +6367,7 @@
      {
       "rid": "UCG-HB-toe-on-to-counter-salto-fwd-tucked-with-1-1-twist-penn-2",
       "short_name": "Toe on to counter salto fwd tucked with 1/1 twist",
-      "number": "20",
+      "number": "22",
       "variant": 1,
       "value": "C",
       "element_group": "IV",
@@ -6380,7 +6380,7 @@
      {
       "rid": "UCGM-mag-HB-toe-on-to-counter-salto-fwd-tucked-with-1-1-twist-penn-2",
       "short_name": "Toe on to counter salto fwd tucked with 1/1 twist",
-      "number": "7",
+      "number": "8",
       "variant": 1,
       "value": "C",
       "element_group": "IV",
@@ -6404,7 +6404,7 @@
      {
       "rid": "UCG-HB-stoop-in-and-free-back-toss-to-dorsal-hang-and-1-1-turn-to-c",
       "short_name": "Stoop in and free back toss with full turn to below horizontal",
-      "number": "22",
+      "number": "23",
       "variant": 1,
       "value": "E",
       "element_group": "III",
@@ -6417,7 +6417,7 @@
      {
       "rid": "UCGM-mag-HB-stoop-in-and-free-back-toss-to-dorsal-hang-and-1-1-turn-to-c",
       "short_name": "Stoop in and free back toss with full turn to below horizontal",
-      "number": "8",
+      "number": "9",
       "variant": 1,
       "value": "E",
       "element_group": "III",
@@ -6441,7 +6441,7 @@
      {
       "rid": "UCG-HB-double-salto-bwd-tucked-with-3-1-turns",
       "short_name": "Double salto bwd. tucked with 3/1 turns",
-      "number": "23",
+      "number": "24",
       "variant": 1,
       "value": "E",
       "element_group": "IV",
@@ -6454,7 +6454,7 @@
      {
       "rid": "UCGM-mag-HB-double-salto-bwd-tucked-with-3-1-turns",
       "short_name": "Double salto bwd. tucked with 3/1 turns",
-      "number": "9",
+      "number": "10",
       "variant": 1,
       "value": "E",
       "element_group": "IV",
@@ -6478,7 +6478,7 @@
      {
       "rid": "UCG-HB-salto-fwd-stretched-with-3-2-t-also-from-el-grip-meister",
       "short_name": "Salto fwd stretched with 3/2 t. also from el grip",
-      "number": "24",
+      "number": "25",
       "variant": 1,
       "value": "G",
       "element_group": "II",
@@ -6491,7 +6491,7 @@
      {
       "rid": "UCGM-mag-HB-salto-fwd-stretched-with-3-2-t-also-from-el-grip-meister",
       "short_name": "Salto fwd stretched with 3/2 t. also from el grip",
-      "number": "10",
+      "number": "11",
       "variant": 1,
       "value": "G",
       "element_group": "II",
@@ -6856,6 +6856,66 @@
       "value": "I=0.9",
       "element_group": "II",
       "eponym": "Koudinov 2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-HB-0170",
+   "discipline": "MAG",
+   "apparatus": "HB",
+   "short_name": "Underswing dismount",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "UCG-MAG-ADD": [
+     {
+      "rid": "UCG-HB-underswing-dismount",
+      "short_name": "Underswing dismount",
+      "number": "5",
+      "variant": 1,
+      "value": "Sub-A",
+      "element_group": null,
+      "eponym": "",
+      "note": "",
+      "video": "https://youtu.be/UMN43IoU5o0"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-HB-0171",
+   "discipline": "MAG",
+   "apparatus": "HB",
+   "short_name": "Voronin from kip-cast",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "UCG-MAG-ADD": [
+     {
+      "rid": "UCG-HB-voronin-from-kip-cast",
+      "short_name": "Voronin from kip-cast",
+      "number": "17",
+      "variant": 1,
+      "value": "B",
+      "element_group": "II",
+      "eponym": "",
+      "note": "",
+      "video": "https://youtu.be/wu3ltMbHPN8"
+     }
+    ],
+    "UCG-MASTERS-MAG": [
+     {
+      "rid": "UCGM-mag-HB-voronin-from-kip-cast",
+      "short_name": "Voronin from kip-cast",
+      "number": "3",
+      "variant": 1,
+      "value": "B",
+      "element_group": "II",
+      "eponym": "",
+      "note": "",
+      "video": "https://youtu.be/wu3ltMbHPN8",
+      "page": 10
      }
     ]
    }
@@ -10796,7 +10856,7 @@
      {
       "rid": "UCG-PB-press-to-shoulderstand-2-s",
       "short_name": "Press to shoulderstand (2 s.)",
-      "number": "1",
+      "number": "4",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -10833,9 +10893,9 @@
      {
       "rid": "UCG-PB-forward-roll-to-upper-arm-from-shoulderstand-l-or-support-sw",
       "short_name": "Forward roll to upper arm from shoulderstand, L, or support swing bwd",
-      "number": "2",
+      "number": "1",
       "variant": 1,
-      "value": "A",
+      "value": "Sub-A",
       "element_group": null,
       "eponym": "",
       "note": "",
@@ -10856,7 +10916,7 @@
      {
       "rid": "UCG-PB-back-uprise-to-support-from-upper-arm",
       "short_name": "Back uprise to support from upper arm",
-      "number": "3",
+      "number": "5",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -10897,7 +10957,7 @@
      {
       "rid": "UCG-PB-peach-to-upper-arm",
       "short_name": "Peach to upper arm",
-      "number": "4",
+      "number": "6",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -10934,7 +10994,7 @@
      {
       "rid": "UCG-PB-moy-to-upper-arm",
       "short_name": "Moy to upper arm",
-      "number": "5",
+      "number": "7",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -10971,7 +11031,7 @@
      {
       "rid": "UCG-PB-salto-forward-to-upper-arm",
       "short_name": "¾ salto forward to upper arm",
-      "number": "6",
+      "number": "8",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -11008,7 +11068,7 @@
      {
       "rid": "UCG-PB-kip-from-upper-arm-to-support-or-l",
       "short_name": "Kip from upper arm to support or L",
-      "number": "7",
+      "number": "9",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -11045,7 +11105,7 @@
      {
       "rid": "UCG-PB-underswing-to-long-hang-bwd-uprise-to-support",
       "short_name": "Underswing to long hang bwd uprise to support",
-      "number": "8",
+      "number": "10",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -11082,9 +11142,9 @@
      {
       "rid": "UCG-PB-flank-dismount-from-at-least-45-above-horizontal",
       "short_name": "Flank dismount from at least 45° above horizontal",
-      "number": "9",
+      "number": "2",
       "variant": 1,
-      "value": "A",
+      "value": "Sub-A",
       "element_group": null,
       "eponym": "",
       "note": "",
@@ -11120,7 +11180,7 @@
      {
       "rid": "UCG-PB-wende-dismount-also-w-1-2-turn",
       "short_name": "Wende dismount (also w/ 1/2 turn)",
-      "number": "10",
+      "number": "11",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -11158,9 +11218,9 @@
      {
       "rid": "UCG-PB-stutz-dismount-also-reverse-stutz-dismount",
       "short_name": "Stutz dismount (also reverse Stutz dismount)",
-      "number": "11",
+      "number": "3",
       "variant": 1,
-      "value": "A",
+      "value": "Sub-A",
       "element_group": null,
       "eponym": "",
       "note": "",
@@ -14479,7 +14539,7 @@
       "short_name": "Stride Swing Forwards or Backwards with Travel Sideways",
       "number": "1",
       "variant": 1,
-      "value": "A",
+      "value": "Sub-A",
       "element_group": null,
       "eponym": "",
       "note": "",
@@ -14500,7 +14560,7 @@
      {
       "rid": "UCG-PH-false-scissor",
       "short_name": "False scissor",
-      "number": "2",
+      "number": "3",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -14523,7 +14583,7 @@
      {
       "rid": "UCG-PH-single-leg-stockli",
       "short_name": "Single leg Stockli",
-      "number": "3",
+      "number": "4",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -14546,7 +14606,7 @@
      {
       "rid": "UCG-PH-single-leg-travel",
       "short_name": "Single leg travel",
-      "number": "4",
+      "number": "5",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -14583,13 +14643,13 @@
      {
       "rid": "UCG-PH-circle-dismount",
       "short_name": "½ Circle Dismount",
-      "number": "5",
+      "number": "2",
       "variant": 1,
-      "value": "A",
+      "value": "Sub-A",
       "element_group": null,
       "eponym": "",
       "note": "May also be performed on the leather or one hand leather one hand pommel",
-      "video": "https://youtu.be/7_YFy4wdFZg"
+      "video": "https://youtu.be/V-yTqw-K9u0"
      }
     ],
     "UCG-MASTERS-MAG": [
@@ -15451,6 +15511,29 @@
       "value": "F=0.6",
       "element_group": "II",
       "eponym": "Manukyan"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0142",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "½ Circle with ¼ Spindle Dismount",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "UCG-MAG-ADD": [
+     {
+      "rid": "UCG-PH-circle-with-spindle-dismount",
+      "short_name": "½ Circle with ¼ Spindle Dismount",
+      "number": "6",
+      "variant": 1,
+      "value": "A",
+      "element_group": null,
+      "eponym": "",
+      "note": "Gymnast must not be touching the apparatus when their feet land",
+      "video": "https://youtu.be/7_YFy4wdFZg"
      }
     ]
    }
@@ -18463,7 +18546,7 @@
       "short_name": "German hang (2 s.)",
       "number": "3",
       "variant": 1,
-      "value": "A",
+      "value": "Sub-A",
       "element_group": null,
       "eponym": "",
       "note": "",
@@ -18484,7 +18567,7 @@
      {
       "rid": "UCG-SR-muscle-up",
       "short_name": "Muscle up",
-      "number": "4",
+      "number": "6",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -18521,7 +18604,7 @@
      {
       "rid": "UCG-SR-pike-press-to-shoulderstand-2-s",
       "short_name": "Pike press to shoulderstand (2 s.)",
-      "number": "5",
+      "number": "7",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -18558,7 +18641,7 @@
      {
       "rid": "UCG-SR-felge-tucked-to-support",
       "short_name": "Felge tucked to support",
-      "number": "6",
+      "number": "8",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -18595,7 +18678,7 @@
      {
       "rid": "UCG-SR-tuck-planche-2-s",
       "short_name": "Tuck planche (2 s.)",
-      "number": "7",
+      "number": "9",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -18624,15 +18707,15 @@
    "id": "MAG-SR-0147",
    "discipline": "MAG",
    "apparatus": "SR",
-   "short_name": "Tuck salto, front or back",
+   "short_name": "Tuck salto, front or back, release before vertical",
    "aka": [],
    "eponym": "",
    "codes": {
     "UCG-MAG-ADD": [
      {
       "rid": "UCG-SR-tuck-salto-front-or-back",
-      "short_name": "Tuck salto, front or back",
-      "number": "8",
+      "short_name": "Tuck salto, front or back, release before vertical",
+      "number": "10",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -18670,7 +18753,7 @@
      {
       "rid": "UCG-SR-back-uprise-to-shoulderstand-2-s",
       "short_name": "Back uprise to shoulderstand (2 s.)",
-      "number": "9",
+      "number": "11",
       "variant": 1,
       "value": "A",
       "element_group": "I",
@@ -18707,7 +18790,7 @@
      {
       "rid": "UCG-SR-felge-to-shoulderstand-2-s",
       "short_name": "Felge to shoulderstand (2 s.)",
-      "number": "10",
+      "number": "12",
       "variant": 1,
       "value": "A",
       "element_group": "I",
@@ -18744,7 +18827,7 @@
      {
       "rid": "UCG-SR-uprise-bwd-to-tuck-planche-2-s",
       "short_name": "Uprise bwd. to tuck planche (2 s.)",
-      "number": "11",
+      "number": "13",
       "variant": 1,
       "value": "A",
       "element_group": "III",
@@ -18781,7 +18864,7 @@
      {
       "rid": "UCG-SR-swing-bwd-and-inlocate-to-back-lever-2-s",
       "short_name": "Swing bwd. and inlocate to back lever (2 s.)",
-      "number": "12",
+      "number": "14",
       "variant": 1,
       "value": "A",
       "element_group": "III",
@@ -18818,7 +18901,7 @@
      {
       "rid": "UCG-SR-uprise-bwd-and-salto-bwd-tucked",
       "short_name": "Uprise bwd. and salto bwd tucked",
-      "number": "13",
+      "number": "15",
       "variant": 1,
       "value": "A",
       "element_group": "IV",
@@ -18855,7 +18938,7 @@
      {
       "rid": "UCG-SR-5-4-tucked-salto-bwd-to-inverted-hang-and-immediate-dislocat",
       "short_name": "5/4 tucked salto bwd. to inverted hang and immediate dislocate",
-      "number": "14",
+      "number": "16",
       "variant": 1,
       "value": "B",
       "element_group": "I",
@@ -18892,7 +18975,7 @@
      {
       "rid": "UCG-SR-from-still-hang-vertical-pullup-to-support-with-one-arm-stra",
       "short_name": "From still hang, vertical pullup to support with one arm straight and the other bent",
-      "number": "15",
+      "number": "17",
       "variant": 1,
       "value": "B",
       "element_group": "II",
@@ -18929,7 +19012,7 @@
      {
       "rid": "UCG-SR-from-or-through-hanging-l-vertical-pull-up-with-bent-arms-an",
       "short_name": "From or through hanging L, vertical pull up with bent arms and legs horizontal to L-sit (2 s.)",
-      "number": "16",
+      "number": "18",
       "variant": 1,
       "value": "B",
       "element_group": "II",
@@ -18966,7 +19049,7 @@
      {
       "rid": "UCG-SR-uprise-bwd-or-swing-down-from-handstand-and-salto-bwd-piked-",
       "short_name": "Uprise bwd. or swing down from handstand and salto bwd piked or stretched",
-      "number": "17",
+      "number": "19",
       "variant": 1,
       "value": "B",
       "element_group": "IV",
@@ -19003,7 +19086,7 @@
      {
       "rid": "UCG-SR-from-still-hang-vertical-pullup-to-handstand-2-s-with-one-ar",
       "short_name": "From still hang, vertical pullup to handstand (2 s.) with one arm straight and the other bent",
-      "number": "18",
+      "number": "20",
       "variant": 1,
       "value": "C",
       "element_group": "II",
@@ -19040,7 +19123,7 @@
      {
       "rid": "UCG-SR-kip-and-salto-fwd-tucked-no-support",
       "short_name": "Kip and salto fwd. tucked (no support)",
-      "number": "19",
+      "number": "21",
       "variant": 1,
       "value": "C",
       "element_group": "IV",
@@ -19077,7 +19160,7 @@
      {
       "rid": "UCG-SR-v-sit-muscle-up-to-v-sit",
       "short_name": "Pull up with bent arms while keeping legs vertical to V-Sit (2 s.)",
-      "number": "20",
+      "number": "22",
       "variant": 1,
       "value": "D",
       "element_group": "II",
@@ -19114,7 +19197,7 @@
      {
       "rid": "UCG-SR-from-inverted-cross-roll-backwards-through-maltese-to-invert",
       "short_name": "From inverted cross, slow lower and roll bwd. through maltese to inverted swallow (2 s.)",
-      "number": "21",
+      "number": "23",
       "variant": 1,
       "value": "F",
       "element_group": "II",
@@ -19255,6 +19338,52 @@
       "note": "",
       "video": "https://youtube.com/watch?v=tooXNnunDs4",
       "page": 5
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-SR-0166",
+   "discipline": "MAG",
+   "apparatus": "SR",
+   "short_name": "Tuck press to tucked or extended shoulderstand (2 s.)",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "UCG-MAG-ADD": [
+     {
+      "rid": "UCG-SR-tuck-press-to-tucked-or-extended-shoulderstand-2-s",
+      "short_name": "Tuck press to tucked or extended shoulderstand (2 s.)",
+      "number": "4",
+      "variant": 1,
+      "value": "Sub-A",
+      "element_group": null,
+      "eponym": "",
+      "note": "",
+      "video": "https://youtu.be/q1O-KFIAHN8"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-SR-0167",
+   "discipline": "MAG",
+   "apparatus": "SR",
+   "short_name": "Tucked salto backwards with release after vertical",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "UCG-MAG-ADD": [
+     {
+      "rid": "UCG-SR-tuck-back-salto-release-after-vertical",
+      "short_name": "Tucked salto backwards with release after vertical",
+      "number": "5",
+      "variant": 1,
+      "value": "Sub-A",
+      "element_group": null,
+      "eponym": "",
+      "note": "",
+      "video": "https://youtu.be/vSM10bPuhNc"
      }
     ]
    }
