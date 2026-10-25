@@ -54,6 +54,7 @@ export const SKILLS = [
   {"id": "UCGM-mag-HB-swing-to-1-2-turn-minimum-45-above-horizontal", "app": "hb", "name": "Swing to 1/2 turn, minimum 45° above horizontal", "eponym": "", "value": "ME", "src": "UCGM", "note": "", "eg": 1},
   {"id": "UCGM-mag-HB-underswing-piked-straddled-or-free-salto-forward-dismount", "app": "hb", "name": "Underswing (piked, straddled, or free) salto forward dismount", "eponym": "", "value": "ME", "src": "UCGM", "note": "", "eg": 4},
   {"id": "UCGM-mag-HB-underswing-piked-straddled-or-free-dismount-also-with-half-t", "app": "hb", "name": "Underswing (piked, straddled, or free) dismount, also with half turn", "eponym": "", "value": "ME", "src": "UCGM", "note": "", "eg": 4},
+  {"id": "UCGM-mag-HB-voronin-from-kip-cast", "app": "hb", "name": "Voronin from kip-cast", "eponym": "", "value": "B", "src": "UCGM", "note": "", "eg": 2},
   {"id": "UCGM-mag-PB-press-to-shoulderstand-2-s", "app": "pb", "name": "Press to shoulderstand (2 s.)", "eponym": "", "value": "ME", "src": "UCGM", "note": "shoulders may be on or off bars, either is acceptable", "eg": 2},
   {"id": "UCGM-mag-PB-back-uprise-to-support-from-upper-arm", "app": "pb", "name": "Back uprise to support from upper arm", "eponym": "", "value": "ME", "src": "UCGM", "note": "", "eg": 1},
   {"id": "UCGM-mag-PB-peach-to-upper-arm", "app": "pb", "name": "Peach to upper arm", "eponym": "", "value": "ME", "src": "UCGM", "note": "", "eg": 3},

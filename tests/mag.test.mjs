@@ -312,7 +312,7 @@ test('Catalog: box numbers, other names, Masters lists', async () => {
   const ids = (d, app, q) => searchSkills(d, app, q).map((s) => s.id);
   assert.equal(findSkill('WG-SR-I-75').box, 'WG I.75');
   assert.equal(findSkill('USAG-BB-7.104-1b').box, 'Xcel 7.104');
-  assert.equal(findSkill('UCG-FX-pancake-stop-required').box, 'UCG FX 1');
+  assert.equal(findSkill('UCG-FX-pancake-stop-required').box, 'UCG FX 5'); // after the 4 Sub-A boxes (CoP Sub-A review, 2026-10)
   assert.ok(ids('mag', 'sr', 'I.75').includes('WG-SR-I-75'));
   assert.ok(ids('wag', 'bb', '7.104').includes('USAG-BB-7.104-1a'));
   // Other names coaches use find the skill, and it comes first.
@@ -333,7 +333,9 @@ test('HB search: "back tuck" is not a half turn; one-letter typos in names are f
   assert.ok(ids('back tuck').includes('WG-HB-IV-50')); // over-bar tucked double back
   assert.ok(ids('half turn handstand').includes('WG-HB-I-19'));
   assert.ok(!ids('back tuck').includes('WG-HB-I-19'));
-  assert.equal(searchSkills('mag', 'hb', 'varonin')[0]?.eponym, 'Voronin');
+  // The WG Voronin (eponym) and the UCG "Voronin from kip-cast" (named for it) both survive the typo.
+  assert.ok(ids('varonin').includes('WG-HB-II-26'));
+  assert.ok(ids('varonin').includes('UCG-HB-voronin-from-kip-cast'));
 });
 
 test('retired UCG skill ids open on the skill they were merged into (PB 16 -> PB 15)', () => {
