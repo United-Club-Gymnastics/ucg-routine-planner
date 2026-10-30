@@ -191,3 +191,45 @@ test('local mode: export my data; feedback sends no athlete name and no query', 
   expect([...body.values()].some((v) => /\/ucg-routine-planner\/$/.test(v))).toBe(true);
   expect(errors).toEqual([]);
 });
+
+test('calibration: judge practice loads, checks a D-score and lays out the routine', async ({ page }) => {
+  const errors = watchErrors(page);
+  // The routine videos are Drive embeds: stand in for them here.
+  await page.route(/drive\.google\.com/, (route) => route.fulfill({ status: 200, contentType: 'text/html', body: '<!doctype html><title>video</title>' }));
+  await page.goto('./calibration/infinity#BB_2'); // no trailing slash: redirected, as on GitHub Pages
+  await expect(page).toHaveURL(/calibration\/infinity\/#BB_2$/);
+  await expect(page.locator('#cp-video')).toHaveAttribute('src', /drive\.google\.com\/file\/d\/.+\/preview/);
+  await expect(page.locator('#cp-main')).toHaveClass(/is-portrait/);
+  const step = (letter, n) => page.locator(`[data-letter="${letter}"] [data-step="1"]`).click({ clickCount: n });
+  await step('E', 2);
+  await step('C', 4);
+  await step('B', 1);
+  for (const k of ['I', 'II', 'III']) await page.locator(`[data-eg="${k}"] input`).check();
+  await expect(page.locator('#cp-d')).toHaveText('5.00');
+  await page.getByRole('button', { name: 'Did I get it right?' }).click();
+  await expect(page.locator('.cp-verdict')).toContainText('Off by 0.90');
+  await expect(page.locator('[data-letter="B"]')).toHaveClass(/is-wrong/);
+  await expect(page.locator('[data-letter="B"] .cp-key')).toHaveText('Key: 2');
+  await expect(page.locator('[data-eg="IV"]')).toHaveClass(/is-wrong/);
+  await page.getByRole('button', { name: 'See the routine laid out' }).click();
+  await expect(page.locator('.cp-sum-total')).toContainText('15.9');
+  await expect(page.locator('.cp-warn')).toHaveCount(0);
+  // Open in the Routine Planner: that routine alone, nothing to sign in to or save, and back.
+  await page.getByRole('link', { name: /Open in Routine Planner/ }).click();
+  await expect(page).toHaveURL(/\?calibration=BB_2$/);
+  await expect(page.locator('#calibration-banner')).toContainText('Calibration routine BB_2');
+  await expect(page.locator('[data-routine="bb"] [data-calc="src"]').first()).toBeVisible();
+  await expect(page.locator('#guest-banner')).toBeHidden();
+  await expect(page.locator('[data-signin]:visible')).toHaveCount(0);
+  await expect(page.locator('#save-status')).toHaveText('Not saved: a copy to look at');
+  await expect(page.locator('[data-sv="bb"]')).toHaveText('15.9');
+  await page.getByRole('link', { name: 'Back to judge practice' }).click();
+  await expect(page).toHaveURL(/calibration\/infinity\/#BB_2$/);
+  await expect(page.locator('#cp-video-name')).toHaveText('Beam · BB_2');
+  // A landscape video gets the wide layout; deductions are off here; progress was kept.
+  await page.locator('.cp-routine[data-id="BB_4"]').click();
+  await expect(page.locator('#cp-main')).toHaveClass(/is-landscape/);
+  await expect(page.locator('.cp-routine[data-id="BB_2"]')).toHaveClass(/is-off/);
+  await expect(page.locator('.cp-deductions input')).toBeDisabled();
+  expect(errors).toEqual([]);
+});

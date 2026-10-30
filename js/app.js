@@ -85,6 +85,7 @@ const sortedAthletes = () =>
 // ---- Saving ---------------------------------------------------------------
 
 const saveTimers = new Map(); // athlete id -> pending save (each athlete saves on its own)
+const guestStatus = () => (state.user?.calibration ? 'Not saved: a copy to look at' : 'Not saved: sign in to keep this');
 function setStatus(text, kind = '') {
   const el = $('#save-status');
   if (el) {
@@ -94,7 +95,7 @@ function setStatus(text, kind = '') {
 }
 function scheduleSave() {
   if (state.user?.guest) {
-    setStatus('Not saved: sign in to keep this', 'guest');
+    setStatus(guestStatus(), 'guest');
     return;
   }
   const a = athlete();
@@ -230,9 +231,9 @@ function renderUserArea() {
   const face = u.guest || u.local || (!u.photoURL && !initials)
     ? ICON_PERSON
     : u.photoURL ? `<img class="avatar" src="${esc(u.photoURL)}" alt="" referrerpolicy="no-referrer" />` : `<span>${esc(initials)}</span>`;
-  const who = u.guest ? 'Not signed in: nothing is saved' : u.local ? 'Local mode: saved in this browser only' : esc(u.displayName || u.email);
+  const who = u.calibration ? 'Judge practice: nothing is saved' : u.guest ? 'Not signed in: nothing is saved' : u.local ? 'Local mode: saved in this browser only' : esc(u.displayName || u.email);
   area.innerHTML = `
-    ${u.guest ? '<button class="btn btn-ghost btn-sm header-signin" type="button" data-signin>Sign in to save</button>' : ''}
+    ${u.guest && !u.calibration ? '<button class="btn btn-ghost btn-sm header-signin" type="button" data-signin>Sign in to save</button>' : ''}
     <div class="menu-wrap">
       <button type="button" class="account-btn" data-menu="account-menu" aria-haspopup="menu" aria-expanded="false" aria-label="Account and feedback">${face}</button>
       <div class="menu" id="account-menu" role="menu" hidden>
@@ -240,7 +241,7 @@ function renderUserArea() {
         <button type="button" role="menuitem" data-action="feedback">Send feedback</button>
         ${u.guest ? '' : '<button type="button" role="menuitem" data-action="export">Export my data</button><button type="button" role="menuitem" data-action="delete-data">Delete all my data</button>'}
         <a role="menuitem" href="privacy.html" target="_blank" rel="noopener">Privacy</a>
-        ${u.guest ? '<button type="button" role="menuitem" data-signin>Sign in with Google</button>' : ''}
+        ${u.guest && !u.calibration ? '<button type="button" role="menuitem" data-signin>Sign in with Google</button>' : ''}
         ${!u.guest && !u.local ? '<button type="button" role="menuitem" data-action="signout">Sign out</button>' : ''}
       </div>
     </div>`;
@@ -380,7 +381,7 @@ if (new URLSearchParams(location.search).get('from') === 'infinity') {
 }
 function renderMoveBanner() {
   const el = $('#move-banner');
-  const show = readPref('rp-from-infinity', false) && !readPref('rp-move-closed', false) && !state.athletes.some((a) => a.importedFrom);
+  const show = !state.user?.calibration && readPref('rp-from-infinity', false) && !readPref('rp-move-closed', false) && !state.athletes.some((a) => a.importedFrom);
   el.hidden = !show;
   if (!show) return;
   const intro = '<strong>The UCG Infinity planner has moved here, and grown.</strong> Same start values, now with every UCG level, skill search and offline use.';
@@ -579,7 +580,7 @@ document.addEventListener('click', async (ev) => {
 });
 
 // Guests lose everything when the page closes: ask first.
-const guestHasWork = () => state.user?.guest && state.athletes.some((a) => a.name || a.entries.some(hasContent));
+const guestHasWork = () => state.user?.guest && !state.user.calibration && state.athletes.some((a) => a.name || a.entries.some(hasContent));
 let reloadConfirmed = false; // already asked (guestOkToReload): don't ask twice
 window.addEventListener('beforeunload', (ev) => {
   if (!guestHasWork() || reloadConfirmed) return;
@@ -637,7 +638,7 @@ function renderAll() {
             <input id="f-club" type="text" value="${esc(a.club)}" placeholder="Add club or school" /></label>
         </div>
         <div class="band-actions">
-          <span id="save-status" class="save-status"${state.user?.guest ? ` data-kind="guest">Not saved: sign in to keep this` : '>'}</span>
+          <span id="save-status" class="save-status"${state.user?.guest ? ` data-kind="guest">${guestStatus()}` : '>'}</span>
           ${e ? `<button class="btn btn-accent" type="button" id="export-all">Export PDF</button>` : ''}
         </div>
       </div>
@@ -2525,7 +2526,7 @@ async function onUser(user) {
   stopWatching();
   stopWatching = () => {};
   renderUserArea();
-  $('#guest-banner').hidden = !user?.guest;
+  $('#guest-banner').hidden = !user?.guest || !!user.calibration;
   if (!user) {
     state.athletes = [];
     renderAthletePicker();
@@ -2708,7 +2709,37 @@ const guestOkToReload = () =>
   !guestHasWork() || (reloadConfirmed = confirm("You're not signed in, so reloading clears your athletes and routines. Reload anyway?"));
 watchForUpdates();
 
-store.init(onUser).catch((e) => {
+// ---- A calibration routine from judge practice (?calibration=BB_2) -----------------------
+// calibration/infinity/ links here to show a routine skill by skill: the planner opens with
+// just that routine, as a guest that can't sign in, so nothing is read from or saved to an account.
+const CALIBRATION = new URLSearchParams(location.search).get('calibration');
+
+async function openCalibration(id) {
+  app.innerHTML = '<p class="loading">Loading the routine…</p>';
+  const [{ calibrationAthlete, condensedOf }] = await Promise.all([import('./calibration-view.js'), loadDiscipline('wag')]);
+  const match = (ev, s) =>
+    closestSkill('wag', ev, s.name, (x) => wagSkillAllowed('infinity', 'inf', x) && x.value === s.letter && condensedOf(ev, x.group) === s.group);
+  const found = calibrationAthlete(id, uid, match);
+  const practice = `calibration/infinity/${found ? `#${encodeURIComponent(found.routine.id)}` : ''}`;
+  const banner = $('#calibration-banner');
+  banner.hidden = false;
+  if (!found) {
+    banner.innerHTML = `<span>There's no calibration routine “${esc(id)}”.</span><span class="banner-actions"><a class="banner-btn" href="${practice}">Back to judge practice</a></span>`;
+    app.innerHTML = '';
+    return;
+  }
+  await onUser({ ...GUEST, calibration: found.routine.id });
+  const a = found.athlete;
+  state.athletes = [a];
+  state.athleteId = a.id;
+  state.entryId = a.entries[0].id;
+  state.tab[a.entries[0].id] = found.routine.event;
+  renderAll();
+  banner.innerHTML = `<span><strong>Calibration routine ${esc(found.routine.id)}</strong>, from judge practice, laid out in the planner. Nothing here is saved: try changes freely.</span>
+    <span class="banner-actions"><a class="banner-btn" href="${practice}">Back to judge practice</a></span>`;
+}
+
+(CALIBRATION ? openCalibration(CALIBRATION) : store.init(onUser)).catch((e) => {
   console.error(e);
   app.innerHTML = `<p class="error">Could not start the app: ${esc(e?.message || e)}</p>`;
 });
