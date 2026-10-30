@@ -1,0 +1,185 @@
+/* Judge practice (calibration/infinity/): the judging calculator's look (UCG 2026 tokens),
+   beside the routine video. Saira Condensed stands in for Greed Condensed, as in the planner. */
+@font-face { font-family: 'Saira Condensed'; font-weight: 700; font-display: swap; src: url('../../assets/fonts/saira-condensed-latin-700-normal.woff2') format('woff2'); }
+
+:root {
+  --navy: #1e2b38;
+  --blue-green: #a5c8cf;
+  --light-blue: #dbebee;
+  --dark-blue-green: #184b56;
+  --red-orange: #f4694a;
+  --purple: #adbae9;
+  --white: #ffffff;
+  --fg-secondary: #4a5a66;
+  --border: #bfd5d9;
+  --border-soft: #cfe1e4;
+  --border-field: #6b858d;
+  --urgent-tint: #fde4dd;
+  --right-tint: #e2f0ec;
+  --off-mark: #b33a1f; /* 5.6:1 on white */
+  --font-display: 'Greed Condensed', 'Saira Condensed', 'Arial Narrow', sans-serif;
+  --font-body: 'Suisse Intl', Arial, Helvetica, sans-serif;
+}
+* { box-sizing: border-box; }
+html { background: var(--light-blue); }
+body { margin: 0; font-family: var(--font-body); font-size: 15px; line-height: 1.5; color: var(--navy); background: var(--light-blue); }
+h1, h2, p { margin: 0; }
+button, input, select { font: inherit; color: inherit; }
+a { color: var(--dark-blue-green); font-weight: 600; }
+.cp-display { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; line-height: 0.95; letter-spacing: 0.005em; }
+.cp-subhead { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; }
+.cp-hint { color: var(--fg-secondary); font-size: 0.88rem; margin-bottom: 10px; }
+.cp-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+[hidden] { display: none !important; }
+body.is-vault .cp-nonvault, body:not(.is-vault) .cp-vault-only { display: none; }
+
+/* ---- header + picker ---- */
+.cp-header { display: flex; align-items: center; gap: 14px; background: var(--navy); color: var(--light-blue); padding: 14px 24px; }
+.cp-mark { width: 40px; height: 40px; filter: brightness(0) invert(1); }
+.cp-header h1 { font-size: 2rem; color: var(--white); }
+.cp-header .cp-subhead { color: var(--blue-green); }
+.cp-progress { margin-left: auto; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--white); }
+
+.cp-picker { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; padding: 12px 24px; background: var(--white); border-bottom: 1px solid var(--border-soft); }
+.cp-tabs { display: inline-flex; gap: 4px; background: var(--light-blue); border-radius: 12px; padding: 4px; }
+.cp-tabs button { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; border: 0; border-radius: 8px; padding: 8px 14px; background: transparent; cursor: pointer; }
+.cp-tabs button small { font-family: var(--font-body); font-weight: 400; letter-spacing: 0; text-transform: none; margin-left: 4px; }
+.cp-tabs button:hover { background: var(--purple); }
+.cp-tabs button[aria-selected="true"] { background: var(--navy); color: var(--white); }
+.cp-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cp-routine { display: inline-flex; align-items: center; gap: 6px; border: 1.5px solid var(--border); background: var(--white); border-radius: 999px; padding: 5px 12px; cursor: pointer; font-weight: 600; font-size: 0.9rem; }
+.cp-routine:hover { border-color: var(--navy); }
+.cp-routine.is-current { background: var(--navy); color: var(--white); border-color: var(--navy); }
+.cp-routine.is-right span, .cp-legend-right { color: var(--dark-blue-green); font-weight: 700; }
+.cp-routine.is-off span, .cp-legend-off { color: var(--off-mark); font-weight: 700; }
+.cp-routine.is-current.is-right span { color: var(--blue-green); }
+.cp-routine.is-current.is-off span { color: var(--red-orange); } /* 4.9:1 on navy */
+.cp-legend { margin-left: auto; font-size: 0.82rem; color: var(--fg-secondary); }
+.cp-legend span { margin-left: 8px; }
+
+/* ---- main: video beside the calculator, sized by the video's orientation ---- */
+.cp-main { display: grid; gap: 20px; padding: 20px 24px; align-items: start; justify-content: center; }
+.cp-main.is-portrait { grid-template-columns: minmax(260px, 400px) minmax(340px, 520px); }
+.cp-main.is-landscape { grid-template-columns: minmax(480px, 860px) minmax(340px, 440px); }
+.cp-video-col { position: sticky; top: 12px; }
+.cp-video-frame { background: var(--navy); border-radius: 18px; overflow: hidden; width: 100%; }
+.is-portrait .cp-video-frame { aspect-ratio: 9 / 16; max-height: calc(100vh - 70px); margin: 0 auto; }
+.is-landscape .cp-video-frame { aspect-ratio: 16 / 9; }
+/* A tall window: keep a portrait video narrow enough to fit (width follows the height cap). */
+.is-portrait .cp-video-frame { width: min(100%, calc((100vh - 70px) * 9 / 16)); }
+.cp-video-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+.cp-video-meta { margin-top: 8px; font-size: 0.88rem; color: var(--fg-secondary); }
+.cp-intro { margin-top: 8px; padding: 8px 12px; border-radius: 10px; background: var(--white); border-left: 4px solid var(--purple); font-size: 0.9rem; }
+
+.cp-card { background: var(--white); border: 1px solid var(--border-soft); border-radius: 16px; padding: 14px 18px; margin-bottom: 10px; }
+.cp-card h2 { font-size: 1.45rem; margin-bottom: 6px; }
+.cp-card-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 4px; }
+.cp-card-head h2 { margin: 0; }
+.cp-chip { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; border-radius: 999px; padding: 3px 10px; background: var(--light-blue); }
+.cp-chip.is-full { background: var(--blue-green); }
+.cp-chip.is-short { background: var(--urgent-tint); }
+
+.cp-letter { display: flex; align-items: center; gap: 10px; padding: 6px 8px; margin: 0 -8px; border: 1.5px solid transparent; border-top-color: var(--border-soft); border-radius: 10px; }
+.cp-letter-name { display: flex; align-items: baseline; gap: 8px; margin-right: auto; }
+.cp-letter-name b { font-size: 1.7rem; width: 1.1em; }
+.cp-letter-name small { color: var(--fg-secondary); }
+.cp-stepper { display: flex; }
+.cp-stepper button { width: 40px; height: 40px; border: 1.5px solid var(--border); background: var(--white); font-size: 1.3rem; cursor: pointer; touch-action: manipulation; }
+.cp-stepper button:first-child { border-radius: 10px 0 0 10px; }
+.cp-stepper button:last-child { border-radius: 0 10px 10px 0; }
+.cp-stepper button:hover { background: var(--light-blue); }
+.cp-stepper input { width: 46px; height: 40px; text-align: center; font-weight: 600; font-size: 1.1rem; border: 1.5px solid var(--border); border-left: 0; border-right: 0; border-radius: 0; background: var(--white); -moz-appearance: textfield; appearance: textfield; }
+.cp-stepper input::-webkit-inner-spin-button, .cp-stepper input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+
+.cp-checks { display: grid; gap: 6px; }
+.cp-check { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border: 1.5px solid var(--border-soft); border-radius: 10px; cursor: pointer; font-size: 0.9rem; }
+.cp-check input { width: 20px; height: 20px; accent-color: var(--navy); flex: none; }
+.cp-check b { font-size: 1.2rem; color: var(--dark-blue-green); width: 1.6em; flex: none; }
+.cp-check:has(input:checked) { background: var(--light-blue); border-color: var(--blue-green); }
+.cp-check .cp-key { margin-left: auto; }
+
+/* feedback on the inputs */
+.cp-key { flex: none; font-size: 0.8rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--white); border: 1.5px solid var(--red-orange); color: var(--navy); white-space: nowrap; }
+.cp-calc-col .is-right { background: var(--right-tint); border-color: var(--blue-green); }
+.cp-calc-col .is-wrong { background: var(--urgent-tint); border-color: var(--red-orange); }
+
+#cp-vault { width: 100%; height: 44px; border: 1.5px solid var(--border-field); border-radius: 10px; background: var(--white); padding: 0 12px; }
+
+/* Deductions: shown so the layout matches the real calculator, but off here. */
+.cp-deductions { background: #eef4f5; }
+.cp-deductions h2, .cp-deductions .cp-field { color: var(--fg-secondary); }
+.cp-field { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+.cp-field input { width: 120px; height: 44px; border: 1.5px dashed var(--border-field); border-radius: 10px; background: #eef4f5; padding: 0 12px; cursor: not-allowed; }
+
+.cp-score { display: flex; justify-content: space-between; align-items: end; gap: 10px; background: var(--navy); color: var(--light-blue); border-radius: 16px; padding: 14px 18px; }
+.cp-score .cp-subhead { display: block; color: var(--blue-green); }
+.cp-score b { display: block; font-size: 2.4rem; color: var(--white); font-variant-numeric: tabular-nums; margin-top: 4px; }
+.cp-final { text-align: right; }
+.cp-final b { font-size: 2.8rem; color: var(--blue-green); }
+.cp-final small { display: block; font-size: 0.8rem; color: var(--light-blue); }
+
+.cp-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.cp-btn { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.95rem; line-height: 1; border: 1.5px solid var(--navy); background: transparent; color: var(--navy); border-radius: 8px; padding: 11px 16px; cursor: pointer; text-decoration: none; display: inline-block; }
+.cp-btn:hover { background: var(--navy); color: var(--white); }
+.cp-btn-primary { background: var(--navy); color: var(--white); flex: 1; }
+.cp-btn-primary:hover { background: var(--dark-blue-green); border-color: var(--dark-blue-green); }
+.cp-btn:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid var(--dark-blue-green); outline-offset: 2px; }
+
+/* ---- result ---- */
+#cp-result { margin-top: 12px; background: var(--white); border: 1px solid var(--border-soft); border-radius: 16px; padding: 14px 18px; }
+.cp-verdict { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 12px; padding: 10px 14px; border-radius: 12px; border: 1.5px solid; }
+.cp-verdict.is-right { background: var(--right-tint); border-color: var(--blue-green); }
+.cp-verdict.is-wrong { background: var(--urgent-tint); border-color: var(--red-orange); }
+.cp-verdict .cp-display { font-size: 1.5rem; }
+.cp-notes { margin: 12px 0; padding-left: 20px; }
+.cp-notes li { margin: 4px 0; }
+
+/* ---- routine laid out ---- */
+.cp-breakdown { max-width: 1000px; margin: 0 auto; padding: 0 24px 20px; }
+.cp-table { width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-size: 0.92rem; }
+.cp-table th { text-align: left; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; background: var(--navy); color: var(--white); padding: 7px 10px; }
+.cp-table td { padding: 7px 10px; border-bottom: 1px solid var(--border-soft); vertical-align: top; }
+.cp-table tr.is-muted td { color: var(--fg-secondary); }
+.cp-num { text-align: right; width: 3em; }
+.cp-nowrap { white-space: nowrap; }
+.cp-val { display: inline-block; min-width: 1.6em; text-align: center; font-weight: 700; background: var(--light-blue); border-radius: 6px; padding: 0 4px; color: var(--navy); }
+.cp-status { font-size: 0.78rem; font-weight: 700; border-radius: 999px; padding: 2px 9px; white-space: nowrap; color: var(--navy); }
+.cp-status.is-counting { background: var(--blue-green); }
+.cp-status.is-egOnly { background: var(--purple); }
+.cp-status.is-top { background: var(--light-blue); }
+.cp-tag { font-size: 0.75rem; font-weight: 600; border: 1px dashed var(--border-field); border-radius: 6px; padding: 0 6px; color: var(--navy); }
+.cp-rownote { font-size: 0.8rem; color: var(--fg-secondary); font-style: italic; white-space: pre-line; }
+.cp-bonusline { margin-bottom: 10px; }
+.cp-sum { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; }
+.cp-sum > span { font-size: 1.4rem; font-weight: 700; }
+.cp-sum div { border: 1.5px solid var(--border); border-radius: 10px; padding: 6px 12px; text-align: center; min-width: 90px; }
+.cp-sum small { display: block; font-size: 0.75rem; color: var(--fg-secondary); }
+.cp-sum b { font-size: 1.2rem; }
+.cp-sum .cp-sum-total { background: var(--navy); border-color: var(--navy); }
+.cp-sum .cp-sum-total small { color: var(--blue-green); }
+.cp-sum .cp-sum-total b { color: var(--white); }
+.cp-warn { margin-top: 10px; padding: 8px 12px; border-radius: 10px; background: var(--urgent-tint); font-weight: 600; }
+
+.cp-footer { text-align: center; font-size: 0.85rem; color: var(--fg-secondary); padding: 10px 24px 28px; }
+
+/* Landscape video: wide screens keep it beside the calculator; narrower ones put it on top. */
+@media (max-width: 1080px) {
+  .cp-main.is-landscape { grid-template-columns: minmax(0, 760px); }
+  .is-landscape .cp-video-col { position: static; }
+}
+@media (max-width: 760px) {
+  .cp-main.is-portrait { grid-template-columns: minmax(0, 1fr); }
+  .is-portrait .cp-video-col { position: static; }
+  .is-portrait .cp-video-frame { width: auto; height: 70vh; max-height: none; }
+  .cp-main { padding: 12px 16px; }
+  .cp-picker, .cp-header { padding-left: 16px; padding-right: 16px; }
+  .cp-header { flex-wrap: wrap; row-gap: 4px; }
+  .cp-header h1 { font-size: 1.6rem; }
+  .cp-header .cp-subhead { letter-spacing: 0.1em; }
+  .cp-progress { font-size: 0.8rem; margin-left: 54px; width: 100%; }
+  .cp-legend { margin-left: 0; }
+  .cp-breakdown { padding: 0 16px 16px; }
+  .cp-table { font-size: 0.85rem; }
+  .cp-table th:nth-child(4), .cp-table td:nth-child(4) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }

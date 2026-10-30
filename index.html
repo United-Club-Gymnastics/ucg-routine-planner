@@ -14,8 +14,10 @@
     <script type="importmap">
       {
         "imports": {
+          "./calibration/infinity/routines.js": "./calibration/infinity/routines.js?v=__BUILD__",
           "./js/app.js": "./js/app.js?v=__BUILD__",
           "./js/athlete-doc.js": "./js/athlete-doc.js?v=__BUILD__",
+          "./js/calibration-view.js": "./js/calibration-view.js?v=__BUILD__",
           "./js/data/catalog-mag.js": "./js/data/catalog-mag.js?v=__BUILD__",
           "./js/data/catalog-wag.js": "./js/data/catalog-wag.js?v=__BUILD__",
           "./js/data/examples.js": "./js/data/examples.js?v=__BUILD__",
@@ -72,6 +74,8 @@
     </div>
 
     <div id="move-banner" class="banner banner-move" role="region" aria-label="Moving from the UCG Infinity planner" hidden></div>
+
+    <div id="calibration-banner" class="banner banner-guest" role="region" aria-label="Calibration routine" hidden></div>
 
     <div id="guest-banner" class="banner banner-guest" hidden>
       <span>You're not signed in, so nothing is saved: close or reload this page and your routines are gone.</span>

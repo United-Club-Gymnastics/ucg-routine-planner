@@ -1,0 +1,70 @@
+{
+  "_about": "Judge practice (calibration/infinity/): what the calibration sheet doesn't hold. Read by tools/build_calibration.py. extras: skills on the video outside the sheet's top 8 that earn something (group bonus or apparatus bonus); intro: shown with the video, before checking; bonus_why: why the apparatus bonus is or isn't earned (Nate checked each video, 2026-10-30); vaults: the vault each VT video shows, by name in the Infinity vault chart (empty until known: practice then checks the value only).",
+  "sheet": "1nE3NvHyU9RjycQQDQFs2sUpmYLrjNDIDXy_tcQwlWOQ",
+  "videos": "1lWyC0Fr0daNE5PGeekC0zWxkcWEokCaF",
+  "extras": {
+    "BB_2": [
+      {
+        "name": "Dive Cartwheel",
+        "letter": "B",
+        "group": "IV"
+      }
+    ],
+    "FX_2": [
+      {
+        "name": "Arabian Dive Roll or Full Twisting BHS",
+        "letter": "B",
+        "group": "II"
+      }
+    ],
+    "FX_4": [
+      {
+        "name": "Front Tuck",
+        "letter": "A",
+        "group": "III"
+      }
+    ],
+    "FX_8": [
+      {
+        "name": "Front Tuck Stepout",
+        "letter": "A",
+        "group": "III"
+      },
+      {
+        "name": "Back Tuck",
+        "letter": "A",
+        "group": "IV"
+      }
+    ]
+  },
+  "intro": {
+    "BB_3": "BB_3 and BB_3 limited are the same routine. Here, every skill attempted gets credit.",
+    "BB_3 (limited credit)": "BB_3 and BB_3 limited are the same routine. Here, judge the credit you'd actually give: some attempts may fall short."
+  },
+  "bonus_why": {
+    "UB_1": "At least 2 bar changes",
+    "UB_2": "At least 2 bar changes",
+    "UB_3": "At least 2 bar changes",
+    "UB_4": "At least 2 bar changes",
+    "UB_5": "Fewer than 2 bar changes",
+    "UB_6": "Fewer than 2 bar changes",
+    "BB_1": "The Front Handspring isn't connected to another flight element",
+    "BB_2": "Dive Cartwheel connected into the Roundoff",
+    "BB_3": "Only one flight element (the dismount)",
+    "BB_3 (limited credit)": "Only one flight element (the dismount)",
+    "BB_4": "Back Handspring connected to the Layout Stepout",
+    "BB_5": "Only one flight element (the dismount)",
+    "BB_6": "Only one flight element (the dismount)",
+    "BB_7": "Dive Cartwheel connected to the Roundoff",
+    "BB_8": "Only one flight element (the dismount)",
+    "FX_1": "Back 1/2 connected to the Front Pike",
+    "FX_2": "Back 1.5 connected to the Front Full",
+    "FX_3": "No two saltos in one pass",
+    "FX_4": "Front Full connected to a Front Tuck",
+    "FX_5": "Tucked Front Full connected to the Front Half",
+    "FX_6": "No saltos",
+    "FX_7": "Front Tuck Stepout connected to the Back Tuck",
+    "FX_8": "Front Tuck Stepout connected to a Back Tuck"
+  },
+  "vaults": {}
+}

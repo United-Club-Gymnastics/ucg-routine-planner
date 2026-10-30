@@ -179,6 +179,7 @@ h2 { font-size: var(--fs-h2); line-height: var(--leading-tight); letter-spacing:
   padding: 6px 12px; font: inherit; font-weight: 700; cursor: pointer;
 }
 @media (hover: hover) { .banner-btn:hover { background: var(--ucg-navy-deep); } }
+a.banner-btn { display: inline-block; text-decoration: none; }
 
 main { padding: 0 0 clamp(48px, 6vw, 80px); }
 .site-footer { border-top: 1px solid var(--border-default); padding: 16px var(--gutter) 24px; }

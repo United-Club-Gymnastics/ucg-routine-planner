@@ -126,6 +126,48 @@ privacy = withSecurity(privacy);
 if (privacy.includes('__BUILD__')) throw new Error('privacy.html still has development-only parts');
 writeFileSync(join(OUT, 'privacy.html'), privacy);
 
+// Judge practice for UCG Infinity (calibration/infinity/): its own small bundle and stylesheet,
+// and its own policy: no Firebase or sign-in, but it embeds the routine videos from Google Drive.
+const CAL = 'calibration/infinity';
+const cal = await build({
+  absWorkingDir: ROOT,
+  entryPoints: [`${CAL}/practice.js`],
+  bundle: true,
+  format: 'esm',
+  target: 'es2022',
+  outdir: join(OUT, CAL),
+  entryNames: '[name]-[hash]',
+  minify: true,
+  sourcemap: true,
+  metafile: true,
+  legalComments: 'linked',
+  logLevel: 'warning',
+});
+const calJs = Object.keys(cal.metafile.outputs).find((f) => f.endsWith('.js'));
+const calCss = Buffer.concat([
+  Buffer.from(fontFaces ? `${fontFaces.replaceAll('../assets/', '../../assets/')}\n` : ''),
+  readFileSync(join(ROOT, CAL, 'practice.css')),
+]);
+const calCssName = `practice-${hash(calCss)}.css`;
+writeFileSync(join(OUT, CAL, calCssName), calCss);
+const CAL_CSP = [
+  "default-src 'self'",
+  "script-src 'self'",
+  "style-src 'self'",
+  "img-src 'self' data:",
+  "font-src 'self'",
+  "frame-src https://drive.google.com",
+  "connect-src 'self'",
+  "object-src 'none'",
+  "base-uri 'none'",
+].join('; ');
+let calHtml = readFileSync(join(ROOT, CAL, 'index.html'), 'utf8')
+  .replace('<meta charset="utf-8" />', `<meta charset="utf-8" />\n    <meta http-equiv="Content-Security-Policy" content="${CAL_CSP}" />\n    <meta name="referrer" content="strict-origin-when-cross-origin" />`)
+  .replace('href="practice.css?v=__BUILD__"', `href="${calCssName}"`)
+  .replace('<script type="module" src="practice.js"></script>', `<script type="module" src="${posix(relative(join(OUT, CAL), join(ROOT, calJs)))}"></script>`);
+if (calHtml.includes('__BUILD__') || calHtml.includes('src="practice.js"')) throw new Error(`${CAL}/index.html still has development-only parts`);
+writeFileSync(join(OUT, CAL, 'index.html'), calHtml);
+
 let html = readFileSync(join(ROOT, 'index.html'), 'utf8');
 // The policy comes first in <head>, before anything it applies to.
 html = withSecurity(html);

@@ -30,7 +30,14 @@ createServer((req, res) => {
     res.writeHead(403);
     return res.end();
   }
-  if (existsSync(file) && statSync(file).isDirectory()) file = join(file, 'index.html');
+  if (existsSync(file) && statSync(file).isDirectory()) {
+    // Like GitHub Pages: a folder without its trailing slash redirects to it.
+    if (!url.pathname.endsWith('/')) {
+      res.writeHead(301, { location: `${url.pathname}/${url.search}` });
+      return res.end();
+    }
+    file = join(file, 'index.html');
+  }
   if (!existsSync(file)) {
     res.writeHead(404);
     return res.end('Not found');
