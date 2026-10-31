@@ -169,6 +169,18 @@ test('UCG Infinity: each element earns credit once, whatever the connection', ()
   const r = scoreInfinity('bb', [sk('Back walkover'), sk('Cartwheel', 'A', true), sk('Back walkover')]);
   assert.deepEqual(st(r), ['ok', 'ok', 'x:once']);
 });
+test('Bars: a mount element repeated inside the routine is a different element (§VII.B.2.e)', () => {
+  const kip = (v) => ({ name: 'Glide kip', letter: 'A', skillId: `USAG-UB-1.101-${v}` });
+  const cast = { name: 'Cast', letter: 'A' };
+  // Infinity: the glide kip mount and a glide kip later both count; a third is a repeat. Same for the long hang kip.
+  assert.deepEqual(st(scoreInfinity('ub', [kip(1), cast, kip(1), cast, kip(1)])), ['ok', 'ok', 'ok', 'x:once', 'x:once']);
+  assert.deepEqual(st(scoreInfinity('ub', [kip(3), cast, kip(3)])), ['ok', 'ok', 'ok']);
+  // Xcel: the mount doesn't use up one of the two credits a glide kip can earn inside the routine.
+  const x = scoreXcel('gold', 'ub', [kip(1), cast, kip(1), sk('Back hip circle'), kip(1), sk('Underswing dismount')], { srMet: [1, 1, 1, 1] });
+  assert.deepEqual(st(x), ['ok', 'ok', 'ok', 'ok', 'ok', 'ok']);
+  // Beam and floor, and WAG Masters, are unchanged.
+  assert.deepEqual(st(scoreInfinity('bb', [sk('Leap'), sk('Cartwheel'), sk('Leap')])), ['ok', 'ok', 'x:once']);
+});
 test('Same-element data: versions the Code counts as one element share a key; hand-support flight from the list', async () => {
   const { elementKey } = await import('../js/scoring/wag.js');
   const id = (skillId) => ({ skillId, name: '' });
