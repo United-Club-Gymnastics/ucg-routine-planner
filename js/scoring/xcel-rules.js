@@ -20,7 +20,7 @@ const credited = (it) => it.status === 'counting' || (it.status === 'noncounting
 const MOUNT = { ub: 1, bb: 1 };
 const DISMOUNT = { ub: 8, bb: 9 };
 // By element group; a few skills in other groups are tagged as mounts or dismounts.
-const isMount = (ev, it) => group(it) === MOUNT[ev] || !!T(it).mount;
+export const isMount = (ev, it) => group(it) === MOUNT[ev] || !!T(it).mount;
 const isDismount = (ev, it) => group(it) === DISMOUNT[ev] || !!T(it).dismount;
 const inner = (ev, it) => !isMount(ev, it) && !isDismount(ev, it);
 

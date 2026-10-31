@@ -169,7 +169,7 @@ test('UCG Infinity: each element earns credit once, whatever the connection', ()
   const r = scoreInfinity('bb', [sk('Back walkover'), sk('Cartwheel', 'A', true), sk('Back walkover')]);
   assert.deepEqual(st(r), ['ok', 'ok', 'x:once']);
 });
-test('Bars: a mount element repeated inside the routine is a different element (§VII.B.2.e)', () => {
+test('Bars: a mount element repeated inside the routine is a different element (§VII.B.2.e)', async () => {
   const kip = (v) => ({ name: 'Glide kip', letter: 'A', skillId: `USAG-UB-1.101-${v}` });
   const cast = { name: 'Cast', letter: 'A' };
   // Infinity: the glide kip mount and a glide kip later both count; a third is a repeat. Same for the long hang kip.
@@ -178,6 +178,13 @@ test('Bars: a mount element repeated inside the routine is a different element (
   // Xcel: the mount doesn't use up one of the two credits a glide kip can earn inside the routine.
   const x = scoreXcel('gold', 'ub', [kip(1), cast, kip(1), sk('Back hip circle'), kip(1), sk('Underswing dismount')], { srMet: [1, 1, 1, 1] });
   assert.deepEqual(st(x), ['ok', 'ok', 'ok', 'ok', 'ok', 'ok']);
+  // Only a mount element is the mount: a listed Group 1 skill, or a typed-in one in group 1 or without a group.
+  const { findSkill } = await import('../js/skill-search.js');
+  const L = (id) => { const skill = findSkill(id); return { name: skill.name, letter: skill.value, skillId: id, skill }; };
+  assert.deepEqual(st(scoreInfinity('ub', [L('USAG-UB-1.101-1'), cast, L('USAG-UB-1.101-1')])), ['ok', 'ok', 'ok']);
+  assert.deepEqual(st(scoreInfinity('ub', [L('USAG-UB-2.102-1'), cast, L('USAG-UB-2.102-1')])), ['ok', 'ok', 'x:once']);
+  assert.deepEqual(st(scoreInfinity('ub', [s('Kip', 'A', 1), cast, s('Kip', 'A', 1)])), ['ok', 'ok', 'ok']);
+  assert.deepEqual(st(scoreInfinity('ub', [s('Kip cast', 'A', 2), cast, s('Kip cast', 'A', 2)])), ['ok', 'ok', 'x:once']);
   // Beam and floor, and WAG Masters, are unchanged.
   assert.deepEqual(st(scoreInfinity('bb', [sk('Leap'), sk('Cartwheel'), sk('Leap')])), ['ok', 'ok', 'x:once']);
 });
