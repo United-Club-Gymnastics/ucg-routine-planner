@@ -66,7 +66,7 @@ test("a named vault is in the Infinity vault chart, at the D-score in its video'
 });
 
 test('vault: by value until the vault is named', () => {
-  const r = byId('VT_1');
+  const r = { ...byId('VT_1'), vault: null };
   const key = answerKey(r);
   const pick = (dv) => INFINITY_VAULT_LIST.find((v) => v.dv === dv);
   assert.equal(compare(r, key, { vault: pick(5.1) }).right, true);

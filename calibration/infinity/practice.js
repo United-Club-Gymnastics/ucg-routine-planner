@@ -3,7 +3,7 @@
 // way the planner scores it. Difficulty only: execution is judged as in Xcel Sapphire.
 import { INFINITY_GROUPS, INFINITY_VALUES, INFINITY_VAULT_LIST } from '../../js/scoring/wag.js';
 import { LETTERS, ROMAN, answerKey, compare, entryD } from './key.js';
-import { ROUTINES, SHEET_URL } from './routines.js';
+import { ROUTINES } from './routines.js';
 
 const $ = (id) => document.getElementById(id);
 const EVENTS = [['vt', 'Vault'], ['ub', 'Bars'], ['bb', 'Beam'], ['fx', 'Floor']];
@@ -284,7 +284,6 @@ addEventListener('hashchange', () => {
   }
 });
 
-$('cp-sheet').href = SHEET_URL;
 const first = fromHash() || ROUTINES.find((r) => r.event === 'bb');
 tab = first.event;
 open(first);

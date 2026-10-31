@@ -1,5 +1,5 @@
 {
-  "_about": "Judge practice (calibration/infinity/): what the calibration sheet doesn't hold. Read by tools/build_calibration.py. extras: skills on the video outside the sheet's top 8 that earn something (group bonus or apparatus bonus); intro: shown with the video, before checking; bonus_why: why the apparatus bonus is or isn't earned (Nate checked each video, 2026-10-30; BB_1, BB_4, BB_7 and BB_8 revised 2026-10-30); vaults: the vault each VT video shows, by name in the Infinity vault chart (empty until known: practice then checks the value only).",
+  "_about": "Judge practice (calibration/infinity/): what the calibration sheet doesn't hold. Read by tools/build_calibration.py. extras: skills on the video outside the sheet's top 8 that earn something (group bonus or apparatus bonus); intro: shown with the video, before checking; bonus_why: why the apparatus bonus is or isn't earned (Nate checked each video, 2026-10-30; BB_1, BB_4, BB_7 and BB_8 revised 2026-10-30); vaults: the vault each VT video shows, by name in the Infinity vault chart (Nate, 2026-10-30; a vault missing here is checked by value only).",
   "sheet": "1nE3NvHyU9RjycQQDQFs2sUpmYLrjNDIDXy_tcQwlWOQ",
   "videos": "1lWyC0Fr0daNE5PGeekC0zWxkcWEokCaF",
   "extras": {
@@ -78,5 +78,12 @@
     "FX_7": "Front Tuck Stepout connected to the Back Tuck",
     "FX_8": "Front Tuck Stepout connected to a Back Tuck"
   },
-  "vaults": {}
+  "vaults": {
+    "VT_1": "Tsuk Pike",
+    "VT_2": "1/2 On - 1/2 Off",
+    "VT_3": "1/4 On - 1/4 Off (land facing table)",
+    "VT_4": "Ft. Hspr. - Front Tuck",
+    "VT_5": "Front Handspring",
+    "VT_6": "Ft. Hspr. 1/2 Off"
+  }
 }
