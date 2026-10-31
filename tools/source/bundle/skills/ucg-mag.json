@@ -2,13 +2,13 @@
  "schema_version": "0.3.0",
  "code": "UCG-MAG-ADD",
  "discipline": "MAG",
- "edition": "2026-10-21",
- "built": "2026-10-24",
+ "edition": "2026-10-29",
+ "built": "2026-10-29",
  "source": {
   "kind": "authored",
   "document": "MAG/UCG MAG CoP.svg",
   "repo": "nssharpe/ucg-code-of-points",
-  "commit": "15383259af3fa5c6ed5de8de7b6063119749cd1b"
+  "commit": "dd41f99f1c7c6a3aa50580e4df2fe08c900c9e0b"
  },
  "records": [
   {

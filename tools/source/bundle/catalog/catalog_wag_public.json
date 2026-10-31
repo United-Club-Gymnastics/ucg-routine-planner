@@ -1,7 +1,7 @@
 {
  "discipline": "WAG",
- "version": "a220831d2eee",
- "built": "2026-10-22",
+ "version": "90974ca9d700",
+ "built": "2026-10-30",
  "elements": [
   {
    "id": "WAG-BB-0001",
@@ -38204,7 +38204,8 @@
    "short_name": "Round-off, straddle back over LB via support",
    "aka": [
     "RO, straddle back over LB via support",
-    "Roundoff, straddle back over LB via support"
+    "Roundoff, straddle back over LB via support",
+    "Round-off, straddleback over LB via support"
    ],
    "eponym": "",
    "codes": {
@@ -40282,7 +40283,9 @@
    "discipline": "WAG",
    "apparatus": "UB",
    "short_name": "Straddle back to LB handstand",
-   "aka": [],
+   "aka": [
+    "Straddleback to LB handstand"
+   ],
    "eponym": "",
    "codes": {
     "WG-WAG-2025": [
@@ -47187,7 +47190,8 @@
    "apparatus": "UB",
    "short_name": "HB counterswing to LB handstand with full turn",
    "aka": [
-    "Straddle back to handstand with turn"
+    "Straddle back to handstand with turn",
+    "Straddleback to handstand with turn"
    ],
    "eponym": "",
    "codes": {
@@ -47201,7 +47205,8 @@
       "element_group": "2",
       "eponym": "",
       "aka": [
-       "Straddle back to handstand with turn"
+       "Straddle back to handstand with turn",
+       "Straddleback to handstand with turn"
       ],
       "tags": {
        "bar": "HB",
@@ -47240,7 +47245,8 @@
    "apparatus": "UB",
    "short_name": "Counterswing, ½ twist flight to LB handstand",
    "aka": [
-    "Straddle back to handstand with turn"
+    "Straddle back to handstand with turn",
+    "Straddleback to handstand with turn"
    ],
    "eponym": "",
    "codes": {
@@ -47254,7 +47260,8 @@
       "element_group": "2",
       "eponym": "",
       "aka": [
-       "Straddle back to handstand with turn"
+       "Straddle back to handstand with turn",
+       "Straddleback to handstand with turn"
       ],
       "tags": {
        "bar": "HB",
@@ -49479,7 +49486,8 @@
    "aka": [
     "Straddleback from handstand",
     "Straddle back",
-    "Straddleback"
+    "Straddleback",
+    "Straddle back from handstand"
    ],
    "eponym": "",
    "codes": {
@@ -49495,7 +49503,8 @@
       "aka": [
        "Straddleback from handstand",
        "Straddle back",
-       "Straddleback"
+       "Straddleback",
+       "Straddle back from handstand"
       ],
       "tags": {
        "bar": "HB",
@@ -49516,7 +49525,8 @@
       "aka": [
        "Straddleback from handstand",
        "Straddle back",
-       "Straddleback"
+       "Straddleback",
+       "Straddle back from handstand"
       ],
       "tags": {
        "bar": "HB",
@@ -49535,7 +49545,8 @@
    "aka": [
     "Straddle back to handstand",
     "Straddleback to handstand",
-    "Straddle back from handstand to handstand"
+    "Straddle back from handstand to handstand",
+    "Straddleback from handstand to handstand"
    ],
    "eponym": "",
    "codes": {
@@ -49551,7 +49562,8 @@
       "aka": [
        "Straddle back to handstand",
        "Straddleback to handstand",
-       "Straddle back from handstand to handstand"
+       "Straddle back from handstand to handstand",
+       "Straddleback from handstand to handstand"
       ],
       "tags": {
        "bar": "HB",
@@ -49574,7 +49586,8 @@
       "aka": [
        "Straddle back to handstand",
        "Straddleback to handstand",
-       "Straddle back from handstand to handstand"
+       "Straddle back from handstand to handstand",
+       "Straddleback from handstand to handstand"
       ],
       "tags": {
        "bar": "HB",
@@ -55965,7 +55978,8 @@
    "apparatus": "UB",
    "short_name": "HB counterswing to LB handstand with ½ turn",
    "aka": [
-    "Straddle back to handstand with ½ turn"
+    "Straddle back to handstand with ½ turn",
+    "Straddleback to handstand with ½ turn"
    ],
    "eponym": "",
    "codes": {
@@ -55979,7 +55993,8 @@
       "element_group": "2",
       "eponym": "",
       "aka": [
-       "Straddle back to handstand with ½ turn"
+       "Straddle back to handstand with ½ turn",
+       "Straddleback to handstand with ½ turn"
       ],
       "tags": {
        "bar": "HB",
@@ -58683,6 +58698,9 @@
       "element_group": "7",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Sole circle"
+      ],
       "tags": {
        "bar": "either",
        "bar_change": true,
@@ -61456,6 +61474,9 @@
       "element_group": "7",
       "eponym": "",
       "relation": "covers_more",
+      "aka": [
+       "Sole circle"
+      ],
       "tags": {
        "bar": "either",
        "bar_change": true,
