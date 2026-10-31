@@ -1,8 +1,20 @@
 {
-  "_about": "Judge practice (calibration/infinity/): what the calibration sheet doesn't hold. Read by tools/build_calibration.py. extras: skills on the video outside the sheet's top 8 that earn something (group bonus or apparatus bonus); intro: shown with the video, before checking; bonus_why: why the apparatus bonus is or isn't earned (Nate checked each video, 2026-10-30); vaults: the vault each VT video shows, by name in the Infinity vault chart (empty until known: practice then checks the value only).",
+  "_about": "Judge practice (calibration/infinity/): what the calibration sheet doesn't hold. Read by tools/build_calibration.py. extras: skills on the video outside the sheet's top 8 that earn something (group bonus or apparatus bonus); intro: shown with the video, before checking; bonus_why: why the apparatus bonus is or isn't earned (Nate checked each video, 2026-10-30; BB_1, BB_4, BB_7 and BB_8 revised 2026-10-30); vaults: the vault each VT video shows, by name in the Infinity vault chart (empty until known: practice then checks the value only).",
   "sheet": "1nE3NvHyU9RjycQQDQFs2sUpmYLrjNDIDXy_tcQwlWOQ",
   "videos": "1lWyC0Fr0daNE5PGeekC0zWxkcWEokCaF",
   "extras": {
+    "BB_1": [
+      {
+        "name": "Front Handspring",
+        "letter": "B",
+        "group": "IV"
+      },
+      {
+        "name": "Front Layout Dismount",
+        "letter": "B",
+        "group": "I"
+      }
+    ],
     "BB_2": [
       {
         "name": "Dive Cartwheel",
@@ -48,7 +60,7 @@
     "UB_4": "At least 2 bar changes",
     "UB_5": "Fewer than 2 bar changes",
     "UB_6": "Fewer than 2 bar changes",
-    "BB_1": "The Front Handspring isn't connected to another flight element",
+    "BB_1": "A second Front Handspring connected to the first",
     "BB_2": "Dive Cartwheel connected into the Roundoff",
     "BB_3": "Only one flight element (the dismount)",
     "BB_3 (limited credit)": "Only one flight element (the dismount)",

@@ -9,8 +9,8 @@ export const ROUTINES = [
   "portrait": false,
   "skills": [
    {
-    "name": "Switch Split Mount (1.401)",
-    "letter": "D",
+    "name": "Switch Split Jump Mount (1.301)",
+    "letter": "C",
     "group": "I"
    },
    {
@@ -44,15 +44,26 @@ export const ROUTINES = [
     "group": "II"
    },
    {
+    "name": "Backward Body Wave, one-leg balance",
+    "letter": "B",
+    "group": "III"
+   }
+  ],
+  "extras": [
+   {
+    "name": "Front Handspring",
+    "letter": "B",
+    "group": "IV"
+   },
+   {
     "name": "Front Layout Dismount",
     "letter": "B",
     "group": "I"
    }
   ],
-  "extras": [],
-  "eventBonus": false,
-  "eventBonusWhy": "The Front Handspring isn't connected to another flight element",
-  "sv": 14.6,
+  "eventBonus": true,
+  "eventBonusWhy": "A second Front Handspring connected to the first",
+  "sv": 14.7,
   "notes": [],
   "intro": ""
  },
@@ -263,8 +274,8 @@ export const ROUTINES = [
     "group": "II"
    },
    {
-    "name": "Straddle Jump 1/2",
-    "letter": "D",
+    "name": "Straddle Jump 1/2 from Cross",
+    "letter": "C",
     "group": "II"
    },
    {
@@ -281,7 +292,7 @@ export const ROUTINES = [
   "extras": [],
   "eventBonus": true,
   "eventBonusWhy": "Back Handspring connected to the Layout Stepout",
-  "sv": 15.5,
+  "sv": 15.3,
   "notes": [],
   "intro": ""
  },
@@ -407,8 +418,8 @@ export const ROUTINES = [
     "group": "II"
    },
    {
-    "name": "Straddle Jump 1/2",
-    "letter": "D",
+    "name": "Straddle Jump 1/2 from Cross",
+    "letter": "C",
     "group": "II"
    },
    {
@@ -445,7 +456,7 @@ export const ROUTINES = [
   "extras": [],
   "eventBonus": true,
   "eventBonusWhy": "Dive Cartwheel connected to the Roundoff",
-  "sv": 13.8,
+  "sv": 13.6,
   "notes": [],
   "intro": ""
  },
@@ -461,8 +472,8 @@ export const ROUTINES = [
     "group": "I"
    },
    {
-    "name": "Straddle Jump Half",
-    "letter": "D",
+    "name": "Straddle Jump 1/2 from Cross",
+    "letter": "C",
     "group": "II"
    },
    {
@@ -499,7 +510,7 @@ export const ROUTINES = [
   "extras": [],
   "eventBonus": false,
   "eventBonusWhy": "Only one flight element (the dismount)",
-  "sv": 14.1,
+  "sv": 13.9,
   "notes": [],
   "intro": ""
  },
