@@ -9,7 +9,7 @@ import { TAGS as MASTERS_TAGS } from '../data/masters-wag-tags.js';
 import { VAULTS as WG_VAULTS } from '../data/wag-vaults.js';
 import { VAULTS as MASTERS_VAULTS } from '../data/masters-vaults.js';
 import { SAME_ELEMENT, HAND_SUPPORT_FLIGHT as HAND_SUPPORT_FLIGHT_IDS } from '../data/wag-same.js';
-import { detectSR, infinityApparatusBonus, markKindRestrictions, sapphireBonus } from './xcel-rules.js';
+import { detectSR, infinityApparatusBonus, isMount, markKindRestrictions, sapphireBonus } from './xcel-rules.js';
 
 const HAND_SUPPORT_FLIGHT = new Set(HAND_SUPPORT_FLIGHT_IDS);
 
@@ -397,8 +397,12 @@ const isHandSupportFlight = (it) => (it.skillId ? HAND_SUPPORT_FLIGHT.has(it.ski
 
 // Bars: a mount element done again inside the routine is a different element from the mount
 // (§VII.B.2.e in the Xcel and Development bars chapters), so a glide kip or long hang kip later
-// in the routine earns credit of its own. The mount is the routine's first skill.
-const repeatKey = (event, live) => (it) => (event === 'ub' && it === live[0] ? `mount:${elementKey(it)}` : elementKey(it));
+// in the routine earns credit of its own. The mount is the routine's first skill, when it is a
+// mount element: a listed Group 1 (or mount-tagged) skill, or a typed-in one in group 1 (or
+// with no group given).
+const isMountElement = (it) => (it.skill ? isMount('ub', it) : !it.eg || it.eg === 1);
+const repeatKey = (event, live) => (it) =>
+  (event === 'ub' && it === live[0] && isMountElement(it) ? `mount:${elementKey(it)}` : elementKey(it));
 
 const repeat = (it, of, why) => Object.assign(it, { status: 'repeat', repeatOf: of.idx, repeatWhy: why });
 
