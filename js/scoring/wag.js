@@ -50,7 +50,7 @@ const condensedOf = (event, eg) => {
 export function scoreInfinity(event, skills = [], { eventBonus = false } = {}) {
   const items = baseItems(skills, (l) => INFINITY_VALUES[l] ?? 0);
   for (const it of items) it.condensed = it.eg ? condensedOf(event, it.eg) : null;
-  markOnce(items);
+  markOnce(event, items);
   markOffLevel(items);
   // A listed skill with no value (the Sapphire / Infinity no-value cast) shows in the routine
   // but adds nothing: no difficulty, and it doesn't count toward the 6 skills.
@@ -395,6 +395,11 @@ export const elementKey = (it) => (it.skillId ? SAME_ELEMENT[it.skillId] || it.s
 const HAND_FLIGHT_NAME = /\b(round[- ]?off|flic[- ]?flac|flip[- ]?flop|back handspring|front handspring|flyspring|bhs|fhs)\b/i;
 const isHandSupportFlight = (it) => (it.skillId ? HAND_SUPPORT_FLIGHT.has(it.skillId) : HAND_FLIGHT_NAME.test(it.name));
 
+// Bars: a mount element done again inside the routine is a different element from the mount
+// (§VII.B.2.e in the Xcel and Development bars chapters), so a glide kip or long hang kip later
+// in the routine earns credit of its own. The mount is the routine's first skill.
+const repeatKey = (event, live) => (it) => (event === 'ub' && it === live[0] ? `mount:${elementKey(it)}` : elementKey(it));
+
 const repeat = (it, of, why) => Object.assign(it, { status: 'repeat', repeatOf: of.idx, repeatWhy: why });
 
 // UCG Infinity: an element earns value-part credit once, whatever its connection.
@@ -405,11 +410,12 @@ function markOffLevel(items) {
   for (const it of items) if (!it.status && it.offLevel) Object.assign(it, { status: 'noncounting', reason: 'offLevel' });
 }
 
-function markOnce(items) {
+function markOnce(event, items) {
+  const keyOf = repeatKey(event, items.filter((it) => !it.status));
   const seen = new Map();
   for (const it of items) {
     if (it.status) continue;
-    const key = elementKey(it);
+    const key = keyOf(it);
     if (seen.has(key)) repeat(it, seen.get(key), 'once');
     else seen.set(key, it);
   }
@@ -430,7 +436,8 @@ function markOnce(items) {
  */
 function markXcelRepeats(event, items) {
   const live = items.filter((it) => !it.status);
-  const key = new Map(live.map((it) => [it, elementKey(it)]));
+  const keyOf = repeatKey(event, live);
+  const key = new Map(live.map((it) => [it, keyOf(it)]));
   const connected = (k) => k < live.length - 1 && (event === 'ub' || live[k].link); // live[k] -> live[k + 1]
   const context = new Map(
     live.map((it, k) => [it, `${k > 0 && connected(k - 1) ? key.get(live[k - 1]) : '-'}|${connected(k) ? key.get(live[k + 1]) : '-'}`])
