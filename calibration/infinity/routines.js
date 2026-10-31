@@ -1296,7 +1296,7 @@ export const ROUTINES = [
   "portrait": false,
   "dv": 5.1,
   "sv": 15.1,
-  "vault": null,
+  "vault": "Tsuk Pike",
   "intro": ""
  },
  {
@@ -1306,7 +1306,7 @@ export const ROUTINES = [
   "portrait": true,
   "dv": 3.6,
   "sv": 13.6,
-  "vault": null,
+  "vault": "1/2 On - 1/2 Off",
   "intro": ""
  },
  {
@@ -1314,9 +1314,9 @@ export const ROUTINES = [
   "event": "vt",
   "video": "1R7u_eqqlrzn0xinPXUu0Z1o9wOWZNNXM",
   "portrait": true,
-  "dv": 5.4,
-  "sv": 15.4,
-  "vault": null,
+  "dv": 2.4,
+  "sv": 12.4,
+  "vault": "1/4 On - 1/4 Off (land facing table)",
   "intro": ""
  },
  {
@@ -1324,9 +1324,9 @@ export const ROUTINES = [
   "event": "vt",
   "video": "1yFZ_d46lb9baca-oUXaSQePjz5WWcaSX",
   "portrait": false,
-  "dv": 2.4,
-  "sv": 12.4,
-  "vault": null,
+  "dv": 5.4,
+  "sv": 15.4,
+  "vault": "Ft. Hspr. - Front Tuck",
   "intro": ""
  },
  {
@@ -1336,7 +1336,7 @@ export const ROUTINES = [
   "portrait": false,
   "dv": 2.4,
   "sv": 12.4,
-  "vault": null,
+  "vault": "Front Handspring",
   "intro": ""
  },
  {
@@ -1346,7 +1346,7 @@ export const ROUTINES = [
   "portrait": false,
   "dv": 3.0,
   "sv": 13.0,
-  "vault": null,
+  "vault": "Ft. Hspr. 1/2 Off",
   "intro": ""
  }
 ];
