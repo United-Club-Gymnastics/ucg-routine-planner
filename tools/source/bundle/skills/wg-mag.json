@@ -1129,7 +1129,25 @@
    "eponym": "Tippelt",
    "element_group": "II",
    "apparatus": "PH",
-   "code_text": true
+   "code_text": true,
+   "forms": [
+    {
+     "form": "a",
+     "name": "Flair or circle through handstand (with or without ½ t.) and lower to flair or circle"
+    },
+    {
+     "form": "b",
+     "name": "Flair or circle through handstand and lower to flair or circle, 360°+ turn or 3/3 travel (min. 180° turn)",
+     "value": "D=0.4"
+    },
+    {
+     "form": "c",
+     "name": "Flair or circle through handstand and lower to flair or circle, 360°+ turn and 3/3 travel",
+     "value": "E=0.5"
+    }
+   ],
+   "forms_rule": "A circle or flair handstand lowered back to circles or flairs is one value higher with a 360°+ turn or a 3/3 travel (3/3 needs at least a 180° turn), two higher with both. Each value is its own form, so the routine shows the value earned.",
+   "forms_citation": "WG MAG 2025 §11 Pommel Horse 2.c.4, table 2 (circle or flair handstand lowered to circle or flair)"
   },
   {
    "number": "52",
@@ -1137,7 +1155,25 @@
    "value": "D=0.4",
    "eponym": "",
    "element_group": "II",
-   "apparatus": "PH"
+   "apparatus": "PH",
+   "forms": [
+    {
+     "form": "a",
+     "name": "Flair with backward hop through handstand"
+    },
+    {
+     "form": "b",
+     "name": "Flair with backward hop through handstand, 360°+ turn or 3/3 travel (min. 180° turn)",
+     "value": "E=0.5"
+    },
+    {
+     "form": "c",
+     "name": "Flair with backward hop through handstand, 360°+ turn and 3/3 travel",
+     "value": "F=0.6"
+    }
+   ],
+   "forms_rule": "A circle or flair handstand lowered back to circles or flairs is one value higher with a 360°+ turn or a 3/3 travel (3/3 needs at least a 180° turn), two higher with both. Each value is its own form, so the routine shows the value earned.",
+   "forms_citation": "WG MAG 2025 §11 Pommel Horse 2.c.4, table 2 (circle or flair handstand lowered to circle or flair)"
   },
   {
    "number": "54",
@@ -1696,7 +1732,25 @@
    "eponym": "Dolidze",
    "element_group": "IV",
    "apparatus": "PH",
-   "code_text": true
+   "code_text": true,
+   "forms": [
+    {
+     "form": "a",
+     "name": "From pommels, circle with 1/4 turn to Russian wendeswing 270° on one pommel to handstand"
+    },
+    {
+     "form": "b",
+     "name": "From pommels, circle with 1/4 turn to Russian wendeswing 270° on one pommel to handstand, 450°+ turn or 3/3 travel (min. 270° turn)",
+     "value": "E=0.5"
+    },
+    {
+     "form": "c",
+     "name": "From pommels, circle with 1/4 turn to Russian wendeswing 270° on one pommel to handstand, 450°+ turn and 3/3 travel",
+     "value": "F=0.6"
+    }
+   ],
+   "forms_rule": "A circle or flair handstand dismount is one value higher with a 450°+ turn or a 3/3 travel (3/3 needs at least a 270° turn), two higher with both. Each value is its own form, so the routine shows the value earned.",
+   "forms_citation": "WG MAG 2025 §11 Pommel Horse 2.c.4, table 1 (circle or flair handstand dismounts)"
   },
   {
    "number": "13",
@@ -1713,7 +1767,20 @@
    "eponym": "",
    "element_group": "IV",
    "apparatus": "PH",
-   "code_text": true
+   "code_text": true,
+   "forms": [
+    {
+     "form": "a",
+     "name": "DSA, reverse Stöckli or circle on one pommel through handstand"
+    },
+    {
+     "form": "b",
+     "name": "DSA, reverse Stöckli or circle on one pommel through handstand, 450°+ turn or 3/3 travel (min. 270° turn)",
+     "value": "D=0.4"
+    }
+   ],
+   "forms_rule": "A circle or flair handstand dismount is one value higher with a 450°+ turn or a 3/3 travel (3/3 needs at least a 270° turn), two higher with both. Each value is its own form, so the routine shows the value earned. With both, it is IV.5 (E).",
+   "forms_citation": "WG MAG 2025 §11 Pommel Horse 2.c.4, table 1 (circle or flair handstand dismounts)"
   },
   {
    "number": "16",
@@ -1721,7 +1788,25 @@
    "value": "D=0.4",
    "eponym": "Jessen/Loos",
    "element_group": "IV",
-   "apparatus": "PH"
+   "apparatus": "PH",
+   "forms": [
+    {
+     "form": "a",
+     "name": "DSA backward hop to far-end handstand dismount"
+    },
+    {
+     "form": "b",
+     "name": "DSA backward hop to far-end handstand dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+     "value": "E=0.5"
+    },
+    {
+     "form": "c",
+     "name": "DSA backward hop to far-end handstand dismount, 450°+ turn and 3/3 travel",
+     "value": "F=0.6"
+    }
+   ],
+   "forms_rule": "A circle or flair handstand dismount is one value higher with a 450°+ turn or a 3/3 travel (3/3 needs at least a 270° turn), two higher with both. Each value is its own form, so the routine shows the value earned.",
+   "forms_citation": "WG MAG 2025 §11 Pommel Horse 2.c.4, table 1 (circle or flair handstand dismounts)"
   },
   {
    "number": "20",
@@ -1730,7 +1815,20 @@
    "eponym": "",
    "element_group": "IV",
    "apparatus": "PH",
-   "code_text": true
+   "code_text": true,
+   "forms": [
+    {
+     "form": "a",
+     "name": "Circle or flair through handstand (also with ¾ t. with or without travel)"
+    },
+    {
+     "form": "b",
+     "name": "Circle or flair through handstand dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+     "value": "C=0.3"
+    }
+   ],
+   "forms_rule": "A circle or flair handstand dismount is one value higher with a 450°+ turn or a 3/3 travel (3/3 needs at least a 270° turn), two higher with both. Each value is its own form, so the routine shows the value earned. With both, it is IV.4 (D).",
+   "forms_citation": "WG MAG 2025 §11 Pommel Horse 2.c.4, table 1 (circle or flair handstand dismounts)"
   },
   {
    "number": "21",
@@ -1738,7 +1836,25 @@
    "value": "C=0.3",
    "eponym": "",
    "element_group": "IV",
-   "apparatus": "PH"
+   "apparatus": "PH",
+   "forms": [
+    {
+     "form": "a",
+     "name": "Backward hop to handstand dismount"
+    },
+    {
+     "form": "b",
+     "name": "Backward hop to handstand dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+     "value": "D=0.4"
+    },
+    {
+     "form": "c",
+     "name": "Backward hop to handstand dismount, 450°+ turn and 3/3 travel",
+     "value": "E=0.5"
+    }
+   ],
+   "forms_rule": "A circle or flair handstand dismount is one value higher with a 450°+ turn or a 3/3 travel (3/3 needs at least a 270° turn), two higher with both. Each value is its own form, so the routine shows the value earned.",
+   "forms_citation": "WG MAG 2025 §11 Pommel Horse 2.c.4, table 1 (circle or flair handstand dismounts)"
   },
   {
    "number": "22",
@@ -1747,7 +1863,25 @@
    "eponym": "Targhetta",
    "element_group": "IV",
    "apparatus": "PH",
-   "code_text": true
+   "code_text": true,
+   "forms": [
+    {
+     "form": "a",
+     "name": "180° Russian from one end of the horse to the other end through handstand to dismount. Bertoncelj through handstand to dismount"
+    },
+    {
+     "form": "b",
+     "name": "180° Russian end to end, or Bertoncelj, through handstand to dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+     "value": "E=0.5"
+    },
+    {
+     "form": "c",
+     "name": "180° Russian end to end, or Bertoncelj, through handstand to dismount, 450°+ turn and 3/3 travel",
+     "value": "F=0.6"
+    }
+   ],
+   "forms_rule": "A circle or flair handstand dismount is one value higher with a 450°+ turn or a 3/3 travel (3/3 needs at least a 270° turn), two higher with both. Each value is its own form, so the routine shows the value earned.",
+   "forms_citation": "WG MAG 2025 §11 Pommel Horse 2.c.4, table 1 (circle or flair handstand dismounts)"
   },
   {
    "number": "1",

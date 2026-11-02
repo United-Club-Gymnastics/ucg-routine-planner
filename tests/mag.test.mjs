@@ -369,3 +369,21 @@ test('Advanced floor: a routine opening with a round-off starts with a tumbling 
   assert.equal(tumbles([{ name: 'L-sit (2 s.)', letter: 'A', eg: '', skillId: 'UCG-FX-l-sit-2-s' }, ...pass]), false);
   assert.equal(tumbles([{ name: 'Cartwheel', letter: 'Sub-A', eg: '', skillId: 'UCG-FX-cartwheel' }, ...pass]), false);
 });
+
+// WG pommel horse 2.c.4 (Nate, 2026-11-02): handstand elements are listed at each value they can earn,
+// one form per value; form a keeps the bare ID.
+test('pommel horse handstand elements: one skill per upgraded value', async () => {
+  await loadDiscipline('mag');
+  const v = (id) => findSkill(id)?.value;
+  assert.deepEqual(['WG-PH-IV-20a', 'WG-PH-IV-20b'].map(v), ['B', 'C']);
+  assert.equal(findSkill('WG-PH-IV-20c'), null); // with both, it is IV.4 (D)
+  assert.equal(findSkill('WG-PH-IV-20').id, 'WG-PH-IV-20a'); // saved routines
+  assert.deepEqual(['WG-PH-IV-21a', 'WG-PH-IV-21b', 'WG-PH-IV-21c'].map(v), ['C', 'D', 'E']);
+  assert.deepEqual(['WG-PH-II-51a', 'WG-PH-II-51b', 'WG-PH-II-51c'].map(v), ['C', 'D', 'E']);
+  const ucg = 'UCG-PH-half-spindle-to-handstand-dismount-from-over-the-handles';
+  assert.deepEqual([`${ucg}-a`, `${ucg}-b`, `${ucg}-c`].map(v), ['D', 'E', 'F']);
+  assert.equal(findSkill(ucg).id, `${ucg}-a`);
+  // Masters: an upgrade above D counts as D+.
+  const dismount = (id) => scoreRoutine('ph', 'masters', [{ name: findSkill(id).label, letter: v(id), eg: 4, skillId: id }], {}, { decade: 40 }).rows[0].value;
+  assert.equal(dismount(`${ucg}-c`), dismount(`${ucg}-a`));
+});

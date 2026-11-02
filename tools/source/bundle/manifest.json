@@ -1,17 +1,17 @@
 {
  "schema_version": "0.3.0",
- "built": "2026-10-30",
+ "built": "2026-11-02",
  "catalogs": {
-  "MAG": "a7e5fe626490",
+  "MAG": "2cbbc6898de4",
   "WAG": "90974ca9d700"
  },
  "sources": {
-  "nssharpe/gym-skill-extract": "b5a2d9964cfa664e033f7b88e96fe1ba7293f48b",
+  "nssharpe/gym-skill-extract": "a5d80c240118532b6acf0fdf2711030bdecbe081",
   "nssharpe/ucg-code-of-points": "dd41f99f1c7c6a3aa50580e4df2fe08c900c9e0b"
  },
  "files": {
   "catalog/aliases_mag.json": {
-   "sha256": "7e6499e4f6a58a1f61f38ace5cf774afd69fc02b9ed389a8a36cf146d33419bd",
+   "sha256": "db86d744cc4b13239f816323709d67c71edd6da4cd118e0944f40b7fe67303b1",
    "schema": "aliases.schema.json"
   },
   "catalog/aliases_wag.json": {
@@ -19,7 +19,7 @@
    "schema": "aliases.schema.json"
   },
   "catalog/catalog_mag_public.json": {
-   "sha256": "02c89db7abceaccf3cfa9bb6f2f81ef423d54c60b91d638733909f8aaf356842",
+   "sha256": "4abf62efb5787b9b3d00ce2be648b6c8550089fe50629bf208a44f4031ad637c",
    "schema": "catalog.schema.json"
   },
   "catalog/catalog_wag_public.json": {
@@ -125,13 +125,13 @@
    "sha256": "4f0a7ebb801b92026cd17665eebebbcf1910d95a29b806194422ec716d6977de"
   },
   "schema/skill.schema.json": {
-   "sha256": "0e5ff9668849ae3b53f5125de577ed318e76281d41e19cd9f0730dea29345b7e"
+   "sha256": "0e1a70af5fce8ca0b25183766b7eb64a2af209df5dbdde473e30343bc97ac974"
   },
   "schema/vaults.schema.json": {
    "sha256": "fa90ecc90307b3978e187e772db40e2a5cf0424ff4edd9b507ae9bab67e7c5c9"
   },
   "skills/ucg-mag.json": {
-   "sha256": "3036f5c885d86837032cb6bd72df65837a9a4c33524a82d11d3d6e191cf1afbb",
+   "sha256": "d61e94029868e14bbeb2c1d90b4d8d95ecd91bad03a8df4b967d51e45cba02a4",
    "schema": "skill.schema.json"
   },
   "skills/ucg-masters-mag.json": {
@@ -155,7 +155,7 @@
    "schema": "skill.schema.json"
   },
   "skills/wg-mag.json": {
-   "sha256": "88d90f5c481ce210086df9998261bb03b63db4af7b2a7cee6d3edf652d44fb7b",
+   "sha256": "41ebb5b3058e74c94c76d3a724df8d1804f84da42d627e7029bc6642be3d4d3f",
    "schema": "skill.schema.json"
   },
   "skills/wg-wag.json": {

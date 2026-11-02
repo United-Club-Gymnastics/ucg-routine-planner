@@ -604,10 +604,11 @@ def box_label(code, x, app):
 
 def own_record(pid, entries):
     """The catalog entry that IS the planner record `pid` (not just another record of its element)."""
-    # exact, then a record split into forms (bare id = form a), then the Development Program's
-    # own ids (the planner names DP E skills USAG-...), then vault numbers.
+    # exact, then a record split into forms (bare id = form a; after a hyphen when the id ends in
+    # a letter), then the Development Program's own ids (the planner names DP E skills USAG-...),
+    # then vault numbers.
     dp = pid.replace("USAG-", "USAGDP-", 1)
-    tries = [pid, pid + "a", dp, dp + "a", "WG-VT-" + pid, f"WGW-VT-{pid}-1"]
+    tries = [pid, pid + "a", pid + "-a", dp, dp + "a", "WG-VT-" + pid, f"WGW-VT-{pid}-1"]
     for t in tries:
         for code, x in entries:
             if x["rid"] == t or x["rid"] + (x.get("form") or "") == t:
