@@ -25,14 +25,16 @@ self.addEventListener('install', (event) => {
       // A device can still be running an older worker (it waits for the planner's tabs to close),
       // and an older worker answers a page it doesn't know with the planner, which can't load
       // from a folder. Give the older versions' caches these pages, under the names they look
-      // up (the folder, and the folder without its slash as a redirect), so a reload shows them.
+      // up (the folder, its index.html, and the folder without its slash as a redirect), so a
+      // reload shows them.
       for (const key of await caches.keys()) {
         if (!key.startsWith('rp-') || key === 'rp-meta' || key === CACHE) continue;
         const old = await caches.open(key);
         for (const f of PAGES) {
           const folder = f.slice(0, -'index.html'.length);
           const page = await cache.match(f);
-          if (!page || (await old.match(folder))) continue;
+          if (!page || (await old.match(f))) continue;
+          await old.put(f, page.clone());
           await old.put(folder, page.clone());
           await old.put(folder.slice(0, -1), Response.redirect(new URL(folder, self.registration.scope).href, 302));
         }

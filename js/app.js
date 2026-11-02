@@ -2241,6 +2241,8 @@ function updateRows(container, items, spec, list, changeOf = () => null) {
     const changed = changeOf(row);
     const [text, title] = row?.noCredit
       ? ['Not credited here', "None of the codes this level uses has this skill, so it earns nothing. Pick a replacement or remove it."]
+      : row?.notRecognised
+        ? ['Not recognised', "The judges didn't recognise this skill in the calibration routine, so it earns nothing. Judge practice says why."]
       : changed
         ? ['Value changed', `The Code now gives this skill ${changeText(changed.now, changed.keys)}; this routine has ${changeText(changed.was, changed.keys)}. Tap “Update values” under the routine to use the Code's values.`]
       : flagFor(it, spec)[0]
@@ -2709,18 +2711,19 @@ const guestOkToReload = () =>
   !guestHasWork() || (reloadConfirmed = confirm("You're not signed in, so reloading clears your athletes and routines. Reload anyway?"));
 watchForUpdates();
 
-// ---- A calibration routine from judge practice (?calibration=BB_2) -----------------------
-// calibration/infinity/ links here to show a routine skill by skill: the planner opens with
+// ---- A calibration routine from judge practice (?calibration=BB_2, ?calibration=mag/adv-fx) --
+// calibration/infinity/ and calibration/mag/ link here to show a routine skill by skill: the planner opens with
 // just that routine, as a guest that can't sign in, so nothing is read from or saved to an account.
 const CALIBRATION = new URLSearchParams(location.search).get('calibration');
 
 async function openCalibration(id) {
   app.innerHTML = '<p class="loading">Loading the routine…</p>';
-  const [{ calibrationAthlete, condensedOf }] = await Promise.all([import('./calibration-view.js'), loadDiscipline('wag')]);
+  const mag = id.startsWith('mag/');
+  const [{ calibrationAthlete, condensedOf }] = await Promise.all([import('./calibration-view.js'), loadDiscipline(mag ? 'mag' : 'wag')]);
   const match = (ev, s) =>
     closestSkill('wag', ev, s.name, (x) => wagSkillAllowed('infinity', 'inf', x) && x.value === s.letter && condensedOf(ev, x.group) === s.group);
   const found = calibrationAthlete(id, uid, match);
-  const practice = `calibration/infinity/${found ? `#${encodeURIComponent(found.routine.id)}` : ''}`;
+  const practice = `calibration/${mag ? 'mag' : 'infinity'}/${found ? `#${encodeURIComponent(found.routine.practiceId || found.routine.id)}` : ''}`;
   const banner = $('#calibration-banner');
   banner.hidden = false;
   if (!found) {
@@ -2735,7 +2738,8 @@ async function openCalibration(id) {
   state.entryId = a.entries[0].id;
   state.tab[a.entries[0].id] = found.routine.event;
   renderAll();
-  banner.innerHTML = `<span><strong>Calibration routine ${esc(found.routine.id)}</strong>, from judge practice, laid out in the planner. Nothing here is saved: try changes freely.</span>
+  const stick = found.routine.stick ? ` The stuck landing's +${found.routine.stick.toFixed(1)} isn't part of a plan, so the start value here is ${found.routine.stick.toFixed(1)} lower than judge practice's.` : '';
+  banner.innerHTML = `<span><strong>Calibration routine ${esc(found.routine.id)}</strong>, from judge practice, laid out in the planner. Nothing here is saved: try changes freely.${stick}</span>
     <span class="banner-actions"><a class="banner-btn" href="${practice}">Back to judge practice</a></span>`;
 }
 
