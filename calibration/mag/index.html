@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MAG Calibration · UCG Judge Practice</title>
+    <meta name="description" content="Practice judging UCG MAG routines (Developmental, Intermediate, Advanced) on calibration videos: enter difficulty, neutral and execution deductions, and check them against the answer key." />
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../infinity/practice.css?v=__BUILD__" />
+    <link rel="stylesheet" href="practice.css?v=__BUILD__" />
+  </head>
+  <body>
+    <header class="cp-header">
+      <img src="../../assets/ucg-mark.svg" alt="" class="cp-mark" />
+      <div>
+        <h1 class="cp-display">Judge Practice</h1>
+        <p class="cp-subhead">MAG · calibration routines</p>
+      </div>
+      <p class="cp-progress" id="cp-progress"></p>
+    </header>
+
+    <nav class="cp-picker" aria-label="Routines">
+      <div class="cp-tabs" role="tablist" id="cp-tabs"></div>
+      <div class="cp-chips" id="cp-chips"></div>
+      <p class="cp-legend"><span class="cp-legend-right">✓</span> right <span class="cp-legend-off">•</span> tried, not right yet</p>
+    </nav>
+
+    <main class="cp-main is-landscape" id="cp-main">
+      <section class="cp-video-col" aria-label="Routine video">
+        <div class="cp-video-frame">
+          <iframe id="cp-video" title="Routine video" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <p class="cp-video-meta"><span id="cp-video-name"></span> · <a id="cp-video-link" target="_blank" rel="noopener"></a></p>
+        <p class="cp-intro" id="cp-intro"></p>
+      </section>
+
+      <section class="cp-calc-col" aria-label="Judging calculator">
+        <form id="cp-calc" autocomplete="off" novalidate>
+          <div class="cp-card cp-nonvault">
+            <div class="cp-card-head">
+              <h2 class="cp-display">Counting skills</h2>
+              <span class="cp-chip" id="cp-count"></span>
+            </div>
+            <p class="cp-hint" id="cp-skills-hint"></p>
+            <div id="cp-skills"></div>
+            <p class="cp-eg-line" id="cp-eg-line"></p>
+          </div>
+
+          <div class="cp-card cp-vault-only" id="cp-vault-card">
+            <h2 class="cp-display">Vault</h2>
+            <p class="cp-hint">From the MAG vault table, at this level's values.</p>
+            <label class="cp-sr" for="cp-vault">Vault</label>
+            <select id="cp-vault"></select>
+          </div>
+
+          <div class="cp-card" id="cp-bonus-card">
+            <h2 class="cp-display">Bonus</h2>
+            <div id="cp-bonus" class="cp-checks"></div>
+          </div>
+
+          <div class="cp-card">
+            <h2 class="cp-display">Neutral deductions</h2>
+            <div id="cp-missing" class="cp-checks"></div>
+            <label class="cp-field cp-live" id="cp-nd-row">Other neutral deductions <input type="number" id="cp-nd" min="0" step="0.1" placeholder="0.0" inputmode="decimal" /><span class="cp-key" hidden></span></label>
+          </div>
+
+          <div class="cp-card">
+            <h2 class="cp-display">Execution</h2>
+            <label class="cp-field cp-live" id="cp-e-row">Total execution deductions <input type="number" id="cp-e" min="0" step="0.1" placeholder="0.0" inputmode="decimal" /><span class="cp-key" hidden></span></label>
+          </div>
+
+          <div class="cp-score cp-score-mag" aria-live="polite">
+            <div><span class="cp-subhead">D-score</span><b class="cp-display" id="cp-d">0.0</b></div>
+            <div><span class="cp-subhead">Start value</span><b class="cp-display" id="cp-sv">—</b><small id="cp-short"></small></div>
+            <div><span class="cp-subhead">Neutral</span><b class="cp-display" id="cp-ndv">0.0</b></div>
+            <div><span class="cp-subhead">Execution</span><b class="cp-display" id="cp-ev">0.0</b></div>
+            <div class="cp-final"><span class="cp-subhead">Final</span><b class="cp-display" id="cp-final">—</b></div>
+          </div>
+
+          <div class="cp-actions">
+            <button type="button" class="cp-btn cp-btn-primary" id="cp-check">Did I get it right?</button>
+            <button type="button" class="cp-btn" id="cp-reset">Reset</button>
+          </div>
+        </form>
+
+        <div id="cp-result" hidden></div>
+      </section>
+    </main>
+
+    <section class="cp-breakdown" id="cp-breakdown" hidden aria-label="Routine laid out"></section>
+
+    <footer class="cp-footer">
+      Feedback? <a href="mailto:rules@unitedclubgymnastics.org">rules@unitedclubgymnastics.org</a>
+    </footer>
+
+    <script type="module" src="practice.js"></script>
+  </body>
+</html>

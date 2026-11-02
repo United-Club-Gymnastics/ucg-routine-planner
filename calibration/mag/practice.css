@@ -1,0 +1,76 @@
+/* Judge practice for MAG (calibration/mag/): on top of the Infinity page's stylesheet
+   (../infinity/practice.css, which the build puts first), the MAG calculator's parts:
+   a value and an element group for each counting skill, live deduction inputs, the final score. */
+
+/* The videos are all landscape; the calculator is wide enough for a skill's buttons on one line. */
+@media (min-width: 1081px) {
+  .cp-main.is-landscape { grid-template-columns: minmax(440px, 780px) minmax(380px, 520px); }
+}
+
+/* ---- one counting skill: value + element group, as buttons ---- */
+.cp-skill { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; border: 0; border-top: 1px solid var(--border-soft); margin: 0; padding: 7px 0; min-width: 0; }
+.cp-skill-n { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; width: 1.2em; text-align: right; color: var(--dark-blue-green); }
+.cp-seg { display: inline-flex; }
+.cp-seg label { position: relative; cursor: pointer; }
+.cp-seg input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.cp-seg span { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 36px; padding: 0 6px; border: 1.5px solid var(--border); margin-left: -1.5px; background: var(--white); color: var(--navy); font-weight: 700; font-size: 0.92rem; touch-action: manipulation; }
+.cp-seg label:first-child span { border-radius: 8px 0 0 8px; margin-left: 0; }
+.cp-seg label:last-child span { border-radius: 0 8px 8px 0; }
+.cp-seg label:hover span { background: var(--light-blue); }
+.cp-seg input:checked + span { background: var(--navy); border-color: var(--navy); color: var(--white); position: relative; z-index: 1; }
+.cp-seg input:focus-visible + span { outline: 3px solid var(--dark-blue-green); outline-offset: 2px; position: relative; z-index: 2; }
+.cp-seg input:disabled + span { background: var(--light-blue); color: var(--fg-secondary); cursor: not-allowed; }
+.cp-seg-value span { min-width: 30px; }
+.cp-clear { margin-left: auto; width: 32px; height: 32px; border: 1.5px solid var(--border); border-radius: 8px; background: var(--white); color: var(--navy); font-size: 1.1rem; line-height: 1; cursor: pointer; }
+.cp-clear:hover { background: var(--light-blue); }
+.cp-eg-line { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border-soft); font-size: 0.9rem; }
+.cp-eg-line b { color: var(--dark-blue-green); }
+
+/* bonus counts and the stick bonus: a label with a small input on the right */
+.cp-check-num { cursor: default; }
+.cp-check-num > span:first-child { margin-right: auto; }
+.cp-check small { color: var(--fg-secondary); margin-left: 4px; }
+.cp-check-num input, .cp-check-num select { width: 84px; height: 38px; border: 1.5px solid var(--border-field); border-radius: 8px; background: var(--white); padding: 0 8px; flex: none; }
+.cp-check-num .cp-key { margin-left: 0; }
+
+/* live deduction inputs (the Infinity page shows them switched off) */
+.cp-field.cp-live { padding: 6px 10px; margin: 6px -10px 0; border: 1.5px solid transparent; border-radius: 10px; }
+.cp-field.cp-live input { width: 110px; height: 44px; border: 1.5px solid var(--border-field); border-radius: 10px; background: var(--white); padding: 0 12px; cursor: text; margin-left: auto; }
+.cp-field.cp-live .cp-key { margin-left: 0; }
+#cp-missing:empty { display: none; }
+
+.cp-intro { display: block; }
+
+/* the score: D, start value, neutral, execution, final */
+.cp-score-mag { flex-wrap: wrap; }
+.cp-score-mag > div { min-width: 70px; }
+.cp-score-mag b { font-size: 1.9rem; }
+.cp-score-mag .cp-final b { font-size: 2.6rem; }
+
+/* result lines: start value, neutral, execution */
+.cp-lines { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 4px; }
+.cp-lines li { padding: 6px 10px; border-radius: 8px; border: 1.5px solid; }
+.cp-lines li.is-right { background: var(--right-tint); border-color: var(--blue-green); }
+.cp-lines li.is-wrong { background: var(--urgent-tint); border-color: var(--red-orange); }
+.cp-lines small { color: var(--fg-secondary); }
+
+/* the routine laid out */
+.cp-status.is-nr { background: var(--urgent-tint); }
+.cp-status.is-top { background: var(--light-blue); }
+.cp-table tr.cp-line td { background: var(--light-blue); font-size: 0.88rem; }
+.cp-sum { row-gap: 10px; }
+
+@media (max-width: 760px) {
+  /* Three level names side by side on a phone. */
+  .cp-tabs { max-width: 100%; }
+  .cp-tabs button { padding: 8px 8px; letter-spacing: 0.04em; font-size: 0.85rem; }
+  .cp-seg span { min-width: 30px; height: 38px; padding: 0 4px; font-size: 0.85rem; }
+  .cp-seg-value span { min-width: 28px; }
+  .cp-skill-n { width: auto; }
+  .cp-score-mag b { font-size: 1.5rem; }
+  .cp-score-mag .cp-final b { font-size: 2rem; }
+  /* Every column stays (element group, every deduction): the table scrolls inside its card. */
+  .cp-breakdown .cp-card { overflow-x: auto; }
+  .cp-table { min-width: 560px; }
+  .cp-table th:nth-child(4), .cp-table td:nth-child(4) { display: table-cell; }
+}

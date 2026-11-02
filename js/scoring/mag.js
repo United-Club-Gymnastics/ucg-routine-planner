@@ -26,6 +26,9 @@ export const FX_DOUBLE_SALTOS = [
 // A skill typed in by hand: go by its name.
 const DOUBLE_NAME = /\b(double|dbl|triple|full[- ]?in|full[- ]?out|half[- ]?in|half[- ]?out)\b/i;
 export const isDoubleSalto = (it) => (it.skillId ? FX_DOUBLE_SALTOS.includes(it.skillId) : DOUBLE_NAME.test(it.name));
+// Floor: the round-off is an acro element with no element group (UCG CoP), so it can open a tumbling pass.
+const FX_ROUND_OFF = 'UCG-FX-round-off-stuck-rebound-or-connected-to-other-acro';
+const isRoundOff = (it) => (it.skillId ? it.skillId === FX_ROUND_OFF : /\bround[- ]?off\b/i.test(it.name));
 
 // Requirements and bonuses the routine itself can show. Each takes the listed
 // skills (no blanks) and returns the skill that meets it, if any.
@@ -38,8 +41,12 @@ const DETECT = {
     return last && isDoubleSalto(last) ? last : undefined;
   },
   balance: (skills) => skills.find((it) => FX_BALANCE_OR_JUMP.includes(it.skillId)),
-  // The first skill is an acro element (EG II-IV): the routine starts with a tumbling pass.
-  tumbleStart: (skills) => ([2, 3, 4].includes(skills[0]?.eg) ? skills[0] : undefined),
+  // The first skill is an acro element (EG II-IV, or a round-off, which has no EG): the routine
+  // starts with a tumbling pass (MAG-NL-1: opening with a non-acro element costs 0.3).
+  tumbleStart: (skills) => {
+    const first = skills[0];
+    return first && ([2, 3, 4].includes(first.eg) || isRoundOff(first)) ? first : undefined;
+  },
 };
 
 export const EXECUTION = 10;
@@ -161,7 +168,7 @@ export function eventOptions(event, level) {
     }
     if (WG.fxStartTumbling.ucg_levels.includes(level)) {
       o.push({ id: 'tumbleStart', kind: 'check', value: WG.fxStartTumbling.neutral, deduction: true, detect: true, label: 'Starts with a tumbling pass',
-        help: "Required: -0.3 neutral deduction if the routine doesn't start with a tumbling pass. Ticked automatically when the first skill listed is from EG II, III or IV." });
+        help: "Required: -0.3 neutral deduction if the routine doesn't start with a tumbling pass. Ticked automatically when the first skill listed is from EG II, III or IV, or a round-off." });
     }
   }
   if (event === 'ph' && level === 'dev') {
@@ -204,8 +211,9 @@ export function letterValue(letter) {
   return LETTER_VALUES[l] ?? LETTER_VALUES[l.toUpperCase()] ?? 0;
 }
 
-// A skill re-valued as "not credited at this level" (revalue.js) counts for nothing, routine length included.
-const isFilled = (s) => !!(s && !s.noCredit && (String(s.name || '').trim() || s.letter));
+// A skill re-valued as "not credited at this level" (revalue.js), or one the judges didn't recognise
+// (a judge-practice calibration routine), counts for nothing, routine length included.
+const isFilled = (s) => !!(s && !s.noCredit && !s.notRecognised && (String(s.name || '').trim() || s.letter));
 export const SR_MAX_STATIC = 3; // WG rings: EG II/III skills before a B or higher EG I skill
 
 // "Back giant", "backgiant" and "Back-Giant" are the same skill.

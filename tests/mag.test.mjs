@@ -354,3 +354,18 @@ test('redirect hook (MAG and WAG loaders): only a missing id is mapped, and only
   const { REDIRECTS } = await import('../js/data/wag-redirects.js');
   assert.equal(typeof REDIRECTS, 'object'); // generated from the bundle (empty while no WAG id is retired)
 });
+
+// MAG-NL-1: an Advanced floor routine must open with an acro element (−0.3 otherwise). The round-off
+// has no element group but is one.
+test('Advanced floor: a routine opening with a round-off starts with a tumbling pass', () => {
+  const pass = [
+    { name: 'Round-off', letter: 'A', eg: '', skillId: 'UCG-FX-round-off-stuck-rebound-or-connected-to-other-acro' },
+    { name: 'Back handspring', letter: 'A', eg: 3, skillId: 'WG-FX-III-2' },
+    { name: 'Double back tuck', letter: 'C', eg: 3, skillId: 'WG-FX-III-3' },
+  ];
+  const tumbles = (skills) => !!scoreRoutine('fx', 'adv', skills).detected.tumbleStart;
+  assert.equal(tumbles(pass), true);
+  assert.equal(tumbles([{ name: 'Round off', letter: 'A', eg: '' }, ...pass.slice(1)]), true); // typed in
+  assert.equal(tumbles([{ name: 'L-sit (2 s.)', letter: 'A', eg: '', skillId: 'UCG-FX-l-sit-2-s' }, ...pass]), false);
+  assert.equal(tumbles([{ name: 'Cartwheel', letter: 'Sub-A', eg: '', skillId: 'UCG-FX-cartwheel' }, ...pass]), false);
+});

@@ -278,7 +278,7 @@ export function listedValues(e, evId, s) {
  * adjusted value): row.base then holds the list's values at the time, and is compared instead.
  */
 export function valueChange(e, evId, row) {
-  if (!row?.skillId || !row.fromList || row.noCredit) return null;
+  if (!row?.skillId || !row.fromList || row.noCredit || row.notRecognised) return null;
   // Copied from another level before rows kept the list's values (row.base): can't tell.
   if (e.revalued && !e.catalog && !row.base) return null;
   const s = findSkill(row.skillId);
