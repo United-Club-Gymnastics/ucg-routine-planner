@@ -1,7 +1,7 @@
 {
  "discipline": "MAG",
- "version": "a7e5fe626490",
- "built": "2026-10-24",
+ "version": "2cbbc6898de4",
+ "built": "2026-11-02",
  "elements": [
   {
    "id": "MAG-FX-0001",
@@ -12991,19 +12991,20 @@
    "id": "MAG-PH-0034",
    "discipline": "MAG",
    "apparatus": "PH",
-   "short_name": "Circle through handstand back down to circles",
+   "short_name": "Flair or circle through handstand (with or without ½ t.) and lower to flair or circle",
    "aka": [],
    "eponym": "Tippelt",
    "codes": {
     "WG-MAG-2025": [
      {
-      "rid": "WG-PH-II-51",
-      "short_name": "Circle through handstand back down to circles",
+      "rid": "WG-PH-II-51a",
+      "short_name": "Flair or circle through handstand (with or without ½ t.) and lower to flair or circle",
       "number": "51",
       "variant": 1,
       "value": "C=0.3",
       "element_group": "II",
-      "eponym": "Tippelt"
+      "eponym": "Tippelt",
+      "form": "a"
      }
     ]
    }
@@ -13018,13 +13019,14 @@
    "codes": {
     "WG-MAG-2025": [
      {
-      "rid": "WG-PH-II-52",
+      "rid": "WG-PH-II-52a",
       "short_name": "Flair with backward hop through handstand",
       "number": "52",
       "variant": 1,
       "value": "D=0.4",
       "element_group": "II",
-      "eponym": ""
+      "eponym": "",
+      "form": "a"
      }
     ]
    }
@@ -14382,19 +14384,20 @@
    "id": "MAG-PH-0100",
    "discipline": "MAG",
    "apparatus": "PH",
-   "short_name": "One-pommel Russian 270° to handstand dismount",
+   "short_name": "From pommels, circle with 1/4 turn to Russian wendeswing 270° on one pommel to handstand",
    "aka": [],
    "eponym": "Dolidze",
    "codes": {
     "WG-MAG-2025": [
      {
-      "rid": "WG-PH-IV-10",
-      "short_name": "One-pommel Russian 270° to handstand dismount",
+      "rid": "WG-PH-IV-10a",
+      "short_name": "From pommels, circle with 1/4 turn to Russian wendeswing 270° on one pommel to handstand",
       "number": "10",
       "variant": 1,
       "value": "D=0.4",
       "element_group": "IV",
-      "eponym": "Dolidze"
+      "eponym": "Dolidze",
+      "form": "a"
      }
     ]
    }
@@ -14424,19 +14427,20 @@
    "id": "MAG-PH-0102",
    "discipline": "MAG",
    "apparatus": "PH",
-   "short_name": "Dismount through one-pommel handstand",
+   "short_name": "DSA, reverse Stöckli or circle on one pommel through handstand",
    "aka": [],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
      {
-      "rid": "WG-PH-IV-15",
-      "short_name": "Dismount through one-pommel handstand",
+      "rid": "WG-PH-IV-15a",
+      "short_name": "DSA, reverse Stöckli or circle on one pommel through handstand",
       "number": "15",
       "variant": 1,
       "value": "C=0.3",
       "element_group": "IV",
-      "eponym": ""
+      "eponym": "",
+      "form": "a"
      }
     ]
    }
@@ -14451,13 +14455,14 @@
    "codes": {
     "WG-MAG-2025": [
      {
-      "rid": "WG-PH-IV-16",
+      "rid": "WG-PH-IV-16a",
       "short_name": "DSA backward hop to far-end handstand dismount",
       "number": "16",
       "variant": 1,
       "value": "D=0.4",
       "element_group": "IV",
-      "eponym": "Jessen/Loos"
+      "eponym": "Jessen/Loos",
+      "form": "a"
      }
     ]
    }
@@ -14466,19 +14471,20 @@
    "id": "MAG-PH-0104",
    "discipline": "MAG",
    "apparatus": "PH",
-   "short_name": "Handstand dismount from circle or flair",
+   "short_name": "Circle or flair through handstand (also with ¾ t. with or without travel)",
    "aka": [],
    "eponym": "",
    "codes": {
     "WG-MAG-2025": [
      {
-      "rid": "WG-PH-IV-20",
-      "short_name": "Handstand dismount from circle or flair",
+      "rid": "WG-PH-IV-20a",
+      "short_name": "Circle or flair through handstand (also with ¾ t. with or without travel)",
       "number": "20",
       "variant": 1,
       "value": "B=0.2",
       "element_group": "IV",
-      "eponym": ""
+      "eponym": "",
+      "form": "a"
      }
     ]
    }
@@ -14493,13 +14499,14 @@
    "codes": {
     "WG-MAG-2025": [
      {
-      "rid": "WG-PH-IV-21",
+      "rid": "WG-PH-IV-21a",
       "short_name": "Backward hop to handstand dismount",
       "number": "21",
       "variant": 1,
       "value": "C=0.3",
       "element_group": "IV",
-      "eponym": ""
+      "eponym": "",
+      "form": "a"
      }
     ]
    }
@@ -14508,19 +14515,20 @@
    "id": "MAG-PH-0106",
    "discipline": "MAG",
    "apparatus": "PH",
-   "short_name": "180° Russian across horse to handstand dismount",
+   "short_name": "180° Russian from one end of the horse to the other end through handstand to dismount. Bertoncelj through handstand to dismount",
    "aka": [],
    "eponym": "Targhetta",
    "codes": {
     "WG-MAG-2025": [
      {
-      "rid": "WG-PH-IV-22",
-      "short_name": "180° Russian across horse to handstand dismount",
+      "rid": "WG-PH-IV-22a",
+      "short_name": "180° Russian from one end of the horse to the other end through handstand to dismount. Bertoncelj through handstand to dismount",
       "number": "22",
       "variant": 1,
       "value": "D=0.4",
       "element_group": "IV",
-      "eponym": "Targhetta"
+      "eponym": "Targhetta",
+      "form": "a"
      }
     ]
    }
@@ -14938,13 +14946,14 @@
    "codes": {
     "UCG-MAG-ADD": [
      {
-      "rid": "UCG-PH-half-spindle-over-one-pommel-handstand-dismount",
+      "rid": "UCG-PH-half-spindle-over-one-pommel-handstand-dismount-a",
       "short_name": "From circles or flairs with one pommel between hands, ½ spindle through handstand and dismount",
       "number": "18",
       "variant": 1,
       "value": "C",
       "element_group": "IV",
       "eponym": "Pearce",
+      "form": "a",
       "note": "",
       "video": "https://youtu.be/2fOvri6l_F4"
      }
@@ -15049,13 +15058,14 @@
    "codes": {
     "UCG-MAG-ADD": [
      {
-      "rid": "UCG-PH-half-spindle-to-handstand-dismount-from-over-the-handles",
+      "rid": "UCG-PH-half-spindle-to-handstand-dismount-from-over-the-handles-a",
       "short_name": "From circles or flairs with both pommels between hands, ½ spindle through handstand and dismount",
       "number": "21",
       "variant": 1,
       "value": "D",
       "element_group": "IV",
       "eponym": "",
+      "form": "a",
       "note": "",
       "video": "https://youtu.be/toUG9QqVWlI"
      }
@@ -15534,6 +15544,410 @@
       "eponym": "",
       "note": "Gymnast must not be touching the apparatus when their feet land",
       "video": "https://youtu.be/7_YFy4wdFZg"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0143",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "Flair or circle through handstand and lower to flair or circle, 360°+ turn or 3/3 travel (min. 180° turn)",
+   "aka": [],
+   "eponym": "Tippelt",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PH-II-51b",
+      "short_name": "Flair or circle through handstand and lower to flair or circle, 360°+ turn or 3/3 travel (min. 180° turn)",
+      "number": "51",
+      "variant": 1,
+      "value": "D=0.4",
+      "element_group": "II",
+      "eponym": "Tippelt",
+      "form": "b"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0144",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "Flair or circle through handstand and lower to flair or circle, 360°+ turn and 3/3 travel",
+   "aka": [],
+   "eponym": "Tippelt",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PH-II-51c",
+      "short_name": "Flair or circle through handstand and lower to flair or circle, 360°+ turn and 3/3 travel",
+      "number": "51",
+      "variant": 1,
+      "value": "E=0.5",
+      "element_group": "II",
+      "eponym": "Tippelt",
+      "form": "c"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0145",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "Flair with backward hop through handstand, 360°+ turn or 3/3 travel (min. 180° turn)",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PH-II-52b",
+      "short_name": "Flair with backward hop through handstand, 360°+ turn or 3/3 travel (min. 180° turn)",
+      "number": "52",
+      "variant": 1,
+      "value": "E=0.5",
+      "element_group": "II",
+      "eponym": "",
+      "form": "b"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0146",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "Flair with backward hop through handstand, 360°+ turn and 3/3 travel",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PH-II-52c",
+      "short_name": "Flair with backward hop through handstand, 360°+ turn and 3/3 travel",
+      "number": "52",
+      "variant": 1,
+      "value": "F=0.6",
+      "element_group": "II",
+      "eponym": "",
+      "form": "c"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0147",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "From pommels, circle with 1/4 turn to Russian wendeswing 270° on one pommel to handstand, 450°+ turn or 3/3 travel (min. 270° turn)",
+   "aka": [],
+   "eponym": "Dolidze",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PH-IV-10b",
+      "short_name": "From pommels, circle with 1/4 turn to Russian wendeswing 270° on one pommel to handstand, 450°+ turn or 3/3 travel (min. 270° turn)",
+      "number": "10",
+      "variant": 1,
+      "value": "E=0.5",
+      "element_group": "IV",
+      "eponym": "Dolidze",
+      "form": "b"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0148",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "From pommels, circle with 1/4 turn to Russian wendeswing 270° on one pommel to handstand, 450°+ turn and 3/3 travel",
+   "aka": [],
+   "eponym": "Dolidze",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PH-IV-10c",
+      "short_name": "From pommels, circle with 1/4 turn to Russian wendeswing 270° on one pommel to handstand, 450°+ turn and 3/3 travel",
+      "number": "10",
+      "variant": 1,
+      "value": "F=0.6",
+      "element_group": "IV",
+      "eponym": "Dolidze",
+      "form": "c"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0149",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "DSA, reverse Stöckli or circle on one pommel through handstand, 450°+ turn or 3/3 travel (min. 270° turn)",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PH-IV-15b",
+      "short_name": "DSA, reverse Stöckli or circle on one pommel through handstand, 450°+ turn or 3/3 travel (min. 270° turn)",
+      "number": "15",
+      "variant": 1,
+      "value": "D=0.4",
+      "element_group": "IV",
+      "eponym": "",
+      "form": "b"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0150",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "DSA backward hop to far-end handstand dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+   "aka": [],
+   "eponym": "Jessen/Loos",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PH-IV-16b",
+      "short_name": "DSA backward hop to far-end handstand dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+      "number": "16",
+      "variant": 1,
+      "value": "E=0.5",
+      "element_group": "IV",
+      "eponym": "Jessen/Loos",
+      "form": "b"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0151",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "DSA backward hop to far-end handstand dismount, 450°+ turn and 3/3 travel",
+   "aka": [],
+   "eponym": "Jessen/Loos",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PH-IV-16c",
+      "short_name": "DSA backward hop to far-end handstand dismount, 450°+ turn and 3/3 travel",
+      "number": "16",
+      "variant": 1,
+      "value": "F=0.6",
+      "element_group": "IV",
+      "eponym": "Jessen/Loos",
+      "form": "c"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0152",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "Circle or flair through handstand dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PH-IV-20b",
+      "short_name": "Circle or flair through handstand dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+      "number": "20",
+      "variant": 1,
+      "value": "C=0.3",
+      "element_group": "IV",
+      "eponym": "",
+      "form": "b"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0153",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "Backward hop to handstand dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PH-IV-21b",
+      "short_name": "Backward hop to handstand dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+      "number": "21",
+      "variant": 1,
+      "value": "D=0.4",
+      "element_group": "IV",
+      "eponym": "",
+      "form": "b"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0154",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "Backward hop to handstand dismount, 450°+ turn and 3/3 travel",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PH-IV-21c",
+      "short_name": "Backward hop to handstand dismount, 450°+ turn and 3/3 travel",
+      "number": "21",
+      "variant": 1,
+      "value": "E=0.5",
+      "element_group": "IV",
+      "eponym": "",
+      "form": "c"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0155",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "180° Russian end to end, or Bertoncelj, through handstand to dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+   "aka": [],
+   "eponym": "Targhetta",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PH-IV-22b",
+      "short_name": "180° Russian end to end, or Bertoncelj, through handstand to dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+      "number": "22",
+      "variant": 1,
+      "value": "E=0.5",
+      "element_group": "IV",
+      "eponym": "Targhetta",
+      "form": "b"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0156",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "180° Russian end to end, or Bertoncelj, through handstand to dismount, 450°+ turn and 3/3 travel",
+   "aka": [],
+   "eponym": "Targhetta",
+   "codes": {
+    "WG-MAG-2025": [
+     {
+      "rid": "WG-PH-IV-22c",
+      "short_name": "180° Russian end to end, or Bertoncelj, through handstand to dismount, 450°+ turn and 3/3 travel",
+      "number": "22",
+      "variant": 1,
+      "value": "F=0.6",
+      "element_group": "IV",
+      "eponym": "Targhetta",
+      "form": "c"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0157",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "From circles or flairs with one pommel between hands, ½ spindle through handstand and dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+   "aka": [],
+   "eponym": "Pearce",
+   "codes": {
+    "UCG-MAG-ADD": [
+     {
+      "rid": "UCG-PH-half-spindle-over-one-pommel-handstand-dismount-b",
+      "short_name": "From circles or flairs with one pommel between hands, ½ spindle through handstand and dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+      "number": "18",
+      "variant": 1,
+      "value": "D",
+      "element_group": "IV",
+      "eponym": "Pearce",
+      "form": "b",
+      "note": "",
+      "video": "https://youtu.be/2fOvri6l_F4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0158",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "From circles or flairs with one pommel between hands, ½ spindle through handstand and dismount, 450°+ turn and 3/3 travel",
+   "aka": [],
+   "eponym": "Pearce",
+   "codes": {
+    "UCG-MAG-ADD": [
+     {
+      "rid": "UCG-PH-half-spindle-over-one-pommel-handstand-dismount-c",
+      "short_name": "From circles or flairs with one pommel between hands, ½ spindle through handstand and dismount, 450°+ turn and 3/3 travel",
+      "number": "18",
+      "variant": 1,
+      "value": "E",
+      "element_group": "IV",
+      "eponym": "Pearce",
+      "form": "c",
+      "note": "",
+      "video": "https://youtu.be/2fOvri6l_F4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0159",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "From circles or flairs with both pommels between hands, ½ spindle through handstand and dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "UCG-MAG-ADD": [
+     {
+      "rid": "UCG-PH-half-spindle-to-handstand-dismount-from-over-the-handles-b",
+      "short_name": "From circles or flairs with both pommels between hands, ½ spindle through handstand and dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+      "number": "21",
+      "variant": 1,
+      "value": "E",
+      "element_group": "IV",
+      "eponym": "",
+      "form": "b",
+      "note": "",
+      "video": "https://youtu.be/toUG9QqVWlI"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0160",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "From circles or flairs with both pommels between hands, ½ spindle through handstand and dismount, 450°+ turn and 3/3 travel",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "UCG-MAG-ADD": [
+     {
+      "rid": "UCG-PH-half-spindle-to-handstand-dismount-from-over-the-handles-c",
+      "short_name": "From circles or flairs with both pommels between hands, ½ spindle through handstand and dismount, 450°+ turn and 3/3 travel",
+      "number": "21",
+      "variant": 1,
+      "value": "F",
+      "element_group": "IV",
+      "eponym": "",
+      "form": "c",
+      "note": "",
+      "video": "https://youtu.be/toUG9QqVWlI"
      }
     ]
    }

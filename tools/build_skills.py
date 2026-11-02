@@ -50,12 +50,32 @@ def skill_file(name):
     return json.load(open(os.path.join(BUNDLE, name), encoding="utf-8"))
 
 
+def with_forms(row, r):
+    """A record split into forms (pommel horse handstand elements, one per value they can earn: the
+    bundle's `forms`): one skill each, ID = the record's + the form letter (after a hyphen when the ID
+    ends in a letter), as gym-skill-extract's catalog does. Form "a" keeps the bare ID as an alias, so
+    routines saved before the split still find it. An upgraded form's note is the rule."""
+    if not r.get("forms"):
+        return [row]
+    rule = (r.get("forms_rule") or "").split(". ")[0].rstrip(".") + "."
+    out = []
+    for f in r["forms"]:
+        fid = f"{row['id']}-{f['form']}" if row["id"][-1:].isalpha() else row["id"] + f["form"]
+        x = {**row, "id": fid, "name": f["name"], "value": f.get("value", row["value"]).split("=")[0]}
+        if f["form"] == "a":
+            x["alias"] = row["id"]
+        else:
+            x["note"] = rule
+        out.append(x)
+    return out
+
+
 def wg_skills(wg):
     out = []
     for s in wg["records"]:
         if s["apparatus"] not in APPS:
             continue
-        out.append({
+        out += with_forms({
             "id": f"WG-{s['apparatus']}-{s['element_group']}-{s['number']}",  # FIG numbers restart in each EG
             "app": s["apparatus"].lower(),
             "name": s["description"],  # the bundle's public name, not necessarily the Code's text
@@ -64,7 +84,7 @@ def wg_skills(wg):
             "eg": ROMAN.get(s["element_group"]),
             "src": "WG",
             "note": "",
-        })
+        }, s)
     return out
 
 
@@ -75,7 +95,7 @@ def ucg_skills(ucg):
         if r["apparatus"] not in APPS + ["VT"] or r.get("removed"):
             continue
         note = r.get("note") or ""
-        out.append({
+        out += with_forms({
             "id": r["id"],
             "app": r["apparatus"].lower(),
             "name": r["description"],
@@ -84,7 +104,7 @@ def ucg_skills(ucg):
             "eg": ROMAN.get(r["element_group"]),
             "src": "UCG",
             "note": NOTE_EDITS.get(note, note),
-        })
+        }, r)
     return out
 
 

@@ -11,14 +11,15 @@ const byId = (id) => ROUTINES.find((r) => r.id === id);
 const sum = (xs) => Math.round(xs.reduce((a, b) => a + b, 0) * 10) / 10;
 
 // This season's keys: start value, neutral deductions, final. Last season's doc had higher start
-// values where an A became Sub-A (2026-28 UCG CoP), and Intermediate rings EG I at 0.3 (now 0.5).
+// values where an A became Sub-A (2026-28 UCG CoP; Intermediate high bar's half turn is UCG HB 3, Sub-A),
+// and Intermediate rings EG I at 0.3 (now 0.5).
 const KEYS = {
   'dev-fx': [11.4, 0, 10.6], 'int-fx': [11.6, 0, 11.1], 'adv-fx': [13.2, 0.6, 8.4],
   'dev-ph': [11.1, 0, 9.0], 'int-ph': [11.4, 0, 9.6], 'adv-ph': [13.4, 0, 10.5],
   'dev-sr': [12.0, 0, 11.3], 'int-sr': [11.6, 0, 10.9], 'adv-sr': [13.6, 0, 10.9],
   'dev-vt': [11.3, 0, 10.9], 'int-vt': [11.3, 0, 10.9], 'adv-vt': [12.8, 0, 12.1],
   'dev-pb': [12.0, 0, 10.3], 'int-pb': [12.1, 0, 11.3], 'adv-pb': [12.0, 0, 10.3],
-  'dev-hb': [10.9, 0, 9.9], 'int-hb': [10.8, 0, 9.4], 'adv-hb': [12.0, 0, 8.1],
+  'dev-hb': [10.9, 0, 9.9], 'int-hb': [10.7, 0, 9.3], 'adv-hb': [12.0, 0, 8.1],
 };
 
 // The entry a judge would make from the key itself.
@@ -160,4 +161,11 @@ test('opened in the planner (?calibration=mag/…), each routine has the key’s
     assert.equal(scoreEvent(e, r.event).sv, Math.round((answerKey(r).sv - r.stick) * 10) / 10, r.id);
   }
   assert.equal(calibrationAthlete('mag/nope', () => 'x'), null);
+});
+
+test("Advanced pommel horse: the handstand dismount with 3/3 travel and 270° turn is IV.20's C form", () => {
+  const r = byId('adv-ph');
+  assert.equal(r.rows.at(-1).skillId, 'WG-PH-IV-20b');
+  const d = answerKey(r).score.items.at(-1);
+  assert.deepEqual([d.letter, d.status, d.bonus], ['C', 'counting', 0.3]);
 });

@@ -293,7 +293,7 @@ function showBreakdown(key) {
       return `<tr class="${kind === 'counting' ? '' : 'is-muted'}">
         <td class="cp-num">${i + 1}</td>
         <td>${esc(src.name)}${listed}</td>
-        <td class="cp-nowrap"><span class="cp-val">${esc(src.letter || '–')}</span>${src.letter ? ` ${f1(it.value)}` : ''}</td>
+        <td class="cp-nowrap"><span class="cp-val">${esc(it.letter || '–')}</span>${it.letter ? ` ${f1(it.value)}` : ''}</td>
         <td>${src.eg ? ROMAN[src.eg] : '–'}</td>
         <td><span class="cp-status ${cls}" title="${esc(title)}">${label}</span></td>
         <td class="cp-num">${it.bonus ? `+${f1(it.bonus)}` : ''}</td>

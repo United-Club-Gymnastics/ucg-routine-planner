@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/nssharpe/gym-skill-extract/schema/skill.schema.json",
   "title": "Skill file (one code edition)",
-  "description": "Version 0.3.0 (2026-10-19): adds public_names and the record flag code_text (the bundle's WG files), and group_name is public in own-words files (x-public \"own_words\"). Version 0.2.0 (2026-10-19): adds distinct_from. Version 0.1.0 (2026-10-18), inferred from the Oct 2026 extractor outputs and ucg-code-of-points/catalog/ucg_skills.json. One file holds one code edition: the extractor outputs (WG MAG/WAG, Xcel, USAG Development, NAIGC) and the four authored UCG files (MAG, WAG, Masters MAG, Masters WAG). Field annotations: x-public says whether the field may go into the public planner bundle (true; false = Code text, private; \"ucg\" = public only for UCG codes, whose text UCG owns; \"own_words\" = public only in an own_words file). x-derived marks fields a build fills in, never edited by hand. See docs/ARCHITECTURE.md.",
+  "description": "Version 0.3.0, amended 2026-11-02: a form may carry its own value (sources.py and the planner already read it; the pommel horse handstand forms). Version 0.3.0 (2026-10-19): adds public_names and the record flag code_text (the bundle's WG files), and group_name is public in own-words files (x-public \"own_words\"). Version 0.2.0 (2026-10-19): adds distinct_from. Version 0.1.0 (2026-10-18), inferred from the Oct 2026 extractor outputs and ucg-code-of-points/catalog/ucg_skills.json. One file holds one code edition: the extractor outputs (WG MAG/WAG, Xcel, USAG Development, NAIGC) and the four authored UCG files (MAG, WAG, Masters MAG, Masters WAG). Field annotations: x-public says whether the field may go into the public planner bundle (true; false = Code text, private; \"ucg\" = public only for UCG codes, whose text UCG owns; \"own_words\" = public only in an own_words file). x-derived marks fields a build fills in, never edited by hand. See docs/ARCHITECTURE.md.",
   "type": "object",
   "required": ["schema_version", "code", "discipline", "source", "records"],
   "additionalProperties": false,
@@ -174,7 +174,7 @@
         },
         "same_as": { "type": "array", "items": { "type": "string" }, "x-public": true },
         "forms": {
-          "description": "Separately credited forms of one printed record (UCG rulings).",
+          "description": "Separately credited forms of one printed record (UCG rulings), each with its own planner ID (the record's plus the form letter).",
           "type": "array",
           "items": {
             "type": "object",
@@ -186,7 +186,8 @@
               "eponym": { "type": "string" },
               "hand_support_flight": { "type": "boolean" },
               "same_as": { "type": "array", "items": { "type": "string" } },
-              "note": { "type": "string" }
+              "note": { "type": "string" },
+              "value": { "description": "The form's own value, in the record's format, when it differs (e.g. a handstand dismount upgraded by turn and travel).", "type": "string" }
             }
           },
           "x-public": true

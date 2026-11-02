@@ -319,7 +319,25 @@
    "eponym": "Pearce",
    "video": "https://youtu.be/2fOvri6l_F4",
    "drawing": true,
-   "added": "2026-10-01"
+   "added": "2026-10-01",
+   "forms": [
+    {
+     "form": "a",
+     "name": "From circles or flairs with one pommel between hands, ½ spindle through handstand and dismount"
+    },
+    {
+     "form": "b",
+     "name": "From circles or flairs with one pommel between hands, ½ spindle through handstand and dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+     "value": "D"
+    },
+    {
+     "form": "c",
+     "name": "From circles or flairs with one pommel between hands, ½ spindle through handstand and dismount, 450°+ turn and 3/3 travel",
+     "value": "E"
+    }
+   ],
+   "forms_rule": "A circle or flair handstand dismount is one value higher with a 450°+ turn or a 3/3 travel (3/3 needs at least a 270° turn), two higher with both. Each value is its own form, so the routine shows the value earned.",
+   "forms_citation": "WG MAG 2025 §11 Pommel Horse 2.c.4, table 1 (circle or flair handstand dismounts)"
   },
   {
    "id": "UCG-PH-double-scissor-fwd-with-travel-swd-and-turn",
@@ -353,7 +371,25 @@
    "eponym": "",
    "video": "https://youtu.be/toUG9QqVWlI",
    "drawing": true,
-   "added": "2026-10-01"
+   "added": "2026-10-01",
+   "forms": [
+    {
+     "form": "a",
+     "name": "From circles or flairs with both pommels between hands, ½ spindle through handstand and dismount"
+    },
+    {
+     "form": "b",
+     "name": "From circles or flairs with both pommels between hands, ½ spindle through handstand and dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+     "value": "E"
+    },
+    {
+     "form": "c",
+     "name": "From circles or flairs with both pommels between hands, ½ spindle through handstand and dismount, 450°+ turn and 3/3 travel",
+     "value": "F"
+    }
+   ],
+   "forms_rule": "A circle or flair handstand dismount is one value higher with a 450°+ turn or a 3/3 travel (3/3 needs at least a 270° turn), two higher with both. Each value is its own form, so the routine shows the value earned.",
+   "forms_citation": "WG MAG 2025 §11 Pommel Horse 2.c.4, table 1 (circle or flair handstand dismounts)"
   },
   {
    "id": "UCG-PH-kehre-bwd-kehre-fwd-kehre-bwd-kehre-fwd-ganser",

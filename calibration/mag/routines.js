@@ -437,7 +437,8 @@ export const ROUTINES = [
    },
    {
     "name": "Scissor Hop",
-    "skillId": null,
+    "label": "Scissor forward with travel sideways (also with 1/2 t.)",
+    "skillId": "WG-PH-I-2",
     "letter": "B",
     "eg": 1,
     "ded": "0.1, 0.1",
@@ -456,7 +457,8 @@ export const ROUTINES = [
    },
    {
     "name": "Scissor",
-    "skillId": null,
+    "label": "Scissor forward",
+    "skillId": "WG-PH-I-1",
     "letter": "A",
     "eg": 1,
     "ded": "0.3, 0.1, 0.1, 0.1",
@@ -520,7 +522,8 @@ export const ROUTINES = [
    },
    {
     "name": "Scissor",
-    "skillId": null,
+    "label": "Scissor forward",
+    "skillId": "WG-PH-I-1",
     "letter": "A",
     "eg": 1,
     "ded": "0.1",
@@ -529,7 +532,8 @@ export const ROUTINES = [
    },
    {
     "name": "Scissor Hop",
-    "skillId": null,
+    "label": "Scissor forward with travel sideways (also with 1/2 t.)",
+    "skillId": "WG-PH-I-2",
     "letter": "B",
     "eg": 1,
     "ded": "0.3, 0.1",
@@ -597,7 +601,8 @@ export const ROUTINES = [
   "rows": [
    {
     "name": "Full Scissor Travel Down",
-    "skillId": null,
+    "label": "Double scissor fwd. (¼ t. fwd. a. ¼ t. bwd.) with travel sideways",
+    "skillId": "WG-PH-I-9",
     "letter": "C",
     "eg": 1,
     "ded": "0.2",
@@ -617,7 +622,8 @@ export const ROUTINES = [
    },
    {
     "name": "Half Scissor Travel Up",
-    "skillId": null,
+    "label": "Scissor forward with travel sideways (also with 1/2 t.)",
+    "skillId": "WG-PH-I-2",
     "letter": "B",
     "eg": 1,
     "ded": "0.2",
@@ -626,7 +632,8 @@ export const ROUTINES = [
    },
    {
     "name": "Full Scissor Forward w/ Travel and ½ Turn",
-    "skillId": null,
+    "label": "Double Scissor fwd with travel swd. and ½ turn",
+    "skillId": "UCG-PH-double-scissor-fwd-with-travel-swd-and-turn",
     "letter": "D",
     "eg": 1,
     "ded": "0.3",
@@ -645,7 +652,8 @@ export const ROUTINES = [
    },
    {
     "name": "3/3 Side Travel Over Both Pommels with Hop",
-    "skillId": null,
+    "label": "Full side travel over both pommels",
+    "skillId": "WG-PH-III-4",
     "letter": "D",
     "eg": 3,
     "ded": "0.3",
@@ -664,7 +672,8 @@ export const ROUTINES = [
    },
    {
     "name": "Circle Handstand 3/3 Travel w/ 270°",
-    "skillId": null,
+    "label": "Circle or flair through handstand dismount, 450°+ turn or 3/3 travel (min. 270° turn)",
+    "skillId": "WG-PH-IV-20b",
     "letter": "C",
     "eg": 4,
     "ded": "0.6",
@@ -1189,7 +1198,8 @@ export const ROUTINES = [
    },
    {
     "name": "Back Pike",
-    "skillId": null,
+    "label": "Back pike or layout, optional ½ twist",
+    "skillId": "WG-PB-IV-19",
     "letter": "A",
     "eg": 4,
     "ded": "0.1, 0.1, 0.1",
@@ -1430,8 +1440,9 @@ export const ROUTINES = [
    },
    {
     "name": "Half Turn",
-    "skillId": null,
-    "letter": "A",
+    "label": "Swing to 1/2 turn, also with hop, also to support",
+    "skillId": "UCG-HB-swing-to-1-2-turn-also-with-hop-also-to-support",
+    "letter": "Sub-A",
     "eg": 0,
     "ded": "0.1, 0.1",
     "e": 0.2,
@@ -1543,7 +1554,8 @@ export const ROUTINES = [
    },
    {
     "name": "Back Giant ½ Turn",
-    "skillId": null,
+    "label": "Backward ½ turn through handstand",
+    "skillId": "WG-HB-I-37",
     "letter": "A",
     "eg": 1,
     "ded": "0.6",
