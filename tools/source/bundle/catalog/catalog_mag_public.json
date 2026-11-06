@@ -1,7 +1,7 @@
 {
  "discipline": "MAG",
- "version": "2cbbc6898de4",
- "built": "2026-11-02",
+ "version": "f4e7e5c5b9d9",
+ "built": "2026-11-06",
  "elements": [
   {
    "id": "MAG-FX-0001",
@@ -14568,7 +14568,7 @@
      {
       "rid": "UCG-PH-false-scissor",
       "short_name": "False scissor",
-      "number": "3",
+      "number": "4",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -14591,7 +14591,7 @@
      {
       "rid": "UCG-PH-single-leg-stockli",
       "short_name": "Single leg Stockli",
-      "number": "4",
+      "number": "5",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -14614,7 +14614,7 @@
      {
       "rid": "UCG-PH-single-leg-travel",
       "short_name": "Single leg travel",
-      "number": "5",
+      "number": "6",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -14627,7 +14627,7 @@
      {
       "rid": "UCGM-mag-PH-single-leg-travel",
       "short_name": "Single leg travel",
-      "number": "13",
+      "number": "17",
       "variant": 1,
       "value": "ME",
       "element_group": "III",
@@ -14664,7 +14664,7 @@
      {
       "rid": "UCGM-mag-PH-1-2-circle-dismount-fwd-or-bwd",
       "short_name": "½ Circle Dismount (fwd or bwd)",
-      "number": "14",
+      "number": "18",
       "variant": 1,
       "value": "ME",
       "element_group": "IV",
@@ -14689,7 +14689,7 @@
      {
       "rid": "UCG-PH-flaired-front-loop-rear-loop-or-in-cross-support-on-pommels-",
       "short_name": "Flaired front loop, rear loop, or in cross support on pommels or pommel+leather (not shown)",
-      "number": "7",
+      "number": "10",
       "variant": 1,
       "value": "A",
       "element_group": "II",
@@ -14702,7 +14702,7 @@
      {
       "rid": "UCGM-mag-PH-flaired-front-loop-rear-loop-or-in-cross-support-on-pommels-",
       "short_name": "Flaired front loop, rear loop, or in cross support on pommels or pommel+leather (not shown)",
-      "number": "17",
+      "number": "20",
       "variant": 1,
       "value": "A",
       "element_group": "II",
@@ -14726,7 +14726,7 @@
      {
       "rid": "UCG-PH-from-cross-support-frontways-on-end-tucked-salto-backwards-s",
       "short_name": "From cross support frontways on end, tucked salto backwards/sideways to dismount",
-      "number": "8",
+      "number": "12",
       "variant": 1,
       "value": "B",
       "element_group": "IV",
@@ -14739,7 +14739,7 @@
      {
       "rid": "UCGM-mag-PH-from-cross-support-frontways-on-end-tucked-salto-backwards-s",
       "short_name": "From cross support frontways on end, tucked salto backwards/sideways to dismount",
-      "number": "18",
+      "number": "22",
       "variant": 1,
       "value": "B",
       "element_group": "IV",
@@ -14776,7 +14776,7 @@
      {
       "rid": "UCGM-mag-PH-any-combination-of-two-flops-on-one-pommel-circle-in-side-su",
       "short_name": "Any combination of two flops on one pommel",
-      "number": "19",
+      "number": "23",
       "variant": 1,
       "value": "C",
       "element_group": "II",
@@ -14813,7 +14813,7 @@
      {
       "rid": "UCGM-mag-PH-russian-flop-combo-circle-in-side-support-circle-in-cross-su",
       "short_name": "Russian + Flop combo (Russian 180° or 270°)",
-      "number": "20",
+      "number": "24",
       "variant": 1,
       "value": "C",
       "element_group": "II",
@@ -14850,14 +14850,14 @@
      {
       "rid": "UCGM-mag-PH-reverse-stockli-with-270-turn-from-one-pommel-rendon",
       "short_name": "Reverse stockli with 270° turn from one pommel",
-      "number": "21",
+      "number": "1",
       "variant": 1,
       "value": "C",
       "element_group": "II",
       "eponym": "Rendon",
       "note": "",
       "video": "https://www.youtube.com/watch?v=QvRRfrEmRh8&ab_channel=NAIGC",
-      "page": 3
+      "page": 4
      }
     ]
    }
@@ -14887,14 +14887,14 @@
      {
       "rid": "UCGM-mag-PH-reverse-st-ckli-with-360-t-using-side-support",
       "short_name": "Reverse Stöckli with 360° t. using side support",
-      "number": "22",
+      "number": "2",
       "variant": 1,
       "value": "C",
       "element_group": "II",
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/5onjjL29Ats",
-      "page": 3
+      "page": 4
      }
     ]
    }
@@ -14924,14 +14924,14 @@
      {
       "rid": "UCGM-mag-PH-from-support-on-end-russian-wendeswing-fwd-to-cross-support-",
       "short_name": "From support on end, Russian wendeswing fwd. to cross support on far pommel + leather",
-      "number": "23",
+      "number": "3",
       "variant": 1,
       "value": "C",
       "element_group": "III",
       "eponym": "",
       "note": "",
       "video": "https://youtu.be/MYAa0iI32cc",
-      "page": 3
+      "page": 4
      }
     ]
    }
@@ -14962,14 +14962,14 @@
      {
       "rid": "UCGM-mag-PH-half-spindle-over-one-pommel-handstand-dismount",
       "short_name": "From circles or flairs with one pommel between hands, ½ spindle through handstand and dismount",
-      "number": "24",
+      "number": "4",
       "variant": 1,
       "value": "C",
       "element_group": "IV",
       "eponym": "Pearce",
       "note": "",
       "video": "https://youtu.be/2fOvri6l_F4",
-      "page": 3
+      "page": 4
      }
     ]
    }
@@ -14999,7 +14999,7 @@
      {
       "rid": "UCGM-mag-PH-double-scissor-fwd-with-travel-swd-and-1-2-turn",
       "short_name": "Double Scissor fwd with travel swd. and ½ turn",
-      "number": "1",
+      "number": "5",
       "variant": 1,
       "value": "D",
       "element_group": "I",
@@ -15036,7 +15036,7 @@
      {
       "rid": "UCGM-mag-PH-reverse-st-ckli-with-360-t-on-the-leather-between-the-pommel",
       "short_name": "Reverse Stöckli with 360° t. on the leather between the pommels",
-      "number": "2",
+      "number": "6",
       "variant": 1,
       "value": "D",
       "element_group": "II",
@@ -15074,7 +15074,7 @@
      {
       "rid": "UCGM-mag-PH-half-spindle-to-handstand-dismount-from-over-the-handles",
       "short_name": "From circles or flairs with both pommels between hands, ½ spindle through handstand and dismount",
-      "number": "3",
+      "number": "7",
       "variant": 1,
       "value": "D",
       "element_group": "IV",
@@ -15111,7 +15111,7 @@
      {
       "rid": "UCGM-mag-PH-kehre-bwd-kehre-fwd-kehre-bwd-kehre-fwd-ganser",
       "short_name": "Kehre bwd, kehre fwd, kehre bwd, kehre fwd",
-      "number": "5",
+      "number": "9",
       "variant": 1,
       "value": "E",
       "element_group": "III",
@@ -15135,7 +15135,7 @@
      {
       "rid": "UCGM-mag-PH-1-2-circle-dismount-fwd-or-bwd",
       "short_name": "½ Circle Dismount (fwd or bwd)",
-      "number": "14",
+      "number": "18",
       "variant": 1,
       "value": "ME",
       "element_group": "IV",
@@ -15159,7 +15159,7 @@
      {
       "rid": "UCGM-mag-PH-kehr-to-rear-support-with-1-4-turn-dismount",
       "short_name": "Kehr to rear support with ¼ turn dismount",
-      "number": "15",
+      "number": "19",
       "variant": 1,
       "value": "ME",
       "element_group": "IV",
@@ -15183,7 +15183,7 @@
      {
       "rid": "UCGM-mag-PH-3-4-kehr-to-one-pommel-3-4-sohn-to-immediate-3-4-reverse-sto",
       "short_name": "¾ Kehr to one pommel (¾ Sohn) to immediate ¾ Reverse Stockli",
-      "number": "4",
+      "number": "8",
       "variant": 1,
       "value": "E",
       "element_group": "II",
@@ -15207,7 +15207,7 @@
      {
       "rid": "UCGM-mag-PH-second-circle-in-direct-succession",
       "short_name": "Second circle in direct succession x2",
-      "number": "7",
+      "number": "10",
       "variant": 1,
       "value": "ME",
       "element_group": "II",
@@ -15231,7 +15231,7 @@
      {
       "rid": "UCGM-mag-PH-circle-on-pommel-leather",
       "short_name": "Circle on pommel + leather",
-      "number": "8",
+      "number": "11",
       "variant": 1,
       "value": "ME",
       "element_group": "II",
@@ -15255,7 +15255,7 @@
      {
       "rid": "UCGM-mag-PH-kehr-to-rear-support",
       "short_name": "Kehr to rear support",
-      "number": "9",
+      "number": "12",
       "variant": 1,
       "value": "ME",
       "element_group": "II",
@@ -15279,7 +15279,7 @@
      {
       "rid": "UCGM-mag-PH-false-scissor-forwards-or-single-leg-circle-forwards",
       "short_name": "False scissor forwards or single leg circle forwards",
-      "number": "1",
+      "number": "4",
       "variant": 1,
       "value": "ME",
       "element_group": "I",
@@ -15303,7 +15303,7 @@
      {
       "rid": "UCGM-mag-PH-false-scissor-backwards-or-single-leg-circle-backwards",
       "short_name": "False scissor backwards or single leg circle backwards",
-      "number": "2",
+      "number": "5",
       "variant": 1,
       "value": "ME",
       "element_group": "I",
@@ -15327,7 +15327,7 @@
      {
       "rid": "UCGM-mag-PH-hop-sideways",
       "short_name": "Hop sideways",
-      "number": "3",
+      "number": "6",
       "variant": 1,
       "value": "ME",
       "element_group": "I",
@@ -15351,7 +15351,7 @@
      {
       "rid": "UCGM-mag-PH-second-scissor-forwards-in-direct-succession",
       "short_name": "Second scissor forwards in direct succession x2",
-      "number": "4",
+      "number": "7",
       "variant": 1,
       "value": "ME",
       "element_group": "I",
@@ -15375,7 +15375,7 @@
      {
       "rid": "UCGM-mag-PH-second-scissor-backwards-in-direct-succession",
       "short_name": "Second scissor backwards in direct succession x2",
-      "number": "5",
+      "number": "8",
       "variant": 1,
       "value": "ME",
       "element_group": "I",
@@ -15399,7 +15399,7 @@
      {
       "rid": "UCGM-mag-PH-single-leg-stockli-or-simple-swiss",
       "short_name": "Single leg Stockli or \"Simple Swiss\"",
-      "number": "6",
+      "number": "9",
       "variant": 1,
       "value": "ME",
       "element_group": "I",
@@ -15423,7 +15423,7 @@
      {
       "rid": "UCGM-mag-PH-circle-with-travel-sideways-to-rear-support",
       "short_name": "Circle with travel sideways to rear support",
-      "number": "12",
+      "number": "15",
       "variant": 1,
       "value": "ME",
       "element_group": "III",
@@ -15447,7 +15447,7 @@
      {
       "rid": "UCGM-mag-PH-czechkehre-to-rear-support",
       "short_name": "Czechkehre to rear support",
-      "number": "11",
+      "number": "14",
       "variant": 1,
       "value": "ME",
       "element_group": "II",
@@ -15471,7 +15471,7 @@
      {
       "rid": "UCGM-mag-PH-czechkehre-as-mount",
       "short_name": "Czechkehre as mount",
-      "number": "10",
+      "number": "13",
       "variant": 1,
       "value": "ME",
       "element_group": "II",
@@ -15537,7 +15537,7 @@
      {
       "rid": "UCG-PH-circle-with-spindle-dismount",
       "short_name": "½ Circle with ¼ Spindle Dismount",
-      "number": "6",
+      "number": "7",
       "variant": 1,
       "value": "A",
       "element_group": null,
@@ -15948,6 +15948,154 @@
       "form": "c",
       "note": "",
       "video": "https://youtu.be/toUG9QqVWlI"
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0161",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "Scissor with hop sideways from the end to stand",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "UCG-MAG-ADD": [
+     {
+      "rid": "UCG-PH-scissor-with-hop-sideways-from-the-end-to-stand",
+      "short_name": "Scissor with hop sideways from the end to stand",
+      "number": "3",
+      "variant": 1,
+      "value": "Sub-A",
+      "element_group": null,
+      "eponym": "",
+      "note": "",
+      "video": "https://youtu.be/1mQfmRzuSTk"
+     }
+    ],
+    "UCG-MASTERS-MAG": [
+     {
+      "rid": "UCGM-mag-PH-scissor-with-hop-sideways-from-the-end-to-stand",
+      "short_name": "Scissor with hop sideways from the end to stand",
+      "number": "1",
+      "variant": 1,
+      "value": "GE",
+      "element_group": null,
+      "eponym": "",
+      "note": "",
+      "video": "https://youtu.be/1mQfmRzuSTk",
+      "page": 3
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0162",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "From stride swing, leg cut forward and ¾ twist to stand",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "UCG-MAG-ADD": [
+     {
+      "rid": "UCG-PH-from-stride-swing-leg-cut-forward-and-twist-to-stand",
+      "short_name": "From stride swing, leg cut forward and ¾ twist to stand",
+      "number": "8",
+      "variant": 1,
+      "value": "A",
+      "element_group": null,
+      "eponym": "",
+      "note": "",
+      "video": "https://youtu.be/s_DsdhhMf9g"
+     }
+    ],
+    "UCG-MASTERS-MAG": [
+     {
+      "rid": "UCGM-mag-PH-from-stride-swing-leg-cut-forward-and-3-4-twist-to-stand",
+      "short_name": "From stride swing, leg cut forward and ¾ twist to stand",
+      "number": "2",
+      "variant": 1,
+      "value": "ME",
+      "element_group": null,
+      "eponym": "",
+      "note": "",
+      "video": "https://youtu.be/s_DsdhhMf9g",
+      "page": 3
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0163",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "Scissor fwd with travel sideways and ½ turn from the end to stand",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "UCG-MAG-ADD": [
+     {
+      "rid": "UCG-PH-scissor-fwd-with-travel-sideways-and-turn-from-the-end-to-st",
+      "short_name": "Scissor fwd with travel sideways and ½ turn from the end to stand",
+      "number": "9",
+      "variant": 1,
+      "value": "A",
+      "element_group": null,
+      "eponym": "",
+      "note": "",
+      "video": "https://youtu.be/kQWMLZr5z64"
+     }
+    ],
+    "UCG-MASTERS-MAG": [
+     {
+      "rid": "UCGM-mag-PH-scissor-fwd-with-travel-sideways-and-1-2-turn-from-the-end-t",
+      "short_name": "Scissor fwd with travel sideways and ½ turn from the end to stand",
+      "number": "3",
+      "variant": 1,
+      "value": "ME",
+      "element_group": null,
+      "eponym": "",
+      "note": "",
+      "video": "https://youtu.be/kQWMLZr5z64",
+      "page": 3
+     }
+    ]
+   }
+  },
+  {
+   "id": "MAG-PH-0164",
+   "discipline": "MAG",
+   "apparatus": "PH",
+   "short_name": "Double scissor fwd. with travel sideways from pommels to stand on end",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "UCG-MAG-ADD": [
+     {
+      "rid": "UCG-PH-double-scissor-fwd-with-travel-sideways-from-pommels-to-stan",
+      "short_name": "Double scissor fwd. with travel sideways from pommels to stand on end",
+      "number": "11",
+      "variant": 1,
+      "value": "A",
+      "element_group": "IV",
+      "eponym": "",
+      "note": "",
+      "video": "https://youtu.be/9qSh0ZTuuV8"
+     }
+    ],
+    "UCG-MASTERS-MAG": [
+     {
+      "rid": "UCGM-mag-PH-double-scissor-fwd-with-travel-sideways-from-pommels-to-stan",
+      "short_name": "Double scissor fwd. with travel sideways from pommels to stand on end",
+      "number": "21",
+      "variant": 1,
+      "value": "A",
+      "element_group": "IV",
+      "eponym": "",
+      "note": "",
+      "video": "https://youtu.be/9qSh0ZTuuV8",
+      "page": 3
      }
     ]
    }
