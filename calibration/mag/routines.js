@@ -8,7 +8,7 @@
 // Each routine: id (level-event), level (dev | int | adv), event, the video (youtube or drive id),
 // and the doc's scoring:
 //   rows   the skills in order: name (as the doc gives it), skillId and label (the listed skill and
-//          its name in the skill list), letter, eg (0 = none), nr (not recognised: a repetition or
+//          its name in the skill list), letter, eg (0 = none), nr (not recognized: a repetition or
 //          the judges' call, see why), ded (the execution deductions as the doc lists them), e
 //          (their total), why (the doc's comments)
 //   lines  deductions that aren't a skill: { kind: execution | neutral, what, v, why, rule } (rule:

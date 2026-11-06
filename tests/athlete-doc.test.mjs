@@ -70,7 +70,7 @@ test('Infinity vault ids are unique and permanent-looking, and old names still s
   for (const v of INF_VAULTS) assert.equal(scoreInfinityVault(v.name)?.id, v.id);
 });
 
-test('an athlete saved by a newer version is recognised (the planner does not save over it)', () => {
+test('an athlete saved by a newer version is recognized (the planner does not save over it)', () => {
   const a = migrateAthlete(fixture('v99-newer.json'));
   assert.ok(savedByNewer(a));
   assert.equal(athleteDoc(a).schemaVersion, 99);

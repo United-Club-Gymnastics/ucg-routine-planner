@@ -27,7 +27,7 @@ const ROMAN = { 1: 'I', 2: 'II', 3: 'III', 4: 'IV' };
 // A listed skill's box number in its code ("WG I.75", "Xcel 7.104"), to check it's the right skill.
 const boxOf = (entry, evId, idx) => findSkill(entry.routines?.[evId]?.[idx]?.skillId)?.box || '';
 
-// Skill name with its box number right-aligned (smaller, grey) in the same cell; the name shrinks first.
+// Skill name with its box number right-aligned (smaller, gray) in the same cell; the name shrinks first.
 function nameWithBox(w, fonts, name, box, x, right, y, size = 10, color) {
   let boxW = 0;
   if (box) {

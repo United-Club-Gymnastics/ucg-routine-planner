@@ -14,7 +14,7 @@ OUT = os.path.join(os.path.dirname(__file__), "..", "assets", "worksheets")
 
 CARDS = {0: "tt-tr", 1: "tt-sy", 2: "tt-dmt", 3: "tt-tu-nf", 4: "tt-tu-if", 5: "tt-tu-hf"}
 
-# (old lines, new lines, font size): old lines are removed, new lines are centred in their place.
+# (old lines, new lines, font size): old lines are removed, new lines are centered in their place.
 FIXES = {
     0: [(["Max Skill DD: 2 @ 0.5 or 0.6", "(some exceptions)"], ["Max Skill DD: 0.4, plus up", "to 2 listed saltos (0.5-0.6)"], 11)],
     1: [(["Max Skill DD: 2 @ 0.5 or 0.6", "(some exceptions)"], ["Max Skill DD: 0.4, plus up", "to 2 listed saltos (0.5-0.6)"], 11)],

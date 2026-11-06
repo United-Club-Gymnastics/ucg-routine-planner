@@ -35,7 +35,7 @@ export function quarterSomersaults(notation) {
   }
   return 0;
 }
-// With no FIG shorthand, recognise a full (360°+) somersault by its name.
+// With no FIG shorthand, recognize a full (360°+) somersault by its name.
 const FLIP_NAME = /somersault|salto|\b(back|front) (tuck|pike|straight|layout)|barani|rudy|randy|\bfull\b(?! turn)|ball ?out|cody|porpoise|double|triple|half-in|full-in|\b1 1\/4\b/i;
 const NOT_FLIP = /jump|drop|turn\b|seat|swivel|return|cradle|cruise|3\/4/i;
 export const isSalto = (s) => {
