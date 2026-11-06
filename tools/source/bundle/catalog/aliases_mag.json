@@ -1,7 +1,7 @@
 {
  "discipline": "MAG",
- "version": "2cbbc6898de4",
- "built": "2026-11-02",
+ "version": "f4e7e5c5b9d9",
+ "built": "2026-11-06",
  "aliases": {
   "WG-FX-I-1": [
    "MAG-FX-0001"
@@ -2268,6 +2268,30 @@
   ],
   "UCG-PH-half-spindle-to-handstand-dismount-from-over-the-handles-c": [
    "MAG-PH-0160"
+  ],
+  "UCG-PH-scissor-with-hop-sideways-from-the-end-to-stand": [
+   "MAG-PH-0161"
+  ],
+  "UCGM-mag-PH-scissor-with-hop-sideways-from-the-end-to-stand": [
+   "MAG-PH-0161"
+  ],
+  "UCG-PH-from-stride-swing-leg-cut-forward-and-twist-to-stand": [
+   "MAG-PH-0162"
+  ],
+  "UCGM-mag-PH-from-stride-swing-leg-cut-forward-and-3-4-twist-to-stand": [
+   "MAG-PH-0162"
+  ],
+  "UCG-PH-scissor-fwd-with-travel-sideways-and-turn-from-the-end-to-st": [
+   "MAG-PH-0163"
+  ],
+  "UCGM-mag-PH-scissor-fwd-with-travel-sideways-and-1-2-turn-from-the-end-t": [
+   "MAG-PH-0163"
+  ],
+  "UCG-PH-double-scissor-fwd-with-travel-sideways-from-pommels-to-stan": [
+   "MAG-PH-0164"
+  ],
+  "UCGM-mag-PH-double-scissor-fwd-with-travel-sideways-from-pommels-to-stan": [
+   "MAG-PH-0164"
   ],
   "WG-SR-I-1": [
    "MAG-SR-0001"

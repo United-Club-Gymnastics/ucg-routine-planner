@@ -2,13 +2,13 @@
  "schema_version": "0.3.0",
  "code": "UCG-MAG-ADD",
  "discipline": "MAG",
- "edition": "2026-10-29",
- "built": "2026-10-29",
+ "edition": "2026-11-06",
+ "built": "2026-11-06",
  "source": {
   "kind": "authored",
   "document": "MAG/UCG MAG CoP.svg",
   "repo": "nssharpe/ucg-code-of-points",
-  "commit": "dd41f99f1c7c6a3aa50580e4df2fe08c900c9e0b"
+  "commit": "90dd309eb4d939a76b8732cfb7240c715954e159"
  },
  "records": [
   {
@@ -185,9 +185,21 @@
    "adopted": "2026-10-21"
   },
   {
-   "id": "UCG-PH-false-scissor",
+   "id": "UCG-PH-scissor-with-hop-sideways-from-the-end-to-stand",
    "apparatus": "PH",
    "number": "3",
+   "description": "Scissor with hop sideways from the end to stand",
+   "value": "Sub-A",
+   "element_group": null,
+   "eponym": "",
+   "video": "https://youtu.be/1mQfmRzuSTk",
+   "drawing": true,
+   "added": "2026-11-03"
+  },
+  {
+   "id": "UCG-PH-false-scissor",
+   "apparatus": "PH",
+   "number": "4",
    "description": "False scissor",
    "value": "A",
    "element_group": null,
@@ -198,7 +210,7 @@
   {
    "id": "UCG-PH-single-leg-stockli",
    "apparatus": "PH",
-   "number": "4",
+   "number": "5",
    "description": "Single leg Stockli",
    "value": "A",
    "element_group": null,
@@ -209,7 +221,7 @@
   {
    "id": "UCG-PH-single-leg-travel",
    "apparatus": "PH",
-   "number": "5",
+   "number": "6",
    "description": "Single leg travel",
    "value": "A",
    "element_group": null,
@@ -221,7 +233,7 @@
   {
    "id": "UCG-PH-circle-with-spindle-dismount",
    "apparatus": "PH",
-   "number": "6",
+   "number": "7",
    "description": "½ Circle with ¼ Spindle Dismount",
    "value": "A",
    "element_group": null,
@@ -232,9 +244,33 @@
    "added": "2026-10-21"
   },
   {
+   "id": "UCG-PH-from-stride-swing-leg-cut-forward-and-twist-to-stand",
+   "apparatus": "PH",
+   "number": "8",
+   "description": "From stride swing, leg cut forward and ¾ twist to stand",
+   "value": "A",
+   "element_group": null,
+   "eponym": "",
+   "video": "https://youtu.be/s_DsdhhMf9g",
+   "drawing": true,
+   "added": "2026-11-03"
+  },
+  {
+   "id": "UCG-PH-scissor-fwd-with-travel-sideways-and-turn-from-the-end-to-st",
+   "apparatus": "PH",
+   "number": "9",
+   "description": "Scissor fwd with travel sideways and ½ turn from the end to stand",
+   "value": "A",
+   "element_group": null,
+   "eponym": "",
+   "video": "https://youtu.be/kQWMLZr5z64",
+   "drawing": true,
+   "added": "2026-11-03"
+  },
+  {
    "id": "UCG-PH-flaired-front-loop-rear-loop-or-in-cross-support-on-pommels-",
    "apparatus": "PH",
-   "number": "7",
+   "number": "10",
    "description": "Flaired front loop, rear loop, or in cross support on pommels or pommel+leather (not shown)",
    "value": "A",
    "element_group": "II",
@@ -243,9 +279,21 @@
    "drawing": true
   },
   {
+   "id": "UCG-PH-double-scissor-fwd-with-travel-sideways-from-pommels-to-stan",
+   "apparatus": "PH",
+   "number": "11",
+   "description": "Double scissor fwd. with travel sideways from pommels to stand on end",
+   "value": "A",
+   "element_group": "IV",
+   "eponym": "",
+   "video": "https://youtu.be/9qSh0ZTuuV8",
+   "drawing": true,
+   "added": "2026-11-03"
+  },
+  {
    "id": "UCG-PH-from-cross-support-frontways-on-end-tucked-salto-backwards-s",
    "apparatus": "PH",
-   "number": "8",
+   "number": "12",
    "description": "From cross support frontways on end, tucked salto backwards/sideways to dismount",
    "value": "B",
    "element_group": "IV",
