@@ -39,7 +39,35 @@
 .cp-field.cp-live .cp-key { margin-left: 0; }
 #cp-missing:empty { display: none; }
 
-.cp-intro { display: block; }
+/* the level's rules at a glance, cheat-sheet style: a label column and its rule */
+.cp-intro { display: block; padding: 10px 14px; }
+.cp-rules-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; margin-bottom: 6px; }
+.cp-rules-head b { font-size: 1.25rem; color: var(--navy); }
+.cp-rules-head span { font-size: 0.82rem; color: var(--fg-secondary); }
+.cp-rules { display: grid; grid-template-columns: max-content 1fr; gap: 0; margin: 0; font-size: 0.86rem; line-height: 1.35; }
+.cp-rules dt, .cp-rules dd { margin: 0; padding: 4px 0; border-top: 1px solid var(--border-soft); }
+.cp-rules dt { font-weight: 700; padding-right: 14px; }
+.cp-rules-foot { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--border-soft); font-size: 0.82rem; color: var(--fg-secondary); }
+
+/* the counting skills' instructions and the apparatus's element groups */
+.cp-skills-hint { margin-bottom: 8px; font-size: 0.86rem; line-height: 1.4; }
+.cp-steps { margin: 0 0 8px; padding-left: 18px; }
+.cp-steps li { margin: 2px 0; }
+.cp-groups { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 12px; font-size: 0.82rem; color: var(--fg-secondary); }
+.cp-groups b { display: inline-block; min-width: 2.1em; color: var(--dark-blue-green); }
+
+/* connected skills (floor, high bar): a pill on the line between two rows; connected rows get a navy stripe */
+#cp-skills.is-linkable .cp-skill { position: relative; padding: 11px 0 11px 8px; }
+.cp-link { position: absolute; z-index: 2; left: 34px; bottom: -11px; display: inline-flex; align-items: center; gap: 5px; height: 22px; padding: 0 10px 0 8px; border: 1.5px dashed var(--fg-secondary); border-radius: 999px; background: var(--white); color: var(--fg-secondary); font-size: 0.74rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+.cp-link[hidden] { display: none; }
+.cp-link:hover { border-color: var(--navy); color: var(--navy); }
+.cp-link[aria-pressed="true"] { border-style: solid; border-color: var(--navy); background: var(--navy); color: var(--white); }
+.cp-skill.is-linked, .cp-skill.is-linked-after { box-shadow: inset 4px 0 0 var(--navy); }
+
+/* a bonus worked out from the skills (the connections): the value on the right */
+.cp-check-auto { cursor: default; }
+.cp-check-auto > span:first-child { margin-right: auto; }
+.cp-check-auto output { font-weight: 700; font-variant-numeric: tabular-nums; min-width: 3em; text-align: right; }
 
 /* the score: D, start value, neutral, execution, final */
 .cp-score-mag { flex-wrap: wrap; }
@@ -67,6 +95,10 @@
   .cp-seg span { min-width: 30px; height: 38px; padding: 0 4px; font-size: 0.85rem; }
   .cp-seg-value span { min-width: 28px; }
   .cp-skill-n { width: auto; }
+  /* The rules: each label above its rule. */
+  .cp-rules { grid-template-columns: minmax(0, 1fr); }
+  .cp-rules dd { border-top: 0; padding-top: 0; }
+  .cp-groups { grid-template-columns: minmax(0, 1fr); }
   .cp-score-mag b { font-size: 1.5rem; }
   .cp-score-mag .cp-final b { font-size: 2rem; }
   /* Every column stays (element group, every deduction): the table scrolls inside its card. */

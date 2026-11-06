@@ -174,7 +174,7 @@ test('mushroom bonus counts toward the Developmental cap', () => {
 
 test('vault: WG 2025-2028 values; Advanced uses GymACT values; Developmental bans flipping vaults', () => {
   assert.equal(scoreVault('adv', '202').startValue, 11.4);
-  assert.equal(scoreVault('adv', '107').startValue, 13.6); // Cuervo piked: 2.8 WG, 3.6 GymACT
+  assert.equal(scoreVault('adv', '107').startValue, 13.0); // Cuervo piked: 2.8 WG, 3.0 GymACT 2027
   assert.equal(scoreVault('int', '107').startValue, 12.8);
   assert.equal(scoreVault('int', '405').startValue, 13.1); // Yurchenko str. 1/1: 3.6 in 2025-2028, capped
   assert.equal(scoreVault('adv', '405').startValue, 13.6);
@@ -191,8 +191,10 @@ test('WG vaults: exactly the no-salto vaults are non-flipping, and the GymACT va
   const wg = VAULTS.filter((v) => v.src === 'WG');
   const nonFlipping = ['201', '202', '203', '204', '205', '206', '301', '302', '303', '501', '502', '503', '513', '514', '515'];
   assert.deepEqual(wg.filter((v) => !v.flipping).map((v) => v.id).sort(), nonFlipping);
-  const adv = { 107: 3.6, 108: 4.4, 109: 4.8, 113: 4.0, 114: 4.4, 115: 4.8, 116: 5.2, 117: 5.6, 118: 6.0,
-    213: 2.8, 219: 3.8, 225: 5.2, 226: 5.6, 228: 5.6, 231: 5.6, 232: 6.0 };
+  // GymACT 2027: WG + 0.2 for the front handspring and round-off ½-on saltos (228 too, by Nate's ruling).
+  const adv = { 101: 2.6, 107: 3.0, 108: 3.4, 109: 3.8, 113: 3.8, 114: 4.2, 115: 4.6, 116: 5.0, 117: 5.4, 118: 5.8,
+    207: 2.2, 213: 2.6, 219: 3.4, 225: 5.0, 226: 5.4, 228: 5.4, 231: 5.4, 232: 5.8,
+    413: 2.8, 414: 3.2, 415: 4.0, 416: 4.4, 417: 4.8, 419: 5.2, 420: 5.6, 516: 2.4, 517: 2.8, 518: 3.6 };
   assert.deepEqual(Object.fromEntries(wg.filter((v) => v.adv !== v.value).map((v) => [v.id, v.adv])),
     adv);
   assert.equal(scoreVault('dev', '201').banned, false); // front handspring is allowed at Developmental

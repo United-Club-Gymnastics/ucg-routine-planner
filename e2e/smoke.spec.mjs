@@ -249,7 +249,7 @@ test('calibration: MAG judge practice checks a score, lays out every deduction a
   }
   await expect(page.locator('#cp-eg-line')).toContainText('+1.4');
   await expect(page.locator('#cp-sv')).toHaveText('12.0');
-  await page.locator('#cp-stick').selectOption('0.1');
+  await page.locator('#cp-stick').check();
   await page.locator('#cp-e').fill('0.6');
   await expect(page.locator('#cp-final')).toHaveText('11.5');
   await page.getByRole('button', { name: 'Did I get it right?' }).click();
@@ -274,5 +274,44 @@ test('calibration: MAG judge practice checks a score, lays out every deduction a
   await expect(page).toHaveURL(/#adv-pb$/);
   await page.getByRole('tab', { name: /Intermediate/ }).click();
   await expect(page.locator('.cp-routine[data-id="int-pb"]')).toHaveClass(/is-right/);
+  expect(errors).toEqual([]);
+});
+
+test('MAG judging calculator: a level and apparatus, scored like judge practice; the stand-alone file too', async ({ page }) => {
+  const errors = watchErrors(page);
+  // The stand-alone file loads Saira Condensed from Google Fonts: stand in for it here.
+  await page.route(/fonts\.(googleapis|gstatic)\.com/, (route) => route.fulfill({ status: 200, contentType: 'text/css', body: '' }));
+  for (const url of ['./calculator/mag/#int-pb', './calculator/mag/UCG_MAG_Judging_Calculator.html#int-pb']) {
+    await page.goto(url);
+    await expect(page.locator('[data-level="int"]')).toHaveAttribute('aria-selected', 'true');
+    // The int-pb judge practice entry: six A skills (I, II, II, III, IV, none), stuck, 0.6 execution.
+    const skills = [['A', 3], ['A', 2], ['A', 0], ['A', 1], ['A', 2], ['A', 4]];
+    for (const [i, [v, g]] of skills.entries()) {
+      await page.locator(`[data-row="${i}"] label:has(input[value="${v}"])`).click();
+      await page.locator(`[data-row="${i}"] .cp-seg-eg label:has(input[value="${g}"])`).click();
+    }
+    await expect(page.locator('#cp-eg-line')).toContainText('+1.4');
+    await expect(page.locator('#cp-sv')).toHaveText('12.0');
+    await page.locator('#cp-stick').check();
+    await page.locator('#cp-e').fill('0.6');
+    await expect(page.locator('#cp-final')).toHaveText('11.5');
+    // Vault: the vault table at the level's values; the skills give way to it.
+    await page.locator('[data-event="vt"]').click();
+    await expect(page.locator('#cp-vault')).toBeVisible();
+    await expect(page.locator('#cp-skills')).toBeHidden();
+    await page.locator('#cp-vault').selectOption('213');
+    await expect(page.locator('#cp-sv')).toHaveText('12.4');
+    // Developmental floor: 6 rows, a cap of 12.3.
+    await page.locator('[data-level="dev"]').click();
+    await page.locator('[data-event="fx"]').click();
+    await expect(page.locator('.cp-skill')).toHaveCount(6);
+    for (let i = 0; i < 6; i++) {
+      await page.locator(`[data-row="${i}"] label:has(input[value="C"])`).click();
+      await page.locator(`[data-row="${i}"] .cp-seg-eg label:has(input[value="${(i % 4) + 1}"])`).click();
+    }
+    await expect(page.locator('#cp-sv')).toHaveText('12.3');
+    await page.getByRole('button', { name: 'Reset routine' }).click();
+    await expect(page.locator('#cp-sv')).toHaveText('—');
+  }
   expect(errors).toEqual([]);
 });

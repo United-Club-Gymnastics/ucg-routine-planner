@@ -169,3 +169,39 @@ test("Advanced pommel horse: the handstand dismount with 3/3 travel and 270° tu
   const d = answerKey(r).score.items.at(-1);
   assert.deepEqual([d.letter, d.status, d.bonus], ['C', 'counting', 0.3]);
 });
+
+// The calculator (calibration/mag/calculator.js, shared with calculator/mag/): the stick bonus a stuck
+// landing earns, and connections marked between counting skills.
+import { levelRules, stickBonus } from '../calibration/mag/calculator.js';
+
+test('stick bonus: by level, and at Advanced by the dismount\'s value; on vault, by flipping', () => {
+  const v = (level, dismount) => stickBonus(level, 'pb', { dismount }).value;
+  assert.deepEqual(['dev', 'int'].map((l) => [v(l, 'A'), v(l, 'D')]), [[0.1, 0.1], [0.1, 0.1]]);
+  assert.deepEqual(['Sub-A', 'A', 'B', 'C', 'E'].map((d) => v('adv', d)), [0, 0, 0.1, 0.2, 0.2]);
+  assert.equal(stickBonus('adv', 'ph', { dismount: 'E' }).value, 0);
+  const vt = (level, id) => stickBonus(level, 'vt', { vault: findVault(id, level) }).value;
+  assert.deepEqual([vt('dev', '201'), vt('int', '201'), vt('int', '313'), vt('adv', '201'), vt('adv', '313')], [0.1, 0.1, 0.2, 0, 0.2]);
+  // Every answer key's stick bonus is what its stuck landing earns.
+  for (const r of ROUTINES.filter((x) => x.stick)) {
+    const dismount = r.rows?.filter((x) => !x.nr).at(-1)?.letter;
+    assert.equal(stickBonus(r.level, r.event, { dismount, vault: r.vault && findVault(r.vault, r.level) }).value, r.stick, r.id);
+  }
+});
+
+test('connections: the judge connects counting skills, and the bonus follows', () => {
+  const skills = [['D', 2, true], ['B', 3], ['A', 1], ['C', 4], ['B', 2], ['A', 1], ['C', 3]].map(([letter, eg, link]) => ({ letter, eg, link: !!link }));
+  const entry = { skills, bonus: {}, stick: 0, missing: {}, otherNd: '', e: '' };
+  const linked = scoreEntry({ event: 'fx', level: 'adv' }, entry);
+  const none = scoreEntry({ event: 'fx', level: 'adv' }, { ...entry, skills: skills.map((s) => ({ ...s, link: false })) });
+  assert.equal(linked.score.optionValues.conn1, 0.1);
+  assert.equal(Math.round((linked.d - none.d) * 10) / 10, 0.1);
+  const hb = [['C', 2, true], ['C', 2, true], ['D', 3], ['A', 4]].map(([letter, eg, link]) => ({ letter, eg, link: !!link }));
+  assert.equal(scoreEntry({ event: 'hb', level: 'int' }, { ...entry, skills: hb }).score.optionValues.connCC, 0.2);
+});
+
+test('the rules panel: each level\'s rows, with the Advanced dismount group off floor only', () => {
+  const labels = (l, e) => levelRules(l, e).map(([k]) => k);
+  assert.ok(labels('adv', 'pb').includes('EG IV (dismount)') && !labels('adv', 'fx').includes('EG IV (dismount)'));
+  assert.ok(labels('dev', 'ph').includes('Mushroom bonus') && labels('dev', 'vt').includes('Banned'));
+  assert.equal(levelRules('int', 'sr').find(([k]) => k === 'Start value cap')[1], '13.1, bonuses included');
+});

@@ -6,7 +6,7 @@
   "WAG": "90974ca9d700"
  },
  "sources": {
-  "nssharpe/gym-skill-extract": "da525c76b4d63d87534200df17ec86a7ab7ffbf2",
+  "nssharpe/gym-skill-extract": "e7214c102b7e5cd7d5e87d4e0385cdd762fed838",
   "nssharpe/ucg-code-of-points": "90dd309eb4d939a76b8732cfb7240c715954e159"
  },
  "files": {
@@ -27,7 +27,7 @@
    "schema": "catalog.schema.json"
   },
   "catalog/levels.json": {
-   "sha256": "ce43d4e05fc002252cc6655c7f498b1983b068121f3dd836f72009c64e0d8f1c",
+   "sha256": "49590112cc9f3b2087d5a9600a35618d32c9e7e7254331dd706aa7231c659ec3",
    "schema": "levels.schema.json"
   },
   "rules/UCG-MAG/digest/levels.json": {
@@ -35,7 +35,7 @@
    "schema": "digest.schema.json"
   },
   "rules/UCG-MAG/digest/vault.json": {
-   "sha256": "219e0bdd46454a27501d2dc341967a01d6bb2c45ab3b3fd6f3a380c52c6de1ab",
+   "sha256": "543c64989d126b1844bd998c267a397c95adcc502de6d0af63af48db8a071352",
    "schema": "digest.schema.json"
   },
   "rules/UCG-MASTERS-MAG/digest/vault-values.json": {
