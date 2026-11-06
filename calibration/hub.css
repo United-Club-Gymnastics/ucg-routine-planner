@@ -1,0 +1,13 @@
+/* Judge practice's front page (calibration/): a card for each practice page, on top of the
+   Infinity page's stylesheet (../infinity/practice.css, which the build puts first). */
+.cp-hub { max-width: 960px; margin: 0 auto; padding: 24px; }
+.cp-hub-intro { font-size: 1.02rem; line-height: 1.55; margin-bottom: 18px; max-width: 70ch; }
+.cp-hub-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.cp-hub-card { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 20px 22px; color: var(--navy); font-weight: 400; text-decoration: none; border: 1.5px solid var(--border-soft); transition: border-color 0.15s; }
+.cp-hub-card .cp-subhead { color: var(--dark-blue-green); }
+.cp-hub-card h2 { font-size: 2.2rem; margin: 0; }
+.cp-hub-card p { flex: 1; line-height: 1.5; }
+.cp-hub-card .cp-btn { align-self: flex-start; margin-top: 6px; }
+.cp-hub-card:hover { border-color: var(--navy); }
+.cp-hub-card:hover .cp-btn { background: var(--navy); color: var(--white); }
+.cp-hub-more { margin-top: 18px; font-size: 0.92rem; color: var(--fg-secondary); }

@@ -132,12 +132,15 @@ writeFileSync(join(OUT, 'privacy.html'), privacy);
 // privacy-enhanced). MAG's stylesheet builds on Infinity's, and the calculator's on both.
 const MAG_CSS = ['calibration/infinity/practice.css', 'calibration/mag/practice.css'];
 const PRACTICE = [
+  // The front page (calibration/): a card for each practice page, no script.
+  { dir: 'calibration', js: null, css: ['calibration/infinity/practice.css', 'calibration/hub.css'], frames: "'none'" },
   { dir: 'calibration/infinity', js: 'practice.js', css: ['calibration/infinity/practice.css'], frames: 'https://drive.google.com' },
   { dir: 'calibration/mag', js: 'practice.js', css: MAG_CSS, frames: 'https://drive.google.com https://www.youtube-nocookie.com' },
   { dir: 'calculator/mag', js: 'calc.js', css: [...MAG_CSS, 'calculator/mag/calc.css'], frames: "'none'" },
 ];
 for (const { dir: CAL, js, css, frames } of PRACTICE) {
-  const cal = await build({
+  mkdirSync(join(OUT, CAL), { recursive: true });
+  const cal = js && await build({
     absWorkingDir: ROOT,
     entryPoints: [`${CAL}/${js}`],
     bundle: true,
@@ -151,16 +154,18 @@ for (const { dir: CAL, js, css, frames } of PRACTICE) {
     legalComments: 'linked',
     logLevel: 'warning',
   });
-  const calJs = Object.keys(cal.metafile.outputs).find((f) => f.endsWith('.js'));
-  const calCss = Buffer.concat([
-    Buffer.from(fontFaces ? `${fontFaces.replaceAll('../assets/', '../../assets/')}\n` : ''),
-    ...css.map((f) => readFileSync(join(ROOT, f))),
-  ]);
+  const calJs = cal && Object.keys(cal.metafile.outputs).find((f) => f.endsWith('.js'));
+  // The stylesheets point at ../../assets/ (they sit two folders down); the built one sits in the page's folder.
+  const assets = `${'../'.repeat(CAL.split('/').length)}assets/`;
+  const calCss = Buffer.from([
+    fontFaces ? `${fontFaces.replaceAll('../assets/', '../../assets/')}\n` : '',
+    ...css.map((f) => readFileSync(join(ROOT, f), 'utf8')),
+  ].join('').replaceAll('../../assets/', assets));
   const calCssName = `practice-${hash(calCss)}.css`;
   writeFileSync(join(OUT, CAL, calCssName), calCss);
   const CAL_CSP = [
     "default-src 'self'",
-    "script-src 'self'",
+    `script-src ${js ? "'self'" : "'none'"}`,
     "style-src 'self'",
     "img-src 'self' data:",
     "font-src 'self'",
@@ -172,9 +177,9 @@ for (const { dir: CAL, js, css, frames } of PRACTICE) {
   let calHtml = readFileSync(join(ROOT, CAL, 'index.html'), 'utf8')
     .replace('<meta charset="utf-8" />', `<meta charset="utf-8" />\n    <meta http-equiv="Content-Security-Policy" content="${CAL_CSP}" />\n    <meta name="referrer" content="strict-origin-when-cross-origin" />`)
     // The development stylesheets (Infinity's, MAG's, the page's own) become the one built file.
-    .replace(/(\s*<link rel="stylesheet" href="[^"]*\.css\?v=__BUILD__" \/>)+/, `\n    <link rel="stylesheet" href="${calCssName}" />`)
-    .replace(`<script type="module" src="${js}"></script>`, `<script type="module" src="${posix(relative(join(OUT, CAL), join(ROOT, calJs)))}"></script>`);
-  if (calHtml.includes('__BUILD__') || calHtml.includes(`src="${js}"`)) throw new Error(`${CAL}/index.html still has development-only parts`);
+    .replace(/(\s*<link rel="stylesheet" href="[^"]*\.css\?v=__BUILD__" \/>)+/, `\n    <link rel="stylesheet" href="${calCssName}" />`);
+  if (js) calHtml = calHtml.replace(`<script type="module" src="${js}"></script>`, `<script type="module" src="${posix(relative(join(OUT, CAL), join(ROOT, calJs)))}"></script>`);
+  if (calHtml.includes('__BUILD__') || (js && calHtml.includes(`src="${js}"`))) throw new Error(`${CAL}/index.html still has development-only parts`);
   writeFileSync(join(OUT, CAL, 'index.html'), calHtml);
 }
 
