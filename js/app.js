@@ -594,7 +594,7 @@ function renderAll() {
   renderAthletePicker();
   const a = athlete();
   // The athlete's disciplines' skill lists load on demand; draw once they're here, so every
-  // listed skill is recognised (badges, box numbers, and its id kept when saving).
+  // listed skill is recognized (badges, box numbers, and its id kept when saving).
   const missing = [...new Set((a?.entries || []).map((x) => x.disc))].filter((d) => !disciplineLoaded(d));
   if (missing.length) {
     app.innerHTML = `<p class="loading">Loading…</p>`;
@@ -2242,7 +2242,7 @@ function updateRows(container, items, spec, list, changeOf = () => null) {
     const [text, title] = row?.noCredit
       ? ['Not credited here', "None of the codes this level uses has this skill, so it earns nothing. Pick a replacement or remove it."]
       : row?.notRecognised
-        ? ['Not recognised', "The judges didn't recognise this skill in the calibration routine, so it earns nothing. Judge practice says why."]
+        ? ['Not recognized', "The judges didn't recognize this skill in the calibration routine, so it earns nothing. Judge practice says why."]
       : changed
         ? ['Value changed', `The Code now gives this skill ${changeText(changed.now, changed.keys)}; this routine has ${changeText(changed.was, changed.keys)}. Tap “Update values” under the routine to use the Code's values.`]
       : flagFor(it, spec)[0]

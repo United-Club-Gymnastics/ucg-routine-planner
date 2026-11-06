@@ -167,7 +167,7 @@ const CREDIT = {
   sr: ['Not counting', 'is-top', 'Rings: only 3 strength (EG II/III) skills count before a B or higher EG I skill'],
   style: ['Not counting', 'is-top', 'High bar: at most two flights of each style count'],
   repeat: ['Repetition', 'is-nr', 'The same skill again: no credit, execution deductions still apply'],
-  nr: ['Not recognised', 'is-nr', 'The judges didn’t credit it: see the comment'],
+  nr: ['Not recognized', 'is-nr', 'The judges didn’t credit it: see the comment'],
 };
 const dedCell = (ded, why) => (ded || why ? `${ded ? `<b>${esc(ded)}</b>` : ''}${ded && why ? ' · ' : ''}${esc(why || '')}` : '');
 

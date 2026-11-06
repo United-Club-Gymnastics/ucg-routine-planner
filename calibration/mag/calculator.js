@@ -150,7 +150,7 @@ export function createCalculator({ form, fields, root, onChange = () => {} }) {
         <legend class="cp-sr">Skill ${i + 1}</legend>
         <span class="cp-skill-n">${i + 1}</span>
         <span class="cp-seg cp-seg-value" role="radiogroup" aria-label="Skill ${i + 1} value">
-          ${LETTERS.map((l) => `<label title="${l === 'Sub-A' ? 'Sub-A: recognised, worth 0.0, no element group' : `${l}`}"><input type="radio" name="v${i}" value="${l}"><span>${l === 'Sub-A' ? 'Sub' : l}</span></label>`).join('')}
+          ${LETTERS.map((l) => `<label title="${l === 'Sub-A' ? 'Sub-A: recognized, worth 0.0, no element group' : `${l}`}"><input type="radio" name="v${i}" value="${l}"><span>${l === 'Sub-A' ? 'Sub' : l}</span></label>`).join('')}
         </span>
         <span class="cp-seg cp-seg-eg" role="radiogroup" aria-label="Skill ${i + 1} element group">
           <label title="No element group"><input type="radio" name="g${i}" value="0"><span>–</span></label>

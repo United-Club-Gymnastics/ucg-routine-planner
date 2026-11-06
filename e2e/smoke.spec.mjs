@@ -198,10 +198,10 @@ test('calibration: the front page links to each practice page', async ({ page })
   await page.goto('./calibration'); // no trailing slash: redirected, as on GitHub Pages
   await expect(page).toHaveURL(/calibration\/$/);
   await expect(page.locator('.cp-hub-card')).toHaveCount(2);
-  await page.getByRole('link', { name: /Practise MAG/ }).click();
+  await page.getByRole('link', { name: /Practice MAG/ }).click();
   await expect(page).toHaveURL(/calibration\/mag\//);
   await page.goBack();
-  await page.getByRole('link', { name: /Practise Infinity/ }).click();
+  await page.getByRole('link', { name: /Practice Infinity/ }).click();
   await expect(page).toHaveURL(/calibration\/infinity\//);
   expect(errors).toEqual([]);
 });

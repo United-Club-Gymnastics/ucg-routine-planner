@@ -54,7 +54,7 @@ export const MIN_SKILLS = 6;
 export const MAX_ROUTINE = 20; // skills a routine list can hold (counting + non-counting)
 export const MAX_PER_EG = WG.counting.maxPerEg; // WG: at most 4 counting skills from one element group
 
-// Sub-A skills (UCG CoP) are recognised skills worth 0.0, with no EG.
+// Sub-A skills (UCG CoP) are recognized skills worth 0.0, with no EG.
 export const LETTER_VALUES = { 'Sub-A': 0, A: 0.1, B: 0.2, C: 0.3, D: 0.4, E: 0.5, F: 0.6, G: 0.7, H: 0.8, I: 0.9, J: 1.0 };
 export const LETTERS = Object.keys(LETTER_VALUES);
 export const ROMAN = { 1: 'I', 2: 'II', 3: 'III', 4: 'IV' };
@@ -211,7 +211,7 @@ export function letterValue(letter) {
   return LETTER_VALUES[l] ?? LETTER_VALUES[l.toUpperCase()] ?? 0;
 }
 
-// A skill re-valued as "not credited at this level" (revalue.js), or one the judges didn't recognise
+// A skill re-valued as "not credited at this level" (revalue.js), or one the judges didn't recognize
 // (a judge-practice calibration routine), counts for nothing, routine length included.
 const isFilled = (s) => !!(s && !s.noCredit && !s.notRecognised && (String(s.name || '').trim() || s.letter));
 export const SR_MAX_STATIC = 3; // WG rings: EG II/III skills before a B or higher EG I skill

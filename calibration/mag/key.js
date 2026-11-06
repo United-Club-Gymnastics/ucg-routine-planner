@@ -4,7 +4,7 @@
 import { LEVELS, ROMAN, eventOptions, letterValue, round1, scoreRoutine, scoreVault } from '../../js/scoring/mag.js';
 
 export { ROMAN };
-// The values a judge picks from (Sub-A: a recognised skill worth 0.0, no element group).
+// The values a judge picks from (Sub-A: a recognized skill worth 0.0, no element group).
 export const LETTERS = ['Sub-A', 'A', 'B', 'C', 'D', 'E', 'F'];
 // How far an execution total may be from the key's and still count as right.
 export const E_TOLERANCE = 0.3;
@@ -23,7 +23,7 @@ export const requirements = (event, level) => eventOptions(event, level).filter(
 
 /**
  * The routine's skills as the planner holds them: each listed skill by its name in the skill list, so
- * a repetition is the same name (scoreRoutine's repeat check); a skill the judges didn't recognise
+ * a repetition is the same name (scoreRoutine's repeat check); a skill the judges didn't recognize
  * for another reason is `notRecognised` (counts for nothing).
  */
 export function skillRows(r) {
@@ -129,7 +129,7 @@ export function compare(r, key, entry, esc = (s) => s) {
       if (milli(k) !== milli(m)) out.notes.push(`<b>${esc(o.label)}:</b> ${k ? `+${k.toFixed(1)}${s.detected[o.id] ? ` (${esc(s.detected[o.id])})` : ''}` : 'not earned'}.`);
     }
     if (milli(entry.stick || 0) !== milli(r.stick)) out.notes.push(`<b>Stick bonus:</b> ${r.stick ? `+${r.stick.toFixed(1)}, the dismount is stuck` : 'none'}.`);
-    if (s.shortBy && !mine.score.shortBy) out.notes.push(`<b>Short routine:</b> only ${s.rows.length} recognised skills, −${s.shortDeduction.toFixed(1)}.`);
+    if (s.shortBy && !mine.score.shortBy) out.notes.push(`<b>Short routine:</b> only ${s.rows.length} recognized skills, −${s.shortDeduction.toFixed(1)}.`);
   }
   if (!out.nd) {
     out.notes.push(`<b>Neutral deductions:</b> ${key.ndItems.length ? key.ndItems.map((x) => `${esc(x.what)} −${x.v.toFixed(1)}`).join('; ') : 'none'}${mine.nd ? `; you have −${mine.nd.toFixed(1)}` : ''}.`);

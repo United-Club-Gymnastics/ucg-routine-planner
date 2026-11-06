@@ -123,7 +123,7 @@ async function loadLogo(doc) {
   }
 }
 
-// Logo on the left, title centred in the space to its right.
+// Logo on the left, title centered in the space to its right.
 function drawHeader(page, p, fonts, logo, title) {
   const x = 110;
   const top = 568;

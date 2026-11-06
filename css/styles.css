@@ -509,11 +509,11 @@ input::placeholder { color: var(--fg-muted); }
 /* Phones only: the folded row and its edit bar. */
 .row-summary, .row-edit { display: none; }
 .skill-row.is-repeat .row-flag, .skill-row.non-counting .row-flag { display: inline-block; }
-/* Centred in the open space where Value + EG bonus would be. */
+/* Centered in the open space where Value + EG bonus would be. */
 .skill-row.is-repeat .col-value, .skill-row.is-repeat .col-bonus,
 .skill-row.non-counting .col-value, .skill-row.non-counting .col-bonus { display: none; }
 
-/* Counting skills sit on the blue green card colour (as the event bonus box
+/* Counting skills sit on the blue green card color (as the event bonus box
    when it's on); repeats and non-counting skills get a gray bar and a flag. */
 .skill-row.is-counting { background: var(--ucg-blue-green); }
 .skill-row.is-counting .skill-input, .skill-row.is-counting select { background-color: var(--ucg-white); border-color: var(--fg-muted); }
@@ -523,7 +523,7 @@ input::placeholder { color: var(--fg-muted); }
 .skill-row.is-repeat, .skill-row.non-counting { background: #e9edef; }
 .skill-row.is-repeat .skill-input, .skill-row.is-repeat select,
 .skill-row.non-counting .skill-input, .skill-row.non-counting select { background-color: var(--ucg-white); }
-/* The focus ring wins over the row colours above. */
+/* The focus ring wins over the row colors above. */
 .skill-row:is(.is-counting, .is-repeat, .non-counting) :is(input, select):focus { border-color: var(--ucg-navy); box-shadow: 0 0 0 1.5px var(--ucg-navy); }
 
 /* ---- Event bonus toggle ---- */
@@ -641,7 +641,7 @@ input::placeholder { color: var(--fg-muted); }
 .chip-tt { background: #d9eef0; }
 
 /* Discipline badges: WAG purple, MAG navy, T&T dark blue green */
-/* Centred on the capitals themselves: the text box is trimmed to cap height (no room kept for
+/* Centered on the capitals themselves: the text box is trimmed to cap height (no room kept for
    descenders), and text-indent balances the tracking added after the last letter. */
 .disc-badge, .cg-badge, .src-badge, .sv-pill { line-height: 1; text-box: trim-both cap alphabetic; }
 .disc-badge {
