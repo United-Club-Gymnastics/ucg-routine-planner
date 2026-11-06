@@ -26,7 +26,7 @@ test('MAG vaults: Advanced values and flipping equal UCG-MAG vault.json', () => 
   }
   const ids = new Set(wg.map((v) => v.id));
   for (const n of [...Object.keys(adv), ...nonFlipping]) assert.ok(ids.has(n), `digest vault ${n} is a WG vault`);
-  assert.equal(adv['228'], 5.6); // Nate 2026-10-21
+  assert.equal(adv['228'], 5.4); // WG + 0.2, though GymACT doesn't list it (Nate 2026-11-06)
 });
 
 test('Infinity tables equal UCG-WAG infinity.json and levels.json', () => {

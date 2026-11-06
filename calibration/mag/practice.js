@@ -1,26 +1,14 @@
 // Judge practice for UCG MAG: watch a calibration routine, judge it the way the MAG judging calculator
 // does (each counting skill's value and element group, bonuses, neutral and execution deductions),
 // check it against the answer key, and see the routine laid out with every deduction the key takes.
-import { APPARATUS, LEVELS, devBanned, offeredAt, skillKey } from '../../js/scoring/mag.js';
-import { VAULTS } from '../../js/data/mag-vaults.js';
-import { E_TOLERANCE, LETTERS, ROMAN, answerKey, bonusOptions, compare, requirements, scoreEntry } from './key.js';
+import { LEVELS, skillKey } from '../../js/scoring/mag.js';
+import { E_TOLERANCE, answerKey, bonusOptions, compare, requirements } from './key.js';
+import { EVENT_NAME, EVENT_SHORT, LEVEL_TABS, ROMAN, createCalculator, esc, f1, rulesHtml } from './calculator.js';
 import { ROUTINES } from './routines.js';
 
 const $ = (id) => document.getElementById(id);
-const LEVEL_TABS = [['dev', 'Developmental'], ['int', 'Intermediate'], ['adv', 'Advanced']];
 const LEVEL_NAME = Object.fromEntries(LEVEL_TABS);
-const EVENT_NAME = { fx: 'Floor', ph: 'Pommel Horse', sr: 'Rings', vt: 'Vault', pb: 'Parallel Bars', hb: 'High Bar' };
-const EVENT_SHORT = { fx: 'Floor', ph: 'Pommel', sr: 'Rings', vt: 'Vault', pb: 'P-Bars', hb: 'High Bar' };
-const f1 = (n) => (Math.round(n * 10) / 10).toFixed(1);
-const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const routineName = (r) => `${LEVEL_NAME[r.level]} ${EVENT_NAME[r.event]}`;
-
-// What each level counts, shown with the video (UCG MAG Rules Breakdown 2026-28).
-const LEVEL_RULES = {
-  dev: 'Developmental: the 6 highest-valued skills count. Each element group with an A or higher skill earns +0.5, but only 3 groups count (+1.5 at most). −0.5 per skill short of 6. Stuck dismount +0.1 (not pommel horse). Start value cap 12.3, bonuses included.',
-  int: 'Intermediate: the dismount and the 7 highest-valued other skills count. EG I +0.5 for an A or higher; EG II–IV +0.3 for an A, +0.5 for a B or higher. −1.0 per skill short of 6. Stuck dismount +0.1 (vault: +0.2 for a flipping vault). Start value cap 13.1, bonuses included.',
-  adv: 'Advanced (GymACT): the dismount and the 7 highest-valued other skills count. EG I +0.5; EG II–III +0.3 for an A or B, +0.4 for a C, +0.5 for a D or higher; the dismount group is worth the dismount’s value (max 0.5; floor has no dismount group). −1.0 per skill short of 6. Stuck dismount +0.1 for a B, +0.2 for a C or higher (vault: +0.2, flipping vaults only). No cap.',
-};
 
 // ---- progress, kept on this device only --------------------------------------------------
 const STORE = 'ucg-calibration-mag';
@@ -72,108 +60,21 @@ $('cp-chips').addEventListener('click', (e) => {
   if (b) open(ROUTINES.find((r) => r.id === b.dataset.id));
 });
 
-// ---- the calculator ----------------------------------------------------------------------
-const rowCount = () => LEVELS[current.level].maxSkills;
-
-function renderSkills(r) {
-  const groups = APPARATUS[r.event].groups;
-  $('cp-skills').innerHTML = Array.from({ length: rowCount() }, (_, i) => `
-    <fieldset class="cp-skill" data-row="${i}">
-      <legend class="cp-sr">Skill ${i + 1}</legend>
-      <span class="cp-skill-n">${i + 1}</span>
-      <span class="cp-seg cp-seg-value" role="radiogroup" aria-label="Skill ${i + 1} value">
-        ${LETTERS.map((l) => `<label title="${l === 'Sub-A' ? 'Sub-A: recognised, worth 0.0, no element group' : `${l}`}"><input type="radio" name="v${i}" value="${l}"><span>${l === 'Sub-A' ? 'Sub' : l}</span></label>`).join('')}
-      </span>
-      <span class="cp-seg cp-seg-eg" role="radiogroup" aria-label="Skill ${i + 1} element group">
-        <label title="No element group"><input type="radio" name="g${i}" value="0"><span>–</span></label>
-        ${[1, 2, 3, 4].map((g) => `<label title="EG ${ROMAN[g]}: ${esc(groups[g])}"><input type="radio" name="g${i}" value="${g}"><span>${ROMAN[g]}</span></label>`).join('')}
-      </span>
-      <button type="button" class="cp-clear" data-clear="${i}" aria-label="Clear skill ${i + 1}" title="Clear">×</button>
-    </fieldset>`).join('');
-  const dismount = r.level === 'dev' ? '' : ' The dismount always counts (on floor, the last acrobatic element).';
-  $('cp-skills-hint').innerHTML = `Enter each skill that counts: its value and element group (– for none).${dismount} Groups: ${[1, 2, 3, 4].map((g) => `<b>${ROMAN[g]}</b> ${esc(groups[g])}`).join(' · ')}.`;
-}
-$('cp-skills').addEventListener('click', (e) => {
-  const b = e.target.closest('[data-clear]');
-  if (!b) return;
-  $('cp-skills').querySelectorAll(`[data-row="${b.dataset.clear}"] input`).forEach((i) => (i.checked = false));
-  update();
+// ---- the calculator (calculator.js, shared with the stand-alone calculator) -------------------
+const calc = createCalculator({
+  form: $('cp-calc'),
+  fields: $('cp-calc-fields'),
+  root: document.body,
+  onChange: () => checked && clearCheck(), // an edit after checking starts a new try
 });
-
-function renderOptions(r) {
-  const opts = r.event === 'vt' ? [] : bonusOptions(r.event, r.level);
-  const stick = r.event !== 'ph';
-  $('cp-bonus-card').hidden = !opts.length && !stick;
-  $('cp-bonus').innerHTML = opts.map((o) => o.kind === 'check'
-    ? `<label class="cp-check" data-opt="${o.id}"><input type="checkbox" data-bonus="${o.id}"><span>${esc(o.label)} <small>+${f1(o.value)}</small></span><span class="cp-key" hidden></span></label>`
-    : `<label class="cp-check cp-check-num" data-opt="${o.id}"><span>${esc(o.label)} <small>${o.kind === 'mushroom' ? 'value, max +1.0' : `+${f1(o.value)} each, how many`}</small></span><input type="number" min="0" step="${o.kind === 'mushroom' ? 0.1 : 1}" placeholder="0" inputmode="decimal" data-bonus="${o.id}"><span class="cp-key" hidden></span></label>`).join('')
-    + (stick ? `<label class="cp-check cp-check-num" data-opt="stick"><span>Stuck landing <small>stick bonus</small></span><select id="cp-stick"><option value="0">None</option><option value="0.1">+0.1</option><option value="0.2">+0.2</option></select><span class="cp-key" hidden></span></label>` : '');
-  const reqs = r.event === 'vt' ? [] : requirements(r.event, r.level);
-  $('cp-missing').innerHTML = reqs.map((o) => `<label class="cp-check" data-req="${o.id}"><input type="checkbox" data-missing="${o.id}"><span>Missing: ${esc(o.label.replace(/^Routine includes a /, '').replace(/^./, (c) => c.toUpperCase()))} <small>−${f1(o.value)}</small></span><span class="cp-key" hidden></span></label>`).join('');
-}
-
-function renderVaults(r) {
-  const list = VAULTS.filter((v) => offeredAt(r.level, v)).sort((a, b) => String(a.id).localeCompare(String(b.id), 'en', { numeric: true }));
-  const dv = (v) => (r.level === 'adv' ? v.adv : v.value);
-  $('cp-vault').innerHTML = '<option value="">Choose the vault…</option>' + list.map((v) => {
-    const banned = r.level === 'dev' && devBanned(v);
-    return `<option value="${esc(v.id)}">${/^\d/.test(v.id) ? `${esc(v.id)} ` : ''}${esc(v.name)}${v.eponym ? ` (${esc(v.eponym)})` : ''} · ${banned ? 'banned at Developmental' : f1(dv(v))}</option>`;
-  }).join('');
-}
-
-const entry = () => ({
-  skills: Array.from({ length: rowCount() }, (_, i) => ({
-    letter: $('cp-calc').querySelector(`input[name="v${i}"]:checked`)?.value || '',
-    eg: Number($('cp-calc').querySelector(`input[name="g${i}"]:checked`)?.value || 0),
-  })),
-  bonus: Object.fromEntries([...$('cp-bonus').querySelectorAll('[data-bonus]')].map((i) => [i.dataset.bonus, i.type === 'checkbox' ? i.checked : i.value])),
-  stick: Number($('cp-stick')?.value || 0),
-  missing: Object.fromEntries([...$('cp-missing').querySelectorAll('[data-missing]')].map((i) => [i.dataset.missing, i.checked])),
-  otherNd: $('cp-nd').value,
-  e: $('cp-e').value,
-  vault: $('cp-vault').value,
-});
-
-function update() {
-  if (!current) return;
-  const e = entry();
-  const mine = scoreEntry(current, e);
-  if (current.event !== 'vt') {
-    const n = e.skills.filter((s) => s.letter).length;
-    $('cp-count').textContent = `${n} / ${rowCount()} skills`;
-    $('cp-count').className = `cp-chip${n === rowCount() ? ' is-full' : n < 6 ? ' is-short' : ''}`;
-    // Sub-A has no element group.
-    e.skills.forEach((s, i) => $('cp-skills').querySelectorAll(`input[name="g${i}"]`).forEach((g) => {
-      g.disabled = s.letter === 'Sub-A';
-      if (g.disabled) g.checked = false;
-    }));
-    const eg = mine.score.egBonus;
-    $('cp-eg-line').innerHTML = Object.keys(eg).length
-      ? `Element group bonus: ${Object.entries(eg).map(([g, v]) => `<b>${ROMAN[g]}</b> +${f1(v)}`).join(' · ')} = <b>+${f1(mine.score.egTotal)}</b>`
-      : 'Element group bonus: none yet.';
-  }
-  $('cp-d').textContent = f1(mine.d);
-  $('cp-sv').textContent = mine.filled ? f1(mine.sv) : '—';
-  const short = mine.score?.shortDeduction;
-  $('cp-short').textContent = mine.filled && short ? `−${f1(short)} short routine` : '';
-  $('cp-ndv').textContent = mine.nd ? `−${f1(mine.nd)}` : '0.0';
-  $('cp-ev').textContent = mine.e ? `−${f1(mine.e)}` : '0.0';
-  $('cp-final').textContent = mine.filled ? f1(mine.final) : '—';
-  if (checked) clearCheck(); // an edit after checking starts a new try
-}
-$('cp-calc').addEventListener('input', update);
-$('cp-calc').addEventListener('change', update);
-$('cp-calc').addEventListener('submit', (e) => e.preventDefault());
+const entry = () => calc.entry();
 $('cp-reset').addEventListener('click', () => {
   resetCalc();
-  update();
+  calc.update();
 });
 
 function resetCalc() {
-  $('cp-calc').querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach((i) => (i.checked = false));
-  $('cp-calc').querySelectorAll('input[type="number"]').forEach((i) => (i.value = ''));
-  if ($('cp-stick')) $('cp-stick').value = '0';
-  $('cp-vault').value = '';
+  calc.reset();
   clearCheck();
 }
 
@@ -207,8 +108,7 @@ function check() {
     const s = key.score;
     for (const o of bonusOptions(r.event, r.level)) {
       const k = s.optionValues[o.id] || 0;
-      const v = e.bonus[o.id];
-      const m = o.kind === 'check' ? (v ? o.value : 0) : o.kind === 'count' ? Math.min(Number(v) || 0, o.max) * o.value : Math.min(Number(v) || 0, 1);
+      const m = mine.score.optionValues[o.id] || 0;
       mark($('cp-bonus').querySelector(`[data-opt="${o.id}"]`), Math.abs(k - m) < 1e-9, k ? `Key: +${f1(k)}` : 'Key: none');
     }
     for (const o of requirements(r.event, r.level)) {
@@ -334,7 +234,6 @@ function showBreakdown(key) {
 function open(r) {
   current = r;
   tab = r.level;
-  document.body.classList.toggle('is-vault', r.event === 'vt');
   if (r.youtube) {
     $('cp-video').src = `https://www.youtube-nocookie.com/embed/${r.youtube}?rel=0`;
     $('cp-video-link').href = `https://www.youtube.com/watch?v=${r.youtube}`;
@@ -345,13 +244,10 @@ function open(r) {
     $('cp-video-link').textContent = 'Open in Drive ↗';
   }
   $('cp-video-name').textContent = routineName(r);
-  $('cp-intro').textContent = LEVEL_RULES[r.level];
-  if (r.event === 'vt') renderVaults(r);
-  else renderSkills(r);
-  renderOptions(r);
-  resetCalc();
+  $('cp-intro').innerHTML = rulesHtml(r.level, r.event);
+  clearCheck();
+  calc.open(r.level, r.event);
   $('cp-breakdown').hidden = true;
-  update();
   renderPicker();
   history.replaceState(null, '', `#${r.id}`);
 }

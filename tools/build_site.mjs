@@ -126,17 +126,20 @@ privacy = withSecurity(privacy);
 if (privacy.includes('__BUILD__')) throw new Error('privacy.html still has development-only parts');
 writeFileSync(join(OUT, 'privacy.html'), privacy);
 
-// Judge practice (calibration/infinity/, calibration/mag/): each page its own small bundle and
-// stylesheet, and its own policy: no Firebase or sign-in, but it embeds the routine videos (Google
-// Drive; MAG also YouTube, privacy-enhanced). MAG's stylesheet builds on Infinity's.
+// Judge practice (calibration/infinity/, calibration/mag/) and the MAG judging calculator
+// (calculator/mag/): each page its own small bundle and stylesheet, and its own policy: no Firebase
+// or sign-in; judge practice embeds the routine videos (Google Drive; MAG also YouTube,
+// privacy-enhanced). MAG's stylesheet builds on Infinity's, and the calculator's on both.
+const MAG_CSS = ['calibration/infinity/practice.css', 'calibration/mag/practice.css'];
 const PRACTICE = [
-  { dir: 'calibration/infinity', css: ['calibration/infinity/practice.css'], frames: 'https://drive.google.com' },
-  { dir: 'calibration/mag', css: ['calibration/infinity/practice.css', 'calibration/mag/practice.css'], frames: 'https://drive.google.com https://www.youtube-nocookie.com' },
+  { dir: 'calibration/infinity', js: 'practice.js', css: ['calibration/infinity/practice.css'], frames: 'https://drive.google.com' },
+  { dir: 'calibration/mag', js: 'practice.js', css: MAG_CSS, frames: 'https://drive.google.com https://www.youtube-nocookie.com' },
+  { dir: 'calculator/mag', js: 'calc.js', css: [...MAG_CSS, 'calculator/mag/calc.css'], frames: "'none'" },
 ];
-for (const { dir: CAL, css, frames } of PRACTICE) {
+for (const { dir: CAL, js, css, frames } of PRACTICE) {
   const cal = await build({
     absWorkingDir: ROOT,
-    entryPoints: [`${CAL}/practice.js`],
+    entryPoints: [`${CAL}/${js}`],
     bundle: true,
     format: 'esm',
     target: 'es2022',
@@ -168,11 +171,59 @@ for (const { dir: CAL, css, frames } of PRACTICE) {
   ].join('; ');
   let calHtml = readFileSync(join(ROOT, CAL, 'index.html'), 'utf8')
     .replace('<meta charset="utf-8" />', `<meta charset="utf-8" />\n    <meta http-equiv="Content-Security-Policy" content="${CAL_CSP}" />\n    <meta name="referrer" content="strict-origin-when-cross-origin" />`)
-    // The development stylesheets (one, or Infinity's and the page's own) become the one built file.
-    .replace(/(\s*<link rel="stylesheet" href="[^"]*practice\.css\?v=__BUILD__" \/>)+/, `\n    <link rel="stylesheet" href="${calCssName}" />`)
-    .replace('<script type="module" src="practice.js"></script>', `<script type="module" src="${posix(relative(join(OUT, CAL), join(ROOT, calJs)))}"></script>`);
-  if (calHtml.includes('__BUILD__') || calHtml.includes('src="practice.js"')) throw new Error(`${CAL}/index.html still has development-only parts`);
+    // The development stylesheets (Infinity's, MAG's, the page's own) become the one built file.
+    .replace(/(\s*<link rel="stylesheet" href="[^"]*\.css\?v=__BUILD__" \/>)+/, `\n    <link rel="stylesheet" href="${calCssName}" />`)
+    .replace(`<script type="module" src="${js}"></script>`, `<script type="module" src="${posix(relative(join(OUT, CAL), join(ROOT, calJs)))}"></script>`);
+  if (calHtml.includes('__BUILD__') || calHtml.includes(`src="${js}"`)) throw new Error(`${CAL}/index.html still has development-only parts`);
   writeFileSync(join(OUT, CAL, 'index.html'), calHtml);
+}
+
+// The MAG judging calculator as one stand-alone file for the UCG website, uploaded and linked to like
+// the UCG Infinity Judging Calculator: the page with its stylesheets and script inline. Saira
+// Condensed comes from Google Fonts (the stylesheets' own font files are this site's). Pure ASCII,
+// so the page reads right whatever charset the website serves it with.
+{
+  const page = readFileSync(join(ROOT, 'calculator/mag/index.html'), 'utf8');
+  const markup = page.slice(page.indexOf('<div id="ucg-mag-calc"'), page.indexOf('<!-- end of the calculator -->')).trimEnd();
+  const js = await build({
+    absWorkingDir: ROOT,
+    entryPoints: ['calculator/mag/calc.js'],
+    bundle: true,
+    format: 'iife',
+    target: 'es2022',
+    charset: 'ascii',
+    legalComments: 'none',
+    write: false,
+    logLevel: 'warning',
+  });
+  // esbuild's ASCII output leaves regular expressions alone (/[½¼¾]/): \u escapes mean the same there.
+  const script = js.outputFiles[0].text.replace(/<\/(script)/gi, '<\\/$1')
+    .replace(/[^\x00-\x7f]/g, (c) => `\\u${c.charCodeAt(0).toString(16).padStart(4, '0')}`);
+  const style = [...MAG_CSS, 'calculator/mag/calc.css'].map((f) => readFileSync(join(ROOT, f), 'utf8')).join('\n')
+    .replace(/@font-face\s*\{[^}]*\}\s*/g, '');
+  const ascii = (text, entity) => text.replace(/[^\x00-\x7f]/gu, (c) => entity(c.codePointAt(0)));
+  const file = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UCG MAG Judging Calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@700&display=swap" rel="stylesheet">
+<style>
+${ascii(style, (n) => `\\${n.toString(16)} `)}
+</style>
+</head>
+<body>
+${ascii(markup, (n) => `&#${n};`)}
+<script>
+${script}</script>
+</body>
+</html>
+`;
+  if (/[^\x00-\x7f]/.test(file)) throw new Error('the MAG judging calculator file is not pure ASCII');
+  writeFileSync(join(OUT, 'calculator/mag', 'UCG_MAG_Judging_Calculator.html'), file);
 }
 
 let html = readFileSync(join(ROOT, 'index.html'), 'utf8');

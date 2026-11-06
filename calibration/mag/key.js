@@ -60,8 +60,10 @@ export function answerKey(r) {
 
 /**
  * A judge's entry, scored the same way:
- *   skills [{ letter, eg }] (the counting skills), bonus { [optionId]: true | count }, stick (0, 0.1, 0.2),
- *   missing { [requirementId]: true }, otherNd, e; or, for vault, vault (id), stick, otherNd, e.
+ *   skills [{ letter, eg, link }] (the counting skills in the order performed; link: connected to the
+ *   next one), bonus { [optionId]: true | count } (the connection bonuses come from the links),
+ *   stick (0, 0.1, 0.2), missing { [requirementId]: true }, otherNd, e; or, for vault, vault (id),
+ *   stick, otherNd, e.
  */
 export function scoreEntry(r, entry) {
   const nums = (n) => Math.max(0, Number(n) || 0);
@@ -73,16 +75,11 @@ export function scoreEntry(r, entry) {
     const nd = round1(nums(entry.otherNd));
     return { vault: v, d, sv, nd, e, final: round1(sv - nd - e), filled: !!v };
   }
-  const rows = entry.skills.filter((s) => s.letter).map((s, i) => ({ name: `Skill ${i + 1}`, letter: s.letter, eg: s.letter === 'Sub-A' ? '' : s.eg || '' }));
-  const score = scoreRoutine(r.event, r.level, rows, {});
-  let bonus = 0;
-  for (const o of bonusOptions(r.event, r.level)) {
-    const v = entry.bonus[o.id];
-    if (o.kind === 'check' && v) bonus += o.value;
-    if (o.kind === 'count') bonus += Math.min(nums(v), o.max) * o.value;
-    if (o.kind === 'mushroom') bonus += Math.min(nums(v), 1);
-  }
-  const d = round1(score.difficulty + score.egTotal + bonus + nums(entry.stick));
+  const rows = entry.skills.filter((s) => s.letter).map((s, i) => ({ name: `Skill ${i + 1}`, letter: s.letter, eg: s.letter === 'Sub-A' ? '' : s.eg || '', link: !!s.link }));
+  // The ticked bonuses and the mushroom value; scoreRoutine counts the connections from the links.
+  const options = Object.fromEntries(bonusOptions(r.event, r.level).filter((o) => !o.connect).map((o) => [o.id, o.kind === 'check' ? !!entry.bonus[o.id] : entry.bonus[o.id]]));
+  const score = scoreRoutine(r.event, r.level, rows, options);
+  const d = round1(score.difficulty + score.egTotal + score.bonus + nums(entry.stick));
   const sv = rows.length ? startValue(r.level, round1(10 + d), score.shortDeduction) : 0;
   const nd = round1(requirements(r.event, r.level).reduce((t, o) => t + (entry.missing[o.id] ? o.value : 0), 0) + nums(entry.otherNd));
   return { score, d, sv, nd, e, final: round1(sv - nd - e), filled: rows.length > 0 };
@@ -128,8 +125,7 @@ export function compare(r, key, entry, esc = (s) => s) {
     }
     for (const o of bonusOptions(r.event, r.level)) {
       const k = s.optionValues[o.id] || 0;
-      const v = entry.bonus[o.id];
-      const m = o.kind === 'check' ? (v ? o.value : 0) : o.kind === 'count' ? Math.min(Number(v) || 0, o.max) * o.value : Math.min(Number(v) || 0, 1);
+      const m = mine.score.optionValues[o.id] || 0;
       if (milli(k) !== milli(m)) out.notes.push(`<b>${esc(o.label)}:</b> ${k ? `+${k.toFixed(1)}${s.detected[o.id] ? ` (${esc(s.detected[o.id])})` : ''}` : 'not earned'}.`);
     }
     if (milli(entry.stick || 0) !== milli(r.stick)) out.notes.push(`<b>Stick bonus:</b> ${r.stick ? `+${r.stick.toFixed(1)}, the dismount is stuck` : 'none'}.`);

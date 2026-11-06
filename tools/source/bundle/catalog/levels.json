@@ -189,7 +189,7 @@
    "eg": {
     "from": "code"
    },
-   "note": "GymACT rules; some front-handspring vaults are worth more than in WG, at Advanced only (rules/UCG-MAG/digest/vault.json; planner ADV_VAULT)."
+   "note": "GymACT rules; front-handspring and round-off ½-on flipping vaults are worth 0.2 more than in WG (GymACT 2027), at Advanced only (rules/UCG-MAG/digest/vault.json; planner ADV_VAULT)."
   },
   "masters": {
    "name": "MAG Masters",
