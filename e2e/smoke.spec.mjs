@@ -192,6 +192,20 @@ test('local mode: export my data; feedback sends no athlete name and no query', 
   expect(errors).toEqual([]);
 });
 
+test('calibration: the front page links to each practice page', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.route(/youtube-nocookie\.com|drive\.google\.com/, (route) => route.fulfill({ status: 200, contentType: 'text/html', body: '<!doctype html><title>video</title>' }));
+  await page.goto('./calibration'); // no trailing slash: redirected, as on GitHub Pages
+  await expect(page).toHaveURL(/calibration\/$/);
+  await expect(page.locator('.cp-hub-card')).toHaveCount(2);
+  await page.getByRole('link', { name: /Practise MAG/ }).click();
+  await expect(page).toHaveURL(/calibration\/mag\//);
+  await page.goBack();
+  await page.getByRole('link', { name: /Practise Infinity/ }).click();
+  await expect(page).toHaveURL(/calibration\/infinity\//);
+  expect(errors).toEqual([]);
+});
+
 test('calibration: judge practice loads, checks a D-score and lays out the routine', async ({ page }) => {
   const errors = watchErrors(page);
   // The routine videos are Drive embeds: stand in for them here.

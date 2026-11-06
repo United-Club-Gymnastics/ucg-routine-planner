@@ -30,7 +30,7 @@ Athletes are saved in Firestore at `users/{user id}/athletes/{athlete}`. Each at
 | [`js/data/`](js/data/) | Skill lists, vault tables, Xcel requirements, example routines (most generated, see below) |
 | [`js/app.js`](js/app.js) | The screen: athlete search, levels, routines, skill picker |
 | [`js/pdf.js`](js/pdf.js), [`js/pdf-infinity.js`](js/pdf-infinity.js) | PDF export |
-| [`calibration/infinity/`](calibration/infinity/) | Judge practice for UCG Infinity difficulty (its own page; see "Judge practice") |
+| [`calibration/`](calibration/) | Judge practice: a front page linking Infinity and MAG practice (their own pages; see "Judge practice") |
 | [`calculator/mag/`](calculator/mag/) | The MAG judging calculator (its own page and a stand-alone file; see "MAG judging calculator") |
 
 ## Scoring rules
@@ -118,6 +118,8 @@ All skill and rules data except T&T comes from the skill bundle that gym-skill-e
 MAG Dev/Int/Adv and the T&T cards are the printouts people already fill in by hand; the planner writes onto them at fixed positions measured from each PDF (`LAYOUTS` in `js/pdf.js`). **If a sheet changes, replace it in `assets/worksheets/` and re-measure.** UCG Infinity uses Julia's worksheet. Xcel uses a low-ink worksheet drawn in `js/pdf.js` (there's no official one), and MAG and WAG Masters a low-ink, UCG-branded drawing of the Masters WAG SV worksheet (2026 Individual World Cup) with its age-decade value table (the printed MAG Masters sheet, with 6 rows and "Misc.", was retired for policy v2.1).
 
 ## Judge practice (calibration routines)
+
+**<https://routines.unitedclubgymnastics.org/calibration/>** ([`calibration/index.html`](calibration/index.html), `hub.css`): the front page, a short explainer and a card for each practice page below (Infinity, MAG), plus a link to the MAG judging calculator. No script; the build gives it Infinity's stylesheet plus `hub.css`. Update its routine counts when a page gains or loses routines.
 
 **<https://routines.unitedclubgymnastics.org/calibration/infinity/>** ([`calibration/infinity/`](calibration/infinity/)): judges practise UCG Infinity **difficulty** on the calibration routine videos. Each routine's video (a Google Drive embed; portrait videos sit beside the calculator, landscape ones get a wide frame) is next to the judging calculator's difficulty inputs (A-E counts, element groups I-IV, apparatus bonus; vault from the Infinity vault chart). Deductions are shown but off: execution is judged as in Xcel Sapphire, and the page links to the real calculator. **Did I get it right?** compares the entry with the answer key, marks each input right or wrong, and says why (which skills make the count, which skill earns a group, why the apparatus bonus is or isn't earned); **See the routine laid out** shows every skill with its value, group and credit, and the start value sum, with **Open in Routine Planner**. Progress (right / tried) is kept in that browser only. A routine can be linked directly: `…/calibration/infinity/#FX_4`.
 
