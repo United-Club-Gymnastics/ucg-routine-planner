@@ -2,13 +2,13 @@
  "schema_version": "0.3.0",
  "code": "UCG-MAG-ADD",
  "discipline": "MAG",
- "edition": "2026-11-06",
- "built": "2026-11-06",
+ "edition": "2026-11-08",
+ "built": "2026-11-08",
  "source": {
   "kind": "authored",
   "document": "MAG/UCG MAG CoP.svg",
   "repo": "nssharpe/ucg-code-of-points",
-  "commit": "90dd309eb4d939a76b8732cfb7240c715954e159"
+  "commit": "157ca8b0a960ea6da9054ec3f967a0455280c927"
  },
  "records": [
   {
@@ -661,12 +661,13 @@
    "id": "UCG-SR-uprise-bwd-or-swing-down-from-handstand-and-salto-bwd-piked-",
    "apparatus": "SR",
    "number": "19",
-   "description": "Uprise bwd. or swing down from handstand and salto bwd piked or stretched",
+   "description": "From support swing forward, back salto dismount piked or stretched",
    "value": "B",
    "element_group": "IV",
    "eponym": "",
    "video": "https://youtu.be/ijSlz6JXUSE",
-   "drawing": true
+   "drawing": true,
+   "adopted": "2026-11-08"
   },
   {
    "id": "UCG-SR-from-still-hang-vertical-pullup-to-handstand-2-s-with-one-ar",
