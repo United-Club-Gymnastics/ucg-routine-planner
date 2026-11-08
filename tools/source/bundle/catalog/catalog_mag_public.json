@@ -1,7 +1,7 @@
 {
  "discipline": "MAG",
- "version": "f4e7e5c5b9d9",
- "built": "2026-11-06",
+ "version": "7cdbfcf8c7da",
+ "built": "2026-11-08",
  "elements": [
   {
    "id": "MAG-FX-0001",
@@ -19603,14 +19603,14 @@
    "id": "MAG-SR-0156",
    "discipline": "MAG",
    "apparatus": "SR",
-   "short_name": "Uprise bwd. or swing down from handstand and salto bwd piked or stretched",
+   "short_name": "From support swing forward, back salto dismount piked or stretched",
    "aka": [],
    "eponym": "",
    "codes": {
     "UCG-MAG-ADD": [
      {
       "rid": "UCG-SR-uprise-bwd-or-swing-down-from-handstand-and-salto-bwd-piked-",
-      "short_name": "Uprise bwd. or swing down from handstand and salto bwd piked or stretched",
+      "short_name": "From support swing forward, back salto dismount piked or stretched",
       "number": "19",
       "variant": 1,
       "value": "B",
@@ -19623,7 +19623,7 @@
     "UCG-MASTERS-MAG": [
      {
       "rid": "UCGM-mag-SR-uprise-bwd-or-swing-down-from-handstand-and-salto-bwd-piked-",
-      "short_name": "Uprise bwd. or swing down from handstand and salto bwd piked or stretched",
+      "short_name": "From support swing forward, back salto dismount piked or stretched",
       "number": "18",
       "variant": 1,
       "value": "B",
