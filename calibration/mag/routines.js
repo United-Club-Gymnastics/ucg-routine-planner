@@ -961,7 +961,7 @@ export const ROUTINES = [
    },
    {
     "name": "Swing down from HS and Salto Bwd Stretched",
-    "label": "Uprise bwd. or swing down from handstand and salto bwd piked or stretched",
+    "label": "From support swing forward, back salto dismount piked or stretched",
     "skillId": "UCG-SR-uprise-bwd-or-swing-down-from-handstand-and-salto-bwd-piked-",
     "letter": "B",
     "eg": 4,
