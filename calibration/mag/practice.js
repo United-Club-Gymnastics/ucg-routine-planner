@@ -1,7 +1,7 @@
 // Judge practice for UCG MAG: watch a calibration routine, judge it the way the MAG judging calculator
 // does (each counting skill's value and element group, bonuses, neutral and execution deductions),
 // check it against the answer key, and see the routine laid out with every deduction the key takes.
-import { LEVELS, skillKey } from '../../js/scoring/mag.js';
+import { LEVELS, neutralTotal, skillKey } from '../../js/scoring/mag.js';
 import { E_TOLERANCE, answerKey, bonusOptions, compare, requirements } from './key.js';
 import { EVENT_NAME, EVENT_SHORT, LEVEL_TABS, ROMAN, createCalculator, esc, f1, rulesHtml } from './calculator.js';
 import { ROUTINES } from './routines.js';
@@ -118,7 +118,9 @@ function check() {
   }
   if ($('cp-stick')) mark($('cp-bonus').querySelector('[data-opt="stick"]'), Math.abs(e.stick - r.stick) < 1e-9, r.stick ? `Key: +${f1(r.stick)}` : 'Key: none');
   const judgeNd = key.ndItems.filter((x) => !x.rule).reduce((t, x) => t + x.v, 0);
-  mark($('cp-nd-row'), Math.abs((Number(e.otherNd) || 0) - judgeNd) < 1e-9, `Key: ${f1(judgeNd)}`);
+  // The key's own neutral deductions are one total: the itemized ones and "other" together.
+  const myNd = neutralTotal(r.event, r.level, e.neutral) + (Number(e.otherNd) || 0);
+  mark($('cp-nd-row'), Math.abs(myNd - judgeNd) < 1e-9, `Key: ${f1(judgeNd)} in all (itemized + other)`);
   mark($('cp-e-row'), res.e, `Key: ${f1(key.e)}`);
 
   const p = progress[r.id] || { tries: 0 };

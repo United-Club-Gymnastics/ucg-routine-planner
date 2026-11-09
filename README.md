@@ -134,7 +134,7 @@ MAG Dev/Int/Adv and the T&T cards are the printouts people already fill in by ha
 - **Scored by the planner:** `calibration/mag/key.js` runs each routine through `scoreRoutine` / `scoreVault` (`js/scoring/mag.js`), plus the stick bonus (the level's cap includes it) and the judges' own neutral deductions; the judge's entry goes through the same engine. Skills the judges didn't recognize for another reason than repetition are `notRecognised` (scored as nothing, flagged "Not recognized" in the planner).
 - **Open in Routine Planner** links to `/?calibration=mag/adv-fx`: the routine at its MAG level (vault too). The stick bonus isn't part of a plan, so the planner's start value is the key's less the stick (the banner says so).
 - **Build:** as Infinity's page; its stylesheet is Infinity's plus `calibration/mag/practice.css`, and it may also frame `www.youtube-nocookie.com`.
-- **The calculator itself** is `calibration/mag/calculator.js` (markup, scoring, reset), shared with the MAG judging calculator below.
+- **The calculator itself** is `calibration/mag/calculator.js` (markup, reset); its rules with no DOM are `calibration/mag/rules.js` (the level tabs, `levelRules`, `stickBonus`, and the scoring re-exported), whose export list is an API: ucg-platform vendors it with `js/scoring/mag.js` and its data. The general neutral deductions are itemized (floor: time over 70 s, out of bounds, same diagonal, rebounding off the 10 cm mat, and at Advanced the corners and unique corner transitions; vault: out of the landing area, not feet first), from `neutralOptions` / `neutralTotal` in `js/scoring/mag.js` (Nate 2026-11-09), with one "Other" number for anything else, shared with the MAG judging calculator below.
 
 ## MAG judging calculator
 

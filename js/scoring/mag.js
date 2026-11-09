@@ -187,6 +187,50 @@ export function eventOptions(event, level) {
   return o;
 }
 
+// General neutral deductions the D1 judge takes from the final score, itemized for the judging
+// calculator (Nate 2026-11-09): WG MAG floor §10.2.1.2 and Art. 10.3, vault Art. 13.3 (the line amounts
+// are the Code's 0.1 / 0.3; the extracted tables lost their marks), and UCG's own (Rules Breakdown:
+// vault "not feet first", the floor mat). The corner rules are Advanced only (Rules Breakdown,
+// Balance/Corner Requirement row); the Advanced floor requirements are in eventOptions. `kind`:
+//   pick   one of `steps` ([value, label]): time over 70 s
+//   count  how many times, `value` each
+//   check  once, `value`
+export function neutralOptions(event, level) {
+  const o = [];
+  const line = (where) => [
+    { id: 'oobHand', kind: 'count', value: 0.1, label: `One foot or hand outside the ${where}` },
+    { id: 'oobBody', kind: 'count', value: 0.3, label: `Both feet, foot and hand, or another part of the body outside the ${where}` },
+    { id: 'oobLand', kind: 'count', value: 0.3, label: `Landing directly outside the ${where}` },
+  ];
+  if (event === 'fx') {
+    o.push({ id: 'time', kind: 'pick', label: 'Longer than 70 seconds', steps: [[0.1, 'up to 2 s over'], [0.3, '2–5 s over'], [0.5, 'more than 5 s over']] });
+    o.push(...line('floor area'));
+    o.push({ id: 'diagonal', kind: 'check', value: 0.3, label: 'Same diagonal 3 times in a row' });
+    if (level === 'adv') {
+      o.push({ id: 'corners', kind: 'check', value: 0.3, label: 'No pass to and/or from each corner' });
+      o.push({ id: 'transitions', kind: 'check', value: 0.3, label: 'Corner transitions not all different' });
+    }
+    o.push({ id: 'matRebound', kind: 'count', value: 0.5, label: 'Rebounding off the 10 cm mat' });
+  }
+  if (event === 'vt') {
+    o.push(...line('landing area'));
+    o.push({ id: 'notFeetFirst', kind: 'check', value: 2.0, label: 'Not landing feet first' });
+  }
+  return o;
+}
+
+/** The itemized neutral deductions' total: values { [id]: true | count | step value }. */
+export function neutralTotal(event, level, values = {}) {
+  let t = 0;
+  for (const o of neutralOptions(event, level)) {
+    const v = values?.[o.id];
+    if (o.kind === 'check' && v) t += o.value;
+    if (o.kind === 'count') t += Math.max(0, Math.floor(Number(v) || 0)) * o.value;
+    if (o.kind === 'pick') t += o.steps.find(([x]) => x === Number(v))?.[0] || 0;
+  }
+  return round1(t);
+}
+
 // Connection bonuses, from the skills the gymnast links (`link`: connected to the next
 // skill): which linked pairs earn each option. Rank: A=1, B=2, ... (Masters letters 0).
 const RANK = (it) => 'ABCDEFGHIJ'.indexOf(String(it.letter || '').toUpperCase()) + 1;

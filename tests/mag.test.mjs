@@ -389,3 +389,23 @@ test('pommel horse handstand elements: one skill per upgraded value', async () =
   const dismount = (id) => scoreRoutine('ph', 'masters', [{ name: findSkill(id).label, letter: v(id), eg: 4, skillId: id }], {}, { decade: 40 }).rows[0].value;
   assert.equal(dismount(`${ucg}-c`), dismount(`${ucg}-a`));
 });
+
+// Nate 2026-11-09: at most 4 counting skills per element group at every level, Developmental too.
+// A skill with no element group (Sub-A, or none) never counts toward the 4 and is never cut by it.
+test('4 per element group at Developmental; skills with no group are outside the limit', () => {
+  const r = scoreRoutine('pb', 'dev', [
+    s('One', 'C', 1), s('Two', 'C', 1), s('Three', 'B', 1), s('Four', 'B', 1), s('Five', 'D', 1),
+    s('Sub one', 'Sub-A', null), s('No group', 'A', null),
+  ]);
+  const st = (n) => r.items.find((it) => it.name === n);
+  assert.equal(r.rows.filter((x) => x.eg === 1).length, 4);
+  assert.equal(st('Four').status, 'noncounting'); // the lowest EG I skill, the latest on a tie
+  assert.equal(st('Four').reason, 'eg');
+  assert.equal(st('Sub one').status, 'counting');
+  assert.equal(st('No group').status, 'counting');
+  assert.equal(r.rows.length, 6);
+  for (const level of ['int', 'adv']) {
+    const many = scoreRoutine('pb', level, [s('a', 'A', null), s('b', 'A', null), s('c', 'A', null), s('d', 'A', null), s('e', 'A', null), s('f', 'Sub-A', null), s('g', 'B', 4)]);
+    assert.equal(many.rows.length, 7, level);
+  }
+});
