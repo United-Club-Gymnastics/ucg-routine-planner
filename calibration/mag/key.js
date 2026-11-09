@@ -70,6 +70,8 @@ export function scoreEntry(r, entry) {
   const e = round1(nums(entry.e));
   if (r.event === 'vt') {
     const v = entry.vault ? scoreVault(r.level, entry.vault) : null;
+    // A vault the level bans (Developmental: flipping or round-off entry) scores 0, whatever else.
+    if (v?.banned) return { vault: v, d: 0, sv: 0, nd: 0, e, final: 0, filled: true, banned: true };
     const d = round1((v?.dv || 0) + nums(entry.stick));
     const sv = v ? startValue(r.level, round1(10 + d), 0) : 0;
     const nd = round1(neutralTotal(r.event, r.level, entry.neutral) + nums(entry.otherNd));

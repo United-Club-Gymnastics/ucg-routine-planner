@@ -228,3 +228,11 @@ test('rules.js: the stable export list, and no DOM', async () => {
   }
   assert.equal(rules.stickBonus('adv', 'hb', { dismount: 'C' }).value, 0.2);
 });
+
+// A vault the level bans scores 0 (Developmental: flipping or round-off entry), stick and deductions too.
+test('a banned Developmental vault scores 0', () => {
+  const r = scoreEntry({ event: 'vt', level: 'dev' }, { vault: '101', stick: 0.1, neutral: { oobHand: 1 }, otherNd: '0.3', e: '1.2' });
+  assert.equal(r.banned, true);
+  assert.deepEqual([r.d, r.sv, r.nd, r.final], [0, 0, 0, 0]);
+  assert.ok(scoreEntry({ event: 'vt', level: 'int' }, { vault: '101', stick: 0, e: '0' }).sv > 10);
+});
