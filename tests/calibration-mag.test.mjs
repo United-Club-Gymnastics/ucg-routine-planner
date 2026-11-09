@@ -205,3 +205,34 @@ test('the rules panel: each level\'s rows, with the Advanced dismount group off 
   assert.ok(labels('dev', 'ph').includes('Mushroom bonus') && labels('dev', 'vt').includes('Banned'));
   assert.equal(levelRules('int', 'sr').find(([k]) => k === 'Start value cap')[1], '13.1, bonuses included');
 });
+
+// The itemized neutral deductions (Nate 2026-11-09): in the engine, so every consumer scores them alike.
+test('itemized neutral deductions: floor and vault', async () => {
+  const { neutralOptions, neutralTotal } = await import('../js/scoring/mag.js');
+  assert.deepEqual(neutralOptions('fx', 'int').map((o) => o.id), ['time', 'oobHand', 'oobBody', 'oobLand', 'diagonal', 'matRebound']);
+  assert.deepEqual(neutralOptions('fx', 'adv').map((o) => o.id), ['time', 'oobHand', 'oobBody', 'oobLand', 'diagonal', 'corners', 'transitions', 'matRebound']);
+  assert.deepEqual(neutralOptions('vt', 'dev').map((o) => o.id), ['oobHand', 'oobBody', 'oobLand', 'notFeetFirst']);
+  assert.deepEqual(neutralOptions('pb', 'adv'), []);
+  assert.equal(neutralTotal('fx', 'adv', { time: '0.3', oobHand: 2, oobBody: '1', corners: true, matRebound: 0 }), 1.1);
+  assert.equal(neutralTotal('fx', 'int', { corners: true, time: '0.4' }), 0); // corners: Advanced only; 0.4 isn't a step
+  assert.equal(neutralTotal('vt', 'int', { notFeetFirst: true, oobLand: 1 }), 2.3);
+  const vt = scoreEntry({ event: 'vt', level: 'int' }, { vault: 'other', stick: 0, neutral: { oobHand: 1 }, otherNd: '0.2', e: '1' });
+  assert.equal(vt.nd, 0.3);
+});
+
+// ucg-platform vendors calibration/mag/rules.js: its export list is an API.
+test('rules.js: the stable export list, and no DOM', async () => {
+  const rules = await import('../calibration/mag/rules.js');
+  for (const name of ['scoreEntry', 'bonusOptions', 'requirements', 'neutralOptions', 'neutralTotal', 'stickBonus', 'levelRules', 'LEVEL_TABS', 'LETTERS', 'ROMAN', 'APPARATUS', 'VAULTS', 'offeredAt', 'devBanned', 'findVault', 'LEVELS']) {
+    assert.ok(name in rules, name);
+  }
+  assert.equal(rules.stickBonus('adv', 'hb', { dismount: 'C' }).value, 0.2);
+});
+
+// A vault the level bans scores 0 (Developmental: flipping or round-off entry), stick and deductions too.
+test('a banned Developmental vault scores 0', () => {
+  const r = scoreEntry({ event: 'vt', level: 'dev' }, { vault: '101', stick: 0.1, neutral: { oobHand: 1 }, otherNd: '0.3', e: '1.2' });
+  assert.equal(r.banned, true);
+  assert.deepEqual([r.d, r.sv, r.nd, r.final], [0, 0, 0, 0]);
+  assert.ok(scoreEntry({ event: 'vt', level: 'int' }, { vault: '101', stick: 0, e: '0' }).sv > 10);
+});

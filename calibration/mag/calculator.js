@@ -2,56 +2,12 @@
 // connections), the level's bonuses and requirements, the stick bonus, neutral and execution
 // deductions, and the score. Shared by judge practice (calibration/mag/) and the stand-alone
 // calculator (calculator/mag/), so the two look and score alike.
-import { APPARATUS, LEVELS, devBanned, findVault, offeredAt } from '../../js/scoring/mag.js';
-import { VAULTS } from '../../js/data/mag-vaults.js';
-import { LETTERS, ROMAN, bonusOptions, requirements, scoreEntry } from './key.js';
+import { APPARATUS, LEVELS, LETTERS, ROMAN, VAULTS, bonusOptions, devBanned, findVault, neutralOptions, offeredAt, requirements, scoreEntry,
+  COP_URL, EVENT_NAME, LEVEL_NOTE, LEVEL_TABS, f1, levelRules, stickBonus } from './rules.js';
 
-export { ROMAN };
-export const LEVEL_TABS = [['dev', 'Developmental'], ['int', 'Intermediate'], ['adv', 'Advanced']];
-export const EVENT_NAME = { fx: 'Floor', ph: 'Pommel Horse', sr: 'Rings', vt: 'Vault', pb: 'Parallel Bars', hb: 'High Bar' };
-export const EVENT_SHORT = { fx: 'Floor', ph: 'Pommel', sr: 'Rings', vt: 'Vault', pb: 'P-Bars', hb: 'High Bar' };
-export const COP_URL = 'https://unitedclubgymnastics.org/wp-content/uploads/UCG-MAG-CoP.pdf';
-export const f1 = (n) => (Math.round(n * 10) / 10).toFixed(1);
+// The rules (no DOM) are rules.js; these are re-exported for the pages that import them from here.
+export { COP_URL, EVENT_NAME, EVENT_SHORT, LEVEL_TABS, ROMAN, f1, levelRules, stickBonus } from './rules.js';
 export const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
-
-// ---- the level's rules at a glance (UCG MAG Rules Breakdown 2026-28; the MAG judges' cheat sheets) ----
-const LEVEL_NOTE = { dev: 'Close to USAG Level 7', int: 'Close to USAG Level 9', adv: '2027 GymACT rules' };
-const RANKS = 'A/B +0.3 · C +0.4 · D or higher +0.5';
-const STICK = { dev: '+0.1', int: '+0.1', adv: '+0.1 for a B dismount · +0.2 for C or higher' };
-const VAULT_STICK = { dev: '+0.1, any vault', int: '+0.1 non-flipping · +0.2 flipping', adv: '+0.2 flipping vaults only' };
-
-/** [label, text or [lines]] rows: what the level counts and awards on this apparatus. */
-export function levelRules(level, event) {
-  const rows = [];
-  if (event === 'vt') {
-    rows.push(['Vault value', level === 'adv' ? 'UCG CoP vault table; front handspring and round-off ½-on saltos at GymACT values' : 'UCG CoP vault table (WG values)']);
-    if (level === 'dev') rows.push(['Banned', 'flipping and round-off-entry vaults (score 0)']);
-    rows.push(['Stick bonus', VAULT_STICK[level]]);
-    rows.push(['Neutral', 'not landing feet first −2.0']);
-  } else {
-    rows.push(['Counting skills', level === 'dev' ? 'the 6 highest-valued · −0.5 per skill short of 6' : 'the dismount + the 7 highest-valued others · −1.0 per skill short of 6']);
-    if (level === 'dev') rows.push(['Element groups', '+0.5 for each group with an A or higher · only 3 groups count (+1.5 max)']);
-    else {
-      rows.push(['EG I', '+0.5 for an A or higher']);
-      // Advanced scores the dismount group on its own, except on floor (no dismount group).
-      rows.push([level === 'adv' && event !== 'fx' ? 'EG II–III' : 'EG II–IV', level === 'int' ? 'A +0.3 · B or higher +0.5' : RANKS]);
-      if (level === 'adv' && event !== 'fx') rows.push(['EG IV (dismount)', 'the dismount’s value (+0.5 max)']);
-    }
-    rows.push(['Start value cap', LEVELS[level].cap != null ? `${f1(LEVELS[level].cap)}, bonuses included` : 'none']);
-    rows.push(['Stick bonus', event === 'ph' ? 'none on pommel horse' : STICK[level]]);
-    if (event === 'fx') {
-      rows.push(['Bonus', ['D or higher connected with B or C +0.1', 'D or higher connected with D or higher +0.2', 'double-salto dismount +0.1']]);
-      if (level === 'adv') rows.push(['Required', ['a double salto', 'a tumbling pass first', 'a balance or jump per WG', '−0.3 for each one missing']]);
-    }
-    if (event === 'ph' && level === 'dev') rows.push(['Mushroom bonus', ['+0.1 per circle, +0.2 per other skill', 'the top 5 count (+1.0 max)']]);
-    if (event === 'sr') {
-      rows.push(['Bonus', '+0.3 once for a C or higher strength skill']);
-      if (level === 'adv') rows.push(['Required', 'a swing to handstand (−0.3 if missing)']);
-    }
-    if (event === 'hb') rows.push(['Bonus', 'C + C connection +0.1: flight to flight, or in bar to flight and back']);
-  }
-  return rows;
-}
 
 /** The rules panel: the level, then its rules for the apparatus. */
 export function rulesHtml(level, event) {
@@ -66,21 +22,6 @@ export function rulesHtml(level, event) {
  * (Advanced: +0.1 for a B, +0.2 for C or higher) or, on vault, whether it flips.
  * { value, why } — `why` explains it next to the checkbox.
  */
-export function stickBonus(level, event, { dismount = '', vault = null } = {}) {
-  if (event === 'ph') return { value: 0, why: 'none on pommel horse' };
-  if (event === 'vt') {
-    if (level === 'dev') return { value: 0.1, why: '+0.1, any vault' };
-    if (!vault) return { value: 0, why: VAULT_STICK[level] };
-    if (vault.flipping) return { value: 0.2, why: '+0.2, a flipping vault' };
-    return level === 'int' ? { value: 0.1, why: '+0.1, a non-flipping vault' } : { value: 0, why: 'none for a non-flipping vault' };
-  }
-  if (level !== 'adv') return { value: 0.1, why: '+0.1' };
-  if (!dismount) return { value: 0, why: STICK.adv };
-  const rank = 'ABCDEFGHIJ'.indexOf(dismount) + 1;
-  if (rank >= 3) return { value: 0.2, why: `+0.2, a ${dismount} dismount` };
-  if (rank === 2) return { value: 0.1, why: '+0.1, a B dismount' };
-  return { value: 0, why: `none for ${dismount === 'Sub-A' ? 'a Sub-A' : 'an A'} dismount` };
-}
 
 const ICON_LINK = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>';
 const ICON_PLUS = '<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>';
@@ -113,6 +54,7 @@ export const CALC_HTML = `
   <div class="cp-card">
     <h2 class="cp-display">Neutral deductions</h2>
     <div id="cp-missing" class="cp-checks"></div>
+    <div id="cp-neutral" class="cp-checks"></div>
     <label class="cp-field cp-live" id="cp-nd-row">Other neutral deductions <input type="number" id="cp-nd" min="0" step="0.1" placeholder="0.0" inputmode="decimal" /><span class="cp-key" hidden></span></label>
   </div>
 
@@ -184,6 +126,11 @@ export function createCalculator({ form, fields, root, onChange = () => {} }) {
     }).join('')
       + (stick ? `<label class="cp-check" data-opt="stick"><input type="checkbox" id="cp-stick"><span>Stuck landing <small id="cp-stick-why"></small></span><span class="cp-key" hidden></span></label>` : '');
     const reqs = event === 'vt' ? [] : requirements(event, level);
+    $('cp-neutral').innerHTML = neutralOptions(event, level).map((o) => {
+      if (o.kind === 'check') return `<label class="cp-check" data-nd="${o.id}"><input type="checkbox" data-neutral="${o.id}"><span>${esc(o.label)} <small>−${f1(o.value)}</small></span></label>`;
+      if (o.kind === 'pick') return `<label class="cp-check cp-check-num" data-nd="${o.id}"><span>${esc(o.label)}</span><select data-neutral="${o.id}"><option value="">No</option>${o.steps.map(([v, l]) => `<option value="${v}">${esc(l)} −${f1(v)}</option>`).join('')}</select></label>`;
+      return `<label class="cp-check cp-check-num" data-nd="${o.id}"><span>${esc(o.label)} <small>−${f1(o.value)} each, how many</small></span><input type="number" min="0" step="1" placeholder="0" inputmode="numeric" data-neutral="${o.id}"></label>`;
+    }).join('');
     $('cp-missing').innerHTML = reqs.map((o) => `<label class="cp-check" data-req="${o.id}"><input type="checkbox" data-missing="${o.id}"><span>Missing: ${esc(o.label.replace(/^Routine includes a /, '').replace(/^./, (c) => c.toUpperCase()))} <small>−${f1(o.value)}</small></span><span class="cp-key" hidden></span></label>`).join('');
   }
 
@@ -213,6 +160,7 @@ export function createCalculator({ form, fields, root, onChange = () => {} }) {
     bonus: Object.fromEntries([...$('cp-bonus').querySelectorAll('[data-bonus]')].map((i) => [i.dataset.bonus, i.type === 'checkbox' ? i.checked : i.value])),
     stick: $('cp-stick')?.checked ? stickNow().value : 0,
     missing: Object.fromEntries([...$('cp-missing').querySelectorAll('[data-missing]')].map((i) => [i.dataset.missing, i.checked])),
+    neutral: Object.fromEntries([...$('cp-neutral').querySelectorAll('[data-neutral]')].map((i) => [i.dataset.neutral, i.type === 'checkbox' ? i.checked : i.value])),
     otherNd: $('cp-nd').value,
     e: $('cp-e').value,
     vault: $('cp-vault').value,
@@ -271,7 +219,7 @@ export function createCalculator({ form, fields, root, onChange = () => {} }) {
     form.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach((i) => (i.checked = false));
     form.querySelectorAll('input[type="number"]').forEach((i) => (i.value = ''));
     links().forEach((b) => setLink(b, false));
-    $('cp-vault').value = '';
+    form.querySelectorAll('select').forEach((i) => (i.value = ''));
   }
 
   /** Set the calculator up, empty, for a level and an apparatus. */

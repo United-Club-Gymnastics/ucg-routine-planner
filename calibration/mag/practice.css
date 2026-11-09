@@ -31,6 +31,7 @@
 .cp-check-num > span:first-child { margin-right: auto; }
 .cp-check small { color: var(--fg-secondary); margin-left: 4px; }
 .cp-check-num input, .cp-check-num select { width: 84px; height: 38px; border: 1.5px solid var(--border-field); border-radius: 8px; background: var(--white); padding: 0 8px; flex: none; }
+.cp-check-num select { width: auto; max-width: 220px; }
 .cp-check-num .cp-key { margin-left: 0; }
 
 /* live deduction inputs (the Infinity page shows them switched off) */

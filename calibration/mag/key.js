@@ -1,7 +1,7 @@
 // Judge practice for UCG MAG: the answer key for a calibration routine, scored by the planner's own
 // MAG rules (js/scoring/mag.js), and how a judge's entry compares with it. No DOM: tested in
 // tests/calibration-mag.test.mjs.
-import { LEVELS, ROMAN, eventOptions, letterValue, round1, scoreRoutine, scoreVault } from '../../js/scoring/mag.js';
+import { LEVELS, ROMAN, eventOptions, letterValue, neutralTotal, round1, scoreRoutine, scoreVault } from '../../js/scoring/mag.js';
 
 export { ROMAN };
 // The values a judge picks from (Sub-A: a recognized skill worth 0.0, no element group).
@@ -62,17 +62,19 @@ export function answerKey(r) {
  * A judge's entry, scored the same way:
  *   skills [{ letter, eg, link }] (the counting skills in the order performed; link: connected to the
  *   next one), bonus { [optionId]: true | count } (the connection bonuses come from the links),
- *   stick (0, 0.1, 0.2), missing { [requirementId]: true }, otherNd, e; or, for vault, vault (id),
- *   stick, otherNd, e.
+ *   stick (0, 0.1, 0.2), missing { [requirementId]: true }, neutral { [neutralId]: true | count | step
+ *   value } (mag.js neutralOptions), otherNd, e; or, for vault, vault (id), stick, neutral, otherNd, e.
  */
 export function scoreEntry(r, entry) {
   const nums = (n) => Math.max(0, Number(n) || 0);
   const e = round1(nums(entry.e));
   if (r.event === 'vt') {
     const v = entry.vault ? scoreVault(r.level, entry.vault) : null;
+    // A vault the level bans (Developmental: flipping or round-off entry) scores 0, whatever else.
+    if (v?.banned) return { vault: v, d: 0, sv: 0, nd: 0, e, final: 0, filled: true, banned: true };
     const d = round1((v?.dv || 0) + nums(entry.stick));
     const sv = v ? startValue(r.level, round1(10 + d), 0) : 0;
-    const nd = round1(nums(entry.otherNd));
+    const nd = round1(neutralTotal(r.event, r.level, entry.neutral) + nums(entry.otherNd));
     return { vault: v, d, sv, nd, e, final: round1(sv - nd - e), filled: !!v };
   }
   const rows = entry.skills.filter((s) => s.letter).map((s, i) => ({ name: `Skill ${i + 1}`, letter: s.letter, eg: s.letter === 'Sub-A' ? '' : s.eg || '', link: !!s.link }));
@@ -81,7 +83,8 @@ export function scoreEntry(r, entry) {
   const score = scoreRoutine(r.event, r.level, rows, options);
   const d = round1(score.difficulty + score.egTotal + score.bonus + nums(entry.stick));
   const sv = rows.length ? startValue(r.level, round1(10 + d), score.shortDeduction) : 0;
-  const nd = round1(requirements(r.event, r.level).reduce((t, o) => t + (entry.missing[o.id] ? o.value : 0), 0) + nums(entry.otherNd));
+  const nd = round1(requirements(r.event, r.level).reduce((t, o) => t + (entry.missing?.[o.id] ? o.value : 0), 0)
+    + neutralTotal(r.event, r.level, entry.neutral) + nums(entry.otherNd));
   return { score, d, sv, nd, e, final: round1(sv - nd - e), filled: rows.length > 0 };
 }
 
