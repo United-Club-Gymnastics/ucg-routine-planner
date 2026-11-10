@@ -1,7 +1,7 @@
 {
  "discipline": "MAG",
- "version": "7cdbfcf8c7da",
- "built": "2026-11-08",
+ "version": "374557f6267b",
+ "built": "2026-11-10",
  "elements": [
   {
    "id": "MAG-FX-0001",
@@ -19455,14 +19455,14 @@
    "id": "MAG-SR-0152",
    "discipline": "MAG",
    "apparatus": "SR",
-   "short_name": "Uprise bwd. and salto bwd tucked",
+   "short_name": "From support swing fwd. (any entry), back salto dismount tucked",
    "aka": [],
    "eponym": "",
    "codes": {
     "UCG-MAG-ADD": [
      {
       "rid": "UCG-SR-uprise-bwd-and-salto-bwd-tucked",
-      "short_name": "Uprise bwd. and salto bwd tucked",
+      "short_name": "From support swing fwd. (any entry), back salto dismount tucked",
       "number": "15",
       "variant": 1,
       "value": "A",
@@ -19475,7 +19475,7 @@
     "UCG-MASTERS-MAG": [
      {
       "rid": "UCGM-mag-SR-uprise-bwd-and-salto-bwd-tucked",
-      "short_name": "Uprise bwd. and salto bwd tucked",
+      "short_name": "From support swing fwd. (any entry), back salto dismount tucked",
       "number": "14",
       "variant": 1,
       "value": "A",
@@ -19603,14 +19603,14 @@
    "id": "MAG-SR-0156",
    "discipline": "MAG",
    "apparatus": "SR",
-   "short_name": "From support swing forward, back salto dismount piked or stretched",
+   "short_name": "From support swing forward (any entry), back salto dismount piked or stretched",
    "aka": [],
    "eponym": "",
    "codes": {
     "UCG-MAG-ADD": [
      {
       "rid": "UCG-SR-uprise-bwd-or-swing-down-from-handstand-and-salto-bwd-piked-",
-      "short_name": "From support swing forward, back salto dismount piked or stretched",
+      "short_name": "From support swing forward (any entry), back salto dismount piked or stretched",
       "number": "19",
       "variant": 1,
       "value": "B",
@@ -19623,7 +19623,7 @@
     "UCG-MASTERS-MAG": [
      {
       "rid": "UCGM-mag-SR-uprise-bwd-or-swing-down-from-handstand-and-salto-bwd-piked-",
-      "short_name": "From support swing forward, back salto dismount piked or stretched",
+      "short_name": "From support swing forward (any entry), back salto dismount piked or stretched",
       "number": "18",
       "variant": 1,
       "value": "B",
