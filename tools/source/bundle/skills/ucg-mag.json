@@ -2,13 +2,13 @@
  "schema_version": "0.3.0",
  "code": "UCG-MAG-ADD",
  "discipline": "MAG",
- "edition": "2026-11-08",
- "built": "2026-11-08",
+ "edition": "2026-11-10",
+ "built": "2026-11-10",
  "source": {
   "kind": "authored",
   "document": "MAG/UCG MAG CoP.svg",
   "repo": "nssharpe/ucg-code-of-points",
-  "commit": "157ca8b0a960ea6da9054ec3f967a0455280c927"
+  "commit": "72e188d2e0b78575780e89b458b4e5b8bc249aa5"
  },
  "records": [
   {
@@ -615,12 +615,13 @@
    "id": "UCG-SR-uprise-bwd-and-salto-bwd-tucked",
    "apparatus": "SR",
    "number": "15",
-   "description": "Uprise bwd. and salto bwd tucked",
+   "description": "From support swing fwd. (any entry), back salto dismount tucked",
    "value": "A",
    "element_group": "IV",
    "eponym": "",
    "video": "https://www.youtube.com/watch?v=rnsd8UeGwc0",
-   "drawing": true
+   "drawing": true,
+   "adopted": "2026-11-10"
   },
   {
    "id": "UCG-SR-5-4-tucked-salto-bwd-to-inverted-hang-and-immediate-dislocat",
@@ -661,7 +662,7 @@
    "id": "UCG-SR-uprise-bwd-or-swing-down-from-handstand-and-salto-bwd-piked-",
    "apparatus": "SR",
    "number": "19",
-   "description": "From support swing forward, back salto dismount piked or stretched",
+   "description": "From support swing forward (any entry), back salto dismount piked or stretched",
    "value": "B",
    "element_group": "IV",
    "eponym": "",

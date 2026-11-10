@@ -2,13 +2,13 @@
  "schema_version": "0.3.0",
  "code": "UCG-MASTERS-MAG",
  "discipline": "MAG",
- "edition": "2026-11-08",
- "built": "2026-11-08",
+ "edition": "2026-11-10",
+ "built": "2026-11-10",
  "source": {
   "kind": "authored",
   "document": "Masters/UCG Masters MAG CoP.svg",
   "repo": "nssharpe/ucg-code-of-points",
-  "commit": "157ca8b0a960ea6da9054ec3f967a0455280c927"
+  "commit": "72e188d2e0b78575780e89b458b4e5b8bc249aa5"
  },
  "records": [
   {
@@ -824,7 +824,7 @@
    "apparatus": "SR",
    "number": "14",
    "page": 5,
-   "description": "Uprise bwd. and salto bwd tucked",
+   "description": "From support swing fwd. (any entry), back salto dismount tucked",
    "value": "A",
    "element_group": "IV",
    "eponym": "",
@@ -878,7 +878,7 @@
    "apparatus": "SR",
    "number": "18",
    "page": 5,
-   "description": "From support swing forward, back salto dismount piked or stretched",
+   "description": "From support swing forward (any entry), back salto dismount piked or stretched",
    "value": "B",
    "element_group": "IV",
    "eponym": "",

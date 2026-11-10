@@ -1,17 +1,17 @@
 {
  "schema_version": "0.3.0",
- "built": "2026-11-08",
+ "built": "2026-11-10",
  "catalogs": {
-  "MAG": "7cdbfcf8c7da",
+  "MAG": "374557f6267b",
   "WAG": "90974ca9d700"
  },
  "sources": {
-  "nssharpe/gym-skill-extract": "c1b8b33624cd081fe99bebe182a4e4edc56783d3",
-  "nssharpe/ucg-code-of-points": "157ca8b0a960ea6da9054ec3f967a0455280c927"
+  "nssharpe/gym-skill-extract": "6615d8779deb2d097c289124854bb29d548d27b0",
+  "nssharpe/ucg-code-of-points": "72e188d2e0b78575780e89b458b4e5b8bc249aa5"
  },
  "files": {
   "catalog/aliases_mag.json": {
-   "sha256": "a63f509de987350974ebff8eea5cefe1e311168231f7bbdf774deea31f8bc66b",
+   "sha256": "a8d0093e6ea79a2d7ff402ba6d6baae8fc5868cd9b2a0e16796424a0584556ff",
    "schema": "aliases.schema.json"
   },
   "catalog/aliases_wag.json": {
@@ -19,7 +19,7 @@
    "schema": "aliases.schema.json"
   },
   "catalog/catalog_mag_public.json": {
-   "sha256": "1f87ecb7d458f994bfe44f1612a4950fabe670369bec5fe0d77a76bca2f49ab0",
+   "sha256": "6c590a71032a4d5cbed0536bceadd5b0c31cb93ca5db89458f96eb17e6d92a1c",
    "schema": "catalog.schema.json"
   },
   "catalog/catalog_wag_public.json": {
@@ -131,11 +131,11 @@
    "sha256": "fa90ecc90307b3978e187e772db40e2a5cf0424ff4edd9b507ae9bab67e7c5c9"
   },
   "skills/ucg-mag.json": {
-   "sha256": "ee991aa7c70f4fd2a6deb5b6538d68b8598e7f6077b36a217dca8fa9b2cdf100",
+   "sha256": "a29f8620b1372790375ba09d1176ac2698db3a3b053a014d45bdf9cdab9f0d66",
    "schema": "skill.schema.json"
   },
   "skills/ucg-masters-mag.json": {
-   "sha256": "a7dcf6f839fca9b49a7e64c56c12b9ea5f9992668fb8a8f3f4ea0626c343afdb",
+   "sha256": "363352a3a9598e1241aa92eb3004371ee0491e9fa4017bd8db888ba9fff19c8a",
    "schema": "skill.schema.json"
   },
   "skills/ucg-masters-vaults.json": {
@@ -143,11 +143,11 @@
    "schema": "vaults.schema.json"
   },
   "skills/ucg-masters-wag.json": {
-   "sha256": "244f0e4b3a04901f7ef5e1854c297ad92db6ab1488e553cc3fea39338c18b407",
+   "sha256": "119b29f1057dccae35fabcaa6d87a410e4fe27837e3879d9a1169164a1c5f9a7",
    "schema": "skill.schema.json"
   },
   "skills/ucg-wag.json": {
-   "sha256": "4dd22b5a9717c40bd26a582c54173bfbdd7d4afe9a9130bbd34438cb925cf605",
+   "sha256": "ddcdc15d20e1016598ea50b005abbb06b62da4f91f65e46a709298293c46c3cd",
    "schema": "skill.schema.json"
   },
   "skills/ucg_wag_skills_simplified.json": {
