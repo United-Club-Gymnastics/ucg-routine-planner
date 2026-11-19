@@ -189,7 +189,7 @@ export function scoreEvent(entry, evId) {
     const r = mag.scoreRoutine(evId, level, rows, opts, ctx);
     const any = r.rows.length > 0;
     if (r.capped) out.notes.push(`Start value capped at ${fmt(r.cap)} (${fmt(r.raw)} before the cap).`);
-    if (r.deductions) out.notes.push(`Expected neutral deduction −${fmt(r.deductions)}: ${fmt(r.afterDeductions)} after deductions.`);
+    if (r.deductions) out.notes.push(`Expected neutral deduction${r.missing.length > 1 ? 's' : ''}: ${r.missing.map((m) => `${m.label} (−${fmt(m.value)})`).join(', ')}. ${fmt(r.afterDeductions)} after deductions.`);
     if (any && mag.LEVELS[level].masters && r.dismount == null) {
       out.notes.push(evId === 'fx'
         ? 'No dismount: the last skill that isn’t from EG I is the dismount. Without one, the routine is one skill short.'

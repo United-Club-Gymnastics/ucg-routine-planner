@@ -52,10 +52,12 @@ test('Advanced pommel: dismount group is worth the dismount value (12.3)', () =>
   assert.equal(r.startValue, 12.3);
 });
 
-test('Advanced rings matches spreadsheet (12.9)', () => {
+test('Advanced rings matches spreadsheet (12.9, 13.2 with the strength bonus)', () => {
   const r = scoreRoutine('sr', 'adv', advRings, { swingHs: true });
   assert.equal(r.egTotal, 1.4);
-  assert.equal(r.afterDeductions, 12.9);
+  // The spreadsheet's 12.9 leaves the strength bonus unticked; the Cross (C, EG II) earns it.
+  assert.equal(r.detected.strength, 'Cross');
+  assert.equal(r.afterDeductions, 13.2);
 });
 
 test('Advanced p-bars and high bar match spreadsheet (12.4, 12.1)', () => {
@@ -233,7 +235,8 @@ test('all-around adds vault and the five events', () => {
     vault: '202',
     routines: { fx: advFloor, ph: advPommel, sr: advRings, pb: advPbars, hb: advHbar },
   }).allAround;
-  assert.equal(aa, 73.7); // the spreadsheet's 73.4 also takes off the floor neutral deduction
+  // The spreadsheet's 73.4 also takes off the floor neutral deduction and leaves the rings strength bonus unticked.
+  assert.equal(aa, 74.0);
 });
 
 test('blank rows are ignored; empty routine scores 0', () => {
@@ -276,6 +279,37 @@ test('Advanced rings: a listed swing to handstand (I.75, I.81, I.86-88) meets th
   // Not a listed one, and not ticked by hand: still missing.
   assert.equal(scoreRoutine('sr', 'adv', [...base, sk('Uprise bwd. str. through handstand.', 'B', 1, 'WG-SR-I-32')]).deductions, 0.3);
   assert.equal(scoreRoutine('sr', 'adv', base, { swingHs: true }).deductions, 0);
+  // It must be a counting skill (WG): an A swing to handstand behind 8 higher skills doesn't count.
+  const strong = [sk('Kip', 'B', 1), sk('Cross', 'C', 2), sk('Planche', 'D', 2), sk('Back lever', 'B', 2), sk('Front lever', 'C', 2), sk('Giant', 'C', 1), sk('Honma', 'B', 1), sk('Double back', 'C', 4)];
+  const notCounting = scoreRoutine('sr', 'adv', [sk('Swing to handstand', 'A', 1, 'WG-SR-I-86'), ...strong]);
+  assert.equal(notCounting.items[0].status, 'noncounting');
+  assert.equal(notCounting.detected.swingHs, undefined);
+  assert.equal(notCounting.deductions, 0.3);
+});
+
+test('Rings: a C or higher strength skill (EG II) earns the +0.3 strength bonus by itself', () => {
+  const base = [s('Kip', 'A', 1), s('L-sit', 'A', 2), s('Back lever', 'B', 2), s('Dislocate', 'A', 1), s('Inlocate', 'A', 1), s('Back tuck', 'A', 4)];
+  for (const level of ['dev', 'int', 'adv']) {
+    assert.equal(scoreRoutine('sr', level, base).optionValues.strength, 0);
+    const r = scoreRoutine('sr', level, [...base.slice(0, 5), s('Cross', 'C', 2), base[5]]);
+    assert.equal(r.optionValues.strength, 0.3);
+    assert.equal(r.detected.strength, 'Cross');
+  }
+  // A C swing to strength (EG III) is not a strength skill; a hand tick still counts.
+  assert.equal(scoreRoutine('sr', 'int', [...base, s('Back uprise to planche', 'C', 3)]).optionValues.strength, 0);
+  assert.equal(scoreRoutine('sr', 'int', base, { strength: true }).optionValues.strength, 0.3);
+  // Only one bonus, however many C strength skills.
+  assert.equal(scoreRoutine('sr', 'int', [s('Cross', 'C', 2), s('Planche', 'D', 2), ...base]).bonus, 0.3);
+  // A 4th static before a B swing element isn't credited (WG 12.2.2.3), so it doesn't earn the bonus.
+  const statics = [s('L-sit', 'A', 2), s('Back lever', 'B', 2), s('Front lever', 'B', 2), s('Cross', 'C', 2), ...base.slice(3)];
+  assert.equal(scoreRoutine('sr', 'int', statics).optionValues.strength, 0);
+});
+
+test('Requirement deductions are itemized (missing)', () => {
+  const r = scoreRoutine('sr', 'adv', advRings);
+  assert.deepEqual(r.missing, [{ id: 'swingHs', label: 'No swing to handstand', value: 0.3 }]);
+  assert.deepEqual(scoreRoutine('sr', 'adv', advRings, { swingHs: true }).missing, []);
+  assert.deepEqual(scoreRoutine('fx', 'adv', advFloor).missing.map((m) => m.id), ['dblFlip', 'balance']);
 });
 
 test('Advanced floor: double flip and double flipping dismount are detected from the routine', () => {

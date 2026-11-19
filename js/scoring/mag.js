@@ -33,7 +33,10 @@ const isRoundOff = (it) => (it.skillId ? it.skillId === FX_ROUND_OFF : /\bround[
 // Requirements and bonuses the routine itself can show. Each takes the listed
 // skills (no blanks) and returns the skill that meets it, if any.
 const DETECT = {
-  swingHs: (skills) => skills.find((it) => SWING_HS.includes(it.skillId)),
+  // Rings: a C or higher strength skill (EG II). A static the 3-statics rule leaves uncredited doesn't earn it.
+  strength: (skills) => skills.find((it) => it.eg === 2 && it.value >= 0.3 && it.reason !== 'sr'),
+  // WG: the swing to handstand must be among the counting elements.
+  swingHs: (skills) => skills.find((it) => it.status === 'counting' && SWING_HS.includes(it.skillId)),
   dblFlip: (skills) => skills.find(isDoubleSalto),
   // The dismount is the last skill in the routine.
   dblDismount: (skills) => {
@@ -158,16 +161,16 @@ export function eventOptions(event, level) {
     o.push({ id: 'dblDismount', kind: 'check', value: 0.1, detect: true, label: 'Double flipping dismount',
       help: '+0.1. Ticked automatically when the last skill listed is a double or triple salto.' });
     if (level === 'adv') {
-      o.push({ id: 'dblFlip', kind: 'check', value: 0.3, deduction: true, detect: true, label: 'Routine includes a double flip',
+      o.push({ id: 'dblFlip', kind: 'check', value: 0.3, deduction: true, detect: true, label: 'Routine includes a double flip', missing: 'No double flip',
         help: 'Required: -0.3 neutral deduction if missing. Ticked automatically for a double salto from the skill list.' });
     }
     // WG newsletters (MAG-NL-1, NL-3, NL-4): Advanced only (Nate 2026-10-20).
     if (WG.fxBalanceOrJump.ucg_levels.includes(level)) {
-      o.push({ id: 'balance', kind: 'check', value: WG.fxBalanceOrJump.neutral, deduction: true, detect: true, label: 'Balance or jump requirement',
+      o.push({ id: 'balance', kind: 'check', value: WG.fxBalanceOrJump.neutral, deduction: true, detect: true, label: 'Balance or jump requirement', missing: 'No one-leg balance or listed jump',
         help: 'Required: -0.3 neutral deduction if missing. A one-leg balance (I.61, I.62) or a jump from the WG list (I.67, I.68, I.74, I.75, I.115-I.117, I.43, II.8); it need not be a counting skill. Ticked automatically for those skills from the list.' });
     }
     if (WG.fxStartTumbling.ucg_levels.includes(level)) {
-      o.push({ id: 'tumbleStart', kind: 'check', value: WG.fxStartTumbling.neutral, deduction: true, detect: true, label: 'Starts with a tumbling pass',
+      o.push({ id: 'tumbleStart', kind: 'check', value: WG.fxStartTumbling.neutral, deduction: true, detect: true, label: 'Starts with a tumbling pass', missing: 'Does not start with a tumbling pass',
         help: "Required: -0.3 neutral deduction if the routine doesn't start with a tumbling pass. Ticked automatically when the first skill listed is from EG II, III or IV, or a round-off." });
     }
   }
@@ -175,10 +178,11 @@ export function eventOptions(event, level) {
     o.push({ id: 'mushroom', kind: 'mushroom', label: 'Mushroom bonus', help: '+0.1 per circle, +0.2 per other skill; top 5 count, max +1.0' });
   }
   if (event === 'sr' && level !== 'masters') {
-    o.push({ id: 'strength', kind: 'check', value: 0.3, label: 'C or higher strength skill', help: 'One-time +0.3' });
+    o.push({ id: 'strength', kind: 'check', value: 0.3, detect: true, label: 'C or higher strength skill',
+      help: 'One-time +0.3. Ticked automatically for a C or higher strength skill (EG II) in the routine.' });
     if (level === 'adv') {
-      o.push({ id: 'swingHs', kind: 'check', value: 0.3, deduction: true, detect: true, label: 'Routine includes a swing to handstand',
-        help: 'Required: -0.3 neutral deduction if missing. Ticked automatically for I.75, I.81, I.86, I.87 or I.88 from the skill list.' });
+      o.push({ id: 'swingHs', kind: 'check', value: 0.3, deduction: true, detect: true, label: 'Routine includes a swing to handstand', missing: 'No swing to handstand',
+        help: 'Required: -0.3 neutral deduction if missing. It must be a counting skill: ticked automatically for I.75, I.81, I.86, I.87 or I.88 from the skill list when it counts.' });
     }
   }
   if (event === 'hb' && level !== 'masters') {
@@ -471,6 +475,7 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
   let deductions = 0;
   const optionValues = {};
   const detected = {}; // option id -> the skill that meets it
+  const missing = []; // requirements not met: [{ id, label, value }] (neutral deductions)
   for (const o of eventOptions(event, level)) {
     const v = options?.[o.id];
     let got = 0;
@@ -479,7 +484,10 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
       if (hit) detected[o.id] = hit.name;
     }
     if (o.kind === 'check' && o.deduction) {
-      if (!v && !detected[o.id]) deductions += o.value;
+      if (!v && !detected[o.id]) {
+        deductions += o.value;
+        missing.push({ id: o.id, label: o.missing || o.label, value: o.value });
+      }
       continue;
     }
     if (o.kind === 'check' && (v || detected[o.id])) got = o.value;
@@ -525,6 +533,7 @@ export function scoreRoutine(event, level, skills = [], options = {}, { decade }
     cap: L.cap,
     startValue,
     deductions: rows.length ? deductions : 0,
+    missing: rows.length ? missing : [],
     afterDeductions: rows.length ? round1(startValue - deductions) : 0,
   };
 }
