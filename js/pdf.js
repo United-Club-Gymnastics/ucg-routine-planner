@@ -121,7 +121,9 @@ const MAG_LAYOUTS = {
     url: 'assets/worksheets/adv.pdf', name: { x: 139, y: 75.5 }, event: { x: 367, y: 75.5 },
     cols: [[57.5, 265.5], [265.5, 323.5], [323.5, 382.5], [382.5, 471.5], [471.5, 540.5]], rowTop: 191.5, rowH: 24.75,
     lines: { x: 494, ys: [434.8, 553.3, 604.3, 641, 667.3] }, fill: ['skills', 'eg', 'bonus', 'base', 'sv'],
-    deductions: { fx: { x: 282, y: 701.8 }, sr: { x: 309, y: 715.3 } },
+    // The sheet prints a fixed "Expected Deductions" list here (floor double flip, rings swing to handstand):
+    // it is covered, and the routine's own requirement deductions are written in its place.
+    deductions: { cover: [50, 673, 270, 48], y: 688 },
   },
 };
 
@@ -148,14 +150,29 @@ async function magPage(doc, fonts, athlete, entry, evId, r) {
     sv: fmt(r.sv),
   };
   if (r.sv != null) L.fill.forEach((key, i) => w.text(values[key], L.lines.x, L.lines.ys[i] - 3, { size: 11, font: key === 'sv' ? fonts.bold : fonts.regular }));
-  const mark = L.deductions?.[evId];
-  if (mark && r.deductions) w.text(`<-- applies to this routine (-${fmt(r.deductions)})`, mark.x, mark.y, { size: 9, font: fonts.bold });
   const spec = eventSpec(entry, evId);
+  let notesY = 740;
+  const D = L.deductions;
+  if (D) {
+    const [cx, cy, cw, ch] = D.cover;
+    page.drawRectangle({ x: cx, y: page.getMediaBox().height - cy - ch, width: cw, height: ch, color: rgb(1, 1, 1) });
+    // Requirements this level checks on this apparatus (Advanced floor and rings), met or not.
+    if (r.sv != null && spec.options.some((o) => o.deduction)) {
+      const x = L.cols[0][0];
+      let y = D.y;
+      w.text('Expected neutral deductions', x, y, { size: 10.5, font: fonts.bold, c: NAVY });
+      const missing = r.missing || [];
+      if (!missing.length) w.text('None: the routine meets every requirement.', x, (y += 13.5), { size: 10 });
+      for (const m of missing) w.text(`${m.label}: -${fmt(m.value)}`, x, (y += 13.5), { size: 10 });
+      if (missing.length) w.text(`Start value ${fmt(r.sv)} - ${fmt(r.deductions)} = ${fmt(r.afterDeductions)} after neutral deductions`, x, (y += 13.5), { size: 10, font: fonts.bold });
+      notesY = Math.max(notesY, y + 18);
+    }
+  }
   const bonuses = spec.options.filter((o) => r.optionValues?.[o.id]).map((o) => `${o.label} +${fmt(r.optionValues[o.id])}`);
   const notes = [];
   if (bonuses.length) notes.push(`Bonuses${L.fill.includes('skillsAndBonus') ? ' (included in line 1)' : ''}: ${bonuses.join(', ')}.`);
   if (r.capped) notes.push(`Start value capped at ${fmt(r.cap)} (${fmt(r.raw)} before the cap).`);
-  notes.forEach((n, i) => w.text(n, L.cols[0][0], 740 + i * 13, { size: 9, maxWidth: 480 }));
+  notes.forEach((n, i) => w.text(n, L.cols[0][0], notesY + i * 13, { size: 9, maxWidth: 480 }));
 }
 
 // ---- Masters (MAG + WAG): a start value worksheet drawn here ---------------------------
