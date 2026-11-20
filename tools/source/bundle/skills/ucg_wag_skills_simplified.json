@@ -3,7 +3,7 @@
  "code": "UCG-WAG-COMBINED",
  "discipline": "WAG",
  "edition": "2026-27",
- "built": "2026-10-19",
+ "built": "2026-11-20",
  "own_words": true,
  "source": {
   "kind": "combined",
@@ -13204,7 +13204,7 @@
    "element_group": "1",
    "group_name": "Mounts",
    "apparatus": "UB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/HlLKn4nE4a0"
   },
   {
@@ -13216,7 +13216,7 @@
    "element_group": "1",
    "group_name": "Mounts",
    "apparatus": "UB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/Hb5U8i-uu9o"
   },
   {
@@ -13228,7 +13228,7 @@
    "element_group": "1",
    "group_name": "Mounts",
    "apparatus": "UB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/SDTquwOJHto"
   },
   {
@@ -13240,7 +13240,7 @@
    "element_group": "2",
    "group_name": "Casts / Counterswings",
    "apparatus": "UB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/FzbVlpjbFRY"
   },
   {
@@ -13252,7 +13252,7 @@
    "element_group": "2",
    "group_name": "Casts / Counterswings",
    "apparatus": "UB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/NB0jZCOs-YQ"
   },
   {
@@ -13264,7 +13264,7 @@
    "element_group": "2",
    "group_name": "Casts / Counterswings",
    "apparatus": "UB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/Zn8LdaeRAcs"
   },
   {
@@ -13276,7 +13276,7 @@
    "element_group": "3",
    "group_name": "Underswings / Clear-hip Circles",
    "apparatus": "UB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/pzLlIV1Z0wU"
   },
   {
@@ -13288,7 +13288,7 @@
    "element_group": "6",
    "group_name": "Stalder Circles",
    "apparatus": "UB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/SFOdhDrD7gY"
   },
   {
@@ -13300,8 +13300,20 @@
    "element_group": "7",
    "group_name": "Circle Swings / Hechts",
    "apparatus": "UB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/ce_D2cwMnxw"
+  },
+  {
+   "number": "UCG 10",
+   "variant": 1,
+   "description": "From a cast, uprise or backswing, straddle cut to salto backward tucked or stretched with ½ (180°) twist on LB or HB",
+   "value": "B",
+   "eponym": "",
+   "element_group": "8",
+   "group_name": "Dismounts",
+   "apparatus": "UB",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
+   "video": "https://youtu.be/dgA4qewl7ys"
   },
   {
    "number": "UCG 1",
@@ -13312,7 +13324,7 @@
    "element_group": "1",
    "group_name": "Mounts",
    "apparatus": "BB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/CknbeUJA3Fs"
   },
   {
@@ -13324,7 +13336,7 @@
    "element_group": "1",
    "group_name": "Mounts",
    "apparatus": "BB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/k5cBdDNuIj0"
   },
   {
@@ -13336,7 +13348,7 @@
    "element_group": "1",
    "group_name": "Mounts",
    "apparatus": "BB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)"
+   "source": "UCG WAG Code of Points additions (2026-11-20)"
   },
   {
    "number": "UCG 4",
@@ -13347,7 +13359,7 @@
    "element_group": "1",
    "group_name": "Mounts",
    "apparatus": "BB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/_t3Iu3ApG9Q"
   },
   {
@@ -13359,7 +13371,7 @@
    "element_group": "1",
    "group_name": "Mounts",
    "apparatus": "BB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/mFidt9zg1Dg"
   },
   {
@@ -13371,7 +13383,7 @@
    "element_group": "3",
    "group_name": "Turns",
    "apparatus": "BB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/mU6XMw1xPJg"
   },
   {
@@ -13383,7 +13395,7 @@
    "element_group": "5",
    "group_name": "Holds / Stands",
    "apparatus": "BB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/eBfgmEZaDfo"
   },
   {
@@ -13395,7 +13407,7 @@
    "element_group": "5",
    "group_name": "Holds / Stands",
    "apparatus": "BB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)"
+   "source": "UCG WAG Code of Points additions (2026-11-20)"
   },
   {
    "number": "UCG 9",
@@ -13406,7 +13418,7 @@
    "element_group": "5",
    "group_name": "Holds / Stands",
    "apparatus": "BB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/CsBzYwPEiGg"
   },
   {
@@ -13418,7 +13430,7 @@
    "element_group": "5",
    "group_name": "Holds / Stands",
    "apparatus": "BB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/dskfyVz9KY4"
   },
   {
@@ -13430,7 +13442,7 @@
    "element_group": "5",
    "group_name": "Holds / Stands",
    "apparatus": "BB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/ONEM9wgC7x8"
   },
   {
@@ -13442,7 +13454,7 @@
    "element_group": "8",
    "group_name": "Saltos",
    "apparatus": "BB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/yqHLC7pqWK0"
   },
   {
@@ -13454,7 +13466,7 @@
    "element_group": "9",
    "group_name": "Dismounts",
    "apparatus": "BB",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/dnFmMoPJ9x8"
   },
   {
@@ -13466,7 +13478,7 @@
    "element_group": "1",
    "group_name": "Leaps / Jumps / Hops",
    "apparatus": "FX",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/sQUInfDfj5E"
   },
   {
@@ -13478,7 +13490,7 @@
    "element_group": "2",
    "group_name": "Turns",
    "apparatus": "FX",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/QVyP_7dtSz8"
   },
   {
@@ -13490,7 +13502,7 @@
    "element_group": "2",
    "group_name": "Turns",
    "apparatus": "FX",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/xUYQwOgtMB4"
   },
   {
@@ -13502,7 +13514,7 @@
    "element_group": "2",
    "group_name": "Turns",
    "apparatus": "FX",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/w9NXoaHnBbE"
   },
   {
@@ -13514,7 +13526,7 @@
    "element_group": "2",
    "group_name": "Turns",
    "apparatus": "FX",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/3s8T3QGJBqw"
   },
   {
@@ -13526,7 +13538,7 @@
    "element_group": "5",
    "group_name": "Walkovers / Cartwheels / Handsprings",
    "apparatus": "FX",
-   "source": "UCG WAG Code of Points additions (2026-10-18)",
+   "source": "UCG WAG Code of Points additions (2026-11-20)",
    "video": "https://youtu.be/T6sJM7Mds_4"
   }
  ]

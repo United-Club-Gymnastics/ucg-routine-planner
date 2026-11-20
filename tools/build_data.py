@@ -114,14 +114,16 @@ def wag():
     # id + form letter, e.g. USAG-BB-7.104-1b); the bare record id stays as an alias of
     # form "a" so routines saved before the split still find their skill.
     links = {"aliases": {}, "same_as": [], "flight": {}}
+    # UCG additions use their permanent id from ucg-wag.json (the older ones are "UCGW-BB-3", from their
+    # box number; newer ones are minted by the CoP and never follow the number). The combined file has none.
+    ucg_ids = {(r["apparatus"], r["number"]): r["id"] for r in records("ucg-wag.json")}
     for s in records("ucg_wag_skills_simplified.json"):
         if s["apparatus"] == "VT":
             continue
         app = s["apparatus"]
         ucg = s["source"].startswith("UCG")
         row = {
-            # UCG additions keep their old ids ("UCG 3" -> UCGW-BB-3) so saved routines still find them.
-            "id": f"UCGW-{app}-{s['number'].split()[1]}" if ucg else f"USAG-{app}-{s['number']}-{s.get('variant', 1)}",
+            "id": ucg_ids[(app, s["number"].split()[1])] if ucg else f"USAG-{app}-{s['number']}-{s.get('variant', 1)}",
             "app": app.lower(),
             "name": " ".join(s["description"].split()),
             "eponym": s.get("eponym") or "",

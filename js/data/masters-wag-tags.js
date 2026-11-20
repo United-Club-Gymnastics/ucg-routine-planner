@@ -58,6 +58,7 @@ export const TAGS = {
   "UCGM-wag-UB-cast-from-lb-with-1-2-turn-to-hang-on-hb": ["bar_change", "turn180"],
   "UCGM-wag-UB-clear-hip-circle-forward-to-1-2-turn-and-straddle-backwards-": ["circle", "flight", "turn180"],
   "UCGM-wag-UB-drop-kip-to-support": ["kip"],
+  "UCGM-wag-UB-from-a-cast-uprise-or-backswing-straddle-cut-to-salto-backwa": ["dismount", "turn180"],
   "UCGM-wag-UB-from-handstand-on-hb-under-swing-toe-on-with-1-2-turn-and-fl": ["bar_change", "flight", "turn180"],
   "UCGM-wag-UB-front-support-free-squat-forward-over-bar-with-1-2-turn-to-h": ["flight", "turn180"],
   "UCGM-wag-UB-front-support-stoop-forward-over-bar-with-1-2-turn-to-clear-": ["flight", "turn180"],

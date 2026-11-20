@@ -1,7 +1,7 @@
 {
  "discipline": "WAG",
- "version": "90974ca9d700",
- "built": "2026-10-30",
+ "version": "831aee72ddae",
+ "built": "2026-11-20",
  "aliases": {
   "WGW-BB-1.101-1": [
    "WAG-BB-0001"
@@ -5354,6 +5354,12 @@
   ],
   "WGW-UB-6.408-2": [
    "WAG-UB-0512"
+  ],
+  "UCGW-UB-from-a-cast-uprise-or-backswing-straddle-cut-to-salto-backwa": [
+   "WAG-UB-0513"
+  ],
+  "UCGM-wag-UB-from-a-cast-uprise-or-backswing-straddle-cut-to-salto-backwa": [
+   "WAG-UB-0513"
   ],
   "WGW-VT-1.01-1": [
    "WAG-VT-0001"
