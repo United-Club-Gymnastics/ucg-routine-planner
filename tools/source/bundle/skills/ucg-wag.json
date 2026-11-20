@@ -1,14 +1,14 @@
 {
- "schema_version": "0.2.0",
+ "schema_version": "0.3.0",
  "code": "UCG-WAG-ADD",
  "discipline": "WAG",
- "edition": "2026-10-18",
- "built": "2026-10-19",
+ "edition": "2026-11-20",
+ "built": "2026-11-20",
  "source": {
   "kind": "authored",
   "document": "WAG/UCG WAG CoP.svg",
   "repo": "nssharpe/ucg-code-of-points",
-  "commit": "72e188d2e0b78575780e89b458b4e5b8bc249aa5"
+  "commit": "77018c87dfc35f9c322ef86ecb5065ba5f997325"
  },
  "records": [
   {
@@ -109,6 +109,18 @@
    "eponym": "Sharpe 2",
    "video": "https://youtu.be/ce_D2cwMnxw",
    "drawing": true
+  },
+  {
+   "id": "UCGW-UB-from-a-cast-uprise-or-backswing-straddle-cut-to-salto-backwa",
+   "apparatus": "UB",
+   "number": "10",
+   "description": "From a cast, uprise or backswing, straddle cut to salto backward tucked or stretched with ½ (180°) twist on LB or HB",
+   "value": "B",
+   "element_group": "8",
+   "eponym": "",
+   "video": "https://youtu.be/dgA4qewl7ys",
+   "drawing": true,
+   "added": "2026-11-18"
   },
   {
    "id": "UCGW-BB-1",

@@ -2,13 +2,13 @@
  "schema_version": "0.3.0",
  "code": "UCG-MASTERS-WAG",
  "discipline": "WAG",
- "edition": "2026-10-21",
- "built": "2026-10-21",
+ "edition": "2026-11-20",
+ "built": "2026-11-20",
  "source": {
   "kind": "authored",
   "document": "Masters/UCG Masters WAG CoP.svg",
   "repo": "nssharpe/ucg-code-of-points",
-  "commit": "72e188d2e0b78575780e89b458b4e5b8bc249aa5"
+  "commit": "77018c87dfc35f9c322ef86ecb5065ba5f997325"
  },
  "records": [
   {
@@ -247,10 +247,24 @@
    "main_id": "UCGW-UB-9"
   },
   {
-   "id": "UCGM-wag-UB-jump-with-3-2-540-turn-kip-to-support-on-lb-victor",
+   "id": "UCGM-wag-UB-from-a-cast-uprise-or-backswing-straddle-cut-to-salto-backwa",
    "apparatus": "UB",
    "number": "20",
    "page": 3,
+   "description": "From a cast, uprise or backswing, straddle cut to salto backward tucked or stretched with ½ (180°) twist on LB or HB",
+   "value": "B",
+   "element_group": "",
+   "eponym": "",
+   "video": "https://youtu.be/dgA4qewl7ys",
+   "drawing": true,
+   "main_id": "UCGW-UB-from-a-cast-uprise-or-backswing-straddle-cut-to-salto-backwa",
+   "added": "2026-11-20"
+  },
+  {
+   "id": "UCGM-wag-UB-jump-with-3-2-540-turn-kip-to-support-on-lb-victor",
+   "apparatus": "UB",
+   "number": "21",
+   "page": 4,
    "description": "Jump with ³⁄₂ (540°) turn, kip to support on LB",
    "value": "C",
    "element_group": "",
@@ -262,7 +276,7 @@
   {
    "id": "UCGM-wag-UB-stalder-hecht-from-lb-to-hb-with-1-2-turn-180",
    "apparatus": "UB",
-   "number": "21",
+   "number": "22",
    "page": 4,
    "description": "Stalder hecht from LB to HB with ½ turn (180°)",
    "value": "C",
@@ -275,7 +289,7 @@
   {
    "id": "UCGM-wag-UB-on-lb-3-4-bwd-giant-with-release-and-1-2-turn-in-tuck-to-cat",
    "apparatus": "UB",
-   "number": "22",
+   "number": "23",
    "page": 4,
    "description": "On LB, ¾ bwd giant with release and ½ turn in tuck to catch on HB (Laumann)",
    "value": "C",
@@ -287,7 +301,7 @@
   {
    "id": "UCGM-wag-UB-clear-hip-circle-forward-to-1-2-turn-and-straddle-backwards-",
    "apparatus": "UB",
-   "number": "23",
+   "number": "24",
    "page": 4,
    "description": "Clear hip circle forward to ½ turn and straddle backwards over the bar – catch in hang",
    "value": "D",
@@ -299,7 +313,7 @@
   {
    "id": "UCGM-wag-UB-back-uprise-release-with-1-2-turn-in-straddle-bwd-over-hb-fr",
    "apparatus": "UB",
-   "number": "24",
+   "number": "25",
    "page": 4,
    "description": "Back uprise, release with ½ turn in straddle bwd over HB (Franzella)",
    "value": "D",
@@ -311,7 +325,7 @@
   {
    "id": "UCGM-wag-UB-on-lb-3-4-bwd-giant-with-release-and-1-1-turn-in-tuck-to-cat",
    "apparatus": "UB",
-   "number": "25",
+   "number": "26",
    "page": 4,
    "description": "On LB, ¾ bwd giant with release and ¹⁄₁ turn in tuck to catch on HB",
    "value": "D",
@@ -323,7 +337,7 @@
   {
    "id": "UCGM-wag-UB-toe-on-to-salto-fwd-tucked-with-1-2-turn-180-to-hang-on-lb",
    "apparatus": "UB",
-   "number": "26",
+   "number": "27",
    "page": 4,
    "description": "Toe on to salto fwd tucked with ½ turn (180°) to hang on LB",
    "value": "E",

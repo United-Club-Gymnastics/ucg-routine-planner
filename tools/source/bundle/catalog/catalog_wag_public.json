@@ -1,7 +1,7 @@
 {
  "discipline": "WAG",
- "version": "90974ca9d700",
- "built": "2026-10-30",
+ "version": "831aee72ddae",
+ "built": "2026-11-20",
  "elements": [
   {
    "id": "WAG-BB-0001",
@@ -60451,14 +60451,14 @@
      {
       "rid": "UCGM-wag-UB-jump-with-3-2-540-turn-kip-to-support-on-lb-victor",
       "short_name": "Jump with ³⁄₂ (540°) turn, kip to support on LB",
-      "number": "20",
+      "number": "21",
       "variant": 1,
       "value": "C",
       "element_group": "",
       "eponym": "Victor",
       "note": "",
       "video": "https://youtu.be/Hb5U8i-uu9o",
-      "page": 3
+      "page": 4
      }
     ]
    }
@@ -60631,7 +60631,7 @@
      {
       "rid": "UCGM-wag-UB-toe-on-to-salto-fwd-tucked-with-1-2-turn-180-to-hang-on-lb",
       "short_name": "Toe on to salto fwd tucked with ½ turn (180°) to hang on LB",
-      "number": "26",
+      "number": "27",
       "variant": 1,
       "value": "E",
       "element_group": "",
@@ -60667,7 +60667,7 @@
      {
       "rid": "UCGM-wag-UB-stalder-hecht-from-lb-to-hb-with-1-2-turn-180",
       "short_name": "Stalder hecht from LB to HB with ½ turn (180°)",
-      "number": "21",
+      "number": "22",
       "variant": 1,
       "value": "C",
       "element_group": "",
@@ -61051,7 +61051,7 @@
      {
       "rid": "UCGM-wag-UB-on-lb-3-4-bwd-giant-with-release-and-1-2-turn-in-tuck-to-cat",
       "short_name": "On LB, ¾ bwd giant with release and ½ turn in tuck to catch on HB (Laumann)",
-      "number": "22",
+      "number": "23",
       "variant": 1,
       "value": "C",
       "element_group": "",
@@ -61077,7 +61077,7 @@
      {
       "rid": "UCGM-wag-UB-clear-hip-circle-forward-to-1-2-turn-and-straddle-backwards-",
       "short_name": "Clear hip circle forward to ½ turn and straddle backwards over the bar – catch in hang",
-      "number": "23",
+      "number": "24",
       "variant": 1,
       "value": "D",
       "element_group": "",
@@ -61101,7 +61101,7 @@
      {
       "rid": "UCGM-wag-UB-back-uprise-release-with-1-2-turn-in-straddle-bwd-over-hb-fr",
       "short_name": "Back uprise, release with ½ turn in straddle bwd over HB (Franzella)",
-      "number": "24",
+      "number": "25",
       "variant": 1,
       "value": "D",
       "element_group": "",
@@ -61137,7 +61137,7 @@
      {
       "rid": "UCGM-wag-UB-on-lb-3-4-bwd-giant-with-release-and-1-1-turn-in-tuck-to-cat",
       "short_name": "On LB, ¾ bwd giant with release and ¹⁄₁ turn in tuck to catch on HB",
-      "number": "25",
+      "number": "26",
       "variant": 1,
       "value": "D",
       "element_group": "",
@@ -61633,6 +61633,42 @@
       "value": "D=0.4",
       "element_group": "6",
       "eponym": "Okamura"
+     }
+    ]
+   }
+  },
+  {
+   "id": "WAG-UB-0513",
+   "discipline": "WAG",
+   "apparatus": "UB",
+   "short_name": "From a cast, uprise or backswing, straddle cut to salto backward tucked or stretched with ½ (180°) twist on LB or HB",
+   "aka": [],
+   "eponym": "",
+   "codes": {
+    "UCG-WAG-ADD": [
+     {
+      "rid": "UCGW-UB-from-a-cast-uprise-or-backswing-straddle-cut-to-salto-backwa",
+      "short_name": "From a cast, uprise or backswing, straddle cut to salto backward tucked or stretched with ½ (180°) twist on LB or HB",
+      "number": "UCG 10",
+      "variant": 1,
+      "value": "B",
+      "element_group": "8",
+      "eponym": "",
+      "video": "https://youtu.be/dgA4qewl7ys"
+     }
+    ],
+    "UCG-MASTERS-WAG": [
+     {
+      "rid": "UCGM-wag-UB-from-a-cast-uprise-or-backswing-straddle-cut-to-salto-backwa",
+      "short_name": "From a cast, uprise or backswing, straddle cut to salto backward tucked or stretched with ½ (180°) twist on LB or HB",
+      "number": "20",
+      "variant": 1,
+      "value": "B",
+      "element_group": "",
+      "eponym": "",
+      "note": "",
+      "video": "https://youtu.be/dgA4qewl7ys",
+      "page": 3
      }
     ]
    }

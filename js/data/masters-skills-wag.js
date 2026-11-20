@@ -77,5 +77,6 @@ export const SKILLS = [
   {"id": "UCGM-wag-UB-on-lb-3-4-bwd-giant-with-release-and-1-2-turn-in-tuck-to-cat", "app": "ub", "name": "On LB, ¾ bwd giant with release and ½ turn in tuck to catch on HB (Laumann)", "eponym": "", "value": "C", "src": "UCGM", "note": ""},
   {"id": "UCGM-wag-UB-clear-hip-circle-forward-to-1-2-turn-and-straddle-backwards-", "app": "ub", "name": "Clear hip circle forward to ½ turn and straddle backwards over the bar – catch in hang", "eponym": "", "value": "D", "src": "UCGM", "note": ""},
   {"id": "UCGM-wag-UB-back-uprise-release-with-1-2-turn-in-straddle-bwd-over-hb-fr", "app": "ub", "name": "Back uprise, release with ½ turn in straddle bwd over HB (Franzella)", "eponym": "", "value": "D", "src": "UCGM", "note": ""},
-  {"id": "UCGM-wag-UB-on-lb-3-4-bwd-giant-with-release-and-1-1-turn-in-tuck-to-cat", "app": "ub", "name": "On LB, ¾ bwd giant with release and ¹⁄₁ turn in tuck to catch on HB", "eponym": "", "value": "D", "src": "UCGM", "note": ""}
+  {"id": "UCGM-wag-UB-on-lb-3-4-bwd-giant-with-release-and-1-1-turn-in-tuck-to-cat", "app": "ub", "name": "On LB, ¾ bwd giant with release and ¹⁄₁ turn in tuck to catch on HB", "eponym": "", "value": "D", "src": "UCGM", "note": ""},
+  {"id": "UCGM-wag-UB-from-a-cast-uprise-or-backswing-straddle-cut-to-salto-backwa", "app": "ub", "name": "From a cast, uprise or backswing, straddle cut to salto backward tucked or stretched with ½ (180°) twist on LB or HB", "eponym": "", "value": "B", "src": "UCGM", "note": ""}
 ];
