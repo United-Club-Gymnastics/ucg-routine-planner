@@ -5961,47 +5961,52 @@
   "level": "dev",
   "title": "Developmental Floor example",
   "event": "fx",
-  "sv": 11.6,
+  "sv": 11.4,
   "sheetTotals": {
    "numberOfSkills": 6,
-   "difficulty": 0.6,
+   "difficulty": 0.4,
    "egBonus": 1.0,
    "bonusDeduction": 0.0
   },
   "skills": [
    {
     "name": "Run into cartwheel",
-    "letter": "A",
-    "eg": null
+    "letter": "Sub-A",
+    "eg": null,
+    "skillId": "UCG-FX-cartwheel"
    },
    {
-    "name": "Backward roll to support",
-    "letter": "A",
-    "eg": null
+    "name": "Straight arm backward roll to prone",
+    "letter": "Sub-A",
+    "eg": null,
+    "skillId": "UCG-FX-straight-arm-backward-roll-to-prone"
    },
    {
     "name": "L hold",
     "letter": "A",
-    "eg": null
+    "eg": null,
+    "skillId": "UCG-FX-l-sit-2-s"
    },
    {
     "name": "Dive Roll (side pass)",
     "letter": "A",
-    "eg": 2
+    "eg": 2,
+    "skillId": "WG-FX-II-7"
    },
    {
     "name": "Half pirouette in handstand",
     "letter": "A",
-    "eg": 1
+    "eg": 1,
+    "skillId": "WG-FX-I-31"
    },
    {
     "name": "Round off",
     "letter": "A",
-    "eg": null
+    "eg": null,
+    "skillId": "UCG-FX-round-off-stuck-rebound-or-connected-to-other-acro"
    }
   ],
-  "video": "https://youtu.be/P_xa5MvEPr0",
-  "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 12.7."
+  "video": "https://youtu.be/P_xa5MvEPr0"
  },
  {
   "id": "mag-dev-ph-1",
@@ -6009,10 +6014,10 @@
   "level": "dev",
   "title": "Developmental Pommel Horse example",
   "event": "ph",
-  "sv": 11.7,
+  "sv": 11.6,
   "sheetTotals": {
    "numberOfSkills": 6,
-   "difficulty": 0.7,
+   "difficulty": 0.6,
    "egBonus": 0.5,
    "bonusDeduction": 0.5
   },
@@ -6020,36 +6025,41 @@
    {
     "name": "Single leg stockli travel",
     "letter": "A",
-    "eg": null
+    "eg": null,
+    "skillId": "UCG-PH-single-leg-stockli"
    },
    {
     "name": "Scissor hop",
     "letter": "B",
-    "eg": 1
+    "eg": 1,
+    "skillId": "WG-PH-I-2"
    },
    {
     "name": "Single leg travel",
     "letter": "A",
-    "eg": null
+    "eg": null,
+    "skillId": "UCG-PH-single-leg-travel"
    },
    {
     "name": "Scissor",
     "letter": "A",
-    "eg": 1
+    "eg": 1,
+    "skillId": "WG-PH-I-1"
    },
    {
     "name": "False Scissor",
     "letter": "A",
-    "eg": null
+    "eg": null,
+    "skillId": "UCG-PH-false-scissor"
    },
    {
     "name": "1/2 Circle dismount",
-    "letter": "A",
-    "eg": null
+    "letter": "Sub-A",
+    "eg": null,
+    "skillId": "UCG-PH-circle-dismount"
    }
   ],
-  "video": "https://youtu.be/oOk4IZOtGiU",
-  "note": "Bonus/Deduction column entries: skill 1 (Single leg stockli travel): '5 Mushroom Circles'; skill 2 (Scissor hop): '+(0.5)'. Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 12.7."
+  "video": "https://youtu.be/oOk4IZOtGiU"
  },
  {
   "id": "mag-dev-sr-1",
@@ -6057,10 +6067,10 @@
   "level": "dev",
   "title": "Developmental Rings example",
   "event": "sr",
-  "sv": 12.1,
+  "sv": 11.9,
   "sheetTotals": {
    "numberOfSkills": 6,
-   "difficulty": 0.6,
+   "difficulty": 0.4,
    "egBonus": 1.5,
    "bonusDeduction": 0.0
   },
@@ -6068,36 +6078,41 @@
    {
     "name": "Muscle up",
     "letter": "A",
-    "eg": null
+    "eg": null,
+    "skillId": "UCG-SR-muscle-up"
    },
    {
-    "name": "Shoulder stand",
-    "letter": "A",
-    "eg": null
+    "name": "Tuck press to shoulderstand",
+    "letter": "Sub-A",
+    "eg": null,
+    "skillId": "UCG-SR-tuck-press-to-tucked-or-extended-shoulderstand-2-s"
    },
    {
     "name": "L-sit",
     "letter": "A",
-    "eg": 2
+    "eg": 2,
+    "skillId": "WG-SR-II-1"
    },
    {
     "name": "Fwd roll from support",
     "letter": "A",
-    "eg": 1
+    "eg": 1,
+    "skillId": "WG-SR-I-7"
    },
    {
     "name": "German hang",
-    "letter": "A",
-    "eg": null
+    "letter": "Sub-A",
+    "eg": null,
+    "skillId": "UCG-SR-german-hang-2-s"
    },
    {
     "name": "Back pike dismount",
     "letter": "A",
-    "eg": 4
+    "eg": 4,
+    "skillId": "WG-SR-IV-25"
    }
   ],
-  "video": "https://youtu.be/wmPVrcZKRYw",
-  "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 12.7."
+  "video": "https://youtu.be/wmPVrcZKRYw"
  },
  {
   "id": "mag-dev-vt-1",
@@ -6105,13 +6120,12 @@
   "level": "dev",
   "title": "Developmental Vault example",
   "event": "vt",
-  "vault": "Hdspr. (FIG VT 201)",
-  "vaultName": "Hdspr.",
+  "vault": "Front handspring (WG VT 201)",
+  "vaultName": "Front handspring",
   "vaultNumber": 201,
   "vaultEg": 2,
   "sv": 11.2,
-  "video": "https://youtu.be/oo0gXB4FPvs",
-  "note": "Sheet note: SV Cap is 12.7."
+  "video": "https://youtu.be/oo0gXB4FPvs"
  },
  {
   "id": "mag-dev-pb-1",
@@ -6119,10 +6133,10 @@
   "level": "dev",
   "title": "Developmental Parallel Bars example",
   "event": "pb",
-  "sv": 12.1,
+  "sv": 11.9,
   "sheetTotals": {
    "numberOfSkills": 6,
-   "difficulty": 0.6,
+   "difficulty": 0.4,
    "egBonus": 1.5,
    "bonusDeduction": 0.0
   },
@@ -6130,36 +6144,41 @@
    {
     "name": "Kip",
     "letter": "A",
-    "eg": 3
+    "eg": 3,
+    "skillId": "WG-PB-III-73"
    },
    {
     "name": "L",
     "letter": "A",
-    "eg": 2
+    "eg": 2,
+    "skillId": "WG-PB-II-7"
    },
    {
     "name": "Shoulder Stand Hold",
     "letter": "A",
-    "eg": null
+    "eg": null,
+    "skillId": "UCG-PB-press-to-shoulderstand-2-s"
    },
    {
     "name": "Forward Roll",
-    "letter": "A",
-    "eg": null
+    "letter": "Sub-A",
+    "eg": null,
+    "skillId": "UCG-PB-forward-roll-to-upper-arm-from-shoulderstand-l-or-support-sw"
    },
    {
     "name": "Front Uprise",
     "letter": "A",
-    "eg": 1
+    "eg": 1,
+    "skillId": "WG-PB-I-1"
    },
    {
     "name": "Flank Dismount",
-    "letter": "A",
-    "eg": null
+    "letter": "Sub-A",
+    "eg": null,
+    "skillId": "UCG-PB-flank-dismount-from-at-least-45-above-horizontal"
    }
   ],
-  "video": "https://youtu.be/9KwgcAB9v00",
-  "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 12.7."
+  "video": "https://youtu.be/9KwgcAB9v00"
  },
  {
   "id": "mag-dev-hb-1",
@@ -6167,47 +6186,52 @@
   "level": "dev",
   "title": "Developmental High Bar example",
   "event": "hb",
-  "sv": 11.1,
+  "sv": 10.8,
   "sheetTotals": {
    "numberOfSkills": 6,
-   "difficulty": 0.6,
+   "difficulty": 0.3,
    "egBonus": 0.5,
    "bonusDeduction": 0.0
   },
   "skills": [
    {
     "name": "Pullover",
-    "letter": "A",
-    "eg": null
+    "letter": "Sub-A",
+    "eg": null,
+    "skillId": "UCG-HB-pull-over"
    },
    {
     "name": "Cast to Horizontal",
-    "letter": "A",
-    "eg": null
+    "letter": "Sub-A",
+    "eg": null,
+    "skillId": "UCG-HB-cast-to-horizontal"
    },
    {
     "name": "Back Hip Circle to Undershoot",
-    "letter": "A",
-    "eg": null
+    "letter": "Sub-A",
+    "eg": null,
+    "skillId": "UCG-HB-backward-hip-circle"
    },
    {
     "name": "Back Uprise to Undershoot",
     "letter": "A",
-    "eg": null
+    "eg": null,
+    "skillId": "UCG-HB-back-uprise-to-support"
    },
    {
     "name": "Kip to Support to Undershoot",
     "letter": "A",
-    "eg": null
+    "eg": null,
+    "skillId": "UCG-HB-kip-to-support"
    },
    {
     "name": "Back Pike Dismount",
     "letter": "A",
-    "eg": 4
+    "eg": 4,
+    "skillId": "WG-HB-IV-25"
    }
   ],
-  "video": "https://youtube.com/watch?v=TXesc5Rb80o?feature=share",
-  "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 12.7."
+  "video": "https://youtube.com/watch?v=TXesc5Rb80o?feature=share"
  },
  {
   "id": "mag-int-fx-1",
@@ -6215,10 +6239,10 @@
   "level": "int",
   "title": "Intermediate Floor example",
   "event": "fx",
-  "sv": 11.7,
+  "sv": 11.6,
   "sheetTotals": {
    "numberOfSkills": 6,
-   "difficulty": 0.6,
+   "difficulty": 0.5,
    "egBonus": 1.1,
    "bonusDeduction": 0.0
   },
@@ -6226,36 +6250,41 @@
    {
     "name": "Front Tuck",
     "letter": "A",
-    "eg": 2
+    "eg": 2,
+    "skillId": "WG-FX-II-13"
    },
    {
     "name": "Cartwheel",
-    "letter": "A",
-    "eg": null
+    "letter": "Sub-A",
+    "eg": null,
+    "skillId": "UCG-FX-cartwheel"
    },
    {
     "name": "Dive Roll (side pass)",
     "letter": "A",
-    "eg": 2
+    "eg": 2,
+    "skillId": "WG-FX-II-7"
    },
    {
     "name": "Handstand Half Pirouette",
     "letter": "A",
-    "eg": 1
+    "eg": 1,
+    "skillId": "WG-FX-I-31"
    },
    {
     "name": "Round Off",
     "letter": "A",
-    "eg": null
+    "eg": null,
+    "skillId": "UCG-FX-round-off-stuck-rebound-or-connected-to-other-acro"
    },
    {
     "name": "Back Tuck",
     "letter": "A",
-    "eg": 3
+    "eg": 3,
+    "skillId": "WG-FX-III-1"
    }
   ],
-  "video": "https://youtu.be/OkTig22qyeg",
-  "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 13.2."
+  "video": "https://youtu.be/OkTig22qyeg"
  },
  {
   "id": "mag-int-ph-1",
@@ -6263,10 +6292,10 @@
   "level": "int",
   "title": "Intermediate Pommel Horse example",
   "event": "ph",
-  "sv": 11.5,
+  "sv": 11.4,
   "sheetTotals": {
    "numberOfSkills": 6,
-   "difficulty": 0.7,
+   "difficulty": 0.6,
    "egBonus": 0.8,
    "bonusDeduction": 0.0
   },
@@ -6274,36 +6303,41 @@
    {
     "name": "Single Leg Stockli Travel",
     "letter": "A",
-    "eg": null
+    "eg": null,
+    "skillId": "UCG-PH-single-leg-stockli"
    },
    {
     "name": "Scissor",
     "letter": "A",
-    "eg": 1
+    "eg": 1,
+    "skillId": "WG-PH-I-1"
    },
    {
     "name": "Scissor Hop",
     "letter": "B",
-    "eg": 1
+    "eg": 1,
+    "skillId": "WG-PH-I-2"
    },
    {
     "name": "Single Leg Travel",
     "letter": "A",
-    "eg": null
+    "eg": null,
+    "skillId": "UCG-PH-single-leg-travel"
    },
    {
     "name": "Circle",
     "letter": "A",
-    "eg": 2
+    "eg": 2,
+    "skillId": "WG-PH-II-1"
    },
    {
     "name": "1/2 Circle Dismount",
-    "letter": "A",
-    "eg": null
+    "letter": "Sub-A",
+    "eg": null,
+    "skillId": "UCG-PH-circle-dismount"
    }
   ],
-  "video": "https://youtu.be/lAJLPhhrXwg",
-  "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 13.2."
+  "video": "https://youtu.be/lAJLPhhrXwg"
  },
  {
   "id": "mag-int-sr-1",
@@ -6311,10 +6345,10 @@
   "level": "int",
   "title": "Intermediate Rings example",
   "event": "sr",
-  "sv": 11.7,
+  "sv": 11.6,
   "sheetTotals": {
    "numberOfSkills": 6,
-   "difficulty": 0.6,
+   "difficulty": 0.5,
    "egBonus": 1.1,
    "bonusDeduction": 0.0
   },
@@ -6322,36 +6356,41 @@
    {
     "name": "Inlocate",
     "letter": "A",
-    "eg": 1
+    "eg": 1,
+    "skillId": "WG-SR-I-37"
    },
    {
     "name": "Back uprise to support",
     "letter": "A",
-    "eg": 1
+    "eg": 1,
+    "skillId": "WG-SR-I-31"
    },
    {
     "name": "L-sit",
     "letter": "A",
-    "eg": 2
+    "eg": 2,
+    "skillId": "WG-SR-II-1"
    },
    {
     "name": "German hang",
-    "letter": "A",
-    "eg": null
+    "letter": "Sub-A",
+    "eg": null,
+    "skillId": "UCG-SR-german-hang-2-s"
    },
    {
     "name": "Dislocate",
     "letter": "A",
-    "eg": 1
+    "eg": 1,
+    "skillId": "WG-SR-I-25"
    },
    {
     "name": "Back layout",
     "letter": "A",
-    "eg": 4
+    "eg": 4,
+    "skillId": "WG-SR-IV-25"
    }
   ],
-  "video": "https://youtu.be/1wd5CMEFAh8",
-  "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 13.2."
+  "video": "https://youtu.be/1wd5CMEFAh8"
  },
  {
   "id": "mag-int-vt-1",
@@ -6359,13 +6398,12 @@
   "level": "int",
   "title": "Intermediate Vault example",
   "event": "vt",
-  "vault": "Hdspr. sw. 1/4t. (FIG VT 301)",
-  "vaultName": "Hdspr. sw. 1/4t.",
+  "vault": "Sideways handspring with ¼ turn (WG VT 301)",
+  "vaultName": "Sideways handspring with ¼ turn",
   "vaultNumber": 301,
   "vaultEg": 3,
   "sv": 11.2,
-  "video": "https://youtu.be/iw-cMRsmPng",
-  "note": "Sheet note: SV Cap is 13.2."
+  "video": "https://youtu.be/iw-cMRsmPng"
  },
  {
   "id": "mag-int-pb-1",
@@ -6384,36 +6422,41 @@
    {
     "name": "Kip",
     "letter": "A",
-    "eg": 3
+    "eg": 3,
+    "skillId": "WG-PB-III-73"
    },
    {
     "name": "L",
     "letter": "A",
-    "eg": 2
+    "eg": 2,
+    "skillId": "WG-PB-II-7"
    },
    {
     "name": "Shoulder Stand Hold",
     "letter": "A",
-    "eg": null
+    "eg": null,
+    "skillId": "UCG-PB-press-to-shoulderstand-2-s"
    },
    {
     "name": "Front Uprise",
     "letter": "A",
-    "eg": 1
+    "eg": 1,
+    "skillId": "WG-PB-I-1"
    },
    {
     "name": "Swing Handstand",
     "letter": "A",
-    "eg": 2
+    "eg": 2,
+    "skillId": "WG-PB-II-1"
    },
    {
     "name": "Back Pike",
     "letter": "A",
-    "eg": 4
+    "eg": 4,
+    "skillId": "WG-PB-IV-19"
    }
   ],
-  "video": "https://youtu.be/eOOFV1BmwEs",
-  "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 13.2."
+  "video": "https://youtu.be/eOOFV1BmwEs"
  },
  {
   "id": "mag-int-hb-1",
@@ -6421,47 +6464,52 @@
   "level": "int",
   "title": "Intermediate High Bar example",
   "event": "hb",
-  "sv": 10.9,
+  "sv": 10.6,
   "sheetTotals": {
    "numberOfSkills": 6,
-   "difficulty": 0.6,
+   "difficulty": 0.3,
    "egBonus": 0.3,
    "bonusDeduction": 0.0
   },
   "skills": [
    {
     "name": "Pullover in Undergrip",
-    "letter": "A",
-    "eg": null
+    "letter": "Sub-A",
+    "eg": null,
+    "skillId": "UCG-HB-pull-over"
    },
    {
     "name": "3/4 Front Giant Hop Out",
     "letter": "A",
-    "eg": null
+    "eg": null,
+    "skillId": "UCG-HB-3-4-forward-giant-hop-out"
    },
    {
     "name": "Swing Half Turn",
-    "letter": "A",
-    "eg": null
+    "letter": "Sub-A",
+    "eg": null,
+    "skillId": "UCG-HB-swing-to-1-2-turn-also-with-hop-also-to-support"
    },
    {
     "name": "Kip to Support",
     "letter": "A",
-    "eg": null
+    "eg": null,
+    "skillId": "UCG-HB-kip-to-support"
    },
    {
     "name": "Cast to Horizontal",
-    "letter": "A",
-    "eg": null
+    "letter": "Sub-A",
+    "eg": null,
+    "skillId": "UCG-HB-cast-to-horizontal"
    },
    {
     "name": "Back Pike Dismount",
     "letter": "A",
-    "eg": 4
+    "eg": 4,
+    "skillId": "WG-HB-IV-25"
    }
   ],
-  "video": "https://youtube.com/watch?v=2keQH9G2-0w?feature=share",
-  "note": "Sheet note: -1 for each skill fewer than 6. Sheet note: SV Cap is 13.2."
+  "video": "https://youtube.com/watch?v=2keQH9G2-0w?feature=share"
  },
  {
   "id": "wag-silver-ub-1",

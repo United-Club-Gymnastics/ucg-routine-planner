@@ -41,15 +41,25 @@ There are nine tabs: {New Flyers, Intermediate Flyers, High Flyers} × {Trampoli
 
 There are three tabs.
 
-- **Example Dev Routine** ("Level: NAIGC Developmental") and **Example Int Routine** ("Level: NAIGC Intermediate").
+Updated 2026-11-20 to the 2026-2028 UCG MAG rules and CoP values (Drive version 1166 before the update). Nate settled
+the skill readings the names left open: Dev floor "backward roll to support" is the straight arm backward roll to prone
+(Sub-A), Dev rings is the tuck press to shoulderstand (Sub-A), "Scissor hop" is WG PH I.2 (B) and p-bars "Kip" is the
+glide kip (WG PB III.73).
+
+- **Example Dev Routine** ("Level: UCG Developmental") and **Example Int Routine** ("Level: UCG Intermediate").
   - Each tab has one example per event: Floor, Pommel Horse, Rings, Vault, Parallel Bars, High Bar.
   - The event header cells "<Event> (video)" link to YouTube. The link is stored in a `video` field.
-  - Columns are: Skill #, Skill Name, Value-letter, Value-points (formula from letter), EG, Bonus/Deduction, SV.
-  - Each event ends with a "Number of Skills:" summary row (count, difficulty, EG bonus, bonus/deduction, SV). It is stored as `sv` and `sheetTotals`.
-  - Column J lists element-group names and the level notes ("-1 for each skill fewer than 6", "SV Cap is 12.7" for Dev / "13.2" for Int). The notes are copied into each example's `note`.
-  - Int has empty numbered slots 7–8 on each event, which are skipped.
-  - AA SV totals in the sheet: Dev 69.8, Int 69.
-- **Vault Reference Table:** FIG vault list (name, EG I–V, VT number, Value, "Advanced (GymACT)" value). This is reference data, not examples, so it is not exported.
+  - Columns are: Skill #, Skill Name, Value-letter (Sub-A, A-J), Value-points (formula from letter), EG, Bonus/Deduction, SV.
+  - Each skill is matched to the planner's skill list (`skillId`), as the skill picker would set it; the sheet's
+    letter and EG equal the list's. The names are the sheet's own.
+  - Each event ends with a "Number of Skills:" summary row (count, difficulty, EG bonus, bonus/deduction, SV). It is
+    stored as `sv` and `sheetTotals`. `tests/examples.test.mjs` checks that the planner gives `sv` (plus the sheet's
+    bonus column, the Dev pommel mushroom bonus, which the example doesn't carry).
+  - Column J lists element-group names and the level rules (short deduction, SV cap); they aren't copied.
+  - Int has empty numbered slots 7-8 on each event, which are skipped.
+  - AA SV totals in the sheet: Dev 68.8, Int 68.4.
+- **Vault Reference Table:** the planner's MAG vault list (UCG CoP and WG vaults: name, EG, VT number, Dev/Int value,
+  Advanced (GymACT) value, allowed or banned at Developmental). Reference data, not examples, so it is not exported.
 
 ### Mapping choices
 

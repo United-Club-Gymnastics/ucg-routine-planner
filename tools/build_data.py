@@ -549,8 +549,8 @@ def examples():
         if "skills" in e:
             if e["discipline"] == "tt":
                 r["skills"] = [match_tt(e["event"], {"name": s.get("name", ""), "notation": s.get("notation", ""), "dd": s.get("dd", "")}) for s in e["skills"]]
-            elif e["discipline"] == "wag":
-                # Matched to the Xcel list already (see examples_notes.md): kept as the skill
+            elif e["discipline"] in ("wag", "mag"):
+                # Matched to the skill list already (see examples_notes.md): kept as the skill
                 # picker would set it, so values, groups and special requirements follow the list.
                 r["skills"] = [
                     {
