@@ -7,6 +7,7 @@
 import { rgb } from 'https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.esm.min.js';
 import { INFINITY_GROUPS, INFINITY_EVENT_BONUS as EVENT_BONUS, INFINITY_MAX_SKILLS as MAX_SKILLS, MIN_SKILLS } from './scoring/wag.js';
 import { scoreEntry } from './model.js';
+import { fitText } from './pdf-fit.js';
 
 const fmt = (n) => Number(n || 0).toFixed(1);
 const EVENTS = ['ub', 'bb', 'fx'];
@@ -75,11 +76,8 @@ function painter(page, fonts) {
   const p = {
     text(s, x, y, { size = 10, font = fonts.regular, color = INK, maxWidth } = {}) {
       let t = safeText(font, s);
-      if (maxWidth) {
-        // Shrink long text to fit its box (down to 6pt), then truncate.
-        while (size > 6 && font.widthOfTextAtSize(t, size) > maxWidth) size -= 0.5;
-        while (t.length > 1 && font.widthOfTextAtSize(t, size) > maxWidth) t = t.slice(0, -1);
-      }
+      // Shrink long text to fit its box (down to 6pt), then cut it with an ellipsis.
+      if (maxWidth) ({ lines: [t], size } = fitText(font, t, maxWidth, { size }));
       page.drawText(t, { x, y, size, font, color });
     },
     center(s, cx, y, opts = {}) {
@@ -194,7 +192,10 @@ function drawEventPage(doc, fonts, logo, athlete, event, r) {
     const ty = y + rowH / 2 - 3.5;
     p.center(extra ? 'EG' : String(i + 1), 119, ty, { size: extra ? 6.5 : 8, font: extra ? fonts.bold : fonts.regular });
     if (!row) continue;
-    p.text(row.name, 132, ty, { size: fs - 0.5, maxWidth: 162 });
+    // A long name wraps onto two lines when the row has room (y runs up on this page).
+    const fit = fitText(fonts.regular, safeText(fonts.regular, row.name), 162, { size: fs - 0.5, wrapBelow: Math.min(fs - 0.5, 8), minSize: 6.5, maxLines: rowH >= 17 ? 2 : 1 });
+    const lead = fit.size * 1.1;
+    fit.lines.forEach((t, k) => p.text(t, 132, ty - (k - (fit.lines.length - 1) / 2) * lead + (fit.lines.length > 1 ? 0.5 : 0), { size: fit.size }));
     p.center(row.letter, 318, ty, { size: fs });
     if (extra) p.center('EG bonus only', 370, ty + 0.5, { size: 6.5, color: MUTED });
     else if (row.letter) p.center(fmt(row.value), 370, ty, { size: fs });

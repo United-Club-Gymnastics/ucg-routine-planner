@@ -13,6 +13,7 @@ import { DECADES, VAULT_AGE_BONUS } from './scoring/masters.js';
 import { RULES as MASTERS_RULES } from './data/masters-rules.js';
 import { crTexts } from './scoring/wag.js';
 import { findSkill } from './skill-search.js';
+import { fitText } from './pdf-fit.js';
 
 const PAGE_H = 792;
 const INK = rgb(0.094, 0.294, 0.337); // UCG dark blue green, reads as "filled in"
@@ -27,14 +28,20 @@ const ROMAN = { 1: 'I', 2: 'II', 3: 'III', 4: 'IV' };
 // A listed skill's box number in its code ("WG I.75", "Xcel 7.104"), to check it's the right skill.
 const boxOf = (entry, evId, idx) => findSkill(entry.routines?.[evId]?.[idx]?.skillId)?.box || '';
 
-// Skill name with its box number right-aligned (smaller, gray) in the same cell; the name shrinks first.
+// Skill name with its box number right-aligned (smaller, gray) in the same cell. A long name shrinks a
+// little, then wraps onto two smaller lines centered on the row (rows are at least 19pt tall).
 function nameWithBox(w, fonts, name, box, x, right, y, size = 10, color) {
   let boxW = 0;
   if (box) {
     boxW = fonts.regular.widthOfTextAtSize(box, 7.5);
     w.text(box, right - boxW, y, { size: 7.5, c: MUTED });
   }
-  w.text(name, x, y, { size, maxWidth: right - x - (box ? boxW + 6 : 0), ...(color ? { c: color } : {}) });
+  const maxWidth = right - x - (box ? boxW + 6 : 0);
+  const fit = fitText(fonts.regular, safeText(fonts.regular, name), maxWidth, { size, wrapBelow: Math.min(size, 8), minSize: 6.5, maxLines: 2 });
+  const lead = fit.size * 1.1;
+  fit.lines.forEach((t, i) =>
+    w.text(t, x, y + (i - (fit.lines.length - 1) / 2) * lead - (fit.lines.length > 1 ? 0.5 : 0), { size: fit.size, ...(color ? { c: color } : {}) })
+  );
 }
 
 function safeText(font, text) {
@@ -63,10 +70,7 @@ function writer(page, fonts, color = INK) {
   const PAGE_H = mb.y + mb.height;
   const text = (s, x, y, { size = 10, font = fonts.regular, maxWidth, c = color } = {}) => {
     let t = safeText(font, s);
-    if (maxWidth) {
-      while (size > 6 && font.widthOfTextAtSize(t, size) > maxWidth) size -= 0.5;
-      while (t.length > 1 && font.widthOfTextAtSize(t, size) > maxWidth) t = t.slice(0, -1);
-    }
+    if (maxWidth) ({ lines: [t], size } = fitText(font, t, maxWidth, { size })); // shrinks to 6pt, then cuts with an ellipsis
     page.drawText(t, { x, y: PAGE_H - y, size, font, color: c });
     return font.widthOfTextAtSize(t, size);
   };
